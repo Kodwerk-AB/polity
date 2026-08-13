@@ -140,6 +140,34 @@ const mandateOf = (
 
 const HEX = /^[0-9A-Fa-f]{6}$/
 
+/**
+ * The party's own name for itself — Fidesz's "Magyar Polgári Szövetség",
+ * Morena's "Movimiento Regeneración Nacional".
+ *
+ * From P1705 (native label), the same property the chambers use. Worth carrying
+ * for the same reason: the endonym is frequently the name a reader actually
+ * recognises, and an English translation ("Ecologist Green Party of Mexico")
+ * is often nobody's idea of what the party is called.
+ *
+ * Only kept when it differs from the English label, since repeating it says
+ * nothing.
+ */
+const endonymOf = (entity: Parameters<typeof labelOf>[0], english: string): string | undefined => {
+  for (const property of ['P1705', 'P1448', 'P1549']) {
+    const raw = entity?.claims?.[property]?.[0]?.mainsnak?.datavalue?.value
+    const text = (raw as { text?: string } | undefined)?.text
+    if (text && text.trim() && text.trim() !== english) return text.trim()
+  }
+  return undefined
+}
+
+/** The party's short form — "AfD", "CDU" — from P1813 (short name). */
+const abbreviationOf = (entity: Parameters<typeof labelOf>[0]): string | undefined => {
+  const raw = entity?.claims?.P1813?.[0]?.mainsnak?.datavalue?.value
+  const text = (raw as { text?: string } | undefined)?.text
+  return text && text.trim().length <= 24 ? text.trim() : undefined
+}
+
 /** The `|logo=` filename on a party's own article, unwrapped from its markup. */
 const logoFromArticle = async (title: string): Promise<string | undefined> => {
   const { getArticle } = await import('./net/wiki')
@@ -392,9 +420,14 @@ const buildCountry = async (
               ).slice(1, 5)
             )
           : undefined
+        const english = labelOf(entity) ?? bloc.name
+        const endonym = endonymOf(entity, english)
+        const abbreviation = abbreviationOf(entity)
         parties[qid] = {
           entity: { qid, ...(labelOf(entity) ? { label: labelOf(entity)! } : {}) },
-          name: labelOf(entity) ?? bloc.name,
+          name: english,
+          ...(endonym ? { endonym } : {}),
+          ...(abbreviation ? { abbreviation } : {}),
           kind: kindOf(bloc.name, entity),
           ...(band ? { alignment: band } : {}),
           ...(alignmentLabel ? { alignment_raw: alignmentLabel } : {}),

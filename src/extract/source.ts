@@ -1,5 +1,5 @@
 import { hashOf } from '../net/cache'
-import { getArticle, type PageRevision } from '../net/wiki'
+import { getArticle, getRenderedInfobox, type PageRevision } from '../net/wiki'
 import {
   compositionField,
   legislatureInfobox,
@@ -36,6 +36,34 @@ export interface ChamberSource {
    * gate.
    */
   elections?: string
+}
+
+/**
+ * A seat count: parentheses around a number and nothing else.
+ *
+ * A four-digit number is excluded because it is almost always a YEAR — a
+ * party's disambiguator, as in Indonesia's "Prosperous Justice Party (2020)",
+ * which made the field look as though it carried counts when every real count
+ * in it was an unexpanded template. No chamber seats between 1000 and 9999
+ * members, so nothing true is lost.
+ */
+const SEAT_COUNT = /\(\s*(?!\d{4}\s*\))\d[\d,]*\s*\)/
+
+/**
+ * Whether a field's seat counts are mostly template lookups.
+ *
+ * Counted per BULLET, since each bullet is one party and should carry one
+ * number. Indonesia writes every government party as `{{DPR RI|GOLKAR}}` and
+ * one opposition bloc as a literal `(110)`, so testing for "no numbers at all"
+ * kept the whole chamber on markup the model could not read. Half or fewer
+ * resolved means the rendered page is the better source.
+ */
+const mostlyTemplated = (field: string): boolean => {
+  if (!/\{\{/.test(field)) return false
+  const bullets = (field.match(/^\s*[*:]/gm) ?? []).length
+  if (bullets < 2) return false
+  const counts = (field.match(new RegExp(SEAT_COUNT.source, 'g')) ?? []).length
+  return counts <= bullets / 2
 }
 
 const ELECTION_FIELDS =
@@ -76,6 +104,34 @@ export const chamberSource = async (
         }
       }
     }
+    // A field whose seat counts are all template lookups carries no number a
+    // reader can see — Mexico writes `{{MexDep|MRN}}`, Indonesia
+    // `{{DPR RI|GOLKAR}}`. The rendered page expands them, so that is where
+    // those chambers' compositions actually live.
+    // Prefer the RENDERED page when most of the seat counts are template
+    // lookups rather than numbers.
+    //
+    // "No numbers at all" was too strict a test: Indonesia writes every
+    // government party as `{{DPR RI|GOLKAR}}` and then one opposition bloc as a
+    // literal `(110)`, so a single hardcoded figure kept the whole chamber on
+    // unexpanded markup the model could not read. What matters is the RATIO —
+    // a field whose bullets outnumber its counts is one where the numbers live
+    // in the templates.
+    if (mostlyTemplated(field)) {
+      const rendered = await getRenderedInfobox(articleTitle)
+      if (rendered && SEAT_COUNT.test(rendered)) {
+        const elections = electionLines(page.wikitext)
+        return {
+          text: elections ? `${rendered.slice(0, 11000)}\n\n${elections}` : rendered.slice(0, 12000),
+          hash: hashOf(rendered),
+          precise: true,
+          article: page.title,
+          revid: page.revid,
+          ...(elections ? { elections } : {}),
+        }
+      }
+    }
+
     const elections = electionLines(page.wikitext)
     return {
       text: elections ? `${field}\n\n${elections}` : field,

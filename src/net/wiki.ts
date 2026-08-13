@@ -210,6 +210,52 @@ export const getArticle = async (title: string): Promise<PageRevision | undefine
   return { title: data?.parse?.title ?? title, revid: data?.parse?.revid ?? 0, wikitext }
 }
 
+/**
+ * An article's infobox as RENDERED text, with templates expanded.
+ *
+ * Some chambers write their seat counts as template lookups rather than
+ * numbers: Mexico's `{{MexDep|MRN}}` and Indonesia's `{{DPR RI|GOLKAR}}` are
+ * both real, and the wikitext carries no digit at all for a reader — or a
+ * model — to find. Wikipedia renders them, so the rendered page is where those
+ * chambers' compositions actually exist.
+ *
+ * Used only as a FALLBACK: wikitext is preferred everywhere it carries the
+ * numbers, because the markup's bold headers make the government/opposition
+ * split far clearer than the stripped HTML does.
+ */
+export const getRenderedInfobox = async (title: string): Promise<string | undefined> => {
+  const url =
+    `https://en.wikipedia.org/w/api.php?action=parse&page=${encodeURIComponent(title)}` +
+    `&prop=text&section=0&format=json&redirects=1`
+  const data = await fetchJson<{ parse?: { text?: { '*'?: string } } }>(url)
+  const html = data?.parse?.text?.['*']
+  if (!html) return undefined
+
+  // Start a little BEFORE the heading. Indonesia's infobox opens its groups
+  // with a coalition banner that sits above the label, and slicing at the
+  // heading cut the government block off entirely — leaving a list that began
+  // mid-opposition and read as illegible.
+  const start = html.search(/Political groups/i)
+  if (start < 0) return undefined
+  return html
+    .slice(Math.max(0, start - 600), start + 11000)
+    // Keep link targets: they are the Q-id resolution key, and stripping tags
+    // outright would throw away every party's article title.
+    .replace(/<a\b[^>]*href="\/wiki\/([^"#?]+)"[^>]*>([\s\S]*?)<\/a>/gi, (_m, href, text) => {
+      const target = decodeURIComponent(String(href).replace(/_/g, ' '))
+      const label = String(text).replace(/<[^>]+>/g, '').trim()
+      return label ? `[[${target}|${label}]]` : `[[${target}]]`
+    })
+    .replace(/<style[\s\S]*?<\/style>/gi, '')
+    .replace(/<\/(?:li|tr|div|p)>/gi, '\n')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&#160;|&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/[ \t]+/g, ' ')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim()
+}
+
 /** Last-edit timestamps for many titles in one request — the cheap change probe. */
 export const lastEdited = async (titles: string[]): Promise<Map<string, string>> => {
   const out = new Map<string, string>()
