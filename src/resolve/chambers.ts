@@ -40,9 +40,21 @@ export interface ChamberRef {
   qid: QID
   role: ChamberRole
   name: string
+  /**
+   * The chamber's name in its own language — "Bundestag", "Sejm",
+   * "Asamblea Legislativa", "최고인민회의".
+   *
+   * From P1705 (native label), which is the chamber's own name for itself
+   * rather than a translation. Worth carrying because it is frequently the name
+   * a reader actually recognises: nobody outside Germany calls the Bundestag
+   * the Federal Diet, and "Riksdag" is more use than "Parliament of Sweden".
+   */
+  name_local?: string
   article?: string
   /** P1342 at preferred rank — the chamber's declared size. */
   seats_total?: number
+  /** P2097 — the constitutional term, in years. */
+  term_years?: number
   /** Set when the class hierarchy did not name a role and one was inferred. */
   inferred: boolean
   /** The body is abolished or suspended and is not currently sitting. */
@@ -131,10 +143,65 @@ const roleFromName = (name: string): ChamberRole | undefined => {
   return UPPER_NAMES.test(name) ? 'upper' : LOWER_NAMES.test(name) ? 'lower' : undefined
 }
 
+/** P1705 native label, or the endonym Wikidata files under P1448/P1559. */
+const nativeName = (entity: WikidataEntity | undefined): string | undefined => {
+  for (const property of ['P1705', 'P1448', 'P1549']) {
+    const raw = entity?.claims?.[property]?.[0]?.mainsnak?.datavalue?.value
+    const text = (raw as { text?: string } | undefined)?.text
+    if (text && text.trim()) return text.trim()
+  }
+  return undefined
+}
+
 const seatsOf = (entity: WikidataEntity | undefined): number | undefined => {
   const statement = currentStatement(entity?.claims?.P1342)
   const amount = statement ? claimAmount(statement) : undefined
   return amount && amount > 0 ? amount : undefined
+}
+
+/**
+ * The chamber's term of office in YEARS (P2097).
+ *
+ * Wikidata stores the unit as a Q-id, so a term written in months or days
+ * arrives as a bare number that means something else entirely. Anything outside
+ * a plausible range is dropped rather than converted — a guess about the unit
+ * would produce a mandate status that is confidently wrong.
+ */
+const YEAR_UNIT = 'Q577'
+
+const termFrom = (entity: WikidataEntity | undefined): number | undefined => {
+  const statement = currentStatement(entity?.claims?.P2097)
+  if (!statement) return undefined
+  // The unit is a Q-id, so a term written in months or days arrives as a bare
+  // number meaning something else entirely. Only years are trusted; anything
+  // else is dropped rather than converted, because a guess about the unit
+  // produces a mandate status that is confidently wrong.
+  const unit = (statement.mainsnak?.datavalue?.value as { unit?: string } | undefined)?.unit
+  if (unit && !unit.endsWith(YEAR_UNIT)) return undefined
+  const amount = claimAmount(statement)
+  return amount && amount >= 1 && amount <= 12 ? amount : undefined
+}
+
+/**
+ * The chamber's term of office, in years.
+ *
+ * P2097 is a property of an OFFICE, not of a building: measured across six
+ * major chambers it is empty on every legislature item and present on the
+ * member's position — "United States representative" carries 2 years where the
+ * House of Representatives carries nothing. So the chamber is asked first, and
+ * its P527 parts second, which is where the answer actually lives.
+ */
+const termOf = async (entity: WikidataEntity | undefined): Promise<number | undefined> => {
+  const direct = termFrom(entity)
+  if (direct) return direct
+  const parts = claimIds(entity, 'P527')
+  if (!parts.length) return undefined
+  const partEntities = await getEntities(parts, 'claims')
+  for (const part of parts) {
+    const term = termFrom(partEntities[part])
+    if (term) return term
+  }
+  return undefined
 }
 
 /** A body that has been abolished is never the current legislature. */
@@ -226,6 +293,8 @@ export const chambersOf = async (countryQid: QID): Promise<ChamberRef[]> => {
         const ref: ChamberRef = { qid: id as QID, role, name, inferred: true, dissolved: true }
         const article = enwikiTitle(entity)
         if (article) ref.article = article
+        const local = nativeName(entity)
+        if (local && local !== name) ref.name_local = local
         const seats = seatsOf(entity)
         if (seats) ref.seats_total = seats
         dissolvedOnly.push(ref)
@@ -255,8 +324,14 @@ export const chambersOf = async (countryQid: QID): Promise<ChamberRef[]> => {
     }
     const article = enwikiTitle(entity)
     if (article) ref.article = article
+    const local = nativeName(entity)
+    // Only when it differs — "Riigikogu" is both the English and the Estonian
+    // name, and repeating it says nothing.
+    if (local && local !== name) ref.name_local = local
     const seats = seatsOf(entity)
     if (seats) ref.seats_total = seats
+    const term = await termOf(entity)
+    if (term) ref.term_years = term
 
     // When two candidates claim the same role, prefer the one with an article
     // — the composition has to be read from somewhere.

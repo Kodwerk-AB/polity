@@ -1,0 +1,69 @@
+name: rebuild
+
+# Weekly, plus on demand. The cadence is set by how fast the world changes:
+# there is an election somewhere most weeks, and a composition that moved is
+# picked up on the next run rather than being watched for continuously.
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+# The commit this job makes is the whole product, so it needs write access and
+# nothing else.
+permissions:
+  contents: write
+
+concurrency:
+  group: rebuild
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - run: bun install --frozen-lockfile
+
+      # The cache is what makes the steady state cheap: an unchanged
+      # composition is never re-extracted, so a normal week costs a handful of
+      # model calls rather than 273. Keyed by run so it always restores from
+      # the most recent, and saves even when the build fails.
+      - name: Restore harvest cache
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: polity-cache-${{ github.run_id }}
+          restore-keys: polity-cache-
+
+      - name: Rebuild
+        env:
+          CLAUDE_KEY: ${{ secrets.CLAUDE_KEY }}
+        run: bun run build
+
+      - name: Regenerate schema
+        run: bun run build:schema
+
+      - name: Verify
+        run: bun run typecheck && bun run test
+
+      # A rebuild that found nothing new should not manufacture a commit, so
+      # the diff is checked before writing one.
+      - name: Commit
+        run: |
+          git config user.name  'polity'
+          git config user.email 'polity@users.noreply.github.com'
+          git add data schema
+          if git diff --cached --quiet; then
+            echo 'no change'
+            exit 0
+          fi
+          COUNTRIES=$(node -e "console.log(Object.keys(require('./data/polity.json').countries).length)")
+          ERRORS=$(node -e "console.log(require('./data/issues.json').filter(i=>i.severity==='error').length)")
+          git commit -m "Rebuild: ${COUNTRIES} countries, ${ERRORS} errors"
+          git push

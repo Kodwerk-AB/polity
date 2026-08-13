@@ -1,0 +1,3155 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "polity",
+    "version": "1.0.0",
+    "description": "Every country's government, parliament and parties — as structured, typed, verifiable data. Generated from Wikidata and Wikipedia, rebuilt on a schedule, published as static JSON.",
+    "license": {
+      "name": "ODbL-1.0",
+      "url": "https://opendatacommons.org/licenses/odbl/1-0/"
+    }
+  },
+  "paths": {
+    "/polity.json": {
+      "get": {
+        "summary": "The whole dataset.",
+        "responses": {
+          "200": {
+            "description": "Every country, keyed by ISO 3166-1 alpha-2.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PolityDataset"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Entity": {
+        "type": "object",
+        "required": [
+          "qid"
+        ],
+        "properties": {
+          "qid": {
+            "type": "string",
+            "pattern": "^Q[0-9]+$",
+            "description": "Wikidata entity id."
+          },
+          "label": {
+            "type": "string",
+            "description": "English label. May be absent."
+          }
+        }
+      },
+      "Provenance": {
+        "type": "object",
+        "required": [
+          "kind",
+          "derivation",
+          "retrieved_at"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "wikidata",
+              "wikipedia",
+              "ipu",
+              "manual"
+            ],
+            "description": "Which source the value came from."
+          },
+          "derivation": {
+            "type": "string",
+            "enum": [
+              "structured",
+              "parsed",
+              "extracted",
+              "derived",
+              "manual"
+            ],
+            "description": "How much interpretation stands between the source and the field. `extracted` means a language model read it from prose or markup and the result was checked by arithmetic."
+          },
+          "qid": {
+            "type": "string",
+            "pattern": "^Q[0-9]+$"
+          },
+          "article": {
+            "type": "string"
+          },
+          "revid": {
+            "type": "integer",
+            "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
+          },
+          "retrieved_at": {
+            "type": "string",
+            "format": "date"
+          },
+          "model": {
+            "type": "string"
+          }
+        }
+      },
+      "ImageRef": {
+        "type": "object",
+        "required": [
+          "file",
+          "url",
+          "host",
+          "non_free"
+        ],
+        "description": "A pointer to an image, never a re-hosted copy. The licence facts travel with it so each consumer applies its own policy.",
+        "properties": {
+          "file": {
+            "type": "string",
+            "description": "Commons/Wikipedia filename, without the File: prefix."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Special:FilePath URL. Serves CORS `*`."
+          },
+          "host": {
+            "type": "string",
+            "enum": [
+              "commons",
+              "wikipedia"
+            ]
+          },
+          "license": {
+            "type": "string",
+            "description": "As the host states it: \"PD\", \"CC BY-SA 4.0\", \"Fair use\"."
+          },
+          "non_free": {
+            "type": "boolean",
+            "description": "The host serves it under fair use, not a licence grant."
+          },
+          "restrictions": {
+            "type": "string"
+          },
+          "credit": {
+            "type": "string"
+          }
+        }
+      },
+      "OfficeHolder": {
+        "type": "object",
+        "required": [
+          "person",
+          "name",
+          "party",
+          "represents",
+          "provenance"
+        ],
+        "properties": {
+          "person": {
+            "type": "object",
+            "required": [
+              "qid"
+            ],
+            "properties": {
+              "qid": {
+                "type": "string",
+                "pattern": "^Q[0-9]+$",
+                "description": "Wikidata entity id."
+              },
+              "label": {
+                "type": "string",
+                "description": "English label. May be absent."
+              }
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "office": {
+            "type": "object",
+            "required": [
+              "qid"
+            ],
+            "properties": {
+              "qid": {
+                "type": "string",
+                "pattern": "^Q[0-9]+$",
+                "description": "Wikidata entity id."
+              },
+              "label": {
+                "type": "string",
+                "description": "English label. May be absent."
+              }
+            }
+          },
+          "party": {
+            "oneOf": [
+              {
+                "type": "object",
+                "required": [
+                  "qid"
+                ],
+                "properties": {
+                  "qid": {
+                    "type": "string",
+                    "pattern": "^Q[0-9]+$",
+                    "description": "Wikidata entity id."
+                  },
+                  "label": {
+                    "type": "string",
+                    "description": "English label. May be absent."
+                  }
+                }
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Null when genuinely independent — several heads of state suspend party membership."
+          },
+          "since": {
+            "type": "string",
+            "format": "date",
+            "description": "Day precision, or absent. Never padded."
+          },
+          "born_year": {
+            "type": "integer"
+          },
+          "portrait": {
+            "type": "object",
+            "required": [
+              "file",
+              "url",
+              "host",
+              "non_free"
+            ],
+            "description": "A pointer to an image, never a re-hosted copy. The licence facts travel with it so each consumer applies its own policy.",
+            "properties": {
+              "file": {
+                "type": "string",
+                "description": "Commons/Wikipedia filename, without the File: prefix."
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "Special:FilePath URL. Serves CORS `*`."
+              },
+              "host": {
+                "type": "string",
+                "enum": [
+                  "commons",
+                  "wikipedia"
+                ]
+              },
+              "license": {
+                "type": "string",
+                "description": "As the host states it: \"PD\", \"CC BY-SA 4.0\", \"Fair use\"."
+              },
+              "non_free": {
+                "type": "boolean",
+                "description": "The host serves it under fair use, not a licence grant."
+              },
+              "restrictions": {
+                "type": "string"
+              },
+              "credit": {
+                "type": "string"
+              }
+            }
+          },
+          "represents": {
+            "type": "string",
+            "enum": [
+              "political",
+              "ceremonial"
+            ],
+            "description": "Whether this office speaks politically or ceremonially for the state."
+          },
+          "provenance": {
+            "type": "object",
+            "required": [
+              "kind",
+              "derivation",
+              "retrieved_at"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "wikidata",
+                  "wikipedia",
+                  "ipu",
+                  "manual"
+                ],
+                "description": "Which source the value came from."
+              },
+              "derivation": {
+                "type": "string",
+                "enum": [
+                  "structured",
+                  "parsed",
+                  "extracted",
+                  "derived",
+                  "manual"
+                ],
+                "description": "How much interpretation stands between the source and the field. `extracted` means a language model read it from prose or markup and the result was checked by arithmetic."
+              },
+              "qid": {
+                "type": "string",
+                "pattern": "^Q[0-9]+$"
+              },
+              "article": {
+                "type": "string"
+              },
+              "revid": {
+                "type": "integer",
+                "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
+              },
+              "retrieved_at": {
+                "type": "string",
+                "format": "date"
+              },
+              "model": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "Party": {
+        "type": "object",
+        "required": [
+          "entity",
+          "name",
+          "kind",
+          "ideologies",
+          "groupings",
+          "colors",
+          "provenance"
+        ],
+        "properties": {
+          "entity": {
+            "type": "object",
+            "required": [
+              "qid"
+            ],
+            "properties": {
+              "qid": {
+                "type": "string",
+                "pattern": "^Q[0-9]+$",
+                "description": "Wikidata entity id."
+              },
+              "label": {
+                "type": "string",
+                "description": "English label. May be absent."
+              }
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "endonym": {
+            "type": "string"
+          },
+          "abbreviation": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "party",
+              "electoral_alliance",
+              "parliamentary_group",
+              "independents",
+              "residual"
+            ],
+            "description": "An electoral alliance is not a party. \"Which party governs?\" has no honest answer when the answer is an alliance of five."
+          },
+          "alignment": {
+            "type": "string",
+            "enum": [
+              "left",
+              "centre_left",
+              "centre",
+              "centre_right",
+              "right"
+            ],
+            "description": "The five-band fold of Wikidata P1387."
+          },
+          "alignment_raw": {
+            "type": "string",
+            "description": "Wikidata's own label, unfolded."
+          },
+          "ideologies": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "qid"
+              ],
+              "properties": {
+                "qid": {
+                  "type": "string",
+                  "pattern": "^Q[0-9]+$",
+                  "description": "Wikidata entity id."
+                },
+                "label": {
+                  "type": "string",
+                  "description": "English label. May be absent."
+                }
+              }
+            }
+          },
+          "groupings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "qid"
+              ],
+              "properties": {
+                "qid": {
+                  "type": "string",
+                  "pattern": "^Q[0-9]+$",
+                  "description": "Wikidata entity id."
+                },
+                "label": {
+                  "type": "string",
+                  "description": "English label. May be absent."
+                }
+              }
+            },
+            "description": "Transnational families (EPP, Progressive Alliance). Open statements only — an ended membership is not membership."
+          },
+          "colors": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^#[0-9a-f]{6}$"
+            }
+          },
+          "founded_year": {
+            "type": "integer"
+          },
+          "dissolved_year": {
+            "type": "integer"
+          },
+          "logo": {
+            "type": "object",
+            "required": [
+              "file",
+              "url",
+              "host",
+              "non_free"
+            ],
+            "description": "A pointer to an image, never a re-hosted copy. The licence facts travel with it so each consumer applies its own policy.",
+            "properties": {
+              "file": {
+                "type": "string",
+                "description": "Commons/Wikipedia filename, without the File: prefix."
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "Special:FilePath URL. Serves CORS `*`."
+              },
+              "host": {
+                "type": "string",
+                "enum": [
+                  "commons",
+                  "wikipedia"
+                ]
+              },
+              "license": {
+                "type": "string",
+                "description": "As the host states it: \"PD\", \"CC BY-SA 4.0\", \"Fair use\"."
+              },
+              "non_free": {
+                "type": "boolean",
+                "description": "The host serves it under fair use, not a licence grant."
+              },
+              "restrictions": {
+                "type": "string"
+              },
+              "credit": {
+                "type": "string"
+              }
+            }
+          },
+          "provenance": {
+            "type": "object",
+            "required": [
+              "kind",
+              "derivation",
+              "retrieved_at"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "wikidata",
+                  "wikipedia",
+                  "ipu",
+                  "manual"
+                ],
+                "description": "Which source the value came from."
+              },
+              "derivation": {
+                "type": "string",
+                "enum": [
+                  "structured",
+                  "parsed",
+                  "extracted",
+                  "derived",
+                  "manual"
+                ],
+                "description": "How much interpretation stands between the source and the field. `extracted` means a language model read it from prose or markup and the result was checked by arithmetic."
+              },
+              "qid": {
+                "type": "string",
+                "pattern": "^Q[0-9]+$"
+              },
+              "article": {
+                "type": "string"
+              },
+              "revid": {
+                "type": "integer",
+                "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
+              },
+              "retrieved_at": {
+                "type": "string",
+                "format": "date"
+              },
+              "model": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "Seating": {
+        "type": "object",
+        "required": [
+          "party",
+          "name",
+          "seats",
+          "share",
+          "standing"
+        ],
+        "properties": {
+          "party": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^Q[0-9]+$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Reference into the country`s party registry. Null for residual rows, which keep their name."
+          },
+          "name": {
+            "type": "string"
+          },
+          "seats": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "share": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "standing": {
+            "type": "string",
+            "enum": [
+              "government",
+              "backing",
+              "opposition",
+              "speaker",
+              "non_attached",
+              "vacant"
+            ],
+            "description": "Confidence-and-supply is why this is not a boolean: a party holding no ministries that supplies the majority is neither government nor opposition."
+          },
+          "alliance": {
+            "type": "string"
+          },
+          "vote_share": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
+      },
+      "Chamber": {
+        "type": "object",
+        "required": [
+          "entity",
+          "role",
+          "name",
+          "seats_total",
+          "selection",
+          "contestation",
+          "composition",
+          "as_of",
+          "confidence",
+          "provenance",
+          "source_hash"
+        ],
+        "properties": {
+          "entity": {
+            "type": "object",
+            "required": [
+              "qid"
+            ],
+            "properties": {
+              "qid": {
+                "type": "string",
+                "pattern": "^Q[0-9]+$",
+                "description": "Wikidata entity id."
+              },
+              "label": {
+                "type": "string",
+                "description": "English label. May be absent."
+              }
+            }
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "unicameral",
+              "lower",
+              "upper"
+            ],
+            "description": "Resolved by walking Wikidata P279 upward, never by exact class."
+          },
+          "name": {
+            "type": "string"
+          },
+          "name_local": {
+            "type": "string"
+          },
+          "seats_total": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "selection": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "directly_elected",
+                "indirectly_elected",
+                "appointed",
+                "hereditary",
+                "ex_officio",
+                "reserved"
+              ],
+              "description": "How members arrive."
+            }
+          },
+          "contestation": {
+            "type": "string",
+            "enum": [
+              "competitive",
+              "restricted",
+              "uncontested",
+              "appointed",
+              "suspended"
+            ],
+            "description": "How real the contest is. Orthogonal to structure: a chamber can be bicameral, directly elected AND uncontested."
+          },
+          "seats_contested": {
+            "type": "integer"
+          },
+          "composition": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "party",
+                "name",
+                "seats",
+                "share",
+                "standing"
+              ],
+              "properties": {
+                "party": {
+                  "oneOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^Q[0-9]+$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "description": "Reference into the country`s party registry. Null for residual rows, which keep their name."
+                },
+                "name": {
+                  "type": "string"
+                },
+                "seats": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "share": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "standing": {
+                  "type": "string",
+                  "enum": [
+                    "government",
+                    "backing",
+                    "opposition",
+                    "speaker",
+                    "non_attached",
+                    "vacant"
+                  ],
+                  "description": "Confidence-and-supply is why this is not a boolean: a party holding no ministries that supplies the majority is neither government nor opposition."
+                },
+                "alliance": {
+                  "type": "string"
+                },
+                "vote_share": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              }
+            }
+          },
+          "last_election": {
+            "type": "string",
+            "format": "date"
+          },
+          "next_election": {
+            "type": "string",
+            "format": "date"
+          },
+          "term_years": {
+            "type": "number",
+            "description": "The constitutional term. What makes a missing next_election usable: a chamber elected five years ago under a four-year term is overdue whether or not a date was recorded."
+          },
+          "mandate": {
+            "type": "object",
+            "description": "Where the chamber stands in its electoral cycle — the early warning that a composition may be about to go out of date. Entirely derived; absent when nothing is known.",
+            "required": [
+              "state",
+              "inferred"
+            ],
+            "properties": {
+              "expected_end": {
+                "type": "string",
+                "format": "date",
+                "description": "When the mandate is expected to end. An ABSOLUTE date on purpose — a \"days remaining\" count would be wrong the morning after it was written, since the file is rebuilt weekly. Compute the difference against your own clock."
+              },
+              "inferred": {
+                "type": "boolean",
+                "description": "True when expected_end came from term_years rather than a scheduled date."
+              },
+              "state": {
+                "type": "string",
+                "enum": [
+                  "current",
+                  "due_soon",
+                  "overdue",
+                  "unknown"
+                ],
+                "description": "`overdue` is a signal to re-check the source, not an accusation — a term can be legally extended."
+              }
+            }
+          },
+          "as_of": {
+            "type": "string",
+            "format": "date"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "partial",
+              "flagged"
+            ],
+            "description": "In the data, not a log: a consumer must tell a verified row from a guessed one."
+          },
+          "provenance": {
+            "type": "object",
+            "required": [
+              "kind",
+              "derivation",
+              "retrieved_at"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "wikidata",
+                  "wikipedia",
+                  "ipu",
+                  "manual"
+                ],
+                "description": "Which source the value came from."
+              },
+              "derivation": {
+                "type": "string",
+                "enum": [
+                  "structured",
+                  "parsed",
+                  "extracted",
+                  "derived",
+                  "manual"
+                ],
+                "description": "How much interpretation stands between the source and the field. `extracted` means a language model read it from prose or markup and the result was checked by arithmetic."
+              },
+              "qid": {
+                "type": "string",
+                "pattern": "^Q[0-9]+$"
+              },
+              "article": {
+                "type": "string"
+              },
+              "revid": {
+                "type": "integer",
+                "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
+              },
+              "retrieved_at": {
+                "type": "string",
+                "format": "date"
+              },
+              "model": {
+                "type": "string"
+              }
+            }
+          },
+          "source_hash": {
+            "type": "string",
+            "description": "Hash of the source field the composition was read from — the change-detection key, and what makes a re-extraction happen only on a real change."
+          }
+        }
+      },
+      "Government": {
+        "type": "object",
+        "required": [
+          "governing",
+          "backing",
+          "seats",
+          "minority",
+          "confidence",
+          "provenance"
+        ],
+        "properties": {
+          "governing": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^Q[0-9]+$"
+            }
+          },
+          "backing": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^Q[0-9]+$"
+            }
+          },
+          "cabinet": {
+            "type": "object",
+            "required": [
+              "qid"
+            ],
+            "properties": {
+              "qid": {
+                "type": "string",
+                "pattern": "^Q[0-9]+$",
+                "description": "Wikidata entity id."
+              },
+              "label": {
+                "type": "string",
+                "description": "English label. May be absent."
+              }
+            }
+          },
+          "seats": {
+            "type": "integer"
+          },
+          "seats_with_backing": {
+            "type": "integer"
+          },
+          "minority": {
+            "type": "boolean",
+            "description": "Computed from seats, never from \"has backers\" — Denmark and Spain govern in a minority with no supply deal at all."
+          },
+          "description": {
+            "type": "string"
+          },
+          "formed": {
+            "type": "string",
+            "format": "date"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "partial",
+              "flagged"
+            ],
+            "description": ""
+          },
+          "provenance": {
+            "type": "object",
+            "required": [
+              "kind",
+              "derivation",
+              "retrieved_at"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "wikidata",
+                  "wikipedia",
+                  "ipu",
+                  "manual"
+                ],
+                "description": "Which source the value came from."
+              },
+              "derivation": {
+                "type": "string",
+                "enum": [
+                  "structured",
+                  "parsed",
+                  "extracted",
+                  "derived",
+                  "manual"
+                ],
+                "description": "How much interpretation stands between the source and the field. `extracted` means a language model read it from prose or markup and the result was checked by arithmetic."
+              },
+              "qid": {
+                "type": "string",
+                "pattern": "^Q[0-9]+$"
+              },
+              "article": {
+                "type": "string"
+              },
+              "revid": {
+                "type": "integer",
+                "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
+              },
+              "retrieved_at": {
+                "type": "string",
+                "format": "date"
+              },
+              "model": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "Polity": {
+        "type": "object",
+        "required": [
+          "iso",
+          "entity",
+          "name",
+          "form",
+          "form_raw",
+          "head_of_state",
+          "head_of_government",
+          "parties",
+          "chambers",
+          "government",
+          "sources",
+          "updated_at"
+        ],
+        "properties": {
+          "iso": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}$"
+          },
+          "entity": {
+            "type": "object",
+            "required": [
+              "qid"
+            ],
+            "properties": {
+              "qid": {
+                "type": "string",
+                "pattern": "^Q[0-9]+$",
+                "description": "Wikidata entity id."
+              },
+              "label": {
+                "type": "string",
+                "description": "English label. May be absent."
+              }
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "form": {
+            "type": "string",
+            "enum": [
+              "parliamentary_republic",
+              "presidential_republic",
+              "semi_presidential_republic",
+              "constitutional_monarchy",
+              "absolute_monarchy",
+              "one_party_state",
+              "theocracy",
+              "military_junta",
+              "transitional",
+              "dominant_party_state",
+              "other"
+            ],
+            "description": "Folded from Wikidata P122 at preferred rank."
+          },
+          "form_raw": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "head_of_state": {
+            "type": "object",
+            "required": [
+              "person",
+              "name",
+              "party",
+              "represents",
+              "provenance"
+            ],
+            "properties": {
+              "person": {
+                "type": "object",
+                "required": [
+                  "qid"
+                ],
+                "properties": {
+                  "qid": {
+                    "type": "string",
+                    "pattern": "^Q[0-9]+$",
+                    "description": "Wikidata entity id."
+                  },
+                  "label": {
+                    "type": "string",
+                    "description": "English label. May be absent."
+                  }
+                }
+              },
+              "name": {
+                "type": "string"
+              },
+              "office": {
+                "type": "object",
+                "required": [
+                  "qid"
+                ],
+                "properties": {
+                  "qid": {
+                    "type": "string",
+                    "pattern": "^Q[0-9]+$",
+                    "description": "Wikidata entity id."
+                  },
+                  "label": {
+                    "type": "string",
+                    "description": "English label. May be absent."
+                  }
+                }
+              },
+              "party": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "required": [
+                      "qid"
+                    ],
+                    "properties": {
+                      "qid": {
+                        "type": "string",
+                        "pattern": "^Q[0-9]+$",
+                        "description": "Wikidata entity id."
+                      },
+                      "label": {
+                        "type": "string",
+                        "description": "English label. May be absent."
+                      }
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Null when genuinely independent — several heads of state suspend party membership."
+              },
+              "since": {
+                "type": "string",
+                "format": "date",
+                "description": "Day precision, or absent. Never padded."
+              },
+              "born_year": {
+                "type": "integer"
+              },
+              "portrait": {
+                "type": "object",
+                "required": [
+                  "file",
+                  "url",
+                  "host",
+                  "non_free"
+                ],
+                "description": "A pointer to an image, never a re-hosted copy. The licence facts travel with it so each consumer applies its own policy.",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "description": "Commons/Wikipedia filename, without the File: prefix."
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Special:FilePath URL. Serves CORS `*`."
+                  },
+                  "host": {
+                    "type": "string",
+                    "enum": [
+                      "commons",
+                      "wikipedia"
+                    ]
+                  },
+                  "license": {
+                    "type": "string",
+                    "description": "As the host states it: \"PD\", \"CC BY-SA 4.0\", \"Fair use\"."
+                  },
+                  "non_free": {
+                    "type": "boolean",
+                    "description": "The host serves it under fair use, not a licence grant."
+                  },
+                  "restrictions": {
+                    "type": "string"
+                  },
+                  "credit": {
+                    "type": "string"
+                  }
+                }
+              },
+              "represents": {
+                "type": "string",
+                "enum": [
+                  "political",
+                  "ceremonial"
+                ],
+                "description": "Whether this office speaks politically or ceremonially for the state."
+              },
+              "provenance": {
+                "type": "object",
+                "required": [
+                  "kind",
+                  "derivation",
+                  "retrieved_at"
+                ],
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "wikidata",
+                      "wikipedia",
+                      "ipu",
+                      "manual"
+                    ],
+                    "description": "Which source the value came from."
+                  },
+                  "derivation": {
+                    "type": "string",
+                    "enum": [
+                      "structured",
+                      "parsed",
+                      "extracted",
+                      "derived",
+                      "manual"
+                    ],
+                    "description": "How much interpretation stands between the source and the field. `extracted` means a language model read it from prose or markup and the result was checked by arithmetic."
+                  },
+                  "qid": {
+                    "type": "string",
+                    "pattern": "^Q[0-9]+$"
+                  },
+                  "article": {
+                    "type": "string"
+                  },
+                  "revid": {
+                    "type": "integer",
+                    "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
+                  },
+                  "retrieved_at": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "model": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "head_of_government": {
+            "oneOf": [
+              {
+                "type": "object",
+                "required": [
+                  "person",
+                  "name",
+                  "party",
+                  "represents",
+                  "provenance"
+                ],
+                "properties": {
+                  "person": {
+                    "type": "object",
+                    "required": [
+                      "qid"
+                    ],
+                    "properties": {
+                      "qid": {
+                        "type": "string",
+                        "pattern": "^Q[0-9]+$",
+                        "description": "Wikidata entity id."
+                      },
+                      "label": {
+                        "type": "string",
+                        "description": "English label. May be absent."
+                      }
+                    }
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "office": {
+                    "type": "object",
+                    "required": [
+                      "qid"
+                    ],
+                    "properties": {
+                      "qid": {
+                        "type": "string",
+                        "pattern": "^Q[0-9]+$",
+                        "description": "Wikidata entity id."
+                      },
+                      "label": {
+                        "type": "string",
+                        "description": "English label. May be absent."
+                      }
+                    }
+                  },
+                  "party": {
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "required": [
+                          "qid"
+                        ],
+                        "properties": {
+                          "qid": {
+                            "type": "string",
+                            "pattern": "^Q[0-9]+$",
+                            "description": "Wikidata entity id."
+                          },
+                          "label": {
+                            "type": "string",
+                            "description": "English label. May be absent."
+                          }
+                        }
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "description": "Null when genuinely independent — several heads of state suspend party membership."
+                  },
+                  "since": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Day precision, or absent. Never padded."
+                  },
+                  "born_year": {
+                    "type": "integer"
+                  },
+                  "portrait": {
+                    "type": "object",
+                    "required": [
+                      "file",
+                      "url",
+                      "host",
+                      "non_free"
+                    ],
+                    "description": "A pointer to an image, never a re-hosted copy. The licence facts travel with it so each consumer applies its own policy.",
+                    "properties": {
+                      "file": {
+                        "type": "string",
+                        "description": "Commons/Wikipedia filename, without the File: prefix."
+                      },
+                      "url": {
+                        "type": "string",
+                        "format": "uri",
+                        "description": "Special:FilePath URL. Serves CORS `*`."
+                      },
+                      "host": {
+                        "type": "string",
+                        "enum": [
+                          "commons",
+                          "wikipedia"
+                        ]
+                      },
+                      "license": {
+                        "type": "string",
+                        "description": "As the host states it: \"PD\", \"CC BY-SA 4.0\", \"Fair use\"."
+                      },
+                      "non_free": {
+                        "type": "boolean",
+                        "description": "The host serves it under fair use, not a licence grant."
+                      },
+                      "restrictions": {
+                        "type": "string"
+                      },
+                      "credit": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "represents": {
+                    "type": "string",
+                    "enum": [
+                      "political",
+                      "ceremonial"
+                    ],
+                    "description": "Whether this office speaks politically or ceremonially for the state."
+                  },
+                  "provenance": {
+                    "type": "object",
+                    "required": [
+                      "kind",
+                      "derivation",
+                      "retrieved_at"
+                    ],
+                    "properties": {
+                      "kind": {
+                        "type": "string",
+                        "enum": [
+                          "wikidata",
+                          "wikipedia",
+                          "ipu",
+                          "manual"
+                        ],
+                        "description": "Which source the value came from."
+                      },
+                      "derivation": {
+                        "type": "string",
+                        "enum": [
+                          "structured",
+                          "parsed",
+                          "extracted",
+                          "derived",
+                          "manual"
+                        ],
+                        "description": "How much interpretation stands between the source and the field. `extracted` means a language model read it from prose or markup and the result was checked by arithmetic."
+                      },
+                      "qid": {
+                        "type": "string",
+                        "pattern": "^Q[0-9]+$"
+                      },
+                      "article": {
+                        "type": "string"
+                      },
+                      "revid": {
+                        "type": "integer",
+                        "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
+                      },
+                      "retrieved_at": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "model": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Null when the SAME PERSON holds both offices — explicitly, so \"one person does both jobs\" is distinguishable from \"we only found one\"."
+          },
+          "parties": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "required": [
+                "entity",
+                "name",
+                "kind",
+                "ideologies",
+                "groupings",
+                "colors",
+                "provenance"
+              ],
+              "properties": {
+                "entity": {
+                  "type": "object",
+                  "required": [
+                    "qid"
+                  ],
+                  "properties": {
+                    "qid": {
+                      "type": "string",
+                      "pattern": "^Q[0-9]+$",
+                      "description": "Wikidata entity id."
+                    },
+                    "label": {
+                      "type": "string",
+                      "description": "English label. May be absent."
+                    }
+                  }
+                },
+                "name": {
+                  "type": "string"
+                },
+                "endonym": {
+                  "type": "string"
+                },
+                "abbreviation": {
+                  "type": "string"
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "party",
+                    "electoral_alliance",
+                    "parliamentary_group",
+                    "independents",
+                    "residual"
+                  ],
+                  "description": "An electoral alliance is not a party. \"Which party governs?\" has no honest answer when the answer is an alliance of five."
+                },
+                "alignment": {
+                  "type": "string",
+                  "enum": [
+                    "left",
+                    "centre_left",
+                    "centre",
+                    "centre_right",
+                    "right"
+                  ],
+                  "description": "The five-band fold of Wikidata P1387."
+                },
+                "alignment_raw": {
+                  "type": "string",
+                  "description": "Wikidata's own label, unfolded."
+                },
+                "ideologies": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "qid"
+                    ],
+                    "properties": {
+                      "qid": {
+                        "type": "string",
+                        "pattern": "^Q[0-9]+$",
+                        "description": "Wikidata entity id."
+                      },
+                      "label": {
+                        "type": "string",
+                        "description": "English label. May be absent."
+                      }
+                    }
+                  }
+                },
+                "groupings": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "qid"
+                    ],
+                    "properties": {
+                      "qid": {
+                        "type": "string",
+                        "pattern": "^Q[0-9]+$",
+                        "description": "Wikidata entity id."
+                      },
+                      "label": {
+                        "type": "string",
+                        "description": "English label. May be absent."
+                      }
+                    }
+                  },
+                  "description": "Transnational families (EPP, Progressive Alliance). Open statements only — an ended membership is not membership."
+                },
+                "colors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^#[0-9a-f]{6}$"
+                  }
+                },
+                "founded_year": {
+                  "type": "integer"
+                },
+                "dissolved_year": {
+                  "type": "integer"
+                },
+                "logo": {
+                  "type": "object",
+                  "required": [
+                    "file",
+                    "url",
+                    "host",
+                    "non_free"
+                  ],
+                  "description": "A pointer to an image, never a re-hosted copy. The licence facts travel with it so each consumer applies its own policy.",
+                  "properties": {
+                    "file": {
+                      "type": "string",
+                      "description": "Commons/Wikipedia filename, without the File: prefix."
+                    },
+                    "url": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "Special:FilePath URL. Serves CORS `*`."
+                    },
+                    "host": {
+                      "type": "string",
+                      "enum": [
+                        "commons",
+                        "wikipedia"
+                      ]
+                    },
+                    "license": {
+                      "type": "string",
+                      "description": "As the host states it: \"PD\", \"CC BY-SA 4.0\", \"Fair use\"."
+                    },
+                    "non_free": {
+                      "type": "boolean",
+                      "description": "The host serves it under fair use, not a licence grant."
+                    },
+                    "restrictions": {
+                      "type": "string"
+                    },
+                    "credit": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "provenance": {
+                  "type": "object",
+                  "required": [
+                    "kind",
+                    "derivation",
+                    "retrieved_at"
+                  ],
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "enum": [
+                        "wikidata",
+                        "wikipedia",
+                        "ipu",
+                        "manual"
+                      ],
+                      "description": "Which source the value came from."
+                    },
+                    "derivation": {
+                      "type": "string",
+                      "enum": [
+                        "structured",
+                        "parsed",
+                        "extracted",
+                        "derived",
+                        "manual"
+                      ],
+                      "description": "How much interpretation stands between the source and the field. `extracted` means a language model read it from prose or markup and the result was checked by arithmetic."
+                    },
+                    "qid": {
+                      "type": "string",
+                      "pattern": "^Q[0-9]+$"
+                    },
+                    "article": {
+                      "type": "string"
+                    },
+                    "revid": {
+                      "type": "integer",
+                      "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
+                    },
+                    "retrieved_at": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "model": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "chambers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "entity",
+                "role",
+                "name",
+                "seats_total",
+                "selection",
+                "contestation",
+                "composition",
+                "as_of",
+                "confidence",
+                "provenance",
+                "source_hash"
+              ],
+              "properties": {
+                "entity": {
+                  "type": "object",
+                  "required": [
+                    "qid"
+                  ],
+                  "properties": {
+                    "qid": {
+                      "type": "string",
+                      "pattern": "^Q[0-9]+$",
+                      "description": "Wikidata entity id."
+                    },
+                    "label": {
+                      "type": "string",
+                      "description": "English label. May be absent."
+                    }
+                  }
+                },
+                "role": {
+                  "type": "string",
+                  "enum": [
+                    "unicameral",
+                    "lower",
+                    "upper"
+                  ],
+                  "description": "Resolved by walking Wikidata P279 upward, never by exact class."
+                },
+                "name": {
+                  "type": "string"
+                },
+                "name_local": {
+                  "type": "string"
+                },
+                "seats_total": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "selection": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "directly_elected",
+                      "indirectly_elected",
+                      "appointed",
+                      "hereditary",
+                      "ex_officio",
+                      "reserved"
+                    ],
+                    "description": "How members arrive."
+                  }
+                },
+                "contestation": {
+                  "type": "string",
+                  "enum": [
+                    "competitive",
+                    "restricted",
+                    "uncontested",
+                    "appointed",
+                    "suspended"
+                  ],
+                  "description": "How real the contest is. Orthogonal to structure: a chamber can be bicameral, directly elected AND uncontested."
+                },
+                "seats_contested": {
+                  "type": "integer"
+                },
+                "composition": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "party",
+                      "name",
+                      "seats",
+                      "share",
+                      "standing"
+                    ],
+                    "properties": {
+                      "party": {
+                        "oneOf": [
+                          {
+                            "type": "string",
+                            "pattern": "^Q[0-9]+$"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "Reference into the country`s party registry. Null for residual rows, which keep their name."
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "seats": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "share": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      },
+                      "standing": {
+                        "type": "string",
+                        "enum": [
+                          "government",
+                          "backing",
+                          "opposition",
+                          "speaker",
+                          "non_attached",
+                          "vacant"
+                        ],
+                        "description": "Confidence-and-supply is why this is not a boolean: a party holding no ministries that supplies the majority is neither government nor opposition."
+                      },
+                      "alliance": {
+                        "type": "string"
+                      },
+                      "vote_share": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      }
+                    }
+                  }
+                },
+                "last_election": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "next_election": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "term_years": {
+                  "type": "number",
+                  "description": "The constitutional term. What makes a missing next_election usable: a chamber elected five years ago under a four-year term is overdue whether or not a date was recorded."
+                },
+                "mandate": {
+                  "type": "object",
+                  "description": "Where the chamber stands in its electoral cycle — the early warning that a composition may be about to go out of date. Entirely derived; absent when nothing is known.",
+                  "required": [
+                    "state",
+                    "inferred"
+                  ],
+                  "properties": {
+                    "expected_end": {
+                      "type": "string",
+                      "format": "date",
+                      "description": "When the mandate is expected to end. An ABSOLUTE date on purpose — a \"days remaining\" count would be wrong the morning after it was written, since the file is rebuilt weekly. Compute the difference against your own clock."
+                    },
+                    "inferred": {
+                      "type": "boolean",
+                      "description": "True when expected_end came from term_years rather than a scheduled date."
+                    },
+                    "state": {
+                      "type": "string",
+                      "enum": [
+                        "current",
+                        "due_soon",
+                        "overdue",
+                        "unknown"
+                      ],
+                      "description": "`overdue` is a signal to re-check the source, not an accusation — a term can be legally extended."
+                    }
+                  }
+                },
+                "as_of": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "confidence": {
+                  "type": "string",
+                  "enum": [
+                    "high",
+                    "partial",
+                    "flagged"
+                  ],
+                  "description": "In the data, not a log: a consumer must tell a verified row from a guessed one."
+                },
+                "provenance": {
+                  "type": "object",
+                  "required": [
+                    "kind",
+                    "derivation",
+                    "retrieved_at"
+                  ],
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "enum": [
+                        "wikidata",
+                        "wikipedia",
+                        "ipu",
+                        "manual"
+                      ],
+                      "description": "Which source the value came from."
+                    },
+                    "derivation": {
+                      "type": "string",
+                      "enum": [
+                        "structured",
+                        "parsed",
+                        "extracted",
+                        "derived",
+                        "manual"
+                      ],
+                      "description": "How much interpretation stands between the source and the field. `extracted` means a language model read it from prose or markup and the result was checked by arithmetic."
+                    },
+                    "qid": {
+                      "type": "string",
+                      "pattern": "^Q[0-9]+$"
+                    },
+                    "article": {
+                      "type": "string"
+                    },
+                    "revid": {
+                      "type": "integer",
+                      "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
+                    },
+                    "retrieved_at": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "model": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "source_hash": {
+                  "type": "string",
+                  "description": "Hash of the source field the composition was read from — the change-detection key, and what makes a re-extraction happen only on a real change."
+                }
+              }
+            },
+            "description": "One entry for unicameral, two for bicameral. The shape never changes, so a consumer writes one code path. Pick by role, never by index."
+          },
+          "government": {
+            "type": "object",
+            "required": [
+              "governing",
+              "backing",
+              "seats",
+              "minority",
+              "confidence",
+              "provenance"
+            ],
+            "properties": {
+              "governing": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^Q[0-9]+$"
+                }
+              },
+              "backing": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^Q[0-9]+$"
+                }
+              },
+              "cabinet": {
+                "type": "object",
+                "required": [
+                  "qid"
+                ],
+                "properties": {
+                  "qid": {
+                    "type": "string",
+                    "pattern": "^Q[0-9]+$",
+                    "description": "Wikidata entity id."
+                  },
+                  "label": {
+                    "type": "string",
+                    "description": "English label. May be absent."
+                  }
+                }
+              },
+              "seats": {
+                "type": "integer"
+              },
+              "seats_with_backing": {
+                "type": "integer"
+              },
+              "minority": {
+                "type": "boolean",
+                "description": "Computed from seats, never from \"has backers\" — Denmark and Spain govern in a minority with no supply deal at all."
+              },
+              "description": {
+                "type": "string"
+              },
+              "formed": {
+                "type": "string",
+                "format": "date"
+              },
+              "confidence": {
+                "type": "string",
+                "enum": [
+                  "high",
+                  "partial",
+                  "flagged"
+                ],
+                "description": ""
+              },
+              "provenance": {
+                "type": "object",
+                "required": [
+                  "kind",
+                  "derivation",
+                  "retrieved_at"
+                ],
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "wikidata",
+                      "wikipedia",
+                      "ipu",
+                      "manual"
+                    ],
+                    "description": "Which source the value came from."
+                  },
+                  "derivation": {
+                    "type": "string",
+                    "enum": [
+                      "structured",
+                      "parsed",
+                      "extracted",
+                      "derived",
+                      "manual"
+                    ],
+                    "description": "How much interpretation stands between the source and the field. `extracted` means a language model read it from prose or markup and the result was checked by arithmetic."
+                  },
+                  "qid": {
+                    "type": "string",
+                    "pattern": "^Q[0-9]+$"
+                  },
+                  "article": {
+                    "type": "string"
+                  },
+                  "revid": {
+                    "type": "integer",
+                    "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
+                  },
+                  "retrieved_at": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "model": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "kind",
+                "derivation",
+                "retrieved_at"
+              ],
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "wikidata",
+                    "wikipedia",
+                    "ipu",
+                    "manual"
+                  ],
+                  "description": "Which source the value came from."
+                },
+                "derivation": {
+                  "type": "string",
+                  "enum": [
+                    "structured",
+                    "parsed",
+                    "extracted",
+                    "derived",
+                    "manual"
+                  ],
+                  "description": "How much interpretation stands between the source and the field. `extracted` means a language model read it from prose or markup and the result was checked by arithmetic."
+                },
+                "qid": {
+                  "type": "string",
+                  "pattern": "^Q[0-9]+$"
+                },
+                "article": {
+                  "type": "string"
+                },
+                "revid": {
+                  "type": "integer",
+                  "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
+                },
+                "retrieved_at": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "model": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "PolityDataset": {
+        "type": "object",
+        "required": [
+          "schema_version",
+          "generated_at",
+          "countries",
+          "omissions"
+        ],
+        "properties": {
+          "schema_version": {
+            "type": "string"
+          },
+          "generated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "countries": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "required": [
+                "iso",
+                "entity",
+                "name",
+                "form",
+                "form_raw",
+                "head_of_state",
+                "head_of_government",
+                "parties",
+                "chambers",
+                "government",
+                "sources",
+                "updated_at"
+              ],
+              "properties": {
+                "iso": {
+                  "type": "string",
+                  "pattern": "^[A-Z]{2}$"
+                },
+                "entity": {
+                  "type": "object",
+                  "required": [
+                    "qid"
+                  ],
+                  "properties": {
+                    "qid": {
+                      "type": "string",
+                      "pattern": "^Q[0-9]+$",
+                      "description": "Wikidata entity id."
+                    },
+                    "label": {
+                      "type": "string",
+                      "description": "English label. May be absent."
+                    }
+                  }
+                },
+                "name": {
+                  "type": "string"
+                },
+                "form": {
+                  "type": "string",
+                  "enum": [
+                    "parliamentary_republic",
+                    "presidential_republic",
+                    "semi_presidential_republic",
+                    "constitutional_monarchy",
+                    "absolute_monarchy",
+                    "one_party_state",
+                    "theocracy",
+                    "military_junta",
+                    "transitional",
+                    "dominant_party_state",
+                    "other"
+                  ],
+                  "description": "Folded from Wikidata P122 at preferred rank."
+                },
+                "form_raw": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "head_of_state": {
+                  "type": "object",
+                  "required": [
+                    "person",
+                    "name",
+                    "party",
+                    "represents",
+                    "provenance"
+                  ],
+                  "properties": {
+                    "person": {
+                      "type": "object",
+                      "required": [
+                        "qid"
+                      ],
+                      "properties": {
+                        "qid": {
+                          "type": "string",
+                          "pattern": "^Q[0-9]+$",
+                          "description": "Wikidata entity id."
+                        },
+                        "label": {
+                          "type": "string",
+                          "description": "English label. May be absent."
+                        }
+                      }
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "office": {
+                      "type": "object",
+                      "required": [
+                        "qid"
+                      ],
+                      "properties": {
+                        "qid": {
+                          "type": "string",
+                          "pattern": "^Q[0-9]+$",
+                          "description": "Wikidata entity id."
+                        },
+                        "label": {
+                          "type": "string",
+                          "description": "English label. May be absent."
+                        }
+                      }
+                    },
+                    "party": {
+                      "oneOf": [
+                        {
+                          "type": "object",
+                          "required": [
+                            "qid"
+                          ],
+                          "properties": {
+                            "qid": {
+                              "type": "string",
+                              "pattern": "^Q[0-9]+$",
+                              "description": "Wikidata entity id."
+                            },
+                            "label": {
+                              "type": "string",
+                              "description": "English label. May be absent."
+                            }
+                          }
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "description": "Null when genuinely independent — several heads of state suspend party membership."
+                    },
+                    "since": {
+                      "type": "string",
+                      "format": "date",
+                      "description": "Day precision, or absent. Never padded."
+                    },
+                    "born_year": {
+                      "type": "integer"
+                    },
+                    "portrait": {
+                      "type": "object",
+                      "required": [
+                        "file",
+                        "url",
+                        "host",
+                        "non_free"
+                      ],
+                      "description": "A pointer to an image, never a re-hosted copy. The licence facts travel with it so each consumer applies its own policy.",
+                      "properties": {
+                        "file": {
+                          "type": "string",
+                          "description": "Commons/Wikipedia filename, without the File: prefix."
+                        },
+                        "url": {
+                          "type": "string",
+                          "format": "uri",
+                          "description": "Special:FilePath URL. Serves CORS `*`."
+                        },
+                        "host": {
+                          "type": "string",
+                          "enum": [
+                            "commons",
+                            "wikipedia"
+                          ]
+                        },
+                        "license": {
+                          "type": "string",
+                          "description": "As the host states it: \"PD\", \"CC BY-SA 4.0\", \"Fair use\"."
+                        },
+                        "non_free": {
+                          "type": "boolean",
+                          "description": "The host serves it under fair use, not a licence grant."
+                        },
+                        "restrictions": {
+                          "type": "string"
+                        },
+                        "credit": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "represents": {
+                      "type": "string",
+                      "enum": [
+                        "political",
+                        "ceremonial"
+                      ],
+                      "description": "Whether this office speaks politically or ceremonially for the state."
+                    },
+                    "provenance": {
+                      "type": "object",
+                      "required": [
+                        "kind",
+                        "derivation",
+                        "retrieved_at"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "type": "string",
+                          "enum": [
+                            "wikidata",
+                            "wikipedia",
+                            "ipu",
+                            "manual"
+                          ],
+                          "description": "Which source the value came from."
+                        },
+                        "derivation": {
+                          "type": "string",
+                          "enum": [
+                            "structured",
+                            "parsed",
+                            "extracted",
+                            "derived",
+                            "manual"
+                          ],
+                          "description": "How much interpretation stands between the source and the field. `extracted` means a language model read it from prose or markup and the result was checked by arithmetic."
+                        },
+                        "qid": {
+                          "type": "string",
+                          "pattern": "^Q[0-9]+$"
+                        },
+                        "article": {
+                          "type": "string"
+                        },
+                        "revid": {
+                          "type": "integer",
+                          "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
+                        },
+                        "retrieved_at": {
+                          "type": "string",
+                          "format": "date"
+                        },
+                        "model": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "head_of_government": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "required": [
+                        "person",
+                        "name",
+                        "party",
+                        "represents",
+                        "provenance"
+                      ],
+                      "properties": {
+                        "person": {
+                          "type": "object",
+                          "required": [
+                            "qid"
+                          ],
+                          "properties": {
+                            "qid": {
+                              "type": "string",
+                              "pattern": "^Q[0-9]+$",
+                              "description": "Wikidata entity id."
+                            },
+                            "label": {
+                              "type": "string",
+                              "description": "English label. May be absent."
+                            }
+                          }
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "office": {
+                          "type": "object",
+                          "required": [
+                            "qid"
+                          ],
+                          "properties": {
+                            "qid": {
+                              "type": "string",
+                              "pattern": "^Q[0-9]+$",
+                              "description": "Wikidata entity id."
+                            },
+                            "label": {
+                              "type": "string",
+                              "description": "English label. May be absent."
+                            }
+                          }
+                        },
+                        "party": {
+                          "oneOf": [
+                            {
+                              "type": "object",
+                              "required": [
+                                "qid"
+                              ],
+                              "properties": {
+                                "qid": {
+                                  "type": "string",
+                                  "pattern": "^Q[0-9]+$",
+                                  "description": "Wikidata entity id."
+                                },
+                                "label": {
+                                  "type": "string",
+                                  "description": "English label. May be absent."
+                                }
+                              }
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "description": "Null when genuinely independent — several heads of state suspend party membership."
+                        },
+                        "since": {
+                          "type": "string",
+                          "format": "date",
+                          "description": "Day precision, or absent. Never padded."
+                        },
+                        "born_year": {
+                          "type": "integer"
+                        },
+                        "portrait": {
+                          "type": "object",
+                          "required": [
+                            "file",
+                            "url",
+                            "host",
+                            "non_free"
+                          ],
+                          "description": "A pointer to an image, never a re-hosted copy. The licence facts travel with it so each consumer applies its own policy.",
+                          "properties": {
+                            "file": {
+                              "type": "string",
+                              "description": "Commons/Wikipedia filename, without the File: prefix."
+                            },
+                            "url": {
+                              "type": "string",
+                              "format": "uri",
+                              "description": "Special:FilePath URL. Serves CORS `*`."
+                            },
+                            "host": {
+                              "type": "string",
+                              "enum": [
+                                "commons",
+                                "wikipedia"
+                              ]
+                            },
+                            "license": {
+                              "type": "string",
+                              "description": "As the host states it: \"PD\", \"CC BY-SA 4.0\", \"Fair use\"."
+                            },
+                            "non_free": {
+                              "type": "boolean",
+                              "description": "The host serves it under fair use, not a licence grant."
+                            },
+                            "restrictions": {
+                              "type": "string"
+                            },
+                            "credit": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "represents": {
+                          "type": "string",
+                          "enum": [
+                            "political",
+                            "ceremonial"
+                          ],
+                          "description": "Whether this office speaks politically or ceremonially for the state."
+                        },
+                        "provenance": {
+                          "type": "object",
+                          "required": [
+                            "kind",
+                            "derivation",
+                            "retrieved_at"
+                          ],
+                          "properties": {
+                            "kind": {
+                              "type": "string",
+                              "enum": [
+                                "wikidata",
+                                "wikipedia",
+                                "ipu",
+                                "manual"
+                              ],
+                              "description": "Which source the value came from."
+                            },
+                            "derivation": {
+                              "type": "string",
+                              "enum": [
+                                "structured",
+                                "parsed",
+                                "extracted",
+                                "derived",
+                                "manual"
+                              ],
+                              "description": "How much interpretation stands between the source and the field. `extracted` means a language model read it from prose or markup and the result was checked by arithmetic."
+                            },
+                            "qid": {
+                              "type": "string",
+                              "pattern": "^Q[0-9]+$"
+                            },
+                            "article": {
+                              "type": "string"
+                            },
+                            "revid": {
+                              "type": "integer",
+                              "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
+                            },
+                            "retrieved_at": {
+                              "type": "string",
+                              "format": "date"
+                            },
+                            "model": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "description": "Null when the SAME PERSON holds both offices — explicitly, so \"one person does both jobs\" is distinguishable from \"we only found one\"."
+                },
+                "parties": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "required": [
+                      "entity",
+                      "name",
+                      "kind",
+                      "ideologies",
+                      "groupings",
+                      "colors",
+                      "provenance"
+                    ],
+                    "properties": {
+                      "entity": {
+                        "type": "object",
+                        "required": [
+                          "qid"
+                        ],
+                        "properties": {
+                          "qid": {
+                            "type": "string",
+                            "pattern": "^Q[0-9]+$",
+                            "description": "Wikidata entity id."
+                          },
+                          "label": {
+                            "type": "string",
+                            "description": "English label. May be absent."
+                          }
+                        }
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "endonym": {
+                        "type": "string"
+                      },
+                      "abbreviation": {
+                        "type": "string"
+                      },
+                      "kind": {
+                        "type": "string",
+                        "enum": [
+                          "party",
+                          "electoral_alliance",
+                          "parliamentary_group",
+                          "independents",
+                          "residual"
+                        ],
+                        "description": "An electoral alliance is not a party. \"Which party governs?\" has no honest answer when the answer is an alliance of five."
+                      },
+                      "alignment": {
+                        "type": "string",
+                        "enum": [
+                          "left",
+                          "centre_left",
+                          "centre",
+                          "centre_right",
+                          "right"
+                        ],
+                        "description": "The five-band fold of Wikidata P1387."
+                      },
+                      "alignment_raw": {
+                        "type": "string",
+                        "description": "Wikidata's own label, unfolded."
+                      },
+                      "ideologies": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "qid"
+                          ],
+                          "properties": {
+                            "qid": {
+                              "type": "string",
+                              "pattern": "^Q[0-9]+$",
+                              "description": "Wikidata entity id."
+                            },
+                            "label": {
+                              "type": "string",
+                              "description": "English label. May be absent."
+                            }
+                          }
+                        }
+                      },
+                      "groupings": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "qid"
+                          ],
+                          "properties": {
+                            "qid": {
+                              "type": "string",
+                              "pattern": "^Q[0-9]+$",
+                              "description": "Wikidata entity id."
+                            },
+                            "label": {
+                              "type": "string",
+                              "description": "English label. May be absent."
+                            }
+                          }
+                        },
+                        "description": "Transnational families (EPP, Progressive Alliance). Open statements only — an ended membership is not membership."
+                      },
+                      "colors": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "pattern": "^#[0-9a-f]{6}$"
+                        }
+                      },
+                      "founded_year": {
+                        "type": "integer"
+                      },
+                      "dissolved_year": {
+                        "type": "integer"
+                      },
+                      "logo": {
+                        "type": "object",
+                        "required": [
+                          "file",
+                          "url",
+                          "host",
+                          "non_free"
+                        ],
+                        "description": "A pointer to an image, never a re-hosted copy. The licence facts travel with it so each consumer applies its own policy.",
+                        "properties": {
+                          "file": {
+                            "type": "string",
+                            "description": "Commons/Wikipedia filename, without the File: prefix."
+                          },
+                          "url": {
+                            "type": "string",
+                            "format": "uri",
+                            "description": "Special:FilePath URL. Serves CORS `*`."
+                          },
+                          "host": {
+                            "type": "string",
+                            "enum": [
+                              "commons",
+                              "wikipedia"
+                            ]
+                          },
+                          "license": {
+                            "type": "string",
+                            "description": "As the host states it: \"PD\", \"CC BY-SA 4.0\", \"Fair use\"."
+                          },
+                          "non_free": {
+                            "type": "boolean",
+                            "description": "The host serves it under fair use, not a licence grant."
+                          },
+                          "restrictions": {
+                            "type": "string"
+                          },
+                          "credit": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "provenance": {
+                        "type": "object",
+                        "required": [
+                          "kind",
+                          "derivation",
+                          "retrieved_at"
+                        ],
+                        "properties": {
+                          "kind": {
+                            "type": "string",
+                            "enum": [
+                              "wikidata",
+                              "wikipedia",
+                              "ipu",
+                              "manual"
+                            ],
+                            "description": "Which source the value came from."
+                          },
+                          "derivation": {
+                            "type": "string",
+                            "enum": [
+                              "structured",
+                              "parsed",
+                              "extracted",
+                              "derived",
+                              "manual"
+                            ],
+                            "description": "How much interpretation stands between the source and the field. `extracted` means a language model read it from prose or markup and the result was checked by arithmetic."
+                          },
+                          "qid": {
+                            "type": "string",
+                            "pattern": "^Q[0-9]+$"
+                          },
+                          "article": {
+                            "type": "string"
+                          },
+                          "revid": {
+                            "type": "integer",
+                            "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
+                          },
+                          "retrieved_at": {
+                            "type": "string",
+                            "format": "date"
+                          },
+                          "model": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "chambers": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "entity",
+                      "role",
+                      "name",
+                      "seats_total",
+                      "selection",
+                      "contestation",
+                      "composition",
+                      "as_of",
+                      "confidence",
+                      "provenance",
+                      "source_hash"
+                    ],
+                    "properties": {
+                      "entity": {
+                        "type": "object",
+                        "required": [
+                          "qid"
+                        ],
+                        "properties": {
+                          "qid": {
+                            "type": "string",
+                            "pattern": "^Q[0-9]+$",
+                            "description": "Wikidata entity id."
+                          },
+                          "label": {
+                            "type": "string",
+                            "description": "English label. May be absent."
+                          }
+                        }
+                      },
+                      "role": {
+                        "type": "string",
+                        "enum": [
+                          "unicameral",
+                          "lower",
+                          "upper"
+                        ],
+                        "description": "Resolved by walking Wikidata P279 upward, never by exact class."
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "name_local": {
+                        "type": "string"
+                      },
+                      "seats_total": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "selection": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "directly_elected",
+                            "indirectly_elected",
+                            "appointed",
+                            "hereditary",
+                            "ex_officio",
+                            "reserved"
+                          ],
+                          "description": "How members arrive."
+                        }
+                      },
+                      "contestation": {
+                        "type": "string",
+                        "enum": [
+                          "competitive",
+                          "restricted",
+                          "uncontested",
+                          "appointed",
+                          "suspended"
+                        ],
+                        "description": "How real the contest is. Orthogonal to structure: a chamber can be bicameral, directly elected AND uncontested."
+                      },
+                      "seats_contested": {
+                        "type": "integer"
+                      },
+                      "composition": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "party",
+                            "name",
+                            "seats",
+                            "share",
+                            "standing"
+                          ],
+                          "properties": {
+                            "party": {
+                              "oneOf": [
+                                {
+                                  "type": "string",
+                                  "pattern": "^Q[0-9]+$"
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ],
+                              "description": "Reference into the country`s party registry. Null for residual rows, which keep their name."
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "seats": {
+                              "type": "integer",
+                              "minimum": 0
+                            },
+                            "share": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 1
+                            },
+                            "standing": {
+                              "type": "string",
+                              "enum": [
+                                "government",
+                                "backing",
+                                "opposition",
+                                "speaker",
+                                "non_attached",
+                                "vacant"
+                              ],
+                              "description": "Confidence-and-supply is why this is not a boolean: a party holding no ministries that supplies the majority is neither government nor opposition."
+                            },
+                            "alliance": {
+                              "type": "string"
+                            },
+                            "vote_share": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 1
+                            }
+                          }
+                        }
+                      },
+                      "last_election": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "next_election": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "term_years": {
+                        "type": "number",
+                        "description": "The constitutional term. What makes a missing next_election usable: a chamber elected five years ago under a four-year term is overdue whether or not a date was recorded."
+                      },
+                      "mandate": {
+                        "type": "object",
+                        "description": "Where the chamber stands in its electoral cycle — the early warning that a composition may be about to go out of date. Entirely derived; absent when nothing is known.",
+                        "required": [
+                          "state",
+                          "inferred"
+                        ],
+                        "properties": {
+                          "expected_end": {
+                            "type": "string",
+                            "format": "date",
+                            "description": "When the mandate is expected to end. An ABSOLUTE date on purpose — a \"days remaining\" count would be wrong the morning after it was written, since the file is rebuilt weekly. Compute the difference against your own clock."
+                          },
+                          "inferred": {
+                            "type": "boolean",
+                            "description": "True when expected_end came from term_years rather than a scheduled date."
+                          },
+                          "state": {
+                            "type": "string",
+                            "enum": [
+                              "current",
+                              "due_soon",
+                              "overdue",
+                              "unknown"
+                            ],
+                            "description": "`overdue` is a signal to re-check the source, not an accusation — a term can be legally extended."
+                          }
+                        }
+                      },
+                      "as_of": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "confidence": {
+                        "type": "string",
+                        "enum": [
+                          "high",
+                          "partial",
+                          "flagged"
+                        ],
+                        "description": "In the data, not a log: a consumer must tell a verified row from a guessed one."
+                      },
+                      "provenance": {
+                        "type": "object",
+                        "required": [
+                          "kind",
+                          "derivation",
+                          "retrieved_at"
+                        ],
+                        "properties": {
+                          "kind": {
+                            "type": "string",
+                            "enum": [
+                              "wikidata",
+                              "wikipedia",
+                              "ipu",
+                              "manual"
+                            ],
+                            "description": "Which source the value came from."
+                          },
+                          "derivation": {
+                            "type": "string",
+                            "enum": [
+                              "structured",
+                              "parsed",
+                              "extracted",
+                              "derived",
+                              "manual"
+                            ],
+                            "description": "How much interpretation stands between the source and the field. `extracted` means a language model read it from prose or markup and the result was checked by arithmetic."
+                          },
+                          "qid": {
+                            "type": "string",
+                            "pattern": "^Q[0-9]+$"
+                          },
+                          "article": {
+                            "type": "string"
+                          },
+                          "revid": {
+                            "type": "integer",
+                            "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
+                          },
+                          "retrieved_at": {
+                            "type": "string",
+                            "format": "date"
+                          },
+                          "model": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "source_hash": {
+                        "type": "string",
+                        "description": "Hash of the source field the composition was read from — the change-detection key, and what makes a re-extraction happen only on a real change."
+                      }
+                    }
+                  },
+                  "description": "One entry for unicameral, two for bicameral. The shape never changes, so a consumer writes one code path. Pick by role, never by index."
+                },
+                "government": {
+                  "type": "object",
+                  "required": [
+                    "governing",
+                    "backing",
+                    "seats",
+                    "minority",
+                    "confidence",
+                    "provenance"
+                  ],
+                  "properties": {
+                    "governing": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^Q[0-9]+$"
+                      }
+                    },
+                    "backing": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^Q[0-9]+$"
+                      }
+                    },
+                    "cabinet": {
+                      "type": "object",
+                      "required": [
+                        "qid"
+                      ],
+                      "properties": {
+                        "qid": {
+                          "type": "string",
+                          "pattern": "^Q[0-9]+$",
+                          "description": "Wikidata entity id."
+                        },
+                        "label": {
+                          "type": "string",
+                          "description": "English label. May be absent."
+                        }
+                      }
+                    },
+                    "seats": {
+                      "type": "integer"
+                    },
+                    "seats_with_backing": {
+                      "type": "integer"
+                    },
+                    "minority": {
+                      "type": "boolean",
+                      "description": "Computed from seats, never from \"has backers\" — Denmark and Spain govern in a minority with no supply deal at all."
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "formed": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "confidence": {
+                      "type": "string",
+                      "enum": [
+                        "high",
+                        "partial",
+                        "flagged"
+                      ],
+                      "description": ""
+                    },
+                    "provenance": {
+                      "type": "object",
+                      "required": [
+                        "kind",
+                        "derivation",
+                        "retrieved_at"
+                      ],
+                      "properties": {
+                        "kind": {
+                          "type": "string",
+                          "enum": [
+                            "wikidata",
+                            "wikipedia",
+                            "ipu",
+                            "manual"
+                          ],
+                          "description": "Which source the value came from."
+                        },
+                        "derivation": {
+                          "type": "string",
+                          "enum": [
+                            "structured",
+                            "parsed",
+                            "extracted",
+                            "derived",
+                            "manual"
+                          ],
+                          "description": "How much interpretation stands between the source and the field. `extracted` means a language model read it from prose or markup and the result was checked by arithmetic."
+                        },
+                        "qid": {
+                          "type": "string",
+                          "pattern": "^Q[0-9]+$"
+                        },
+                        "article": {
+                          "type": "string"
+                        },
+                        "revid": {
+                          "type": "integer",
+                          "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
+                        },
+                        "retrieved_at": {
+                          "type": "string",
+                          "format": "date"
+                        },
+                        "model": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "sources": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "kind",
+                      "derivation",
+                      "retrieved_at"
+                    ],
+                    "properties": {
+                      "kind": {
+                        "type": "string",
+                        "enum": [
+                          "wikidata",
+                          "wikipedia",
+                          "ipu",
+                          "manual"
+                        ],
+                        "description": "Which source the value came from."
+                      },
+                      "derivation": {
+                        "type": "string",
+                        "enum": [
+                          "structured",
+                          "parsed",
+                          "extracted",
+                          "derived",
+                          "manual"
+                        ],
+                        "description": "How much interpretation stands between the source and the field. `extracted` means a language model read it from prose or markup and the result was checked by arithmetic."
+                      },
+                      "qid": {
+                        "type": "string",
+                        "pattern": "^Q[0-9]+$"
+                      },
+                      "article": {
+                        "type": "string"
+                      },
+                      "revid": {
+                        "type": "integer",
+                        "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
+                      },
+                      "retrieved_at": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "model": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "updated_at": {
+                  "type": "string",
+                  "format": "date"
+                }
+              }
+            }
+          },
+          "omissions": {
+            "type": "array",
+            "description": "What did not make it in, and why — published, not logged.",
+            "items": {
+              "type": "object",
+              "required": [
+                "iso",
+                "reason"
+              ],
+              "properties": {
+                "iso": {
+                  "type": "string"
+                },
+                "reason": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

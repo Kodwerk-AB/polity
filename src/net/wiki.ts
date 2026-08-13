@@ -135,14 +135,37 @@ export const dayPrecision = (time: string | undefined): string | undefined => {
  * So: open statements only, then preferred, then the latest start. A statement
  * with an end date is never current however it is ranked.
  */
-export const currentStatement = (statements: Snak[] | undefined): Snak | undefined => {
-  const open = (statements ?? []).filter(
-    statement => statement.rank !== 'deprecated' && !statement.qualifiers?.P582?.length
-  )
-  if (!open.length) return undefined
-  const preferred = open.filter(statement => statement.rank === 'preferred')
-  const pool = preferred.length ? preferred : open
-  return [...pool].sort((a, b) => (timeOf(b, 'P580') ?? '').localeCompare(timeOf(a, 'P580') ?? ''))[0]
+export const currentStatement = (statements: Snak[] | undefined): Snak | undefined =>
+  resolveStatement(statements).statement
+
+export interface Resolution {
+  statement?: Snak
+  /**
+   * True when every statement had an end date and the latest was taken anyway.
+   *
+   * Colombia and Guinea-Bissau are the cases: their heads of state carry only
+   * CLOSED statements, because the source is mid-transition and nobody has
+   * opened the successor's yet. Omitting the country entirely is the worse
+   * answer — the office exists and somebody holds it — so the most recent
+   * holder is reported and the caller lowers confidence.
+   */
+  stale: boolean
+}
+
+export const resolveStatement = (statements: Snak[] | undefined): Resolution => {
+  const live = (statements ?? []).filter(statement => statement.rank !== 'deprecated')
+  const byStart = (pool: Snak[]) =>
+    [...pool].sort((a, b) => (timeOf(b, 'P580') ?? '').localeCompare(timeOf(a, 'P580') ?? ''))[0]
+
+  const open = live.filter(statement => !statement.qualifiers?.P582?.length)
+  if (open.length) {
+    const preferred = open.filter(statement => statement.rank === 'preferred')
+    const chosen = byStart(preferred.length ? preferred : open)
+    return chosen ? { statement: chosen, stale: false } : { stale: false }
+  }
+  // Nothing open. Take the most recently ENDED, and say so.
+  const closed = byStart(live)
+  return closed ? { statement: closed, stale: true } : { stale: false }
 }
 
 /** The start date of a statement, day precision only. */

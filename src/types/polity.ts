@@ -242,6 +242,24 @@ export interface Chamber {
   composition: Seating[]
   last_election?: ISODate
   next_election?: ISODate
+  /**
+   * The constitutional term, in years (P2097 on the chamber).
+   *
+   * Kept beside the dates because it is what makes a MISSING `next_election`
+   * usable: a chamber elected five years ago under a four-year term is overdue
+   * whether or not anyone has written down when the next vote falls.
+   */
+  term_years?: number
+  /**
+   * How this chamber's mandate stands, derived from the dates above.
+   *
+   * This is the field that answers "might this data be about to go out of
+   * date?" — the question that sank every previous attempt at this dataset.
+   * mySociety gave up because "there is an election somewhere roughly once a
+   * week"; a consumer that can see which countries are close to due can re-check the
+   * handful that matter instead of re-reading all 193.
+   */
+  mandate?: MandateStatus
   /** When this composition was last confirmed against the source. */
   as_of: ISODate
   confidence: Confidence
@@ -322,6 +340,40 @@ export interface Polity {
   /** Everything read to build this record. */
   sources: Provenance[]
   updated_at: ISODate
+}
+
+/**
+ * Where a chamber stands in its electoral cycle.
+ *
+ * Derived from `last_election`, `next_election` and `term_years` — never
+ * asserted by a source, and absent when none of the three is known rather than
+ * guessed at.
+ */
+export interface MandateStatus {
+  /**
+   * When the mandate is expected to end: `next_election` where the source gives
+   * one, otherwise `last_election` plus `term_years`.
+   *
+   * An ABSOLUTE date on purpose. A "days remaining" count would be wrong the
+   * morning after it was written — the file is rebuilt weekly, not daily — and
+   * a consumer computing the difference against its own clock is always right.
+   * The rule throughout: store what was true when the source said it, never
+   * a number that decays silently between rebuilds.
+   */
+  expected_end?: ISODate
+  /** True when `expected_end` was computed from the term rather than read. */
+  inferred: boolean
+  /**
+   * `current` — comfortably inside its term.
+   * `due_soon` — the mandate ends within a year of `as_of`.
+   * `overdue` — past its expected end with no newer election recorded. A signal
+   *   to re-check the source, not an accusation: a term can be legally extended.
+   * `unknown` — no date and no term to reason from.
+   *
+   * Evaluated against the chamber's `as_of`, so it stays true of the moment the
+   * data was gathered rather than drifting toward `overdue` on the shelf.
+   */
+  state: 'current' | 'due_soon' | 'overdue' | 'unknown'
 }
 
 /** The published file. */
