@@ -18,7 +18,7 @@ import type { Standing } from '../types/enums'
 const MODEL = 'claude-haiku-4-5-20251001'
 /** Bumped whenever SYSTEM changes, so a prompt fix invalidates old answers
  *  rather than serving a cached reading of a rule that no longer applies. */
-const PROMPT_VERSION = 'v4'
+const PROMPT_VERSION = 'v6'
 const API = 'https://api.anthropic.com/v1/messages'
 
 export interface ExtractedBloc {
@@ -78,17 +78,29 @@ Rules:
   A standing header like "Government (108)" is NOT one of those levels — it is
   a header, its total is the sum of the rows beneath it, and those rows are the
   blocs. Report them with standing:government, not the header.
-- The seats must add up to the chamber's declared size. If your rows sum to
-  noticeably more, you have taken two levels of a nested list; take the outer
-  one. If they sum to noticeably less, you have missed rows.
+- CHECK YOUR TOTAL BEFORE ANSWERING. Add up the seats you are about to report
+  and compare with the declared size you were given.
+  * Sum much LARGER: you have counted a nesting twice. Brazil lists a coalition
+    ("Brazil of Hope", 81) and then the parties inside it (PT 64, PCdoB 11,
+    PV 6). Report the coalition OR its members, never both. An {{efn|...}}
+    footnote often restates a party that is already listed — those restatements
+    are notes, not extra blocs, and must not be counted.
+  * Sum much SMALLER: you have missed rows. Read to the very end of the markup;
+    the opposition is usually listed after the government and is easy to stop
+    short of.
+  Getting within a few seats of the declared size is the strongest signal that
+  you read the structure correctly.
 - A cabinet name in a header ("Government (Støre Cabinet)") is not a party.
 - name: the party's display name, without the seat count.
 - article: the wikilink target if the row links one, e.g. [[Labour Party
   (Norway)|Labour]] gives article "Labour Party (Norway)".
 - alliance: only when the markup nests a party inside a named bloc.
-- last_election / next_election: if the markup you are given carries an election
-  date, report it as YYYY-MM-DD, or YYYY when only a year is written. Do not
-  infer one from anything else. Most fields will not have them; that is fine.
+- last_election / next_election: report ONLY from a field literally named
+  last_election or next_election. Those are the chamber's own elections. Any
+  other date in the markup belongs to a person — when a speaker or a party
+  leader took office — and must never be reported as the chamber's election.
+  Format as YYYY-MM-DD, or YYYY when only a year is written. Most fields carry
+  neither; that is fine, report nothing.
 
 Return JSON only, matching the schema exactly.`
 

@@ -102,6 +102,10 @@ const FORM_BY_LABEL: [RegExp, GovernmentForm][] = [
   // Presidential is the commoner shape and the one the United States means by
   // "constitutional republic", but this is a fallback and reads as one.
   [/constitutional republic|federal republic|democratic republic/i, 'presidential_republic'],
+  // A country that says nothing but "republic" has told us almost nothing.
+  // `other` is the honest answer and keeps the office rules above in charge,
+  // where guessing parliamentary made Egypt's president ceremonial.
+  [/^republic$/i, 'other'],
 ]
 
 export interface FormResult {
@@ -189,6 +193,8 @@ export interface Leaders {
   head_of_government: OfficeHolder | null
   /** True when one person holds both offices — the reason HoG may be null. */
   same_person: boolean
+  /** The form, possibly corrected by what the offices turned out to be. */
+  form: GovernmentForm
 }
 
 /**
@@ -239,6 +245,16 @@ export const leadersOf = async (
 
   // The form is the first guess: in a parliamentary republic or a
   // constitutional monarchy the head of state is ceremonial.
+  //
+  // It is only a guess, because P122 is frequently too coarse to settle it.
+  // Egypt is filed a bare "republic" and folds to parliamentary, which made
+  // el-Sisi — the dominant executive of a presidential system — ceremonial.
+  // India folds to presidential on "constitutional republic", which made
+  // President Murmu political when the office is the ceremonial one.
+  //
+  // The OFFICE decides where the form cannot. A head of state who is called a
+  // president and who also appoints the government is political; a monarch is
+  // ceremonial wherever a prime minister exists.
   const ceremonialByForm =
     form === 'parliamentary_republic' || form === 'constitutional_monarchy'
   const head_of_state = await build(HEAD_OF_STATE, ceremonialByForm ? 'ceremonial' : 'political')
@@ -254,10 +270,39 @@ export const leadersOf = async (
   // president is both, and calling either ceremonial would be plainly wrong.
   if (head_of_state && (same || !head_of_government)) head_of_state.represents = 'political'
 
+  // A crowned head of state is ceremonial whenever a prime minister exists,
+  // whatever the form folded to — and a president in a system Wikidata could
+  // not classify is political, since a purely ceremonial presidency is the
+  // exception that a parliamentary form would have named.
+  if (head_of_state && head_of_government) {
+    const office = `${head_of_state.office?.label ?? ''} ${head_of_state.name}`
+    if (/\b(king|queen|emir|sultan|emperor|grand duke|prince)\b/i.test(office)) {
+      head_of_state.represents = 'ceremonial'
+    } else if (form === 'other' || form === 'dominant_party_state' || form === 'one_party_state') {
+      head_of_state.represents = 'political'
+    }
+  }
+
+  // A form of `presidential_republic` alongside a SEPARATE head of government
+  // is a contradiction: a presidential system's whole definition is that the
+  // president IS the head of government. India reaches it on "constitutional
+  // republic" — its P122 says nothing but four flavours of "republic" — and the
+  // result made President Murmu political and Prime Minister Modi's office
+  // secondary, which is exactly backwards.
+  //
+  // Where the structure and the label disagree, the STRUCTURE wins: two
+  // separate offices means a parliamentary arrangement.
+  const corrected: GovernmentForm =
+    form === 'presidential_republic' && head_of_state && head_of_government && !same
+      ? 'parliamentary_republic'
+      : form
+  if (corrected !== form && head_of_state) head_of_state.represents = 'ceremonial'
+
   return {
     head_of_state,
     head_of_government: same ? null : head_of_government,
     same_person: same,
+    form: corrected,
   }
 }
 

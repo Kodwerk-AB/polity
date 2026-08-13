@@ -24,10 +24,54 @@ const FIELD_NAMES = ['political_groups1', 'political_groups', 'political_groups2
  * would be the right way to take ONE template, where here the whole remainder
  * is wanted and handed to a model that copes with the markup.
  */
+/**
+ * The value of `|field =`, read to the next TOP-LEVEL field.
+ *
+ * Brace-aware, and that is the whole point. A naive "stop at the next
+ * `\n| something =`" is wrong wherever the value contains templates that carry
+ * pipes of their own, which is most of them: Brazil's Chamber wraps its parties
+ * in `{{efn|…}}` footnotes, and the regex terminated inside the first one —
+ * returning 662 characters of the government bloc and cutting all 351 seats of
+ * the opposition. Italy and South Africa were truncated the same way.
+ *
+ * So the depth of `{{`/`[[` is tracked, and a `|` only ends the value at depth
+ * zero. The cursor advances by two over a brace pair so an overlapping run like
+ * `}}}}` is counted once per pair rather than once per position.
+ */
+const valueOf = (wikitext: string, field: string): string | undefined => {
+  const opener = new RegExp(`^\\s*\\|\\s*${field}\\s*=`, 'im')
+  const match = opener.exec(wikitext)
+  if (!match) return undefined
+
+  let cursor = match.index + match[0].length
+  const start = cursor
+  let depth = 0
+  while (cursor < wikitext.length) {
+    const pair = wikitext.slice(cursor, cursor + 2)
+    if (pair === '{{' || pair === '[[') {
+      depth += 1
+      cursor += 2
+      continue
+    }
+    if (pair === '}}' || pair === ']]') {
+      depth = Math.max(0, depth - 1)
+      cursor += 2
+      continue
+    }
+    if (depth === 0) {
+      // A top-level `|` at the start of a line is the next field; `}}` there
+      // closes the infobox itself.
+      if (/^\n\s*\|\s*[a-z_0-9]+\s*=/i.test(wikitext.slice(cursor, cursor + 40))) break
+      if (wikitext.startsWith('\n}}', cursor)) break
+    }
+    cursor += 1
+  }
+  return wikitext.slice(start, cursor).trim()
+}
+
 export const compositionField = (wikitext: string): string | undefined => {
   for (const field of FIELD_NAMES) {
-    const pattern = new RegExp(`^\\s*\\|\\s*${field}\\s*=\\s*([\\s\\S]*?)(?=\\n\\s*\\|\\s*[a-z_0-9]+\\s*=|\\n\\}\\})`, 'im')
-    const value = pattern.exec(wikitext)?.[1]?.trim()
+    const value = valueOf(wikitext, field)
     if (value && value.length > 8) return value
   }
   return undefined

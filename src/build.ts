@@ -70,40 +70,14 @@ const normaliseDate = (value: string | undefined): string | undefined => {
  * A chamber where one bloc holds nearly every seat in a one-party state is
  * uncontested by arithmetic, not by opinion.
  */
-const contestationOf = (
-  form: Polity['form'],
-  chamber: ChamberRef,
-  blocs: ExtractedBloc[]
-): Contestation => {
-  if (chamber.dissolved) return 'suspended'
-  const total = blocs.reduce((sum, bloc) => sum + bloc.seats, 0)
-  const largest = blocs.reduce((most, bloc) => Math.max(most, bloc.seats), 0)
-  const dominance = total > 0 ? largest / total : 0
-
-  if (form === 'one_party_state' || form === 'dominant_party_state') {
-    // A ruling party holding nearly everything, in a state that permits no
-    // rival, is not a contest. North Korea's Workers' Party holds 671 of 687.
-    return dominance >= 0.85 ? 'uncontested' : 'restricted'
-  }
-  if (form === 'absolute_monarchy' || form === 'theocracy') {
-    return chamber.role === 'upper' ? 'appointed' : 'restricted'
-  }
-  if (form === 'military_junta' || form === 'transitional') return 'suspended'
-  // An upper house nobody elects is appointed however competitive the state.
-  if (chamber.role === 'upper' && !blocs.length) return 'appointed'
-  return 'competitive'
-}
-
 /**
  * Where a chamber stands in its electoral cycle.
  *
- * The whole point of this field is early warning. Composition drifts the moment
- * an election happens, and the dataset cannot watch 193 countries continuously
- * — but it CAN say which ones are near the end of a term, so a consumer
- * re-checks the handful that matter rather than distrusting all of them.
- *
- * Everything is derived; nothing is asserted. With no dates and no term the
- * answer is `unknown`, which is honest and useful in a way a guess would not be.
+ * The whole point is early warning: composition drifts the moment an election
+ * happens, and the dataset cannot watch 193 countries continuously — but it CAN
+ * say which are near the end of a term, so a consumer re-checks the handful
+ * that matter. An ABSOLUTE date, never a countdown: a "days remaining" field
+ * would be wrong the morning after a weekly rebuild wrote it.
  */
 const mandateOf = (
   lastElection: string | undefined,
@@ -112,10 +86,6 @@ const mandateOf = (
   asOf: Date
 ): Polity['chambers'][number]['mandate'] => {
   const year = 365.25 * 86_400_000
-
-  // A scheduled date is the best evidence there is. Failing that, the term
-  // arithmetic answers; failing that, five years is the commonest term in the
-  // world and the longest that is at all usual.
   let expected: Date | undefined
   let inferred = false
   if (nextElection) {
@@ -124,14 +94,108 @@ const mandateOf = (
     expected = new Date(new Date(lastElection).getTime() + (termYears ?? 5) * year)
     inferred = true
   }
-
   if (!expected || Number.isNaN(expected.getTime())) {
     return lastElection || nextElection ? { inferred: false, state: 'unknown' } : undefined
   }
-
   const remaining = expected.getTime() - asOf.getTime()
   const state = remaining < 0 ? 'overdue' : remaining <= year ? 'due_soon' : 'current'
   return { expected_end: expected.toISOString().slice(0, 10), inferred, state }
+}
+
+const contestationOf = (
+  form: Polity['form'],
+  chamber: ChamberRef,
+  blocs: ExtractedBloc[]
+): Contestation => {
+  if (chamber.dissolved) return 'suspended'
+
+  const total = blocs.reduce((sum, bloc) => sum + bloc.seats, 0)
+  const largest = blocs.reduce((most, bloc) => Math.max(most, bloc.seats), 0)
+  const dominance = total > 0 ? largest / total : 0
+  // Rows that are somebody's party, as opposed to vacancies and independents.
+  const partyRows = blocs.filter(bloc => !NOT_A_PARTY.test(bloc.name.trim())).length
+
+  // 1. The form, where it is decisive. A state that permits no rival is not
+  //    holding a contest whatever its turnout says.
+  if (form === 'one_party_state') return 'uncontested'
+  if (form === 'military_junta' || form === 'transitional') return 'suspended'
+  if (form === 'dominant_party_state') return dominance >= 0.85 ? 'uncontested' : 'restricted'
+  if (form === 'absolute_monarchy') return chamber.role === 'upper' ? 'appointed' : 'restricted'
+  if (form === 'theocracy') return 'restricted'
+
+  // 2. A house nobody elects. An upper chamber with no parties in it is
+  //    appointed or indirectly chosen — Britain's Lords, Germany's Bundesrat,
+  //    Canada's Senate all reach here.
+  if (chamber.role === 'upper' && partyRows === 0) return 'appointed'
+
+  // 3. THE ARITHMETIC, which is the part `form` cannot supply.
+  //
+  //    `form` is unusable for a third of the world: Wikidata's P122 returns
+  //    NOTHING for 39 countries and a bare "republic" for 21 more, so a rule
+  //    that only consults the label defaults them all to `competitive`. That
+  //    put Cuba, Belarus, Cambodia, Equatorial Guinea and Turkmenistan in the
+  //    same bucket as Denmark — 233 of 273 chambers — which would let any
+  //    downstream freedom metric read the world's autocracies as democracies.
+  //
+  //    Seat concentration is evidence the label is not. A chamber where one
+  //    bloc holds nearly everything, or where nobody stands against the
+  //    government at all, is not a competitive chamber however it is described.
+  //    This is a claim about the SEATS, which is all the dataset can honestly
+  //    assert — a country may be listed `restricted` for a genuine landslide,
+  //    which is why the field is named for the contest and not for freedom.
+  // Concentration FIRST, because it is the strongest evidence and does not
+  // depend on the source having split the chamber into sides at all. Cuba at
+  // 94% is uncontested however its rows are labelled; checking the weaker
+  // opposition-share rule first called it merely restricted.
+  if (total > 0 && partyRows > 0) {
+    // A single party holding the entire chamber.
+    if (partyRows === 1 && dominance >= 0.99) return 'uncontested'
+    // Effectively no opposition: one bloc past 90%.
+    if (dominance >= 0.9) return 'uncontested'
+    // A supermajority no ordinary election produces.
+    if (dominance >= 0.75) return 'restricted'
+  }
+
+  // A chamber the source never split into sides tells us nothing about who
+  // opposes whom. Switzerland is the case — every party filed `non_attached`,
+  // because its executive is elected by the assembly rather than formed from a
+  // majority — and judging it on opposition share called one of the world's
+  // most competitive parliaments restricted. Where no row is marked government
+  // OR opposition, only concentration can speak.
+  const unaligned =
+    blocs.every(bloc => bloc.standing !== 'government' && bloc.standing !== 'opposition')
+
+  if (total > 0 && partyRows > 0 && !unaligned) {
+    // NOBODY IN OPPOSITION. The sharpest signal there is, and the one
+    // dominance misses entirely: Belarus seats five parties and 40
+    // "independents" with not one opposition member, and Turkmenistan four
+    // blocs the same way. Each looked competitive on concentration alone —
+    // 46% and 52% — because the ruling bloc is deliberately split.
+    //
+    // A real chamber has somebody voting against the government. One that does
+    // not, and that seats enough members for it to be meaningful, is not
+    // holding a contest.
+    const opposition = blocs
+      .filter(bloc => bloc.standing === 'opposition')
+      .reduce((sum, bloc) => sum + bloc.seats, 0)
+    const governing = blocs
+      .filter(bloc => bloc.standing === 'government' || bloc.standing === 'backing')
+      .reduce((sum, bloc) => sum + bloc.seats, 0)
+    // The signal is "everyone is with the government", not "nobody is marked
+    // opposition". Switzerland is the difference: its executive is not drawn
+    // from a parliamentary majority, so the source files every party as
+    // unaligned and no row says `government` either. That is a consensus
+    // system, not a captured one, and it is among the most competitive
+    // chambers in the world.
+    if (opposition === 0 && governing >= total * 0.9 && partyRows >= 2 && total >= 20) {
+      return 'uncontested'
+    }
+
+    // An opposition that exists but holds almost nothing.
+    if (opposition / total <= 0.05) return 'restricted'
+  }
+
+  return 'competitive'
 }
 
 // ---------------------------------------------------------------------------
@@ -154,7 +218,12 @@ const HEX = /^[0-9A-Fa-f]{6}$/
  */
 const endonymOf = (entity: Parameters<typeof labelOf>[0], english: string): string | undefined => {
   for (const property of ['P1705', 'P1448', 'P1549']) {
-    const raw = entity?.claims?.[property]?.[0]?.mainsnak?.datavalue?.value
+    // Through the SAME incumbency rule as every other statement. Taking [0]
+    // read Sweden's Centre Party as "Bondeförbundet" — the farmers' league it
+    // stopped being in 1957, sitting in the data with an explicit end date
+    // beside the live "Centerpartiet".
+    const statement = currentStatement(entity?.claims?.[property])
+    const raw = statement?.mainsnak?.datavalue?.value
     const text = (raw as { text?: string } | undefined)?.text
     if (text && text.trim() && text.trim() !== english) return text.trim()
   }
@@ -163,7 +232,13 @@ const endonymOf = (entity: Parameters<typeof labelOf>[0], english: string): stri
 
 /** The party's short form — "AfD", "CDU" — from P1813 (short name). */
 const abbreviationOf = (entity: Parameters<typeof labelOf>[0]): string | undefined => {
-  const raw = entity?.claims?.P1813?.[0]?.mainsnak?.datavalue?.value
+  // Preferred rank matters here more than anywhere: a party often carries its
+  // formal initialism and its everyday one, and only the ranking separates
+  // them. Sweden's Social Democrats are "SAP" (Sveriges socialdemokratiska
+  // arbetareparti) and "S" — and every Swede, every ballot paper and every
+  // seating chart says S, which is the statement Wikidata marks preferred.
+  const statement = currentStatement(entity?.claims?.P1813)
+  const raw = statement?.mainsnak?.datavalue?.value
   const text = (raw as { text?: string } | undefined)?.text
   return text && text.trim().length <= 24 ? text.trim() : undefined
 }
@@ -230,7 +305,12 @@ const logoOf = async (
   entity: Parameters<typeof labelOf>[0],
   article?: string
 ): Promise<ImageRef | undefined> => {
-  let file = claimStrings(entity, 'P154')[0]
+  // Preferred rank: a party that has rebranded carries both marks, and the
+  // superseded one is exactly what nobody would recognise.
+  const logoStatement = currentStatement(entity?.claims?.P154)
+  let file =
+    (logoStatement?.mainsnak?.datavalue?.value as string | undefined) ??
+    claimStrings(entity, 'P154')[0]
   if (!file && article) file = await logoFromArticle(article)
   if (!file) return undefined
   const licence = await fileLicence(file)
@@ -305,8 +385,10 @@ const buildCountry = async (
 ): Promise<BuildResult> => {
   const retrieved = today()
   const countryEntity = (await getEntities([countryQid], 'claims|labels'))[countryQid]
-  const { form, form_raw } = await governmentForm(countryEntity)
-  const leaders = await leadersOf(countryQid, form, retrieved)
+  const { form: declaredForm, form_raw } = await governmentForm(countryEntity)
+  const leaders = await leadersOf(countryQid, declaredForm, retrieved)
+  // The office arrangement can correct the label — see `leadersOf`.
+  const form = leaders.form
 
   if (!leaders.head_of_state) {
     return { omission: { iso, reason: 'no head of state resolved' } }
@@ -369,10 +451,16 @@ const buildCountry = async (
     // redirect resolution does the work — a party's common name almost always
     // redirects to its article.
     const linked = blocs.map(bloc => bloc.article).filter((title): title is string => !!title)
-    const unlinked = blocs
-      .filter(bloc => !bloc.article && !NOT_A_PARTY.test(bloc.name.trim()))
+    // The NAME is tried alongside the link, not only in its absence.
+    //
+    // A wikilink the model reports can simply not exist — Lithuania's Homeland
+    // Union came back as "Homeland Union (2020)", which resolves to nothing,
+    // while the bare "Homeland Union" is a real article. Falling back only when
+    // `article` was ABSENT left 28 seats of a major opposition party unlinked.
+    const byName = blocs
+      .filter(bloc => !NOT_A_PARTY.test(bloc.name.trim()))
       .map(bloc => bloc.name)
-    const byTitle = await resolveArticles([...linked, ...unlinked])
+    const byTitle = await resolveArticles([...linked, ...byName])
     const partyQids = [...new Set([...byTitle.values()])]
     const partyEntities = partyQids.length
       ? await getEntities(partyQids, 'claims|labels')
@@ -390,9 +478,25 @@ const buildCountry = async (
       return { qid: id as QID, ...(label ? { label } : {}) }
     }
 
-    const seatsTotal =
-      ref.seats_total ?? blocs.reduce((sum, bloc) => sum + bloc.seats, 0) ?? 0
     const seated = blocs.reduce((sum, bloc) => sum + bloc.seats, 0)
+    // Wikidata's declared size is the DEFAULT, not the authority.
+    //
+    // P1342 goes stale where a chamber is resized: Mongolia's State Great
+    // Khural still reads 76 where it now seats 126, and India's Lok Sabha 545
+    // where the constitutional figure is 543. When a clean reading of the
+    // article disagrees with it, the reading is the better evidence — it came
+    // from a page an editor maintains, where P1342 is a number nobody revisits.
+    //
+    // "Clean" is doing the work: only a composition that looks internally
+    // sound (enough rows, a plausible total) may overrule the declared size.
+    // Otherwise a truncated read would silently redefine the chamber to
+    // whatever it managed to find.
+    const declared = ref.seats_total ?? 0
+    const trustReading =
+      seated > 0 &&
+      blocs.length >= 3 &&
+      (declared === 0 || Math.abs(seated - declared) / declared > 0.02)
+    const seatsTotal = trustReading ? seated : declared || seated
     // Share is of the seats actually SEATED, not the declared size.
     //
     // The two disagree whenever a chamber's reading overruns its P1342 —
@@ -404,10 +508,22 @@ const buildCountry = async (
 
     const composition: Seating[] = []
     for (const bloc of blocs) {
-      const qid = (bloc.article ? byTitle.get(bloc.article) : undefined) ?? byTitle.get(bloc.name)
+      // A residual row is never a party, however confidently the model links
+      // it: "Independent" pointed at the ENTITY for independent politician,
+      // which put a non-party in the registry and made 421 seats of
+      // independents look like one organisation.
+      const residual = NOT_A_PARTY.test(bloc.name.trim())
+      const qid = residual
+        ? undefined
+        : (bloc.article ? byTitle.get(bloc.article) : undefined) ?? byTitle.get(bloc.name)
       if (qid && !parties[qid]) {
         const entity = partyEntities[qid]
-        const alignmentId = openClaimIds(entity, 'P1387')[0]
+        // A party that has moved on the spectrum carries its history here, so
+        // the current statement is the one that describes it today.
+        const alignmentStatement = currentStatement(entity?.claims?.P1387)
+        const alignmentId =
+          (alignmentStatement?.mainsnak?.datavalue?.value as { id?: string } | undefined)?.id ??
+          openClaimIds(entity, 'P1387')[0]
         const alignmentLabel = alignmentId ? labelOf(labelEntities[alignmentId]) : undefined
         const band = alignmentLabel
           ? SPECTRUM_BY_LABEL.find(([pattern]) => pattern.test(alignmentLabel))?.[1]

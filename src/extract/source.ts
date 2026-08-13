@@ -62,12 +62,35 @@ const mostlyTemplated = (field: string): boolean => {
   if (!/\{\{/.test(field)) return false
   const bullets = (field.match(/^\s*[*:]/gm) ?? []).length
   if (bullets < 2) return false
-  const counts = (field.match(new RegExp(SEAT_COUNT.source, 'g')) ?? []).length
+  // A seat count is a number in parentheses OR the last argument of a legend
+  // template. India writes every row as `{{Party legend|Indian National
+  // Congress|98}}` — the number is there, plainly, behind a pipe rather than a
+  // bracket. Counting only parentheses saw 8 counts against 45 bullets, sent
+  // the country down the rendered-HTML path, and spent the model's window on
+  // inline CSS instead of parties.
+  const counts =
+    (field.match(new RegExp(SEAT_COUNT.source, 'g')) ?? []).length +
+    (field.match(/\{\{\s*(?:party legend|legend|composition bar)[^}]*\|\s*\d[\d,]*\s*[|}]/gi) ?? [])
+      .length
+  // A template that looks up its number elsewhere carries no digit at all —
+  // Ireland writes `{{Political party data|seats|Q216517|ms-lower-house}}`,
+  // which resolves against Wikidata at render time. Those are the clearest
+  // possible case for reading the rendered page instead.
+  const lookups = (field.match(/\{\{\s*(?:political party data|party data)\b/gi) ?? []).length
+  if (lookups >= 2) return true
   return counts <= bullets / 2
 }
 
-const ELECTION_FIELDS =
-  /^\s*\|\s*(?:last_election\d*|next_election\d*|election\d*|new_session)\s*=\s*(.+)$/gim
+/**
+ * Only the fields that mean an ELECTION.
+ *
+ * `election1`…`electionN` are the dates the numbered LEADERS took their posts —
+ * a speaker's, a whip's, a party leader's. Canada carries five of them, and
+ * offering the model `election5 = September 13, 2022` alongside the real
+ * `last_election1 = April 28, 2025` got the leadership date reported as the
+ * chamber's last election, three years wrong.
+ */
+const ELECTION_FIELDS = /^\s*\|\s*(?:last_election\d*|next_election\d*)\s*=\s*(.+)$/gim
 
 const electionLines = (wikitext: string): string | undefined => {
   const lines = [...wikitext.matchAll(ELECTION_FIELDS)]

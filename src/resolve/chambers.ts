@@ -146,7 +146,12 @@ const roleFromName = (name: string): ChamberRole | undefined => {
 /** P1705 native label, or the endonym Wikidata files under P1448/P1559. */
 const nativeName = (entity: WikidataEntity | undefined): string | undefined => {
   for (const property of ['P1705', 'P1448', 'P1549']) {
-    const raw = entity?.claims?.[property]?.[0]?.mainsnak?.datavalue?.value
+    // Through the incumbency rule, like every other statement. A chamber
+    // renamed at some point carries both names, and taking the first would
+    // print whichever the editors happened to add first — the same way a
+    // party's superseded name reached the data before this was applied there.
+    const statement = currentStatement(entity?.claims?.[property])
+    const raw = statement?.mainsnak?.datavalue?.value
     const text = (raw as { text?: string } | undefined)?.text
     if (text && text.trim()) return text.trim()
   }
