@@ -1,0 +1,18 @@
+{
+  "name": "polity",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Every country's government, parliament and parties — as structured, typed, verifiable data.",
+  "license": "ODbL-1.0",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build:schema": "tsx scripts/emit-openapi.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0",
+    "tsx": "^4.19.0"
+  }
+}
