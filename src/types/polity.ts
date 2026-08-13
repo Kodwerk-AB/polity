@@ -2,6 +2,7 @@ import type {
   BlocKind,
   ChamberRole,
   Confidence,
+  Contestation,
   Derivation,
   GovernmentForm,
   Representation,
@@ -224,6 +225,13 @@ export interface Chamber {
   seats_total: number
   /** How its members arrive. Several may apply to one chamber. */
   selection: SelectionMethod[]
+  /**
+   * How real the contest for these seats is. Orthogonal to everything else: a
+   * chamber can be bicameral, directly elected AND uncontested. Recorded so a
+   * consumer can show North Korea's Supreme People's Assembly honestly rather
+   * than either omitting it or implying its 687 seats were fought over.
+   */
+  contestation: Contestation
   /**
    * Seats this election actually renewed, when it renewed only some. Its
    * presence means the composition describes THIS election, not the whole

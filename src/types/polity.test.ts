@@ -23,6 +23,7 @@ describe('a unicameral country', () => {
     name_local: 'Asamblea Legislativa',
     seats_total: 60,
     selection: ['directly_elected'],
+    contestation: 'competitive',
     composition: [
       { party: q(61692310), name: 'Nuevas Ideas', seats: 54, share: 0.9, standing: 'government' },
       { party: q(2044983), name: 'PCN', seats: 2, share: 0.033, standing: 'government' },

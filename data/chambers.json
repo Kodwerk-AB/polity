@@ -1,0 +1,3535 @@
+{
+ "AD": {
+  "qid": "Q228",
+  "name": "Andorra",
+  "article": "Andorra",
+  "chambers": [
+   {
+    "qid": "Q24824",
+    "role": "unicameral",
+    "name": "General Council of Andorra",
+    "inferred": false,
+    "article": "General Council (Andorra)",
+    "seats_total": 28
+   }
+  ]
+ },
+ "AE": {
+  "qid": "Q878",
+  "name": "United Arab Emirates",
+  "article": "United Arab Emirates",
+  "chambers": [
+   {
+    "qid": "Q1479761",
+    "role": "unicameral",
+    "name": "Federal National Council",
+    "inferred": false,
+    "article": "Federal National Council",
+    "seats_total": 40
+   }
+  ]
+ },
+ "AF": {
+  "qid": "Q889",
+  "name": "Afghanistan",
+  "article": "Afghanistan",
+  "chambers": [
+   {
+    "qid": "Q2386705",
+    "role": "unicameral",
+    "name": "National Assembly of Afghanistan",
+    "inferred": true,
+    "article": "National Assembly (Afghanistan)"
+   }
+  ]
+ },
+ "AG": {
+  "qid": "Q781",
+  "name": "Antigua and Barbuda",
+  "article": "Antigua and Barbuda",
+  "chambers": [
+   {
+    "qid": "Q1266832",
+    "role": "lower",
+    "name": "House of Representatives of Antigua and Barbuda",
+    "inferred": false,
+    "article": "House of Representatives (Antigua and Barbuda)",
+    "seats_total": 19
+   },
+   {
+    "qid": "Q1254104",
+    "role": "upper",
+    "name": "Senate of Antigua and Barbuda",
+    "inferred": true,
+    "article": "Senate (Antigua and Barbuda)",
+    "seats_total": 17
+   }
+  ]
+ },
+ "AL": {
+  "qid": "Q222",
+  "name": "Albania",
+  "article": "Albania",
+  "chambers": [
+   {
+    "qid": "Q1135960",
+    "role": "unicameral",
+    "name": "Parliament of Albania",
+    "inferred": false,
+    "article": "Parliament of Albania",
+    "seats_total": 140
+   }
+  ]
+ },
+ "AM": {
+  "qid": "Q399",
+  "name": "Armenia",
+  "article": "Armenia",
+  "chambers": [
+   {
+    "qid": "Q1337463",
+    "role": "unicameral",
+    "name": "National Assembly of Armenia",
+    "inferred": false,
+    "article": "National Assembly (Armenia)",
+    "seats_total": 107
+   }
+  ]
+ },
+ "AO": {
+  "qid": "Q916",
+  "name": "Angola",
+  "article": "Angola",
+  "chambers": [
+   {
+    "qid": "Q1969479",
+    "role": "unicameral",
+    "name": "National Assembly of Angola",
+    "inferred": false,
+    "article": "National Assembly (Angola)",
+    "seats_total": 220
+   }
+  ]
+ },
+ "AR": {
+  "qid": "Q414",
+  "name": "Argentina",
+  "article": "Argentina",
+  "chambers": [
+   {
+    "qid": "Q629133",
+    "role": "lower",
+    "name": "Chamber of Deputies of Argentina",
+    "inferred": true,
+    "article": "Argentine Chamber of Deputies",
+    "seats_total": 257
+   },
+   {
+    "qid": "Q2118303",
+    "role": "upper",
+    "name": "Argentine Senate",
+    "inferred": true,
+    "article": "Argentine Senate",
+    "seats_total": 72
+   }
+  ]
+ },
+ "AT": {
+  "qid": "Q40",
+  "name": "Austria",
+  "article": "Austria",
+  "chambers": [
+   {
+    "qid": "Q871363",
+    "role": "lower",
+    "name": "National Council of Austria",
+    "inferred": false,
+    "article": "National Council (Austria)",
+    "seats_total": 183
+   },
+   {
+    "qid": "Q557150",
+    "role": "upper",
+    "name": "Federal Council of Austria",
+    "inferred": false,
+    "article": "Federal Council (Austria)",
+    "seats_total": 60
+   }
+  ]
+ },
+ "AU": {
+  "qid": "Q408",
+  "name": "Australia",
+  "article": "Australia",
+  "chambers": [
+   {
+    "qid": "Q783401",
+    "role": "lower",
+    "name": "Australian House of Representatives",
+    "inferred": true,
+    "article": "Australian House of Representatives",
+    "seats_total": 151
+   },
+   {
+    "qid": "Q783330",
+    "role": "upper",
+    "name": "Australian Senate",
+    "inferred": true,
+    "article": "Australian Senate",
+    "seats_total": 76
+   }
+  ]
+ },
+ "AZ": {
+  "qid": "Q227",
+  "name": "Azerbaijan",
+  "article": "Azerbaijan",
+  "chambers": [
+   {
+    "qid": "Q330600",
+    "role": "unicameral",
+    "name": "National Assembly of Azerbaijan",
+    "inferred": false,
+    "article": "National Assembly (Azerbaijan)",
+    "seats_total": 125
+   }
+  ]
+ },
+ "BA": {
+  "qid": "Q225",
+  "name": "Bosnia and Herzegovina",
+  "article": "Bosnia and Herzegovina",
+  "chambers": [
+   {
+    "qid": "Q320268",
+    "role": "lower",
+    "name": "House of Representatives",
+    "inferred": false,
+    "article": "House of Representatives of Bosnia and Herzegovina",
+    "seats_total": 42
+   },
+   {
+    "qid": "Q2718547",
+    "role": "upper",
+    "name": "House of Peoples of Bosnia and Herzegovina",
+    "inferred": false,
+    "article": "House of Peoples of Bosnia and Herzegovina",
+    "seats_total": 15
+   }
+  ]
+ },
+ "BB": {
+  "qid": "Q244",
+  "name": "Barbados",
+  "article": "Barbados",
+  "chambers": [
+   {
+    "qid": "Q570619",
+    "role": "lower",
+    "name": "House of Assembly of Barbados",
+    "inferred": false,
+    "article": "House of Assembly of Barbados",
+    "seats_total": 30
+   },
+   {
+    "qid": "Q586461",
+    "role": "upper",
+    "name": "Senate of Barbados",
+    "inferred": true,
+    "article": "Senate of Barbados",
+    "seats_total": 21
+   }
+  ]
+ },
+ "BD": {
+  "qid": "Q902",
+  "name": "Bangladesh",
+  "article": "Bangladesh",
+  "chambers": [
+   {
+    "qid": "Q1684080",
+    "role": "unicameral",
+    "name": "Jatiya Sangsad",
+    "inferred": false,
+    "article": "Jatiya Sangsad",
+    "seats_total": 350
+   }
+  ]
+ },
+ "BE": {
+  "qid": "Q31",
+  "name": "Belgium",
+  "article": "Belgium",
+  "chambers": [
+   {
+    "qid": "Q1347545",
+    "role": "lower",
+    "name": "Chamber of Representatives",
+    "inferred": false,
+    "article": "Chamber of Representatives (Belgium)",
+    "seats_total": 150
+   },
+   {
+    "qid": "Q1355042",
+    "role": "upper",
+    "name": "Senate of Belgium",
+    "inferred": true,
+    "article": "Senate (Belgium)",
+    "seats_total": 60
+   }
+  ]
+ },
+ "BF": {
+  "qid": "Q965",
+  "name": "Burkina Faso",
+  "article": "Burkina Faso",
+  "chambers": [
+   {
+    "qid": "Q619238",
+    "role": "unicameral",
+    "name": "National Assembly of Burkina Faso",
+    "inferred": false,
+    "article": "National Assembly (Burkina Faso)",
+    "seats_total": 127
+   }
+  ]
+ },
+ "BG": {
+  "qid": "Q219",
+  "name": "Bulgaria",
+  "article": "Bulgaria",
+  "chambers": [
+   {
+    "qid": "Q639704",
+    "role": "unicameral",
+    "name": "National Assembly of Bulgaria",
+    "inferred": false,
+    "article": "National Assembly (Bulgaria)",
+    "seats_total": 240
+   }
+  ]
+ },
+ "BH": {
+  "qid": "Q398",
+  "name": "Bahrain",
+  "article": "Bahrain",
+  "chambers": [
+   {
+    "qid": "Q4118178",
+    "role": "lower",
+    "name": "Council of Representatives",
+    "inferred": false,
+    "article": "Council of Representatives (Bahrain)",
+    "seats_total": 40
+   },
+   {
+    "qid": "Q1334620",
+    "role": "upper",
+    "name": "Consultative Council of Bahrain",
+    "inferred": false,
+    "article": "Consultative Council (Bahrain)",
+    "seats_total": 40
+   }
+  ]
+ },
+ "BI": {
+  "qid": "Q967",
+  "name": "Burundi",
+  "article": "Burundi",
+  "chambers": [
+   {
+    "qid": "Q720003",
+    "role": "lower",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Burundi)",
+    "seats_total": 121
+   },
+   {
+    "qid": "Q3510838",
+    "role": "upper",
+    "name": "Senate",
+    "inferred": true,
+    "article": "Senate (Burundi)",
+    "seats_total": 39
+   }
+  ]
+ },
+ "BJ": {
+  "qid": "Q962",
+  "name": "Benin",
+  "article": "Benin",
+  "chambers": [
+   {
+    "qid": "Q1969527",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Benin)",
+    "seats_total": 109
+   }
+  ]
+ },
+ "BN": {
+  "qid": "Q921",
+  "name": "Brunei",
+  "article": "Brunei",
+  "chambers": [
+   {
+    "qid": "Q2396996",
+    "role": "unicameral",
+    "name": "Legislative Council of Brunei",
+    "inferred": false,
+    "article": "Legislative Council of Brunei",
+    "seats_total": 37
+   }
+  ]
+ },
+ "BO": {
+  "qid": "Q750",
+  "name": "Bolivia",
+  "article": "Bolivia",
+  "chambers": [
+   {
+    "qid": "Q20081431",
+    "role": "lower",
+    "name": "Chamber of Deputies of Bolivia",
+    "inferred": true,
+    "article": "Chamber of Deputies (Bolivia)",
+    "seats_total": 130
+   },
+   {
+    "qid": "Q2948392",
+    "role": "upper",
+    "name": "Senate of Bolivia",
+    "inferred": false,
+    "article": "Chamber of Senators (Bolivia)",
+    "seats_total": 36
+   }
+  ]
+ },
+ "BR": {
+  "qid": "Q155",
+  "name": "Brazil",
+  "article": "Brazil",
+  "chambers": [
+   {
+    "qid": "Q1834804",
+    "role": "lower",
+    "name": "Chamber of Deputies",
+    "inferred": true,
+    "article": "Chamber of Deputies (Brazil)",
+    "seats_total": 513
+   },
+   {
+    "qid": "Q2119413",
+    "role": "upper",
+    "name": "Federal Senate of Brazil",
+    "inferred": true,
+    "article": "Federal Senate (Brazil)",
+    "seats_total": 81
+   }
+  ]
+ },
+ "BS": {
+  "qid": "Q778",
+  "name": "The Bahamas",
+  "article": "The Bahamas",
+  "chambers": [
+   {
+    "qid": "Q2948139",
+    "role": "lower",
+    "name": "House of Assembly",
+    "inferred": false,
+    "seats_total": 39
+   },
+   {
+    "qid": "Q3510833",
+    "role": "upper",
+    "name": "Senate of the Bahamas",
+    "inferred": true,
+    "article": "Senate of the Bahamas",
+    "seats_total": 16
+   }
+  ]
+ },
+ "BT": {
+  "qid": "Q917",
+  "name": "Bhutan",
+  "article": "Bhutan",
+  "chambers": [
+   {
+    "qid": "Q2579023",
+    "role": "lower",
+    "name": "National Assembly of Bhutan",
+    "inferred": false,
+    "article": "National Assembly (Bhutan)",
+    "seats_total": 47
+   },
+   {
+    "qid": "Q2668484",
+    "role": "upper",
+    "name": "National Council of Bhutan",
+    "inferred": false,
+    "article": "National Council (Bhutan)",
+    "seats_total": 25
+   }
+  ]
+ },
+ "BW": {
+  "qid": "Q963",
+  "name": "Botswana",
+  "article": "Botswana",
+  "chambers": [
+   {
+    "qid": "Q859658",
+    "role": "unicameral",
+    "name": "National Assembly of Botswana",
+    "inferred": false,
+    "article": "National Assembly of Botswana",
+    "seats_total": 63
+   }
+  ]
+ },
+ "BY": {
+  "qid": "Q184",
+  "name": "Belarus",
+  "article": "Belarus",
+  "chambers": [
+   {
+    "qid": "Q1649622",
+    "role": "lower",
+    "name": "House of Representatives",
+    "inferred": false,
+    "article": "House of Representatives (Belarus)",
+    "seats_total": 110
+   },
+   {
+    "qid": "Q1512428",
+    "role": "upper",
+    "name": "Council of the Republic of Belarus",
+    "inferred": false,
+    "article": "Council of the Republic (Belarus)",
+    "seats_total": 64
+   }
+  ]
+ },
+ "BZ": {
+  "qid": "Q242",
+  "name": "Belize",
+  "article": "Belize",
+  "chambers": [
+   {
+    "qid": "Q827805",
+    "role": "lower",
+    "name": "House of Representatives",
+    "inferred": false,
+    "article": "House of Representatives (Belize)",
+    "seats_total": 31
+   },
+   {
+    "qid": "Q827490",
+    "role": "upper",
+    "name": "Senate of Belize",
+    "inferred": true,
+    "article": "Senate (Belize)",
+    "seats_total": 13
+   }
+  ]
+ },
+ "CA": {
+  "qid": "Q16",
+  "name": "Canada",
+  "article": "Canada",
+  "chambers": [
+   {
+    "qid": "Q383590",
+    "role": "lower",
+    "name": "House of Commons",
+    "inferred": true,
+    "article": "House of Commons of Canada",
+    "seats_total": 343
+   },
+   {
+    "qid": "Q841180",
+    "role": "upper",
+    "name": "Senate of Canada",
+    "inferred": true,
+    "article": "Senate of Canada",
+    "seats_total": 105
+   }
+  ]
+ },
+ "CD": {
+  "qid": "Q974",
+  "name": "Democratic Republic of the Congo",
+  "article": "Democratic Republic of the Congo",
+  "chambers": [
+   {
+    "qid": "Q1574334",
+    "role": "lower",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Democratic Republic of the Congo)",
+    "seats_total": 500
+   },
+   {
+    "qid": "Q3510889",
+    "role": "upper",
+    "name": "Senate of the Democratic Republic of the Congo",
+    "inferred": true,
+    "article": "Senate (Democratic Republic of the Congo)",
+    "seats_total": 109
+   }
+  ]
+ },
+ "CF": {
+  "qid": "Q929",
+  "name": "Central African Republic",
+  "article": "Central African Republic",
+  "chambers": [
+   {
+    "qid": "Q1577158",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Central African Republic)",
+    "seats_total": 100
+   }
+  ]
+ },
+ "CG": {
+  "qid": "Q971",
+  "name": "Republic of the Congo",
+  "article": "Republic of the Congo",
+  "chambers": [
+   {
+    "qid": "Q1969587",
+    "role": "lower",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Republic of the Congo)",
+    "seats_total": 153
+   },
+   {
+    "qid": "Q3510840",
+    "role": "upper",
+    "name": "Senate",
+    "inferred": true,
+    "article": "Senate (Republic of the Congo)",
+    "seats_total": 52
+   }
+  ]
+ },
+ "CH": {
+  "qid": "Q39",
+  "name": "Switzerland",
+  "article": "Switzerland",
+  "chambers": [
+   {
+    "qid": "Q676078",
+    "role": "lower",
+    "name": "National Council of Switzerland",
+    "inferred": false,
+    "article": "National Council (Switzerland)",
+    "seats_total": 200
+   },
+   {
+    "qid": "Q609037",
+    "role": "upper",
+    "name": "Council of States of Switzerland",
+    "inferred": false,
+    "article": "Council of States (Switzerland)",
+    "seats_total": 46
+   }
+  ]
+ },
+ "CI": {
+  "qid": "Q1008",
+  "name": "Ivory Coast",
+  "article": "Ivory Coast",
+  "chambers": [
+   {
+    "qid": "Q1573929",
+    "role": "lower",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Ivory Coast)",
+    "seats_total": 255
+   },
+   {
+    "qid": "Q27881014",
+    "role": "upper",
+    "name": "Senate",
+    "inferred": true,
+    "article": "Senate of Ivory Coast",
+    "seats_total": 99
+   }
+  ]
+ },
+ "CL": {
+  "qid": "Q298",
+  "name": "Chile",
+  "article": "Chile",
+  "chambers": [
+   {
+    "qid": "Q2119518",
+    "role": "lower",
+    "name": "Chamber of Deputies",
+    "inferred": true,
+    "article": "Chamber of Deputies of Chile",
+    "seats_total": 155
+   },
+   {
+    "qid": "Q2119458",
+    "role": "upper",
+    "name": "Senate of Chile",
+    "inferred": true,
+    "article": "Senate of Chile",
+    "seats_total": 50
+   }
+  ]
+ },
+ "CM": {
+  "qid": "Q1009",
+  "name": "Cameroon",
+  "article": "Cameroon",
+  "chambers": [
+   {
+    "qid": "Q1634099",
+    "role": "lower",
+    "name": "National Assembly of Cameroon",
+    "inferred": false,
+    "article": "National Assembly (Cameroon)",
+    "seats_total": 180
+   },
+   {
+    "qid": "Q3510836",
+    "role": "upper",
+    "name": "Senate of Cameroon",
+    "inferred": true,
+    "article": "Senate (Cameroon)",
+    "seats_total": 100
+   }
+  ]
+ },
+ "CN": {
+  "qid": "Q148",
+  "name": "People's Republic of China",
+  "article": "China",
+  "chambers": [
+   {
+    "qid": "Q19211",
+    "role": "unicameral",
+    "name": "National People's Congress",
+    "inferred": false,
+    "article": "National People's Congress",
+    "seats_total": 2987
+   }
+  ]
+ },
+ "CO": {
+  "qid": "Q739",
+  "name": "Colombia",
+  "article": "Colombia",
+  "chambers": [
+   {
+    "qid": "Q1571756",
+    "role": "lower",
+    "name": "Chamber of Representatives of Colombia",
+    "inferred": true,
+    "article": "Chamber of Representatives of Colombia",
+    "seats_total": 172
+   },
+   {
+    "qid": "Q2398781",
+    "role": "upper",
+    "name": "Senate of Colombia",
+    "inferred": true,
+    "article": "Senate of Colombia",
+    "seats_total": 102
+   }
+  ]
+ },
+ "CR": {
+  "qid": "Q800",
+  "name": "Costa Rica",
+  "article": "Costa Rica",
+  "chambers": [
+   {
+    "qid": "Q1386962",
+    "role": "unicameral",
+    "name": "Legislative Assembly of Costa Rica",
+    "inferred": false,
+    "article": "Legislative Assembly of Costa Rica",
+    "seats_total": 57
+   }
+  ]
+ },
+ "CU": {
+  "qid": "Q241",
+  "name": "Cuba",
+  "article": "Cuba",
+  "chambers": [
+   {
+    "qid": "Q720753",
+    "role": "unicameral",
+    "name": "National Assembly of People's Power",
+    "inferred": false,
+    "article": "National Assembly of People's Power",
+    "seats_total": 470
+   }
+  ]
+ },
+ "CV": {
+  "qid": "Q1011",
+  "name": "Cape Verde",
+  "article": "Cape Verde",
+  "chambers": [
+   {
+    "qid": "Q1718790",
+    "role": "unicameral",
+    "name": "National Assembly of Cape Verde",
+    "inferred": false,
+    "article": "National Assembly (Cape Verde)",
+    "seats_total": 72
+   }
+  ]
+ },
+ "CY": {
+  "qid": "Q229",
+  "name": "Cyprus",
+  "article": "Cyprus",
+  "chambers": [
+   {
+    "qid": "Q1112381",
+    "role": "unicameral",
+    "name": "House of Representatives",
+    "inferred": false,
+    "article": "House of Representatives (Cyprus)",
+    "seats_total": 56
+   }
+  ]
+ },
+ "CZ": {
+  "qid": "Q213",
+  "name": "Czech Republic",
+  "article": "Czech Republic",
+  "chambers": [
+   {
+    "qid": "Q320265",
+    "role": "lower",
+    "name": "Chamber of Deputies of the Parliament of the Czech Republic",
+    "inferred": true,
+    "article": "Chamber of Deputies of the Czech Republic",
+    "seats_total": 200
+   },
+   {
+    "qid": "Q389423",
+    "role": "upper",
+    "name": "Senate of the Czech Republic",
+    "inferred": true,
+    "article": "Senate of the Czech Republic",
+    "seats_total": 81
+   }
+  ]
+ },
+ "DE": {
+  "qid": "Q183",
+  "name": "Germany",
+  "article": "Germany",
+  "chambers": [
+   {
+    "qid": "Q154797",
+    "role": "lower",
+    "name": "German Bundestag",
+    "inferred": false,
+    "article": "Bundestag",
+    "seats_total": 630
+   },
+   {
+    "qid": "Q146138",
+    "role": "upper",
+    "name": "Bundesrat",
+    "inferred": false,
+    "article": "German Bundesrat",
+    "seats_total": 69
+   }
+  ]
+ },
+ "DJ": {
+  "qid": "Q977",
+  "name": "Djibouti",
+  "article": "Djibouti",
+  "chambers": [
+   {
+    "qid": "Q1139363",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Djibouti)",
+    "seats_total": 65
+   }
+  ]
+ },
+ "DK": {
+  "qid": "Q35",
+  "name": "Denmark",
+  "article": "Denmark",
+  "chambers": [
+   {
+    "qid": "Q209151",
+    "role": "unicameral",
+    "name": "Folketing",
+    "inferred": true,
+    "article": "Folketing",
+    "seats_total": 179
+   }
+  ]
+ },
+ "DM": {
+  "qid": "Q784",
+  "name": "Dominica",
+  "article": "Dominica",
+  "chambers": [
+   {
+    "qid": "Q1297237",
+    "role": "unicameral",
+    "name": "House of Assembly of Dominica",
+    "inferred": false,
+    "article": "House of Assembly of Dominica",
+    "seats_total": 21
+   }
+  ]
+ },
+ "DO": {
+  "qid": "Q786",
+  "name": "Dominican Republic",
+  "article": "Dominican Republic",
+  "chambers": [
+   {
+    "qid": "Q320280",
+    "role": "lower",
+    "name": "Chamber of Deputies",
+    "inferred": true,
+    "article": "Chamber of Deputies of the Dominican Republic",
+    "seats_total": 183
+   },
+   {
+    "qid": "Q2119267",
+    "role": "upper",
+    "name": "Senate of the Dominican Republic",
+    "inferred": true,
+    "article": "Senate of the Dominican Republic",
+    "seats_total": 32
+   }
+  ]
+ },
+ "DZ": {
+  "qid": "Q262",
+  "name": "Algeria",
+  "article": "Algeria",
+  "chambers": [
+   {
+    "qid": "Q633590",
+    "role": "lower",
+    "name": "People's National Assembly",
+    "inferred": false,
+    "article": "People's National Assembly",
+    "seats_total": 407
+   },
+   {
+    "qid": "Q2119509",
+    "role": "upper",
+    "name": "Council of the Nation",
+    "inferred": false,
+    "article": "Council of the Nation",
+    "seats_total": 144
+   }
+  ]
+ },
+ "EC": {
+  "qid": "Q736",
+  "name": "Ecuador",
+  "article": "Ecuador",
+  "chambers": [
+   {
+    "qid": "Q1319595",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Ecuador)",
+    "seats_total": 137
+   }
+  ]
+ },
+ "EE": {
+  "qid": "Q191",
+  "name": "Estonia",
+  "article": "Estonia",
+  "chambers": [
+   {
+    "qid": "Q217799",
+    "role": "unicameral",
+    "name": "Riigikogu",
+    "inferred": false,
+    "article": "Riigikogu",
+    "seats_total": 101
+   }
+  ]
+ },
+ "EG": {
+  "qid": "Q79",
+  "name": "Egypt",
+  "article": "Egypt",
+  "chambers": [
+   {
+    "qid": "Q1501976",
+    "role": "lower",
+    "name": "House of Representatives",
+    "inferred": false,
+    "article": "House of Representatives (Egypt)",
+    "seats_total": 596
+   },
+   {
+    "qid": "Q64744338",
+    "role": "upper",
+    "name": "Senate of Egypt",
+    "inferred": true,
+    "article": "Senate (Egypt)",
+    "seats_total": 300
+   }
+  ]
+ },
+ "ER": {
+  "qid": "Q986",
+  "name": "Eritrea",
+  "article": "Eritrea",
+  "chambers": [
+   {
+    "qid": "Q2094027",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": true,
+    "dissolved": true,
+    "article": "National Assembly (Eritrea)",
+    "seats_total": 104
+   }
+  ]
+ },
+ "ES": {
+  "qid": "Q29",
+  "name": "Spain",
+  "article": "Spain",
+  "chambers": [
+   {
+    "qid": "Q539149",
+    "role": "lower",
+    "name": "Congress of Deputies",
+    "inferred": true,
+    "article": "Congress of Deputies",
+    "seats_total": 350
+   },
+   {
+    "qid": "Q855343",
+    "role": "upper",
+    "name": "Senate of Spain",
+    "inferred": true,
+    "article": "Senate of Spain",
+    "seats_total": 266
+   }
+  ]
+ },
+ "ET": {
+  "qid": "Q115",
+  "name": "Ethiopia",
+  "article": "Ethiopia",
+  "chambers": [
+   {
+    "qid": "Q1133185",
+    "role": "lower",
+    "name": "House of Peoples' Representatives",
+    "inferred": false,
+    "article": "House of Peoples' Representatives",
+    "seats_total": 547
+   },
+   {
+    "qid": "Q967407",
+    "role": "upper",
+    "name": "House of Federation",
+    "inferred": false,
+    "article": "House of Federation",
+    "seats_total": 112
+   }
+  ]
+ },
+ "FI": {
+  "qid": "Q33",
+  "name": "Finland",
+  "article": "Finland",
+  "chambers": [
+   {
+    "qid": "Q643412",
+    "role": "unicameral",
+    "name": "Parliament of Finland",
+    "inferred": false,
+    "article": "Parliament of Finland",
+    "seats_total": 200
+   }
+  ]
+ },
+ "FJ": {
+  "qid": "Q712",
+  "name": "Fiji",
+  "article": "Fiji",
+  "chambers": [
+   {
+    "qid": "Q4345425",
+    "role": "unicameral",
+    "name": "Parliament of Fiji",
+    "inferred": false,
+    "article": "Parliament of Fiji",
+    "seats_total": 51
+   }
+  ]
+ },
+ "FM": {
+  "qid": "Q702",
+  "name": "Federated States of Micronesia",
+  "article": "Federated States of Micronesia",
+  "chambers": [
+   {
+    "qid": "Q1287548",
+    "role": "unicameral",
+    "name": "Congress of the Federated States of Micronesia",
+    "inferred": false,
+    "article": "Congress of the Federated States of Micronesia",
+    "seats_total": 14
+   }
+  ]
+ },
+ "FR": {
+  "qid": "Q142",
+  "name": "France",
+  "article": "France",
+  "chambers": [
+   {
+    "qid": "Q193582",
+    "role": "lower",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (France)",
+    "seats_total": 577
+   },
+   {
+    "qid": "Q215987",
+    "role": "upper",
+    "name": "Senate",
+    "inferred": true,
+    "article": "Senate (France)",
+    "seats_total": 348
+   }
+  ]
+ },
+ "GA": {
+  "qid": "Q1000",
+  "name": "Gabon",
+  "article": "Gabon",
+  "chambers": [
+   {
+    "qid": "Q1969545",
+    "role": "lower",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly of Gabon",
+    "seats_total": 143
+   },
+   {
+    "qid": "Q3510846",
+    "role": "upper",
+    "name": "Senate",
+    "inferred": true,
+    "article": "Senate of Gabon",
+    "seats_total": 102
+   }
+  ]
+ },
+ "GB": {
+  "qid": "Q145",
+  "name": "United Kingdom",
+  "article": "United Kingdom",
+  "chambers": [
+   {
+    "qid": "Q11005",
+    "role": "lower",
+    "name": "House of Commons",
+    "inferred": true,
+    "article": "House of Commons of the United Kingdom",
+    "seats_total": 650
+   },
+   {
+    "qid": "Q11007",
+    "role": "upper",
+    "name": "House of Lords",
+    "inferred": true,
+    "article": "House of Lords",
+    "seats_total": 808
+   }
+  ]
+ },
+ "GD": {
+  "qid": "Q769",
+  "name": "Grenada",
+  "article": "Grenada",
+  "chambers": [
+   {
+    "qid": "Q1138354",
+    "role": "lower",
+    "name": "House of Representatives of Grenada",
+    "inferred": false,
+    "article": "House of Representatives (Grenada)",
+    "seats_total": 16
+   },
+   {
+    "qid": "Q1254591",
+    "role": "upper",
+    "name": "Senate of Grenada",
+    "inferred": true,
+    "article": "Senate (Grenada)",
+    "seats_total": 13
+   }
+  ]
+ },
+ "GE": {
+  "qid": "Q230",
+  "name": "Georgia",
+  "article": "Georgia (country)",
+  "chambers": [
+   {
+    "qid": "Q1417210",
+    "role": "unicameral",
+    "name": "Parliament of Georgia",
+    "inferred": false,
+    "article": "Parliament of Georgia",
+    "seats_total": 150
+   }
+  ]
+ },
+ "GH": {
+  "qid": "Q117",
+  "name": "Ghana",
+  "article": "Ghana",
+  "chambers": [
+   {
+    "qid": "Q1807513",
+    "role": "unicameral",
+    "name": "Parliament of Ghana",
+    "inferred": false,
+    "article": "Parliament of Ghana",
+    "seats_total": 275
+   }
+  ]
+ },
+ "GM": {
+  "qid": "Q1005",
+  "name": "The Gambia",
+  "article": "The Gambia",
+  "chambers": [
+   {
+    "qid": "Q1427127",
+    "role": "unicameral",
+    "name": "National Assembly of The Gambia",
+    "inferred": false,
+    "article": "National Assembly of the Gambia",
+    "seats_total": 58
+   }
+  ]
+ },
+ "GN": {
+  "qid": "Q1006",
+  "name": "Guinea",
+  "article": "Guinea",
+  "chambers": [
+   {
+    "qid": "Q1853235",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": true,
+    "article": "National Assembly (Guinea)",
+    "seats_total": 114
+   }
+  ]
+ },
+ "GQ": {
+  "qid": "Q983",
+  "name": "Equatorial Guinea",
+  "article": "Equatorial Guinea",
+  "chambers": [
+   {
+    "qid": "Q775767",
+    "role": "lower",
+    "name": "Chamber of People's Representatives",
+    "inferred": false,
+    "article": "Chamber of Deputies (Equatorial Guinea)",
+    "seats_total": 100
+   },
+   {
+    "qid": "Q14759322",
+    "role": "upper",
+    "name": "Senate of Equatorial Guinea",
+    "inferred": true,
+    "article": "Senate (Equatorial Guinea)",
+    "seats_total": 70
+   }
+  ]
+ },
+ "GR": {
+  "qid": "Q41",
+  "name": "Greece",
+  "article": "Greece",
+  "chambers": [
+   {
+    "qid": "Q477089",
+    "role": "unicameral",
+    "name": "Hellenic Parliament",
+    "inferred": false,
+    "article": "Hellenic Parliament",
+    "seats_total": 300
+   }
+  ]
+ },
+ "GT": {
+  "qid": "Q774",
+  "name": "Guatemala",
+  "article": "Guatemala",
+  "chambers": [
+   {
+    "qid": "Q1136026",
+    "role": "unicameral",
+    "name": "Congress of the Republic of Guatemala",
+    "inferred": false,
+    "article": "Congress of the Republic of Guatemala",
+    "seats_total": 160
+   }
+  ]
+ },
+ "GW": {
+  "qid": "Q1007",
+  "name": "Guinea-Bissau",
+  "article": "Guinea-Bissau",
+  "chambers": [
+   {
+    "qid": "Q740533",
+    "role": "unicameral",
+    "name": "National People's Assembly",
+    "inferred": false,
+    "article": "National People's Assembly (Guinea-Bissau)",
+    "seats_total": 100
+   }
+  ]
+ },
+ "GY": {
+  "qid": "Q734",
+  "name": "Guyana",
+  "article": "Guyana",
+  "chambers": [
+   {
+    "qid": "Q1512579",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Guyana)",
+    "seats_total": 65
+   }
+  ]
+ },
+ "HN": {
+  "qid": "Q783",
+  "name": "Honduras",
+  "article": "Honduras",
+  "chambers": [
+   {
+    "qid": "Q1415847",
+    "role": "unicameral",
+    "name": "National Congress of Honduras",
+    "inferred": false,
+    "article": "National Congress of Honduras",
+    "seats_total": 128
+   }
+  ]
+ },
+ "HR": {
+  "qid": "Q224",
+  "name": "Croatia",
+  "article": "Croatia",
+  "chambers": [
+   {
+    "qid": "Q371576",
+    "role": "unicameral",
+    "name": "Parliament of Croatia",
+    "inferred": false,
+    "article": "Croatian Parliament",
+    "seats_total": 151
+   }
+  ]
+ },
+ "HT": {
+  "qid": "Q790",
+  "name": "Haiti",
+  "article": "Haiti",
+  "chambers": [
+   {
+    "qid": "Q320287",
+    "role": "unicameral",
+    "name": "Chamber of Deputies",
+    "inferred": true,
+    "article": "Chamber of Deputies (Haiti)",
+    "seats_total": 119
+   }
+  ]
+ },
+ "HU": {
+  "qid": "Q28",
+  "name": "Hungary",
+  "article": "Hungary",
+  "chambers": [
+   {
+    "qid": "Q648716",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Hungary)",
+    "seats_total": 199
+   }
+  ]
+ },
+ "ID": {
+  "qid": "Q252",
+  "name": "Indonesia",
+  "article": "Indonesia",
+  "chambers": [
+   {
+    "qid": "Q2670027",
+    "role": "lower",
+    "name": "Dewan Perwakilan Rakyat",
+    "inferred": false,
+    "article": "House of Representatives (Indonesia)",
+    "seats_total": 575
+   },
+   {
+    "qid": "Q2118693",
+    "role": "upper",
+    "name": "Regional Representative Council",
+    "inferred": false,
+    "article": "Regional Representative Council",
+    "seats_total": 152
+   }
+  ]
+ },
+ "IE": {
+  "qid": "Q27",
+  "name": "Ireland",
+  "article": "Republic of Ireland",
+  "chambers": [
+   {
+    "qid": "Q651981",
+    "role": "lower",
+    "name": "Dáil Éireann",
+    "inferred": false,
+    "article": "Dáil Éireann",
+    "seats_total": 174
+   },
+   {
+    "qid": "Q1127591",
+    "role": "upper",
+    "name": "Seanad Éireann",
+    "inferred": true,
+    "article": "Seanad Éireann",
+    "seats_total": 60
+   }
+  ]
+ },
+ "IL": {
+  "qid": "Q801",
+  "name": "Israel",
+  "article": "Israel",
+  "chambers": [
+   {
+    "qid": "Q133396",
+    "role": "unicameral",
+    "name": "The Knesset",
+    "inferred": false,
+    "article": "Knesset",
+    "seats_total": 120
+   }
+  ]
+ },
+ "IN": {
+  "qid": "Q668",
+  "name": "India",
+  "article": "India",
+  "chambers": [
+   {
+    "qid": "Q230003",
+    "role": "lower",
+    "name": "Lok Sabha",
+    "inferred": false,
+    "article": "Lok Sabha",
+    "seats_total": 545
+   },
+   {
+    "qid": "Q244730",
+    "role": "upper",
+    "name": "Rajya Sabha",
+    "inferred": false,
+    "article": "Rajya Sabha",
+    "seats_total": 233
+   }
+  ]
+ },
+ "IQ": {
+  "qid": "Q796",
+  "name": "Iraq",
+  "article": "Iraq",
+  "chambers": [
+   {
+    "qid": "Q1973075",
+    "role": "unicameral",
+    "name": "Council of Representatives of Iraq",
+    "inferred": false,
+    "article": "Council of Representatives (Iraq)",
+    "seats_total": 329
+   }
+  ]
+ },
+ "IR": {
+  "qid": "Q794",
+  "name": "Iran",
+  "article": "Iran",
+  "chambers": [
+   {
+    "qid": "Q378605",
+    "role": "unicameral",
+    "name": "Islamic Consultative Assembly",
+    "inferred": false,
+    "article": "Islamic Consultative Assembly",
+    "seats_total": 290
+   }
+  ]
+ },
+ "IS": {
+  "qid": "Q189",
+  "name": "Iceland",
+  "article": "Iceland",
+  "chambers": [
+   {
+    "qid": "Q131279",
+    "role": "unicameral",
+    "name": "Althing",
+    "inferred": false,
+    "article": "Althing",
+    "seats_total": 63
+   }
+  ]
+ },
+ "IT": {
+  "qid": "Q38",
+  "name": "Italy",
+  "article": "Italy",
+  "chambers": [
+   {
+    "qid": "Q841424",
+    "role": "lower",
+    "name": "Chamber of Deputies of Italy",
+    "inferred": true,
+    "article": "Chamber of Deputies (Italy)",
+    "seats_total": 400
+   },
+   {
+    "qid": "Q633872",
+    "role": "upper",
+    "name": "Senate of the Republic",
+    "inferred": true,
+    "article": "Senate of the Republic (Italy)",
+    "seats_total": 205
+   }
+  ]
+ },
+ "JM": {
+  "qid": "Q766",
+  "name": "Jamaica",
+  "article": "Jamaica",
+  "chambers": [
+   {
+    "qid": "Q20080342",
+    "role": "lower",
+    "name": "House of Representatives of Jamaica",
+    "inferred": false,
+    "seats_total": 63
+   },
+   {
+    "qid": "Q27897650",
+    "role": "upper",
+    "name": "Senate of Jamaica",
+    "inferred": true,
+    "seats_total": 21
+   }
+  ]
+ },
+ "JO": {
+  "qid": "Q810",
+  "name": "Jordan",
+  "article": "Jordan",
+  "chambers": [
+   {
+    "qid": "Q320304",
+    "role": "lower",
+    "name": "House of Representatives of Jordan",
+    "inferred": false,
+    "article": "House of Representatives (Jordan)",
+    "seats_total": 150
+   },
+   {
+    "qid": "Q3510854",
+    "role": "upper",
+    "name": "Senate of Jordan",
+    "inferred": true,
+    "article": "Senate (Jordan)",
+    "seats_total": 65
+   }
+  ]
+ },
+ "JP": {
+  "qid": "Q17",
+  "name": "Japan",
+  "article": "Japan",
+  "chambers": [
+   {
+    "qid": "Q659587",
+    "role": "lower",
+    "name": "House of Representatives",
+    "inferred": false,
+    "article": "House of Representatives (Japan)",
+    "seats_total": 465
+   },
+   {
+    "qid": "Q548911",
+    "role": "upper",
+    "name": "House of Councillors to the Emperor",
+    "inferred": false,
+    "article": "House of Councillors",
+    "seats_total": 248
+   }
+  ]
+ },
+ "KE": {
+  "qid": "Q114",
+  "name": "Kenya",
+  "article": "Kenya",
+  "chambers": [
+   {
+    "qid": "Q1701225",
+    "role": "lower",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Kenya)",
+    "seats_total": 349
+   },
+   {
+    "qid": "Q6978858",
+    "role": "upper",
+    "name": "Senate of Kenya",
+    "inferred": true,
+    "article": "Senate of Kenya",
+    "seats_total": 67
+   }
+  ]
+ },
+ "KG": {
+  "qid": "Q813",
+  "name": "Kyrgyzstan",
+  "article": "Kyrgyzstan",
+  "chambers": [
+   {
+    "qid": "Q578193",
+    "role": "unicameral",
+    "name": "Supreme Council",
+    "inferred": false,
+    "article": "Supreme Council (Kyrgyzstan)",
+    "seats_total": 120
+   }
+  ]
+ },
+ "KH": {
+  "qid": "Q424",
+  "name": "Cambodia",
+  "article": "Cambodia",
+  "chambers": [
+   {
+    "qid": "Q1234896",
+    "role": "lower",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Cambodia)",
+    "seats_total": 123
+   },
+   {
+    "qid": "Q3055339",
+    "role": "upper",
+    "name": "Senate of Cambodia",
+    "inferred": true,
+    "article": "Senate (Cambodia)",
+    "seats_total": 61
+   }
+  ]
+ },
+ "KI": {
+  "qid": "Q710",
+  "name": "Kiribati",
+  "article": "Kiribati",
+  "chambers": [
+   {
+    "qid": "Q1281107",
+    "role": "unicameral",
+    "name": "House of Assembly of Kiribati",
+    "inferred": false,
+    "article": "House of Assembly (Kiribati)",
+    "seats_total": 45
+   }
+  ]
+ },
+ "KM": {
+  "qid": "Q970",
+  "name": "Comoros",
+  "article": "Comoros",
+  "chambers": [
+   {
+    "qid": "Q1573424",
+    "role": "unicameral",
+    "name": "Assembly of the Union of the Comoros",
+    "inferred": false,
+    "article": "Assembly of the Union of the Comoros",
+    "seats_total": 33
+   }
+  ]
+ },
+ "KN": {
+  "qid": "Q763",
+  "name": "Saint Kitts and Nevis",
+  "article": "Saint Kitts and Nevis",
+  "chambers": [
+   {
+    "qid": "Q654504",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Saint Kitts and Nevis)",
+    "seats_total": 15
+   }
+  ]
+ },
+ "KP": {
+  "qid": "Q423",
+  "name": "North Korea",
+  "article": "North Korea",
+  "chambers": [
+   {
+    "qid": "Q714698",
+    "role": "unicameral",
+    "name": "Supreme People's Assembly",
+    "inferred": false,
+    "article": "Supreme People's Assembly",
+    "seats_total": 687
+   }
+  ]
+ },
+ "KR": {
+  "qid": "Q884",
+  "name": "South Korea",
+  "article": "South Korea",
+  "chambers": [
+   {
+    "qid": "Q494162",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (South Korea)",
+    "seats_total": 300
+   }
+  ]
+ },
+ "KW": {
+  "qid": "Q817",
+  "name": "Kuwait",
+  "article": "Kuwait",
+  "chambers": [
+   {
+    "qid": "Q1139228",
+    "role": "unicameral",
+    "name": "National Assembly of Kuwait",
+    "inferred": false,
+    "article": "National Assembly (Kuwait)",
+    "seats_total": 50
+   }
+  ]
+ },
+ "KZ": {
+  "qid": "Q232",
+  "name": "Kazakhstan",
+  "article": "Kazakhstan",
+  "chambers": [
+   {
+    "qid": "Q1316045",
+    "role": "unicameral",
+    "name": "Senate of Kazakhstan",
+    "inferred": true,
+    "article": "Senate of Kazakhstan",
+    "seats_total": 47
+   }
+  ]
+ },
+ "LA": {
+  "qid": "Q819",
+  "name": "Laos",
+  "article": "Laos",
+  "chambers": [
+   {
+    "qid": "Q1188525",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly of Laos",
+    "seats_total": 164
+   }
+  ]
+ },
+ "LB": {
+  "qid": "Q822",
+  "name": "Lebanon",
+  "article": "Lebanon",
+  "chambers": [
+   {
+    "qid": "Q1422275",
+    "role": "unicameral",
+    "name": "Parliament of Lebanon",
+    "inferred": false,
+    "article": "Parliament of Lebanon",
+    "seats_total": 128
+   }
+  ]
+ },
+ "LC": {
+  "qid": "Q760",
+  "name": "Saint Lucia",
+  "article": "Saint Lucia",
+  "chambers": [
+   {
+    "qid": "Q1282775",
+    "role": "lower",
+    "name": "House of Assembly of Saint Lucia",
+    "inferred": false,
+    "article": "House of Assembly of Saint Lucia",
+    "seats_total": 17
+   },
+   {
+    "qid": "Q1563075",
+    "role": "upper",
+    "name": "Senate of Saint Lucia",
+    "inferred": true,
+    "article": "Senate of Saint Lucia",
+    "seats_total": 11
+   }
+  ]
+ },
+ "LI": {
+  "qid": "Q347",
+  "name": "Liechtenstein",
+  "article": "Liechtenstein",
+  "chambers": [
+   {
+    "qid": "Q1149644",
+    "role": "unicameral",
+    "name": "Landtag of Liechtenstein",
+    "inferred": false,
+    "article": "Landtag of Liechtenstein",
+    "seats_total": 25
+   }
+  ]
+ },
+ "LK": {
+  "qid": "Q854",
+  "name": "Sri Lanka",
+  "article": "Sri Lanka",
+  "chambers": [
+   {
+    "qid": "Q1450753",
+    "role": "unicameral",
+    "name": "Parliament of Sri Lanka",
+    "inferred": false,
+    "article": "Parliament of Sri Lanka",
+    "seats_total": 225
+   }
+  ]
+ },
+ "LR": {
+  "qid": "Q1014",
+  "name": "Liberia",
+  "article": "Liberia",
+  "chambers": [
+   {
+    "qid": "Q1137584",
+    "role": "lower",
+    "name": "House of Representatives",
+    "inferred": true,
+    "article": "House of Representatives of Liberia",
+    "seats_total": 73
+   },
+   {
+    "qid": "Q1142439",
+    "role": "upper",
+    "name": "Senate of Liberia",
+    "inferred": true,
+    "article": "Senate of Liberia",
+    "seats_total": 30
+   }
+  ]
+ },
+ "LS": {
+  "qid": "Q1013",
+  "name": "Lesotho",
+  "article": "Lesotho",
+  "chambers": [
+   {
+    "qid": "Q1138713",
+    "role": "lower",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Lesotho)",
+    "seats_total": 120
+   },
+   {
+    "qid": "Q927191",
+    "role": "upper",
+    "name": "Senate of Lesotho",
+    "inferred": true,
+    "article": "Senate of Lesotho",
+    "seats_total": 33
+   }
+  ]
+ },
+ "LT": {
+  "qid": "Q37",
+  "name": "Lithuania",
+  "article": "Lithuania",
+  "chambers": [
+   {
+    "qid": "Q374152",
+    "role": "unicameral",
+    "name": "Seimas",
+    "inferred": false,
+    "article": "Seimas",
+    "seats_total": 141
+   }
+  ]
+ },
+ "LU": {
+  "qid": "Q32",
+  "name": "Luxembourg",
+  "article": "Luxembourg",
+  "chambers": [
+   {
+    "qid": "Q517449",
+    "role": "unicameral",
+    "name": "Chamber of Deputies",
+    "inferred": false,
+    "article": "Chamber of Deputies (Luxembourg)",
+    "seats_total": 60
+   }
+  ]
+ },
+ "LV": {
+  "qid": "Q211",
+  "name": "Latvia",
+  "article": "Latvia",
+  "chambers": [
+   {
+    "qid": "Q822919",
+    "role": "unicameral",
+    "name": "Saeima",
+    "inferred": false,
+    "article": "Saeima",
+    "seats_total": 100
+   }
+  ]
+ },
+ "LY": {
+  "qid": "Q1016",
+  "name": "Libya",
+  "article": "Libya",
+  "chambers": [
+   {
+    "qid": "Q17443556",
+    "role": "unicameral",
+    "name": "House of Representatives",
+    "inferred": false,
+    "article": "House of Representatives (Libya)",
+    "seats_total": 200
+   }
+  ]
+ },
+ "MA": {
+  "qid": "Q1028",
+  "name": "Morocco",
+  "article": "Morocco",
+  "chambers": [
+   {
+    "qid": "Q1572773",
+    "role": "lower",
+    "name": "House of Representatives of Morocco",
+    "inferred": false,
+    "article": "House of Representatives (Morocco)",
+    "seats_total": 395
+   },
+   {
+    "qid": "Q2718576",
+    "role": "upper",
+    "name": "House of Councillors of Morocco",
+    "inferred": false,
+    "article": "House of Councillors (Morocco)",
+    "seats_total": 120
+   }
+  ]
+ },
+ "MC": {
+  "qid": "Q235",
+  "name": "Monaco",
+  "article": "Monaco",
+  "chambers": [
+   {
+    "qid": "Q1127198",
+    "role": "unicameral",
+    "name": "National Council",
+    "inferred": false,
+    "article": "National Council (Monaco)",
+    "seats_total": 24
+   }
+  ]
+ },
+ "MD": {
+  "qid": "Q217",
+  "name": "Moldova",
+  "article": "Moldova",
+  "chambers": [
+   {
+    "qid": "Q555809",
+    "role": "unicameral",
+    "name": "Parliament of the Republic of Moldova",
+    "inferred": false,
+    "article": "Parliament of Moldova",
+    "seats_total": 101
+   }
+  ]
+ },
+ "ME": {
+  "qid": "Q236",
+  "name": "Montenegro",
+  "article": "Montenegro",
+  "chambers": [
+   {
+    "qid": "Q1579497",
+    "role": "unicameral",
+    "name": "Parliament of Montenegro",
+    "inferred": false,
+    "article": "Parliament of Montenegro",
+    "seats_total": 81
+   }
+  ]
+ },
+ "MG": {
+  "qid": "Q1019",
+  "name": "Madagascar",
+  "article": "Madagascar",
+  "chambers": [
+   {
+    "qid": "Q1141206",
+    "role": "lower",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Madagascar)",
+    "seats_total": 160
+   },
+   {
+    "qid": "Q3510853",
+    "role": "upper",
+    "name": "Senate",
+    "inferred": true,
+    "article": "Senate (Madagascar)",
+    "seats_total": 18
+   }
+  ]
+ },
+ "MH": {
+  "qid": "Q709",
+  "name": "Marshall Islands",
+  "article": "Marshall Islands",
+  "chambers": [
+   {
+    "qid": "Q1280186",
+    "role": "unicameral",
+    "name": "Legislature of the Marshall Islands",
+    "inferred": false,
+    "article": "Nitijela",
+    "seats_total": 33
+   }
+  ]
+ },
+ "MK": {
+  "qid": "Q221",
+  "name": "North Macedonia",
+  "article": "North Macedonia",
+  "chambers": [
+   {
+    "qid": "Q1258164",
+    "role": "unicameral",
+    "name": "Assembly of North Macedonia",
+    "inferred": false,
+    "article": "Assembly of North Macedonia",
+    "seats_total": 123
+   }
+  ]
+ },
+ "ML": {
+  "qid": "Q912",
+  "name": "Mali",
+  "article": "Mali",
+  "chambers": [
+   {
+    "qid": "Q1138071",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": true,
+    "dissolved": true,
+    "article": "National Assembly (Mali)",
+    "seats_total": 147
+   }
+  ]
+ },
+ "MM": {
+  "qid": "Q836",
+  "name": "Myanmar",
+  "article": "Myanmar",
+  "chambers": [
+   {
+    "qid": "Q3379823",
+    "role": "lower",
+    "name": "House of Representatives",
+    "inferred": true,
+    "dissolved": true,
+    "article": "Pyithu Hluttaw",
+    "seats_total": 440
+   },
+   {
+    "qid": "Q2119357",
+    "role": "upper",
+    "name": "Amyotha Hluttaw",
+    "inferred": true,
+    "dissolved": true,
+    "article": "Amyotha Hluttaw",
+    "seats_total": 224
+   }
+  ]
+ },
+ "MN": {
+  "qid": "Q711",
+  "name": "Mongolia",
+  "article": "Mongolia",
+  "chambers": [
+   {
+    "qid": "Q1544714",
+    "role": "unicameral",
+    "name": "State Great Khural",
+    "inferred": false,
+    "article": "State Great Khural",
+    "seats_total": 76
+   }
+  ]
+ },
+ "MR": {
+  "qid": "Q1025",
+  "name": "Mauritania",
+  "article": "Mauritania",
+  "chambers": [
+   {
+    "qid": "Q1138935",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Mauritania)",
+    "seats_total": 176
+   }
+  ]
+ },
+ "MT": {
+  "qid": "Q233",
+  "name": "Malta",
+  "article": "Malta",
+  "chambers": [
+   {
+    "qid": "Q1817866",
+    "role": "unicameral",
+    "name": "Parliament of Malta",
+    "inferred": false,
+    "article": "Parliament of Malta",
+    "seats_total": 67
+   }
+  ]
+ },
+ "MU": {
+  "qid": "Q1027",
+  "name": "Mauritius",
+  "article": "Mauritius",
+  "chambers": [
+   {
+    "qid": "Q1854129",
+    "role": "unicameral",
+    "name": "National Assembly of Mauritius",
+    "inferred": false,
+    "article": "National Assembly (Mauritius)",
+    "seats_total": 70
+   }
+  ]
+ },
+ "MV": {
+  "qid": "Q826",
+  "name": "Maldives",
+  "article": "Maldives",
+  "chambers": [
+   {
+    "qid": "Q650066",
+    "role": "unicameral",
+    "name": "People's Majlis",
+    "inferred": false,
+    "article": "People's Majlis",
+    "seats_total": 85
+   }
+  ]
+ },
+ "MW": {
+  "qid": "Q1020",
+  "name": "Malawi",
+  "article": "Malawi",
+  "chambers": [
+   {
+    "qid": "Q1577811",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Malawi)",
+    "seats_total": 193
+   }
+  ]
+ },
+ "MX": {
+  "qid": "Q96",
+  "name": "Mexico",
+  "article": "Mexico",
+  "chambers": [
+   {
+    "qid": "Q3014316",
+    "role": "lower",
+    "name": "Chamber of Deputies",
+    "inferred": true,
+    "article": "Chamber of Deputies (Mexico)",
+    "seats_total": 500
+   },
+   {
+    "qid": "Q264113",
+    "role": "upper",
+    "name": "Senate of the Republic",
+    "inferred": true,
+    "article": "Senate of the Republic (Mexico)",
+    "seats_total": 128
+   }
+  ]
+ },
+ "MY": {
+  "qid": "Q833",
+  "name": "Malaysia",
+  "article": "Malaysia",
+  "chambers": [
+   {
+    "qid": "Q1207092",
+    "role": "lower",
+    "name": "Dewan Rakyat",
+    "inferred": false,
+    "article": "Dewan Rakyat",
+    "seats_total": 222
+   },
+   {
+    "qid": "Q1207095",
+    "role": "upper",
+    "name": "Dewan Negara",
+    "inferred": false,
+    "article": "Dewan Negara",
+    "seats_total": 70
+   }
+  ]
+ },
+ "MZ": {
+  "qid": "Q1029",
+  "name": "Mozambique",
+  "article": "Mozambique",
+  "chambers": [
+   {
+    "qid": "Q1848595",
+    "role": "unicameral",
+    "name": "Assembly of the Republic",
+    "inferred": false,
+    "article": "Assembly of the Republic (Mozambique)",
+    "seats_total": 250
+   }
+  ]
+ },
+ "NA": {
+  "qid": "Q1030",
+  "name": "Namibia",
+  "article": "Namibia",
+  "chambers": [
+   {
+    "qid": "Q1769673",
+    "role": "lower",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Namibia)",
+    "seats_total": 104
+   },
+   {
+    "qid": "Q1969272",
+    "role": "upper",
+    "name": "National Council of Namibia",
+    "inferred": false,
+    "article": "National Council (Namibia)",
+    "seats_total": 42
+   }
+  ]
+ },
+ "NE": {
+  "qid": "Q1032",
+  "name": "Niger",
+  "article": "Niger",
+  "chambers": [
+   {
+    "qid": "Q1969585",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": true,
+    "dissolved": true,
+    "article": "National Assembly (Niger)",
+    "seats_total": 171
+   }
+  ]
+ },
+ "NG": {
+  "qid": "Q1033",
+  "name": "Nigeria",
+  "article": "Nigeria",
+  "chambers": [
+   {
+    "qid": "Q665693",
+    "role": "lower",
+    "name": "House of Representatives of Nigeria",
+    "inferred": false,
+    "article": "House of Representatives (Nigeria)",
+    "seats_total": 360
+   },
+   {
+    "qid": "Q2993611",
+    "role": "upper",
+    "name": "Senate of Nigeria",
+    "inferred": true,
+    "article": "Senate of Nigeria",
+    "seats_total": 109
+   }
+  ]
+ },
+ "NI": {
+  "qid": "Q811",
+  "name": "Nicaragua",
+  "article": "Nicaragua",
+  "chambers": [
+   {
+    "qid": "Q1969591",
+    "role": "unicameral",
+    "name": "Asamblea Nacional de Nicaragua",
+    "inferred": false,
+    "article": "National Assembly (Nicaragua)",
+    "seats_total": 92
+   }
+  ]
+ },
+ "NL": {
+  "qid": "Q55",
+  "name": "Netherlands",
+  "article": "Netherlands",
+  "chambers": [
+   {
+    "qid": "Q233262",
+    "role": "lower",
+    "name": "House of Representatives",
+    "inferred": false,
+    "article": "House of Representatives (Netherlands)",
+    "seats_total": 150
+   },
+   {
+    "qid": "Q59486",
+    "role": "upper",
+    "name": "Senate",
+    "inferred": false,
+    "article": "Senate (Netherlands)",
+    "seats_total": 75
+   }
+  ]
+ },
+ "NO": {
+  "qid": "Q20",
+  "name": "Norway",
+  "article": "Norway",
+  "chambers": [
+   {
+    "qid": "Q109016",
+    "role": "unicameral",
+    "name": "Stortinget",
+    "inferred": false,
+    "article": "Storting",
+    "seats_total": 169
+   }
+  ]
+ },
+ "NP": {
+  "qid": "Q837",
+  "name": "Nepal",
+  "article": "Nepal",
+  "chambers": [
+   {
+    "qid": "Q5915308",
+    "role": "lower",
+    "name": "House of Representatives",
+    "inferred": false,
+    "article": "House of Representatives (Nepal)",
+    "seats_total": 275
+   },
+   {
+    "qid": "Q8349995",
+    "role": "upper",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Nepal)",
+    "seats_total": 59
+   }
+  ]
+ },
+ "NR": {
+  "qid": "Q697",
+  "name": "Nauru",
+  "article": "Nauru",
+  "chambers": [
+   {
+    "qid": "Q1972029",
+    "role": "unicameral",
+    "name": "Parliament of Nauru",
+    "inferred": false,
+    "article": "Parliament of Nauru",
+    "seats_total": 19
+   }
+  ]
+ },
+ "NZ": {
+  "qid": "Q664",
+  "name": "New Zealand",
+  "article": "New Zealand",
+  "chambers": [
+   {
+    "qid": "Q2034424",
+    "role": "unicameral",
+    "name": "House of Representatives",
+    "inferred": false,
+    "article": "New Zealand House of Representatives",
+    "seats_total": 120
+   }
+  ]
+ },
+ "OM": {
+  "qid": "Q842",
+  "name": "Oman",
+  "article": "Oman",
+  "chambers": [
+   {
+    "qid": "Q818704",
+    "role": "lower",
+    "name": "Consultative Assembly of Oman",
+    "inferred": false,
+    "article": "Consultative Assembly (Oman)",
+    "seats_total": 90
+   },
+   {
+    "qid": "Q2117607",
+    "role": "upper",
+    "name": "state council of Oman",
+    "inferred": false,
+    "article": "Council of State (Oman)",
+    "seats_total": 86
+   }
+  ]
+ },
+ "PA": {
+  "qid": "Q804",
+  "name": "Panama",
+  "article": "Panama",
+  "chambers": [
+   {
+    "qid": "Q1368588",
+    "role": "unicameral",
+    "name": "National Assembly of Panama",
+    "inferred": false,
+    "article": "National Assembly (Panama)",
+    "seats_total": 71
+   }
+  ]
+ },
+ "PE": {
+  "qid": "Q419",
+  "name": "Peru",
+  "article": "Peru",
+  "chambers": [
+   {
+    "qid": "Q1357543",
+    "role": "unicameral",
+    "name": "Congress of the Republic of Peru",
+    "inferred": false,
+    "seats_total": 130
+   }
+  ]
+ },
+ "PG": {
+  "qid": "Q691",
+  "name": "Papua New Guinea",
+  "article": "Papua New Guinea",
+  "chambers": [
+   {
+    "qid": "Q24563",
+    "role": "unicameral",
+    "name": "National Parliament of Papua New Guinea",
+    "inferred": false,
+    "article": "National Parliament of Papua New Guinea",
+    "seats_total": 111
+   }
+  ]
+ },
+ "PH": {
+  "qid": "Q928",
+  "name": "Philippines",
+  "article": "Philippines",
+  "chambers": [
+   {
+    "qid": "Q678545",
+    "role": "lower",
+    "name": "House of Representatives of the Philippines",
+    "inferred": false,
+    "article": "House of Representatives of the Philippines",
+    "seats_total": 292
+   },
+   {
+    "qid": "Q1418426",
+    "role": "upper",
+    "name": "Senate of the Philippines",
+    "inferred": true,
+    "article": "Senate of the Philippines",
+    "seats_total": 24
+   }
+  ]
+ },
+ "PK": {
+  "qid": "Q843",
+  "name": "Pakistan",
+  "article": "Pakistan",
+  "chambers": [
+   {
+    "qid": "Q1518223",
+    "role": "lower",
+    "name": "National Assembly (Pakistan)",
+    "inferred": false,
+    "article": "National Assembly of Pakistan",
+    "seats_total": 342
+   },
+   {
+    "qid": "Q2571392",
+    "role": "upper",
+    "name": "Senate of Pakistan",
+    "inferred": true,
+    "article": "Senate of Pakistan",
+    "seats_total": 104
+   }
+  ]
+ },
+ "PL": {
+  "qid": "Q36",
+  "name": "Poland",
+  "article": "Poland",
+  "chambers": [
+   {
+    "qid": "Q98964",
+    "role": "lower",
+    "name": "Sejm of the Republic of Poland",
+    "inferred": false,
+    "article": "Sejm",
+    "seats_total": 460
+   },
+   {
+    "qid": "Q98975",
+    "role": "upper",
+    "name": "Senate of Poland",
+    "inferred": true,
+    "article": "Senate of Poland",
+    "seats_total": 100
+   }
+  ]
+ },
+ "PT": {
+  "qid": "Q45",
+  "name": "Portugal",
+  "article": "Portugal",
+  "chambers": [
+   {
+    "qid": "Q740564",
+    "role": "unicameral",
+    "name": "Assembly of the Republic",
+    "inferred": false,
+    "article": "Assembly of the Republic (Portugal)",
+    "seats_total": 230
+   }
+  ]
+ },
+ "PW": {
+  "qid": "Q695",
+  "name": "Palau",
+  "article": "Palau",
+  "chambers": [
+   {
+    "qid": "Q2118228",
+    "role": "lower",
+    "name": "House of Delegates of Palau",
+    "inferred": false,
+    "article": "House of Delegates of Palau",
+    "seats_total": 16
+   },
+   {
+    "qid": "Q969494",
+    "role": "upper",
+    "name": "Senate of Palau",
+    "inferred": true,
+    "article": "Senate of Palau",
+    "seats_total": 9
+   }
+  ]
+ },
+ "PY": {
+  "qid": "Q733",
+  "name": "Paraguay",
+  "article": "Paraguay",
+  "chambers": [
+   {
+    "qid": "Q320290",
+    "role": "lower",
+    "name": "Chamber of Deputies",
+    "inferred": true,
+    "article": "Chamber of Deputies of Paraguay",
+    "seats_total": 80
+   },
+   {
+    "qid": "Q2119404",
+    "role": "upper",
+    "name": "Senate of Paraguay",
+    "inferred": true,
+    "article": "Senate of Paraguay",
+    "seats_total": 45
+   }
+  ]
+ },
+ "QA": {
+  "qid": "Q846",
+  "name": "Qatar",
+  "article": "Qatar",
+  "chambers": [
+   {
+    "qid": "Q818691",
+    "role": "unicameral",
+    "name": "Consultative Assembly of Qatar",
+    "inferred": false,
+    "article": "Shura Council of Qatar",
+    "seats_total": 45
+   }
+  ]
+ },
+ "RO": {
+  "qid": "Q218",
+  "name": "Romania",
+  "article": "Romania",
+  "chambers": [
+   {
+    "qid": "Q320306",
+    "role": "lower",
+    "name": "Chamber of Deputies of Romania",
+    "inferred": true,
+    "article": "Chamber of Deputies (Romania)",
+    "seats_total": 330
+   },
+   {
+    "qid": "Q1466018",
+    "role": "upper",
+    "name": "Senate",
+    "inferred": true,
+    "article": "Senate of Romania",
+    "seats_total": 134
+   }
+  ]
+ },
+ "RS": {
+  "qid": "Q403",
+  "name": "Serbia",
+  "article": "Serbia",
+  "chambers": [
+   {
+    "qid": "Q920222",
+    "role": "unicameral",
+    "name": "National Assembly of Serbia",
+    "inferred": false,
+    "article": "National Assembly (Serbia)",
+    "seats_total": 250
+   }
+  ]
+ },
+ "RU": {
+  "qid": "Q159",
+  "name": "Russia",
+  "article": "Russia",
+  "chambers": [
+   {
+    "qid": "Q715641",
+    "role": "lower",
+    "name": "State Duma",
+    "inferred": false,
+    "article": "State Duma",
+    "seats_total": 450
+   },
+   {
+    "qid": "Q186473",
+    "role": "upper",
+    "name": "Federation Council",
+    "inferred": false,
+    "article": "Federation Council (Russia)",
+    "seats_total": 200
+   }
+  ]
+ },
+ "RW": {
+  "qid": "Q1037",
+  "name": "Rwanda",
+  "article": "Rwanda",
+  "chambers": [
+   {
+    "qid": "Q320292",
+    "role": "lower",
+    "name": "Chamber of Deputies",
+    "inferred": true,
+    "article": "Chamber of Deputies (Rwanda)",
+    "seats_total": 80
+   },
+   {
+    "qid": "Q3510861",
+    "role": "upper",
+    "name": "Senate of Rwanda",
+    "inferred": true,
+    "article": "Senate (Rwanda)",
+    "seats_total": 26
+   }
+  ]
+ },
+ "SA": {
+  "qid": "Q851",
+  "name": "Saudi Arabia",
+  "article": "Saudi Arabia",
+  "chambers": [
+   {
+    "qid": "Q818708",
+    "role": "unicameral",
+    "name": "Consultative Assembly of Saudi Arabia",
+    "inferred": false,
+    "article": "Consultative Assembly of Saudi Arabia",
+    "seats_total": 150
+   }
+  ]
+ },
+ "SB": {
+  "qid": "Q685",
+  "name": "Solomon Islands",
+  "article": "Solomon Islands",
+  "chambers": [
+   {
+    "qid": "Q727851",
+    "role": "unicameral",
+    "name": "National Parliament of Solomon Islands",
+    "inferred": false,
+    "article": "National Parliament of Solomon Islands",
+    "seats_total": 50
+   }
+  ]
+ },
+ "SC": {
+  "qid": "Q1042",
+  "name": "Seychelles",
+  "article": "Seychelles",
+  "chambers": [
+   {
+    "qid": "Q676484",
+    "role": "unicameral",
+    "name": "National Assembly of Seychelles",
+    "inferred": false,
+    "article": "National Assembly (Seychelles)",
+    "seats_total": 31
+   }
+  ]
+ },
+ "SD": {
+  "qid": "Q1049",
+  "name": "Sudan",
+  "article": "Sudan",
+  "chambers": [
+   {
+    "qid": "Q1969569",
+    "role": "lower",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly of Sudan",
+    "seats_total": 426
+   },
+   {
+    "qid": "Q2993867",
+    "role": "upper",
+    "name": "Council of States",
+    "inferred": false,
+    "article": "Council of States of Sudan",
+    "seats_total": 32
+   }
+  ]
+ },
+ "SE": {
+  "qid": "Q34",
+  "name": "Sweden",
+  "article": "Sweden",
+  "chambers": [
+   {
+    "qid": "Q272930",
+    "role": "unicameral",
+    "name": "Parliament of Sweden",
+    "inferred": false,
+    "article": "Riksdag",
+    "seats_total": 349
+   }
+  ]
+ },
+ "SG": {
+  "qid": "Q334",
+  "name": "Singapore",
+  "article": "Singapore",
+  "chambers": [
+   {
+    "qid": "Q1517231",
+    "role": "unicameral",
+    "name": "Parliament of Singapore",
+    "inferred": false,
+    "article": "Parliament of Singapore",
+    "seats_total": 99
+   }
+  ]
+ },
+ "SI": {
+  "qid": "Q215",
+  "name": "Slovenia",
+  "article": "Slovenia",
+  "chambers": [
+   {
+    "qid": "Q1568676",
+    "role": "lower",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Slovenia)",
+    "seats_total": 90
+   },
+   {
+    "qid": "Q953810",
+    "role": "upper",
+    "name": "National Council of Slovenia",
+    "inferred": false,
+    "article": "National Council (Slovenia)",
+    "seats_total": 40
+   }
+  ]
+ },
+ "SK": {
+  "qid": "Q214",
+  "name": "Slovakia",
+  "article": "Slovakia",
+  "chambers": [
+   {
+    "qid": "Q1139204",
+    "role": "unicameral",
+    "name": "National Council of the Slovak Republic",
+    "inferred": false,
+    "article": "National Council of Slovakia",
+    "seats_total": 150
+   }
+  ]
+ },
+ "SL": {
+  "qid": "Q1044",
+  "name": "Sierra Leone",
+  "article": "Sierra Leone",
+  "chambers": [
+   {
+    "qid": "Q1138130",
+    "role": "unicameral",
+    "name": "Parliament of Sierra Leone",
+    "inferred": false,
+    "article": "Parliament of Sierra Leone",
+    "seats_total": 124
+   }
+  ]
+ },
+ "SM": {
+  "qid": "Q238",
+  "name": "San Marino",
+  "article": "San Marino",
+  "chambers": [
+   {
+    "qid": "Q817979",
+    "role": "unicameral",
+    "name": "Grand and General Council",
+    "inferred": false,
+    "article": "Great and General Council",
+    "seats_total": 60
+   }
+  ]
+ },
+ "SN": {
+  "qid": "Q1041",
+  "name": "Senegal",
+  "article": "Senegal",
+  "chambers": [
+   {
+    "qid": "Q1853640",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Senegal)",
+    "seats_total": 165
+   }
+  ]
+ },
+ "SO": {
+  "qid": "Q1045",
+  "name": "Somalia",
+  "article": "Somalia",
+  "chambers": [
+   {
+    "qid": "Q21078126",
+    "role": "lower",
+    "name": "House of the People",
+    "inferred": false,
+    "seats_total": 261
+   },
+   {
+    "qid": "Q25683566",
+    "role": "upper",
+    "name": "Upper House of Somalia",
+    "inferred": false,
+    "article": "Senate of Somalia",
+    "seats_total": 54
+   }
+  ]
+ },
+ "SR": {
+  "qid": "Q730",
+  "name": "Suriname",
+  "article": "Suriname",
+  "chambers": [
+   {
+    "qid": "Q1760847",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Suriname)",
+    "seats_total": 51
+   }
+  ]
+ },
+ "SS": {
+  "qid": "Q958",
+  "name": "South Sudan",
+  "article": "South Sudan",
+  "chambers": [
+   {
+    "qid": "Q1968103",
+    "role": "lower",
+    "name": "National Legislative Assembly",
+    "inferred": false,
+    "article": "National Legislative Assembly",
+    "seats_total": 550
+   },
+   {
+    "qid": "Q1454821",
+    "role": "upper",
+    "name": "Council of States",
+    "inferred": false,
+    "article": "Council of States (South Sudan)",
+    "seats_total": 100
+   }
+  ]
+ },
+ "ST": {
+  "qid": "Q1039",
+  "name": "São Tomé and Príncipe",
+  "article": "São Tomé and Príncipe",
+  "chambers": [
+   {
+    "qid": "Q1267064",
+    "role": "unicameral",
+    "name": "Asamblea Nacional de Santo Tomé y Príncipe",
+    "inferred": false,
+    "article": "National Assembly (São Tomé and Príncipe)",
+    "seats_total": 55
+   }
+  ]
+ },
+ "SV": {
+  "qid": "Q792",
+  "name": "El Salvador",
+  "article": "El Salvador",
+  "chambers": [
+   {
+    "qid": "Q1812873",
+    "role": "unicameral",
+    "name": "Legislative Assembly of El Salvador",
+    "inferred": false,
+    "article": "Legislative Assembly of El Salvador",
+    "seats_total": 60
+   }
+  ]
+ },
+ "SY": {
+  "qid": "Q858",
+  "name": "Syria",
+  "article": "Syria",
+  "chambers": [
+   {
+    "qid": "Q1372196",
+    "role": "unicameral",
+    "name": "People's Assembly of Syria",
+    "inferred": false,
+    "article": "People's Assembly of Syria",
+    "seats_total": 210
+   }
+  ]
+ },
+ "SZ": {
+  "qid": "Q1050",
+  "name": "Eswatini",
+  "article": "Eswatini",
+  "chambers": [
+   {
+    "qid": "Q5914707",
+    "role": "lower",
+    "name": "House of Assembly of Eswatini",
+    "inferred": false,
+    "article": "House of Assembly of Eswatini",
+    "seats_total": 70
+   },
+   {
+    "qid": "Q2117771",
+    "role": "upper",
+    "name": "Senate of Eswatini",
+    "inferred": true,
+    "article": "Senate of Eswatini",
+    "seats_total": 30
+   }
+  ]
+ },
+ "TD": {
+  "qid": "Q657",
+  "name": "Chad",
+  "article": "Chad",
+  "chambers": [
+   {
+    "qid": "Q1599346",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly of Chad",
+    "seats_total": 155
+   }
+  ]
+ },
+ "TG": {
+  "qid": "Q945",
+  "name": "Togo",
+  "article": "Togo",
+  "chambers": [
+   {
+    "qid": "Q1969578",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Togo)",
+    "seats_total": 81
+   }
+  ]
+ },
+ "TH": {
+  "qid": "Q869",
+  "name": "Thailand",
+  "article": "Thailand",
+  "chambers": [
+   {
+    "qid": "Q914226",
+    "role": "lower",
+    "name": "House of Representatives of Thailand",
+    "inferred": true,
+    "article": "House of Representatives (Thailand)",
+    "seats_total": 500
+   },
+   {
+    "qid": "Q1699171",
+    "role": "upper",
+    "name": "Senate of Thailand",
+    "inferred": true,
+    "article": "Senate (Thailand)",
+    "seats_total": 150
+   }
+  ]
+ },
+ "TJ": {
+  "qid": "Q863",
+  "name": "Tajikistan",
+  "article": "Tajikistan",
+  "chambers": [
+   {
+    "qid": "Q9390763",
+    "role": "lower",
+    "name": "Assembly of Representatives",
+    "inferred": false,
+    "article": "Assembly of Representatives (Tajikistan)",
+    "seats_total": 63
+   },
+   {
+    "qid": "Q19921131",
+    "role": "upper",
+    "name": "National Assembly of Tajikistan",
+    "inferred": false,
+    "article": "National Assembly of Tajikistan",
+    "seats_total": 33
+   }
+  ]
+ },
+ "TL": {
+  "qid": "Q574",
+  "name": "Timor-Leste",
+  "article": "Timor-Leste",
+  "chambers": [
+   {
+    "qid": "Q680806",
+    "role": "unicameral",
+    "name": "National Parliament",
+    "inferred": false,
+    "article": "National Parliament of Timor-Leste",
+    "seats_total": 65
+   }
+  ]
+ },
+ "TM": {
+  "qid": "Q874",
+  "name": "Turkmenistan",
+  "article": "Turkmenistan",
+  "chambers": [
+   {
+    "qid": "Q630145",
+    "role": "lower",
+    "name": "Assembly of Turkmenistan",
+    "inferred": false,
+    "article": "Assembly of Turkmenistan",
+    "seats_total": 125
+   },
+   {
+    "qid": "Q949403",
+    "role": "upper",
+    "name": "Government Council of Turkmenistan",
+    "inferred": false,
+    "article": "People's Council of Turkmenistan",
+    "seats_total": 56
+   }
+  ]
+ },
+ "TN": {
+  "qid": "Q948",
+  "name": "Tunisia",
+  "article": "Tunisia",
+  "chambers": [
+   {
+    "qid": "Q18342090",
+    "role": "unicameral",
+    "name": "Assembly of the Representatives of the People",
+    "inferred": false,
+    "article": "Assembly of the Representatives of the People"
+   }
+  ]
+ },
+ "TO": {
+  "qid": "Q678",
+  "name": "Tonga",
+  "article": "Tonga",
+  "chambers": [
+   {
+    "qid": "Q1287831",
+    "role": "unicameral",
+    "name": "Legislative Assembly of Tonga",
+    "inferred": false,
+    "article": "Legislative Assembly of Tonga",
+    "seats_total": 26
+   }
+  ]
+ },
+ "TR": {
+  "qid": "Q43",
+  "name": "Turkey",
+  "article": "Turkey",
+  "chambers": [
+   {
+    "qid": "Q274918",
+    "role": "unicameral",
+    "name": "Grand National Assembly of Turkey",
+    "inferred": false,
+    "article": "Grand National Assembly of Turkey",
+    "seats_total": 600
+   }
+  ]
+ },
+ "TT": {
+  "qid": "Q754",
+  "name": "Trinidad and Tobago",
+  "article": "Trinidad and Tobago",
+  "chambers": [
+   {
+    "qid": "Q2145199",
+    "role": "lower",
+    "name": "House of Representatives",
+    "inferred": false,
+    "article": "House of Representatives (Trinidad and Tobago)",
+    "seats_total": 41
+   },
+   {
+    "qid": "Q3510869",
+    "role": "upper",
+    "name": "Senate of Trinidad and Tobago",
+    "inferred": true,
+    "article": "Senate (Trinidad and Tobago)",
+    "seats_total": 31
+   }
+  ]
+ },
+ "TV": {
+  "qid": "Q672",
+  "name": "Tuvalu",
+  "article": "Tuvalu",
+  "chambers": [
+   {
+    "qid": "Q897278",
+    "role": "unicameral",
+    "name": "Parliament of Tuvalu",
+    "inferred": false,
+    "article": "Parliament of Tuvalu",
+    "seats_total": 16
+   }
+  ]
+ },
+ "TZ": {
+  "qid": "Q924",
+  "name": "Tanzania",
+  "article": "Tanzania",
+  "chambers": [
+   {
+    "qid": "Q1138299",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly (Tanzania)",
+    "seats_total": 393
+   }
+  ]
+ },
+ "UA": {
+  "qid": "Q212",
+  "name": "Ukraine",
+  "article": "Ukraine",
+  "chambers": [
+   {
+    "qid": "Q176296",
+    "role": "unicameral",
+    "name": "Verkhovna Rada",
+    "inferred": false,
+    "article": "Verkhovna Rada",
+    "seats_total": 450
+   }
+  ]
+ },
+ "UG": {
+  "qid": "Q1036",
+  "name": "Uganda",
+  "article": "Uganda",
+  "chambers": [
+   {
+    "qid": "Q2052850",
+    "role": "unicameral",
+    "name": "Parliament of Uganda",
+    "inferred": false,
+    "article": "Parliament of Uganda",
+    "seats_total": 529
+   }
+  ]
+ },
+ "US": {
+  "qid": "Q30",
+  "name": "United States",
+  "article": "United States",
+  "chambers": [
+   {
+    "qid": "Q11701",
+    "role": "lower",
+    "name": "United States House of Representatives",
+    "inferred": true,
+    "article": "United States House of Representatives",
+    "seats_total": 435
+   },
+   {
+    "qid": "Q66096",
+    "role": "upper",
+    "name": "United States Senate",
+    "inferred": true,
+    "article": "United States Senate",
+    "seats_total": 100
+   }
+  ]
+ },
+ "UY": {
+  "qid": "Q77",
+  "name": "Uruguay",
+  "article": "Uruguay",
+  "chambers": [
+   {
+    "qid": "Q320303",
+    "role": "lower",
+    "name": "Chamber of Representatives",
+    "inferred": true,
+    "article": "Chamber of Representatives of Uruguay",
+    "seats_total": 99
+   },
+   {
+    "qid": "Q1149788",
+    "role": "upper",
+    "name": "Chamber of senators",
+    "inferred": true,
+    "article": "Senate of Uruguay",
+    "seats_total": 30
+   }
+  ]
+ },
+ "UZ": {
+  "qid": "Q265",
+  "name": "Uzbekistan",
+  "article": "Uzbekistan",
+  "chambers": [
+   {
+    "qid": "Q6518225",
+    "role": "lower",
+    "name": "Legislative Chamber of Uzbekistan",
+    "inferred": false,
+    "article": "Legislative Chamber of Uzbekistan",
+    "seats_total": 150
+   },
+   {
+    "qid": "Q2117711",
+    "role": "upper",
+    "name": "Senate of Uzbekistan",
+    "inferred": true,
+    "article": "Senate of Uzbekistan",
+    "seats_total": 100
+   }
+  ]
+ },
+ "VC": {
+  "qid": "Q757",
+  "name": "Saint Vincent and the Grenadines",
+  "article": "Saint Vincent and the Grenadines",
+  "chambers": [
+   {
+    "qid": "Q1138357",
+    "role": "unicameral",
+    "name": "House of Assembly of Saint Vincent and the Grenadines",
+    "inferred": false,
+    "article": "House of Assembly of Saint Vincent and the Grenadines",
+    "seats_total": 21
+   }
+  ]
+ },
+ "VE": {
+  "qid": "Q717",
+  "name": "Venezuela",
+  "article": "Venezuela",
+  "chambers": [
+   {
+    "qid": "Q1585014",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly of Venezuela",
+    "seats_total": 285
+   }
+  ]
+ },
+ "VN": {
+  "qid": "Q881",
+  "name": "Vietnam",
+  "article": "Vietnam",
+  "chambers": [
+   {
+    "qid": "Q1765001",
+    "role": "unicameral",
+    "name": "National Assembly of Vietnam",
+    "inferred": false,
+    "article": "National Assembly of Vietnam",
+    "seats_total": 498
+   }
+  ]
+ },
+ "VU": {
+  "qid": "Q686",
+  "name": "Vanuatu",
+  "article": "Vanuatu",
+  "chambers": [
+   {
+    "qid": "Q764201",
+    "role": "unicameral",
+    "name": "Parliament of Vanuatu",
+    "inferred": false,
+    "article": "Parliament of Vanuatu",
+    "seats_total": 52
+   }
+  ]
+ },
+ "WS": {
+  "qid": "Q683",
+  "name": "Samoa",
+  "article": "Samoa",
+  "chambers": [
+   {
+    "qid": "Q1269555",
+    "role": "unicameral",
+    "name": "Legislative Assembly of Samoa",
+    "inferred": false,
+    "article": "Legislative Assembly of Samoa",
+    "seats_total": 51
+   }
+  ]
+ },
+ "YE": {
+  "qid": "Q805",
+  "name": "Yemen",
+  "article": "Yemen",
+  "chambers": [
+   {
+    "qid": "Q1484102",
+    "role": "lower",
+    "name": "House of Representatives",
+    "inferred": false,
+    "article": "House of Representatives (Yemen)",
+    "seats_total": 301
+   },
+   {
+    "qid": "Q12239042",
+    "role": "upper",
+    "name": "Shura Council",
+    "inferred": false,
+    "article": "Shura Council (Yemen)",
+    "seats_total": 111
+   }
+  ]
+ },
+ "ZA": {
+  "qid": "Q258",
+  "name": "South Africa",
+  "article": "South Africa",
+  "chambers": [
+   {
+    "qid": "Q240823",
+    "role": "lower",
+    "name": "National Assembly of South Africa",
+    "inferred": false,
+    "article": "National Assembly (South Africa)",
+    "seats_total": 400
+   },
+   {
+    "qid": "Q2119484",
+    "role": "upper",
+    "name": "National Council of Provinces",
+    "inferred": false,
+    "article": "National Council of Provinces",
+    "seats_total": 90
+   }
+  ]
+ },
+ "ZM": {
+  "qid": "Q953",
+  "name": "Zambia",
+  "article": "Zambia",
+  "chambers": [
+   {
+    "qid": "Q1784088",
+    "role": "unicameral",
+    "name": "National Assembly",
+    "inferred": false,
+    "article": "National Assembly of Zambia",
+    "seats_total": 166
+   }
+  ]
+ },
+ "ZW": {
+  "qid": "Q954",
+  "name": "Zimbabwe",
+  "article": "Zimbabwe",
+  "chambers": [
+   {
+    "qid": "Q1631396",
+    "role": "lower",
+    "name": "National Assembly of Zimbabwe",
+    "inferred": false,
+    "article": "National Assembly of Zimbabwe",
+    "seats_total": 210
+   },
+   {
+    "qid": "Q659211",
+    "role": "upper",
+    "name": "Senate of Zimbabwe",
+    "inferred": true,
+    "article": "Senate of Zimbabwe",
+    "seats_total": 40
+   }
+  ]
+ }
+}

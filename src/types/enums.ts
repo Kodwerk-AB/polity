@@ -70,6 +70,37 @@ export const CHAMBER_ROLES = [
 ] as const
 export type ChamberRole = (typeof CHAMBER_ROLES)[number]
 
+/**
+ * How competitive a chamber's seats actually are.
+ *
+ * North Korea's Supreme People's Assembly is a real building with real members
+ * who really meet; what is fictional is the contest. Recording it as an
+ * ordinary parliament would be false, and omitting the country would be worse —
+ * it has a legislature and a composition, and a dataset that cannot say so is
+ * incomplete precisely where the question is most interesting.
+ *
+ * So competitiveness is its own axis, orthogonal to structure. A chamber can be
+ * bicameral, directly elected AND uncontested. The judgement is recorded once,
+ * here, rather than leaking into `standing` (where "opposition" would become a
+ * lie) or into omission.
+ */
+export const CONTESTATION = [
+  /** Seats are won in elections the opposition can, and does, win. */
+  'competitive',
+  /** Elections occur and are meaningfully constrained — barred candidates,
+   *  captured media, a ruling party that does not lose. */
+  'restricted',
+  /** A single party or front presents the only slate. Turnout and unanimity
+   *  are reported near 100%; North Korea, Eritrea, Turkmenistan. */
+  'uncontested',
+  /** Members are appointed by a monarch or ruling council, not elected. */
+  'appointed',
+  /** The chamber exists in law and is not currently sitting — suspended,
+   *  dissolved past its term, or displaced by emergency rule. */
+  'suspended',
+] as const
+export type Contestation = (typeof CONTESTATION)[number]
+
 /** How a chamber's members arrive. Several may apply at once. */
 export const SELECTION_METHODS = [
   'directly_elected',
@@ -104,6 +135,10 @@ export const GOVERNMENT_FORMS = [
   'theocracy',
   'military_junta',
   'transitional',
+  /** Power is held by a party that permits no rival to take it, whatever the
+   *  constitution says — China, North Korea, Eritrea. Distinct from
+   *  `one_party_state` only in that a front of nominal parties may exist. */
+  'dominant_party_state',
   'other',
 ] as const
 export type GovernmentForm = (typeof GOVERNMENT_FORMS)[number]
