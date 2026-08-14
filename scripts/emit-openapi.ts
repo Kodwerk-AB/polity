@@ -272,7 +272,13 @@ const chamber = {
       type: 'string',
       pattern: '^\\d{4}(-\\d{2}-\\d{2})?$',
       description:
-        'The vintage of the composition — the election it describes, NOT the day the pipeline ran. Year precision where the source gives only a year. Falls back to the retrieval date only when no election date is known.',
+        'The vintage of the composition — the election it describes, NOT the day the pipeline ran. Year precision where the source gives only a year. Falls back to the retrieval date only when no election date is known, and sets as_of_is_fallback when it does.',
+    },
+    as_of_is_fallback: {
+      type: 'boolean',
+      enum: [true],
+      description:
+        'as_of carries the retrieval date because no election date could be read — a data gap, not an observation. It says the chamber was read today, never that its composition was current today. Absent, not false, where as_of is a real election date.',
     },
     retrieved_at: {
       type: 'string',

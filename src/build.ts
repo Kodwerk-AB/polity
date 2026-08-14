@@ -1071,6 +1071,10 @@ const buildCountry = async (
       ...(mandate ? { mandate } : {}),
       // The election the composition describes, NOT the day we read it.
       as_of: lastElection ?? retrieved,
+      // Say so when it IS the day we read it — otherwise the fallback reads as
+      // a fresh observation and there is nothing in the payload to tell them
+      // apart.
+      ...(lastElection ? {} : { as_of_is_fallback: true as const }),
       retrieved_at: retrieved,
       ...(newer ? { superseded_by_election: newer } : {}),
       confidence,

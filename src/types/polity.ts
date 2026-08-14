@@ -376,9 +376,19 @@ export interface Chamber {
    * being asserted 273 times.
    *
    * Falls back to the retrieval date only when no election date is known, which
-   * is itself worth seeing.
+   * is itself worth seeing. When it does, `as_of_is_fallback` is set — the two
+   * dates are otherwise indistinguishable in the payload, so a consumer had no
+   * way to tell a dated observation from a gap wearing today's date.
    */
   as_of: ISODate
+  /**
+   * `as_of` carries the retrieval date because no election date could be read.
+   *
+   * A data gap, not an observation: it says only that the chamber was read
+   * today, never that its composition was current today. Affects 49 of 276
+   * chambers. Absent — not `false` — where `as_of` is a real election date.
+   */
+  as_of_is_fallback?: true
   /** When the pipeline last read the source. Distinct from `as_of`. */
   retrieved_at: ISODate
   /**

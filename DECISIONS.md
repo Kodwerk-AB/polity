@@ -376,20 +376,31 @@ would assert something the source does not say.
 Stated plainly rather than left for a consumer to discover:
 
 - **Kazakhstan** — the 2026 constitution abolished both chambers on 1 July 2026
-  and replaced them with a unicameral 145-seat Kurultai. We still record one
-  50-seat "Senate" as `unicameral`, with the Mäjilis missing entirely.
+  and replaced them with a unicameral 145-seat Kurultai, first elected in August
+  2026. We still record one 50-seat "Senate". This is upstream lag, not a
+  resolver bug: Wikidata's P194 still points at "Parliament of Kazakhstan" with
+  the Senate and Mäjilis as its parts, and carries no Kurultai item. The chamber
+  is `flagged`, holds zero composition rows, and now carries
+  `as_of_is_fallback`. Publishing a 145-seat chamber would assert what no source
+  yet says.
 - ~~**Nepal** — `head_of_state` names the *Vice* President.~~ **Fixed.** The
   presidency's office item had all three real presidents marked *deprecated* and
   closed, leaving the vice president as its only open holder; the country item
   was correct throughout. An office that calls its own history false is no
   longer read. See "Trusting an office item" below.
 - **Pakistan** — `form: theocracy`, described above.
-- **`represents`** — derived from title rather than power, so all three absolute
-  monarchies (Brunei, Oman, Saudi Arabia) read `ceremonial`, the exact inverse
-  of reality.
-- **`as_of` fallback** — where no election date parses, `as_of` carries the
-  retrieval date, presenting a data gap as a fresh observation. Affects roughly
-  50 chambers.
+- ~~**`represents`** — all three absolute monarchies read `ceremonial`.~~
+  **Fixed.** A crowned head of state was called ceremonial on the title alone
+  wherever a prime minister existed, which is right for Britain and Sweden and
+  the exact inverse for Brunei, Oman, Saudi Arabia and Eswatini, where the crown
+  IS the executive and the premier serves at its pleasure. `form` separates
+  them, and is stated outright on all four.
+- ~~**`as_of` fallback** — presents a data gap as a fresh observation.~~
+  **Disclosed.** The fallback remains (there is no date to report), but it is no
+  longer silent: `as_of_is_fallback: true` marks all 49 affected chambers, so a
+  gap wearing today's date is now distinguishable from an observation made
+  today. It was previously inferable only by comparing `as_of` to
+  `retrieved_at` and knowing the rule.
 - **Bolivia's Senate** — composition sums to 52 in a 36-seat chamber, with no
   alliance nesting to explain it.
 

@@ -1,6 +1,6 @@
 {
  "schema_version": "1.0.0",
- "generated_at": "2026-08-14T22:22:36.791Z",
+ "generated_at": "2026-08-14T22:25:54.547Z",
  "countries": {
   "AD": {
    "iso": "AD",
@@ -661,6 +661,7 @@
      "contestation": "restricted",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -959,6 +960,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
@@ -3716,6 +3718,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
@@ -6609,6 +6612,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
@@ -9247,7 +9251,7 @@
      "non_free": false,
      "credit": "Chin Yu Chu / Pangalau"
     },
-    "represents": "ceremonial",
+    "represents": "political",
     "provenance": {
      "kind": "wikidata",
      "derivation": "structured",
@@ -9287,6 +9291,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -11423,6 +11428,7 @@
      "contestation": "competitive",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "superseded_by_election": {
       "article": "2026 Bahamian general election",
@@ -12470,6 +12476,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
@@ -12748,6 +12755,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
@@ -13414,6 +13422,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
@@ -14062,6 +14071,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -17773,6 +17783,7 @@
       "state": "due_soon"
      },
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
@@ -22579,6 +22590,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -28550,6 +28562,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -30318,6 +30331,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -32803,6 +32817,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -34008,6 +34023,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -34342,6 +34358,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
@@ -35395,6 +35412,7 @@
      "contestation": "competitive",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "superseded_by_election": {
       "article": "2026 Guinean parliamentary election",
@@ -39115,6 +39133,7 @@
       "state": "due_soon"
      },
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -47896,6 +47915,7 @@
      "contestation": "competitive",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -47919,6 +47939,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -48336,6 +48357,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -52561,6 +52583,7 @@
      "contestation": "competitive",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -52691,6 +52714,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -53841,6 +53865,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
@@ -56031,6 +56056,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -61043,6 +61069,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -62084,6 +62111,7 @@
      "contestation": "suspended",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -64597,6 +64625,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
@@ -67342,6 +67371,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
@@ -68591,6 +68621,7 @@
      "contestation": "suspended",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -72964,7 +72995,7 @@
      "non_free": false,
      "credit": "Foreign Ministry of Oman"
     },
-    "represents": "ceremonial",
+    "represents": "political",
     "provenance": {
      "kind": "wikidata",
      "derivation": "structured",
@@ -73037,6 +73068,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -73710,6 +73742,7 @@
      "contestation": "competitive",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "superseded_by_election": {
       "article": "2026 Peruvian general election",
@@ -78889,6 +78922,7 @@
      "contestation": "competitive",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -78912,6 +78946,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -83155,6 +83190,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -83236,7 +83272,7 @@
      "non_free": false,
      "credit": "U.S. Department of State from United States"
     },
-    "represents": "ceremonial",
+    "represents": "political",
     "provenance": {
      "kind": "wikidata",
      "derivation": "structured",
@@ -83269,6 +83305,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -84235,6 +84272,7 @@
      ],
      "term_years": 5,
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -85899,6 +85937,7 @@
       "state": "current"
      },
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -87828,6 +87867,7 @@
      "contestation": "suspended",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -87851,6 +87891,7 @@
      "contestation": "suspended",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -88563,6 +88604,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
@@ -89413,7 +89455,7 @@
      "non_free": false,
      "credit": "Cabinet Public Relations Office of the Cabinet Secretariat"
     },
-    "represents": "ceremonial",
+    "represents": "political",
     "provenance": {
      "kind": "wikidata",
      "derivation": "structured",
@@ -89510,6 +89552,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -91714,6 +91757,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -92401,6 +92445,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -94031,6 +94076,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
@@ -97302,6 +97348,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -97408,6 +97455,7 @@
      "contestation": "restricted",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -100076,6 +100124,7 @@
      "contestation": "suspended",
      "composition": [],
      "as_of": "2026-08-14",
+     "as_of_is_fallback": true,
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {

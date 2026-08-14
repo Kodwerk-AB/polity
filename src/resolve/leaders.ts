@@ -553,9 +553,18 @@ export const leadersOf = async (
   // whatever the form folded to — and a president in a system Wikidata could
   // not classify is political, since a purely ceremonial presidency is the
   // exception that a parliamentary form would have named.
+  //
+  // EXCEPT under an absolute monarchy, where the crown IS the executive and
+  // the prime minister serves at its pleasure. Reading the title alone made
+  // Brunei's Sultan, Oman's Sultan and Saudi Arabia's King ceremonial — the
+  // exact inverse of their power — because each appoints a premier beneath
+  // them. `form` is what separates them from Britain and Sweden, and it is
+  // stated outright on all three rather than inferred.
   if (head_of_state && head_of_government) {
     const office = `${head_of_state.office?.label ?? ''} ${head_of_state.name}`
-    if (/\b(king|queen|emir|sultan|emperor|grand duke|prince)\b/i.test(office)) {
+    if (form === 'absolute_monarchy') {
+      head_of_state.represents = 'political'
+    } else if (/\b(king|queen|emir|sultan|emperor|grand duke|prince)\b/i.test(office)) {
       head_of_state.represents = 'ceremonial'
     } else if (form === 'other' || form === 'dominant_party_state' || form === 'one_party_state') {
       head_of_state.represents = 'political'
