@@ -42,7 +42,7 @@ jobs:
       # Keyed by run so it always restores from the most recent, and saves even
       # when the build fails — a partial harvest is still worth keeping.
       - name: Restore harvest cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: .cache
           key: polity-cache-${{ github.run_id }}

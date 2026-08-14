@@ -60,11 +60,16 @@ jobs:
       - name: Build site payloads
         run: bun run build:site
 
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
 
-      - uses: actions/upload-pages-artifact@v3
+      # `include-hidden-files` is not optional here: the action excludes
+      # dotfiles by default, and `emit-site.ts` writes `site/.nojekyll`.
+      # Without it Pages hands the payload to Jekyll, which drops the
+      # underscore-prefixed entries.
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: site
+          include-hidden-files: true
 
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
