@@ -400,6 +400,14 @@ Stated plainly rather than left for a consumer to discover:
   below Malaysia (0.504). No threshold separates the set, so the wrong answer
   stays visible rather than being replaced by a differently wrong one.
 
+- **Tuvalu** — `head_of_government` reads "Ben Do". The prime minister is
+  Feleti Teo, appointed 2024-02-26, which is exactly the date we record. The
+  Wikidata item Q5441662 IS the Tuvalu premiership entry — right office, right
+  start date, preferred rank, open statement, and its own English description
+  still reads "Prime Minister of Tuvalu since 2024" — but its LABEL has been
+  vandalised. No structural signal distinguishes it from a correct record, so
+  nothing in the resolver can catch it; the fix belongs upstream.
+
 - **Pakistan** — `form: theocracy`, described above.
 - ~~**`represents`** — all three absolute monarchies read `ceremonial`.~~
   **Fixed.** A crowned head of state was called ceremonial on the title alone
