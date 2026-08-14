@@ -779,13 +779,29 @@ const buildCountry = async (
     // an undatable composition is not a high-confidence one — Sudan's upper
     // house shipped `high` with no vintage whatsoever. `partial` is the honest
     // ceiling: the seats may be right, and nothing here can say when they were.
+    // A sum that matches proves less than it looks.
+    //
+    // Every row a chamber lists is checked against its declared size, and a
+    // composition can satisfy that while naming almost nobody: nine chambers
+    // reported a full seat count made entirely of "Independent" and "Vacant",
+    // and six of them were marked `high` on the strength of the arithmetic.
+    // Naming no party is not a confident description of a parliament, however
+    // exactly the seats add up.
+    const RESIDUAL_ROW =
+      /^(others?|independents?|vacant|non[- ]attached|unaffiliated|crossbench|blank|appointed|nominated)/i
+    const namedParties = blocs.filter(bloc => !RESIDUAL_ROW.test(bloc.name.trim())).length
+    const residualSeats = blocs
+      .filter(bloc => RESIDUAL_ROW.test(bloc.name.trim()))
+      .reduce((sum, bloc) => sum + bloc.seats, 0)
+    const mostlyResidual = seated > 0 && residualSeats / seated >= 0.5
+
     const expired = mandate?.state === 'overdue'
     const undated = !lastElection
     const confidence: Confidence = !blocs.length
       ? 'flagged'
-      : !sumsMatch || expired
+      : !sumsMatch || expired || !namedParties
         ? 'flagged'
-        : unresolved > 0 || !precise || undated
+        : unresolved > 0 || !precise || undated || mostlyResidual
           ? 'partial'
           : 'high'
 
@@ -824,8 +840,38 @@ const buildCountry = async (
     chambers.find(chamber => chamber.role === 'lower') ??
     chambers.find(chamber => chamber.role === 'unicameral') ??
     chambers[0]!
-  const governingRows = primary.composition.filter(row => row.standing === 'government')
-  const backingRows = primary.composition.filter(row => row.standing === 'backing')
+  // A party belongs to ONE side. Sources split a bloc across rows — Sweden's
+  // Democrats appear as 2 seats in government and 70 supporting it, which put
+  // the same Q-id in `governing` AND `backing` and implied the party is both
+  // in cabinet and outside it.
+  //
+  // The LARGER row decides which side the party is on, and the seats stay
+  // where the source put them.
+  //
+  // Sweden's Democrats read 2 seats in government and 70 supporting it; the 70
+  // is the party and the 2 is a rounding of the source's own markup. Taking
+  // government as the stronger claim moved all 72 into the cabinet and made a
+  // confidence-and-supply arrangement look like a coalition — the exact
+  // distinction `backing` exists to preserve. Trusting the bigger row instead
+  // keeps SD outside the government, where it belongs, and keeps the seat
+  // total honest.
+  const sideOf = new Map<QID, 'government' | 'backing'>()
+  const largest = new Map<QID, number>()
+  for (const row of primary.composition) {
+    if (!row.party || (row.standing !== 'government' && row.standing !== 'backing')) continue
+    if (row.seats >= (largest.get(row.party) ?? -1)) {
+      largest.set(row.party, row.seats)
+      sideOf.set(row.party, row.standing)
+    }
+  }
+  const sideFor = (row: Seating) =>
+    row.party ? (sideOf.get(row.party) ?? row.standing) : row.standing
+  const governingRows = primary.composition.filter(
+    row => (row.standing === 'government' || row.standing === 'backing') && sideFor(row) === 'government'
+  )
+  const backingRows = primary.composition.filter(
+    row => (row.standing === 'government' || row.standing === 'backing') && sideFor(row) === 'backing'
+  )
   const governmentSeats = governingRows.reduce((sum, row) => sum + row.seats, 0)
   const backedSeats = governmentSeats + backingRows.reduce((sum, row) => sum + row.seats, 0)
 

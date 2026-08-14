@@ -145,8 +145,24 @@ const validateCountry = (
     polity.chambers.find(chamber => chamber.role === 'lower') ??
     polity.chambers.find(chamber => chamber.role === 'unicameral')
   if (primary) {
+    // Count by PARTY, not by row: a party split across a government row and a
+    // backing row belongs to one side, and the build decides which by the
+    // larger row. Summing the rows labelled `government` therefore disagrees
+    // with the government's own total by exactly the smaller row.
+    const side = new Map<string, string>()
+    const biggest = new Map<string, number>()
+    for (const row of primary.composition) {
+      if (!row.party || (row.standing !== 'government' && row.standing !== 'backing')) continue
+      if (row.seats >= (biggest.get(row.party) ?? -1)) {
+        biggest.set(row.party, row.seats)
+        side.set(row.party, row.standing)
+      }
+    }
     const seatedGovernment = primary.composition
-      .filter(row => row.standing === 'government')
+      .filter(row => {
+        if (row.standing !== 'government' && row.standing !== 'backing') return false
+        return (row.party ? side.get(row.party) : row.standing) === 'government'
+      })
       .reduce((total, row) => total + row.seats, 0)
     if (polity.government.seats !== seatedGovernment) {
       note(

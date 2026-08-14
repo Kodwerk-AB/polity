@@ -1,6 +1,6 @@
 {
  "schema_version": "1.0.0",
- "generated_at": "2026-08-14T05:54:26.100Z",
+ "generated_at": "2026-08-14T05:57:57.831Z",
  "countries": {
   "AD": {
    "iso": "AD",
@@ -480,7 +480,7 @@
      },
      "as_of": "2023-10-07",
      "retrieved_at": "2026-08-14",
-     "confidence": "high",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -8208,7 +8208,7 @@
      },
      "as_of": "2022-12-19",
      "retrieved_at": "2026-08-14",
-     "confidence": "high",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -8250,7 +8250,7 @@
      },
      "as_of": "2022-12-19",
      "retrieved_at": "2026-08-14",
-     "confidence": "high",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -29680,7 +29680,7 @@
      },
      "as_of": "2025-03-04",
      "retrieved_at": "2026-08-14",
-     "confidence": "high",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -57252,7 +57252,7 @@
      },
      "as_of": "2023-11-20",
      "retrieved_at": "2026-08-14",
-     "confidence": "high",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -76868,7 +76868,6 @@
     "governing": [
      "Q253586",
      "Q645681",
-     "Q18976059",
      "Q1265313",
      "Q12745038",
      "Q752521",
@@ -76878,6 +76877,7 @@
      "Q24084648"
     ],
     "backing": [
+     "Q18976059",
      "Q1076922",
      "Q1559559",
      "Q139746423",
@@ -76887,7 +76887,7 @@
      "Q11155601",
      "Q18976059"
     ],
-    "seats": 136,
+    "seats": 135,
     "seats_with_backing": 157,
     "minority": false,
     "authority": "established",
@@ -79670,13 +79670,13 @@
      "Q110843",
      "Q213654",
      "Q110857",
-     "Q504069"
+     "Q213654"
     ],
     "backing": [
      "Q504069",
-     "Q213654"
+     "Q504069"
     ],
-    "seats": 103,
+    "seats": 102,
     "seats_with_backing": 176,
     "minority": true,
     "authority": "established",
@@ -83251,7 +83251,7 @@
      },
      "as_of": "2022-09-25",
      "retrieved_at": "2026-08-14",
-     "confidence": "high",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -83271,7 +83271,7 @@
     "seats": 30,
     "minority": false,
     "authority": "established",
-    "confidence": "high",
+    "confidence": "partial",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -83690,7 +83690,7 @@
      },
      "as_of": "2025-10-05",
      "retrieved_at": "2026-08-14",
-     "confidence": "high",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -83860,7 +83860,7 @@
      },
      "as_of": "2023-09-29",
      "retrieved_at": "2026-08-14",
-     "confidence": "high",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -85982,7 +85982,7 @@
      ],
      "as_of": "2026-08-14",
      "retrieved_at": "2026-08-14",
-     "confidence": "partial",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
