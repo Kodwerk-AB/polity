@@ -20,20 +20,24 @@ export interface CountryRef {
   name: string
   /** The country's own English Wikipedia article. */
   article?: string
+  /** P298 — the alpha-3 code, which is how outside datasets key countries. */
+  alpha3?: string
 }
 
 interface SparqlBinding {
   country?: { value?: string }
   iso?: { value?: string }
+  alpha3?: { value?: string }
   name?: { value?: string }
 }
 
 const UN_MEMBERS_QUERY = `
-SELECT ?country ?iso ?name WHERE {
+SELECT ?country ?iso ?alpha3 ?name WHERE {
   ?country p:P463 ?membership .
   ?membership ps:P463 wd:Q1065 .
   FILTER NOT EXISTS { ?membership pq:P582 ?ended }
   ?country wdt:P297 ?iso .
+  OPTIONAL { ?country wdt:P298 ?alpha3 }
   OPTIONAL { ?country rdfs:label ?name FILTER(LANG(?name) = "en") }
 }`
 
@@ -56,7 +60,14 @@ export const unMemberStates = async (): Promise<CountryRef[]> => {
     const iso = row.iso?.value?.toUpperCase()
     if (!qid || !iso || !/^Q\d+$/.test(qid) || !/^[A-Z]{2}$/.test(iso)) continue
     // A country may bind twice when it carries two labels; first wins.
-    if (!seen.has(iso)) seen.set(iso, { iso, qid: qid as QID, name: row.name?.value ?? iso })
+    const alpha3 = row.alpha3?.value?.toUpperCase()
+    if (!seen.has(iso))
+      seen.set(iso, {
+        iso,
+        qid: qid as QID,
+        name: row.name?.value ?? iso,
+        ...(alpha3 && /^[A-Z]{3}$/.test(alpha3) ? { alpha3 } : {}),
+      })
   }
 
   // The UN seat and the ISO code are not always held by the same entity.

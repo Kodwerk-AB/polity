@@ -18,7 +18,7 @@ import type { Standing } from '../types/enums'
 const MODEL = 'claude-haiku-4-5-20251001'
 /** Bumped whenever SYSTEM changes, so a prompt fix invalidates old answers
  *  rather than serving a cached reading of a rule that no longer applies. */
-const PROMPT_VERSION = 'v9'
+const PROMPT_VERSION = 'v10'
 const API = 'https://api.anthropic.com/v1/messages'
 
 export interface ExtractedBloc {
@@ -307,7 +307,13 @@ Rules:
   the note — but set disputed true when the text says the office is contested,
   disputed, vacant, or claimed by more than one person.
 - A title with no name beside it means nobody is recorded. Omit that office
-  rather than borrowing a name from another line. If the title is there and the
+  rather than borrowing a name from another line.
+- Report a PERSON'S NAME, never a description of one. Canada's field holds
+  "{{Current Canadian monarch}}", a template that renders to a name we cannot
+  see; "Current Canadian monarch", "the reigning monarch", "President of X" and
+  "vacant" are all descriptions, not names. Omit the office when that is all
+  the text gives you — a missing leader is recoverable, a title masquerading as
+  a person is not. If the title is there and the
   name is missing BECAUSE rivals claim it, set vacant_contested true.
 - claimants: when a name carries a note that another person disputes it, record
   that person. Sudan writes "Disputed by Abdelaziz al-Hilu of the Government of

@@ -344,7 +344,10 @@ export const leadersOf = async (
     if (!id) return null
     const person = (await getEntities([id], 'labels|claims'))[id]
     const name = labelOf(person)
-    if (!name) return null
+    // Wikidata itself sometimes carries a placeholder where a person belongs —
+    // Burundi's head of state resolved to a label reading "<UNKNOWN>". A leader
+    // we cannot name is not a leader we should publish.
+    if (!name || /^[<(\[]|unknown|vacant|n\/a$/i.test(name.trim())) return null
 
     // CROSS-CHECK the country's claim against the person's own record.
     //

@@ -457,9 +457,37 @@ export interface Polity {
   /** One entry for unicameral, two for bicameral. Never a different shape. */
   chambers: Chamber[]
   government: Government
+  /**
+   * V-Dem's electoral democracy index for the country, 0–1.
+   *
+   * An outside measure of whether elections are actually contested, carried
+   * because the rest of this record cannot supply it: seat counts show that one
+   * party holds everything, and cannot say whether that is a landslide or a
+   * rigged ballot. Barbados scores 0.797 and Turkmenistan 0.148 on chambers
+   * whose arithmetic looks identical.
+   *
+   * ABSENT for the 17 UN members V-Dem does not cover — mostly small states
+   * (Antigua, Belize, Saint Lucia, Monaco, much of the Pacific). Absence says
+   * nothing about the country and must never be read as a low score.
+   *
+   * Published rather than merely consulted, so a consumer can apply its own
+   * threshold instead of inheriting ours.
+   */
+  democracy?: DemocracyIndex
   /** Everything read to build this record. */
   sources: Provenance[]
   updated_at: ISODate
+}
+
+/**
+ * V-Dem's electoral democracy index, with the year it describes.
+ */
+export interface DemocracyIndex {
+  /** 0–1; higher is a freer contest. */
+  score: number
+  /** The year scored — annual data, so typically the year before the rebuild. */
+  year: number
+  source: 'vdem'
 }
 
 /**

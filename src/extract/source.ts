@@ -47,6 +47,22 @@ export interface ChamberSource {
    * gate.
    */
   elections?: string
+  /**
+   * How the chamber's members get their seats, as its article states it.
+   *
+   * The `voting_system` field is prose, but it is prose written to answer
+   * exactly one question: "Appointment by the Governor-General", "Appointed by
+   * the President of Barbados", "Proportional representation (single
+   * transferable vote)".
+   *
+   * Nothing else available says this. Seat arithmetic cannot: Antigua's
+   * appointed Senate and Australia's elected one are structurally identical —
+   * a handful of rows, no party contest visible — so a rule reading counts
+   * called both the same thing. And no blanket rule by role works either,
+   * because Australia's upper house IS directly elected while Jamaica's is
+   * not.
+   */
+  voting?: string
 }
 
 /**
@@ -124,6 +140,26 @@ const statedSeats = (wikitext: string): number | undefined => {
   return seats && seats >= 10 && seats <= 3200 ? seats : undefined
 }
 
+/**
+ * The `voting_system` field, trimmed to its first clause.
+ *
+ * The value is usually a wikilink followed by a gloss running to a paragraph;
+ * the distinguishing words are at the front, so the tail is dropped rather
+ * than fed downstream.
+ */
+const votingSystem = (wikitext: string): string | undefined => {
+  const raw = /^\s*\|\s*voting_system\d*\s*=\s*(.+)$/im.exec(wikitext)?.[1]
+  if (!raw) return undefined
+  const cleaned = raw
+    .replace(/<ref[\s\S]*$/i, '')
+    .replace(/\[\[(?:[^\]|]*\|)?([^\]]*)\]\]/g, '$1')
+    .replace(/\{\{[^}]*\}\}/g, ' ')
+    .replace(/'''|<br\s*\/?>/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+  return cleaned ? cleaned.slice(0, 160) : undefined
+}
+
 const electionLines = (wikitext: string): string | undefined => {
   const lines = [...wikitext.matchAll(ELECTION_FIELDS)]
     .map(match => match[0].trim())
@@ -139,7 +175,8 @@ export const chamberSource = async (
 
   // One reading for every branch below.
   const stated = statedSeats(page.wikitext)
-  const seatsField = stated ? { seats: stated } : {}
+  const voting = votingSystem(page.wikitext)
+  const seatsField = { ...(stated ? { seats: stated } : {}), ...(voting ? { voting } : {}) }
 
   const field = compositionField(page.wikitext)
   if (field) {

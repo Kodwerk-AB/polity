@@ -272,6 +272,21 @@ const government = {
   },
 } as const
 
+const democracyIndex = {
+  type: 'object',
+  required: ['score', 'year', 'source'],
+  properties: {
+    score: {
+      type: 'number',
+      minimum: 0,
+      maximum: 1,
+      description: 'Higher is a freer contest. Barbados 0.797; Turkmenistan 0.148.',
+    },
+    year: { type: 'integer', description: 'The year scored. Annual data.' },
+    source: { type: 'string', enum: ['vdem'] },
+  },
+} as const
+
 const polity = {
   type: 'object',
   required: [
@@ -308,6 +323,11 @@ const polity = {
         'One entry for unicameral, two for bicameral. The shape never changes, so a consumer writes one code path. Pick by role, never by index.',
     },
     government,
+    democracy: {
+      ...democracyIndex,
+      description:
+        "V-Dem's electoral democracy index for the country. Absent for the 17 UN members V-Dem does not cover — mostly small states. Absence says nothing about the country and must never be read as a low score.",
+    },
     sources: { type: 'array', items: provenance },
     updated_at: { type: 'string', format: 'date' },
   },
@@ -345,6 +365,7 @@ const spec = {
       Seating: seating,
       Chamber: chamber,
       Government: government,
+      DemocracyIndex: democracyIndex,
       Polity: polity,
       PolityDataset: {
         type: 'object',

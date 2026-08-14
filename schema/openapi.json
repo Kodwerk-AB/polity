@@ -1004,6 +1004,32 @@
           }
         }
       },
+      "DemocracyIndex": {
+        "type": "object",
+        "required": [
+          "score",
+          "year",
+          "source"
+        ],
+        "properties": {
+          "score": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Higher is a freer contest. Barbados 0.797; Turkmenistan 0.148."
+          },
+          "year": {
+            "type": "integer",
+            "description": "The year scored. Annual data."
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "vdem"
+            ]
+          }
+        }
+      },
       "Polity": {
         "type": "object",
         "required": [
@@ -2099,6 +2125,33 @@
                 }
               }
             }
+          },
+          "democracy": {
+            "type": "object",
+            "required": [
+              "score",
+              "year",
+              "source"
+            ],
+            "properties": {
+              "score": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Higher is a freer contest. Barbados 0.797; Turkmenistan 0.148."
+              },
+              "year": {
+                "type": "integer",
+                "description": "The year scored. Annual data."
+              },
+              "source": {
+                "type": "string",
+                "enum": [
+                  "vdem"
+                ]
+              }
+            },
+            "description": "V-Dem's electoral democracy index for the country. Absent for the 17 UN members V-Dem does not cover — mostly small states. Absence says nothing about the country and must never be read as a low score."
           },
           "sources": {
             "type": "array",
@@ -3271,6 +3324,33 @@
                       }
                     }
                   }
+                },
+                "democracy": {
+                  "type": "object",
+                  "required": [
+                    "score",
+                    "year",
+                    "source"
+                  ],
+                  "properties": {
+                    "score": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1,
+                      "description": "Higher is a freer contest. Barbados 0.797; Turkmenistan 0.148."
+                    },
+                    "year": {
+                      "type": "integer",
+                      "description": "The year scored. Annual data."
+                    },
+                    "source": {
+                      "type": "string",
+                      "enum": [
+                        "vdem"
+                      ]
+                    }
+                  },
+                  "description": "V-Dem's electoral democracy index for the country. Absent for the 17 UN members V-Dem does not cover — mostly small states. Absence says nothing about the country and must never be read as a low score."
                 },
                 "sources": {
                   "type": "array",

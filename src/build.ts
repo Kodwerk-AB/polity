@@ -10,12 +10,13 @@ import {
 import { unMemberStates } from './resolve/countries'
 import { chambersOf, type ChamberRef } from './resolve/chambers'
 import { formFromProse, governmentForm, leadersOf } from './resolve/leaders'
+import { democracyScore, FREE_ELECTION_SCORE, type DemocracyScore } from './resolve/democracy'
 import { electionSince } from './extract/elections'
 import { chamberSource } from './extract/source'
 import { governmentTypeLine, leaderLines } from './extract/leaders'
 import { extractComposition, extractLeaders, type ExtractedBloc } from './extract/model'
 import { hashOf } from './net/cache'
-import type { BlocKind, Confidence, Contestation, SpectrumBand } from './types/enums'
+import type { BlocKind, ChamberRole, Confidence, Contestation, SelectionMethod, SpectrumBand } from './types/enums'
 import type {
   Chamber,
   Entity,
@@ -130,10 +131,57 @@ const mandateOf = (
   return { expected_end: expected.toISOString().slice(0, 10), inferred, state }
 }
 
+/**
+ * How members reach their seats, read from the article's `voting_system`.
+ *
+ * `selection` was previously guessed from `role` alone — every lower house
+ * `directly_elected`, every upper house `indirectly_elected`. That is wrong in
+ * both directions: Australia's, Palau's and Micronesia's upper chambers are
+ * directly elected, while Jamaica's, Canada's and Antigua's are appointed
+ * outright. The field states which, in words chosen to answer this exact
+ * question.
+ */
+const APPOINTED = /\bappoint(ed|ment)\b|\bnominat(ed|ion) by\b|\bhereditar/i
+const INDIRECT = /\bindirect|\belectoral college\b|\belected by (?:the )?(?:state|regional|provincial|member|local)/i
+const DIRECT = /\bdirect|proportional representation|first-past-the-post|first past the post|majoritarian|\bplurality\b|two-round|instant-runoff|single transferable|party-list|\bblock voting\b|universal suffrage/i
+
+export const selectionOf = (role: ChamberRole, voting: string | undefined): SelectionMethod[] => {
+  const found: SelectionMethod[] = []
+  if (voting) {
+    if (DIRECT.test(voting)) found.push('directly_elected')
+    if (INDIRECT.test(voting)) found.push('indirectly_elected')
+    if (APPOINTED.test(voting)) found.push('appointed')
+  }
+  if (found.length) return found
+  // No statement: fall back to what the role almost always implies.
+  return role === 'upper' ? ['indirectly_elected'] : ['directly_elected']
+}
+
+/**
+ * Give back a chamber the seat arithmetic condemned but the evidence clears.
+ *
+ * Concentration cannot tell a landslide from a rigged ballot — the two produce
+ * the same numbers. Barbados' governing party took all 30 seats in 2022 in an
+ * election nobody disputes, and the 90% rule called it `uncontested` for it.
+ *
+ * V-Dem measures the contest itself, so it settles what the seats cannot. Used
+ * in ONE direction only: it can clear a verdict, never impose one. A score we
+ * lack, or one in the contested middle, leaves our own reading standing —
+ * because the bands overlap there (Senegal 0.633 sits above Kenya 0.563) and no
+ * cut sorts them correctly. Only an unambiguous score speaks.
+ */
+export const landslideOr = (
+  verdict: Contestation,
+  democracy: DemocracyScore | undefined
+): Contestation =>
+  democracy && democracy.score >= FREE_ELECTION_SCORE ? 'competitive' : verdict
+
 const contestationOf = (
   form: Polity['form'],
   chamber: ChamberRef,
-  blocs: ExtractedBloc[]
+  blocs: ExtractedBloc[],
+  selection: SelectionMethod[],
+  democracy: DemocracyScore | undefined
 ): Contestation => {
   if (chamber.dissolved) return 'suspended'
 
@@ -155,7 +203,21 @@ const contestationOf = (
   if (form === 'absolute_monarchy') return 'appointed'
   if (form === 'theocracy') return 'restricted'
 
-  // 2. A house with no PARTIES in it at all.
+  // 2. A chamber nobody stands for election to.
+  //
+  //    Antigua's, Barbados' and Trinidad's senates each seat three or four
+  //    named parties, because the prime minister and the leader of the
+  //    opposition appoint their own people — so the benches look exactly like
+  //    an elected chamber's and the seat arithmetic below called all three
+  //    `competitive`. No contest was held. `voting_system` says so plainly
+  //    ("Appointment by the Governor-General"), and it is the only signal that
+  //    separates them from Australia's Senate, which is directly elected and
+  //    otherwise identical in shape.
+  if (selection.includes('appointed') && !selection.includes('directly_elected')) {
+    return 'appointed'
+  }
+
+  // 3. A house with no PARTIES in it at all.
   //
   //    Two very different things look like this. An upper chamber of delegates
   //    — Britain's Lords, Germany's Bundesrat, Canada's Senate — is appointed
@@ -170,9 +232,24 @@ const contestationOf = (
   //    holding a party contest, whichever kind it is.
   //    A chamber with NO composition at all is a data gap, not a fact — but an
   //    upper house is appointed by default, which is what it almost always is.
-  if (partyRows === 0) return chamber.role === 'upper' || total > 0 ? 'appointed' : 'competitive'
+  //    Which of the two it is, is STATED — the article's `voting_system` field
+  //    exists to say so. Antigua's Senate reads "Appointment by the
+  //    Governor-General", Australia's reads "Proportional representation
+  //    (single transferable vote)", and the two chambers are otherwise
+  //    indistinguishable to any rule counting seats. Guessing from `role` put
+  //    Micronesia, the Marshall Islands, Nauru and Palau — directly elected,
+  //    genuinely contested, non-partisan legislatures — in the same bucket as
+  //    Saudi Arabia's Shura.
+  if (partyRows === 0) {
+    if (selection.includes('appointed')) return 'appointed'
+    // Directly elected and no parties on the benches means a non-partisan
+    // chamber, not an unfree one. Nauru and Micronesia have no parties at all.
+    if (selection.includes('directly_elected')) return 'competitive'
+    return chamber.role === 'upper' || total > 0 ? 'appointed' : 'competitive'
+  }
 
-  // 3. THE ARITHMETIC, which is the part `form` cannot supply.
+  // 4. THE ARITHMETIC, which is the part `form` cannot supply.
+  //    Its one blind spot is closed at the bottom of this function.
   //
   //    `form` is unusable for a third of the world: Wikidata's P122 returns
   //    NOTHING for 39 countries and a bare "republic" for 21 more, so a rule
@@ -193,11 +270,11 @@ const contestationOf = (
   // opposition-share rule first called it merely restricted.
   if (total > 0 && partyRows > 0) {
     // A single party holding the entire chamber.
-    if (partyRows === 1 && dominance >= 0.99) return 'uncontested'
+    if (partyRows === 1 && dominance >= 0.99) return landslideOr('uncontested', democracy)
     // Effectively no opposition: one bloc past 90%.
-    if (dominance >= 0.9) return 'uncontested'
+    if (dominance >= 0.9) return landslideOr('uncontested', democracy)
     // A supermajority no ordinary election produces.
-    if (dominance >= 0.75) return 'restricted'
+    if (dominance >= 0.75) return landslideOr('restricted', democracy)
   }
 
   // A chamber the source never split into sides tells us nothing about who
@@ -238,11 +315,11 @@ const contestationOf = (
     // system, not a captured one, and it is among the most competitive
     // chambers in the world.
     if (opposition === 0 && governing >= total * 0.9 && partyRows >= 2 && total >= 20) {
-      return 'uncontested'
+      return landslideOr('uncontested', democracy)
     }
 
     // An opposition that exists but holds almost nothing.
-    if (opposition / total <= 0.05) return 'restricted'
+    if (opposition / total <= 0.05) return landslideOr('restricted', democracy)
   }
 
   // Nothing above could speak: no concentration worth naming and no sides to
@@ -459,7 +536,17 @@ interface BuildResult {
 }
 
 /** Wikitext leftovers that mean the field held no readable name. */
-const NOT_A_NAME = /^\s*$|\{\{|^(prime minister|president|monarch|king|queen|chancellor|premier|vacant|tbd|none)\b/i
+/**
+ * Text that is a description of an officeholder rather than one.
+ *
+ * The model is told not to return these, and this is the second line: Canada's
+ * infobox holds `{{Current Canadian monarch}}`, and a stripped template reads
+ * as the perfectly plausible "Current Canadian monarch". A title standing in
+ * for a person is worse than an absent leader, because nothing downstream can
+ * tell it is wrong.
+ */
+const NOT_A_NAME =
+  /^\s*$|\{\{|^<|^(current|the |incumbent|reigning|prime minister|president|monarch|king|queen|chancellor|premier|governor|vacant|tbd|none|unknown)\b|\b(monarch|of the united|of canada|unknown)\b/i
 
 /**
  * Fold a name for comparison: diacritics out, letters only.
@@ -578,6 +665,10 @@ const buildCountry = async (
   const leaders = await leadersOf(countryQid, startingForm, retrieved, !!proseForm)
   // The office arrangement can correct the label — see `leadersOf`.
   const form = leaders.form
+  // P298 is the alpha-3 code, which is how outside datasets key countries.
+  // Read from the entity already in hand rather than threaded down from the
+  // resolver, so nothing else has to carry it.
+  const democracy = await democracyScore(claimStrings(countryEntity, 'P298')[0])
 
   // THE FRESHNESS CHECK. A country's own article is the most-watched page it
   // has: measured across twelve states, every one had been edited within four
@@ -611,6 +702,22 @@ const buildCountry = async (
       applyNamedLeader(leaders.head_of_state, named.head_of_state, lines, retrieved)
       if (!named.same_person) {
         applyNamedLeader(leaders.head_of_government, named.head_of_government, lines, retrieved)
+      }
+      // The article lists every office a country has. Where it names NO head of
+      // government, the country does not have one — and a stale Wikidata
+      // statement is all that was keeping it. Ghana's article names a president,
+      // a vice-president, a speaker and a chief justice, and no prime minister,
+      // because the office does not exist; the record was carrying Nana
+      // Akufo-Addo, a president two years out of office, in the slot.
+      // The article lists every office a country has, so it settles whether a
+      // separate head of government exists at all. Ghana's names a president, a
+      // vice-president, a speaker and a chief justice and no prime minister —
+      // because the office does not exist — while Wikidata's stale P6 was still
+      // filling the slot with a president two years out of office.
+      //
+      // Both shapes mean the same thing: one person holds both offices.
+      if (leaders.head_of_government && (named.same_person || !named.head_of_government)) {
+        leaders.head_of_government = null
       }
       for (const claim of named.claimants ?? []) {
         const target =
@@ -652,6 +759,8 @@ const buildCountry = async (
     let revid: number | undefined
     let precise = false
     let statedSeats: number | undefined
+    /** The article's `voting_system` field — how members reach their seats. */
+    let voting: string | undefined
     let description: string | undefined
     let lastElection: string | undefined
     let nextElection: string | undefined
@@ -664,6 +773,7 @@ const buildCountry = async (
         revid = source.revid
         precise = source.precise
         statedSeats = source.seats
+        voting = source.voting
         const extraction = await extractComposition(source.hash, source.text, {
           chamber: ref.name,
           country: countryName,
@@ -851,6 +961,7 @@ const buildCountry = async (
     const mostlyResidual = seated > 0 && residualSeats / seated >= 0.5
 
     const expired = mandate?.state === 'overdue'
+    const selection = selectionOf(ref.role, voting)
     const undated = !lastElection
     const confidence: Confidence = !blocs.length
       ? 'flagged'
@@ -866,8 +977,8 @@ const buildCountry = async (
       name: ref.name,
       ...(ref.name_local ? { name_local: ref.name_local } : {}),
       seats_total: seatsTotal,
-      selection: ref.role === 'upper' ? ['indirectly_elected'] : ['directly_elected'],
-      contestation: contestationOf(form, ref, blocs),
+      selection,
+      contestation: contestationOf(form, ref, blocs, selection, democracy),
       composition,
       ...(lastElection ? { last_election: lastElection } : {}),
       ...(nextElection ? { next_election: nextElection } : {}),
@@ -982,6 +1093,7 @@ const buildCountry = async (
       name: countryName,
       form,
       form_raw: prose ? [...form_raw, prose] : form_raw,
+      ...(democracy ? { democracy: { ...democracy, source: 'vdem' as const } } : {}),
       head_of_state: leaders.head_of_state,
       head_of_government: leaders.head_of_government,
       parties,

@@ -44,7 +44,7 @@ Nothing provides this. That was checked, not assumed:
 | **ParlGov** | **Dead — October 2024** | Had exactly this model. Maintainer retired, no successor. 37 countries, ends June 2023 |
 | **IPU Parline** | Alive | ~200 attributes per chamber, **no party breakdown** at all |
 | **Wikidata** | Alive | Only **2 national legislatures** carry usable party-seat data |
-| **CLEA / CPDS / V-Dem** | Alive | Election *results archives* and indices — not current composition |
+| **CLEA / CPDS / V-Dem** | Alive | Election *results archives* and indices — not current composition. V-Dem's index is used here as one input to `contestation` |
 | **PolitPro / Europe Elects** | Alive | **Poll projections**, not real parliaments. Terms forbid derived platforms |
 
 The distinction that matters: **results archives are abundant; current
@@ -127,6 +127,24 @@ contest. Recording it as an ordinary parliament would be false and omitting the
 country would be worse, so `contestation` carries the judgement — a chamber can
 be bicameral, directly elected AND `uncontested`.
 
+It is judged from three signals, in order. **`voting_system`** settles how
+members arrive: Antigua's Senate reads "Appointment by the Governor-General"
+and Australia's reads "Proportional representation", and no seat count
+distinguishes them — both are a handful of rows with no visible contest. Then
+**seat concentration**, which is the only signal available for the third of the
+world Wikidata's `P122` describes as nothing or as a bare "republic". Then
+**V-Dem's electoral democracy index**, which closes the one blind spot
+arithmetic has: a landslide and a rigged ballot produce identical numbers.
+Barbados won 30 of 30 seats in 2022 in an election nobody disputes and scores
+0.797; Turkmenistan wins everything too and scores 0.148.
+
+V-Dem is used in ONE direction — it can clear a chamber the arithmetic
+condemned, never condemn one it cleared — and only above 0.7, because the bands
+overlap in the middle (Senegal 0.633 sits above Kenya 0.563) and no cut sorts
+those correctly. The score ships on the country as `democracy`, so a consumer
+can apply its own threshold rather than inherit ours. It covers 176 of 193
+members; the omissions are small states, and absence never means a low score.
+
 **An alliance is not a party.** `kind` separates a party from an electoral
 alliance, a parliamentary group, independents and the chamber's own bookkeeping.
 "Which party governs?" has no honest answer when the answer is an alliance of
@@ -165,4 +183,5 @@ bun run test
 
 ## Licence
 
-Code MIT. Data ODbL — derived from Wikidata (CC0) and Wikipedia (CC BY-SA).
+Code MIT. Data ODbL — derived from Wikidata (CC0), Wikipedia (CC BY-SA) and
+V-Dem's electoral democracy index (CC-BY, via Our World in Data).
