@@ -69,6 +69,12 @@ jobs:
           bun run validate
 
       # A rebuild that found nothing new should not manufacture a commit.
+      #
+      # The harvest takes the better part of an hour, so `main` has usually
+      # moved by the time there is anything to push — a plain push is rejected
+      # as stale through no fault of the data. This commit only ever touches
+      # `data` and `schema`, which nothing else writes, so replaying it onto
+      # the fresh tip is the correct resolution rather than a merge.
       - name: Commit
         run: |
           git config user.name  'polity'
@@ -81,4 +87,11 @@ jobs:
           COUNTRIES=$(node -e "console.log(Object.keys(require('./data/polity.json').countries).length)")
           ERRORS=$(node -e "console.log(require('./data/issues.json').filter(i=>i.severity==='error').length)")
           git commit -m "Rebuild: ${COUNTRIES} countries, ${ERRORS} errors"
+          for attempt in 1 2 3; do
+            if git push; then
+              exit 0
+            fi
+            echo "push rejected (attempt ${attempt}); rebasing onto the current tip"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+          done
           git push
