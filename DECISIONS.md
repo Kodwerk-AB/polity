@@ -9,8 +9,8 @@ This file states each rule, in the order it fires, with the case that forced it.
 It exists so a consumer can decide whether they agree, and re-derive a different
 answer from the same fields if they do not.
 
-The counts below are from the current build: **193 countries, 273 chambers,
-2,104 seat rows, 1,394 parties.**
+The counts below are from the current build: **196 countries, 276 chambers,
+2,108 seat rows, 1,403 parties.**
 
 ---
 
@@ -378,8 +378,11 @@ Stated plainly rather than left for a consumer to discover:
 - **Kazakhstan** — the 2026 constitution abolished both chambers on 1 July 2026
   and replaced them with a unicameral 145-seat Kurultai. We still record one
   50-seat "Senate" as `unicameral`, with the Mäjilis missing entirely.
-- **Nepal** — `head_of_state` names the *Vice* President. The President is Ram
-  Chandra Paudel.
+- ~~**Nepal** — `head_of_state` names the *Vice* President.~~ **Fixed.** The
+  presidency's office item had all three real presidents marked *deprecated* and
+  closed, leaving the vice president as its only open holder; the country item
+  was correct throughout. An office that calls its own history false is no
+  longer read. See "Trusting an office item" below.
 - **Pakistan** — `form: theocracy`, described above.
 - **`represents`** — derived from title rather than power, so all three absolute
   monarchies (Brunei, Oman, Saudi Arabia) read `ceremonial`, the exact inverse
@@ -389,3 +392,37 @@ Stated plainly rather than left for a consumer to discover:
   50 chambers.
 - **Bolivia's Senate** — composition sums to 52 in a 36-seat chamber, with no
   alliance nesting to explain it.
+
+---
+
+## Trusting an office item
+
+Two Wikidata items can name a country's leader, and neither is reliable alone.
+The country item (P35/P6) is often years behind, because the statement is written
+when a leader arrives and rarely closed when they leave. The office item (P1308)
+is maintained where the country is not — so the office is tried first, and the
+country is the fallback.
+
+Where they disagree, the tiebreak is the start date: the later one wins, because
+a claim nobody dated is a claim nobody has revisited. That is right in seventeen
+measured cases and wrong in one.
+
+**Nepal** is the exception, and it is the reason for the rule below. Its
+presidency office lists four holders: the three genuine presidents, every one of
+them marked `deprecated` *and* closed, and the vice president, open and starting
+2025-09-09. On dates alone the vice president wins, so we published him as head
+of state — with his own vice-presidential portrait attached.
+
+The fix is not to trust rank across sources. Preferring the country item wherever
+it carries a preferred-rank claim was tested and **breaks all seventeen** of the
+legitimate cases, because the country's preferred claim is usually the stale one.
+
+The signal is `deprecated` itself. It means *"this statement is false"*, which is
+not what happens when a term ends — that is an end date. A president who served
+and left is closed, never deprecated. So an office whose past holders are
+deprecated has been edited by someone who misread the rank, and nothing it leaves
+open is evidence. Measured across every disagreement: all seventeen legitimate
+office-wins carry **zero** deprecated holders; Nepal's presidency carries three
+of four.
+
+`trustedHolder` refuses such an office outright and lets the country item answer.

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { landslideOr, selectionOf, withoutAllianceHeaders } from './build'
-import { executivePowerOf } from './resolve/leaders'
+import { executivePowerOf, trustedHolder } from './resolve/leaders'
 import { FREE_ELECTION_SCORE } from './resolve/democracy'
 import { familiesOf } from './resolve/ideology'
 import type { QID } from './types/polity'
@@ -220,5 +220,55 @@ describe('executivePowerOf', () => {
     expect(at('presidential_republic', ['Federal presidential republic'], false)).toBe(
       'head_of_state'
     )
+  })
+})
+
+describe('trustedHolder', () => {
+  const held = (id: string, rank: string, opts: { ended?: boolean; start?: string } = {}) =>
+    ({
+      rank,
+      mainsnak: { datavalue: { value: { id } } },
+      qualifiers: {
+        ...(opts.ended ? { P582: [{}] } : {}),
+        ...(opts.start
+          ? { P580: [{ datavalue: { value: { time: `+${opts.start}T00:00:00Z` } } }] }
+          : {}),
+      },
+    }) as never
+
+  const idOf = (statement: ReturnType<typeof trustedHolder>) =>
+    (statement as { mainsnak?: { datavalue?: { value?: { id?: string } } } } | undefined)?.mainsnak
+      ?.datavalue?.value?.id
+
+  it('names the open holder of a maintained office', () => {
+    expect(
+      idOf(
+        trustedHolder([
+          held('Q_old', 'normal', { ended: true, start: '2015-01-01' }),
+          held('Q_now', 'normal', { start: '2023-01-01' }),
+        ])
+      )
+    ).toBe('Q_now')
+  })
+
+  it('refuses an office whose past holders are marked deprecated', () => {
+    // Nepal: the three real presidents sit deprecated and closed, leaving the
+    // VICE president as the only open holder. An office that calls its own
+    // history false is not evidence — fall through to the country item, which
+    // had Ram Chandra Poudel right.
+    expect(
+      trustedHolder([
+        held('Q_president_1', 'deprecated', { ended: true, start: '2008-07-21' }),
+        held('Q_president_2', 'deprecated', { ended: true, start: '2015-10-29' }),
+        held('Q_president_3', 'deprecated', { ended: true, start: '2023-03-13' }),
+        held('Q_vice_president', 'normal', { start: '2025-09-09' }),
+      ])
+    ).toBeUndefined()
+  })
+
+  it('treats an all-closed office as a vacancy rather than an answer', () => {
+    expect(
+      trustedHolder([held('Q_departed', 'normal', { ended: true, start: '2019-01-01' })])
+    ).toBeUndefined()
   })
 })

@@ -1,6 +1,6 @@
 {
  "schema_version": "1.0.0",
- "generated_at": "2026-08-14T22:09:47.716Z",
+ "generated_at": "2026-08-14T22:22:36.791Z",
  "countries": {
   "AD": {
    "iso": "AD",
@@ -47371,7 +47371,7 @@
       "credit": "Sud chiama Nord"
      },
      "ideology_families": [
-      "other"
+      "nationalist"
      ]
     },
     "Q133280326": {
@@ -71746,30 +71746,31 @@
    },
    "head_of_state": {
     "person": {
-     "qid": "Q106993234",
-     "label": "Ram Sahaya Yadav"
+     "qid": "Q3183124",
+     "label": "Ram Chandra Poudel"
     },
-    "name": "Ram Sahaya Yadav",
+    "name": "Ram Chandra Poudel",
     "office": {
      "qid": "Q153756",
      "label": "President of Nepal"
     },
     "office_local": "संघीय प्रजातान्त्रिक गणराज्य नेपालका राष्ट्रपति",
-    "party": null,
-    "since": "2025-09-09",
+    "party": {
+     "qid": "Q216660",
+     "label": "Nepali Congress"
+    },
     "portrait": {
-     "file": "Vpn final photo.jpg",
-     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vpn%20final%20photo.jpg",
+     "file": "President Ram Chandra Poudel, Official portrait (January 2024).jpg",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/President%20Ram%20Chandra%20Poudel%2C%20Official%20portrait%20(January%202024).jpg",
      "host": "commons",
-     "license": "CC BY-SA 4.0",
+     "license": "CC BY 2.0",
      "non_free": false,
-     "credit": "Dinesh Yadava"
+     "credit": "Houses of the Oireachtas"
     },
     "represents": "ceremonial",
-    "superseded": true,
     "provenance": {
      "kind": "wikidata",
-     "derivation": "derived",
+     "derivation": "structured",
      "qid": "Q837",
      "retrieved_at": "2026-08-14"
     }
@@ -72327,7 +72328,7 @@
     "seats": 183,
     "minority": false,
     "authority": "established",
-    "confidence": "flagged",
+    "confidence": "high",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",

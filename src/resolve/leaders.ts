@@ -383,6 +383,33 @@ export interface Leaders {
  * Neither is authoritative on its own; the disagreement between them is what
  * `superseded` reports.
  */
+/**
+ * The holder an office item can be trusted to name, if any.
+ *
+ * An office that says its own past holders were WRONG is not maintained.
+ * Deprecated rank means "this statement is false" — not "this term ended",
+ * which is what an end date is for. A real predecessor is closed, never
+ * deprecated, so an office carrying deprecated holders has been edited by
+ * someone who misread the rank, and whatever they left open is not evidence.
+ *
+ * Nepal is the case: all three genuine presidents sit deprecated AND closed,
+ * leaving the VICE president as the only open holder, and we published him as
+ * head of state with his vice-presidential portrait attached. The country item
+ * had Ram Chandra Poudel right all along.
+ *
+ * Measured against every country where the two sources disagree, this separates
+ * cleanly: all seventeen legitimate office-wins carry ZERO deprecated holders;
+ * Nepal's presidency carries three of four. Preferring the country item on rank
+ * instead — the other obvious fix — would have broken all seventeen.
+ */
+export const trustedHolder = (holders: Snak[]): Snak | undefined => {
+  if (holders.some(held => held.rank === 'deprecated')) return undefined
+  const { statement, stale } = resolveStatement(holders)
+  // An office whose every holder statement is closed is a vacancy, not an
+  // answer — Chad's premiership reads that way and must fall through.
+  return stale ? undefined : statement
+}
+
 const holderOfOffice = async (
   country: WikidataEntity | undefined,
   officeProperty: string
@@ -391,10 +418,8 @@ const holderOfOffice = async (
   if (!offices.length) return undefined
   const entities = await getEntities(offices, 'claims')
   for (const office of offices) {
-    const { statement, stale } = resolveStatement(entities[office]?.claims?.[OFFICEHOLDER])
-    // An office whose every holder statement is closed is a vacancy, not an
-    // answer — Chad's premiership reads that way and must fall through.
-    if (stale || !statement) continue
+    const statement = trustedHolder(entities[office]?.claims?.[OFFICEHOLDER] ?? [])
+    if (!statement) continue
     const id = claimId(statement)
     if (id) return { id, statement }
   }
