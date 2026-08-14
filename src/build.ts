@@ -147,13 +147,29 @@ const contestationOf = (
   if (form === 'one_party_state') return 'uncontested'
   if (form === 'military_junta' || form === 'transitional') return 'suspended'
   if (form === 'dominant_party_state') return dominance >= 0.85 ? 'uncontested' : 'restricted'
-  if (form === 'absolute_monarchy') return chamber.role === 'upper' ? 'appointed' : 'restricted'
+  // An absolute monarchy's assembly is appointed by the monarch — that is what
+  // makes it an absolute monarchy. Saudi Arabia's Shura has never held an
+  // election and all 150 members are chosen by the king, so `restricted`
+  // overstated it: there is no contest to restrict.
+  if (form === 'absolute_monarchy') return 'appointed'
   if (form === 'theocracy') return 'restricted'
 
-  // 2. A house nobody elects. An upper chamber with no parties in it is
-  //    appointed or indirectly chosen — Britain's Lords, Germany's Bundesrat,
-  //    Canada's Senate all reach here.
-  if (chamber.role === 'upper' && partyRows === 0) return 'appointed'
+  // 2. A house with no PARTIES in it at all.
+  //
+  //    Two very different things look like this. An upper chamber of delegates
+  //    — Britain's Lords, Germany's Bundesrat, Canada's Senate — is appointed
+  //    or indirectly chosen, and always has been. But so is a chamber where
+  //    parties are BANNED: the UAE's Federal National Council seats 40 members
+  //    filed as one "Independent" row, half of them appointed outright by the
+  //    emirate rulers and half chosen by an electoral college the rulers pick.
+  //
+  //    Treating "no parties" as a data gap and falling through to the default
+  //    called that competitive — a 100%-dominated appointed advisory council
+  //    read as a free election. A chamber with members and no parties is not
+  //    holding a party contest, whichever kind it is.
+  //    A chamber with NO composition at all is a data gap, not a fact — but an
+  //    upper house is appointed by default, which is what it almost always is.
+  if (partyRows === 0) return chamber.role === 'upper' || total > 0 ? 'appointed' : 'competitive'
 
   // 3. THE ARITHMETIC, which is the part `form` cannot supply.
   //
