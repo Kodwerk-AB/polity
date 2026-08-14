@@ -2,6 +2,7 @@ import { writeFileSync, mkdirSync } from 'node:fs'
 import {
   AUTHORITIES,
   BLOC_KINDS,
+  EXECUTIVE_POWERS,
   RECOGNITION,
   IDEOLOGY_FAMILIES,
   CHAMBER_ROLES,
@@ -347,6 +348,7 @@ const polity = {
     'form_raw',
     'head_of_state',
     'head_of_government',
+    'executive_power',
     'parties',
     'chambers',
     'government',
@@ -360,6 +362,10 @@ const polity = {
     recognition: enumOf(
       RECOGNITION,
       'Set only for a state with no UN seat — absent means a UN member, which is 193 of the 197 carried. Filter on its absence to get exactly the UN membership.'
+    ),
+    executive_power: enumOf(
+      EXECUTIVE_POWERS,
+      'Which office actually runs the government — the field to read when asking who leads a country. Protocol rank does not settle it and neither does `represents`: a semi-presidential label covers France, where the president governs, and Austria, where the chancellor does. Read the named officeholder from this; expect neither where it says `collective`.'
     ),
     form: enumOf(GOVERNMENT_FORMS, 'Folded from Wikidata P122 at preferred rank.'),
     form_raw: { type: 'array', items: { type: 'string' } },
@@ -472,5 +478,5 @@ const sealed = (node: unknown): unknown => {
 writeFileSync('schema/openapi.json', `${JSON.stringify(sealed(spec), null, 2)}\n`)
 console.log(
   `wrote schema/openapi.json — ${Object.keys(spec.components.schemas).length} schemas, ` +
-    `${[STANDINGS, CHAMBER_ROLES, CONTESTATION, GOVERNMENT_FORMS, SPECTRUM_BANDS, BLOC_KINDS, CONFIDENCE, DERIVATIONS, SOURCE_KINDS, SELECTION_METHODS, REPRESENTATION, AUTHORITIES, MANDATE_STATES, IMAGE_HOSTS, IMAGE_RESTRICTIONS, IDEOLOGY_FAMILIES, RECOGNITION].reduce((total, list) => total + list.length, 0)} enum values`
+    `${[STANDINGS, CHAMBER_ROLES, CONTESTATION, GOVERNMENT_FORMS, SPECTRUM_BANDS, BLOC_KINDS, CONFIDENCE, DERIVATIONS, SOURCE_KINDS, SELECTION_METHODS, REPRESENTATION, AUTHORITIES, MANDATE_STATES, IMAGE_HOSTS, IMAGE_RESTRICTIONS, IDEOLOGY_FAMILIES, RECOGNITION, EXECUTIVE_POWERS].reduce((total, list) => total + list.length, 0)} enum values`
 )

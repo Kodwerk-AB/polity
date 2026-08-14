@@ -9,7 +9,7 @@ import {
 } from './net/wiki'
 import { unMemberStates } from './resolve/countries'
 import { chambersOf, type ChamberRef } from './resolve/chambers'
-import { formFromProse, governmentForm, leadersOf } from './resolve/leaders'
+import { executivePowerOf, formFromProse, governmentForm, leadersOf } from './resolve/leaders'
 import { democracyScore, FREE_ELECTION_SCORE, type DemocracyScore } from './resolve/democracy'
 import { familiesOf } from './resolve/ideology'
 import { electionSince } from './extract/elections'
@@ -1156,6 +1156,12 @@ const buildCountry = async (
       name: countryName,
       form,
       ...(recognition ? { recognition } : {}),
+      executive_power: executivePowerOf(
+        form,
+        prose ? [...form_raw, prose] : form_raw,
+        !!leaders.head_of_government,
+        iso
+      ),
       form_raw: prose ? [...form_raw, prose] : form_raw,
       ...(democracy ? { democracy: { ...democracy, source: 'vdem' as const } } : {}),
       head_of_state: leaders.head_of_state,

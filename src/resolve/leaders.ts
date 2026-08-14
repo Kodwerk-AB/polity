@@ -12,7 +12,7 @@ import {
   startedOn,
   type WikidataEntity,
 } from '../net/wiki'
-import type { GovernmentForm } from '../types/enums'
+import type { ExecutivePower, GovernmentForm } from '../types/enums'
 import type { Entity, ImageRef, OfficeHolder, QID } from '../types/polity'
 
 /**
@@ -144,6 +144,105 @@ const FORM_BY_PROSE: [RegExp, GovernmentForm][] = [
   // Last, so it never pre-empts the machinery above.
   [/islamic republic/i, 'theocracy'],
 ]
+
+/**
+ * Which office runs the government.
+ *
+ * `form` settles most of it: a presidential republic is led by its president,
+ * a parliamentary republic or constitutional monarchy by its prime minister.
+ * The hard set is the 28 semi-presidential republics, where the label covers
+ * both France (the president governs) and Austria (the chancellor does).
+ *
+ * The article's own prose separates them, and it is the same signal that fixed
+ * `form` itself: Austria's reads "federal parliamentary republic", Cape
+ * Verde's and Congo's "parliamentary republic", while Azerbaijan's and
+ * Belarus' read "presidential system". Where the prose says nothing, the
+ * president is the safer default — a semi-presidential republic whose
+ * presidency is purely ceremonial is the rarer shape.
+ */
+/**
+ * Semi-presidential republics whose article names no system, and whose premier
+ * nevertheless governs. Verified individually; everything else in that set
+ * takes the president.
+ */
+const SEMI_PRESIDENTIAL_PREMIER = new Set(['PT', 'ST'])
+
+export const executivePowerOf = (
+  form: GovernmentForm,
+  prose: string[],
+  hasHeadOfGovernment: boolean,
+  iso = ''
+): ExecutivePower => {
+  const line = prose.join(' ').toLowerCase()
+
+  // Checked BEFORE the single-officeholder shortcut: Switzerland records no
+  // separate head of government because its Federal Council holds both roles
+  // as a body, so exiting early would have called a seven-member collective a
+  // head of state.
+  if (
+    /directorial system|federal council|collective (?:leadership|presidency)|ruling council/.test(
+      line
+    )
+  ) {
+    return 'collective'
+  }
+
+  // No separate head of government means one person holds both offices.
+  if (!hasHeadOfGovernment) return 'head_of_state'
+  // The prose outranks `form` where it names a parliamentary system outright.
+  // Pakistan is the case: its article says "Federal parliamentary Islamic
+  // republic" and Shehbaz Sharif governs, but `form` keyword-matches
+  // "Islamic" to `theocracy` (a known misclassification) and would hand the
+  // country to President Zardari.
+  // `parliamentary` and its noun are not always adjacent — Pakistan's article
+  // says "Federal parliamentary Islamic republic" — so the words between them
+  // are allowed for.
+  if (/parliamentary(?:\s+\w+)?\s+(?:republic|system|democracy|monarchy)/.test(line)) {
+    return 'head_of_government'
+  }
+
+  switch (form) {
+    case 'presidential_republic':
+    case 'one_party_state':
+    case 'dominant_party_state':
+    case 'theocracy':
+    case 'military_junta':
+      return 'head_of_state'
+    // A monarch who appoints their own prime minister governs through them.
+    // The UAE is the case that matters: the president (ruler of Abu Dhabi)
+    // appoints the prime minister (ruler of Dubai), so the premiership is a
+    // division of authority between emirates rather than a transfer of it.
+    case 'absolute_monarchy':
+      return 'head_of_state'
+    case 'parliamentary_republic':
+      return 'head_of_government'
+    case 'constitutional_monarchy':
+      // Nearly all are premier-led — Britain, Sweden, Japan, Spain. The UAE is
+      // not: its own article calls it an "absolute monarchy" and a "federal
+      // semi-presidential elective semi-constitutional monarchy" in the same
+      // breath, and the president (ruler of Abu Dhabi) appoints the prime
+      // minister (ruler of Dubai). Where the prose still says absolute, the
+      // crown governs.
+      return /absolute monarchy/.test(line) ? 'head_of_state' : 'head_of_government'
+    case 'semi_presidential_republic':
+      // The prose is the tiebreak, and "parliamentary" in it is decisive:
+      // Austria, Cape Verde and Congo all carry it and are all premier-led.
+      if (/parliamentary/.test(line)) return 'head_of_government'
+      if (/presidential system|executive presiden/.test(line)) return 'head_of_state'
+      // Eight say neither, and they genuinely split — Portugal's premier is
+      // the chief executive while Egypt's and the DRC's presidents govern. The
+      // president is the default because it is right for six of the eight; the
+      // two that are not are named in SEMI_PRESIDENTIAL_PREMIER below.
+      return SEMI_PRESIDENTIAL_PREMIER.has(iso) ? 'head_of_government' : 'head_of_state'
+    default:
+      // `other` and `transitional`. Cuba lands here and its president governs
+      // — the 2019 constitution restored a premiership to run the Council of
+      // Ministers day to day, not to lead. So this follows the same default as
+      // everything unclassified: the head of state, unless the prose above
+      // already said parliamentary.
+      return 'head_of_state'
+  }
+}
 
 export const formFromProse = (line: string | undefined): GovernmentForm | undefined => {
   if (!line) return undefined

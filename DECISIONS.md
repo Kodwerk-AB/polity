@@ -252,6 +252,68 @@ only what is new.
 
 ---
 
+## `executive_power` — which office actually runs the government
+
+The field to read when asking *who leads this country*. Protocol rank does not
+settle it, and neither does `represents`.
+
+| condition | value |
+| --- | --- |
+| prose names a directorial system, federal council or ruling council | `collective` |
+| no separate head of government | `head_of_state` |
+| prose names a parliamentary republic / system / democracy | `head_of_government` |
+| `presidential_republic`, `one_party_state`, `dominant_party_state`, `theocracy`, `military_junta` | `head_of_state` |
+| `absolute_monarchy` | `head_of_state` |
+| `parliamentary_republic` | `head_of_government` |
+| `constitutional_monarchy` | `head_of_government`, unless the prose still says "absolute monarchy" |
+| `semi_presidential_republic` | prose decides; president by default |
+| anything else | `head_of_state` |
+
+Result: `head_of_state` 105, `head_of_government` 90, `collective` 1.
+
+**Two simpler rules were tried first and both failed**, in opposite directions,
+which is why this field exists rather than being derived at read time.
+
+Keying on **`represents`** put Austria's Van der Bellen above Chancellor
+Stocker, Poland's Nawrocki above Tusk and Pakistan's Zardari above Sharif — 13
+wrong, because `represents` marks the head of state `political` for every
+semi-presidential republic whether or not the presidency governs.
+
+Keying on **"a head of government exists"** was worse: 39 wrong, including Li
+Qiang above Xi Jinping, Mishustin above Putin and Lecornu above Macron. In
+presidential and one-party systems the premier is a subordinate.
+
+**The semi-presidential republics are the hard set** — 28 of them, and the
+label covers France, where the president governs, and Austria, where the
+chancellor does. The article's prose separates 20: Austria's reads "federal
+parliamentary republic", Azerbaijan's and Belarus' read "presidential system".
+The remaining eight say neither and genuinely split, so the president is the
+default and the two exceptions are named: Portugal and São Tomé, both verified
+against current reporting.
+
+**Individually verified against sources, not inferred:**
+
+- **Portugal** — the prime minister is chief executive; the president is a
+  check on national security and foreign policy.
+- **Cuba** — the 2019 constitution restored a premiership to run the Council of
+  Ministers day to day. *"The president is the one who leads."*
+- **UAE** — the president (ruler of Abu Dhabi) appoints the prime minister
+  (ruler of Dubai), so the premiership divides authority between emirates
+  rather than transferring it. Its own article calls the state an absolute
+  monarchy, which is what the `constitutional_monarchy` branch tests for.
+- **Switzerland** — the Federal Council's seven members share the executive and
+  the presidency rotates yearly. Checked BEFORE the single-officeholder
+  shortcut, since Switzerland records no separate head of government.
+- **Pakistan** — `form` keyword-matches "Islamic" to `theocracy`, which would
+  hand the country to President Zardari. The prose says "Federal parliamentary
+  Islamic republic" and Shehbaz Sharif governs; prose outranks `form` here.
+
+**Known defect it inherits.** Canada reads `head_of_state` because
+`head_of_government` is null upstream — the field is correct given its input,
+and the input is wrong.
+
+---
+
 ## `confidence` — how far to trust a chamber
 
 | Value | When |

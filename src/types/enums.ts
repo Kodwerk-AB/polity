@@ -389,3 +389,33 @@ export const RECOGNITION = [
   'partially_recognised',
 ] as const
 export type Recognition = (typeof RECOGNITION)[number]
+
+/**
+ * Which office actually runs the government.
+ *
+ * Distinct from protocol rank, and distinct from `represents`. A consumer
+ * asking "who leads this country?" — the question a quiz asks, or a headline —
+ * needs the officeholder with executive power, and neither the form nor the
+ * ceremonial/political split answers it alone.
+ *
+ * Two rules were tried against Mondiale's 194 countries and both failed in
+ * opposite directions, which is why this field exists:
+ *
+ * Keying on `represents` put Austria's Van der Bellen above Chancellor
+ * Stocker, Poland's Nawrocki above Tusk and Pakistan's Zardari above Sharif —
+ * 13 wrong, because `represents` marks the head of state `political` for every
+ * semi-presidential republic whether or not the presidency actually governs.
+ *
+ * Keying on "a head of government exists" was worse: 39 wrong, including Li
+ * Qiang above Xi Jinping, Mishustin above Putin and Lecornu above Macron. In
+ * presidential and one-party systems the premier is a subordinate.
+ */
+export const EXECUTIVE_POWERS = [
+  /** A president or monarch governs; any premier serves under them. */
+  'head_of_state',
+  /** A prime minister governs; the head of state is largely ceremonial. */
+  'head_of_government',
+  /** No single officeholder — Switzerland's Federal Council, a ruling junta. */
+  'collective',
+] as const
+export type ExecutivePower = (typeof EXECUTIVE_POWERS)[number]

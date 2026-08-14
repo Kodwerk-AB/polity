@@ -1,6 +1,6 @@
 {
  "schema_version": "1.0.0",
- "generated_at": "2026-08-14T09:37:11.679Z",
+ "generated_at": "2026-08-14T19:52:13.250Z",
  "countries": {
   "AD": {
    "iso": "AD",
@@ -10,6 +10,7 @@
    },
    "name": "Andorra",
    "form": "other",
+   "executive_power": "head_of_state",
    "form_raw": [
     "parliamentary coprincipality",
     "Unitary parliamentary co-principality"
@@ -416,6 +417,7 @@
    },
    "name": "United Arab Emirates",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_state",
    "form_raw": [
     "federal monarchy",
     "absolute monarchy",
@@ -560,6 +562,7 @@
    },
    "name": "Afghanistan",
    "form": "theocracy",
+   "executive_power": "head_of_state",
    "form_raw": [
     "unitary state",
     "islamic theocracy",
@@ -687,6 +690,7 @@
    },
    "name": "Antigua and Barbuda",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "Unitary parliamentary constitutional monarchy"
@@ -973,6 +977,7 @@
    },
    "name": "Albania",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary system",
     "Unitary parliamentary republic"
@@ -1481,6 +1486,7 @@
    },
    "name": "Armenia",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "republic",
     "unitary state",
@@ -1815,6 +1821,7 @@
    },
    "name": "Angola",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "presidential system",
@@ -2236,6 +2243,7 @@
    },
    "name": "Argentina",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "federal republic",
     "Federal presidential republic"
@@ -3074,6 +3082,7 @@
    },
    "name": "Austria",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "federal parliamentary republic",
     "semi-presidential system",
@@ -3727,6 +3736,7 @@
    },
    "name": "Australia",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "representative democracy",
     "constitutional monarchy",
@@ -4498,6 +4508,7 @@
    },
    "name": "Azerbaijan",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "unitary state",
@@ -5237,6 +5248,7 @@
    },
    "name": "Bosnia and Herzegovina",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "federal republic",
     "republic",
@@ -6313,6 +6325,7 @@
    },
    "name": "Barbados",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "unitary state",
     "parliamentary republic",
@@ -6614,6 +6627,7 @@
    },
    "name": "Bangladesh",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "Westminster system",
     "parliamentary republic",
@@ -7050,6 +7064,7 @@
    },
    "name": "Belgium",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "federation",
     "Federal parliamentary constitutional monarchy"
@@ -8062,6 +8077,7 @@
    },
    "name": "Bulgaria",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Unitary parliamentary republic"
@@ -8556,6 +8572,7 @@
    },
    "name": "Bahrain",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "Unitary constitutional monarchy under an authoritarian government"
@@ -8740,6 +8757,7 @@
    },
    "name": "Burundi",
    "form": "dominant_party_state",
+   "executive_power": "head_of_state",
    "form_raw": [
     "representative democracy",
     "presidential system",
@@ -8993,6 +9011,7 @@
    },
    "name": "Benin",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "Unitary presidential republic"
@@ -9188,6 +9207,7 @@
    },
    "name": "Brunei",
    "form": "absolute_monarchy",
+   "executive_power": "head_of_state",
    "form_raw": [
     "unitary state",
     "Islamic state",
@@ -9299,6 +9319,7 @@
    },
    "name": "Bolivia",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "parliamentary republic",
     "republic",
@@ -9747,6 +9768,7 @@
    },
    "name": "Brazil",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "federal republic",
     "representative democracy",
@@ -10968,6 +10990,7 @@
    },
    "name": "The Bahamas",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "Unitary parliamentary constitutional monarchy"
@@ -11236,6 +11259,7 @@
    },
    "name": "Bhutan",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "Unitary parliamentary semi-constitutional monarchy"
@@ -11492,6 +11516,7 @@
    },
    "name": "Botswana",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "parliamentary republic",
     "Unitary parliamentary republic with an executive presidency"
@@ -11804,6 +11829,7 @@
    },
    "name": "Belarus",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "presidential system",
     "republic",
@@ -12239,6 +12265,7 @@
    },
    "name": "Belize",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "parliamentary monarchy",
@@ -12511,6 +12538,7 @@
    },
    "name": "Canada",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_state",
    "form_raw": [
     "constitutional monarchy",
     "federation",
@@ -13114,6 +13142,7 @@
    },
    "name": "Democratic Republic of the Congo",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "Unitary semi-presidential republic"
@@ -13762,6 +13791,7 @@
    },
    "name": "Central African Republic",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary presidential republic"
    ],
@@ -14111,6 +14141,7 @@
    },
    "name": "Republic of the Congo",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Unitary semi-presidential republic under an authoritarian dictatorship"
@@ -14846,6 +14877,7 @@
    },
    "name": "Switzerland",
    "form": "presidential_republic",
+   "executive_power": "collective",
    "form_raw": [
     "directorial system",
     "federal republic",
@@ -15632,6 +15664,7 @@
    },
    "name": "Ivory Coast",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "Unitary presidential republic"
@@ -16022,6 +16055,7 @@
    },
    "name": "Chile",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "democratic republic",
     "Unitary presidential republic"
@@ -16981,6 +17015,7 @@
    },
    "name": "Cameroon",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "Unitary presidential republic under an authoritarian dictatorship"
@@ -17565,6 +17600,7 @@
    },
    "name": "People's Republic of China",
    "form": "dominant_party_state",
+   "executive_power": "head_of_state",
    "form_raw": [
     "people's republic",
     "Unitary communist state"
@@ -18144,6 +18180,7 @@
    },
    "name": "Colombia",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "Unitary presidential republic"
@@ -19118,6 +19155,7 @@
    },
    "name": "Costa Rica",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary presidential republic"
    ],
@@ -19482,6 +19520,7 @@
    },
    "name": "Cuba",
    "form": "other",
+   "executive_power": "head_of_state",
    "form_raw": [
     "unitary state",
     "<!--- Per at Talk:Cuba#Government infobox as it was deemed too overdetailed to have Cuba be labled as unitary. Please seek consensus before changing. --->Communist state"
@@ -19699,6 +19738,7 @@
    },
    "name": "Cape Verde",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Semi-presidential republic"
@@ -20000,6 +20040,7 @@
    },
    "name": "Cyprus",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "presidential system",
@@ -20465,6 +20506,7 @@
    },
    "name": "Czech Republic",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Unitary parliamentary republic"
@@ -21596,6 +21638,7 @@
    },
    "name": "Germany",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Federal parliamentary republic"
@@ -22365,6 +22408,7 @@
    },
    "name": "Djibouti",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary presidential republic under a hereditary dictatorship"
    ],
@@ -22632,6 +22676,7 @@
    },
    "name": "Denmark",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "Unitary parliamentary constitutional monarchy"
@@ -23788,6 +23833,7 @@
    },
    "name": "Dominica",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "Unitary parliamentary republic"
    ],
@@ -23994,6 +24040,7 @@
    },
    "name": "Dominican Republic",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary presidential republic"
    ],
@@ -24829,6 +24876,7 @@
    },
    "name": "Algeria",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "semi-presidential system",
     "people's republic",
@@ -25906,6 +25954,7 @@
    },
    "name": "Ecuador",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "presidential system",
@@ -26470,6 +26519,7 @@
    },
    "name": "Estonia",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Unitary parliamentary republic"
@@ -27062,6 +27112,7 @@
    },
    "name": "Egypt",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "Unitary semi-presidential republic under an authoritarian government{{refn|"
@@ -28214,6 +28265,7 @@
    },
    "name": "Eritrea",
    "form": "one_party_state",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary one-party presidential republic under a totalitarian dictatorship"
    ],
@@ -28391,6 +28443,7 @@
    },
    "name": "Spain",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary monarchy",
     "Unitary&nbsp;parliamentary constitutional monarchy"
@@ -29951,6 +30004,7 @@
    },
    "name": "Ethiopia",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "federal republic",
     "Federal parliamentary republic"
@@ -30287,6 +30341,7 @@
    },
    "name": "Finland",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Unitary parliamentary republic"
@@ -31089,6 +31144,7 @@
    },
    "name": "Fiji",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "Unitary parliamentary republic"
    ],
@@ -31370,6 +31426,7 @@
    },
    "name": "Federated States of Micronesia",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "federal republic",
     "Federal assembly-independent presidential republic under a non-partisan democracy"
@@ -31480,6 +31537,7 @@
    },
    "name": "France",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "semi-presidential system",
     "Unitary semi-presidential republic"
@@ -32405,6 +32463,7 @@
    },
    "name": "Gabon",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "Unitary presidential republic"
@@ -32735,6 +32794,7 @@
    },
    "name": "United Kingdom",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "Unitary parliamentary constitutional monarchy{{Efn|Although the United Kingdom has traditionally been seen as a unitary state, an alternative description of the UK as a \"union state\", put forward by, "
@@ -33940,6 +34000,7 @@
    },
    "name": "Grenada",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "Unitary constitutional monarchy"
    ],
@@ -34274,6 +34335,7 @@
    },
    "name": "Georgia",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "semi-presidential system",
     "unitary state",
@@ -34615,6 +34677,7 @@
    },
    "name": "Ghana",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "democracy",
     "Unitary presidential republic"
@@ -34849,6 +34912,7 @@
    },
    "name": "The Gambia",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "Unitary presidential republic"
@@ -35193,6 +35257,7 @@
    },
    "name": "Guinea",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "Unitary presidential republic"
@@ -35324,6 +35389,7 @@
    },
    "name": "Equatorial Guinea",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary presidential republic under an authoritarian hereditary dictatorship"
    ],
@@ -35562,6 +35628,7 @@
    },
    "name": "Greece",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Unitary parliamentary republic"
@@ -36410,6 +36477,7 @@
    },
    "name": "Guatemala",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "presidential system",
     "representative democracy",
@@ -37283,6 +37351,7 @@
    },
    "name": "Guinea-Bissau",
    "form": "military_junta",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary semi-presidential republic under a military junta"
    ],
@@ -37379,6 +37448,7 @@
    },
    "name": "Guyana",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Unitary parliamentary republic with an executive presidency{{efn |The president is constitutionally obligated to dissolve parliament after a successful no-confidence motion against the government (art"
@@ -37644,6 +37714,7 @@
    },
    "name": "Honduras",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "Unitary presidential republic"
@@ -38023,6 +38094,7 @@
    },
    "name": "Croatia",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "republic",
     "Unitary parliamentary republic"
@@ -39206,6 +39278,7 @@
    },
    "name": "Haiti",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Semi-presidential republic (''de jure'') <!-- Please do not change without prior talk page consensus -->"
    ],
@@ -39320,6 +39393,7 @@
    },
    "name": "Hungary",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Unitary parliamentary republic"
@@ -39676,6 +39750,7 @@
    },
    "name": "Indonesia",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "presidential system",
@@ -40339,6 +40414,7 @@
    },
    "name": "Ireland",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "republic",
     "unitary state",
@@ -41299,6 +41375,7 @@
    },
    "name": "Israel",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "unitary state",
@@ -42213,6 +42290,7 @@
    },
    "name": "India",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "republic",
     "constitutional republic",
@@ -44806,6 +44884,7 @@
    },
    "name": "Iraq",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "federal republic",
     "federation",
@@ -45504,6 +45583,7 @@
    },
    "name": "Iran",
    "form": "theocracy",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Islamic Republic",
     "unitary state",
@@ -45753,6 +45833,7 @@
    },
    "name": "Iceland",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Unitary parliamentary republic"
@@ -46271,6 +46352,7 @@
    },
    "name": "Italy",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Unitary parliamentary republic"
@@ -48624,6 +48706,7 @@
    },
    "name": "Jamaica",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "Unitary parliamentary constitutional monarchy"
    ],
@@ -48760,6 +48843,7 @@
    },
    "name": "Jordan",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "Unitary parliamentary semi-constitutional monarchy"
    ],
@@ -49180,6 +49264,7 @@
    },
    "name": "Japan",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "Unitary parliamentary constitutional monarchy"
@@ -50260,6 +50345,7 @@
    },
    "name": "Kenya",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary presidential republic"
    ],
@@ -51193,6 +51279,7 @@
    },
    "name": "Kyrgyzstan",
    "form": "presidential_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Unitary presidential republic"
@@ -51525,6 +51612,7 @@
    },
    "name": "Cambodia",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "Unitary parliamentary constitutional elective monarchy under a hereditary dictatorship"
@@ -51881,6 +51969,7 @@
    },
    "name": "Kiribati",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary parliamentary republic with an executive president"
    ],
@@ -52061,6 +52150,7 @@
    },
    "name": "Comoros",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "federal republic",
     "Federal"
@@ -52221,6 +52311,7 @@
    },
    "name": "Saint Kitts and Nevis",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "federal monarchy",
@@ -52535,6 +52626,7 @@
    },
    "name": "North Korea",
    "form": "one_party_state",
+   "executive_power": "head_of_state",
    "form_raw": [
     "one-party state",
     "family dictatorship",
@@ -52767,6 +52859,7 @@
    },
    "name": "South Korea",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "presidential system",
@@ -53268,6 +53361,7 @@
    },
    "name": "Kuwait",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "Unitary constitutional monarchy"
@@ -53394,6 +53488,7 @@
    },
    "name": "Kazakhstan",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "presidential system",
     "Unitary semi-presidential republic{{efn|name=semi-president|Although the constitution stipulates that Kazakhstan has a presidential system"
@@ -53523,6 +53618,7 @@
    },
    "name": "Laos",
    "form": "dominant_party_state",
+   "executive_power": "head_of_state",
    "form_raw": [
     "people's republic",
     "communist dictatorship",
@@ -53726,6 +53822,7 @@
    },
    "name": "Lebanon",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Unitary parliamentary republic under confessionalism"
@@ -54381,6 +54478,7 @@
    },
    "name": "Saint Lucia",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "Unitary parliamentary constitutional monarchy"
@@ -54673,6 +54771,7 @@
    },
    "name": "Liechtenstein",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "Unitary parliamentary constitutional monarchy with elements of direct democracy"
@@ -55044,6 +55143,7 @@
    },
    "name": "Sri Lanka",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "Unitary semi-presidential republic"
@@ -55624,6 +55724,7 @@
    },
    "name": "Liberia",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "presidential system",
     "constitutional republic",
@@ -56197,6 +56298,7 @@
    },
    "name": "Lesotho",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "Unitary parliamentary constitutional monarchy"
@@ -56864,6 +56966,7 @@
    },
    "name": "Lithuania",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "semi-presidential system",
     "parliamentary republic",
@@ -57508,6 +57611,7 @@
    },
    "name": "Luxembourg",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "Unitary parliamentary constitutional monarchy"
@@ -58046,6 +58150,7 @@
    },
    "name": "Latvia",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "republic",
@@ -58595,6 +58700,7 @@
    },
    "name": "Libya",
    "form": "transitional",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "Unitary republic under a provisional government (GNU)"
@@ -58719,6 +58825,7 @@
    },
    "name": "Morocco",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "Unitary parliamentary semi-constitutional monarchy"
@@ -59746,6 +59853,7 @@
    },
    "name": "Monaco",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "hereditary monarchy",
@@ -59915,6 +60023,7 @@
    },
    "name": "Moldova",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "unitary state",
@@ -60425,6 +60534,7 @@
    },
    "name": "Montenegro",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "republic",
     "Unitary parliamentary republic"
@@ -61337,6 +61447,7 @@
    },
    "name": "Madagascar",
    "form": "military_junta",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "Unitary semi-presidential republic under a military junta"
@@ -61651,6 +61762,7 @@
    },
    "name": "Marshall Islands",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary parliamentary republic with an executive president"
    ],
@@ -61762,6 +61874,7 @@
    },
    "name": "North Macedonia",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Unitary parliamentary republic"
@@ -62563,6 +62676,7 @@
    },
    "name": "Mali",
    "form": "military_junta",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary presidential republic under a military junta"
    ],
@@ -62688,6 +62802,7 @@
    },
    "name": "Myanmar",
    "form": "other",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "Unitary assembly-independent republic"
@@ -63406,6 +63521,7 @@
    },
    "name": "Mongolia",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary system",
     "Unitary semi-presidential republic"
@@ -63832,6 +63948,7 @@
    },
    "name": "Mauritania",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary semi-presidential Islamic republic"
    ],
@@ -64492,6 +64609,7 @@
    },
    "name": "Malta",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary democracy",
     "Unitary parliamentary republic"
@@ -64754,6 +64872,7 @@
    },
    "name": "Mauritius",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Unitary parliamentary republic"
@@ -65204,6 +65323,7 @@
    },
    "name": "Maldives",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary presidential republic"
    ],
@@ -65576,6 +65696,7 @@
    },
    "name": "Malawi",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary presidential republic"
    ],
@@ -65986,6 +66107,7 @@
    },
    "name": "Mexico",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "federal republic",
     "democratic republic",
@@ -66580,6 +66702,7 @@
    },
    "name": "Malaysia",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "federal monarchy",
@@ -67980,6 +68103,7 @@
    },
    "name": "Mozambique",
    "form": "dominant_party_state",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary dominant-party semi-presidential republic"
    ],
@@ -68326,6 +68450,7 @@
    },
    "name": "Namibia",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary semi-presidential republic"
    ],
@@ -69075,6 +69200,7 @@
    },
    "name": "Niger",
    "form": "military_junta",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary semi-presidential republic under a military junta"
    ],
@@ -69202,6 +69328,7 @@
    },
    "name": "Nigeria",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "federal republic",
     "Federal presidential republic"
@@ -69826,6 +69953,7 @@
    },
    "name": "Nicaragua",
    "form": "other",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "Unitary diarchic presidential socialist republic{{Efn|Since 2025, Nicaragua is defined by the constitution as a revolutionary, socialist state based on Christian values, socialist ideals, and solidary"
@@ -70221,6 +70349,7 @@
    },
    "name": "Netherlands",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary monarchy",
     "constitutional monarchy",
@@ -71614,6 +71743,7 @@
    },
    "name": "Norway",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "representative democracy",
@@ -72295,6 +72425,7 @@
    },
    "name": "Nepal",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "federal republic",
     "people's republic",
@@ -72915,6 +73046,7 @@
    },
    "name": "Nauru",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary parliamentary republic with an executive presidency under a non-partisan democracy"
    ],
@@ -73027,6 +73159,7 @@
    },
    "name": "New Zealand",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary monarchy",
     "Unitary parliamentary constitutional monarchy"
@@ -73491,6 +73624,7 @@
    },
    "name": "Oman",
    "form": "absolute_monarchy",
+   "executive_power": "head_of_state",
    "form_raw": [
     "absolute monarchy",
     "Unitary Islamic absolute monarchy"
@@ -73638,6 +73772,7 @@
    },
    "name": "Panama",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "presidential system",
     "Unitary presidential republic"
@@ -74205,6 +74340,7 @@
    },
    "name": "Peru",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "presidential system",
     "Unitary semi-presidential republic"
@@ -74309,6 +74445,7 @@
    },
    "name": "Papua New Guinea",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "Unitary parliamentary constitutional monarchy"
    ],
@@ -75141,6 +75278,7 @@
    },
    "name": "Philippines",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "Unitary presidential republic"
@@ -76211,6 +76349,7 @@
    },
    "name": "Pakistan",
    "form": "theocracy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "federal republic",
     "parliamentary republic",
@@ -77169,6 +77308,7 @@
    },
    "name": "Poland",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary system",
     "unitary state",
@@ -78099,6 +78239,7 @@
    "name": "Palestine",
    "form": "semi_presidential_republic",
    "recognition": "un_observer",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "unitary state",
@@ -78699,6 +78840,7 @@
    },
    "name": "Portugal",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "republic",
     "Unitary semi-presidential republic"
@@ -79497,6 +79639,7 @@
    },
    "name": "Palau",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary presidential republic under a non-partisan democracy"
    ],
@@ -79612,6 +79755,7 @@
    },
    "name": "Paraguay",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary presidential republic"
    ],
@@ -80276,6 +80420,7 @@
    },
    "name": "Qatar",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "Unitary authoritarian semi-constitutional monarchy"
@@ -80421,6 +80566,7 @@
    },
    "name": "Romania",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "semi-presidential system",
     "unitary state",
@@ -81156,6 +81302,7 @@
    },
    "name": "Serbia",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "Unitary parliamentary republic"
    ],
@@ -82777,6 +82924,7 @@
    },
    "name": "Russia",
    "form": "dominant_party_state",
+   "executive_power": "head_of_state",
    "form_raw": [
     "super-presidential republic",
     "Federal semi-presidential republic under an authoritarian government<!--- Before adding Dominant-party system here, discuss in the talk page, additions before any consensus will be challenged and remo"
@@ -83370,6 +83518,7 @@
    },
    "name": "Rwanda",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "semi-presidential system",
     "Unitary semi-presidential republic under an authoritarian dictatorship{{refn|"
@@ -83860,6 +84009,7 @@
    },
    "name": "Saudi Arabia",
    "form": "absolute_monarchy",
+   "executive_power": "head_of_state",
    "form_raw": [
     "absolute monarchy",
     "islamic theocracy",
@@ -83970,6 +84120,7 @@
    },
    "name": "Solomon Islands",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "Unitary parliamentary constitutional monarchy"
    ],
@@ -84337,6 +84488,7 @@
    },
    "name": "Seychelles",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary presidential republic"
    ],
@@ -84538,6 +84690,7 @@
    },
    "name": "Sudan",
    "form": "military_junta",
+   "executive_power": "head_of_state",
    "form_raw": [
     "federal republic",
     "Federal republic under a military junta"
@@ -84925,6 +85078,7 @@
    },
    "name": "Sweden",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "representative democracy",
@@ -85742,6 +85896,7 @@
    },
    "name": "Singapore",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Unitary parliamentary republic"
@@ -86034,6 +86189,7 @@
    },
    "name": "Slovenia",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "democratic republic",
     "Unitary parliamentary republic"
@@ -86590,6 +86746,7 @@
    },
    "name": "Slovakia",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Unitary parliamentary republic"
@@ -87206,6 +87363,7 @@
    },
    "name": "Sierra Leone",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "presidential system",
     "Unitary presidential republic"
@@ -87415,6 +87573,7 @@
    },
    "name": "San Marino",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "parliamentary republic",
     "diarchy",
@@ -87832,6 +87991,7 @@
    },
    "name": "Senegal",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "presidential system",
     "Unitary semi-presidential republic"
@@ -88277,6 +88437,7 @@
    },
    "name": "Somalia",
    "form": "transitional",
+   "executive_power": "head_of_government",
    "form_raw": [
     "federal republic",
     "Federal parliamentary republic under a Provisional Constitution"
@@ -88431,6 +88592,7 @@
    },
    "name": "Suriname",
    "form": "other",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "Unitary assembly-independent"
@@ -88843,6 +89005,7 @@
    },
    "name": "South Sudan",
    "form": "transitional",
+   "executive_power": "head_of_state",
    "form_raw": [
     "federal republic",
     "Federal presidential republic under a Transitional Constitution"
@@ -89143,6 +89306,7 @@
    },
    "name": "São Tomé and Príncipe",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "Unitary semi-presidential republic"
    ],
@@ -89443,6 +89607,7 @@
    },
    "name": "El Salvador",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "representative democracy",
@@ -89793,6 +89958,7 @@
    },
    "name": "Syria",
    "form": "transitional",
+   "executive_power": "head_of_state",
    "form_raw": [
     "provisional government",
     "Unitary presidential republic under a provisional government"
@@ -89915,6 +90081,7 @@
    },
    "name": "Eswatini",
    "form": "absolute_monarchy",
+   "executive_power": "head_of_state",
    "form_raw": [
     "absolute monarchy",
     "Unitary diarchic"
@@ -90085,6 +90252,7 @@
    },
    "name": "Chad",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Presidential republic"
    ],
@@ -90516,6 +90684,7 @@
    },
    "name": "Togo",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "Unitary parliamentary republic under an authoritarian dictatorship"
    ],
@@ -90818,6 +90987,7 @@
    },
    "name": "Thailand",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "parliamentary monarchy",
@@ -91879,6 +92049,7 @@
    },
    "name": "Tajikistan",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "presidential system",
     "Unitary presidential republic{{efn|Even though an executive president co-exists with a prime minister, multiple sources have still described Tajikistan as a presidential republic with the president se"
@@ -92320,6 +92491,7 @@
    },
    "name": "Timor-Leste",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "semi-presidential system",
     "republic",
@@ -92689,6 +92861,7 @@
    },
    "name": "Turkmenistan",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "presidential system",
@@ -93006,6 +93179,7 @@
    },
    "name": "Tunisia",
    "form": "presidential_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "semi-presidential system",
@@ -93306,6 +93480,7 @@
    },
    "name": "Tonga",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "Semi-constitutional monarchy"
    ],
@@ -93458,6 +93633,7 @@
    },
    "name": "Turkey",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "unitary state",
     "presidential system",
@@ -94294,6 +94470,7 @@
    },
    "name": "Trinidad and Tobago",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Unitary parliamentary republic"
@@ -94629,6 +94806,7 @@
    },
    "name": "Tuvalu",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "Unitary parliamentary constitutional monarchy"
    ],
@@ -94822,6 +95000,7 @@
    "name": "Taiwan",
    "form": "semi_presidential_republic",
    "recognition": "partially_recognised",
+   "executive_power": "head_of_state",
    "form_raw": [
     "semi-presidential system",
     "democracy",
@@ -95169,6 +95348,7 @@
    },
    "name": "Tanzania",
    "form": "dominant_party_state",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary dominant-party presidential republic"
    ],
@@ -95438,6 +95618,7 @@
    },
    "name": "Ukraine",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "semi-presidential system",
     "Unitary semi-presidential republic"
@@ -96032,6 +96213,7 @@
    },
    "name": "Uganda",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "presidential system",
     "Unitary presidential republic"
@@ -96523,6 +96705,7 @@
    },
    "name": "United States",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "constitutional republic",
     "democratic republic",
@@ -96873,6 +97056,7 @@
    },
    "name": "Uruguay",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "participatory democracy",
@@ -97428,6 +97612,7 @@
    },
    "name": "Uzbekistan",
    "form": "semi_presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "presidential system",
     "Unitary semi-presidential republic"
@@ -97891,6 +98076,7 @@
    "name": "Vatican City",
    "form": "theocracy",
    "recognition": "un_observer",
+   "executive_power": "head_of_state",
    "form_raw": [
     "papacy",
     "theocracy",
@@ -98019,6 +98205,7 @@
    },
    "name": "Saint Vincent and the Grenadines",
    "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "Unitary parliamentary constitutional monarchy"
@@ -98273,6 +98460,7 @@
    },
    "name": "Venezuela",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "presidential system",
     "federal republic",
@@ -98825,6 +99013,7 @@
    },
    "name": "Vietnam",
    "form": "one_party_state",
+   "executive_power": "head_of_state",
    "form_raw": [
     "unitary state",
     "one-party state",
@@ -99041,6 +99230,7 @@
    },
    "name": "Vanuatu",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "Unitary parliamentary republic"
    ],
@@ -99452,6 +99642,7 @@
    },
    "name": "Samoa",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_government",
    "form_raw": [
     "Unitary parliamentary republic<!--- Consensus in the talk page is that Samoa is a Republic.--->"
    ],
@@ -99727,6 +99918,7 @@
    "name": "Kosovo",
    "form": "parliamentary_republic",
    "recognition": "partially_recognised",
+   "executive_power": "head_of_government",
    "form_raw": [
     "parliamentary republic",
     "Unitary parliamentary republic"
@@ -100251,6 +100443,7 @@
    },
    "name": "Yemen",
    "form": "transitional",
+   "executive_power": "head_of_state",
    "form_raw": [
     "republic",
     "presidential system",
@@ -100677,6 +100870,7 @@
    },
    "name": "South Africa",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "parliamentary republic",
     "representative democracy",
@@ -101783,6 +101977,7 @@
    },
    "name": "Zambia",
    "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "presidential system",
     "representative democracy",
@@ -102050,6 +102245,7 @@
    },
    "name": "Zimbabwe",
    "form": "parliamentary_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
     "Unitary parliamentary republic with an executive presidency"
    ],

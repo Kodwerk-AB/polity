@@ -4,6 +4,7 @@ import type {
   Confidence,
   Authority,
   Contestation,
+  ExecutivePower,
   Recognition,
   IdeologyFamily,
   ImageHost,
@@ -474,6 +475,20 @@ export interface Polity {
    */
   head_of_state: OfficeHolder
   head_of_government: OfficeHolder | null
+  /**
+   * Which of the two offices actually runs the government.
+   *
+   * The field a consumer wants when asking "who leads this country?" — the
+   * question a quiz asks and a headline answers. Protocol rank does not settle
+   * it, and neither does `represents`: both offices can be political, and a
+   * semi-presidential label covers France, where the president governs, and
+   * Austria, where the chancellor does.
+   *
+   * Read the named officeholder from this rather than guessing: take
+   * `head_of_state` or `head_of_government` as it says, and expect neither
+   * where it reads `collective`.
+   */
+  executive_power: ExecutivePower
   /** The country's parties, keyed by Q-id. Chambers reference these. */
   parties: Record<QID, Party>
   /** One entry for unicameral, two for bicameral. Never a different shape. */

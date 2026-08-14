@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { landslideOr, selectionOf, withoutAllianceHeaders } from './build'
+import { executivePowerOf } from './resolve/leaders'
 import { FREE_ELECTION_SCORE } from './resolve/democracy'
 import { familiesOf } from './resolve/ideology'
 import type { QID } from './types/polity'
@@ -167,5 +168,57 @@ describe('familiesOf', () => {
     // No ideologies at all is an empty array — never `other`, which would
     // assert something about a party we know nothing about.
     expect(familiesOf([], map)).toEqual([])
+  })
+})
+
+describe('executivePowerOf', () => {
+  const at = (form: Parameters<typeof executivePowerOf>[0], prose: string[], hog = true) =>
+    executivePowerOf(form, prose, hog)
+
+  it('gives a presidential republic to its president', () => {
+    expect(at('presidential_republic', ['Federal presidential republic'])).toBe('head_of_state')
+  })
+
+  it('gives a parliamentary system to its prime minister', () => {
+    expect(at('parliamentary_republic', ['Federal parliamentary republic'])).toBe(
+      'head_of_government'
+    )
+    expect(at('constitutional_monarchy', ['Unitary parliamentary monarchy'])).toBe(
+      'head_of_government'
+    )
+  })
+
+  // The 28 semi-presidential republics are the reason this field exists: the
+  // label covers France, where the president governs, and Austria, where the
+  // chancellor does. The article's own prose separates them.
+  it('splits the semi-presidential republics on their prose', () => {
+    expect(at('semi_presidential_republic', ['Unitary semi-presidential republic'])).toBe(
+      'head_of_state'
+    )
+    expect(
+      at('semi_presidential_republic', ['federal parliamentary republic', 'semi-presidential system'])
+    ).toBe('head_of_government')
+  })
+
+  it('reads a parliamentary system through a misclassified form', () => {
+    // Pakistan's form keyword-matches "Islamic" to `theocracy`, which would
+    // hand the country to its president; the prose says otherwise and wins.
+    expect(at('theocracy', ['Federal parliamentary Islamic republic'])).toBe('head_of_government')
+  })
+
+  it('calls a shared executive collective, even with no head of government', () => {
+    // Switzerland records no separate head of government because the Federal
+    // Council holds both roles as a body — so this is checked BEFORE the
+    // single-officeholder shortcut, or a seven-member collective reads as one
+    // head of state.
+    expect(at('presidential_republic', ['directorial system', 'federal republic'], false)).toBe(
+      'collective'
+    )
+  })
+
+  it('gives both offices to one person where there is no head of government', () => {
+    expect(at('presidential_republic', ['Federal presidential republic'], false)).toBe(
+      'head_of_state'
+    )
   })
 })

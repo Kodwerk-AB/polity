@@ -1170,6 +1170,7 @@
           "form_raw",
           "head_of_state",
           "head_of_government",
+          "executive_power",
           "parties",
           "chambers",
           "government",
@@ -1209,6 +1210,15 @@
               "partially_recognised"
             ],
             "description": "Set only for a state with no UN seat — absent means a UN member, which is 193 of the 197 carried. Filter on its absence to get exactly the UN membership."
+          },
+          "executive_power": {
+            "type": "string",
+            "enum": [
+              "head_of_state",
+              "head_of_government",
+              "collective"
+            ],
+            "description": "Which office actually runs the government — the field to read when asking who leads a country. Protocol rank does not settle it and neither does `represents`: a semi-presidential label covers France, where the president governs, and Austria, where the chancellor does. Read the named officeholder from this; expect neither where it says `collective`."
           },
           "form": {
             "type": "string",
@@ -2517,6 +2527,7 @@
                 "form_raw",
                 "head_of_state",
                 "head_of_government",
+                "executive_power",
                 "parties",
                 "chambers",
                 "government",
@@ -2556,6 +2567,15 @@
                     "partially_recognised"
                   ],
                   "description": "Set only for a state with no UN seat — absent means a UN member, which is 193 of the 197 carried. Filter on its absence to get exactly the UN membership."
+                },
+                "executive_power": {
+                  "type": "string",
+                  "enum": [
+                    "head_of_state",
+                    "head_of_government",
+                    "collective"
+                  ],
+                  "description": "Which office actually runs the government — the field to read when asking who leads a country. Protocol rank does not settle it and neither does `represents`: a semi-presidential label covers France, where the president governs, and Austria, where the chancellor does. Read the named officeholder from this; expect neither where it says `collective`."
                 },
                 "form": {
                   "type": "string",
