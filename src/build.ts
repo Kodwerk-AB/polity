@@ -992,7 +992,14 @@ const buildCountry = async (
     // The SAME tolerance the validator applies, so a chamber can never be
     // called `high` and then fail its own sum check — an inconsistency that
     // would make `confidence` meaningless.
-    const sumsMatch = seatsTotal > 0 && Math.abs(seated - seatsTotal) / seatsTotal <= 0.02
+    // Tolerance runs ONE WAY. A chamber can list fewer seats than it holds —
+    // an unfilled vacancy, a bloc the source did not itemise — and 2% absorbs
+    // that. It cannot hold MORE members than it has seats: Brazil listed 515
+    // in a chamber of 513 and shipped `high`, Colombia 202 in 183, Ireland 188
+    // in 174. An overcount is a double-counted coalition, which is a real
+    // defect, so anything over the declared size fails outright.
+    const sumsMatch =
+      seatsTotal > 0 && seated <= seatsTotal && (seatsTotal - seated) / seatsTotal <= 0.02
     // A composition older than its own chamber's mandate is not a high
     // confidence record however cleanly it parsed. Sudan's shipped a 426-seat
     // parliament dissolved in 2019, governed by a party banned the same year,
