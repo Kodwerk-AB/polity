@@ -1,713 +1,7 @@
 {
  "schema_version": "1.0.0",
- "generated_at": "2026-08-14T05:44:39.745Z",
+ "generated_at": "2026-08-14T05:47:44.966Z",
  "countries": {
-  "BF": {
-   "iso": "BF",
-   "entity": {
-    "qid": "Q965",
-    "label": "Burkina Faso"
-   },
-   "name": "Burkina Faso",
-   "form": "military_junta",
-   "form_raw": [
-    "military junta",
-    "Unitary semi-presidential republic under a military junta"
-   ],
-   "head_of_state": {
-    "person": {
-     "qid": "Q114341246",
-     "label": "Ibrahim Traoré"
-    },
-    "name": "Ibrahim Traoré",
-    "party": null,
-    "since": "2022-10-06",
-    "portrait": {
-     "file": "2025 Ibrahim Traore (cropped).jpg",
-     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/2025%20Ibrahim%20Traore%20(cropped).jpg",
-     "host": "commons",
-     "license": "CC BY-SA 3.0",
-     "non_free": false,
-     "credit": "Autor: Stanislav Krasilnikov Crédito: RIA Novosti Fonte: Agência RIA Novosti Photohost Original: Dígito Formato: JPEG, 5"
-    },
-    "represents": "political",
-    "provenance": {
-     "kind": "wikidata",
-     "derivation": "structured",
-     "qid": "Q965",
-     "retrieved_at": "2026-08-14"
-    }
-   },
-   "head_of_government": {
-    "person": {
-     "qid": "Q114835874"
-    },
-    "name": "Jean Emmanuel Ouédraogo",
-    "party": null,
-    "represents": "political",
-    "superseded": true,
-    "provenance": {
-     "kind": "wikipedia",
-     "derivation": "extracted",
-     "article": "Burkina Faso",
-     "revid": 1368567800,
-     "retrieved_at": "2026-08-14",
-     "model": "claude-haiku-4-5"
-    }
-   },
-   "parties": {},
-   "chambers": [
-    {
-     "entity": {
-      "qid": "Q619238",
-      "label": "National Assembly of Burkina Faso"
-     },
-     "role": "unicameral",
-     "name": "National Assembly of Burkina Faso",
-     "seats_total": 127,
-     "selection": [
-      "directly_elected"
-     ],
-     "contestation": "suspended",
-     "composition": [],
-     "as_of": "2026-08-14",
-     "confidence": "flagged",
-     "provenance": {
-      "kind": "wikipedia",
-      "derivation": "structured",
-      "article": "National Assembly (Burkina Faso)",
-      "revid": 1359303037,
-      "retrieved_at": "2026-08-14"
-     },
-     "source_hash": "sha256:318ee5420bfc8fb4a7bcf150a3a06b03"
-    }
-   ],
-   "government": {
-    "governing": [],
-    "backing": [],
-    "seats": 0,
-    "minority": true,
-    "authority": "established",
-    "confidence": "flagged",
-    "provenance": {
-     "kind": "wikipedia",
-     "derivation": "derived",
-     "article": "National Assembly (Burkina Faso)",
-     "retrieved_at": "2026-08-14"
-    }
-   },
-   "sources": [
-    {
-     "kind": "wikidata",
-     "derivation": "structured",
-     "qid": "Q965",
-     "retrieved_at": "2026-08-14"
-    }
-   ],
-   "updated_at": "2026-08-14"
-  },
-  "CA": {
-   "iso": "CA",
-   "entity": {
-    "qid": "Q16",
-    "label": "Canada"
-   },
-   "name": "Canada",
-   "form": "constitutional_monarchy",
-   "form_raw": [
-    "constitutional monarchy",
-    "federation",
-    "parliamentary system",
-    "Federal parliamentary constitutional monarchy"
-   ],
-   "head_of_state": {
-    "person": {
-     "qid": "Q43274",
-     "label": "Charles III"
-    },
-    "name": "Charles III",
-    "party": null,
-    "since": "2022-09-08",
-    "portrait": {
-     "file": "King Charles III 2025-09-17 (cropped).jpg",
-     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/King%20Charles%20III%202025-09-17%20(cropped).jpg",
-     "host": "commons",
-     "license": "Public domain",
-     "non_free": false,
-     "credit": "The White House"
-    },
-    "represents": "ceremonial",
-    "provenance": {
-     "kind": "wikidata",
-     "derivation": "structured",
-     "qid": "Q16",
-     "retrieved_at": "2026-08-14"
-    }
-   },
-   "head_of_government": {
-    "person": {
-     "qid": "Q192533",
-     "label": "Mark Carney"
-    },
-    "name": "Mark Carney",
-    "party": {
-     "qid": "Q138345",
-     "label": "Liberal Party of Canada"
-    },
-    "since": "2025-03-14",
-    "portrait": {
-     "file": "2025-11-14 InaugurationREM Deux-Montagnes Mark Carney.jpg",
-     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/2025-11-14%20InaugurationREM%20Deux-Montagnes%20Mark%20Carney.jpg",
-     "host": "commons",
-     "license": "CC BY-SA 4.0",
-     "non_free": false,
-     "credit": "Lea-Kim"
-    },
-    "represents": "political",
-    "provenance": {
-     "kind": "wikidata",
-     "derivation": "structured",
-     "qid": "Q16",
-     "retrieved_at": "2026-08-14"
-    }
-   },
-   "parties": {
-    "Q138345": {
-     "entity": {
-      "qid": "Q138345",
-      "label": "Liberal Party of Canada"
-     },
-     "name": "Liberal Party of Canada",
-     "kind": "party",
-     "alignment": "centre",
-     "alignment_raw": "centrism",
-     "ideologies": [
-      {
-       "qid": "Q201712",
-       "label": "social liberalism"
-      },
-      {
-       "qid": "Q3237980",
-       "label": "liberalism in Canada"
-      },
-      {
-       "qid": "Q6216",
-       "label": "liberalism"
-      }
-     ],
-     "groupings": [
-      {
-       "qid": "Q212712",
-       "label": "Liberal International"
-      }
-     ],
-     "colors": [
-      "#d71920"
-     ],
-     "founded_year": 1861,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q138345",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Liberale Partei Kanadas Logo.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Liberale%20Partei%20Kanadas%20Logo.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "restrictions": "trademarked",
-      "credit": "Unknown authorUnknown author"
-     }
-    },
-    "Q488523": {
-     "entity": {
-      "qid": "Q488523",
-      "label": "Conservative Party of Canada"
-     },
-     "name": "Conservative Party of Canada",
-     "kind": "party",
-     "alignment": "right",
-     "alignment_raw": "right-wing",
-     "ideologies": [
-      {
-       "qid": "Q7169",
-       "label": "conservatism"
-      }
-     ],
-     "groupings": [
-      {
-       "qid": "Q862603",
-       "label": "International Democracy Union"
-      }
-     ],
-     "colors": [
-      "#003f72"
-     ],
-     "founded_year": 2003,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q488523",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Logo of the Conservative Party of Canada (2023–present).svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20of%20the%20Conservative%20Party%20of%20Canada%20(2023%E2%80%93present).svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "credit": "Conservative Party of Canada/Parti conservateur du Canada"
-     }
-    },
-    "Q735105": {
-     "entity": {
-      "qid": "Q735105",
-      "label": "Bloc Québécois"
-     },
-     "name": "Bloc Québécois",
-     "endonym": "Bloc québécois",
-     "kind": "party",
-     "alignment": "centre_left",
-     "alignment_raw": "centre-left",
-     "ideologies": [
-      {
-       "qid": "Q121254",
-       "label": "social democracy"
-      },
-      {
-       "qid": "Q3141508",
-       "label": "Quebec nationalism"
-      },
-      {
-       "qid": "Q1321476",
-       "label": "Quebec sovereignty movement"
-      },
-      {
-       "qid": "Q877848",
-       "label": "Republicanism"
-      },
-      {
-       "qid": "Q2855609",
-       "label": "environmentalism"
-      }
-     ],
-     "groupings": [],
-     "colors": [
-      "#87cefa"
-     ],
-     "founded_year": 1991,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q735105",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Bloc Québécois-logo.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bloc%20Qu%C3%A9b%C3%A9cois-logo.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "restrictions": "trademarked",
-      "credit": "http://www.blocquebecois.org/"
-     }
-    },
-    "Q130765": {
-     "entity": {
-      "qid": "Q130765",
-      "label": "New Democratic Party"
-     },
-     "name": "New Democratic Party",
-     "abbreviation": "NDP",
-     "kind": "party",
-     "alignment": "centre_left",
-     "alignment_raw": "centre-left",
-     "ideologies": [
-      {
-       "qid": "Q121254",
-       "label": "social democracy"
-      }
-     ],
-     "groupings": [
-      {
-       "qid": "Q7248622",
-       "label": "Progressive Alliance"
-      }
-     ],
-     "colors": [
-      "#f58220"
-     ],
-     "founded_year": 1961,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q130765",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "NDP-NPD Canada.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/NDP-NPD%20Canada.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "credit": "New Democratic Party of Canada (NDP)."
-     }
-    },
-    "Q691730": {
-     "entity": {
-      "qid": "Q691730",
-      "label": "Green Party of Canada"
-     },
-     "name": "Green Party of Canada",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q1661415",
-       "label": "green politics"
-      },
-      {
-       "qid": "Q7252",
-       "label": "feminism"
-      }
-     ],
-     "groupings": [
-      {
-       "qid": "Q384069",
-       "label": "Global Greens"
-      }
-     ],
-     "colors": [
-      "#24b24a"
-     ],
-     "founded_year": 1983,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q691730",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Logo 2025 Green Party of Canada.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%202025%20Green%20Party%20of%20Canada.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "restrictions": "trademarked",
-      "credit": "Green Party of Canada"
-     }
-    },
-    "Q2506575": {
-     "entity": {
-      "qid": "Q2506575",
-      "label": "Representative of the Government in the Senate"
-     },
-     "name": "Representative of the Government in the Senate",
-     "endonym": "représentant du gouvernement au Sénat",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 1867,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q2506575",
-      "retrieved_at": "2026-08-14"
-     }
-    },
-    "Q28946329": {
-     "entity": {
-      "qid": "Q28946329",
-      "label": "Independent Senators Group"
-     },
-     "name": "Independent Senators Group",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 2016,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q28946329",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Independent Senators Group logo.png",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Independent%20Senators%20Group%20logo.png",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "restrictions": "trademarked",
-      "credit": "Independent Senators Group"
-     }
-    },
-    "Q78629555": {
-     "entity": {
-      "qid": "Q78629555",
-      "label": "Progressive Senate Group"
-     },
-     "name": "Progressive Senate Group",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q821102",
-       "label": "progressivism"
-      }
-     ],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 2019,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q78629555",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "The-Progressives-Les-progressistes-300x300.png",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The-Progressives-Les-progressistes-300x300.png",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "credit": "Progressive Senators Group"
-     }
-    },
-    "Q73901811": {
-     "entity": {
-      "qid": "Q73901811",
-      "label": "Canadian Senators Group"
-     },
-     "name": "Canadian Senators Group",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 2019,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q73901811",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Canadian Senators Group Logo.png",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Canadian%20Senators%20Group%20Logo.png",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "credit": "Canadian Senators Group"
-     }
-    },
-    "Q327591": {
-     "entity": {
-      "qid": "Q327591",
-      "label": "independent politician"
-     },
-     "name": "independent politician",
-     "abbreviation": "Independent",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [
-      "#dddddd"
-     ],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q327591",
-      "retrieved_at": "2026-08-14"
-     }
-    }
-   },
-   "chambers": [
-    {
-     "entity": {
-      "qid": "Q383590",
-      "label": "House of Commons"
-     },
-     "role": "lower",
-     "name": "House of Commons",
-     "seats_total": 343,
-     "selection": [
-      "directly_elected"
-     ],
-     "contestation": "competitive",
-     "composition": [
-      {
-       "party": "Q138345",
-       "name": "Liberal",
-       "seats": 172,
-       "share": 0.5015,
-       "standing": "government"
-      },
-      {
-       "party": "Q488523",
-       "name": "Conservative",
-       "seats": 139,
-       "share": 0.4052,
-       "standing": "opposition"
-      },
-      {
-       "party": "Q735105",
-       "name": "Bloc Québécois",
-       "seats": 21,
-       "share": 0.0612,
-       "standing": "opposition"
-      },
-      {
-       "party": "Q130765",
-       "name": "New Democratic",
-       "seats": 5,
-       "share": 0.0146,
-       "standing": "non_attached"
-      },
-      {
-       "party": "Q691730",
-       "name": "Green",
-       "seats": 1,
-       "share": 0.0029,
-       "standing": "non_attached"
-      },
-      {
-       "party": null,
-       "name": "Independent",
-       "seats": 1,
-       "share": 0.0029,
-       "standing": "non_attached"
-      },
-      {
-       "party": null,
-       "name": "Vacant",
-       "seats": 4,
-       "share": 0.0117,
-       "standing": "vacant"
-      }
-     ],
-     "last_election": "2025-04-28",
-     "next_election": "2029-10-15",
-     "mandate": {
-      "expected_end": "2029-10-15",
-      "inferred": false,
-      "state": "current"
-     },
-     "as_of": "2026-08-14",
-     "confidence": "high",
-     "provenance": {
-      "kind": "wikipedia",
-      "derivation": "extracted",
-      "article": "House of Commons of Canada",
-      "revid": 1369092828,
-      "retrieved_at": "2026-08-14",
-      "model": "claude-haiku-4-5"
-     },
-     "source_hash": "sha256:156dfad6e51fcfe84fc3fe390f42a1d7"
-    },
-    {
-     "entity": {
-      "qid": "Q841180",
-      "label": "Senate of Canada"
-     },
-     "role": "upper",
-     "name": "Senate of Canada",
-     "name_local": "Canadian Senate",
-     "seats_total": 105,
-     "selection": [
-      "indirectly_elected"
-     ],
-     "contestation": "competitive",
-     "composition": [
-      {
-       "party": "Q2506575",
-       "name": "Representative of the Government in the Senate",
-       "seats": 5,
-       "share": 0.0476,
-       "standing": "government"
-      },
-      {
-       "party": "Q488523",
-       "name": "Conservative Party",
-       "seats": 12,
-       "share": 0.1143,
-       "standing": "opposition"
-      },
-      {
-       "party": "Q28946329",
-       "name": "Independent Senators Group",
-       "seats": 40,
-       "share": 0.381,
-       "standing": "non_attached"
-      },
-      {
-       "party": "Q78629555",
-       "name": "Progressive Senate Group",
-       "seats": 17,
-       "share": 0.1619,
-       "standing": "non_attached"
-      },
-      {
-       "party": "Q73901811",
-       "name": "Canadian Senators Group",
-       "seats": 16,
-       "share": 0.1524,
-       "standing": "non_attached"
-      },
-      {
-       "party": "Q327591",
-       "name": "Non-affiliated",
-       "seats": 6,
-       "share": 0.0571,
-       "standing": "non_attached"
-      },
-      {
-       "party": null,
-       "name": "Vacant",
-       "seats": 9,
-       "share": 0.0857,
-       "standing": "vacant"
-      }
-     ],
-     "as_of": "2026-08-14",
-     "confidence": "high",
-     "provenance": {
-      "kind": "wikipedia",
-      "derivation": "extracted",
-      "article": "Senate of Canada",
-      "revid": 1365209490,
-      "retrieved_at": "2026-08-14",
-      "model": "claude-haiku-4-5"
-     },
-     "source_hash": "sha256:88905de525bb93b750f704cbc2295722"
-    }
-   ],
-   "government": {
-    "governing": [
-     "Q138345"
-    ],
-    "backing": [],
-    "seats": 172,
-    "minority": false,
-    "authority": "established",
-    "confidence": "high",
-    "provenance": {
-     "kind": "wikipedia",
-     "derivation": "derived",
-     "article": "House of Commons of Canada",
-     "retrieved_at": "2026-08-14"
-    }
-   },
-   "sources": [
-    {
-     "kind": "wikidata",
-     "derivation": "structured",
-     "qid": "Q16",
-     "retrieved_at": "2026-08-14"
-    }
-   ],
-   "updated_at": "2026-08-14"
-  },
   "DE": {
    "iso": "DE",
    "entity": {
@@ -1246,7 +540,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-02-23",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -1272,6 +567,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -1311,306 +607,1053 @@
    ],
    "updated_at": "2026-08-14"
   },
-  "GA": {
-   "iso": "GA",
+  "DK": {
+   "iso": "DK",
    "entity": {
-    "qid": "Q1000",
-    "label": "Gabon"
+    "qid": "Q35",
+    "label": "Denmark"
    },
-   "name": "Gabon",
-   "form": "presidential_republic",
+   "name": "Denmark",
+   "form": "constitutional_monarchy",
    "form_raw": [
-    "republic",
-    "Unitary presidential republic"
+    "constitutional monarchy",
+    "Unitary parliamentary constitutional monarchy"
    ],
    "head_of_state": {
     "person": {
-     "qid": "Q122067521",
-     "label": "Brice Clotaire Oligui Nguema"
+     "qid": "Q1004037",
+     "label": "Frederik X of Denmark"
     },
-    "name": "Brice Clotaire Oligui Nguema",
-    "party": {
-     "qid": "Q134311805",
-     "label": "Democratic Union of Builders"
-    },
-    "since": "2023-09-04",
+    "name": "Frederik X of Denmark",
+    "party": null,
+    "since": "2024-01-14",
     "portrait": {
-     "file": "Brice Oligui Nguema on November 26, 2024 (cropped).jpg",
-     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Brice%20Oligui%20Nguema%20on%20November%2026%2C%202024%20(cropped).jpg",
+     "file": "King Frederik X in 2025.jpg",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/King%20Frederik%20X%20in%202025.jpg",
      "host": "commons",
-     "license": "CC BY 4.0",
+     "license": "CC BY 2.0",
      "non_free": false,
-     "credit": "Lukasz Kobus / European Communities, 2024 / EC - Audiovisual Service"
+     "credit": "Finnish Government"
     },
-    "represents": "political",
+    "represents": "ceremonial",
     "provenance": {
      "kind": "wikidata",
      "derivation": "structured",
-     "qid": "Q1000",
+     "qid": "Q35",
      "retrieved_at": "2026-08-14"
     }
    },
    "head_of_government": {
     "person": {
-     "qid": "Q57856"
+     "qid": "Q5015",
+     "label": "Mette Frederiksen"
     },
-    "name": "Hermann Immongault",
-    "party": null,
+    "name": "Mette Frederiksen",
+    "party": {
+     "qid": "Q212101",
+     "label": "Social Democrats"
+    },
+    "since": "2019-06-27",
+    "portrait": {
+     "file": "Mette Frederiksen by Christian Ursilva (2026).jpg",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mette%20Frederiksen%20by%20Christian%20Ursilva%20(2026).jpg",
+     "host": "commons",
+     "license": "CC BY-SA 4.0",
+     "non_free": false,
+     "credit": "Christian Ursilva"
+    },
     "represents": "political",
     "provenance": {
-     "kind": "wikipedia",
-     "derivation": "extracted",
-     "article": "Gabon",
-     "revid": 1368530220,
-     "retrieved_at": "2026-08-14",
-     "model": "claude-haiku-4-5"
-    },
-    "superseded": true
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q35",
+     "retrieved_at": "2026-08-14"
+    }
    },
    "parties": {
-    "Q134311805": {
+    "Q212101": {
      "entity": {
-      "qid": "Q134311805",
-      "label": "Democratic Union of Builders"
+      "qid": "Q212101",
+      "label": "Social Democrats"
      },
-     "name": "Democratic Union of Builders",
+     "name": "Social Democrats",
+     "endonym": "Socialdemokratiet",
+     "abbreviation": "A",
      "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 2025,
+     "alignment": "centre_left",
+     "alignment_raw": "centre-left",
+     "ideologies": [
+      {
+       "qid": "Q121254",
+       "label": "social democracy"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q220945",
+       "label": "Party of European Socialists"
+      },
+      {
+       "qid": "Q7248622",
+       "label": "Progressive Alliance"
+      },
+      {
+       "qid": "Q2697367",
+       "label": "SAMAK"
+      }
+     ],
+     "colors": [
+      "#f04d46",
+      "#c82518"
+     ],
+     "founded_year": 1871,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q134311805",
+      "qid": "Q212101",
       "retrieved_at": "2026-08-14"
      },
      "logo": {
-      "file": "Union démocratique des bâtisseurs.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Union%20d%C3%A9mocratique%20des%20b%C3%A2tisseurs.png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
+      "file": "Socialdemokratiet symbol (2014–present).svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Socialdemokratiet%20symbol%20(2014%E2%80%93present).svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": "trademarked",
+      "credit": "Socialdemokratiet"
      }
     },
-    "Q1762536": {
+    "Q615603": {
      "entity": {
-      "qid": "Q1762536",
-      "label": "Gabonese Democratic Party"
+      "qid": "Q615603",
+      "label": "Green Left"
      },
-     "name": "Gabonese Democratic Party",
-     "endonym": "Parti démocratique gabonais",
-     "abbreviation": "PDG",
+     "name": "Green Left",
+     "abbreviation": "F",
+     "kind": "party",
+     "alignment": "left",
+     "alignment_raw": "radical left",
+     "ideologies": [
+      {
+       "qid": "Q7229732",
+       "label": "Popular socialism (Nordic countries)"
+      },
+      {
+       "qid": "Q189280",
+       "label": "democratic socialism"
+      },
+      {
+       "qid": "Q1661415",
+       "label": "green politics"
+      },
+      {
+       "qid": "Q268919",
+       "label": "market socialism"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q940628",
+       "label": "Nordic Green Left Alliance"
+      },
+      {
+       "qid": "Q950179",
+       "label": "European Green Party"
+      }
+     ],
+     "colors": [
+      "#a20000",
+      "#eb94d1"
+     ],
+     "founded_year": 1959,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q615603",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "SF - Socialistiske Folkeparti.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/SF%20-%20Socialistiske%20Folkeparti.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": "trademarked",
+      "credit": "Socialistiske Folkeparti"
+     }
+    },
+    "Q107110050": {
+     "entity": {
+      "qid": "Q107110050",
+      "label": "Moderate Party"
+     },
+     "name": "Moderate Party",
+     "endonym": "Moderaterne",
+     "abbreviation": "M",
+     "kind": "party",
+     "alignment": "centre",
+     "alignment_raw": "centrism",
+     "ideologies": [
+      {
+       "qid": "Q617609",
+       "label": "conservative liberalism"
+      },
+      {
+       "qid": "Q3781399",
+       "label": "pro-Europeanism"
+      },
+      {
+       "qid": "Q6216",
+       "label": "liberalism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#842990",
+      "#b48cd2"
+     ],
+     "founded_year": 2022,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q107110050",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Moderaterne listebogstav logo.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Moderaterne%20listebogstav%20logo.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": "trademarked",
+      "credit": "(M)"
+     }
+    },
+    "Q916161": {
+     "entity": {
+      "qid": "Q916161",
+      "label": "Danish Social Liberal Party"
+     },
+     "name": "Danish Social Liberal Party",
+     "endonym": "Radikale Venstre",
+     "abbreviation": "B",
+     "kind": "party",
+     "alignment": "centre",
+     "alignment_raw": "centrism",
+     "ideologies": [
+      {
+       "qid": "Q201712",
+       "label": "social liberalism"
+      },
+      {
+       "qid": "Q3448005",
+       "label": "radical centrism"
+      },
+      {
+       "qid": "Q3781399",
+       "label": "pro-Europeanism"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q25079",
+       "label": "Alliance of Liberals and Democrats for Europe Party"
+      },
+      {
+       "qid": "Q212712",
+       "label": "Liberal International"
+      }
+     ],
+     "colors": [
+      "#733280"
+     ],
+     "founded_year": 1905,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q916161",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Logo of the Danish Social Liberal Party.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20of%20the%20Danish%20Social%20Liberal%20Party.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": "trademarked",
+      "credit": "Radikale Venstre"
+     }
+    },
+    "Q25785": {
+     "entity": {
+      "qid": "Q25785",
+      "label": "Red–Green Alliance"
+     },
+     "name": "Red–Green Alliance",
+     "endonym": "Enhedslisten — de rød-grønne",
+     "abbreviation": "Ø",
+     "kind": "party",
+     "alignment": "left",
+     "alignment_raw": "far-left politics",
+     "ideologies": [
+      {
+       "qid": "Q389647",
+       "label": "anti-capitalism"
+      },
+      {
+       "qid": "Q275595",
+       "label": "eco-socialism"
+      },
+      {
+       "qid": "Q223200",
+       "label": "euroscepticism"
+      },
+      {
+       "qid": "Q189280",
+       "label": "democratic socialism"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q1377231",
+       "label": "European Anti-Capitalist Left"
+      },
+      {
+       "qid": "Q130219314",
+       "label": "European Left Alliance for the People and the Planet"
+      }
+     ],
+     "colors": [
+      "#f7660d"
+     ],
+     "founded_year": 1989,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q25785",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Enhedslisten-Logo-markoer-768x138-1.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Enhedslisten-Logo-markoer-768x138-1.png",
+      "host": "commons",
+      "license": "CC BY-SA 4.0",
+      "non_free": false,
+      "credit": "Enhedslisten"
+     }
+    },
+    "Q18042964": {
+     "entity": {
+      "qid": "Q18042964",
+      "label": "The Alternative"
+     },
+     "name": "The Alternative",
+     "abbreviation": "Å",
+     "kind": "party",
+     "alignment": "centre_left",
+     "alignment_raw": "centre-left",
+     "ideologies": [
+      {
+       "qid": "Q1661415",
+       "label": "green politics"
+      },
+      {
+       "qid": "Q821102",
+       "label": "progressivism"
+      },
+      {
+       "qid": "Q3781399",
+       "label": "pro-Europeanism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#03d563",
+      "#18942d",
+      "#00d564"
+     ],
+     "founded_year": 2013,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q18042964",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Alternativet logo 2025.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Alternativet%20logo%202025.svg",
+      "host": "commons",
+      "license": "CC BY 4.0",
+      "non_free": false,
+      "credit": "Alternativet DK"
+     }
+    },
+    "Q856027": {
+     "entity": {
+      "qid": "Q856027",
+      "label": "Social Democratic Party of the Faroe Islands"
+     },
+     "name": "Social Democratic Party of the Faroe Islands",
+     "endonym": "Javnaðarflokkurin",
+     "kind": "party",
+     "alignment": "centre_left",
+     "alignment_raw": "centre-left",
+     "ideologies": [
+      {
+       "qid": "Q121254",
+       "label": "social democracy"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#a73033"
+     ],
+     "founded_year": 1925,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q856027",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "SDP Regular.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/SDP%20Regular.svg",
+      "host": "commons",
+      "license": "CC BY-SA 4.0",
+      "non_free": false,
+      "credit": "Copelonian"
+     }
+    },
+    "Q932400": {
+     "entity": {
+      "qid": "Q932400",
+      "label": "Union Party"
+     },
+     "name": "Union Party",
+     "endonym": "Sambandsflokkurin",
      "kind": "party",
      "alignment": "centre_right",
      "alignment_raw": "centre-right",
      "ideologies": [
       {
-       "qid": "Q7169",
-       "label": "conservatism"
+       "qid": "Q617609",
+       "label": "conservative liberalism"
       },
       {
-       "qid": "Q6229",
-       "label": "authoritarianism"
-      },
-      {
-       "qid": "Q282739",
-       "label": "Pan-Africanism"
-      },
-      {
-       "qid": "Q216920",
-       "label": "secularism"
+       "qid": "Q492050",
+       "label": "agrarianism"
       }
      ],
      "groupings": [
       {
-       "qid": "Q128064",
-       "label": "Centrist Democrat International"
+       "qid": "Q25079",
+       "label": "Alliance of Liberals and Democrats for Europe Party"
       }
      ],
      "colors": [
-      "#008800"
+      "#00678a"
      ],
-     "founded_year": 1968,
+     "founded_year": 1906,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q1762536",
+      "qid": "Q932400",
       "retrieved_at": "2026-08-14"
      },
      "logo": {
-      "file": "Gabonese Democratic Party.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Gabonese%20Democratic%20Party.png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
+      "file": "Logo of the Union Party (Faroe Islands, 2020).svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20of%20the%20Union%20Party%20(Faroe%20Islands%2C%202020).svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "credit": "Sambandsflokkurin"
      }
     },
-    "Q22080862": {
+    "Q1128374": {
      "entity": {
-      "qid": "Q22080862",
-      "label": "National Union"
+      "qid": "Q1128374",
+      "label": "Inuit Ataqatigiit"
      },
-     "name": "National Union",
+     "name": "Inuit Ataqatigiit",
      "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 2010,
+     "alignment": "left",
+     "alignment_raw": "left-wing",
+     "ideologies": [
+      {
+       "qid": "Q189280",
+       "label": "democratic socialism"
+      },
+      {
+       "qid": "Q5604239",
+       "label": "Greenlandic independence"
+      },
+      {
+       "qid": "Q2855609",
+       "label": "environmentalism"
+      },
+      {
+       "qid": "Q1202972",
+       "label": "left-wing nationalism"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q940628",
+       "label": "Nordic Green Left Alliance"
+      }
+     ],
+     "colors": [
+      "#c82a2f"
+     ],
+     "founded_year": 1976,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q22080862",
+      "qid": "Q1128374",
       "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Inuit Ataqatigiit logo2020 png-600x600.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Inuit%20Ataqatigiit%20logo2020%20png-600x600.png",
+      "host": "commons",
+      "license": "CC BY-SA 4.0",
+      "non_free": false,
+      "credit": "Inuit Ataqatigiit"
      }
     },
-    "Q3366711": {
+    "Q16856492": {
      "entity": {
-      "qid": "Q3366711",
-      "label": "Social Democratic Party"
+      "qid": "Q16856492",
+      "label": "Naleraq"
      },
-     "name": "Social Democratic Party",
+     "name": "Naleraq",
+     "kind": "party",
+     "alignment": "centre",
+     "alignment_raw": "centrism",
+     "ideologies": [
+      {
+       "qid": "Q180490",
+       "label": "populism"
+      },
+      {
+       "qid": "Q5604239",
+       "label": "Greenlandic independence"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#ff8400"
+     ],
+     "founded_year": 2014,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q16856492",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Naleraq Logo.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Naleraq%20Logo.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": "trademarked",
+      "credit": "Naleraq"
+     }
+    },
+    "Q217321": {
+     "entity": {
+      "qid": "Q217321",
+      "label": "Venstre"
+     },
+     "name": "Venstre",
+     "endonym": "Venstre, Danmarks Liberale Parti",
+     "abbreviation": "V",
+     "kind": "party",
+     "alignment": "centre_right",
+     "alignment_raw": "centre-right",
+     "ideologies": [
+      {
+       "qid": "Q617609",
+       "label": "conservative liberalism"
+      },
+      {
+       "qid": "Q794394",
+       "label": "classical liberalism"
+      },
+      {
+       "qid": "Q492050",
+       "label": "agrarianism"
+      },
+      {
+       "qid": "Q3282509",
+       "label": "Nordic agrarian parties"
+      },
+      {
+       "qid": "Q729119",
+       "label": "economic liberalism"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q25079",
+       "label": "Alliance of Liberals and Democrats for Europe Party"
+      },
+      {
+       "qid": "Q212712",
+       "label": "Liberal International"
+      }
+     ],
+     "colors": [
+      "#01438e"
+     ],
+     "founded_year": 1870,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q217321",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Venstre logo (2019–present).svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Venstre%20logo%20(2019%E2%80%93present).svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": "trademarked",
+      "credit": "Venstre"
+     }
+    },
+    "Q507170": {
+     "entity": {
+      "qid": "Q507170",
+      "label": "Danish People's Party"
+     },
+     "name": "Danish People's Party",
+     "endonym": "Dansk Folkeparti",
+     "abbreviation": "O",
+     "kind": "party",
+     "alignment": "right",
+     "alignment_raw": "right-wing",
+     "ideologies": [
+      {
+       "qid": "Q65559626",
+       "label": "Danish nationalism"
+      },
+      {
+       "qid": "Q852739",
+       "label": "national conservatism"
+      },
+      {
+       "qid": "Q1414298",
+       "label": "social conservatism"
+      },
+      {
+       "qid": "Q436860",
+       "label": "right-wing populism"
+      },
+      {
+       "qid": "Q223200",
+       "label": "euroscepticism"
+      },
+      {
+       "qid": "Q65344895",
+       "label": "anti-Islam"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q63157279",
+       "label": "European Alliance of People and Nations"
+      },
+      {
+       "qid": "Q18907386",
+       "label": "Patriots.eu"
+      }
+     ],
+     "colors": [
+      "#fcd03b",
+      "#005ca9",
+      "#db3a3f"
+     ],
+     "founded_year": 1995,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q507170",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Dansk Folkeparti new logo 10 2023 positive.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dansk%20Folkeparti%20new%20logo%2010%202023%20positive.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": "trademarked",
+      "credit": "Dansk Folkeparti (DF)"
+     }
+    },
+    "Q478180": {
+     "entity": {
+      "qid": "Q478180",
+      "label": "Liberal Alliance"
+     },
+     "name": "Liberal Alliance",
+     "abbreviation": "I",
+     "kind": "party",
+     "alignment": "centre_right",
+     "alignment_raw": "centre-right",
+     "ideologies": [
+      {
+       "qid": "Q794394",
+       "label": "classical liberalism"
+      },
+      {
+       "qid": "Q178598",
+       "label": "libertarianism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#fa4a00",
+      "#002945",
+      "#f0b440",
+      "#3fb2be"
+     ],
+     "founded_year": 2007,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q478180",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Logo of the Liberal Alliance (Denmark).svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20of%20the%20Liberal%20Alliance%20(Denmark).svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": "trademarked",
+      "credit": "Liberal Alliance (Denmark)"
+     }
+    },
+    "Q902619": {
+     "entity": {
+      "qid": "Q902619",
+      "label": "Conservative People's Party"
+     },
+     "name": "Conservative People's Party",
+     "endonym": "Det Konservative Folkeparti",
+     "abbreviation": "C",
+     "kind": "party",
+     "alignment": "centre_right",
+     "alignment_raw": "centre-right",
+     "ideologies": [
+      {
+       "qid": "Q1043096",
+       "label": "liberal conservatism"
+      },
+      {
+       "qid": "Q28859676",
+       "label": "social conservatism"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q208242",
+       "label": "European People's Party"
+      },
+      {
+       "qid": "Q862603",
+       "label": "International Democracy Union"
+      }
+     ],
+     "colors": [
+      "#004931",
+      "#6b9249"
+     ],
+     "founded_year": 1916,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q902619",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Det Konservative Folkepartis logo.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Det%20Konservative%20Folkepartis%20logo.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "credit": "konservative.dk"
+     }
+    },
+    "Q112677506": {
+     "entity": {
+      "qid": "Q112677506",
+      "label": "Denmark Democrats - Inger Støjberg"
+     },
+     "name": "Denmark Democrats - Inger Støjberg",
+     "endonym": "Danmarksdemokraterne",
+     "abbreviation": "Æ",
+     "kind": "party",
+     "alignment": "right",
+     "alignment_raw": "right-wing",
+     "ideologies": [
+      {
+       "qid": "Q660018",
+       "label": "national liberalism"
+      },
+      {
+       "qid": "Q3700346",
+       "label": "opposition to immigration"
+      },
+      {
+       "qid": "Q188961",
+       "label": "decentralization"
+      },
+      {
+       "qid": "Q223200",
+       "label": "euroscepticism"
+      },
+      {
+       "qid": "Q1414298",
+       "label": "social conservatism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#1d70b5",
+      "#bd292e"
+     ],
+     "founded_year": 2022,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q112677506",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Logo of the Denmark Democrats.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20of%20the%20Denmark%20Democrats.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "credit": "Danmarksdemokraterne – Inger Støjberg"
+     }
+    },
+    "Q131933143": {
+     "entity": {
+      "qid": "Q131933143",
+      "label": "Citizens' Party"
+     },
+     "name": "Citizens' Party",
+     "endonym": "Borgernes Parti – Lars Boje Mathiesen",
+     "abbreviation": "H",
      "kind": "party",
      "ideologies": [],
      "groupings": [],
      "colors": [
-      "#ba1a2e"
+      "#2b72fd"
      ],
-     "founded_year": 1991,
+     "founded_year": 2024,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q3366711",
+      "qid": "Q131933143",
       "retrieved_at": "2026-08-14"
      },
      "logo": {
-      "file": "Logo of the Social Democratic Party (Gabon).png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Logo%20of%20the%20Social%20Democratic%20Party%20(Gabon).png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
+      "file": "Borgernes Parti logo.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Borgernes%20Parti%20logo.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "credit": "Borgernes Parti – Lars Boje Mathiesen"
      }
     }
    },
    "chambers": [
     {
      "entity": {
-      "qid": "Q1969545",
-      "label": "National Assembly"
+      "qid": "Q209151",
+      "label": "Folketing"
      },
-     "role": "lower",
-     "name": "National Assembly",
-     "seats_total": 143,
+     "role": "unicameral",
+     "name": "Folketing",
+     "name_local": "Folketinget",
+     "seats_total": 179,
      "selection": [
       "directly_elected"
      ],
      "contestation": "competitive",
      "composition": [
       {
-       "party": "Q134311805",
-       "name": "Democratic Union of Builders",
-       "seats": 101,
-       "share": 0.6966,
+       "party": "Q212101",
+       "name": "Social Democrats",
+       "seats": 38,
+       "share": 0.2123,
        "standing": "government"
       },
       {
-       "party": "Q1762536",
-       "name": "Gabonese Democratic Party",
-       "seats": 21,
-       "share": 0.1448,
-       "standing": "opposition"
+       "party": "Q615603",
+       "name": "Green Left",
+       "seats": 20,
+       "share": 0.1117,
+       "standing": "government"
       },
       {
-       "party": "Q22080862",
-       "name": "National Union",
-       "seats": 2,
-       "share": 0.0138,
-       "standing": "opposition"
+       "party": "Q107110050",
+       "name": "Moderates",
+       "seats": 14,
+       "share": 0.0782,
+       "standing": "government"
       },
       {
-       "party": "Q3366711",
-       "name": "Social Democratic Party",
+       "party": "Q916161",
+       "name": "Social Liberals",
+       "seats": 10,
+       "share": 0.0559,
+       "standing": "government"
+      },
+      {
+       "party": "Q25785",
+       "name": "Red–Green Alliance",
+       "seats": 11,
+       "share": 0.0615,
+       "standing": "backing"
+      },
+      {
+       "party": "Q18042964",
+       "name": "Alternative",
+       "seats": 5,
+       "share": 0.0279,
+       "standing": "backing"
+      },
+      {
+       "party": "Q856027",
+       "name": "Social Democratic",
        "seats": 1,
-       "share": 0.0069,
+       "share": 0.0056,
+       "standing": "backing"
+      },
+      {
+       "party": "Q932400",
+       "name": "Union",
+       "seats": 1,
+       "share": 0.0056,
+       "standing": "backing"
+      },
+      {
+       "party": "Q1128374",
+       "name": "Inuit Ataqatigiit",
+       "seats": 1,
+       "share": 0.0056,
+       "standing": "backing"
+      },
+      {
+       "party": "Q16856492",
+       "name": "Naleraq",
+       "seats": 1,
+       "share": 0.0056,
+       "standing": "backing"
+      },
+      {
+       "party": "Q217321",
+       "name": "Venstre",
+       "seats": 18,
+       "share": 0.1006,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q507170",
+       "name": "Danish People's",
+       "seats": 16,
+       "share": 0.0894,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q478180",
+       "name": "Liberal Alliance",
+       "seats": 15,
+       "share": 0.0838,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q902619",
+       "name": "The Conservatives",
+       "seats": 13,
+       "share": 0.0726,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q112677506",
+       "name": "Denmark Democrats",
+       "seats": 10,
+       "share": 0.0559,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q131933143",
+       "name": "Citizens'",
+       "seats": 1,
+       "share": 0.0056,
        "standing": "opposition"
       },
       {
        "party": null,
-       "name": "Others",
-       "seats": 9,
-       "share": 0.0621,
+       "name": "Independent",
+       "seats": 4,
+       "share": 0.0223,
        "standing": "opposition"
-      },
-      {
-       "party": null,
-       "name": "Independents",
-       "seats": 8,
-       "share": 0.0552,
-       "standing": "opposition"
-      },
-      {
-       "party": null,
-       "name": "Vacant",
-       "seats": 3,
-       "share": 0.0207,
-       "standing": "vacant"
       }
      ],
-     "last_election": "2025-09-27",
+     "last_election": "2026-03-24",
      "next_election": "2030-07-01",
+     "term_years": 4,
      "mandate": {
       "expected_end": "2030-07-01",
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-03-24",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
-      "article": "National Assembly of Gabon",
-      "revid": 1324803135,
+      "article": "Folketing",
+      "revid": 1366229283,
       "retrieved_at": "2026-08-14",
       "model": "claude-haiku-4-5"
      },
-     "source_hash": "sha256:59e9e746fdae82690eb5bdd37f3659a8"
-    },
-    {
-     "entity": {
-      "qid": "Q3510846",
-      "label": "Senate"
-     },
-     "role": "upper",
-     "name": "Senate",
-     "seats_total": 102,
-     "selection": [
-      "indirectly_elected"
-     ],
-     "contestation": "appointed",
-     "composition": [],
-     "as_of": "2026-08-14",
-     "confidence": "flagged",
-     "provenance": {
-      "kind": "wikipedia",
-      "derivation": "structured",
-      "retrieved_at": "2026-08-14"
-     },
-     "source_hash": ""
+     "source_hash": "sha256:4d285e43d93d0644992b1eb0044aaaec"
     }
    ],
    "government": {
     "governing": [
-     "Q134311805"
+     "Q212101",
+     "Q615603",
+     "Q107110050",
+     "Q916161"
     ],
-    "backing": [],
-    "seats": 101,
-    "minority": false,
+    "backing": [
+     "Q25785",
+     "Q18042964",
+     "Q856027",
+     "Q932400",
+     "Q1128374",
+     "Q16856492"
+    ],
+    "seats": 82,
+    "seats_with_backing": 102,
+    "minority": true,
     "authority": "established",
-    "confidence": "flagged",
+    "confidence": "high",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
-     "article": "National Assembly of Gabon",
+     "article": "Folketing",
      "retrieved_at": "2026-08-14"
     }
    },
@@ -1618,7 +1661,187 @@
     {
      "kind": "wikidata",
      "derivation": "structured",
-     "qid": "Q1000",
+     "qid": "Q35",
+     "retrieved_at": "2026-08-14"
+    }
+   ],
+   "updated_at": "2026-08-14"
+  },
+  "ER": {
+   "iso": "ER",
+   "entity": {
+    "qid": "Q986",
+    "label": "Eritrea"
+   },
+   "name": "Eritrea",
+   "form": "one_party_state",
+   "form_raw": [
+    "Unitary one-party presidential republic under a totalitarian dictatorship"
+   ],
+   "head_of_state": {
+    "person": {
+     "qid": "Q57348",
+     "label": "Isaias Afwerki"
+    },
+    "name": "Isaias Afwerki",
+    "party": {
+     "qid": "Q863376",
+     "label": "People's Front for Democracy and Justice"
+    },
+    "since": "1991-04-27",
+    "portrait": {
+     "file": "Ambassador Nura Abba Rimi & President Isaias Afwerki of Eritrea (cropped).jpg",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ambassador%20Nura%20Abba%20Rimi%20%26%20President%20Isaias%20Afwerki%20of%20Eritrea%20(cropped).jpg",
+     "host": "commons",
+     "license": "CC BY-SA 2.0",
+     "non_free": false,
+     "credit": "Foreign Affairsng"
+    },
+    "represents": "political",
+    "provenance": {
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q986",
+     "retrieved_at": "2026-08-14"
+    }
+   },
+   "head_of_government": null,
+   "parties": {
+    "Q863376": {
+     "entity": {
+      "qid": "Q863376",
+      "label": "People's Front for Democracy and Justice"
+     },
+     "name": "People's Front for Democracy and Justice",
+     "endonym": "ህዝባዊ ግንባር ንደሞክራስን ፍትሕን, ህግደፍ",
+     "kind": "party",
+     "alignment": "centre",
+     "alignment_raw": "big tent",
+     "ideologies": [
+      {
+       "qid": "Q60743224",
+       "label": "Eritrean nationalism"
+      },
+      {
+       "qid": "Q216920",
+       "label": "secularism"
+      },
+      {
+       "qid": "Q128135",
+       "label": "totalitarianism"
+      },
+      {
+       "qid": "Q1202972",
+       "label": "left-wing nationalism"
+      },
+      {
+       "qid": "Q322294",
+       "label": "statism"
+      },
+      {
+       "qid": "Q177266",
+       "label": "militarism"
+      }
+     ],
+     "groupings": [],
+     "colors": [],
+     "founded_year": 1994,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q863376",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Logo of the People's Front for Democracy and Justice.png",
+      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Logo%20of%20the%20People's%20Front%20for%20Democracy%20and%20Justice.png",
+      "host": "wikipedia",
+      "license": "Fair use",
+      "non_free": true
+     }
+    },
+    "Q4781628": {
+     "entity": {
+      "qid": "Q4781628",
+      "label": "Appointment"
+     },
+     "name": "Appointment",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q4781628",
+      "retrieved_at": "2026-08-14"
+     }
+    }
+   },
+   "chambers": [
+    {
+     "entity": {
+      "qid": "Q2094027",
+      "label": "National Assembly"
+     },
+     "role": "unicameral",
+     "name": "National Assembly",
+     "seats_total": 104,
+     "selection": [
+      "directly_elected"
+     ],
+     "contestation": "suspended",
+     "composition": [
+      {
+       "party": "Q863376",
+       "name": "People's Front for Democracy and Justice",
+       "seats": 75,
+       "share": 0.5,
+       "standing": "government"
+      },
+      {
+       "party": "Q4781628",
+       "name": "Appointed",
+       "seats": 75,
+       "share": 0.5,
+       "standing": "non_attached"
+      }
+     ],
+     "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
+     "confidence": "flagged",
+     "provenance": {
+      "kind": "wikipedia",
+      "derivation": "extracted",
+      "article": "National Assembly (Eritrea)",
+      "revid": 1353490466,
+      "retrieved_at": "2026-08-14",
+      "model": "claude-haiku-4-5"
+     },
+     "source_hash": "sha256:3e9e79298d5750d477ee304847adf62c"
+    }
+   ],
+   "government": {
+    "governing": [
+     "Q863376"
+    ],
+    "backing": [],
+    "seats": 75,
+    "minority": false,
+    "authority": "established",
+    "confidence": "flagged",
+    "provenance": {
+     "kind": "wikipedia",
+     "derivation": "derived",
+     "article": "National Assembly (Eritrea)",
+     "retrieved_at": "2026-08-14"
+    }
+   },
+   "sources": [
+    {
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q986",
      "retrieved_at": "2026-08-14"
     }
    ],
@@ -2649,7 +2872,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-07-04",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -2675,6 +2899,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -2712,1794 +2937,2514 @@
    ],
    "updated_at": "2026-08-14"
   },
-  "IQ": {
-   "iso": "IQ",
+  "IN": {
+   "iso": "IN",
    "entity": {
-    "qid": "Q796",
-    "label": "Iraq"
+    "qid": "Q668",
+    "label": "India"
    },
-   "name": "Iraq",
+   "name": "India",
    "form": "parliamentary_republic",
    "form_raw": [
+    "republic",
+    "constitutional republic",
+    "democratic republic",
     "federal republic",
-    "federation",
-    "Federal parliamentary republic under confessionalism"
+    "Federal parliamentary republic"
    ],
    "head_of_state": {
     "person": {
-     "qid": "Q6496078"
+     "qid": "Q19901232",
+     "label": "Droupadi Murmu"
     },
-    "name": "Nizar Amidi",
-    "party": null,
+    "name": "Droupadi Murmu",
+    "party": {
+     "qid": "Q10230",
+     "label": "Bharatiya Janata Party"
+    },
+    "since": "2022-07-25",
+    "portrait": {
+     "file": "President of India Droupadi Murmu official portrait (cropped).jpg",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/President%20of%20India%20Droupadi%20Murmu%20official%20portrait%20(cropped).jpg",
+     "host": "commons",
+     "license": "GODL-India",
+     "non_free": false,
+     "credit": "President's Secretariat"
+    },
     "represents": "ceremonial",
-    "superseded": true,
     "provenance": {
-     "kind": "wikipedia",
-     "derivation": "extracted",
-     "article": "Iraq",
-     "revid": 1368806689,
-     "retrieved_at": "2026-08-14",
-     "model": "claude-haiku-4-5"
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q668",
+     "retrieved_at": "2026-08-14"
     }
    },
    "head_of_government": {
     "person": {
-     "qid": "Q139573306",
-     "label": "Ali Falih Al-Zaidi"
+     "qid": "Q1058",
+     "label": "Narendra Modi"
     },
-    "name": "Ali Falih Al-Zaidi",
+    "name": "Narendra Modi",
     "party": {
-     "qid": "Q327591",
-     "label": "independent politician"
+     "qid": "Q10230",
+     "label": "Bharatiya Janata Party"
     },
-    "since": "2026-05-14",
+    "since": "2014-05-26",
     "portrait": {
-     "file": "President Donald J. Trump and Iraqi Prime Minister Ali al-Zaidi (cropped).jpg",
-     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/President%20Donald%20J.%20Trump%20and%20Iraqi%20Prime%20Minister%20Ali%20al-Zaidi%20(cropped).jpg",
+     "file": "Official Photograph of Prime Minister Narendra Modi Portrait.png",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Official%20Photograph%20of%20Prime%20Minister%20Narendra%20Modi%20Portrait.png",
      "host": "commons",
-     "license": "Public domain",
+     "license": "GODL-India",
      "non_free": false,
-     "credit": "White House https://x.com/WhiteHouse%7CThe White House"
+     "credit": "Prime Minister's Office"
     },
     "represents": "political",
     "provenance": {
      "kind": "wikidata",
      "derivation": "structured",
-     "qid": "Q796",
+     "qid": "Q668",
      "retrieved_at": "2026-08-14"
     }
    },
    "parties": {
-    "Q135800151": {
+    "Q10230": {
      "entity": {
-      "qid": "Q135800151",
-      "label": "Reconstruction and Development Alliance"
+      "qid": "Q10230",
+      "label": "Bharatiya Janata Party"
      },
-     "name": "Reconstruction and Development Alliance",
+     "name": "Bharatiya Janata Party",
+     "endonym": "भारतीय जनता पार्टी",
+     "abbreviation": "BJP",
      "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q135800151",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Iraqi Reconstruction and Development Alliance logo.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Iraqi%20Reconstruction%20and%20Development%20Alliance%20logo.png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     }
-    },
-    "Q1971776": {
-     "entity": {
-      "qid": "Q1971776",
-      "label": "State of Law Coalition"
-     },
-     "name": "State of Law Coalition",
-     "endonym": "إئتلاف دولة القانون",
-     "kind": "electoral_alliance",
+     "alignment": "right",
+     "alignment_raw": "right-wing",
      "ideologies": [
       {
-       "qid": "Q9585",
-       "label": "Shia Islam"
-      }
-     ],
-     "groupings": [],
-     "colors": [
-      "#ff0000"
-     ],
-     "founded_year": 2009,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q1971776",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Logo of the State of Law Coalition.svg",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Logo%20of%20the%20State%20of%20Law%20Coalition.svg",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     }
-    },
-    "Q18161820": {
-     "entity": {
-      "qid": "Q18161820",
-      "label": "Al-Sadiqoun Bloc"
-     },
-     "name": "Al-Sadiqoun Bloc",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 2014,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q18161820",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Al-Sadiqoun Bloc logo.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Al-Sadiqoun%20Bloc%20logo.png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     }
-    },
-    "Q101210235": {
-     "entity": {
-      "qid": "Q101210235",
-      "label": "Takadum Movement"
-     },
-     "name": "Takadum Movement",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q101210235",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Takadum Party photo.png",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Takadum%20Party%20photo.png",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "credit": "The original uploader was Osamah1Abbas at Wikimedia Commons."
-     }
-    },
-    "Q781221": {
-     "entity": {
-      "qid": "Q781221",
-      "label": "Kurdistan Democratic Party"
-     },
-     "name": "Kurdistan Democratic Party",
-     "endonym": "پارتی دیموکراتی کوردستان",
-     "abbreviation": "PDK",
-     "kind": "party",
-     "alignment": "centre_right",
-     "alignment_raw": "centre-right",
-     "ideologies": [
-      {
-       "qid": "Q7057435",
-       "label": "Kurdish nationalism"
+       "qid": "Q1993616",
+       "label": "cultural nationalism"
       },
       {
-       "qid": "Q180490",
-       "label": "populism"
+       "qid": "Q1307223",
+       "label": "Hindu nationalism"
+      },
+      {
+       "qid": "Q281347",
+       "label": "Hindutva"
+      },
+      {
+       "qid": "Q56209385",
+       "label": "Integral humanism"
       },
       {
        "qid": "Q7169",
        "label": "conservatism"
       },
       {
-       "qid": "Q162719",
-       "label": "neoliberalism"
+       "qid": "Q436860",
+       "label": "right-wing populism"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q129815",
+       "label": "National Democratic Alliance"
       },
       {
-       "qid": "Q2684060",
-       "label": "regionalism"
+       "qid": "Q862603",
+       "label": "International Democracy Union"
+      }
+     ],
+     "colors": [
+      "#ff9933",
+      "#f4c430"
+     ],
+     "founded_year": 1980,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q10230",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Logo of the Bharatiya Janata Party.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20of%20the%20Bharatiya%20Janata%20Party.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": "trademarked",
+      "credit": "SantoUY"
+     }
+    },
+    "Q140215595": {
+     "entity": {
+      "qid": "Q140215595",
+      "label": "Nationalist Citizens Party of India"
+     },
+     "name": "Nationalist Citizens Party of India",
+     "abbreviation": "NCPI",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [
+      {
+       "qid": "Q129815",
+       "label": "National Democratic Alliance"
+      }
+     ],
+     "colors": [
+      "#f5ffaf"
+     ],
+     "founded_year": 2022,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q140215595",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "NCPI party logo.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/NCPI%20party%20logo.svg",
+      "host": "commons",
+      "license": "GODL-India",
+      "non_free": false,
+      "credit": "Election Commission of India"
+     }
+    },
+    "Q2279320": {
+     "entity": {
+      "qid": "Q2279320",
+      "label": "Telugu Desam Party"
+     },
+     "name": "Telugu Desam Party",
+     "abbreviation": "TDP",
+     "kind": "party",
+     "ideologies": [
+      {
+       "qid": "Q2698984",
+       "label": "fiscal conservatism"
+      },
+      {
+       "qid": "Q729119",
+       "label": "economic liberalism"
+      },
+      {
+       "qid": "Q180490",
+       "label": "populism"
       }
      ],
      "groupings": [],
      "colors": [
-      "#ffdb00"
+      "#ffff00"
      ],
-     "founded_year": 1946,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q781221",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "KDP logo.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/KDP%20logo.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "credit": "Jamal Bahktiar, vectorised by Zt-freak"
-     }
-    },
-    "Q2994636": {
-     "entity": {
-      "qid": "Q2994636",
-      "label": "Badr Organization"
-     },
-     "name": "Badr Organization",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
      "founded_year": 1982,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q2994636",
+      "qid": "Q2279320",
       "retrieved_at": "2026-08-14"
      },
      "logo": {
-      "file": "Badr Organisation Political Logo.jpg",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Badr%20Organisation%20Political%20Logo.jpg",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
+      "file": "Telugu Desam Party Flag.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Telugu%20Desam%20Party%20Flag.png",
+      "host": "commons",
+      "license": "CC BY-SA 4.0",
+      "non_free": false,
+      "credit": "456legend"
      }
     },
-    "Q677505": {
+    "Q114593583": {
      "entity": {
-      "qid": "Q677505",
-      "label": "Patriotic Union of Kurdistan"
+      "qid": "Q114593583",
+      "label": "Balasahebanchi Shiv Sena"
      },
-     "name": "Patriotic Union of Kurdistan",
-     "endonym": "Yaketi Nishtimani Kurdistan",
+     "name": "Balasahebanchi Shiv Sena",
+     "abbreviation": "SHS",
      "kind": "party",
-     "alignment": "centre_left",
-     "alignment_raw": "centre-left",
      "ideologies": [
+      {
+       "qid": "Q1307223",
+       "label": "Hindu nationalism"
+      }
+     ],
+     "groupings": [],
+     "colors": [],
+     "founded_year": 2022,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q114593583",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Logo of Shiv Sena.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20of%20Shiv%20Sena.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "credit": "Office of Shiv Sena Dadar"
+     }
+    },
+    "Q904827": {
+     "entity": {
+      "qid": "Q904827",
+      "label": "Janata Dal (United)"
+     },
+     "name": "Janata Dal (United)",
+     "abbreviation": "JD(U)",
+     "kind": "party",
+     "ideologies": [
+      {
+       "qid": "Q216920",
+       "label": "secularism"
+      },
       {
        "qid": "Q121254",
        "label": "social democracy"
       },
       {
-       "qid": "Q7057435",
-       "label": "Kurdish nationalism"
-      },
-      {
-       "qid": "Q494792",
-       "label": "Third Way"
+       "qid": "Q189280",
+       "label": "democratic socialism"
       }
      ],
-     "groupings": [
-      {
-       "qid": "Q159454",
-       "label": "Socialist International"
-      },
-      {
-       "qid": "Q7248622",
-       "label": "Progressive Alliance"
-      }
-     ],
-     "colors": [
-      "#00a550"
-     ],
-     "founded_year": 1975,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q677505",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "PUK Logo.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/PUK%20Logo.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "credit": "Unknown authorUnknown author"
-     }
-    },
-    "Q110944609": {
-     "entity": {
-      "qid": "Q110944609",
-      "label": "Azem coalition"
-     },
-     "name": "Azem coalition",
-     "kind": "electoral_alliance",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 2021,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q110944609",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Star Green.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Star%20Green.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "credit": "This vector image was created with Inkscape by SkywalkerPL from the original images by RedHotHeat, and then manually edi"
-     }
-    },
-    "Q28715319": {
-     "entity": {
-      "qid": "Q28715319",
-      "label": "Babylon Movement"
-     },
-     "name": "Babylon Movement",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 2014,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q28715319",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Babylon Movement logo.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Babylon%20Movement%20logo.png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     }
-    },
-    "Q138297212": {
-     "entity": {
-      "qid": "Q138297212",
-      "label": "Alliance of Nation State Forces"
-     },
-     "name": "Alliance of Nation State Forces",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q138297212",
-      "retrieved_at": "2026-08-14"
-     }
-    },
-    "Q4702230": {
-     "entity": {
-      "qid": "Q4702230",
-      "label": "Al-Asas"
-     },
-     "name": "Al-Asas",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 1948,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q4702230",
-      "retrieved_at": "2026-08-14"
-     }
-    },
-    "Q122421923": {
-     "entity": {
-      "qid": "Q122421923",
-      "label": "Tasmim Alliance"
-     },
-     "name": "Tasmim Alliance",
-     "kind": "party",
-     "ideologies": [],
      "groupings": [],
      "colors": [
-      "#ffd700"
+      "#003366"
      ],
-     "founded_year": 2021,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q122421923",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "شعار تحالف تصميم.png",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/%D8%B4%D8%B9%D8%A7%D8%B1%20%D8%AA%D8%AD%D8%A7%D9%84%D9%81%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85.png",
-      "host": "commons",
-      "license": "CC0",
-      "non_free": false,
-      "credit": "Ahmadf.alabbasi"
-     }
-    },
-    "Q4119382": {
-     "entity": {
-      "qid": "Q4119382",
-      "label": "Kata'ib Hezbollah"
-     },
-     "name": "Kata'ib Hezbollah",
-     "endonym": "كتائب حزب الله العراق",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q574827",
-       "label": "anti-Americanism"
-      },
-      {
-       "qid": "Q584548",
-       "label": "anti-Zionism"
-      }
-     ],
-     "groupings": [],
-     "colors": [],
      "founded_year": 2003,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q4119382",
+      "qid": "Q904827",
       "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Kata'ib Hezbollah logo.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Kata'ib%20Hezbollah%20logo.png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
      }
     },
-    "Q122422013": {
+    "Q108829795": {
      "entity": {
-      "qid": "Q122422013",
-      "label": "Ishraqat Kanoon"
+      "qid": "Q108829795",
+      "label": "Lok Janshakti Party (Ram Vilas)"
      },
-     "name": "Ishraqat Kanoon",
+     "name": "Lok Janshakti Party (Ram Vilas)",
      "kind": "party",
      "ideologies": [],
      "groupings": [],
      "colors": [],
+     "founded_year": 2021,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q122422013",
-      "retrieved_at": "2026-08-14"
-     }
-    }
-   },
-   "chambers": [
-    {
-     "entity": {
-      "qid": "Q1973075",
-      "label": "Council of Representatives of Iraq"
-     },
-     "role": "unicameral",
-     "name": "Council of Representatives of Iraq",
-     "name_local": "مجلس النواب العراقي",
-     "seats_total": 318,
-     "selection": [
-      "directly_elected"
-     ],
-     "contestation": "competitive",
-     "composition": [
-      {
-       "party": "Q135800151",
-       "name": "Reconstruction and Development Coalition",
-       "seats": 46,
-       "share": 0.1447,
-       "standing": "government"
-      },
-      {
-       "party": "Q1971776",
-       "name": "State of Law Coalition",
-       "seats": 29,
-       "share": 0.0912,
-       "standing": "government"
-      },
-      {
-       "party": "Q18161820",
-       "name": "Al Sadiqoun Bloc",
-       "seats": 27,
-       "share": 0.0849,
-       "standing": "government"
-      },
-      {
-       "party": "Q101210235",
-       "name": "Takadum",
-       "seats": 27,
-       "share": 0.0849,
-       "standing": "government"
-      },
-      {
-       "party": "Q781221",
-       "name": "Kurdistan Democratic Party",
-       "seats": 26,
-       "share": 0.0818,
-       "standing": "government"
-      },
-      {
-       "party": "Q2994636",
-       "name": "Badr Organisation",
-       "seats": 18,
-       "share": 0.0566,
-       "standing": "government"
-      },
-      {
-       "party": "Q677505",
-       "name": "Patriotic Union of Kurdistan",
-       "seats": 15,
-       "share": 0.0472,
-       "standing": "government"
-      },
-      {
-       "party": "Q110944609",
-       "name": "Azem Alliance",
-       "seats": 15,
-       "share": 0.0472,
-       "standing": "government"
-      },
-      {
-       "party": "Q28715319",
-       "name": "Babylon Movement",
-       "seats": 2,
-       "share": 0.0063,
-       "standing": "government"
-      },
-      {
-       "party": "Q138297212",
-       "name": "Alliance of Nation State Forces",
-       "seats": 18,
-       "share": 0.0566,
-       "standing": "government"
-      },
-      {
-       "party": "Q4702230",
-       "name": "Al-Asas",
-       "seats": 8,
-       "share": 0.0252,
-       "standing": "government"
-      },
-      {
-       "party": "Q122421923",
-       "name": "Tasmim Alliance",
-       "seats": 6,
-       "share": 0.0189,
-       "standing": "government"
-      },
-      {
-       "party": "Q4119382",
-       "name": "Huqouq Movement",
-       "seats": 6,
-       "share": 0.0189,
-       "standing": "government"
-      },
-      {
-       "party": null,
-       "name": "Al-Siyadah",
-       "seats": 8,
-       "share": 0.0252,
-       "standing": "opposition"
-      },
-      {
-       "party": "Q122422013",
-       "name": "Ishraqat Kanoon",
-       "seats": 8,
-       "share": 0.0252,
-       "standing": "opposition"
-      },
-      {
-       "party": null,
-       "name": "Others",
-       "seats": 59,
-       "share": 0.1855,
-       "standing": "opposition"
-      }
-     ],
-     "last_election": "2025-11-11",
-     "next_election": "2029-07-01",
-     "term_years": 4,
-     "mandate": {
-      "expected_end": "2029-07-01",
-      "inferred": false,
-      "state": "current"
-     },
-     "as_of": "2026-08-14",
-     "confidence": "partial",
-     "provenance": {
-      "kind": "wikipedia",
-      "derivation": "extracted",
-      "article": "Council of Representatives (Iraq)",
-      "revid": 1368697009,
-      "retrieved_at": "2026-08-14",
-      "model": "claude-haiku-4-5"
-     },
-     "source_hash": "sha256:9595f26eef230b268731601968c75325"
-    }
-   ],
-   "government": {
-    "governing": [
-     "Q135800151",
-     "Q1971776",
-     "Q18161820",
-     "Q101210235",
-     "Q781221",
-     "Q2994636",
-     "Q677505",
-     "Q110944609",
-     "Q28715319",
-     "Q138297212",
-     "Q4702230",
-     "Q122421923",
-     "Q4119382"
-    ],
-    "backing": [],
-    "seats": 243,
-    "minority": false,
-    "authority": "established",
-    "confidence": "flagged",
-    "provenance": {
-     "kind": "wikipedia",
-     "derivation": "derived",
-     "article": "Council of Representatives (Iraq)",
-     "retrieved_at": "2026-08-14"
-    }
-   },
-   "sources": [
-    {
-     "kind": "wikidata",
-     "derivation": "structured",
-     "qid": "Q796",
-     "retrieved_at": "2026-08-14"
-    }
-   ],
-   "updated_at": "2026-08-14"
-  },
-  "JM": {
-   "iso": "JM",
-   "entity": {
-    "qid": "Q766",
-    "label": "Jamaica"
-   },
-   "name": "Jamaica",
-   "form": "constitutional_monarchy",
-   "form_raw": [
-    "Unitary parliamentary constitutional monarchy"
-   ],
-   "head_of_state": {
-    "person": {
-     "qid": "Q43274"
-    },
-    "name": "Patrick Allen",
-    "party": null,
-    "represents": "ceremonial",
-    "provenance": {
-     "kind": "wikipedia",
-     "derivation": "extracted",
-     "article": "Jamaica",
-     "revid": 1369103324,
-     "retrieved_at": "2026-08-14",
-     "model": "claude-haiku-4-5"
-    },
-    "superseded": true
-   },
-   "head_of_government": {
-    "person": {
-     "qid": "Q505200",
-     "label": "Andrew Holness"
-    },
-    "name": "Andrew Holness",
-    "party": {
-     "qid": "Q1539301",
-     "label": "Jamaica Labour Party"
-    },
-    "since": "2016-03-03",
-    "portrait": {
-     "file": "Andrew Holness Press (cropped).jpg",
-     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Andrew%20Holness%20Press%20(cropped).jpg",
-     "host": "commons",
-     "license": "Public domain",
-     "non_free": false,
-     "credit": "U.S. Department of State from United States"
-    },
-    "represents": "political",
-    "provenance": {
-     "kind": "wikidata",
-     "derivation": "structured",
-     "qid": "Q766",
-     "retrieved_at": "2026-08-14"
-    }
-   },
-   "parties": {},
-   "chambers": [
-    {
-     "entity": {
-      "qid": "Q20080342",
-      "label": "House of Representatives of Jamaica"
-     },
-     "role": "lower",
-     "name": "House of Representatives of Jamaica",
-     "seats_total": 63,
-     "selection": [
-      "directly_elected"
-     ],
-     "contestation": "competitive",
-     "composition": [],
-     "as_of": "2026-08-14",
-     "confidence": "flagged",
-     "provenance": {
-      "kind": "wikipedia",
-      "derivation": "structured",
-      "retrieved_at": "2026-08-14"
-     },
-     "source_hash": ""
-    },
-    {
-     "entity": {
-      "qid": "Q27897650",
-      "label": "Senate of Jamaica"
-     },
-     "role": "upper",
-     "name": "Senate of Jamaica",
-     "seats_total": 21,
-     "selection": [
-      "indirectly_elected"
-     ],
-     "contestation": "appointed",
-     "composition": [],
-     "as_of": "2026-08-14",
-     "confidence": "flagged",
-     "provenance": {
-      "kind": "wikipedia",
-      "derivation": "structured",
-      "retrieved_at": "2026-08-14"
-     },
-     "source_hash": ""
-    }
-   ],
-   "government": {
-    "governing": [],
-    "backing": [],
-    "seats": 0,
-    "minority": true,
-    "authority": "established",
-    "confidence": "flagged",
-    "provenance": {
-     "kind": "wikipedia",
-     "derivation": "derived",
-     "retrieved_at": "2026-08-14"
-    }
-   },
-   "sources": [
-    {
-     "kind": "wikidata",
-     "derivation": "structured",
-     "qid": "Q766",
-     "retrieved_at": "2026-08-14"
-    }
-   ],
-   "updated_at": "2026-08-14"
-  },
-  "KP": {
-   "iso": "KP",
-   "entity": {
-    "qid": "Q423",
-    "label": "North Korea"
-   },
-   "name": "North Korea",
-   "form": "one_party_state",
-   "form_raw": [
-    "one-party state",
-    "family dictatorship",
-    "Juche",
-    "communist dictatorship",
-    "unitary state",
-    "socialist state",
-    "republic",
-    "<!-- Do not edit or make additions without consensus. The most recent RfC ended without consensus. --> Unitary communist state"
-   ],
-   "head_of_state": {
-    "person": {
-     "qid": "Q56226",
-     "label": "Kim Jong-un"
-    },
-    "name": "Kim Jong-un",
-    "office": {
-     "qid": "Q707631",
-     "label": "General Secretary of the Workers' Party of Korea"
-    },
-    "party": {
-     "qid": "Q49623",
-     "label": "Workers’ Party of Korea"
-    },
-    "since": "2011-12-30",
-    "portrait": {
-     "file": "Kim Jong-un and Vladimir Putin (2023-09-13) 12 (cropped).jpg",
-     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kim%20Jong-un%20and%20Vladimir%20Putin%20(2023-09-13)%2012%20(cropped).jpg",
-     "host": "commons",
-     "license": "CC BY 4.0",
-     "non_free": false,
-     "credit": "Владимир Смирнов / ТАСС"
-    },
-    "represents": "political",
-    "provenance": {
-     "kind": "wikidata",
-     "derivation": "structured",
-     "qid": "Q423",
-     "retrieved_at": "2026-08-14"
-    }
-   },
-   "head_of_government": {
-    "person": {
-     "qid": "Q25035961",
-     "label": "Kim Tok-hun"
-    },
-    "name": "Kim Tok-hun",
-    "party": {
-     "qid": "Q49623",
-     "label": "Workers’ Party of Korea"
-    },
-    "since": "2020-08-13",
-    "portrait": {
-     "file": "2024年金徳訓 2024년김덕훈.jpg",
-     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/2024%E5%B9%B4%E9%87%91%E5%BE%B3%E8%A8%93%202024%EB%85%84%EA%B9%80%EB%8D%95%ED%9B%88.jpg",
-     "host": "commons",
-     "license": "CC BY 4.0",
-     "non_free": false,
-     "credit": "Unknown authorUnknown author"
-    },
-    "represents": "political",
-    "provenance": {
-     "kind": "wikidata",
-     "derivation": "structured",
-     "qid": "Q423",
-     "retrieved_at": "2026-08-14"
-    }
-   },
-   "parties": {
-    "Q49623": {
-     "entity": {
-      "qid": "Q49623",
-      "label": "Workers’ Party of Korea"
-     },
-     "name": "Workers’ Party of Korea",
-     "endonym": "조선로동당",
-     "kind": "party",
-     "alignment": "left",
-     "alignment_raw": "far-left politics",
-     "ideologies": [
-      {
-       "qid": "Q181800",
-       "label": "Juche"
-      },
-      {
-       "qid": "Q502144",
-       "label": "Songun"
-      },
-      {
-       "qid": "Q712541",
-       "label": "Korean ethnic nationalism"
-      },
-      {
-       "qid": "Q53840100",
-       "label": "Byungjin"
-      },
-      {
-       "qid": "Q28319806",
-       "label": "Kimilsungism–Kimjongilism"
-      }
-     ],
-     "groupings": [],
-     "colors": [
-      "#ff0000"
-     ],
-     "founded_year": 1949,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q49623",
+      "qid": "Q108829795",
       "retrieved_at": "2026-08-14"
      },
      "logo": {
-      "file": "WPK symbol.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/WPK%20symbol.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "restrictions": "communist|insignia",
-      "credit": "Sshu94"
-     }
-    },
-    "Q4430243": {
-     "entity": {
-      "qid": "Q4430243",
-      "label": "social organization"
-     },
-     "name": "social organization",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q4430243",
-      "retrieved_at": "2026-08-14"
-     }
-    }
-   },
-   "chambers": [
-    {
-     "entity": {
-      "qid": "Q714698",
-      "label": "Supreme People's Assembly"
-     },
-     "role": "unicameral",
-     "name": "Supreme People's Assembly",
-     "name_local": "최고인민회의",
-     "seats_total": 687,
-     "selection": [
-      "directly_elected"
-     ],
-     "contestation": "uncontested",
-     "composition": [
-      {
-       "party": "Q49623",
-       "name": "Workers' Party of Korea",
-       "seats": 671,
-       "share": 0.9767,
-       "standing": "government"
-      },
-      {
-       "party": "Q4430243",
-       "name": "Social organizations",
-       "seats": 10,
-       "share": 0.0146,
-       "standing": "government"
-      },
-      {
-       "party": null,
-       "name": "Friendly parties and religious organizations",
-       "seats": 6,
-       "share": 0.0087,
-       "standing": "government"
-      }
-     ],
-     "last_election": "2026-03-15",
-     "mandate": {
-      "expected_end": "2031-03-15",
-      "inferred": true,
-      "state": "current"
-     },
-     "as_of": "2026-08-14",
-     "confidence": "partial",
-     "provenance": {
-      "kind": "wikipedia",
-      "derivation": "extracted",
-      "article": "Supreme People's Assembly",
-      "revid": 1366846505,
-      "retrieved_at": "2026-08-14",
-      "model": "claude-haiku-4-5"
-     },
-     "source_hash": "sha256:9093e36d8367efaa8aee24eb69f1582c"
-    }
-   ],
-   "government": {
-    "governing": [
-     "Q49623",
-     "Q4430243"
-    ],
-    "backing": [],
-    "seats": 687,
-    "minority": false,
-    "authority": "rival_governments",
-    "confidence": "partial",
-    "provenance": {
-     "kind": "wikipedia",
-     "derivation": "derived",
-     "article": "Supreme People's Assembly",
-     "retrieved_at": "2026-08-14"
-    }
-   },
-   "sources": [
-    {
-     "kind": "wikidata",
-     "derivation": "structured",
-     "qid": "Q423",
-     "retrieved_at": "2026-08-14"
-    }
-   ],
-   "updated_at": "2026-08-14"
-  },
-  "MU": {
-   "iso": "MU",
-   "entity": {
-    "qid": "Q1027",
-    "label": "Mauritius"
-   },
-   "name": "Mauritius",
-   "form": "parliamentary_republic",
-   "form_raw": [
-    "parliamentary republic",
-    "Unitary parliamentary republic"
-   ],
-   "head_of_state": {
-    "person": {
-     "qid": "Q131403499",
-     "label": "Dharam Gokhool"
-    },
-    "name": "Dharam Gokhool",
-    "party": {
-     "qid": "Q3366796",
-     "label": "Labour Party"
-    },
-    "since": "2024-12-06",
-    "portrait": {
-     "file": "Dharam Gokhool on March 11, 2025 (cropped).jpg",
-     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dharam%20Gokhool%20on%20March%2011%2C%202025%20(cropped).jpg",
-     "host": "commons",
-     "license": "GODL-India",
-     "non_free": false,
-     "credit": "Prime Minister's Office"
-    },
-    "represents": "ceremonial",
-    "provenance": {
-     "kind": "wikidata",
-     "derivation": "structured",
-     "qid": "Q1027",
-     "retrieved_at": "2026-08-14"
-    }
-   },
-   "head_of_government": {
-    "person": {
-     "qid": "Q3401447"
-    },
-    "name": "Navin Ramgoolam",
-    "party": null,
-    "represents": "political",
-    "provenance": {
-     "kind": "wikipedia",
-     "derivation": "extracted",
-     "article": "Mauritius",
-     "revid": 1368845942,
-     "retrieved_at": "2026-08-14",
-     "model": "claude-haiku-4-5"
-    },
-    "superseded": true
-   },
-   "parties": {
-    "Q3366796": {
-     "entity": {
-      "qid": "Q3366796",
-      "label": "Labour Party"
-     },
-     "name": "Labour Party",
-     "endonym": "Parti Travailliste",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q121254",
-       "label": "social democracy"
-      }
-     ],
-     "groupings": [],
-     "colors": [
-      "#ff0000"
-     ],
-     "founded_year": 1936,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q3366796",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Logo of the Labour Party (Mauritius).svg",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Logo%20of%20the%20Labour%20Party%20(Mauritius).svg",
+      "file": "LJP R Logo.jpg",
+      "url": "https://en.wikipedia.org/wiki/Special:FilePath/LJP%20R%20Logo.jpg",
       "host": "wikipedia",
       "license": "Fair use",
       "non_free": true
      }
     },
-    "Q3326727": {
+    "Q1601619": {
      "entity": {
-      "qid": "Q3326727",
-      "label": "Mauritian Militant Movement"
+      "qid": "Q1601619",
+      "label": "Janata Dal (Secular)"
      },
-     "name": "Mauritian Militant Movement",
-     "endonym": "Mouvement Militant Mauricien",
+     "name": "Janata Dal (Secular)",
+     "abbreviation": "JD (S)",
      "kind": "party",
      "ideologies": [
       {
-       "qid": "Q189280",
-       "label": "democratic socialism"
-      }
-     ],
-     "groupings": [
-      {
-       "qid": "Q159454",
-       "label": "Socialist International"
+       "qid": "Q494792",
+       "label": "Third Way"
       },
       {
-       "qid": "Q7248622",
-       "label": "Progressive Alliance"
-      }
-     ],
-     "colors": [],
-     "founded_year": 1969,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q3326727",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Emblem of the MMM.jpg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Emblem%20of%20the%20MMM.jpg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "credit": "MMM Facebook group"
-     }
-    },
-    "Q131176237": {
-     "entity": {
-      "qid": "Q131176237",
-      "label": "New Democrats"
-     },
-     "name": "New Democrats",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q131176237",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Logo of the Nouveau Démocrate (Mauritius).svg",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Logo%20of%20the%20Nouveau%20D%C3%A9mocrate%20(Mauritius).svg",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     }
-    },
-    "Q131172091": {
-     "entity": {
-      "qid": "Q131172091",
-      "label": "Rezistans ek Alternativ"
-     },
-     "name": "Rezistans ek Alternativ",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q275595",
-       "label": "eco-socialism"
-      },
-      {
-       "qid": "Q919526",
-       "label": "environmental policy"
+       "qid": "Q216920",
+       "label": "secularism"
       }
      ],
      "groupings": [],
      "colors": [],
-     "founded_year": 2005,
+     "founded_year": 1999,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q131172091",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Logo of the Rezistans ek Alternativ (Mauritius).svg",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Logo%20of%20the%20Rezistans%20ek%20Alternativ%20(Mauritius).svg",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     }
-    },
-    "Q7357462": {
-     "entity": {
-      "qid": "Q7357462",
-      "label": "Rodrigues People's Organisation"
-     },
-     "name": "Rodrigues People's Organisation",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q7357462",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Logo of the Rodrigues People's Organisation.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Logo%20of%20the%20Rodrigues%20People's%20Organisation.png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     }
-    },
-    "Q131180744": {
-     "entity": {
-      "qid": "Q131180744",
-      "label": "Alliance Liberation"
-     },
-     "name": "Alliance Liberation",
-     "kind": "electoral_alliance",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q131180744",
+      "qid": "Q1601619",
       "retrieved_at": "2026-08-14"
      }
     },
-    "Q6851928": {
+    "Q15940677": {
      "entity": {
-      "qid": "Q6851928",
-      "label": "Militant Socialist Movement"
+      "qid": "Q15940677",
+      "label": "Jana Sena Party"
      },
-     "name": "Militant Socialist Movement",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q189280",
-       "label": "democratic socialism"
-      }
-     ],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 1983,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q6851928",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Logo of the Militant Socialist Movement.svg",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Logo%20of%20the%20Militant%20Socialist%20Movement.svg",
-      "host": "wikipedia",
-      "license": "PD",
-      "non_free": false
-     }
-    },
-    "Q6793756": {
-     "entity": {
-      "qid": "Q6793756",
-      "label": "Mauritian Social Democrat Party"
-     },
-     "name": "Mauritian Social Democrat Party",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q189280",
-       "label": "democratic socialism"
-      }
-     ],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 1955,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q6793756",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Mauritian Social Democratic Party logo.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Mauritian%20Social%20Democratic%20Party%20logo.png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     }
-    }
-   },
-   "chambers": [
-    {
-     "entity": {
-      "qid": "Q1854129",
-      "label": "National Assembly of Mauritius"
-     },
-     "role": "unicameral",
-     "name": "National Assembly of Mauritius",
-     "name_local": "National Assembly",
-     "seats_total": 66,
-     "selection": [
-      "directly_elected"
-     ],
-     "contestation": "restricted",
-     "composition": [
-      {
-       "party": "Q3366796",
-       "name": "Labour Party (Mauritius)",
-       "seats": 35,
-       "share": 0.5303,
-       "standing": "government",
-       "alliance": "Alliance du Changement"
-      },
-      {
-       "party": "Q3326727",
-       "name": "Mauritian Militant Movement",
-       "seats": 15,
-       "share": 0.2273,
-       "standing": "government",
-       "alliance": "Alliance du Changement"
-      },
-      {
-       "party": "Q131176237",
-       "name": "New Democrats (Mauritius)",
-       "seats": 3,
-       "share": 0.0455,
-       "standing": "government",
-       "alliance": "Alliance du Changement"
-      },
-      {
-       "party": "Q131172091",
-       "name": "Rezistans ek Alternativ",
-       "seats": 3,
-       "share": 0.0455,
-       "standing": "government",
-       "alliance": "Alliance du Changement"
-      },
-      {
-       "party": "Q7357462",
-       "name": "Rodrigues People's Organisation",
-       "seats": 2,
-       "share": 0.0303,
-       "standing": "government"
-      },
-      {
-       "party": "Q131180744",
-       "name": "Alliance Liberation",
-       "seats": 2,
-       "share": 0.0303,
-       "standing": "government"
-      },
-      {
-       "party": "Q6851928",
-       "name": "Militant Socialist Movement",
-       "seats": 1,
-       "share": 0.0152,
-       "standing": "opposition"
-      },
-      {
-       "party": "Q6793756",
-       "name": "Parti Mauricien Social Démocrate",
-       "seats": 1,
-       "share": 0.0152,
-       "standing": "opposition"
-      },
-      {
-       "party": null,
-       "name": "Fron Militan Progresis",
-       "seats": 3,
-       "share": 0.0455,
-       "standing": "non_attached"
-      },
-      {
-       "party": null,
-       "name": "Independents",
-       "seats": 1,
-       "share": 0.0152,
-       "standing": "non_attached"
-      }
-     ],
-     "as_of": "2026-08-14",
-     "confidence": "partial",
-     "provenance": {
-      "kind": "wikipedia",
-      "derivation": "extracted",
-      "article": "National Assembly (Mauritius)",
-      "revid": 1368836147,
-      "retrieved_at": "2026-08-14",
-      "model": "claude-haiku-4-5"
-     },
-     "source_hash": "sha256:d57d4135dc65495c2f001ef60e16c1df"
-    }
-   ],
-   "government": {
-    "governing": [
-     "Q3366796",
-     "Q3326727",
-     "Q131176237",
-     "Q131172091",
-     "Q7357462",
-     "Q131180744"
-    ],
-    "backing": [],
-    "seats": 60,
-    "minority": false,
-    "authority": "established",
-    "confidence": "flagged",
-    "provenance": {
-     "kind": "wikipedia",
-     "derivation": "derived",
-     "article": "National Assembly (Mauritius)",
-     "retrieved_at": "2026-08-14"
-    }
-   },
-   "sources": [
-    {
-     "kind": "wikidata",
-     "derivation": "structured",
-     "qid": "Q1027",
-     "retrieved_at": "2026-08-14"
-    }
-   ],
-   "updated_at": "2026-08-14"
-  },
-  "NI": {
-   "iso": "NI",
-   "entity": {
-    "qid": "Q811",
-    "label": "Nicaragua"
-   },
-   "name": "Nicaragua",
-   "form": "other",
-   "form_raw": [
-    "republic",
-    "Unitary diarchic presidential socialist republic{{Efn|Since 2025, Nicaragua is defined by the constitution as a revolutionary, socialist state based on Christian values, socialist ideals, and solidary"
-   ],
-   "head_of_state": {
-    "person": {
-     "qid": "Q3034382"
-    },
-    "name": "Daniel Ortega",
-    "party": null,
-    "represents": "political",
-    "provenance": {
-     "kind": "wikipedia",
-     "derivation": "extracted",
-     "article": "Nicaragua",
-     "revid": 1369277232,
-     "retrieved_at": "2026-08-14",
-     "model": "claude-haiku-4-5"
-    },
-    "superseded": true
-   },
-   "head_of_government": null,
-   "parties": {
-    "Q27389": {
-     "entity": {
-      "qid": "Q27389",
-      "label": "Sandinista National Liberation Front"
-     },
-     "name": "Sandinista National Liberation Front",
-     "endonym": "Frente Sandinista de Liberación Nacional",
-     "abbreviation": "FSLN",
+     "name": "Jana Sena Party",
      "kind": "party",
      "alignment": "left",
      "alignment_raw": "left-wing",
      "ideologies": [
       {
-       "qid": "Q2252089",
-       "label": "Sandinismo"
+       "qid": "Q189280",
+       "label": "democratic socialism"
       },
-      {
-       "qid": "Q7264",
-       "label": "Marxism"
-      },
-      {
-       "qid": "Q739609",
-       "label": "Christian socialism"
-      },
-      {
-       "qid": "Q8813",
-       "label": "Bolivarianism"
-      },
-      {
-       "qid": "Q1144178",
-       "label": "anti-imperialism"
-      },
-      {
-       "qid": "Q1202972",
-       "label": "left-wing nationalism"
-      }
-     ],
-     "groupings": [
-      {
-       "qid": "Q1024114",
-       "label": "Permanent Conference of Political Parties of Latin America and the Caribbean"
-      },
-      {
-       "qid": "Q2915940",
-       "label": "São Paulo Forum"
-      }
-     ],
-     "colors": [
-      "#8b0000"
-     ],
-     "founded_year": 1961,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q27389",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "FSLN (Nicaragua) logo.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/FSLN%20(Nicaragua)%20logo.png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     }
-    },
-    "Q1422066": {
-     "entity": {
-      "qid": "Q1422066",
-      "label": "Constitutionalist Liberal Party"
-     },
-     "name": "Constitutionalist Liberal Party",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q1043096",
-       "label": "liberal conservatism"
-      }
-     ],
-     "groupings": [],
-     "colors": [
-      "#ff2400"
-     ],
-     "founded_year": 1968,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q1422066",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "PLC Nicaragua (positive).svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/PLC%20Nicaragua%20(positive).svg",
-      "host": "commons",
-      "license": "CC BY-SA 4.0",
-      "non_free": false,
-      "credit": "AkBY$"
-     }
-    },
-    "Q2729459": {
-     "entity": {
-      "qid": "Q2729459",
-      "label": "Nicaraguan Liberal Alliance"
-     },
-     "name": "Nicaraguan Liberal Alliance",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 2005,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q2729459",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "ALN logo.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/ALN%20logo.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "restrictions": "trademarked",
-      "credit": "Unknown authorUnknown author"
-     }
-    },
-    "Q9096783": {
-     "entity": {
-      "qid": "Q9096783",
-      "label": "YATAMA"
-     },
-     "name": "YATAMA",
-     "kind": "party",
-     "ideologies": [
       {
        "qid": "Q2684060",
        "label": "regionalism"
       },
       {
-       "qid": "Q5602008",
-       "label": "Indigenismo"
+       "qid": "Q2633888",
+       "label": "Indian nationalism"
       }
      ],
      "groupings": [],
-     "colors": [],
-     "founded_year": 1988,
+     "colors": [
+      "#e62715"
+     ],
+     "founded_year": 2014,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q9096783",
+      "qid": "Q15940677",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q5961363": {
+     "entity": {
+      "qid": "Q5961363",
+      "label": "Rashtriya Lok Dal"
+     },
+     "name": "Rashtriya Lok Dal",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [
+      "#330066"
+     ],
+     "founded_year": 1998,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q5961363",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q28924648": {
+     "entity": {
+      "qid": "Q28924648",
+      "label": "Apna Dal (Sonelal)"
+     },
+     "name": "Apna Dal (Sonelal)",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "founded_year": 2016,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q28924648",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q2740234": {
+     "entity": {
+      "qid": "Q2740234",
+      "label": "Asom Gana Parishad"
+     },
+     "name": "Asom Gana Parishad",
+     "kind": "party",
+     "alignment": "centre",
+     "alignment_raw": "centrism",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "founded_year": 1985,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q2740234",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q4729039": {
+     "entity": {
+      "qid": "Q4729039",
+      "label": "All Jharkhand Students Union"
+     },
+     "name": "All Jharkhand Students Union",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [
+      "#ff33ff"
+     ],
+     "founded_year": 1986,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q4729039",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q20310838": {
+     "entity": {
+      "qid": "Q20310838",
+      "label": "Hindustani Awam Morcha"
+     },
+     "name": "Hindustani Awam Morcha",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [
+      "#ff0000"
+     ],
+     "founded_year": 2015,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q20310838",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q1561861": {
+     "entity": {
+      "qid": "Q1561861",
+      "label": "Nationalist Congress Party"
+     },
+     "name": "Nationalist Congress Party",
+     "kind": "party",
+     "alignment": "centre",
+     "alignment_raw": "centrism",
+     "ideologies": [
+      {
+       "qid": "Q821102",
+       "label": "progressivism"
+      },
+      {
+       "qid": "Q2633888",
+       "label": "Indian nationalism"
+      },
+      {
+       "qid": "Q59599",
+       "label": "civic nationalism"
+      },
+      {
+       "qid": "Q264892",
+       "label": "social justice"
+      },
+      {
+       "qid": "Q201712",
+       "label": "social liberalism"
+      },
+      {
+       "qid": "Q216920",
+       "label": "secularism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#00b2b2"
+     ],
+     "founded_year": 1999,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q1561861",
       "retrieved_at": "2026-08-14"
      },
      "logo": {
-      "file": "YATAMA logo.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/YATAMA%20logo.png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
+      "file": "Ncp-logo.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ncp-logo.png",
+      "host": "commons",
+      "license": "CC0",
+      "non_free": false,
+      "credit": "Sg9655"
      }
     },
-    "Q2054647": {
+    "Q4801137": {
      "entity": {
-      "qid": "Q2054647",
-      "label": "Independent Liberal Party"
+      "qid": "Q4801137",
+      "label": "Sikkim Krantikari Morcha"
      },
-     "name": "Independent Liberal Party",
+     "name": "Sikkim Krantikari Morcha",
      "kind": "party",
      "ideologies": [
       {
-       "qid": "Q1043096",
-       "label": "liberal conservatism"
+       "qid": "Q189280",
+       "label": "democratic socialism"
       }
      ],
      "groupings": [],
      "colors": [
-      "#ff69b4"
+      "#ff0000"
      ],
-     "founded_year": 1944,
+     "founded_year": 2013,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q2054647",
+      "qid": "Q4801137",
       "retrieved_at": "2026-08-14"
      }
     },
-    "Q7024450": {
+    "Q10225": {
      "entity": {
-      "qid": "Q7024450",
-      "label": "Nicaraguan Party of the Christian Path"
+      "qid": "Q10225",
+      "label": "Indian National Congress"
      },
-     "name": "Nicaraguan Party of the Christian Path",
+     "name": "Indian National Congress",
+     "endonym": "भारतीय राष्ट्रीय कांग्रेस",
+     "abbreviation": "INC",
+     "kind": "party",
+     "ideologies": [
+      {
+       "qid": "Q494792",
+       "label": "Third Way"
+      },
+      {
+       "qid": "Q216920",
+       "label": "secularism"
+      },
+      {
+       "qid": "Q59599",
+       "label": "civic nationalism"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q159454",
+       "label": "Socialist International"
+      },
+      {
+       "qid": "Q7248622",
+       "label": "Progressive Alliance"
+      }
+     ],
+     "colors": [
+      "#00bfff"
+     ],
+     "founded_year": 1885,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q10225",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Indian National Congress hand logo.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Indian%20National%20Congress%20hand%20logo.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": "insignia",
+      "credit": "Original design of flag &amp; emblem by Indian National Congress.Vectorized version by Swapnil1101."
+     }
+    },
+    "Q1546941": {
+     "entity": {
+      "qid": "Q1546941",
+      "label": "Samajwadi Party"
+     },
+     "name": "Samajwadi Party",
+     "kind": "party",
+     "alignment": "centre_left",
+     "alignment_raw": "centre-left",
+     "ideologies": [
+      {
+       "qid": "Q189280",
+       "label": "democratic socialism"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q7248622",
+       "label": "Progressive Alliance"
+      }
+     ],
+     "colors": [
+      "#ff2222"
+     ],
+     "founded_year": 1992,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q1546941",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Samajwadi Party.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Samajwadi%20Party.png",
+      "host": "commons",
+      "license": "CC0",
+      "non_free": false,
+      "credit": "[1] (website states that their images are free)"
+     }
+    },
+    "Q912899": {
+     "entity": {
+      "qid": "Q912899",
+      "label": "All India Trinamool Congress"
+     },
+     "name": "All India Trinamool Congress",
+     "abbreviation": "AITC",
+     "kind": "party",
+     "alignment": "left",
+     "alignment_raw": "left-wing",
+     "ideologies": [
+      {
+       "qid": "Q7272",
+       "label": "socialism"
+      },
+      {
+       "qid": "Q6235",
+       "label": "nationalism"
+      },
+      {
+       "qid": "Q216920",
+       "label": "secularism"
+      },
+      {
+       "qid": "Q389647",
+       "label": "anti-capitalism"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q120739928",
+       "label": "Indian National Developmental Inclusive Alliance"
+      }
+     ],
+     "colors": [
+      "#00ff00"
+     ],
+     "founded_year": 1998,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q912899",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "All India Trinamool Congress logo (3).svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/All%20India%20Trinamool%20Congress%20logo%20(3).svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": "insignia",
+      "credit": "VNC200"
+     }
+    },
+    "Q124988169": {
+     "entity": {
+      "qid": "Q124988169",
+      "label": "Nationalist Congress Party (Sharadchandra Pawar)"
+     },
+     "name": "Nationalist Congress Party (Sharadchandra Pawar)",
      "kind": "party",
      "ideologies": [],
      "groupings": [],
      "colors": [],
-     "founded_year": 1996,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q7024450",
+      "qid": "Q124988169",
       "retrieved_at": "2026-08-14"
      },
      "logo": {
-      "file": "Nicaraguan Christian Path.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Nicaraguan%20Christian%20Path.png",
+      "file": "Nationalist Congress Party (Sharadchandra Pawar) Logo.jpg",
+      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Nationalist%20Congress%20Party%20(Sharadchandra%20Pawar)%20Logo.jpg",
       "host": "wikipedia",
       "license": "Fair use",
       "non_free": true
      }
     },
-    "Q4732427": {
+    "Q234277": {
      "entity": {
-      "qid": "Q4732427",
-      "label": "Alliance for the Republic (Nicaragua)"
+      "qid": "Q234277",
+      "label": "Communist Party of India (Marxist)"
      },
-     "name": "Alliance for the Republic (Nicaragua)",
+     "name": "Communist Party of India (Marxist)",
+     "endonym": "भारत की कम्युनिस्ट पार्टी (मार्क्सवादी)",
+     "abbreviation": "CPI(M)",
+     "kind": "party",
+     "alignment": "left",
+     "alignment_raw": "left-wing",
+     "ideologies": [
+      {
+       "qid": "Q6186",
+       "label": "communism"
+      },
+      {
+       "qid": "Q211930",
+       "label": "Marxism–Leninism"
+      },
+      {
+       "qid": "Q216920",
+       "label": "secularism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#ff0000"
+     ],
+     "founded_year": 1964,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q234277",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Cpm election symbol.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cpm%20election%20symbol.svg",
+      "host": "commons",
+      "license": "CC BY-SA 4.0",
+      "non_free": false,
+      "restrictions": "communist",
+      "credit": "Sanu N"
+     }
+    },
+    "Q3176919": {
+     "entity": {
+      "qid": "Q3176919",
+      "label": "Rashtriya Janata Dal"
+     },
+     "name": "Rashtriya Janata Dal",
+     "abbreviation": "RJD",
+     "kind": "party",
+     "ideologies": [
+      {
+       "qid": "Q1414298",
+       "label": "social conservatism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#008000"
+     ],
+     "founded_year": 1997,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q3176919",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q3196786": {
+     "entity": {
+      "qid": "Q3196786",
+      "label": "Indian Union Muslim League"
+     },
+     "name": "Indian Union Muslim League",
+     "abbreviation": "IUML",
+     "kind": "party",
+     "ideologies": [
+      {
+       "qid": "Q1414298",
+       "label": "social conservatism"
+      },
+      {
+       "qid": "Q2641411",
+       "label": "Islamic democracy"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#008000"
+     ],
+     "founded_year": 1948,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q3196786",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q3273397": {
+     "entity": {
+      "qid": "Q3273397",
+      "label": "Jharkhand Mukti Morcha"
+     },
+     "name": "Jharkhand Mukti Morcha",
      "kind": "party",
      "ideologies": [],
      "groupings": [],
      "colors": [
-      "#800080"
+      "#cc3333"
      ],
-     "founded_year": 2004,
+     "founded_year": 1972,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q4732427",
+      "qid": "Q3273397",
       "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q114637001": {
+     "entity": {
+      "qid": "Q114637001",
+      "label": "Shiv Sena (Uddhav Balasaheb Thackeray)"
+     },
+     "name": "Shiv Sena (Uddhav Balasaheb Thackeray)",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q114637001",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q837159": {
+     "entity": {
+      "qid": "Q837159",
+      "label": "Communist Party of India"
+     },
+     "name": "Communist Party of India",
+     "endonym": "भारतीय कम्युनिस्ट पार्टी",
+     "abbreviation": "CPI",
+     "kind": "party",
+     "alignment": "left",
+     "alignment_raw": "left-wing",
+     "ideologies": [
+      {
+       "qid": "Q6186",
+       "label": "communism"
+      },
+      {
+       "qid": "Q7264",
+       "label": "Marxism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#ff0000"
+     ],
+     "founded_year": 1925,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q837159",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q1452292": {
+     "entity": {
+      "qid": "Q1452292",
+      "label": "Communist Party of India (Marxist–Leninist) Liberation"
+     },
+     "name": "Communist Party of India (Marxist–Leninist) Liberation",
+     "kind": "party",
+     "alignment": "left",
+     "alignment_raw": "far-left politics",
+     "ideologies": [
+      {
+       "qid": "Q18127879",
+       "label": "Marxism–Leninism–Maoism"
+      },
+      {
+       "qid": "Q6186",
+       "label": "communism"
+      }
+     ],
+     "groupings": [],
+     "colors": [],
+     "founded_year": 1974,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q1452292",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Flag Logo of CPIML.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20Logo%20of%20CPIML.png",
+      "host": "commons",
+      "license": "CC BY-SA 4.0",
+      "non_free": false,
+      "credit": "Atharvgairola692004"
+     }
+    },
+    "Q1626979": {
+     "entity": {
+      "qid": "Q1626979",
+      "label": "Jammu & Kashmir National Conference"
+     },
+     "name": "Jammu & Kashmir National Conference",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [
+      "#ff3d3d"
+     ],
+     "founded_year": 1939,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q1626979",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Flag of Jammu and Kashmir (1936-1953).svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Jammu%20and%20Kashmir%20(1936-1953).svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": "insignia",
+      "credit": "Germenfer"
+     }
+    },
+    "Q7928160": {
+     "entity": {
+      "qid": "Q7928160",
+      "label": "Viduthalai Chiruthaigal Katchi"
+     },
+     "name": "Viduthalai Chiruthaigal Katchi",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [
+      "#1e90ff"
+     ],
+     "founded_year": 1972,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q7928160",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Viduthalai Chiruthaigal Katchi Party logo.png",
+      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Viduthalai%20Chiruthaigal%20Katchi%20Party%20logo.png",
+      "host": "wikipedia",
+      "license": "Fair use",
+      "non_free": true
+     }
+    },
+    "Q123667819": {
+     "entity": {
+      "qid": "Q123667819",
+      "label": "Bharat Adivasi Party"
+     },
+     "name": "Bharat Adivasi Party",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "founded_year": 2022,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q123667819",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Bharat Adivasi Party.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bharat%20Adivasi%20Party.png",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "credit": "Bharat Adivasi Party"
+     }
+    },
+    "Q3595134": {
+     "entity": {
+      "qid": "Q3595134",
+      "label": "Kerala Congress"
+     },
+     "name": "Kerala Congress",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [
+      "#cc6600"
+     ],
+     "founded_year": 1964,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q3595134",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q195119": {
+     "entity": {
+      "qid": "Q195119",
+      "label": "Marumalarchi Dravida Munnetra Kazhagam"
+     },
+     "name": "Marumalarchi Dravida Munnetra Kazhagam",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [
+      "#996699"
+     ],
+     "founded_year": 1994,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q195119",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q1635587": {
+     "entity": {
+      "qid": "Q1635587",
+      "label": "Revolutionary Socialist Party"
+     },
+     "name": "Revolutionary Socialist Party",
+     "kind": "party",
+     "ideologies": [
+      {
+       "qid": "Q211930",
+       "label": "Marxism–Leninism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#ff0000"
+     ],
+     "founded_year": 1938,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q1635587",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "RSP Political Party Logo.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/RSP%20Political%20Party%20Logo.png",
+      "host": "commons",
+      "license": "CC BY 4.0",
+      "non_free": false,
+      "restrictions": "communist",
+      "credit": "Konnathady Voice"
+     }
+    },
+    "Q7295306": {
+     "entity": {
+      "qid": "Q7295306",
+      "label": "Rastriya Loktantrik Party"
+     },
+     "name": "Rastriya Loktantrik Party",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "founded_year": 2018,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q7295306",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Logo Rashtriya Loktantrik party.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20Rashtriya%20Loktantrik%20party.png",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": "trademarked",
+      "credit": "Rashtriya Loktantrik Party"
+     }
+    },
+    "Q1255973": {
+     "entity": {
+      "qid": "Q1255973",
+      "label": "Dravida Munnetra Kazhagam"
+     },
+     "name": "Dravida Munnetra Kazhagam",
+     "abbreviation": "திமுக",
+     "kind": "party",
+     "alignment": "left",
+     "alignment_raw": "far-left politics",
+     "ideologies": [
+      {
+       "qid": "Q121254",
+       "label": "social democracy"
+      },
+      {
+       "qid": "Q189280",
+       "label": "democratic socialism"
+      },
+      {
+       "qid": "Q180490",
+       "label": "populism"
+      },
+      {
+       "qid": "Q264892",
+       "label": "social justice"
+      },
+      {
+       "qid": "Q3618563",
+       "label": "anti-Hindu sentiment"
+      },
+      {
+       "qid": "Q56136199",
+       "label": "Secessionism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#dd1100"
+     ],
+     "founded_year": 1949,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q1255973",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Flag DMK.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20DMK.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": "insignia",
+      "credit": "Amit6"
+     }
+    },
+    "Q8046035": {
+     "entity": {
+      "qid": "Q8046035",
+      "label": "YSR Congress Party"
+     },
+     "name": "YSR Congress Party",
+     "abbreviation": "YSRCP",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [
+      "#1569c7"
+     ],
+     "founded_year": 2009,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q8046035",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q129844": {
+     "entity": {
+      "qid": "Q129844",
+      "label": "Aam Aadmi Party"
+     },
+     "name": "Aam Aadmi Party",
+     "endonym": "आम आदमी पार्टी",
+     "abbreviation": "AAP",
+     "kind": "party",
+     "alignment": "centre_left",
+     "alignment_raw": "centre-left",
+     "ideologies": [
+      {
+       "qid": "Q93121673",
+       "label": "Composite nationalism"
+      },
+      {
+       "qid": "Q180490",
+       "label": "populism"
+      },
+      {
+       "qid": "Q121254",
+       "label": "social democracy"
+      },
+      {
+       "qid": "Q201712",
+       "label": "social liberalism"
+      },
+      {
+       "qid": "Q216920",
+       "label": "secularism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#266bba"
+     ],
+     "founded_year": 2012,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q129844",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Aam Aadmi Party logo (English).svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Aam%20Aadmi%20Party%20logo%20(English).svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "credit": "Aam Aadmi Party"
+     }
+    },
+    "Q131933513": {
+     "entity": {
+      "qid": "Q131933513",
+      "label": "Akali Dal"
+     },
+     "name": "Akali Dal",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q131933513",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q148034": {
+     "entity": {
+      "qid": "Q148034",
+      "label": "Shiromani Akali Dal"
+     },
+     "name": "Shiromani Akali Dal",
+     "kind": "party",
+     "alignment": "centre_right",
+     "alignment_raw": "centre-right",
+     "ideologies": [
+      {
+       "qid": "Q204886",
+       "label": "federalism"
+      },
+      {
+       "qid": "Q15056830",
+       "label": "Punjabiyat"
+      },
+      {
+       "qid": "Q7169",
+       "label": "conservatism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#0f204a"
+     ],
+     "founded_year": 1920,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q148034",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Shiromani Akali Dal symbol.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shiromani%20Akali%20Dal%20symbol.svg",
+      "host": "commons",
+      "license": "CC BY-SA 4.0",
+      "non_free": false,
+      "credit": "SangrurUser"
+     }
+    },
+    "Q85812100": {
+     "entity": {
+      "qid": "Q85812100",
+      "label": "United People's Party Liberal"
+     },
+     "name": "United People's Party Liberal",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q85812100",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q2837501": {
+     "entity": {
+      "qid": "Q2837501",
+      "label": "All India Majlis-e-Ittehadul Muslimeen"
+     },
+     "name": "All India Majlis-e-Ittehadul Muslimeen",
+     "abbreviation": "AIMIM",
+     "kind": "party",
+     "ideologies": [
+      {
+       "qid": "Q189746",
+       "label": "Islamism"
+      },
+      {
+       "qid": "Q179274",
+       "label": "fatwa"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#009f3c"
+     ],
+     "founded_year": 1927,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q2837501",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q60763483": {
+     "entity": {
+      "qid": "Q60763483",
+      "label": "Zoram People's Movement"
+     },
+     "name": "Zoram People's Movement",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "founded_year": 2017,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q60763483",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q136128792": {
+     "entity": {
+      "qid": "Q136128792",
+      "label": "Aazad Samaj Party"
+     },
+     "name": "Aazad Samaj Party",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q136128792",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "AZAD SAMAJ PARTY LOGO.webp",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/AZAD%20SAMAJ%20PARTY%20LOGO.webp",
+      "host": "commons",
+      "license": "CC BY-SA 4.0",
+      "non_free": false,
+      "credit": "MY Gohad"
+     }
+    },
+    "Q130386383": {
+     "entity": {
+      "qid": "Q130386383",
+      "label": "Jammu and Kashmir Awami Ittehad Party"
+     },
+     "name": "Jammu and Kashmir Awami Ittehad Party",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q130386383",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Original Flag of the Awami Ithad Party.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Original%20Flag%20of%20the%20Awami%20Ithad%20Party.png",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "credit": "Awami Ithad Party"
+     }
+    },
+    "Q2507570": {
+     "entity": {
+      "qid": "Q2507570",
+      "label": "Casual vacancy"
+     },
+     "name": "Casual vacancy",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q2507570",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q651141": {
+     "entity": {
+      "qid": "Q651141",
+      "label": "All India Anna Dravida Munnetra Kazhagam"
+     },
+     "name": "All India Anna Dravida Munnetra Kazhagam",
+     "abbreviation": "AIADMK",
+     "kind": "party",
+     "alignment": "centre_left",
+     "alignment_raw": "centre-left",
+     "ideologies": [
+      {
+       "qid": "Q180490",
+       "label": "populism"
+      },
+      {
+       "qid": "Q7272",
+       "label": "socialism"
+      },
+      {
+       "qid": "Q845578",
+       "label": "welfarism"
+      },
+      {
+       "qid": "Q216920",
+       "label": "secularism"
+      },
+      {
+       "qid": "Q2684060",
+       "label": "regionalism"
+      },
+      {
+       "qid": "Q264892",
+       "label": "social justice"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#009933"
+     ],
+     "founded_year": 1972,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q651141",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Indian Election Symbol Two Leaves.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Indian%20Election%20Symbol%20Two%20Leaves.svg",
+      "host": "commons",
+      "license": "CC BY-SA 4.0",
+      "non_free": false,
+      "credit": "Gnoeee"
+     }
+    },
+    "Q6974870": {
+     "entity": {
+      "qid": "Q6974870",
+      "label": "National People's Party"
+     },
+     "name": "National People's Party",
+     "abbreviation": "NPP",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [
+      "#db7093"
+     ],
+     "founded_year": 2013,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q6974870",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "National People's Party (India) logo 2023.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/National%20People's%20Party%20(India)%20logo%202023.png",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false
+     }
+    },
+    "Q1887353": {
+     "entity": {
+      "qid": "Q1887353",
+      "label": "Pattali Makkal Katchi"
+     },
+     "name": "Pattali Makkal Katchi",
+     "abbreviation": "PMK",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [
+      "#99ff00"
+     ],
+     "founded_year": 1999,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q1887353",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q117004033": {
+     "entity": {
+      "qid": "Q117004033",
+      "label": "Rashtriya Lok Janata Dal"
+     },
+     "name": "Rashtriya Lok Janata Dal",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q117004033",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q7314647": {
+     "entity": {
+      "qid": "Q7314647",
+      "label": "Republican Party of India (A)"
+     },
+     "name": "Republican Party of India (A)",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q7314647",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "RPI(A) logo.webp",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/RPI(A)%20logo.webp",
+      "host": "commons",
+      "license": "CC0",
+      "non_free": false,
+      "credit": "RKTV News UP"
+     }
+    },
+    "Q327591": {
+     "entity": {
+      "qid": "Q327591",
+      "label": "independent politician"
+     },
+     "name": "independent politician",
+     "abbreviation": "Independent",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [
+      "#dddddd"
+     ],
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q327591",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q3690757": {
+     "entity": {
+      "qid": "Q3690757",
+      "label": "Kerala Congress (M)"
+     },
+     "name": "Kerala Congress (M)",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [
+      "#cc9900"
+     ],
+     "founded_year": 1979,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q3690757",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q859993": {
+     "entity": {
+      "qid": "Q859993",
+      "label": "Biju Janata Dal"
+     },
+     "name": "Biju Janata Dal",
+     "endonym": "ବିଜୁ ଜନତା ଦଳ",
+     "kind": "party",
+     "alignment": "centre_left",
+     "alignment_raw": "centre-left",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [
+      "#006400"
+     ],
+     "founded_year": 1997,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q859993",
+      "retrieved_at": "2026-08-14"
+     }
+    },
+    "Q3518390": {
+     "entity": {
+      "qid": "Q3518390",
+      "label": "Bharat Rashtra Samithi"
+     },
+     "name": "Bharat Rashtra Samithi",
+     "kind": "party",
+     "alignment": "centre",
+     "alignment_raw": "centrism",
+     "ideologies": [
+      {
+       "qid": "Q2684060",
+       "label": "regionalism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#ffc0cb"
+     ],
+     "founded_year": 2001,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q3518390",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Flag of Bharat Rashtra Samithi (India Nation Council).svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Bharat%20Rashtra%20Samithi%20(India%20Nation%20Council).svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "credit": "Gppande"
+     }
+    },
+    "Q803681": {
+     "entity": {
+      "qid": "Q803681",
+      "label": "Bahujan Samaj Party"
+     },
+     "name": "Bahujan Samaj Party",
+     "kind": "party",
+     "ideologies": [
+      {
+       "qid": "Q216920",
+       "label": "secularism"
+      },
+      {
+       "qid": "Q121254",
+       "label": "social democracy"
+      },
+      {
+       "qid": "Q189280",
+       "label": "democratic socialism"
+      },
+      {
+       "qid": "Q3033305",
+       "label": "Self-Respect Movement"
+      },
+      {
+       "qid": "Q13416790",
+       "label": "social equality"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#0000ff"
+     ],
+     "founded_year": 1984,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q803681",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Elephant Bahujan Samaj Party.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Elephant%20Bahujan%20Samaj%20Party.svg",
+      "host": "commons",
+      "license": "CC BY-SA 3.0",
+      "non_free": false,
+      "credit": "Furfur"
+     }
+    },
+    "Q1200751": {
+     "entity": {
+      "qid": "Q1200751",
+      "label": "Desiya Murpokku Dravida Kazhagam"
+     },
+     "name": "Desiya Murpokku Dravida Kazhagam",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [
+      "#008080"
+     ],
+     "founded_year": 2005,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q1200751",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Indian Election Symbol Nagara.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Indian%20Election%20Symbol%20Nagara.svg",
+      "host": "commons",
+      "license": "CC BY-SA 4.0",
+      "non_free": false,
+      "credit": "Abilngeorge"
+     }
+    },
+    "Q49647268": {
+     "entity": {
+      "qid": "Q49647268",
+      "label": "Makkal Neethi Maiyam"
+     },
+     "name": "Makkal Neethi Maiyam",
+     "kind": "party",
+     "alignment": "centre_left",
+     "alignment_raw": "centre-left",
+     "ideologies": [
+      {
+       "qid": "Q11324898",
+       "label": "Neutral"
+      }
+     ],
+     "groupings": [],
+     "colors": [],
+     "founded_year": 2018,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q49647268",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Mnm-logo-english.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mnm-logo-english.png",
+      "host": "commons",
+      "license": "CC BY-SA 4.0",
+      "non_free": false,
+      "credit": "Ragunath22"
      }
     }
    },
    "chambers": [
     {
      "entity": {
-      "qid": "Q1969591",
-      "label": "Asamblea Nacional de Nicaragua"
+      "qid": "Q230003",
+      "label": "Lok Sabha"
      },
-     "role": "unicameral",
-     "name": "Asamblea Nacional de Nicaragua",
-     "seats_total": 92,
+     "role": "lower",
+     "name": "Lok Sabha",
+     "seats_total": 545,
      "selection": [
       "directly_elected"
      ],
-     "contestation": "restricted",
+     "contestation": "competitive",
      "composition": [
       {
-       "party": "Q27389",
-       "name": "Sandinista National Liberation Front",
-       "seats": 76,
-       "share": 0.8261,
-       "standing": "government"
+       "party": "Q10230",
+       "name": "Bharatiya Janata Party",
+       "seats": 240,
+       "share": 0.4404,
+       "standing": "government",
+       "alliance": "National Democratic Alliance"
       },
       {
-       "party": "Q1422066",
-       "name": "Constitutionalist Liberal Party",
-       "seats": 9,
-       "share": 0.0978,
-       "standing": "opposition"
+       "party": "Q140215595",
+       "name": "Nationalist Citizens Party of India",
+       "seats": 20,
+       "share": 0.0367,
+       "standing": "government",
+       "alliance": "National Democratic Alliance"
       },
       {
-       "party": "Q2729459",
-       "name": "Nicaraguan Liberal Alliance",
+       "party": "Q2279320",
+       "name": "Telugu Desam Party",
+       "seats": 16,
+       "share": 0.0294,
+       "standing": "government",
+       "alliance": "National Democratic Alliance"
+      },
+      {
+       "party": "Q114593583",
+       "name": "Shiv Sena (2022–present)",
+       "seats": 13,
+       "share": 0.0239,
+       "standing": "government",
+       "alliance": "National Democratic Alliance"
+      },
+      {
+       "party": "Q904827",
+       "name": "Janata Dal (United)",
+       "seats": 12,
+       "share": 0.022,
+       "standing": "government",
+       "alliance": "National Democratic Alliance"
+      },
+      {
+       "party": "Q108829795",
+       "name": "Lok Janshakti Party (Ram Vilas)",
+       "seats": 5,
+       "share": 0.0092,
+       "standing": "government",
+       "alliance": "National Democratic Alliance"
+      },
+      {
+       "party": "Q1601619",
+       "name": "Janata Dal (Secular)",
        "seats": 2,
-       "share": 0.0217,
+       "share": 0.0037,
+       "standing": "government",
+       "alliance": "National Democratic Alliance"
+      },
+      {
+       "party": "Q15940677",
+       "name": "Janasena Party",
+       "seats": 2,
+       "share": 0.0037,
+       "standing": "government",
+       "alliance": "National Democratic Alliance"
+      },
+      {
+       "party": "Q5961363",
+       "name": "Rashtriya Lok Dal",
+       "seats": 2,
+       "share": 0.0037,
+       "standing": "government",
+       "alliance": "National Democratic Alliance"
+      },
+      {
+       "party": "Q28924648",
+       "name": "Apna Dal (Sonelal)",
+       "seats": 1,
+       "share": 0.0018,
+       "standing": "government",
+       "alliance": "National Democratic Alliance"
+      },
+      {
+       "party": "Q2740234",
+       "name": "Asom Gana Parishad",
+       "seats": 1,
+       "share": 0.0018,
+       "standing": "government",
+       "alliance": "National Democratic Alliance"
+      },
+      {
+       "party": "Q4729039",
+       "name": "All Jharkhand Students Union",
+       "seats": 1,
+       "share": 0.0018,
+       "standing": "government",
+       "alliance": "National Democratic Alliance"
+      },
+      {
+       "party": "Q20310838",
+       "name": "Hindustani Awam Morcha",
+       "seats": 1,
+       "share": 0.0018,
+       "standing": "government",
+       "alliance": "National Democratic Alliance"
+      },
+      {
+       "party": "Q1561861",
+       "name": "Nationalist Congress Party",
+       "seats": 1,
+       "share": 0.0018,
+       "standing": "government",
+       "alliance": "National Democratic Alliance"
+      },
+      {
+       "party": "Q4801137",
+       "name": "Sikkim Krantikari Morcha",
+       "seats": 1,
+       "share": 0.0018,
+       "standing": "government",
+       "alliance": "National Democratic Alliance"
+      },
+      {
+       "party": "Q10225",
+       "name": "Indian National Congress",
+       "seats": 98,
+       "share": 0.1798,
+       "standing": "opposition",
+       "alliance": "Indian National Developmental Inclusive Alliance"
+      },
+      {
+       "party": "Q1546941",
+       "name": "Samajwadi Party",
+       "seats": 37,
+       "share": 0.0679,
+       "standing": "opposition",
+       "alliance": "Indian National Developmental Inclusive Alliance"
+      },
+      {
+       "party": "Q912899",
+       "name": "Trinamool Congress",
+       "seats": 8,
+       "share": 0.0147,
+       "standing": "opposition",
+       "alliance": "Indian National Developmental Inclusive Alliance"
+      },
+      {
+       "party": "Q124988169",
+       "name": "Nationalist Congress Party – Sharadchandra Pawar",
+       "seats": 8,
+       "share": 0.0147,
+       "standing": "opposition",
+       "alliance": "Indian National Developmental Inclusive Alliance"
+      },
+      {
+       "party": "Q234277",
+       "name": "Communist Party of India (Marxist)",
+       "seats": 4,
+       "share": 0.0073,
+       "standing": "opposition",
+       "alliance": "Indian National Developmental Inclusive Alliance"
+      },
+      {
+       "party": "Q3176919",
+       "name": "Rashtriya Janata Dal",
+       "seats": 4,
+       "share": 0.0073,
+       "standing": "opposition",
+       "alliance": "Indian National Developmental Inclusive Alliance"
+      },
+      {
+       "party": "Q3196786",
+       "name": "Indian Union Muslim League",
+       "seats": 3,
+       "share": 0.0055,
+       "standing": "opposition",
+       "alliance": "Indian National Developmental Inclusive Alliance"
+      },
+      {
+       "party": "Q3273397",
+       "name": "Jharkhand Mukti Morcha",
+       "seats": 3,
+       "share": 0.0055,
+       "standing": "opposition",
+       "alliance": "Indian National Developmental Inclusive Alliance"
+      },
+      {
+       "party": "Q114637001",
+       "name": "Shiv Sena (UBT)",
+       "seats": 3,
+       "share": 0.0055,
+       "standing": "opposition",
+       "alliance": "Indian National Developmental Inclusive Alliance"
+      },
+      {
+       "party": "Q837159",
+       "name": "Communist Party of India",
+       "seats": 2,
+       "share": 0.0037,
+       "standing": "opposition",
+       "alliance": "Indian National Developmental Inclusive Alliance"
+      },
+      {
+       "party": "Q1452292",
+       "name": "Communist Party of India (Marxist–Leninist) Liberation",
+       "seats": 2,
+       "share": 0.0037,
+       "standing": "opposition",
+       "alliance": "Indian National Developmental Inclusive Alliance"
+      },
+      {
+       "party": "Q1626979",
+       "name": "Jammu & Kashmir National Conference",
+       "seats": 2,
+       "share": 0.0037,
+       "standing": "opposition",
+       "alliance": "Indian National Developmental Inclusive Alliance"
+      },
+      {
+       "party": "Q7928160",
+       "name": "Viduthalai Chiruthaigal Katchi",
+       "seats": 2,
+       "share": 0.0037,
+       "standing": "opposition",
+       "alliance": "Indian National Developmental Inclusive Alliance"
+      },
+      {
+       "party": "Q123667819",
+       "name": "Bharat Adivasi Party",
+       "seats": 1,
+       "share": 0.0018,
+       "standing": "opposition",
+       "alliance": "Indian National Developmental Inclusive Alliance"
+      },
+      {
+       "party": "Q3595134",
+       "name": "Kerala Congress",
+       "seats": 1,
+       "share": 0.0018,
+       "standing": "opposition",
+       "alliance": "Indian National Developmental Inclusive Alliance"
+      },
+      {
+       "party": "Q195119",
+       "name": "Marumalarchi Dravida Munnetra Kazhagam",
+       "seats": 1,
+       "share": 0.0018,
+       "standing": "opposition",
+       "alliance": "Indian National Developmental Inclusive Alliance"
+      },
+      {
+       "party": "Q1635587",
+       "name": "Revolutionary Socialist Party (India)",
+       "seats": 1,
+       "share": 0.0018,
+       "standing": "opposition",
+       "alliance": "Indian National Developmental Inclusive Alliance"
+      },
+      {
+       "party": "Q7295306",
+       "name": "Rashtriya Loktantrik Party",
+       "seats": 1,
+       "share": 0.0018,
+       "standing": "opposition",
+       "alliance": "Indian National Developmental Inclusive Alliance"
+      },
+      {
+       "party": null,
+       "name": "Independent",
+       "seats": 3,
+       "share": 0.0055,
+       "standing": "opposition",
+       "alliance": "Indian National Developmental Inclusive Alliance"
+      },
+      {
+       "party": "Q1255973",
+       "name": "Dravida Munnetra Kazhagam",
+       "seats": 22,
+       "share": 0.0404,
        "standing": "opposition"
       },
       {
-       "party": "Q9096783",
-       "name": "YATAMA",
-       "seats": 1,
-       "share": 0.0109,
+       "party": "Q8046035",
+       "name": "YSR Congress Party",
+       "seats": 4,
+       "share": 0.0073,
        "standing": "opposition"
       },
       {
-       "party": "Q2054647",
-       "name": "Independent Liberal Party",
-       "seats": 1,
-       "share": 0.0109,
+       "party": "Q129844",
+       "name": "Aam Aadmi Party",
+       "seats": 3,
+       "share": 0.0055,
        "standing": "opposition"
       },
       {
-       "party": "Q7024450",
-       "name": "Nicaraguan Party of the Christian Path",
-       "seats": 1,
-       "share": 0.0109,
+       "party": "Q131933513",
+       "name": "Akali Dal (Waris Punjab De)",
+       "seats": 2,
+       "share": 0.0037,
        "standing": "opposition"
       },
       {
-       "party": "Q4732427",
-       "name": "Alliance for the Republic",
+       "party": "Q148034",
+       "name": "Shiromani Akali Dal",
        "seats": 1,
-       "share": 0.0109,
+       "share": 0.0018,
        "standing": "opposition"
+      },
+      {
+       "party": "Q85812100",
+       "name": "United People's Party Liberal",
+       "seats": 1,
+       "share": 0.0018,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q2837501",
+       "name": "All India Majlis-e-Ittehadul Muslimeen",
+       "seats": 1,
+       "share": 0.0018,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q60763483",
+       "name": "Zoram People's Movement",
+       "seats": 1,
+       "share": 0.0018,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q136128792",
+       "name": "Aazad Samaj Party (Kanshi Ram)",
+       "seats": 1,
+       "share": 0.0018,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q130386383",
+       "name": "Jammu and Kashmir Awami Ittehad Party",
+       "seats": 1,
+       "share": 0.0018,
+       "standing": "opposition"
+      },
+      {
+       "party": null,
+       "name": "Independent",
+       "seats": 1,
+       "share": 0.0018,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q2507570",
+       "name": "Casual vacancy",
+       "seats": 3,
+       "share": 0.0055,
+       "standing": "vacant"
       }
      ],
-     "last_election": "2021-11-07",
+     "last_election": "2024-04-19",
+     "next_election": "2029-07-01",
      "mandate": {
-      "expected_end": "2026-11-07",
-      "inferred": true,
-      "state": "due_soon"
+      "expected_end": "2029-07-01",
+      "inferred": false,
+      "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-04-19",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
-      "article": "National Assembly (Nicaragua)",
-      "revid": 1365911071,
+      "article": "Lok Sabha",
+      "revid": 1365743317,
       "retrieved_at": "2026-08-14",
       "model": "claude-haiku-4-5"
      },
-     "source_hash": "sha256:ece41895cf0b1aab106d3409a045c060"
+     "source_hash": "sha256:7a5413dea54d43316278bae6cb36a813"
+    },
+    {
+     "entity": {
+      "qid": "Q244730",
+      "label": "Rajya Sabha"
+     },
+     "role": "upper",
+     "name": "Rajya Sabha",
+     "name_local": "राज्य सभा",
+     "seats_total": 244,
+     "selection": [
+      "indirectly_elected"
+     ],
+     "contestation": "competitive",
+     "composition": [
+      {
+       "party": "Q10230",
+       "name": "Bharatiya Janata Party",
+       "seats": 117,
+       "share": 0.4795,
+       "standing": "government"
+      },
+      {
+       "party": "Q651141",
+       "name": "All India Anna Dravida Munnetra Kazhagam",
+       "seats": 4,
+       "share": 0.0164,
+       "standing": "government"
+      },
+      {
+       "party": "Q904827",
+       "name": "Janata Dal (United)",
+       "seats": 4,
+       "share": 0.0164,
+       "standing": "government"
+      },
+      {
+       "party": "Q1561861",
+       "name": "Nationalist Congress Party",
+       "seats": 4,
+       "share": 0.0164,
+       "standing": "government"
+      },
+      {
+       "party": "Q2279320",
+       "name": "Telugu Desam Party",
+       "seats": 4,
+       "share": 0.0164,
+       "standing": "government"
+      },
+      {
+       "party": "Q114593583",
+       "name": "Shiv Sena (2022–present)",
+       "seats": 2,
+       "share": 0.0082,
+       "standing": "government"
+      },
+      {
+       "party": "Q2740234",
+       "name": "Asom Gana Parishad",
+       "seats": 1,
+       "share": 0.0041,
+       "standing": "government"
+      },
+      {
+       "party": "Q15940677",
+       "name": "Janasena Party",
+       "seats": 1,
+       "share": 0.0041,
+       "standing": "government"
+      },
+      {
+       "party": "Q6974870",
+       "name": "National People's Party (India)",
+       "seats": 1,
+       "share": 0.0041,
+       "standing": "government"
+      },
+      {
+       "party": "Q1887353",
+       "name": "Pattali Makkal Katchi",
+       "seats": 1,
+       "share": 0.0041,
+       "standing": "government"
+      },
+      {
+       "party": "Q5961363",
+       "name": "Rashtriya Lok Dal",
+       "seats": 1,
+       "share": 0.0041,
+       "standing": "government"
+      },
+      {
+       "party": "Q117004033",
+       "name": "Rashtriya Lok Morcha",
+       "seats": 1,
+       "share": 0.0041,
+       "standing": "government"
+      },
+      {
+       "party": "Q7314647",
+       "name": "Republican Party of India (Athawale)",
+       "seats": 1,
+       "share": 0.0041,
+       "standing": "government"
+      },
+      {
+       "party": "Q327591",
+       "name": "Independent politician",
+       "seats": 3,
+       "share": 0.0123,
+       "standing": "government"
+      },
+      {
+       "party": null,
+       "name": "Nominated members",
+       "seats": 7,
+       "share": 0.0287,
+       "standing": "government"
+      },
+      {
+       "party": "Q10225",
+       "name": "Indian National Congress",
+       "seats": 30,
+       "share": 0.123,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q912899",
+       "name": "Trinamool Congress",
+       "seats": 9,
+       "share": 0.0369,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q1546941",
+       "name": "Samajwadi Party",
+       "seats": 4,
+       "share": 0.0164,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q234277",
+       "name": "Communist Party of India (Marxist)",
+       "seats": 3,
+       "share": 0.0123,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q1626979",
+       "name": "Jammu & Kashmir National Conference",
+       "seats": 3,
+       "share": 0.0123,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q3273397",
+       "name": "Jharkhand Mukti Morcha",
+       "seats": 3,
+       "share": 0.0123,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q3176919",
+       "name": "Rashtriya Janata Dal",
+       "seats": 3,
+       "share": 0.0123,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q837159",
+       "name": "Communist Party of India",
+       "seats": 2,
+       "share": 0.0082,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q3196786",
+       "name": "Indian Union Muslim League",
+       "seats": 2,
+       "share": 0.0082,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q3690757",
+       "name": "Kerala Congress (M)",
+       "seats": 1,
+       "share": 0.0041,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q124988169",
+       "name": "Nationalist Congress Party – Sharadchandra Pawar",
+       "seats": 1,
+       "share": 0.0041,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q114637001",
+       "name": "Shiv Sena (Uddhav Balasaheb Thackeray)",
+       "seats": 1,
+       "share": 0.0041,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q327591",
+       "name": "Independent politician",
+       "seats": 1,
+       "share": 0.0041,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q1255973",
+       "name": "Dravida Munnetra Kazhagam",
+       "seats": 8,
+       "share": 0.0328,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q859993",
+       "name": "Biju Janata Dal",
+       "seats": 5,
+       "share": 0.0205,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q8046035",
+       "name": "YSR Congress Party",
+       "seats": 4,
+       "share": 0.0164,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q129844",
+       "name": "Aam Aadmi Party",
+       "seats": 3,
+       "share": 0.0123,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q3518390",
+       "name": "Bharat Rashtra Samithi",
+       "seats": 3,
+       "share": 0.0123,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q85812100",
+       "name": "United People's Party Liberal",
+       "seats": 2,
+       "share": 0.0082,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q803681",
+       "name": "Bahujan Samaj Party",
+       "seats": 1,
+       "share": 0.0041,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q1200751",
+       "name": "Desiya Murpokku Dravida Kazhagam",
+       "seats": 1,
+       "share": 0.0041,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q49647268",
+       "name": "Makkal Needhi Maiam",
+       "seats": 1,
+       "share": 0.0041,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q60763483",
+       "name": "Zoram People's Movement",
+       "seats": 1,
+       "share": 0.0041,
+       "standing": "opposition"
+      }
+     ],
+     "last_election": "2026-07-01",
+     "next_election": "2027-07-01",
+     "mandate": {
+      "expected_end": "2027-07-01",
+      "inferred": false,
+      "state": "due_soon"
+     },
+     "as_of": "2026-07-01",
+     "retrieved_at": "2026-08-14",
+     "confidence": "partial",
+     "provenance": {
+      "kind": "wikipedia",
+      "derivation": "extracted",
+      "article": "Rajya Sabha",
+      "revid": 1368489130,
+      "retrieved_at": "2026-08-14",
+      "model": "claude-haiku-4-5"
+     },
+     "source_hash": "sha256:078917f4f2dd3348f83588907c613df3"
     }
    ],
    "government": {
     "governing": [
-     "Q27389"
+     "Q10230",
+     "Q140215595",
+     "Q2279320",
+     "Q114593583",
+     "Q904827",
+     "Q108829795",
+     "Q1601619",
+     "Q15940677",
+     "Q5961363",
+     "Q28924648",
+     "Q2740234",
+     "Q4729039",
+     "Q20310838",
+     "Q1561861",
+     "Q4801137"
     ],
     "backing": [],
-    "seats": 76,
+    "seats": 318,
     "minority": false,
     "authority": "established",
-    "confidence": "flagged",
+    "confidence": "high",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
-     "article": "National Assembly (Nicaragua)",
+     "article": "Lok Sabha",
      "retrieved_at": "2026-08-14"
     }
    },
@@ -4507,7 +5452,7 @@
     {
      "kind": "wikidata",
      "derivation": "structured",
-     "qid": "Q811",
+     "qid": "Q668",
      "retrieved_at": "2026-08-14"
     }
    ],
@@ -4807,8 +5752,9 @@
       "inferred": true,
       "state": "overdue"
      },
-     "as_of": "2026-08-14",
-     "confidence": "high",
+     "as_of": "2015-04-13",
+     "retrieved_at": "2026-08-14",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -4849,6 +5795,7 @@
      ],
      "term_years": 5,
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -4882,550 +5829,6 @@
      "kind": "wikidata",
      "derivation": "structured",
      "qid": "Q1049",
-     "retrieved_at": "2026-08-14"
-    }
-   ],
-   "updated_at": "2026-08-14"
-  },
-  "SO": {
-   "iso": "SO",
-   "entity": {
-    "qid": "Q1045",
-    "label": "Somalia"
-   },
-   "name": "Somalia",
-   "form": "transitional",
-   "form_raw": [
-    "federal republic",
-    "Federal parliamentary republic under a Provisional Constitution"
-   ],
-   "head_of_state": {
-    "person": {
-     "qid": "Q319153",
-     "label": "Hassan Sheikh Mohamud"
-    },
-    "name": "Hassan Sheikh Mohamud",
-    "party": {
-     "qid": "Q60775601",
-     "label": "Union for Peace and Development Party"
-    },
-    "since": "2022-05-15",
-    "portrait": {
-     "file": "Hassan Sheikh Mohamud--StateDept Portrait-- (cropped).jpg",
-     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hassan%20Sheikh%20Mohamud--StateDept%20Portrait--%20(cropped).jpg",
-     "host": "commons",
-     "license": "Public domain",
-     "non_free": false,
-     "credit": "United States State Department"
-    },
-    "represents": "political",
-    "superseded": true,
-    "provenance": {
-     "kind": "wikidata",
-     "derivation": "derived",
-     "qid": "Q1045",
-     "retrieved_at": "2026-08-14"
-    }
-   },
-   "head_of_government": {
-    "person": {
-     "qid": "Q112598575",
-     "label": "Hamza Abdi Barre"
-    },
-    "name": "Hamza Abdi Barre",
-    "party": {
-     "qid": "Q60775601",
-     "label": "Union for Peace and Development Party"
-    },
-    "since": "2022-06-26",
-    "portrait": {
-     "file": "Hamza Abdi Barre.jpg",
-     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hamza%20Abdi%20Barre.jpg",
-     "host": "commons",
-     "license": "CC0",
-     "non_free": false,
-     "credit": "Atmis Somalia"
-    },
-    "represents": "political",
-    "provenance": {
-     "kind": "wikidata",
-     "derivation": "structured",
-     "qid": "Q1045",
-     "retrieved_at": "2026-08-14"
-    }
-   },
-   "parties": {},
-   "chambers": [
-    {
-     "entity": {
-      "qid": "Q21078126",
-      "label": "House of the People"
-     },
-     "role": "lower",
-     "name": "House of the People",
-     "seats_total": 261,
-     "selection": [
-      "directly_elected"
-     ],
-     "contestation": "suspended",
-     "composition": [],
-     "as_of": "2026-08-14",
-     "confidence": "flagged",
-     "provenance": {
-      "kind": "wikipedia",
-      "derivation": "structured",
-      "retrieved_at": "2026-08-14"
-     },
-     "source_hash": ""
-    },
-    {
-     "entity": {
-      "qid": "Q25683566",
-      "label": "Upper House of Somalia"
-     },
-     "role": "upper",
-     "name": "Upper House of Somalia",
-     "seats_total": 54,
-     "selection": [
-      "indirectly_elected"
-     ],
-     "contestation": "suspended",
-     "composition": [],
-     "as_of": "2026-08-14",
-     "confidence": "flagged",
-     "provenance": {
-      "kind": "wikipedia",
-      "derivation": "structured",
-      "article": "Senate of Somalia",
-      "revid": 1367167721,
-      "retrieved_at": "2026-08-14"
-     },
-     "source_hash": "sha256:d88e648d1a0b1cdc3b706ddd22044214"
-    }
-   ],
-   "government": {
-    "governing": [],
-    "backing": [],
-    "seats": 0,
-    "minority": true,
-    "authority": "established",
-    "confidence": "flagged",
-    "provenance": {
-     "kind": "wikipedia",
-     "derivation": "derived",
-     "retrieved_at": "2026-08-14"
-    }
-   },
-   "sources": [
-    {
-     "kind": "wikidata",
-     "derivation": "structured",
-     "qid": "Q1045",
-     "retrieved_at": "2026-08-14"
-    }
-   ],
-   "updated_at": "2026-08-14"
-  },
-  "TD": {
-   "iso": "TD",
-   "entity": {
-    "qid": "Q657",
-    "label": "Chad"
-   },
-   "name": "Chad",
-   "form": "presidential_republic",
-   "form_raw": [
-    "Presidential republic"
-   ],
-   "head_of_state": {
-    "person": {
-     "qid": "Q16206405",
-     "label": "Mahamat Déby"
-    },
-    "name": "Mahamat Déby",
-    "party": {
-     "qid": "Q327591",
-     "label": "independent politician"
-    },
-    "portrait": {
-     "file": "Mahamat Déby.jpg",
-     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mahamat%20D%C3%A9by.jpg",
-     "host": "commons",
-     "license": "Public domain",
-     "non_free": false,
-     "credit": "United States Department of State Africa U.S.-Africa Leaders Summit: Photos and Videos"
-    },
-    "represents": "political",
-    "provenance": {
-     "kind": "wikidata",
-     "derivation": "structured",
-     "qid": "Q657",
-     "retrieved_at": "2026-08-14"
-    }
-   },
-   "head_of_government": {
-    "person": {
-     "qid": "Q57350"
-    },
-    "name": "Allamaye Halina",
-    "party": null,
-    "represents": "political",
-    "superseded": true,
-    "provenance": {
-     "kind": "wikipedia",
-     "derivation": "extracted",
-     "article": "Chad",
-     "revid": 1368743880,
-     "retrieved_at": "2026-08-14",
-     "model": "claude-haiku-4-5"
-    }
-   },
-   "parties": {
-    "Q1576278": {
-     "entity": {
-      "qid": "Q1576278",
-      "label": "Patriotic Salvation Movement"
-     },
-     "name": "Patriotic Salvation Movement",
-     "abbreviation": "MPS",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q6235",
-       "label": "nationalism"
-      }
-     ],
-     "groupings": [],
-     "colors": [
-      "#3333cc"
-     ],
-     "founded_year": 1990,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q1576278",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Patriotic Salvation Movement.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Patriotic%20Salvation%20Movement.png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     }
-    },
-    "Q6975198": {
-     "entity": {
-      "qid": "Q6975198",
-      "label": "National Rally for Democracy in Chad"
-     },
-     "name": "National Rally for Democracy in Chad",
-     "abbreviation": "RNDT - Le Réveil",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q121254",
-       "label": "social democracy"
-      }
-     ],
-     "groupings": [],
-     "colors": [],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q6975198",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Logo of the National Rally of Chadian Democrats.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Logo%20of%20the%20National%20Rally%20of%20Chadian%20Democrats.png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     }
-    },
-    "Q3623619": {
-     "entity": {
-      "qid": "Q3623619",
-      "label": "Rally for Democracy and Progress"
-     },
-     "name": "Rally for Democracy and Progress",
-     "endonym": "Rassemblement pour la démocratie et le progrès",
-     "abbreviation": "RDP",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 1991,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q3623619",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Logo of the Rally for Democracy and Progress (Chad).png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Logo%20of%20the%20Rally%20for%20Democracy%20and%20Progress%20(Chad).png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     }
-    },
-    "Q1168907": {
-     "entity": {
-      "qid": "Q1168907",
-      "label": "National Union for Democracy and Renewal"
-     },
-     "name": "National Union for Democracy and Renewal",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q121254",
-       "label": "social democracy"
-      }
-     ],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 1992,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q1168907",
-      "retrieved_at": "2026-08-14"
-     }
-    },
-    "Q66898085": {
-     "entity": {
-      "qid": "Q66898085",
-      "label": "Party for Liberty and Development"
-     },
-     "name": "Party for Liberty and Development",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q121254",
-       "label": "social democracy"
-      }
-     ],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 1993,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q66898085",
-      "retrieved_at": "2026-08-14"
-     }
-    },
-    "Q3550258": {
-     "entity": {
-      "qid": "Q3550258",
-      "label": "Chadian Democratic Union"
-     },
-     "name": "Chadian Democratic Union",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q7169",
-       "label": "conservatism"
-      },
-      {
-       "qid": "Q2641411",
-       "label": "Islamic democracy"
-      }
-     ],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 1945,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q3550258",
-      "retrieved_at": "2026-08-14"
-     }
-    },
-    "Q669116": {
-     "entity": {
-      "qid": "Q669116",
-      "label": "Union for Renewal and Democracy"
-     },
-     "name": "Union for Renewal and Democracy",
-     "endonym": "Union pour le renouveau et la démocratie",
-     "abbreviation": "URD",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 1992,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q669116",
-      "retrieved_at": "2026-08-14"
-     }
-    },
-    "Q3658492": {
-     "entity": {
-      "qid": "Q3658492",
-      "label": "National Rally for Development and Progress"
-     },
-     "name": "National Rally for Development and Progress",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q3658492",
-      "retrieved_at": "2026-08-14"
-     }
-    },
-    "Q6972254": {
-     "entity": {
-      "qid": "Q6972254",
-      "label": "National Democratic and Social Convention"
-     },
-     "name": "National Democratic and Social Convention",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q6972254",
-      "retrieved_at": "2026-08-14"
-     }
-    }
-   },
-   "chambers": [
-    {
-     "entity": {
-      "qid": "Q1599346",
-      "label": "National Assembly"
-     },
-     "role": "unicameral",
-     "name": "National Assembly",
-     "name_local": "Assemblée Nationale",
-     "seats_total": 188,
-     "selection": [
-      "directly_elected"
-     ],
-     "contestation": "competitive",
-     "composition": [
-      {
-       "party": "Q1576278",
-       "name": "Patriotic Salvation Movement",
-       "seats": 124,
-       "share": 0.6596,
-       "standing": "government"
-      },
-      {
-       "party": "Q6975198",
-       "name": "National Rally of Chadian Democrats",
-       "seats": 11,
-       "share": 0.0585,
-       "standing": "opposition"
-      },
-      {
-       "party": "Q3623619",
-       "name": "Rally for Democracy and Progress",
-       "seats": 8,
-       "share": 0.0426,
-       "standing": "opposition"
-      },
-      {
-       "party": "Q1168907",
-       "name": "National Union for Democracy and Renewal",
-       "seats": 7,
-       "share": 0.0372,
-       "standing": "opposition"
-      },
-      {
-       "party": "Q66898085",
-       "name": "Party for Liberty and Development",
-       "seats": 3,
-       "share": 0.016,
-       "standing": "opposition"
-      },
-      {
-       "party": "Q3550258",
-       "name": "Chadian Democratic Union",
-       "seats": 1,
-       "share": 0.0053,
-       "standing": "opposition"
-      },
-      {
-       "party": "Q669116",
-       "name": "Union for Renewal and Democracy",
-       "seats": 2,
-       "share": 0.0106,
-       "standing": "opposition"
-      },
-      {
-       "party": "Q3658492",
-       "name": "National Rally for Development and Progress",
-       "seats": 1,
-       "share": 0.0053,
-       "standing": "opposition"
-      },
-      {
-       "party": "Q6972254",
-       "name": "National Democratic and Social Convention",
-       "seats": 1,
-       "share": 0.0053,
-       "standing": "opposition"
-      },
-      {
-       "party": null,
-       "name": "Others",
-       "seats": 30,
-       "share": 0.1596,
-       "standing": "opposition"
-      }
-     ],
-     "last_election": "2024-12-29",
-     "next_election": "2029-07-01",
-     "mandate": {
-      "expected_end": "2029-07-01",
-      "inferred": false,
-      "state": "current"
-     },
-     "as_of": "2026-08-14",
-     "confidence": "high",
-     "provenance": {
-      "kind": "wikipedia",
-      "derivation": "extracted",
-      "article": "National Assembly of Chad",
-      "revid": 1364009159,
-      "retrieved_at": "2026-08-14",
-      "model": "claude-haiku-4-5"
-     },
-     "source_hash": "sha256:e2a19390c36489501c07300048d5563c"
-    }
-   ],
-   "government": {
-    "governing": [
-     "Q1576278"
-    ],
-    "backing": [],
-    "seats": 124,
-    "minority": false,
-    "authority": "established",
-    "confidence": "flagged",
-    "provenance": {
-     "kind": "wikipedia",
-     "derivation": "derived",
-     "article": "National Assembly of Chad",
-     "retrieved_at": "2026-08-14"
-    }
-   },
-   "sources": [
-    {
-     "kind": "wikidata",
-     "derivation": "structured",
-     "qid": "Q657",
      "retrieved_at": "2026-08-14"
     }
    ],
@@ -5641,7 +6044,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-11-05",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -5696,7 +6100,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-11-05",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",

@@ -1,6 +1,6 @@
 {
  "schema_version": "1.0.0",
- "generated_at": "2026-08-14T05:44:49.422Z",
+ "generated_at": "2026-08-14T05:47:59.983Z",
  "countries": {
   "AD": {
    "iso": "AD",
@@ -345,7 +345,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-04-02",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -477,7 +478,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-10-07",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -595,6 +597,7 @@
      "contestation": "restricted",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -822,7 +825,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-04-30",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -877,7 +881,8 @@
       }
      ],
      "as_of": "2026-08-14",
-     "confidence": "high",
+     "retrieved_at": "2026-08-14",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -1369,7 +1374,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-05-11",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -1665,7 +1671,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-06-07",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -2052,7 +2059,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-08-24",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -2727,7 +2735,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-10-26",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -2823,7 +2832,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-10-26",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -3277,7 +3287,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-09-29",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -3339,7 +3350,8 @@
       }
      ],
      "as_of": "2026-08-14",
-     "confidence": "high",
+     "retrieved_at": "2026-08-14",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -3964,7 +3976,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-05-03",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -4061,7 +4074,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-05-03",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -4739,7 +4753,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-09-01",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -5623,7 +5638,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-10-02",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -5735,7 +5751,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-02-16",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -5972,7 +5989,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-02-11",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -6027,7 +6045,8 @@
       }
      ],
      "as_of": "2026-08-14",
-     "confidence": "high",
+     "retrieved_at": "2026-08-14",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -6560,7 +6579,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-02-12",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -7389,7 +7409,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-06-09",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -7500,7 +7521,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-06-09",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -7613,6 +7635,7 @@
      "contestation": "suspended",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -8052,7 +8075,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-04-19",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -8182,8 +8206,9 @@
       "inferred": false,
       "state": "overdue"
      },
-     "as_of": "2026-08-14",
-     "confidence": "high",
+     "as_of": "2022-12-19",
+     "retrieved_at": "2026-08-14",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -8223,8 +8248,9 @@
       "inferred": false,
       "state": "overdue"
      },
-     "as_of": "2026-08-14",
-     "confidence": "high",
+     "as_of": "2022-12-19",
+     "retrieved_at": "2026-08-14",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -8410,7 +8436,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-06-05",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -8442,7 +8469,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-07-23",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -8617,7 +8645,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-01-11",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -8765,6 +8794,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -9119,7 +9149,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-08-17",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -9195,7 +9226,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-08-17",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -10403,7 +10435,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-10-02",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -10528,7 +10561,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-10-02",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -10739,6 +10773,7 @@
      "contestation": "competitive",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -10782,7 +10817,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-05-12",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -10989,7 +11025,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-11-30",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -11020,7 +11057,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-04-20",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -11326,7 +11364,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-10-30",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -11673,7 +11712,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-02-25",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -11722,7 +11762,8 @@
       }
      ],
      "as_of": "2026-08-14",
-     "confidence": "high",
+     "retrieved_at": "2026-08-14",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -11937,7 +11978,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-03-12",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -11985,7 +12027,8 @@
       }
      ],
      "as_of": "2026-08-14",
-     "confidence": "high",
+     "retrieved_at": "2026-08-14",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -12510,7 +12553,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-04-28",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -12587,7 +12631,8 @@
       }
      ],
      "as_of": "2026-08-14",
-     "confidence": "high",
+     "retrieved_at": "2026-08-14",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -13217,7 +13262,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-12-20",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -13243,6 +13289,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -13594,7 +13641,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-12-28",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -14191,7 +14239,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-07-01",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -14295,7 +14344,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-08-20",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -14917,7 +14967,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-10-22",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -14999,7 +15050,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-10-22",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -15318,7 +15370,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-12-27",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -15378,7 +15431,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-09-16",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -16252,7 +16306,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-11-16",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -16404,7 +16459,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-11-16",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -16914,7 +16970,8 @@
       "state": "overdue"
      },
      "as_of": "2026-08-14",
-     "confidence": "high",
+     "retrieved_at": "2026-08-14",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -16994,7 +17051,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-03-12",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -17015,7 +17073,7 @@
     "seats": 152,
     "minority": false,
     "authority": "established",
-    "confidence": "high",
+    "confidence": "flagged",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -17520,7 +17578,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-07-01",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -18297,7 +18356,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-03-08",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -18435,7 +18495,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-03-08",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -18778,7 +18839,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-02-01",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -18982,7 +19044,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-03-26",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -19255,7 +19318,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-05-17",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -19682,7 +19746,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-05-24",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -20561,7 +20626,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-10-03",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -20722,8 +20788,9 @@
       "inferred": false,
       "state": "overdue"
      },
-     "as_of": "2026-08-14",
-     "confidence": "partial",
+     "as_of": "2024-09-20",
+     "retrieved_at": "2026-08-14",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -21301,7 +21368,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-02-23",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -21327,6 +21395,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -21578,7 +21647,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-02-24",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -22628,7 +22698,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-03-24",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -22833,7 +22904,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-12-06",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -23524,7 +23596,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-05-19",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -23606,7 +23679,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-05-19",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -24505,7 +24579,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-07-02",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -24615,7 +24690,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-03-09",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -25135,7 +25211,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-02-09",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -25670,7 +25747,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-03-05",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -26574,7 +26652,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-11-10",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -26747,7 +26826,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-08-04",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -26936,6 +27016,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -28099,7 +28180,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-07-23",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -28236,7 +28318,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-07-23",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -28533,7 +28616,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-06-01",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -28559,6 +28643,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -29221,7 +29306,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-04-02",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -29482,8 +29568,9 @@
       "inferred": false,
       "state": "overdue"
      },
-     "as_of": "2026-08-14",
-     "confidence": "high",
+     "as_of": "2022-12-14",
+     "retrieved_at": "2026-08-14",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -29591,7 +29678,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-03-04",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -30365,7 +30453,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-07-01",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -30462,8 +30551,9 @@
       "inferred": false,
       "state": "overdue"
      },
-     "as_of": "2026-08-14",
-     "confidence": "high",
+     "as_of": "2023-09-24",
+     "retrieved_at": "2026-08-14",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -30756,7 +30846,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-09-27",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -30782,6 +30873,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -31842,7 +31934,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-07-04",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -31868,6 +31961,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -32133,7 +32227,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-06-23",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -32181,7 +32276,8 @@
       }
      ],
      "as_of": "2026-08-14",
-     "confidence": "high",
+     "retrieved_at": "2026-08-14",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -32499,7 +32595,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-10-26",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -32739,7 +32836,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-12-07",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -33053,7 +33151,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-04-09",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -33172,6 +33271,7 @@
      "contestation": "competitive",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -33346,7 +33446,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-11-20",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -33386,7 +33487,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-11-20",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -33974,7 +34076,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-06-25",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -34777,7 +34880,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-06-25",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -34882,7 +34986,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-11-23",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -35123,7 +35228,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-09-01",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -35468,7 +35574,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-11-30",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -36505,7 +36612,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-04-17",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -36634,7 +36742,8 @@
       "inferred": false,
       "state": "overdue"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2015-07-01",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -36940,7 +37049,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-04-12",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -37517,7 +37627,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-02-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -37557,7 +37668,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-02-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -38334,7 +38446,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-11-29",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -38465,7 +38578,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-01-29",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -39438,7 +39552,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-11-01",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -41647,7 +41762,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-04-19",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -41947,7 +42063,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-07-01",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -42599,7 +42716,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-11-11",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -42921,7 +43039,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-03-01",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -43391,7 +43510,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-11-30",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -44972,7 +45092,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-09-25",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -45076,7 +45197,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-09-25",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -45196,6 +45318,7 @@
      "contestation": "competitive",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -45218,6 +45341,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -45581,7 +45705,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-09-10",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -45616,6 +45741,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -46403,7 +46529,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-02-08",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -46550,7 +46677,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-07-20",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -46725,7 +46853,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-08-09",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -46779,7 +46908,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-08-09",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -47115,7 +47245,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-11-30",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -47382,7 +47513,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-07-23",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -47437,7 +47569,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-02-25",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -47615,7 +47748,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-08-19",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -47765,7 +47899,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-01-12",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -48096,7 +48231,8 @@
       "inferred": true,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-08-05",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -48326,7 +48462,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-03-15",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -48779,7 +48916,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-04-10",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -48895,6 +49033,7 @@
      "contestation": "competitive",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -49007,6 +49146,7 @@
      "contestation": "competitive",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -49187,7 +49327,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-02-22",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -49799,7 +49940,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-05-15",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -50039,7 +50181,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-12-01",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -50087,7 +50230,8 @@
       }
      ],
      "as_of": "2026-08-14",
-     "confidence": "high",
+     "retrieved_at": "2026-08-14",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -50422,7 +50566,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-02-09",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -50967,7 +51112,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-11-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -51437,7 +51583,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-10-10",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -51525,7 +51672,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-10-10",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -52143,7 +52291,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-10-07",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -52169,6 +52318,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -52823,8 +52973,9 @@
       "inferred": false,
       "state": "overdue"
      },
-     "as_of": "2026-08-14",
-     "confidence": "partial",
+     "as_of": "2024-10-13",
+     "retrieved_at": "2026-08-14",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -52847,7 +52998,7 @@
     "seats": 76,
     "minority": false,
     "authority": "established",
-    "confidence": "partial",
+    "confidence": "flagged",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -53315,7 +53466,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-10-08",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -53784,7 +53936,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-10-01",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -53951,8 +54104,9 @@
       "inferred": true,
       "state": "overdue"
      },
-     "as_of": "2026-08-14",
-     "confidence": "high",
+     "as_of": "2014-06-25",
+     "retrieved_at": "2026-08-14",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -54745,8 +54899,9 @@
       "inferred": false,
       "state": "overdue"
      },
-     "as_of": "2026-08-14",
-     "confidence": "high",
+     "as_of": "2021-09-08",
+     "retrieved_at": "2026-08-14",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -54896,7 +55051,8 @@
       "inferred": true,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2021-10-05",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -54923,7 +55079,7 @@
     "seats_with_backing": 290,
     "minority": false,
     "authority": "established",
-    "confidence": "high",
+    "confidence": "flagged",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -55163,7 +55319,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-02-05",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -55819,7 +55976,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-09-28",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -56687,7 +56845,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-06-11",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -56958,7 +57117,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-05-29",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -56985,6 +57145,7 @@
      "contestation": "suspended",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -57089,7 +57250,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-11-20",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -57807,7 +57969,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-05-08",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -57926,6 +58089,7 @@
      "contestation": "suspended",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -58416,7 +58580,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-12-28",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -58602,7 +58767,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-12-28",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -58991,7 +59157,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-06-28",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -59608,7 +59775,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-05-13",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -59857,7 +60025,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-05-30",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -60278,6 +60447,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -60645,7 +60815,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-04-21",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -61037,7 +61208,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-09-16",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -61502,7 +61674,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-06-02",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -61585,7 +61758,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-06-02",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -62730,7 +62904,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-11-19",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -62876,7 +63051,8 @@
       }
      ],
      "as_of": "2026-08-14",
-     "confidence": "high",
+     "retrieved_at": "2026-08-14",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -63201,7 +63377,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-10-09",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -63852,7 +64029,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-11-27",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -63905,7 +64083,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-11-26",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -64022,6 +64201,7 @@
      "contestation": "suspended",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -64518,7 +64698,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-02-25",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -64600,7 +64781,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-02-25",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -64970,7 +65152,8 @@
       "inferred": true,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2021-11-07",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -66083,7 +66266,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-10-29",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -66230,7 +66414,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-05-30",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -66848,7 +67033,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-09-08",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -67347,7 +67533,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-03-05",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -67421,7 +67608,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-07-01",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -67547,7 +67735,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-10-11",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -67966,7 +68155,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-10-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -68111,7 +68301,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-10-29",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -68145,6 +68336,7 @@
       }
      ],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -68664,7 +68856,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-05-05",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -68767,6 +68960,7 @@
      "contestation": "competitive",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -69551,7 +69745,8 @@
       "inferred": true,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-07-09",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -70451,7 +70646,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-05-12",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -70562,7 +70758,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-05-12",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -71325,7 +71522,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-02-08",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -71457,7 +71655,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-04-02",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -72191,7 +72390,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-10-15",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -72267,7 +72467,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-10-15",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -72998,7 +73199,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-05-18",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -73093,6 +73295,7 @@
      "contestation": "competitive",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -73115,6 +73318,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -73625,7 +73829,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-04-30",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -73727,7 +73932,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-04-30",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -73851,7 +74057,8 @@
       "inferred": true,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2021-10-02",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -75052,7 +75259,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-12-01",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -75135,7 +75343,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-12-01",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -76641,7 +76850,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-12-17",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -77129,7 +77339,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2021-09-17",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -77204,8 +77415,9 @@
       "inferred": true,
       "state": "overdue"
      },
-     "as_of": "2026-08-14",
-     "confidence": "partial",
+     "as_of": "1993-12-12",
+     "retrieved_at": "2026-08-14",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -77637,7 +77849,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-07-15",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -77663,6 +77876,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -77783,7 +77997,8 @@
       }
      ],
      "as_of": "2026-08-14",
-     "confidence": "high",
+     "retrieved_at": "2026-08-14",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -78134,7 +78349,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-04-17",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -78318,7 +78534,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-09-25",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -78651,8 +78868,9 @@
       "inferred": true,
       "state": "overdue"
      },
-     "as_of": "2026-08-14",
-     "confidence": "high",
+     "as_of": "2015-04-13",
+     "retrieved_at": "2026-08-14",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -78693,7 +78911,8 @@
      ],
      "term_years": 5,
      "as_of": "2026-08-14",
-     "confidence": "high",
+     "retrieved_at": "2026-08-14",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -79432,8 +79651,9 @@
       "inferred": false,
       "state": "overdue"
      },
-     "as_of": "2026-08-14",
-     "confidence": "partial",
+     "as_of": "2022-09-11",
+     "retrieved_at": "2026-08-14",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -79460,7 +79680,7 @@
     "seats_with_backing": 176,
     "minority": true,
     "authority": "established",
-    "confidence": "partial",
+    "confidence": "flagged",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -79715,7 +79935,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-05-03",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -80179,7 +80400,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-03-22",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -80247,6 +80469,7 @@
       "state": "due_soon"
      },
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -80787,7 +81010,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-09-30",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -81000,7 +81224,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-06-24",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -81377,7 +81602,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-06-09",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -81935,7 +82161,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-11-17",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -82055,6 +82282,7 @@
      "contestation": "suspended",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -82077,6 +82305,7 @@
      "contestation": "suspended",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -82448,7 +82677,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-05-25",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -82680,7 +82910,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2010-04-11",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -82742,7 +82973,8 @@
       }
      ],
      "as_of": "2026-08-14",
-     "confidence": "high",
+     "retrieved_at": "2026-08-14",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -83017,7 +83249,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-09-25",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -83338,7 +83571,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-02-04",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -83454,7 +83688,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-10-05",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -83623,7 +83858,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-09-29",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -83649,6 +83885,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -84050,7 +84287,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-12-29",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -84331,7 +84569,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-04-29",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -85280,7 +85519,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-02-08",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -85319,7 +85559,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-06-09",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -85705,7 +85946,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-03-02",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -85739,7 +85981,8 @@
       }
      ],
      "as_of": "2026-08-14",
-     "confidence": "high",
+     "retrieved_at": "2026-08-14",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -86085,7 +86328,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-05-21",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -86351,7 +86595,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-03-26",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -86378,6 +86623,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -86663,7 +86909,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2022-12-17",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -86824,7 +87071,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-11-20",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -87558,7 +87806,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-05-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -87824,7 +88073,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-04-28",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -87872,7 +88122,8 @@
       }
      ],
      "as_of": "2026-08-14",
-     "confidence": "high",
+     "retrieved_at": "2026-08-14",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -87990,7 +88241,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-01-26",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -88256,7 +88508,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-10-29",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -88789,8 +89042,9 @@
       "inferred": true,
       "state": "overdue"
      },
-     "as_of": "2026-08-14",
-     "confidence": "high",
+     "as_of": "2019-07-21",
+     "retrieved_at": "2026-08-14",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -88816,7 +89070,7 @@
     "seats_with_backing": 301,
     "minority": false,
     "authority": "established",
-    "confidence": "high",
+    "confidence": "flagged",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -89284,7 +89538,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-01-15",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -89533,7 +89788,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-11-05",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -89588,7 +89844,8 @@
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-11-05",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -90001,7 +90258,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-10-27",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -90056,7 +90314,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-10-27",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -90450,7 +90709,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-10-27",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -90476,6 +90736,7 @@
      "contestation": "appointed",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -90734,7 +90995,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-11-27",
+     "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
@@ -91268,7 +91530,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-05-25",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -91463,7 +91726,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026-03-15",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -91848,7 +92112,8 @@
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-01-16",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -92111,7 +92376,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2025-08-29",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -92480,8 +92746,9 @@
       "inferred": true,
       "state": "overdue"
      },
-     "as_of": "2026-08-14",
-     "confidence": "partial",
+     "as_of": "2003-04-27",
+     "retrieved_at": "2026-08-14",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -92506,6 +92773,7 @@
      "contestation": "suspended",
      "composition": [],
      "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
@@ -93422,7 +93690,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-05-29",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -93518,7 +93787,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2024-06-13",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -93812,8 +94082,9 @@
       "inferred": false,
       "state": "overdue"
      },
-     "as_of": "2026-08-14",
-     "confidence": "partial",
+     "as_of": "2021-08-12",
+     "retrieved_at": "2026-08-14",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -93835,7 +94106,7 @@
     "seats": 99,
     "minority": false,
     "authority": "established",
-    "confidence": "partial",
+    "confidence": "flagged",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -94077,7 +94348,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-08-23",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
@@ -94145,7 +94417,8 @@
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023-08-23",
+     "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",

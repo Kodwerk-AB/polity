@@ -304,8 +304,21 @@ export interface Chamber {
    * handful that matter instead of re-reading all 193.
    */
   mandate?: MandateStatus
-  /** When this composition was last confirmed against the source. */
+  /**
+   * The vintage of the COMPOSITION — the election it describes, not the day
+   * the pipeline ran.
+   *
+   * Every chamber used to carry the build date, which said the same thing about
+   * Denmark's 2022 parliament and Eritrea's 1993 one: that both were current as
+   * of today. That is the failure mode this dataset exists to avoid, and it was
+   * being asserted 273 times.
+   *
+   * Falls back to the retrieval date only when no election date is known, which
+   * is itself worth seeing.
+   */
   as_of: ISODate
+  /** When the pipeline last read the source. Distinct from `as_of`. */
+  retrieved_at: ISODate
   confidence: Confidence
   provenance: Provenance
   /**

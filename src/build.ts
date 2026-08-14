@@ -730,11 +730,22 @@ const buildCountry = async (
     // called `high` and then fail its own sum check — an inconsistency that
     // would make `confidence` meaningless.
     const sumsMatch = seatsTotal > 0 && Math.abs(seated - seatsTotal) / seatsTotal <= 0.02
+    // A composition older than its own chamber's mandate is not a high
+    // confidence record however cleanly it parsed. Sudan's shipped a 426-seat
+    // parliament dissolved in 2019, governed by a party banned the same year,
+    // marked `high` — because the seats summed and the rows resolved. Age is
+    // the check those two cannot make.
+    // A composition with no election date behind it cannot be dated at all, and
+    // an undatable composition is not a high-confidence one — Sudan's upper
+    // house shipped `high` with no vintage whatsoever. `partial` is the honest
+    // ceiling: the seats may be right, and nothing here can say when they were.
+    const expired = mandate?.state === 'overdue'
+    const undated = !lastElection
     const confidence: Confidence = !blocs.length
       ? 'flagged'
-      : !sumsMatch
+      : !sumsMatch || expired
         ? 'flagged'
-        : unresolved > 0 || !precise
+        : unresolved > 0 || !precise || undated
           ? 'partial'
           : 'high'
 
@@ -751,7 +762,9 @@ const buildCountry = async (
       ...(nextElection ? { next_election: nextElection } : {}),
       ...(ref.term_years ? { term_years: ref.term_years } : {}),
       ...(mandate ? { mandate } : {}),
-      as_of: retrieved,
+      // The election the composition describes, NOT the day we read it.
+      as_of: lastElection ?? retrieved,
+      retrieved_at: retrieved,
       confidence,
       provenance: {
         kind: 'wikipedia',

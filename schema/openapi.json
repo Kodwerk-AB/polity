@@ -597,6 +597,7 @@
           "contestation",
           "composition",
           "as_of",
+          "retrieved_at",
           "confidence",
           "provenance",
           "source_hash"
@@ -769,7 +770,13 @@
           },
           "as_of": {
             "type": "string",
-            "format": "date"
+            "format": "date",
+            "description": "The vintage of the composition — the election it describes, NOT the day the pipeline ran. Falls back to the retrieval date only when no election date is known."
+          },
+          "retrieved_at": {
+            "type": "string",
+            "format": "date",
+            "description": "When the source was last read. Distinct from as_of."
           },
           "confidence": {
             "type": "string",
@@ -1615,6 +1622,7 @@
                 "contestation",
                 "composition",
                 "as_of",
+                "retrieved_at",
                 "confidence",
                 "provenance",
                 "source_hash"
@@ -1787,7 +1795,13 @@
                 },
                 "as_of": {
                   "type": "string",
-                  "format": "date"
+                  "format": "date",
+                  "description": "The vintage of the composition — the election it describes, NOT the day the pipeline ran. Falls back to the retrieval date only when no election date is known."
+                },
+                "retrieved_at": {
+                  "type": "string",
+                  "format": "date",
+                  "description": "When the source was last read. Distinct from as_of."
                 },
                 "confidence": {
                   "type": "string",
@@ -2711,6 +2725,7 @@
                       "contestation",
                       "composition",
                       "as_of",
+                      "retrieved_at",
                       "confidence",
                       "provenance",
                       "source_hash"
@@ -2883,7 +2898,13 @@
                       },
                       "as_of": {
                         "type": "string",
-                        "format": "date"
+                        "format": "date",
+                        "description": "The vintage of the composition — the election it describes, NOT the day the pipeline ran. Falls back to the retrieval date only when no election date is known."
+                      },
+                      "retrieved_at": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "When the source was last read. Distinct from as_of."
                       },
                       "confidence": {
                         "type": "string",

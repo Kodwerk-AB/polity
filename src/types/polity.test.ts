@@ -33,7 +33,8 @@ describe('a unicameral country', () => {
     ],
     last_election: '2024-02-04',
     next_election: '2027-02-28',
-    as_of: '2024-05-01',
+    as_of: '2024-02-04',
+    retrieved_at: '2026-08-14',
     confidence: 'high',
     provenance: {
       kind: 'wikipedia',

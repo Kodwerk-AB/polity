@@ -155,6 +155,7 @@ const chamber = {
     'contestation',
     'composition',
     'as_of',
+    'retrieved_at',
     'confidence',
     'provenance',
     'source_hash',
@@ -203,7 +204,17 @@ const chamber = {
         },
       },
     },
-    as_of: { type: 'string', format: 'date' },
+    as_of: {
+      type: 'string',
+      format: 'date',
+      description:
+        'The vintage of the composition — the election it describes, NOT the day the pipeline ran. Falls back to the retrieval date only when no election date is known.',
+    },
+    retrieved_at: {
+      type: 'string',
+      format: 'date',
+      description: 'When the source was last read. Distinct from as_of.',
+    },
     confidence: enumOf(CONFIDENCE, 'In the data, not a log: a consumer must tell a verified row from a guessed one.'),
     provenance,
     source_hash: {
