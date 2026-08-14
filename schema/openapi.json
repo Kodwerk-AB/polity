@@ -687,7 +687,8 @@
               "restricted",
               "uncontested",
               "appointed",
-              "suspended"
+              "suspended",
+              "unknown"
             ],
             "description": "How real the contest is. Orthogonal to structure: a chamber can be bicameral, directly elected AND uncontested."
           },
@@ -1780,7 +1781,8 @@
                     "restricted",
                     "uncontested",
                     "appointed",
-                    "suspended"
+                    "suspended",
+                    "unknown"
                   ],
                   "description": "How real the contest is. Orthogonal to structure: a chamber can be bicameral, directly elected AND uncontested."
                 },
@@ -2951,7 +2953,8 @@
                           "restricted",
                           "uncontested",
                           "appointed",
-                          "suspended"
+                          "suspended",
+                          "unknown"
                         ],
                         "description": "How real the contest is. Orthogonal to structure: a chamber can be bicameral, directly elected AND uncontested."
                       },

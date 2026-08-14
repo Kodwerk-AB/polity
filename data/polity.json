@@ -1,6 +1,6 @@
 {
  "schema_version": "1.0.0",
- "generated_at": "2026-08-14T06:42:52.039Z",
+ "generated_at": "2026-08-14T06:54:21.891Z",
  "countries": {
   "AD": {
    "iso": "AD",
@@ -5691,7 +5691,7 @@
      "selection": [
       "indirectly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "unknown",
      "composition": [
       {
        "party": "Q1132677",
@@ -11910,7 +11910,7 @@
      "selection": [
       "indirectly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "unknown",
      "composition": [
       {
        "party": "Q1759613",
@@ -12831,7 +12831,7 @@
      "selection": [
       "directly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "unknown",
      "composition": [
       {
        "party": "Q1629663",
@@ -13453,7 +13453,7 @@
      "selection": [
       "directly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "unknown",
      "composition": [
       {
        "party": "Q104581386",
@@ -14132,7 +14132,7 @@
      "selection": [
       "indirectly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "unknown",
      "composition": [
       {
        "party": "Q1785816",
@@ -14760,7 +14760,7 @@
      "selection": [
       "directly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "unknown",
      "composition": [
       {
        "party": "Q385258",
@@ -14865,7 +14865,7 @@
      "selection": [
       "indirectly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "unknown",
      "composition": [
       {
        "party": "Q100934025",
@@ -30152,7 +30152,7 @@
      "selection": [
       "indirectly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "unknown",
      "composition": [
       {
        "party": "Q33959094",
@@ -45730,7 +45730,7 @@
      "selection": [
       "directly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "unknown",
      "composition": [
       {
        "party": "Q1674114",
@@ -48000,7 +48000,7 @@
      "selection": [
       "directly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "unknown",
      "composition": [
       {
        "party": "Q104778590",
@@ -51053,7 +51053,7 @@
      "selection": [
       "indirectly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "unknown",
      "composition": [
       {
        "party": "Q1292804",
@@ -52359,7 +52359,7 @@
      "selection": [
       "directly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "unknown",
      "composition": [
       {
        "party": "Q1125914",
@@ -52476,7 +52476,7 @@
      "selection": [
       "indirectly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "unknown",
      "composition": [
       {
        "party": "Q47008918",
@@ -81321,7 +81321,7 @@
      "selection": [
       "directly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "unknown",
      "composition": [
       {
        "party": "Q2033938",
@@ -86828,7 +86828,7 @@
      "selection": [
       "directly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "unknown",
      "composition": [
       {
        "party": null,
@@ -93852,7 +93852,7 @@
      "selection": [
       "indirectly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "unknown",
      "composition": [
       {
        "party": "Q83162",
@@ -94431,7 +94431,7 @@
      "selection": [
       "indirectly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "unknown",
      "composition": [
       {
        "party": "Q1910161",

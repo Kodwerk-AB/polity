@@ -206,6 +206,12 @@ const contestationOf = (
   // majority — and judging it on opposition share called one of the world's
   // most competitive parliaments restricted. Where no row is marked government
   // OR opposition, only concentration can speak.
+  //
+  // But "the source did not say" is not evidence of a contest either. Tunisia,
+  // Kyrgyzstan and Liberia arrive fully unaligned too, and reading their
+  // silence as `competitive` asserts something no source stated. A chamber
+  // whose sides are unknown gets `unknown`, which is the true answer and lets a
+  // consumer see the difference between a measured verdict and a default.
   const unaligned =
     blocs.every(bloc => bloc.standing !== 'government' && bloc.standing !== 'opposition')
 
@@ -239,7 +245,9 @@ const contestationOf = (
     if (opposition / total <= 0.05) return 'restricted'
   }
 
-  return 'competitive'
+  // Nothing above could speak: no concentration worth naming and no sides to
+  // read. Say so rather than defaulting to a verdict.
+  return unaligned && partyRows > 0 ? 'unknown' : 'competitive'
 }
 
 // ---------------------------------------------------------------------------

@@ -98,6 +98,16 @@ export const CONTESTATION = [
   /** The chamber exists in law and is not currently sitting — suspended,
    *  dissolved past its term, or displaced by emergency rule. */
   'suspended',
+  /**
+   * The source names no government and no opposition, and no bloc is large
+   * enough for concentration to speak.
+   *
+   * A real value, not a gap. Tunisia, Kyrgyzstan and Liberia all arrive with
+   * every party unaligned, and reading that silence as `competitive` would
+   * assert a contest nothing recorded. A consumer can tell a measured verdict
+   * from an absent one, which a default would hide.
+   */
+  'unknown',
 ] as const
 export type Contestation = (typeof CONTESTATION)[number]
 
