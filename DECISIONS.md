@@ -330,6 +330,47 @@ is doubtful can route around it, and one handed a confident wrong answer cannot.
 
 ---
 
+## What a full audit finds
+
+Every country was checked against six rules: `executive_power` must name
+somebody, no leader may be a placeholder or a governor general or carry markup,
+the same person must not fill both offices, a chamber must not seat more members
+than it has, and a government block must not be empty where a chamber is seated.
+
+**Zero high-severity findings.** No placeholder names, no representatives in a
+head-of-state slot, no markup in a name, and every country resolves to a named
+leader.
+
+**21 chambers seat more members than they hold**, and every one of them is
+already `flagged` or `partial` — none claims high confidence. The cause is
+usually `{{efn}}` footnote nesting: Bolivia's senate lists PDC (16) and Unity
+(7) as government, then restates their member parties *inside footnotes*, so a
+flat reading counts 44 seats in a 36-seat chamber. Senegal's +10 is the same
+shape.
+
+A greedy fix — keep the largest rows that sum to the declared size — reconciles
+all of them exactly, and is wrong: it deletes real parties to make arithmetic
+work. That is the same error as the alliance-header rule that once removed the
+CDU from the Bundestag. The rows stay, the chamber stays flagged, and the
+consumer is told rather than misled.
+
+**29 countries have an empty government block**, and most legitimately:
+
+| why | count |
+| --- | --- |
+| the chamber is `appointed` (Gulf monarchies, Eswatini) | 5 |
+| the chamber is `suspended` (Libya, Myanmar, Syria, Sudan…) | 6 |
+| `contestation: unknown` — the source lists parties but never marks sides | 10 |
+| genuinely non-partisan or collective (Switzerland, Micronesia, Nauru…) | 6 |
+| `uncontested` one-party states | 2 |
+
+The `unknown` group is the honest one: Senegal's article is a flat list of
+parties and seats with no government or opposition heading anywhere in it, so
+every row reads `non_attached` and no government can be derived. Inventing one
+would assert something the source does not say.
+
+---
+
 ## Known open defects
 
 Stated plainly rather than left for a consumer to discover:
