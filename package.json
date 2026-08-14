@@ -2,16 +2,19 @@
   "name": "polity",
   "version": "0.1.0",
   "private": false,
-  "description": "Every country's government, parliament and parties — as structured, typed, verifiable data.",
+  "description": "Every country's government, parliament and parties \u2014 as structured, typed, verifiable data.",
   "license": "ODbL-1.0",
   "type": "module",
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
-    "build:schema": "tsx scripts/emit-openapi.ts"
+    "test": "vitest run && bun run build:schema && node scripts/validate-schema.mjs",
+    "build:schema": "tsx scripts/emit-openapi.ts",
+    "validate": "node scripts/validate-schema.mjs"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
     "tsx": "^4.19.0",
     "typescript": "^5.6.0",
     "vitest": "^2.1.0"

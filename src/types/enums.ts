@@ -264,3 +264,111 @@ export const DERIVATIONS = [
   'manual',
 ] as const
 export type Derivation = (typeof DERIVATIONS)[number]
+
+// ---------------------------------------------------------------------------
+// Media and mandate
+// ---------------------------------------------------------------------------
+
+/** Which Wikimedia project hosts a file. */
+export const IMAGE_HOSTS = ['commons', 'wikipedia'] as const
+export type ImageHost = (typeof IMAGE_HOSTS)[number]
+
+/**
+ * Where a chamber stands in its term.
+ *
+ * `unknown` is a real answer, not a gap to be filled: a chamber with no known
+ * election date and no term length cannot be placed in its cycle at all, and
+ * saying so is better than implying it is current.
+ */
+export const MANDATE_STATES = ['current', 'due_soon', 'overdue', 'unknown'] as const
+export type MandateState = (typeof MANDATE_STATES)[number]
+
+/**
+ * Commons' re-use restrictions, beyond the licence itself.
+ *
+ * A file can be freely licensed and still constrained — a party logo is
+ * usually a trademark, and several countries restrict communist insignia.
+ * These are Commons' own values, lowercased and split from its pipe-joined
+ * string; `restrictions` is an ARRAY because a file commonly carries two.
+ */
+export const IMAGE_RESTRICTIONS = ['communist', 'insignia', 'trademarked'] as const
+export type ImageRestriction = (typeof IMAGE_RESTRICTIONS)[number]
+
+/**
+ * How firmly one government actually holds the state.
+ *
+ * Distinct from `contestation`, which is about a chamber's ELECTIONS. This is
+ * about the state itself: a country can hold perfectly competitive elections in
+ * the territory it controls while a rival government runs the rest.
+ */
+export const AUTHORITIES = [
+  /** One government, uncontested control. */
+  'established',
+  /** An office or two is claimed by a rival, but one authority governs. */
+  'contested',
+  /** Two or more governments claim the state — Libya, Yemen, Sudan. */
+  'rival_governments',
+  /** No effective national government. */
+  'collapsed',
+] as const
+export type Authority = (typeof AUTHORITIES)[number]
+
+// ---------------------------------------------------------------------------
+// Ideology families
+// ---------------------------------------------------------------------------
+
+/**
+ * The broad tradition an ideology belongs to.
+ *
+ * `ideologies` carries what Wikidata actually says about a party, and that is
+ * a long tail: 409 distinct ideologies across 1,395 parties, 222 of them
+ * appearing exactly once. The tail is the useful part — "Kemalism", "Basque
+ * nationalism", "Pancasila", "socialism with Chinese characteristics" are
+ * precisely what a reader cannot get anywhere else — so it is NOT folded away.
+ *
+ * This sits alongside it, for the questions the raw labels cannot answer:
+ * "which parliaments seat a green party", "how many governments are led by
+ * Christian democrats". A comparison across countries needs a closed
+ * vocabulary; a description of one party needs the specific label. Both ship.
+ *
+ * A family is deliberately BROADER than a placement on a left-right axis —
+ * that is what `alignment` is for. Nationalism spans both wings and gets its
+ * own family rather than being forced onto a side.
+ */
+export const IDEOLOGY_FAMILIES = [
+  /** Social democracy, democratic socialism, labourism, the Third Way. */
+  'social_democratic',
+  /** Communism, Marxism–Leninism, Trotskyism, anti-capitalism. */
+  'socialist',
+  /** Market liberalism, classical liberalism, libertarianism. */
+  'liberal',
+  /** Conservatism in its national, social and liberal variants. */
+  'conservative',
+  /** Christian democracy and confessional politics of any faith. */
+  'religious',
+  /** Green politics, environmentalism, eco-socialism. */
+  'green',
+  /** Nationalism, regionalism, separatism, irredentism — of any wing. */
+  'nationalist',
+  /**
+   * A stance toward a supranational bloc or neighbour, rather than a domestic
+   * tradition: pro-Europeanism, euroscepticism, Atlanticism, pan-movements.
+   *
+   * Its own family because folding it into `nationalist` made the Liberal
+   * Democrats and the Green Party of England and Wales read as nationalist on
+   * the strength of "pro-Europeanism" alone — a position most of the European
+   * centre holds.
+   */
+  'internationalist',
+  /** Populism, left or right; anti-establishment and anti-corruption politics. */
+  'populist',
+  /** Agrarian and rural-interest politics. */
+  'agrarian',
+  /** Authoritarianism, militarism, ultranationalism, one-party doctrine. */
+  'authoritarian',
+  /** Federalism, decentralisation, direct democracy, constitutional reform. */
+  'reformist',
+  /** Real, named, and outside every family above. */
+  'other',
+] as const
+export type IdeologyFamily = (typeof IDEOLOGY_FAMILIES)[number]

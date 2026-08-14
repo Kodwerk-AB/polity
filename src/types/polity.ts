@@ -2,7 +2,12 @@ import type {
   BlocKind,
   ChamberRole,
   Confidence,
+  Authority,
   Contestation,
+  IdeologyFamily,
+  ImageHost,
+  ImageRestriction,
+  MandateState,
   Derivation,
   GovernmentForm,
   Representation,
@@ -91,13 +96,13 @@ export interface ImageRef {
   /** Special:FilePath URL. Serves `Access-Control-Allow-Origin: *`. */
   url: string
   /** Which wiki actually hosts it — fair-use files never leave en.wikipedia. */
-  host: 'commons' | 'wikipedia'
+  host: ImageHost
   /** As the host states it: "PD", "CC BY-SA 4.0", "Fair use". */
   license?: string
   /** The host serves it under fair use, not a licence grant. */
   non_free: boolean
   /** Commons' `Restrictions` note — "trademarked" for most party marks. */
-  restrictions?: string
+  restrictions?: ImageRestriction[]
   /** The author the licence requires naming, when one is recorded. */
   credit?: string
 }
@@ -222,6 +227,21 @@ export interface Party {
   alignment_raw?: string
   /** Ideologies (P1142), most salient first, as entities. */
   ideologies: Entity[]
+  /**
+   * Broad traditions the ideologies belong to, from a closed set.
+   *
+   * `ideologies` is a long tail — 409 distinct values across 1,395 parties,
+   * 222 of them appearing exactly once — and that tail is the useful part
+   * ("Kemalism", "Pancasila", "socialism with Chinese characteristics"), so it
+   * is kept verbatim. This sits ALONGSIDE it for the questions the raw labels
+   * cannot answer: which parliaments seat a green party, how many governments
+   * are led by Christian democrats. Comparison needs a closed vocabulary;
+   * description needs the specific label. Both ship.
+   *
+   * Broader than `alignment` on purpose: nationalism spans both wings and gets
+   * its own family rather than being forced onto a side.
+   */
+  ideology_families?: IdeologyFamily[]
   /**
    * Transnational families this party belongs to (P463) — the EPP, the
    * Progressive Alliance, Socialist International. OPEN statements only: an
@@ -385,23 +405,6 @@ export interface Chamber {
  * full, so deriving is both better covered and impossible to leave inconsistent
  * with the composition beside it.
  */
-/**
- * How firmly one authority actually holds the state.
- *
- * Distinct from `contestation`, which is about a chamber's elections. This is
- * about the state itself: a country can hold perfectly competitive elections in
- * the territory it controls while a rival government runs the rest.
- */
-export type Authority =
-  /** One government, uncontested control. */
-  | 'established'
-  /** An office or two is claimed by a rival, but one authority governs. */
-  | 'contested'
-  /** Two or more governments claim the state — Libya, Yemen, Sudan. */
-  | 'rival_governments'
-  /** No effective national government. */
-  | 'collapsed'
-
 export interface Government {
   /** Parties holding ministries. */
   governing: QID[]
@@ -521,7 +524,7 @@ export interface MandateStatus {
    * Evaluated against the chamber's `as_of`, so it stays true of the moment the
    * data was gathered rather than drifting toward `overdue` on the shelf.
    */
-  state: 'current' | 'due_soon' | 'overdue' | 'unknown'
+  state: MandateState
 }
 
 /** The published file. */

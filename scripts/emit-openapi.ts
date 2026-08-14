@@ -1,6 +1,8 @@
 import { writeFileSync, mkdirSync } from 'node:fs'
 import {
+  AUTHORITIES,
   BLOC_KINDS,
+  IDEOLOGY_FAMILIES,
   CHAMBER_ROLES,
   CONFIDENCE,
   CONTESTATION,
@@ -9,6 +11,9 @@ import {
   REPRESENTATION,
   SELECTION_METHODS,
   SOURCE_KINDS,
+  IMAGE_HOSTS,
+  IMAGE_RESTRICTIONS,
+  MANDATE_STATES,
   SPECTRUM_BANDS,
   STANDINGS,
 } from '../src/types/enums'
@@ -49,6 +54,7 @@ const provenance = {
     qid: { type: 'string', pattern: '^Q[0-9]+$' },
     article: { type: 'string' },
     revid: {
+      minimum: 1,
       type: 'integer',
       description: 'The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it.',
     },
@@ -65,10 +71,19 @@ const imageRef = {
   properties: {
     file: { type: 'string', description: 'Commons/Wikipedia filename, without the File: prefix.' },
     url: { type: 'string', format: 'uri', description: 'Special:FilePath URL. Serves CORS `*`.' },
-    host: { type: 'string', enum: ['commons', 'wikipedia'] },
-    license: { type: 'string', description: 'As the host states it: "PD", "CC BY-SA 4.0", "Fair use".' },
+    host: { type: 'string', enum: [...IMAGE_HOSTS] },
+    license: {
+      type: 'string',
+      description:
+        'Folded to one name per licence: "Public domain", "CC0", "CC BY-SA 4.0", "Fair use". Versions are kept apart because their terms differ; jurisdiction ports and alternate spellings are not.',
+    },
     non_free: { type: 'boolean', description: 'The host serves it under fair use, not a licence grant.' },
-    restrictions: { type: 'string' },
+    restrictions: {
+      type: 'array',
+      items: { type: 'string', enum: [...IMAGE_RESTRICTIONS] },
+      description:
+        "Re-use limits beyond the licence. A file can be freely licensed and still constrained — a party logo is usually a trademark, and several countries restrict communist insignia. Commons joins these with a pipe; this is the split, sorted list.",
+    },
     credit: { type: 'string' },
   },
 } as const
@@ -104,7 +119,7 @@ const officeHolder = {
       description: 'Null when genuinely independent — several heads of state suspend party membership.',
     },
     since: { type: 'string', format: 'date', description: 'Day precision, or absent. Never padded.' },
-    born_year: { type: 'integer' },
+    born_year: { type: 'integer', minimum: 1900, maximum: 2100 },
     portrait: imageRef,
     represents: enumOf(
       REPRESENTATION,
@@ -128,6 +143,12 @@ const party = {
     ),
     alignment: enumOf(SPECTRUM_BANDS, 'The five-band fold of Wikidata P1387.'),
     alignment_raw: { type: 'string', description: "Wikidata's own label, unfolded." },
+    ideology_families: {
+      type: 'array',
+      items: { type: 'string', enum: [...IDEOLOGY_FAMILIES] },
+      description:
+        'Broad traditions the ideologies belong to. Sits alongside the raw labels rather than replacing them: 409 distinct ideologies occur across these parties and 222 appear exactly once, and that tail is the useful part. Comparison across countries needs a closed vocabulary; describing one party needs the specific label.',
+    },
     ideologies: { type: 'array', items: entity },
     groupings: {
       type: 'array',
@@ -136,8 +157,8 @@ const party = {
         'Transnational families (EPP, Progressive Alliance). Open statements only — an ended membership is not membership.',
     },
     colors: { type: 'array', items: { type: 'string', pattern: '^#[0-9a-f]{6}$' } },
-    founded_year: { type: 'integer' },
-    dissolved_year: { type: 'integer' },
+    founded_year: { type: 'integer', minimum: 1000, maximum: 2100 },
+    dissolved_year: { type: 'integer', minimum: 1000, maximum: 2100 },
     logo: imageRef,
     provenance,
   },
@@ -184,16 +205,32 @@ const chamber = {
     role: enumOf(CHAMBER_ROLES, 'Resolved by walking Wikidata P279 upward, never by exact class.'),
     name: { type: 'string' },
     name_local: { type: 'string' },
-    seats_total: { type: 'integer', minimum: 0 },
+    seats_total: {
+      type: 'integer',
+      minimum: 1,
+      maximum: 4000,
+      description:
+        'No national chamber is smaller than a handful or larger than China\u2019s ~3000.',
+    },
     selection: { type: 'array', items: enumOf(SELECTION_METHODS, 'How members arrive.') },
     contestation: enumOf(
       CONTESTATION,
       'How real the contest is. Orthogonal to structure: a chamber can be bicameral, directly elected AND uncontested.'
     ),
-    seats_contested: { type: 'integer' },
+    seats_contested: { type: 'integer', minimum: 0, maximum: 4000 },
     composition: { type: 'array', items: seating },
-    last_election: { type: 'string', format: 'date' },
-    next_election: { type: 'string', format: 'date' },
+    last_election: {
+      type: 'string',
+      pattern: '^\\d{4}(-\\d{2}-\\d{2})?$',
+      description:
+        'ISO date, or a bare YEAR where the source gives only that. Never padded to a fabricated day — a year padded to 1 July made a September election read as already past.',
+    },
+    next_election: {
+      type: 'string',
+      pattern: '^\\d{4}(-\\d{2}-\\d{2})?$',
+      description:
+        'ISO date, or a bare YEAR where the source gives only that. Never padded to a fabricated day — a year padded to 1 July made a September election read as already past.',
+    },
     term_years: {
       type: 'number',
       description:
@@ -217,7 +254,7 @@ const chamber = {
         },
         state: {
           type: 'string',
-          enum: ['current', 'due_soon', 'overdue', 'unknown'],
+          enum: [...MANDATE_STATES],
           description:
             '`overdue` is a signal to re-check the source, not an accusation — a term can be legally extended.',
         },
@@ -225,9 +262,9 @@ const chamber = {
     },
     as_of: {
       type: 'string',
-      format: 'date',
+      pattern: '^\\d{4}(-\\d{2}-\\d{2})?$',
       description:
-        'The vintage of the composition — the election it describes, NOT the day the pipeline ran. Falls back to the retrieval date only when no election date is known.',
+        'The vintage of the composition — the election it describes, NOT the day the pipeline ran. Year precision where the source gives only a year. Falls back to the retrieval date only when no election date is known.',
     },
     retrieved_at: {
       type: 'string',
@@ -253,13 +290,19 @@ const chamber = {
 
 const government = {
   type: 'object',
-  required: ['governing', 'backing', 'seats', 'minority', 'confidence', 'provenance'],
+  required: ['governing', 'backing', 'seats', 'minority', 'authority', 'confidence', 'provenance'],
   properties: {
     governing: { type: 'array', items: { type: 'string', pattern: '^Q[0-9]+$' } },
     backing: { type: 'array', items: { type: 'string', pattern: '^Q[0-9]+$' } },
     cabinet: entity,
-    seats: { type: 'integer' },
-    seats_with_backing: { type: 'integer' },
+    seats: { type: 'integer', minimum: 0, maximum: 4000 },
+    seats_with_backing: { type: 'integer', minimum: 0, maximum: 4000 },
+    authority: {
+      type: 'string',
+      enum: [...AUTHORITIES],
+      description:
+        "How firmly this government holds the state. Distinct from a chamber's `contestation`, which is about elections: a country can hold competitive elections in the territory it controls while a rival government runs the rest.",
+    },
     minority: {
       type: 'boolean',
       description:
@@ -369,6 +412,7 @@ const spec = {
       Polity: polity,
       PolityDataset: {
         type: 'object',
+        additionalProperties: false,
         required: ['schema_version', 'generated_at', 'countries', 'omissions'],
         properties: {
           schema_version: { type: 'string' },
@@ -390,8 +434,32 @@ const spec = {
 }
 
 mkdirSync('schema', { recursive: true })
-writeFileSync('schema/openapi.json', `${JSON.stringify(spec, null, 2)}\n`)
+/**
+ * Refuse anything the schema does not describe.
+ *
+ * Applied here rather than written onto each object by hand, so a new type
+ * cannot be added without it and a nested object cannot be missed. An unknown
+ * key in this dataset is a generator bug — a renamed field, a value written to
+ * the wrong level — and a schema that silently accepts it is a schema that
+ * cannot catch the one class of error a consumer has no other defence against.
+ */
+const sealed = (node: unknown): unknown => {
+  if (Array.isArray(node)) return node.map(sealed)
+  if (!node || typeof node !== 'object') return node
+  const object = node as Record<string, unknown>
+  const copy: Record<string, unknown> = {}
+  for (const [key, value] of Object.entries(object)) {
+    // `enum` holds data, not sub-schemas; recursing into it would be wrong.
+    copy[key] = key === 'enum' ? value : sealed(value)
+  }
+  if (object.type === 'object' && object.properties && copy.additionalProperties === undefined) {
+    copy.additionalProperties = false
+  }
+  return copy
+}
+
+writeFileSync('schema/openapi.json', `${JSON.stringify(sealed(spec), null, 2)}\n`)
 console.log(
   `wrote schema/openapi.json — ${Object.keys(spec.components.schemas).length} schemas, ` +
-    `${[STANDINGS, CHAMBER_ROLES, CONTESTATION, GOVERNMENT_FORMS, SPECTRUM_BANDS, BLOC_KINDS, CONFIDENCE, DERIVATIONS, SOURCE_KINDS, SELECTION_METHODS, REPRESENTATION].reduce((total, list) => total + list.length, 0)} enum values`
+    `${[STANDINGS, CHAMBER_ROLES, CONTESTATION, GOVERNMENT_FORMS, SPECTRUM_BANDS, BLOC_KINDS, CONFIDENCE, DERIVATIONS, SOURCE_KINDS, SELECTION_METHODS, REPRESENTATION, AUTHORITIES, MANDATE_STATES, IMAGE_HOSTS, IMAGE_RESTRICTIONS, IDEOLOGY_FAMILIES].reduce((total, list) => total + list.length, 0)} enum values`
 )

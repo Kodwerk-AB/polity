@@ -45,7 +45,8 @@
             "type": "string",
             "description": "English label. May be absent."
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Provenance": {
         "type": "object",
@@ -84,6 +85,7 @@
             "type": "string"
           },
           "revid": {
+            "minimum": 1,
             "type": "integer",
             "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
           },
@@ -94,7 +96,8 @@
           "model": {
             "type": "string"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "ImageRef": {
         "type": "object",
@@ -124,19 +127,29 @@
           },
           "license": {
             "type": "string",
-            "description": "As the host states it: \"PD\", \"CC BY-SA 4.0\", \"Fair use\"."
+            "description": "Folded to one name per licence: \"Public domain\", \"CC0\", \"CC BY-SA 4.0\", \"Fair use\". Versions are kept apart because their terms differ; jurisdiction ports and alternate spellings are not."
           },
           "non_free": {
             "type": "boolean",
             "description": "The host serves it under fair use, not a licence grant."
           },
           "restrictions": {
-            "type": "string"
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "communist",
+                "insignia",
+                "trademarked"
+              ]
+            },
+            "description": "Re-use limits beyond the licence. A file can be freely licensed and still constrained — a party logo is usually a trademark, and several countries restrict communist insignia. Commons joins these with a pipe; this is the split, sorted list."
           },
           "credit": {
             "type": "string"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "OfficeHolder": {
         "type": "object",
@@ -163,7 +176,8 @@
                 "type": "string",
                 "description": "English label. May be absent."
               }
-            }
+            },
+            "additionalProperties": false
           },
           "name": {
             "type": "string"
@@ -187,7 +201,8 @@
                 "authority": {
                   "type": "string"
                 }
-              }
+              },
+              "additionalProperties": false
             }
           },
           "office": {
@@ -205,7 +220,8 @@
                 "type": "string",
                 "description": "English label. May be absent."
               }
-            }
+            },
+            "additionalProperties": false
           },
           "office_local": {
             "type": "string",
@@ -228,7 +244,8 @@
                     "type": "string",
                     "description": "English label. May be absent."
                   }
-                }
+                },
+                "additionalProperties": false
               },
               {
                 "type": "null"
@@ -242,7 +259,9 @@
             "description": "Day precision, or absent. Never padded."
           },
           "born_year": {
-            "type": "integer"
+            "type": "integer",
+            "minimum": 1900,
+            "maximum": 2100
           },
           "portrait": {
             "type": "object",
@@ -272,19 +291,29 @@
               },
               "license": {
                 "type": "string",
-                "description": "As the host states it: \"PD\", \"CC BY-SA 4.0\", \"Fair use\"."
+                "description": "Folded to one name per licence: \"Public domain\", \"CC0\", \"CC BY-SA 4.0\", \"Fair use\". Versions are kept apart because their terms differ; jurisdiction ports and alternate spellings are not."
               },
               "non_free": {
                 "type": "boolean",
                 "description": "The host serves it under fair use, not a licence grant."
               },
               "restrictions": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "communist",
+                    "insignia",
+                    "trademarked"
+                  ]
+                },
+                "description": "Re-use limits beyond the licence. A file can be freely licensed and still constrained — a party logo is usually a trademark, and several countries restrict communist insignia. Commons joins these with a pipe; this is the split, sorted list."
               },
               "credit": {
                 "type": "string"
               }
-            }
+            },
+            "additionalProperties": false
           },
           "represents": {
             "type": "string",
@@ -331,6 +360,7 @@
                 "type": "string"
               },
               "revid": {
+                "minimum": 1,
                 "type": "integer",
                 "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
               },
@@ -341,9 +371,11 @@
               "model": {
                 "type": "string"
               }
-            }
+            },
+            "additionalProperties": false
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Party": {
         "type": "object",
@@ -372,7 +404,8 @@
                 "type": "string",
                 "description": "English label. May be absent."
               }
-            }
+            },
+            "additionalProperties": false
           },
           "name": {
             "type": "string"
@@ -409,6 +442,28 @@
             "type": "string",
             "description": "Wikidata's own label, unfolded."
           },
+          "ideology_families": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "social_democratic",
+                "socialist",
+                "liberal",
+                "conservative",
+                "religious",
+                "green",
+                "nationalist",
+                "internationalist",
+                "populist",
+                "agrarian",
+                "authoritarian",
+                "reformist",
+                "other"
+              ]
+            },
+            "description": "Broad traditions the ideologies belong to. Sits alongside the raw labels rather than replacing them: 409 distinct ideologies occur across these parties and 222 appear exactly once, and that tail is the useful part. Comparison across countries needs a closed vocabulary; describing one party needs the specific label."
+          },
           "ideologies": {
             "type": "array",
             "items": {
@@ -426,7 +481,8 @@
                   "type": "string",
                   "description": "English label. May be absent."
                 }
-              }
+              },
+              "additionalProperties": false
             }
           },
           "groupings": {
@@ -446,7 +502,8 @@
                   "type": "string",
                   "description": "English label. May be absent."
                 }
-              }
+              },
+              "additionalProperties": false
             },
             "description": "Transnational families (EPP, Progressive Alliance). Open statements only — an ended membership is not membership."
           },
@@ -458,10 +515,14 @@
             }
           },
           "founded_year": {
-            "type": "integer"
+            "type": "integer",
+            "minimum": 1000,
+            "maximum": 2100
           },
           "dissolved_year": {
-            "type": "integer"
+            "type": "integer",
+            "minimum": 1000,
+            "maximum": 2100
           },
           "logo": {
             "type": "object",
@@ -491,19 +552,29 @@
               },
               "license": {
                 "type": "string",
-                "description": "As the host states it: \"PD\", \"CC BY-SA 4.0\", \"Fair use\"."
+                "description": "Folded to one name per licence: \"Public domain\", \"CC0\", \"CC BY-SA 4.0\", \"Fair use\". Versions are kept apart because their terms differ; jurisdiction ports and alternate spellings are not."
               },
               "non_free": {
                 "type": "boolean",
                 "description": "The host serves it under fair use, not a licence grant."
               },
               "restrictions": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "communist",
+                    "insignia",
+                    "trademarked"
+                  ]
+                },
+                "description": "Re-use limits beyond the licence. A file can be freely licensed and still constrained — a party logo is usually a trademark, and several countries restrict communist insignia. Commons joins these with a pipe; this is the split, sorted list."
               },
               "credit": {
                 "type": "string"
               }
-            }
+            },
+            "additionalProperties": false
           },
           "provenance": {
             "type": "object",
@@ -542,6 +613,7 @@
                 "type": "string"
               },
               "revid": {
+                "minimum": 1,
                 "type": "integer",
                 "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
               },
@@ -552,9 +624,11 @@
               "model": {
                 "type": "string"
               }
-            }
+            },
+            "additionalProperties": false
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Seating": {
         "type": "object",
@@ -610,7 +684,8 @@
             "minimum": 0,
             "maximum": 1
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Chamber": {
         "type": "object",
@@ -644,7 +719,8 @@
                 "type": "string",
                 "description": "English label. May be absent."
               }
-            }
+            },
+            "additionalProperties": false
           },
           "role": {
             "type": "string",
@@ -663,7 +739,9 @@
           },
           "seats_total": {
             "type": "integer",
-            "minimum": 0
+            "minimum": 1,
+            "maximum": 4000,
+            "description": "No national chamber is smaller than a handful or larger than China’s ~3000."
           },
           "selection": {
             "type": "array",
@@ -693,7 +771,9 @@
             "description": "How real the contest is. Orthogonal to structure: a chamber can be bicameral, directly elected AND uncontested."
           },
           "seats_contested": {
-            "type": "integer"
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4000
           },
           "composition": {
             "type": "array",
@@ -751,16 +831,19 @@
                   "minimum": 0,
                   "maximum": 1
                 }
-              }
+              },
+              "additionalProperties": false
             }
           },
           "last_election": {
             "type": "string",
-            "format": "date"
+            "pattern": "^\\d{4}(-\\d{2}-\\d{2})?$",
+            "description": "ISO date, or a bare YEAR where the source gives only that. Never padded to a fabricated day — a year padded to 1 July made a September election read as already past."
           },
           "next_election": {
             "type": "string",
-            "format": "date"
+            "pattern": "^\\d{4}(-\\d{2}-\\d{2})?$",
+            "description": "ISO date, or a bare YEAR where the source gives only that. Never padded to a fabricated day — a year padded to 1 July made a September election read as already past."
           },
           "term_years": {
             "type": "number",
@@ -793,12 +876,13 @@
                 ],
                 "description": "`overdue` is a signal to re-check the source, not an accusation — a term can be legally extended."
               }
-            }
+            },
+            "additionalProperties": false
           },
           "as_of": {
             "type": "string",
-            "format": "date",
-            "description": "The vintage of the composition — the election it describes, NOT the day the pipeline ran. Falls back to the retrieval date only when no election date is known."
+            "pattern": "^\\d{4}(-\\d{2}-\\d{2})?$",
+            "description": "The vintage of the composition — the election it describes, NOT the day the pipeline ran. Year precision where the source gives only a year. Falls back to the retrieval date only when no election date is known."
           },
           "retrieved_at": {
             "type": "string",
@@ -819,7 +903,8 @@
               "year": {
                 "type": "integer"
               }
-            }
+            },
+            "additionalProperties": false
           },
           "confidence": {
             "type": "string",
@@ -867,6 +952,7 @@
                 "type": "string"
               },
               "revid": {
+                "minimum": 1,
                 "type": "integer",
                 "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
               },
@@ -877,13 +963,15 @@
               "model": {
                 "type": "string"
               }
-            }
+            },
+            "additionalProperties": false
           },
           "source_hash": {
             "type": "string",
             "description": "Hash of the source field the composition was read from — the change-detection key, and what makes a re-extraction happen only on a real change."
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Government": {
         "type": "object",
@@ -892,6 +980,7 @@
           "backing",
           "seats",
           "minority",
+          "authority",
           "confidence",
           "provenance"
         ],
@@ -925,13 +1014,28 @@
                 "type": "string",
                 "description": "English label. May be absent."
               }
-            }
+            },
+            "additionalProperties": false
           },
           "seats": {
-            "type": "integer"
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4000
           },
           "seats_with_backing": {
-            "type": "integer"
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4000
+          },
+          "authority": {
+            "type": "string",
+            "enum": [
+              "established",
+              "contested",
+              "rival_governments",
+              "collapsed"
+            ],
+            "description": "How firmly this government holds the state. Distinct from a chamber's `contestation`, which is about elections: a country can hold competitive elections in the territory it controls while a rival government runs the rest."
           },
           "minority": {
             "type": "boolean",
@@ -990,6 +1094,7 @@
                 "type": "string"
               },
               "revid": {
+                "minimum": 1,
                 "type": "integer",
                 "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
               },
@@ -1000,9 +1105,11 @@
               "model": {
                 "type": "string"
               }
-            }
+            },
+            "additionalProperties": false
           }
-        }
+        },
+        "additionalProperties": false
       },
       "DemocracyIndex": {
         "type": "object",
@@ -1028,7 +1135,8 @@
               "vdem"
             ]
           }
-        }
+        },
+        "additionalProperties": false
       },
       "Polity": {
         "type": "object",
@@ -1066,7 +1174,8 @@
                 "type": "string",
                 "description": "English label. May be absent."
               }
-            }
+            },
+            "additionalProperties": false
           },
           "name": {
             "type": "string"
@@ -1119,7 +1228,8 @@
                     "type": "string",
                     "description": "English label. May be absent."
                   }
-                }
+                },
+                "additionalProperties": false
               },
               "name": {
                 "type": "string"
@@ -1143,7 +1253,8 @@
                     "authority": {
                       "type": "string"
                     }
-                  }
+                  },
+                  "additionalProperties": false
                 }
               },
               "office": {
@@ -1161,7 +1272,8 @@
                     "type": "string",
                     "description": "English label. May be absent."
                   }
-                }
+                },
+                "additionalProperties": false
               },
               "office_local": {
                 "type": "string",
@@ -1184,7 +1296,8 @@
                         "type": "string",
                         "description": "English label. May be absent."
                       }
-                    }
+                    },
+                    "additionalProperties": false
                   },
                   {
                     "type": "null"
@@ -1198,7 +1311,9 @@
                 "description": "Day precision, or absent. Never padded."
               },
               "born_year": {
-                "type": "integer"
+                "type": "integer",
+                "minimum": 1900,
+                "maximum": 2100
               },
               "portrait": {
                 "type": "object",
@@ -1228,19 +1343,29 @@
                   },
                   "license": {
                     "type": "string",
-                    "description": "As the host states it: \"PD\", \"CC BY-SA 4.0\", \"Fair use\"."
+                    "description": "Folded to one name per licence: \"Public domain\", \"CC0\", \"CC BY-SA 4.0\", \"Fair use\". Versions are kept apart because their terms differ; jurisdiction ports and alternate spellings are not."
                   },
                   "non_free": {
                     "type": "boolean",
                     "description": "The host serves it under fair use, not a licence grant."
                   },
                   "restrictions": {
-                    "type": "string"
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "communist",
+                        "insignia",
+                        "trademarked"
+                      ]
+                    },
+                    "description": "Re-use limits beyond the licence. A file can be freely licensed and still constrained — a party logo is usually a trademark, and several countries restrict communist insignia. Commons joins these with a pipe; this is the split, sorted list."
                   },
                   "credit": {
                     "type": "string"
                   }
-                }
+                },
+                "additionalProperties": false
               },
               "represents": {
                 "type": "string",
@@ -1287,6 +1412,7 @@
                     "type": "string"
                   },
                   "revid": {
+                    "minimum": 1,
                     "type": "integer",
                     "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
                   },
@@ -1297,9 +1423,11 @@
                   "model": {
                     "type": "string"
                   }
-                }
+                },
+                "additionalProperties": false
               }
-            }
+            },
+            "additionalProperties": false
           },
           "head_of_government": {
             "oneOf": [
@@ -1328,7 +1456,8 @@
                         "type": "string",
                         "description": "English label. May be absent."
                       }
-                    }
+                    },
+                    "additionalProperties": false
                   },
                   "name": {
                     "type": "string"
@@ -1352,7 +1481,8 @@
                         "authority": {
                           "type": "string"
                         }
-                      }
+                      },
+                      "additionalProperties": false
                     }
                   },
                   "office": {
@@ -1370,7 +1500,8 @@
                         "type": "string",
                         "description": "English label. May be absent."
                       }
-                    }
+                    },
+                    "additionalProperties": false
                   },
                   "office_local": {
                     "type": "string",
@@ -1393,7 +1524,8 @@
                             "type": "string",
                             "description": "English label. May be absent."
                           }
-                        }
+                        },
+                        "additionalProperties": false
                       },
                       {
                         "type": "null"
@@ -1407,7 +1539,9 @@
                     "description": "Day precision, or absent. Never padded."
                   },
                   "born_year": {
-                    "type": "integer"
+                    "type": "integer",
+                    "minimum": 1900,
+                    "maximum": 2100
                   },
                   "portrait": {
                     "type": "object",
@@ -1437,19 +1571,29 @@
                       },
                       "license": {
                         "type": "string",
-                        "description": "As the host states it: \"PD\", \"CC BY-SA 4.0\", \"Fair use\"."
+                        "description": "Folded to one name per licence: \"Public domain\", \"CC0\", \"CC BY-SA 4.0\", \"Fair use\". Versions are kept apart because their terms differ; jurisdiction ports and alternate spellings are not."
                       },
                       "non_free": {
                         "type": "boolean",
                         "description": "The host serves it under fair use, not a licence grant."
                       },
                       "restrictions": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "communist",
+                            "insignia",
+                            "trademarked"
+                          ]
+                        },
+                        "description": "Re-use limits beyond the licence. A file can be freely licensed and still constrained — a party logo is usually a trademark, and several countries restrict communist insignia. Commons joins these with a pipe; this is the split, sorted list."
                       },
                       "credit": {
                         "type": "string"
                       }
-                    }
+                    },
+                    "additionalProperties": false
                   },
                   "represents": {
                     "type": "string",
@@ -1496,6 +1640,7 @@
                         "type": "string"
                       },
                       "revid": {
+                        "minimum": 1,
                         "type": "integer",
                         "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
                       },
@@ -1506,9 +1651,11 @@
                       "model": {
                         "type": "string"
                       }
-                    }
+                    },
+                    "additionalProperties": false
                   }
-                }
+                },
+                "additionalProperties": false
               },
               {
                 "type": "null"
@@ -1545,7 +1692,8 @@
                       "type": "string",
                       "description": "English label. May be absent."
                     }
-                  }
+                  },
+                  "additionalProperties": false
                 },
                 "name": {
                   "type": "string"
@@ -1582,6 +1730,28 @@
                   "type": "string",
                   "description": "Wikidata's own label, unfolded."
                 },
+                "ideology_families": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "social_democratic",
+                      "socialist",
+                      "liberal",
+                      "conservative",
+                      "religious",
+                      "green",
+                      "nationalist",
+                      "internationalist",
+                      "populist",
+                      "agrarian",
+                      "authoritarian",
+                      "reformist",
+                      "other"
+                    ]
+                  },
+                  "description": "Broad traditions the ideologies belong to. Sits alongside the raw labels rather than replacing them: 409 distinct ideologies occur across these parties and 222 appear exactly once, and that tail is the useful part. Comparison across countries needs a closed vocabulary; describing one party needs the specific label."
+                },
                 "ideologies": {
                   "type": "array",
                   "items": {
@@ -1599,7 +1769,8 @@
                         "type": "string",
                         "description": "English label. May be absent."
                       }
-                    }
+                    },
+                    "additionalProperties": false
                   }
                 },
                 "groupings": {
@@ -1619,7 +1790,8 @@
                         "type": "string",
                         "description": "English label. May be absent."
                       }
-                    }
+                    },
+                    "additionalProperties": false
                   },
                   "description": "Transnational families (EPP, Progressive Alliance). Open statements only — an ended membership is not membership."
                 },
@@ -1631,10 +1803,14 @@
                   }
                 },
                 "founded_year": {
-                  "type": "integer"
+                  "type": "integer",
+                  "minimum": 1000,
+                  "maximum": 2100
                 },
                 "dissolved_year": {
-                  "type": "integer"
+                  "type": "integer",
+                  "minimum": 1000,
+                  "maximum": 2100
                 },
                 "logo": {
                   "type": "object",
@@ -1664,19 +1840,29 @@
                     },
                     "license": {
                       "type": "string",
-                      "description": "As the host states it: \"PD\", \"CC BY-SA 4.0\", \"Fair use\"."
+                      "description": "Folded to one name per licence: \"Public domain\", \"CC0\", \"CC BY-SA 4.0\", \"Fair use\". Versions are kept apart because their terms differ; jurisdiction ports and alternate spellings are not."
                     },
                     "non_free": {
                       "type": "boolean",
                       "description": "The host serves it under fair use, not a licence grant."
                     },
                     "restrictions": {
-                      "type": "string"
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "communist",
+                          "insignia",
+                          "trademarked"
+                        ]
+                      },
+                      "description": "Re-use limits beyond the licence. A file can be freely licensed and still constrained — a party logo is usually a trademark, and several countries restrict communist insignia. Commons joins these with a pipe; this is the split, sorted list."
                     },
                     "credit": {
                       "type": "string"
                     }
-                  }
+                  },
+                  "additionalProperties": false
                 },
                 "provenance": {
                   "type": "object",
@@ -1715,6 +1901,7 @@
                       "type": "string"
                     },
                     "revid": {
+                      "minimum": 1,
                       "type": "integer",
                       "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
                     },
@@ -1725,9 +1912,11 @@
                     "model": {
                       "type": "string"
                     }
-                  }
+                  },
+                  "additionalProperties": false
                 }
-              }
+              },
+              "additionalProperties": false
             }
           },
           "chambers": {
@@ -1764,7 +1953,8 @@
                       "type": "string",
                       "description": "English label. May be absent."
                     }
-                  }
+                  },
+                  "additionalProperties": false
                 },
                 "role": {
                   "type": "string",
@@ -1783,7 +1973,9 @@
                 },
                 "seats_total": {
                   "type": "integer",
-                  "minimum": 0
+                  "minimum": 1,
+                  "maximum": 4000,
+                  "description": "No national chamber is smaller than a handful or larger than China’s ~3000."
                 },
                 "selection": {
                   "type": "array",
@@ -1813,7 +2005,9 @@
                   "description": "How real the contest is. Orthogonal to structure: a chamber can be bicameral, directly elected AND uncontested."
                 },
                 "seats_contested": {
-                  "type": "integer"
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 4000
                 },
                 "composition": {
                   "type": "array",
@@ -1871,16 +2065,19 @@
                         "minimum": 0,
                         "maximum": 1
                       }
-                    }
+                    },
+                    "additionalProperties": false
                   }
                 },
                 "last_election": {
                   "type": "string",
-                  "format": "date"
+                  "pattern": "^\\d{4}(-\\d{2}-\\d{2})?$",
+                  "description": "ISO date, or a bare YEAR where the source gives only that. Never padded to a fabricated day — a year padded to 1 July made a September election read as already past."
                 },
                 "next_election": {
                   "type": "string",
-                  "format": "date"
+                  "pattern": "^\\d{4}(-\\d{2}-\\d{2})?$",
+                  "description": "ISO date, or a bare YEAR where the source gives only that. Never padded to a fabricated day — a year padded to 1 July made a September election read as already past."
                 },
                 "term_years": {
                   "type": "number",
@@ -1913,12 +2110,13 @@
                       ],
                       "description": "`overdue` is a signal to re-check the source, not an accusation — a term can be legally extended."
                     }
-                  }
+                  },
+                  "additionalProperties": false
                 },
                 "as_of": {
                   "type": "string",
-                  "format": "date",
-                  "description": "The vintage of the composition — the election it describes, NOT the day the pipeline ran. Falls back to the retrieval date only when no election date is known."
+                  "pattern": "^\\d{4}(-\\d{2}-\\d{2})?$",
+                  "description": "The vintage of the composition — the election it describes, NOT the day the pipeline ran. Year precision where the source gives only a year. Falls back to the retrieval date only when no election date is known."
                 },
                 "retrieved_at": {
                   "type": "string",
@@ -1939,7 +2137,8 @@
                     "year": {
                       "type": "integer"
                     }
-                  }
+                  },
+                  "additionalProperties": false
                 },
                 "confidence": {
                   "type": "string",
@@ -1987,6 +2186,7 @@
                       "type": "string"
                     },
                     "revid": {
+                      "minimum": 1,
                       "type": "integer",
                       "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
                     },
@@ -1997,13 +2197,15 @@
                     "model": {
                       "type": "string"
                     }
-                  }
+                  },
+                  "additionalProperties": false
                 },
                 "source_hash": {
                   "type": "string",
                   "description": "Hash of the source field the composition was read from — the change-detection key, and what makes a re-extraction happen only on a real change."
                 }
-              }
+              },
+              "additionalProperties": false
             },
             "description": "One entry for unicameral, two for bicameral. The shape never changes, so a consumer writes one code path. Pick by role, never by index."
           },
@@ -2014,6 +2216,7 @@
               "backing",
               "seats",
               "minority",
+              "authority",
               "confidence",
               "provenance"
             ],
@@ -2047,13 +2250,28 @@
                     "type": "string",
                     "description": "English label. May be absent."
                   }
-                }
+                },
+                "additionalProperties": false
               },
               "seats": {
-                "type": "integer"
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 4000
               },
               "seats_with_backing": {
-                "type": "integer"
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 4000
+              },
+              "authority": {
+                "type": "string",
+                "enum": [
+                  "established",
+                  "contested",
+                  "rival_governments",
+                  "collapsed"
+                ],
+                "description": "How firmly this government holds the state. Distinct from a chamber's `contestation`, which is about elections: a country can hold competitive elections in the territory it controls while a rival government runs the rest."
               },
               "minority": {
                 "type": "boolean",
@@ -2112,6 +2330,7 @@
                     "type": "string"
                   },
                   "revid": {
+                    "minimum": 1,
                     "type": "integer",
                     "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
                   },
@@ -2122,9 +2341,11 @@
                   "model": {
                     "type": "string"
                   }
-                }
+                },
+                "additionalProperties": false
               }
-            }
+            },
+            "additionalProperties": false
           },
           "democracy": {
             "type": "object",
@@ -2151,7 +2372,8 @@
                 ]
               }
             },
-            "description": "V-Dem's electoral democracy index for the country. Absent for the 17 UN members V-Dem does not cover — mostly small states. Absence says nothing about the country and must never be read as a low score."
+            "description": "V-Dem's electoral democracy index for the country. Absent for the 17 UN members V-Dem does not cover — mostly small states. Absence says nothing about the country and must never be read as a low score.",
+            "additionalProperties": false
           },
           "sources": {
             "type": "array",
@@ -2192,6 +2414,7 @@
                   "type": "string"
                 },
                 "revid": {
+                  "minimum": 1,
                   "type": "integer",
                   "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
                 },
@@ -2202,17 +2425,20 @@
                 "model": {
                   "type": "string"
                 }
-              }
+              },
+              "additionalProperties": false
             }
           },
           "updated_at": {
             "type": "string",
             "format": "date"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "PolityDataset": {
         "type": "object",
+        "additionalProperties": false,
         "required": [
           "schema_version",
           "generated_at",
@@ -2265,7 +2491,8 @@
                       "type": "string",
                       "description": "English label. May be absent."
                     }
-                  }
+                  },
+                  "additionalProperties": false
                 },
                 "name": {
                   "type": "string"
@@ -2318,7 +2545,8 @@
                           "type": "string",
                           "description": "English label. May be absent."
                         }
-                      }
+                      },
+                      "additionalProperties": false
                     },
                     "name": {
                       "type": "string"
@@ -2342,7 +2570,8 @@
                           "authority": {
                             "type": "string"
                           }
-                        }
+                        },
+                        "additionalProperties": false
                       }
                     },
                     "office": {
@@ -2360,7 +2589,8 @@
                           "type": "string",
                           "description": "English label. May be absent."
                         }
-                      }
+                      },
+                      "additionalProperties": false
                     },
                     "office_local": {
                       "type": "string",
@@ -2383,7 +2613,8 @@
                               "type": "string",
                               "description": "English label. May be absent."
                             }
-                          }
+                          },
+                          "additionalProperties": false
                         },
                         {
                           "type": "null"
@@ -2397,7 +2628,9 @@
                       "description": "Day precision, or absent. Never padded."
                     },
                     "born_year": {
-                      "type": "integer"
+                      "type": "integer",
+                      "minimum": 1900,
+                      "maximum": 2100
                     },
                     "portrait": {
                       "type": "object",
@@ -2427,19 +2660,29 @@
                         },
                         "license": {
                           "type": "string",
-                          "description": "As the host states it: \"PD\", \"CC BY-SA 4.0\", \"Fair use\"."
+                          "description": "Folded to one name per licence: \"Public domain\", \"CC0\", \"CC BY-SA 4.0\", \"Fair use\". Versions are kept apart because their terms differ; jurisdiction ports and alternate spellings are not."
                         },
                         "non_free": {
                           "type": "boolean",
                           "description": "The host serves it under fair use, not a licence grant."
                         },
                         "restrictions": {
-                          "type": "string"
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "enum": [
+                              "communist",
+                              "insignia",
+                              "trademarked"
+                            ]
+                          },
+                          "description": "Re-use limits beyond the licence. A file can be freely licensed and still constrained — a party logo is usually a trademark, and several countries restrict communist insignia. Commons joins these with a pipe; this is the split, sorted list."
                         },
                         "credit": {
                           "type": "string"
                         }
-                      }
+                      },
+                      "additionalProperties": false
                     },
                     "represents": {
                       "type": "string",
@@ -2486,6 +2729,7 @@
                           "type": "string"
                         },
                         "revid": {
+                          "minimum": 1,
                           "type": "integer",
                           "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
                         },
@@ -2496,9 +2740,11 @@
                         "model": {
                           "type": "string"
                         }
-                      }
+                      },
+                      "additionalProperties": false
                     }
-                  }
+                  },
+                  "additionalProperties": false
                 },
                 "head_of_government": {
                   "oneOf": [
@@ -2527,7 +2773,8 @@
                               "type": "string",
                               "description": "English label. May be absent."
                             }
-                          }
+                          },
+                          "additionalProperties": false
                         },
                         "name": {
                           "type": "string"
@@ -2551,7 +2798,8 @@
                               "authority": {
                                 "type": "string"
                               }
-                            }
+                            },
+                            "additionalProperties": false
                           }
                         },
                         "office": {
@@ -2569,7 +2817,8 @@
                               "type": "string",
                               "description": "English label. May be absent."
                             }
-                          }
+                          },
+                          "additionalProperties": false
                         },
                         "office_local": {
                           "type": "string",
@@ -2592,7 +2841,8 @@
                                   "type": "string",
                                   "description": "English label. May be absent."
                                 }
-                              }
+                              },
+                              "additionalProperties": false
                             },
                             {
                               "type": "null"
@@ -2606,7 +2856,9 @@
                           "description": "Day precision, or absent. Never padded."
                         },
                         "born_year": {
-                          "type": "integer"
+                          "type": "integer",
+                          "minimum": 1900,
+                          "maximum": 2100
                         },
                         "portrait": {
                           "type": "object",
@@ -2636,19 +2888,29 @@
                             },
                             "license": {
                               "type": "string",
-                              "description": "As the host states it: \"PD\", \"CC BY-SA 4.0\", \"Fair use\"."
+                              "description": "Folded to one name per licence: \"Public domain\", \"CC0\", \"CC BY-SA 4.0\", \"Fair use\". Versions are kept apart because their terms differ; jurisdiction ports and alternate spellings are not."
                             },
                             "non_free": {
                               "type": "boolean",
                               "description": "The host serves it under fair use, not a licence grant."
                             },
                             "restrictions": {
-                              "type": "string"
+                              "type": "array",
+                              "items": {
+                                "type": "string",
+                                "enum": [
+                                  "communist",
+                                  "insignia",
+                                  "trademarked"
+                                ]
+                              },
+                              "description": "Re-use limits beyond the licence. A file can be freely licensed and still constrained — a party logo is usually a trademark, and several countries restrict communist insignia. Commons joins these with a pipe; this is the split, sorted list."
                             },
                             "credit": {
                               "type": "string"
                             }
-                          }
+                          },
+                          "additionalProperties": false
                         },
                         "represents": {
                           "type": "string",
@@ -2695,6 +2957,7 @@
                               "type": "string"
                             },
                             "revid": {
+                              "minimum": 1,
                               "type": "integer",
                               "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
                             },
@@ -2705,9 +2968,11 @@
                             "model": {
                               "type": "string"
                             }
-                          }
+                          },
+                          "additionalProperties": false
                         }
-                      }
+                      },
+                      "additionalProperties": false
                     },
                     {
                       "type": "null"
@@ -2744,7 +3009,8 @@
                             "type": "string",
                             "description": "English label. May be absent."
                           }
-                        }
+                        },
+                        "additionalProperties": false
                       },
                       "name": {
                         "type": "string"
@@ -2781,6 +3047,28 @@
                         "type": "string",
                         "description": "Wikidata's own label, unfolded."
                       },
+                      "ideology_families": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "social_democratic",
+                            "socialist",
+                            "liberal",
+                            "conservative",
+                            "religious",
+                            "green",
+                            "nationalist",
+                            "internationalist",
+                            "populist",
+                            "agrarian",
+                            "authoritarian",
+                            "reformist",
+                            "other"
+                          ]
+                        },
+                        "description": "Broad traditions the ideologies belong to. Sits alongside the raw labels rather than replacing them: 409 distinct ideologies occur across these parties and 222 appear exactly once, and that tail is the useful part. Comparison across countries needs a closed vocabulary; describing one party needs the specific label."
+                      },
                       "ideologies": {
                         "type": "array",
                         "items": {
@@ -2798,7 +3086,8 @@
                               "type": "string",
                               "description": "English label. May be absent."
                             }
-                          }
+                          },
+                          "additionalProperties": false
                         }
                       },
                       "groupings": {
@@ -2818,7 +3107,8 @@
                               "type": "string",
                               "description": "English label. May be absent."
                             }
-                          }
+                          },
+                          "additionalProperties": false
                         },
                         "description": "Transnational families (EPP, Progressive Alliance). Open statements only — an ended membership is not membership."
                       },
@@ -2830,10 +3120,14 @@
                         }
                       },
                       "founded_year": {
-                        "type": "integer"
+                        "type": "integer",
+                        "minimum": 1000,
+                        "maximum": 2100
                       },
                       "dissolved_year": {
-                        "type": "integer"
+                        "type": "integer",
+                        "minimum": 1000,
+                        "maximum": 2100
                       },
                       "logo": {
                         "type": "object",
@@ -2863,19 +3157,29 @@
                           },
                           "license": {
                             "type": "string",
-                            "description": "As the host states it: \"PD\", \"CC BY-SA 4.0\", \"Fair use\"."
+                            "description": "Folded to one name per licence: \"Public domain\", \"CC0\", \"CC BY-SA 4.0\", \"Fair use\". Versions are kept apart because their terms differ; jurisdiction ports and alternate spellings are not."
                           },
                           "non_free": {
                             "type": "boolean",
                             "description": "The host serves it under fair use, not a licence grant."
                           },
                           "restrictions": {
-                            "type": "string"
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "enum": [
+                                "communist",
+                                "insignia",
+                                "trademarked"
+                              ]
+                            },
+                            "description": "Re-use limits beyond the licence. A file can be freely licensed and still constrained — a party logo is usually a trademark, and several countries restrict communist insignia. Commons joins these with a pipe; this is the split, sorted list."
                           },
                           "credit": {
                             "type": "string"
                           }
-                        }
+                        },
+                        "additionalProperties": false
                       },
                       "provenance": {
                         "type": "object",
@@ -2914,6 +3218,7 @@
                             "type": "string"
                           },
                           "revid": {
+                            "minimum": 1,
                             "type": "integer",
                             "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
                           },
@@ -2924,9 +3229,11 @@
                           "model": {
                             "type": "string"
                           }
-                        }
+                        },
+                        "additionalProperties": false
                       }
-                    }
+                    },
+                    "additionalProperties": false
                   }
                 },
                 "chambers": {
@@ -2963,7 +3270,8 @@
                             "type": "string",
                             "description": "English label. May be absent."
                           }
-                        }
+                        },
+                        "additionalProperties": false
                       },
                       "role": {
                         "type": "string",
@@ -2982,7 +3290,9 @@
                       },
                       "seats_total": {
                         "type": "integer",
-                        "minimum": 0
+                        "minimum": 1,
+                        "maximum": 4000,
+                        "description": "No national chamber is smaller than a handful or larger than China’s ~3000."
                       },
                       "selection": {
                         "type": "array",
@@ -3012,7 +3322,9 @@
                         "description": "How real the contest is. Orthogonal to structure: a chamber can be bicameral, directly elected AND uncontested."
                       },
                       "seats_contested": {
-                        "type": "integer"
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 4000
                       },
                       "composition": {
                         "type": "array",
@@ -3070,16 +3382,19 @@
                               "minimum": 0,
                               "maximum": 1
                             }
-                          }
+                          },
+                          "additionalProperties": false
                         }
                       },
                       "last_election": {
                         "type": "string",
-                        "format": "date"
+                        "pattern": "^\\d{4}(-\\d{2}-\\d{2})?$",
+                        "description": "ISO date, or a bare YEAR where the source gives only that. Never padded to a fabricated day — a year padded to 1 July made a September election read as already past."
                       },
                       "next_election": {
                         "type": "string",
-                        "format": "date"
+                        "pattern": "^\\d{4}(-\\d{2}-\\d{2})?$",
+                        "description": "ISO date, or a bare YEAR where the source gives only that. Never padded to a fabricated day — a year padded to 1 July made a September election read as already past."
                       },
                       "term_years": {
                         "type": "number",
@@ -3112,12 +3427,13 @@
                             ],
                             "description": "`overdue` is a signal to re-check the source, not an accusation — a term can be legally extended."
                           }
-                        }
+                        },
+                        "additionalProperties": false
                       },
                       "as_of": {
                         "type": "string",
-                        "format": "date",
-                        "description": "The vintage of the composition — the election it describes, NOT the day the pipeline ran. Falls back to the retrieval date only when no election date is known."
+                        "pattern": "^\\d{4}(-\\d{2}-\\d{2})?$",
+                        "description": "The vintage of the composition — the election it describes, NOT the day the pipeline ran. Year precision where the source gives only a year. Falls back to the retrieval date only when no election date is known."
                       },
                       "retrieved_at": {
                         "type": "string",
@@ -3138,7 +3454,8 @@
                           "year": {
                             "type": "integer"
                           }
-                        }
+                        },
+                        "additionalProperties": false
                       },
                       "confidence": {
                         "type": "string",
@@ -3186,6 +3503,7 @@
                             "type": "string"
                           },
                           "revid": {
+                            "minimum": 1,
                             "type": "integer",
                             "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
                           },
@@ -3196,13 +3514,15 @@
                           "model": {
                             "type": "string"
                           }
-                        }
+                        },
+                        "additionalProperties": false
                       },
                       "source_hash": {
                         "type": "string",
                         "description": "Hash of the source field the composition was read from — the change-detection key, and what makes a re-extraction happen only on a real change."
                       }
-                    }
+                    },
+                    "additionalProperties": false
                   },
                   "description": "One entry for unicameral, two for bicameral. The shape never changes, so a consumer writes one code path. Pick by role, never by index."
                 },
@@ -3213,6 +3533,7 @@
                     "backing",
                     "seats",
                     "minority",
+                    "authority",
                     "confidence",
                     "provenance"
                   ],
@@ -3246,13 +3567,28 @@
                           "type": "string",
                           "description": "English label. May be absent."
                         }
-                      }
+                      },
+                      "additionalProperties": false
                     },
                     "seats": {
-                      "type": "integer"
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 4000
                     },
                     "seats_with_backing": {
-                      "type": "integer"
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 4000
+                    },
+                    "authority": {
+                      "type": "string",
+                      "enum": [
+                        "established",
+                        "contested",
+                        "rival_governments",
+                        "collapsed"
+                      ],
+                      "description": "How firmly this government holds the state. Distinct from a chamber's `contestation`, which is about elections: a country can hold competitive elections in the territory it controls while a rival government runs the rest."
                     },
                     "minority": {
                       "type": "boolean",
@@ -3311,6 +3647,7 @@
                           "type": "string"
                         },
                         "revid": {
+                          "minimum": 1,
                           "type": "integer",
                           "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
                         },
@@ -3321,9 +3658,11 @@
                         "model": {
                           "type": "string"
                         }
-                      }
+                      },
+                      "additionalProperties": false
                     }
-                  }
+                  },
+                  "additionalProperties": false
                 },
                 "democracy": {
                   "type": "object",
@@ -3350,7 +3689,8 @@
                       ]
                     }
                   },
-                  "description": "V-Dem's electoral democracy index for the country. Absent for the 17 UN members V-Dem does not cover — mostly small states. Absence says nothing about the country and must never be read as a low score."
+                  "description": "V-Dem's electoral democracy index for the country. Absent for the 17 UN members V-Dem does not cover — mostly small states. Absence says nothing about the country and must never be read as a low score.",
+                  "additionalProperties": false
                 },
                 "sources": {
                   "type": "array",
@@ -3391,6 +3731,7 @@
                         "type": "string"
                       },
                       "revid": {
+                        "minimum": 1,
                         "type": "integer",
                         "description": "The exact Wikipedia revision read. The audit trail — a disagreement can be settled by fetching it."
                       },
@@ -3401,14 +3742,16 @@
                       "model": {
                         "type": "string"
                       }
-                    }
+                    },
+                    "additionalProperties": false
                   }
                 },
                 "updated_at": {
                   "type": "string",
                   "format": "date"
                 }
-              }
+              },
+              "additionalProperties": false
             }
           },
           "omissions": {
@@ -3427,7 +3770,8 @@
                 "reason": {
                   "type": "string"
                 }
-              }
+              },
+              "additionalProperties": false
             }
           }
         }

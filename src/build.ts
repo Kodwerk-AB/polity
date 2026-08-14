@@ -11,10 +11,16 @@ import { unMemberStates } from './resolve/countries'
 import { chambersOf, type ChamberRef } from './resolve/chambers'
 import { formFromProse, governmentForm, leadersOf } from './resolve/leaders'
 import { democracyScore, FREE_ELECTION_SCORE, type DemocracyScore } from './resolve/democracy'
+import { familiesOf } from './resolve/ideology'
 import { electionSince } from './extract/elections'
 import { chamberSource } from './extract/source'
 import { governmentTypeLine, leaderLines } from './extract/leaders'
-import { extractComposition, extractLeaders, type ExtractedBloc } from './extract/model'
+import {
+  classifyIdeologies,
+  extractComposition,
+  extractLeaders,
+  type ExtractedBloc,
+} from './extract/model'
 import { hashOf } from './net/cache'
 import type { BlocKind, ChamberRole, Confidence, Contestation, SelectionMethod, SpectrumBand } from './types/enums'
 import type {
@@ -1168,6 +1174,35 @@ export const build = async (only?: string[]): Promise<PolityDataset> => {
     }
   }
   process.stdout.write('\n')
+
+  // Classify ideologies ONCE for the whole run, not per country.
+  //
+  // The same ideology recurs across dozens of parties in dozens of countries —
+  // "social democracy" appears 162 times — so classifying per party would ask
+  // the same question over and over. Every Q-id here comes from the data that
+  // was just built, so the map can never contain an identifier that does not
+  // occur; and each answer is cached per ideology, making a rebuild classify
+  // only what is genuinely new.
+  const everyIdeology = new Map<string, string>()
+  for (const country of Object.values(countries)) {
+    for (const party of Object.values(country.parties)) {
+      for (const ideology of party.ideologies ?? []) {
+        if (ideology.label) everyIdeology.set(ideology.qid, ideology.label)
+      }
+    }
+  }
+  if (everyIdeology.size) {
+    const families = await classifyIdeologies(
+      [...everyIdeology].map(([qid, label]) => ({ qid, label }))
+    )
+    for (const country of Object.values(countries)) {
+      for (const party of Object.values(country.parties)) {
+        if (!party.ideologies?.length) continue
+        const placed = familiesOf(party.ideologies, families)
+        if (placed.length) party.ideology_families = placed
+      }
+    }
+  }
 
   return {
     schema_version: '1.0.0',

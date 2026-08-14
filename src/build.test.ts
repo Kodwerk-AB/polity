@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest'
 import { landslideOr, selectionOf, withoutAllianceHeaders } from './build'
 import { FREE_ELECTION_SCORE } from './resolve/democracy'
+import { familiesOf } from './resolve/ideology'
+import type { QID } from './types/polity'
 
 /**
  * Both rules exist because a chamber's SHAPE does not reveal how it was filled.
@@ -128,5 +130,42 @@ describe('withoutAllianceHeaders', () => {
     // Nothing names it as a parent, so its seats are the only record of them.
     const rows = [bloc('National Coalition', 40), bloc('Opposition Party', 20)]
     expect(withoutAllianceHeaders(rows)).toEqual(rows)
+  })
+})
+
+describe('familiesOf', () => {
+  const map = {
+    Q121254: 'social_democratic' as const,
+    Q1661415: 'green' as const,
+    Q3781399: 'internationalist' as const,
+  }
+
+  it('reports every family a party spans', () => {
+    // Collapsing to one would be a judgement the source does not support.
+    expect(
+      familiesOf([{ qid: 'Q121254' as QID }, { qid: 'Q1661415' as QID }], map)
+    ).toEqual(['social_democratic', 'green'])
+  })
+
+  it('deduplicates and orders by the canonical list', () => {
+    expect(
+      familiesOf(
+        [{ qid: 'Q1661415' as QID }, { qid: 'Q121254' as QID }, { qid: 'Q121254' as QID }],
+        map
+      )
+    ).toEqual(['social_democratic', 'green'])
+  })
+
+  it('does not read a bloc stance as nationalism', () => {
+    // Pro-Europeanism filed under `nationalist` made the Liberal Democrats and
+    // the Green Party of England and Wales read as nationalist parties.
+    expect(familiesOf([{ qid: 'Q3781399' as QID }], map)).toEqual(['internationalist'])
+  })
+
+  it('falls to `other` only when ideologies exist but none place', () => {
+    expect(familiesOf([{ qid: 'Q999999999' as QID }], map)).toEqual(['other'])
+    // No ideologies at all is an empty array — never `other`, which would
+    // assert something about a party we know nothing about.
+    expect(familiesOf([], map)).toEqual([])
   })
 })

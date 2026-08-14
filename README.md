@@ -26,6 +26,7 @@ Free to use. No API key, no rate limit, no hosting cost.
         { "party": "Q61692310", "name": "Nuevas Ideas", "seats": 54, "standing": "government" },
         { "party": "Q752132",   "name": "ARENA",        "seats": 2,  "standing": "opposition" }
       ],
+      "democracy": { "score": 0.321, "year": 2025, "source": "vdem" },
       "confidence": "high"
     }]
   }
@@ -145,6 +146,13 @@ those correctly. The score ships on the country as `democracy`, so a consumer
 can apply its own threshold rather than inherit ours. It covers 176 of 193
 members; the omissions are small states, and absence never means a low score.
 
+**Ideologies keep their long tail; families make them comparable.** Wikidata
+names 409 distinct ideologies across these parties and 222 appear exactly once —
+"Kemalism", "Pancasila", "socialism with Chinese characteristics". That tail is
+the useful part, so `ideologies` keeps it verbatim and `ideology_families` sits
+alongside from a closed set of thirteen. Comparison across countries needs a
+closed vocabulary; describing one party needs the specific label.
+
 **An alliance is not a party.** `kind` separates a party from an electoral
 alliance, a parliamentary group, independents and the chamber's own bookkeeping.
 "Which party governs?" has no honest answer when the answer is an alliance of
@@ -154,6 +162,11 @@ five.
 the source; opposition is everything left over. A source's own "opposition"
 field is populated for a fraction of countries where the seated blocs are held
 in full.
+
+**Every judgement is written down.** [DECISIONS.md](DECISIONS.md) states each
+derived field's rules in the order they fire, with the case that forced each
+one — and the open defects, named. A consumer who disagrees can re-derive a
+different answer from the same fields.
 
 **Provenance and confidence ship with the data.** Every value records whether it
 was read from a structured property, parsed, extracted by a model, or entered by
@@ -176,8 +189,14 @@ bun install
 bun run build            # full rebuild (cached; near-free after the first)
 bun run build SV NO KP   # a few countries, into data/sample.json
 bun run build:schema     # regenerate schema/openapi.json from the types
-bun run test
+bun run validate         # check data/polity.json against the schema
+bun run test             # unit tests, then schema regeneration and validation
 ```
+
+The schema seals every object with `additionalProperties: false`, so validation
+catches the one class of error nothing else does: a field the generator writes
+that the schema never described. The first run of that check found
+`government.authority` on all 193 countries, missing from the schema entirely.
 
 `CLAUDE_KEY` must be set for extraction. Everything else needs no credentials.
 

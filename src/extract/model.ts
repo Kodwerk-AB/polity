@@ -1,5 +1,5 @@
 import { cacheRead, cacheWrite } from '../net/cache'
-import type { Standing } from '../types/enums'
+import { IDEOLOGY_FAMILIES, type IdeologyFamily, type Standing } from '../types/enums'
 
 /**
  * The extraction step, and the only place a language model touches the data.
@@ -18,7 +18,7 @@ import type { Standing } from '../types/enums'
 const MODEL = 'claude-haiku-4-5-20251001'
 /** Bumped whenever SYSTEM changes, so a prompt fix invalidates old answers
  *  rather than serving a cached reading of a rule that no longer applies. */
-const PROMPT_VERSION = 'v10'
+const PROMPT_VERSION = 'v11'
 const API = 'https://api.anthropic.com/v1/messages'
 
 export interface ExtractedBloc {
@@ -411,4 +411,141 @@ export const extractLeaders = async (
     await sleep(1500 * attempt)
   }
   return undefined
+}
+
+/**
+ * Which broad family each ideology belongs to.
+ *
+ * Wikidata names 409 distinct ideologies across these parties, 222 of them
+ * appearing exactly once. That tail is the useful part — "Kemalism", "Basque
+ * nationalism", "Pancasila", "socialism with Chinese characteristics" — so it
+ * is kept verbatim in `ideologies` and classified ALONGSIDE, never folded away.
+ *
+ * The model does the classification because the alternative is a hand-written
+ * table of 409 Q-ids, which is exactly the kind of thing that gets written from
+ * memory and quietly filled with identifiers that do not exist. Here every
+ * Q-id comes from the data and the model only sorts labels it is shown.
+ *
+ * Cached per ideology, so a rebuild classifies only what is new.
+ */
+const FAMILY_SYSTEM = `You sort political ideologies into broad families.
+
+Return one family per ideology, using ONLY these values:
+
+- social_democratic — social democracy, democratic socialism, labourism, Third Way
+- socialist — communism, Marxism, Trotskyism, anti-capitalism, revolutionary socialism
+- liberal — market and social liberalism, libertarianism, progressivism, secularism, civil rights
+- conservative — conservatism in all variants, monarchism, traditionalism
+- religious — confessional politics of ANY faith: Christian democracy, Islamism, religious Zionism
+- green — green politics, environmentalism, eco-socialism, sustainability
+- nationalist — nationalism, regionalism, separatism, unionism, irredentism, ethnic and
+  linguistic nationalism. A claim about who the nation IS or where its borders belong.
+- internationalist — a stance toward a supranational bloc or neighbour rather than a domestic
+  tradition: pro-Europeanism, euroscepticism, Atlanticism, pan-Africanism, sovereigntism
+- populist — populism of either wing, anti-establishment and anti-corruption politics
+- agrarian — agrarian, rural and peasant-interest politics
+- authoritarian — authoritarianism, militarism, fascism, ultranationalism, one-party doctrine
+- reformist — institutional reform: federalism, decentralisation, direct democracy,
+  constitutionalism, pacifism, anti-fascism
+- other — real and named, but outside every family above
+
+Rules:
+- A family is BROADER than a left-right placement. Nationalism spans both wings; put it in
+  nationalist rather than choosing a side.
+- Do NOT read a bloc stance as nationalism. Pro-Europeanism and euroscepticism are
+  internationalist, not nationalist — most of the European centre holds one or the other.
+- Judge the ideology itself, not parties that happen to hold it.
+- Prefer the most specific family that fits. Use other sparingly and only when nothing fits.`
+
+const FAMILY_TOOL = {
+  name: 'report_families',
+  description: 'Report the family of each ideology given.',
+  input_schema: {
+    type: 'object' as const,
+    properties: {
+      families: {
+        type: 'array',
+        items: {
+          type: 'object',
+          properties: {
+            qid: { type: 'string' },
+            family: {
+              type: 'string',
+              enum: [...IDEOLOGY_FAMILIES],
+            },
+          },
+          required: ['qid', 'family'],
+        },
+      },
+    },
+    required: ['families'],
+  },
+}
+
+/**
+ * Classify ideologies in batches, returning a Q-id → family map.
+ *
+ * Only uncached ideologies are sent, so the steady-state cost is zero.
+ */
+export const classifyIdeologies = async (
+  ideologies: { qid: string; label: string }[]
+): Promise<Record<string, IdeologyFamily>> => {
+  const known: Record<string, IdeologyFamily> = {}
+  const pending: { qid: string; label: string }[] = []
+  for (const ideology of ideologies) {
+    const cached = cacheRead<IdeologyFamily>(`family:${PROMPT_VERSION}:${ideology.qid}`)
+    if (cached) known[ideology.qid] = cached
+    else pending.push(ideology)
+  }
+  if (!pending.length) return known
+
+  const apiKey = process.env.CLAUDE_KEY
+  if (!apiKey) throw new Error('CLAUDE_KEY is not set')
+
+  // 60 at a time keeps each response comfortably inside the token budget.
+  for (let index = 0; index < pending.length; index += 60) {
+    const batch = pending.slice(index, index + 60)
+    const listing = batch.map(item => `${item.qid} ${item.label}`).join('\n')
+
+    for (let attempt = 1; attempt <= 4; attempt++) {
+      calls++
+      const response = await fetch(API, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': '2023-06-01',
+        },
+        body: JSON.stringify({
+          model: MODEL,
+          max_tokens: 4096,
+          system: FAMILY_SYSTEM,
+          tools: [FAMILY_TOOL],
+          tool_choice: { type: 'tool', name: FAMILY_TOOL.name },
+          messages: [{ role: 'user', content: listing }],
+        }),
+        signal: AbortSignal.timeout(90_000),
+      }).catch(() => undefined)
+
+      if (response?.ok) {
+        const body = (await response.json().catch(() => undefined)) as
+          | { content?: { type?: string; input?: unknown }[] }
+          | undefined
+        const parsed = body?.content?.find(part => part.type === 'tool_use')?.input as
+          | { families?: { qid?: string; family?: string }[] }
+          | undefined
+        for (const row of parsed?.families ?? []) {
+          if (!row.qid || !row.family) continue
+          if (!(IDEOLOGY_FAMILIES as readonly string[]).includes(row.family)) continue
+          const family = row.family as IdeologyFamily
+          known[row.qid] = family
+          cacheWrite(`family:${PROMPT_VERSION}:${row.qid}`, family)
+        }
+        break
+      }
+      if (response?.status === 400 || response?.status === 401) break
+      await sleep(1500 * attempt)
+    }
+  }
+  return known
 }

@@ -1,3 +1,4 @@
+import { IMAGE_RESTRICTIONS, type ImageRestriction } from '../types/enums'
 import { cacheRead, cacheWrite } from './cache'
 
 /**
@@ -278,7 +279,7 @@ export interface FileLicence {
   license?: string
   credit?: string
   non_free: boolean
-  restrictions?: string
+  restrictions?: ImageRestriction[]
   host: 'commons' | 'wikipedia'
 }
 
@@ -297,6 +298,45 @@ const stripTags = (html: string): string =>
  * Democratic Alliance mark is public domain and lives there. So ask the
  * licence, and let the consumer decide on the answer.
  */
+/**
+ * Fold Commons' licence spellings onto one name each.
+ *
+ * The same licence arrives under several short names — "PD" and "Public
+ * domain", "Attribution" and "CC BY", "CC BY 3.0 cl" for the Chilean port —
+ * which made thirteen distinct values out of about eight real licences and put
+ * an enum out of reach. Versions ARE kept apart, because CC BY-SA 3.0 and 4.0
+ * are genuinely different terms.
+ */
+const normaliseLicence = (raw: string | undefined): string | undefined => {
+  if (!raw) return undefined
+  const value = raw.trim()
+  if (/^(pd|public domain)\b/i.test(value)) return 'Public domain'
+  if (/^fair use\b/i.test(value)) return 'Fair use'
+  if (/^cc0\b/i.test(value)) return 'CC0'
+  if (/^attribution$/i.test(value)) return 'CC BY'
+  // "CC BY-SA 3.0 de", "CC BY 3.0 cl" — a jurisdiction port of the same terms.
+  const cc = /^(cc by(?:-sa)?)\s*([\d.]+)?/i.exec(value)
+  if (cc) return `${cc[1]!.toUpperCase().replace('CC BY', 'CC BY')}${cc[2] ? ` ${cc[2]}` : ''}`
+  return value
+}
+
+/**
+ * Commons' pipe-joined restriction list, as its parts.
+ *
+ * Values outside the known set are DROPPED rather than passed through, so the
+ * published field is a closed vocabulary a consumer can switch on. A new value
+ * appearing upstream is a deliberate addition to `IMAGE_RESTRICTIONS`, not a
+ * surprise in the data.
+ */
+const restrictionList = (raw: string | undefined): ImageRestriction[] => {
+  if (!raw) return []
+  const parts = raw.split('|').map(part => part.trim().toLowerCase())
+  const known = parts.filter((part): part is ImageRestriction =>
+    (IMAGE_RESTRICTIONS as readonly string[]).includes(part)
+  )
+  return [...new Set(known)].sort()
+}
+
 export const fileLicence = async (file: string): Promise<FileLicence | undefined> => {
   for (const host of ['commons', 'wikipedia'] as const) {
     const domain = host === 'commons' ? 'commons.wikimedia.org' : 'en.wikipedia.org'
@@ -317,13 +357,20 @@ export const fileLicence = async (file: string): Promise<FileLicence | undefined
     }>(url)
     const meta = Object.values(data?.query?.pages ?? {})[0]?.imageinfo?.[0]?.extmetadata
     if (!meta) continue
-    const license = meta.LicenseShortName?.value ? stripTags(meta.LicenseShortName.value) : undefined
+    const license = normaliseLicence(
+      meta.LicenseShortName?.value ? stripTags(meta.LicenseShortName.value) : undefined
+    )
     const credit = meta.Artist?.value ? stripTags(meta.Artist.value) : undefined
     return {
       ...(license ? { license } : {}),
       ...(credit ? { credit: credit.slice(0, 120) } : {}),
       non_free: String(meta.NonFree?.value ?? '').toLowerCase() === 'true',
-      ...(meta.Restrictions?.value ? { restrictions: meta.Restrictions.value } : {}),
+      // Commons joins multiple restrictions with a pipe — "insignia|communist".
+      // An array says the same thing without every consumer having to know the
+      // separator, and the values are a closed set worth validating.
+      ...(restrictionList(meta.Restrictions?.value).length
+        ? { restrictions: restrictionList(meta.Restrictions?.value) }
+        : {}),
       host,
     }
   }
