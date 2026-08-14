@@ -13,7 +13,10 @@ const path = only.length ? 'data/sample.json' : 'data/polity.json'
 writeFileSync(path, `${JSON.stringify(dataset, null, 1)}\n`)
 
 const issues = validateDataset(dataset)
-writeFileSync('data/issues.json', `${JSON.stringify(issues, null, 1)}\n`)
+// A few-country run is a probe, not the dataset. Writing its issue list to the
+// shared file replaced 193 countries' findings with nine countries' — and an
+// empty result then read as "no errors anywhere" rather than "not checked".
+if (!only.length) writeFileSync('data/issues.json', `${JSON.stringify(issues, null, 1)}\n`)
 
 const list = Object.values(dataset.countries)
 const chambers = list.flatMap(country => country.chambers)

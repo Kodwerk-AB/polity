@@ -148,8 +148,12 @@ const statedSeats = (wikitext: string): number | undefined => {
  * than fed downstream.
  */
 const votingSystem = (wikitext: string): string | undefined => {
-  const raw = /^\s*\|\s*voting_system\d*\s*=\s*(.+)$/im.exec(wikitext)?.[1]
-  if (!raw) return undefined
+  // The value must be on the SAME line. Oman's article leaves the field empty,
+  // and a lazy `.+` across newlines captured the following field's NAME —
+  // "| voting_system2 =" — which then matched on the word "voting" itself and
+  // reported an elected chamber as appointed.
+  const raw = /^[ \t]*\|[ \t]*voting_system\d*[ \t]*=[ \t]*([^\n]*)$/im.exec(wikitext)?.[1]
+  if (!raw?.trim()) return undefined
   const cleaned = raw
     .replace(/<ref[\s\S]*$/i, '')
     .replace(/\[\[(?:[^\]|]*\|)?([^\]]*)\]\]/g, '$1')

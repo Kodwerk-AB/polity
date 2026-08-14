@@ -34,6 +34,14 @@ describe('selectionOf', () => {
     ])
   })
 
+  it('ignores a value that is not really there', () => {
+    // Oman's article leaves the field empty, so the regex captured the NEXT
+    // field's name — "| voting_system2 =" — which matched on the word "voting"
+    // and reported an elected chamber as appointed. `chamberSource` now returns
+    // undefined for an empty field, which must land on the role default.
+    expect(selectionOf('unicameral', undefined)).toEqual(['directly_elected'])
+  })
+
   it('falls back to the role when the article states nothing', () => {
     expect(selectionOf('upper', undefined)).toEqual(['indirectly_elected'])
     expect(selectionOf('lower', undefined)).toEqual(['directly_elected'])
