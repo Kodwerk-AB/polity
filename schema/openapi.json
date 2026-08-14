@@ -507,6 +507,28 @@
             },
             "description": "Transnational families (EPP, Progressive Alliance). Open statements only — an ended membership is not membership."
           },
+          "members": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "qid"
+              ],
+              "properties": {
+                "qid": {
+                  "type": "string",
+                  "pattern": "^Q[0-9]+$",
+                  "description": "Wikidata entity id."
+                },
+                "label": {
+                  "type": "string",
+                  "description": "English label. May be absent."
+                }
+              },
+              "additionalProperties": false
+            },
+            "description": "The parties a coalition or parliamentary group is composed of, from P527. Present only on blocs that have parts. This is what joins a leader to the bench they sit on: France seats \"Together for the Republic group\" while Macron leads Renaissance, and nothing else in the record connects the two."
+          },
           "colors": {
             "type": "array",
             "items": {
@@ -1180,6 +1202,14 @@
           "name": {
             "type": "string"
           },
+          "recognition": {
+            "type": "string",
+            "enum": [
+              "un_observer",
+              "partially_recognised"
+            ],
+            "description": "Set only for a state with no UN seat — absent means a UN member, which is 193 of the 197 carried. Filter on its absence to get exactly the UN membership."
+          },
           "form": {
             "type": "string",
             "enum": [
@@ -1794,6 +1824,28 @@
                     "additionalProperties": false
                   },
                   "description": "Transnational families (EPP, Progressive Alliance). Open statements only — an ended membership is not membership."
+                },
+                "members": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "qid"
+                    ],
+                    "properties": {
+                      "qid": {
+                        "type": "string",
+                        "pattern": "^Q[0-9]+$",
+                        "description": "Wikidata entity id."
+                      },
+                      "label": {
+                        "type": "string",
+                        "description": "English label. May be absent."
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "description": "The parties a coalition or parliamentary group is composed of, from P527. Present only on blocs that have parts. This is what joins a leader to the bench they sit on: France seats \"Together for the Republic group\" while Macron leads Renaissance, and nothing else in the record connects the two."
                 },
                 "colors": {
                   "type": "array",
@@ -2497,6 +2549,14 @@
                 "name": {
                   "type": "string"
                 },
+                "recognition": {
+                  "type": "string",
+                  "enum": [
+                    "un_observer",
+                    "partially_recognised"
+                  ],
+                  "description": "Set only for a state with no UN seat — absent means a UN member, which is 193 of the 197 carried. Filter on its absence to get exactly the UN membership."
+                },
                 "form": {
                   "type": "string",
                   "enum": [
@@ -3111,6 +3171,28 @@
                           "additionalProperties": false
                         },
                         "description": "Transnational families (EPP, Progressive Alliance). Open statements only — an ended membership is not membership."
+                      },
+                      "members": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "qid"
+                          ],
+                          "properties": {
+                            "qid": {
+                              "type": "string",
+                              "pattern": "^Q[0-9]+$",
+                              "description": "Wikidata entity id."
+                            },
+                            "label": {
+                              "type": "string",
+                              "description": "English label. May be absent."
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "description": "The parties a coalition or parliamentary group is composed of, from P527. Present only on blocs that have parts. This is what joins a leader to the bench they sit on: France seats \"Together for the Republic group\" while Macron leads Renaissance, and nothing else in the record connects the two."
                       },
                       "colors": {
                         "type": "array",

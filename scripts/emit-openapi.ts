@@ -157,6 +157,12 @@ const party = {
       description:
         'Transnational families (EPP, Progressive Alliance). Open statements only — an ended membership is not membership.',
     },
+    members: {
+      type: 'array',
+      items: entity,
+      description:
+        'The parties a coalition or parliamentary group is composed of, from P527. Present only on blocs that have parts. This is what joins a leader to the bench they sit on: France seats "Together for the Republic group" while Macron leads Renaissance, and nothing else in the record connects the two.',
+    },
     colors: { type: 'array', items: { type: 'string', pattern: '^#[0-9a-f]{6}$' } },
     founded_year: { type: 'integer', minimum: 1000, maximum: 2100 },
     dissolved_year: { type: 'integer', minimum: 1000, maximum: 2100 },
@@ -351,6 +357,10 @@ const polity = {
     iso: { type: 'string', pattern: '^[A-Z]{2}$' },
     entity,
     name: { type: 'string' },
+    recognition: enumOf(
+      RECOGNITION,
+      'Set only for a state with no UN seat — absent means a UN member, which is 193 of the 197 carried. Filter on its absence to get exactly the UN membership.'
+    ),
     form: enumOf(GOVERNMENT_FORMS, 'Folded from Wikidata P122 at preferred rank.'),
     form_raw: { type: 'array', items: { type: 'string' } },
     head_of_state: officeHolder,
