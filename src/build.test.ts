@@ -216,6 +216,68 @@ describe('executivePowerOf', () => {
     )
   })
 
+  it('does not let a stale parliamentary label unseat a president', () => {
+    // P122 returns unranked multi-values mixing the current with the
+    // historical. Tunisia carries "parliamentary republic" beside "Unitary
+    // presidential republic"; its 2022 constitution gives the president sole
+    // control of the executive. Kyrgyzstan is the same shape after 2021.
+    expect(
+      at('presidential_republic', [
+        'parliamentary republic',
+        'semi-presidential system',
+        'Unitary presidential republic',
+      ])
+    ).toBe('head_of_state')
+    expect(
+      at('presidential_republic', ['parliamentary republic', 'Unitary presidential republic'])
+    ).toBe('head_of_state')
+  })
+
+  it('still rescues a misclassified form from its prose', () => {
+    // The override may only RESCUE, never overrule — Pakistan keyword-matches
+    // "Islamic" to `theocracy` and must still reach Shehbaz Sharif.
+    expect(
+      at('theocracy', [
+        'federal republic',
+        'parliamentary republic',
+        'Federal parliamentary Islamic republic',
+      ])
+    ).toBe('head_of_government')
+    // Genuinely premier-led semi-presidential republics keep the override.
+    expect(
+      at('semi_presidential_republic', ['parliamentary republic', 'Semi-presidential republic'])
+    ).toBe('head_of_government')
+  })
+
+  it('keeps a premier-led dictatorship with its premier', () => {
+    // "Dictatorship" says WHO rules, not WHICH OFFICE. Cambodia's Hun Manet
+    // and Togo's Faure Gnassingbé ARE the heads of government; reading the
+    // word alone handed both to a ceremonial king and a figurehead president.
+    expect(
+      at('constitutional_monarchy', [
+        'constitutional monarchy',
+        'Unitary parliamentary constitutional elective monarchy under a hereditary dictatorship',
+      ])
+    ).toBe('head_of_government')
+    expect(
+      at('parliamentary_republic', [
+        'Unitary parliamentary republic under an authoritarian dictatorship',
+      ])
+    ).toBe('head_of_government')
+  })
+
+  it('reads a semi-presidential autocracy as president-led', () => {
+    // Congo-Brazzaville: "under an authoritarian dictatorship" beside a stale
+    // "parliamentary republic". Sassou Nguesso has ruled since 1997 and
+    // appoints the premier, who was reappointed days after resigning.
+    expect(
+      at('semi_presidential_republic', [
+        'parliamentary republic',
+        'Unitary semi-presidential republic under an authoritarian dictatorship',
+      ])
+    ).toBe('head_of_state')
+  })
+
   it('gives both offices to one person where there is no head of government', () => {
     expect(at('presidential_republic', ['Federal presidential republic'], false)).toBe(
       'head_of_state'

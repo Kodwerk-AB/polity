@@ -189,6 +189,32 @@ export const executivePowerOf = (
 
   // No separate head of government means one person holds both offices.
   if (!hasHeadOfGovernment) return 'head_of_state'
+
+  // A semi-presidential autocracy is president-led, whatever else the labels
+  // say.
+  //
+  // Checked before the parliamentary override because the stale label was
+  // beating it: Congo-Brazzaville's summary reads "Unitary semi-presidential
+  // republic under an authoritarian dictatorship" beside a leftover
+  // "parliamentary republic", and Denis Sassou Nguesso has ruled since 1997,
+  // appoints the prime minister, and reappointed him days after a pro-forma
+  // resignation. Where a semi-presidential source says the state is a
+  // dictatorship, the presidency is where the power sits.
+  //
+  // The form guard is the whole rule. "Dictatorship" says WHO rules, not WHICH
+  // OFFICE they rule from, and in a structurally premier-led state the answer
+  // is the premiership: Cambodia's summary says "parliamentary constitutional
+  // elective monarchy under a hereditary dictatorship" and Togo's "parliamentary
+  // republic under an authoritarian dictatorship", but Hun Manet and Faure
+  // Gnassingbé ARE the heads of government. Without the guard this rule handed
+  // both countries to a ceremonial king and a figurehead president.
+  if (
+    form === 'semi_presidential_republic' &&
+    /dictatorship|autocra|personalist/.test(line)
+  ) {
+    return 'head_of_state'
+  }
+
   // The prose outranks `form` where it names a parliamentary system outright.
   // Pakistan is the case: its article says "Federal parliamentary Islamic
   // republic" and Shehbaz Sharif governs, but `form` keyword-matches
@@ -197,7 +223,26 @@ export const executivePowerOf = (
   // `parliamentary` and its noun are not always adjacent — Pakistan's article
   // says "Federal parliamentary Islamic republic" — so the words between them
   // are allowed for.
-  if (/parliamentary(?:\s+\w+)?\s+(?:republic|system|democracy|monarchy)/.test(line)) {
+  //
+  // It may only RESCUE a misclassified form, never overrule one that already
+  // resolved to a president-led type. `line` is P122's raw labels joined with
+  // the article's summary, and P122 returns unranked multi-values mixing the
+  // current with the historical — the same defect FORM_BY_QID exists to
+  // absorb. Tunisia carries a stale "parliamentary republic" beside "Unitary
+  // presidential republic", Kyrgyzstan the same; both handed the country to a
+  // premier who does not govern. Tunisia's 2022 constitution gives the
+  // president sole control of the executive, and Kyrgyzstan's 2021 referendum
+  // reinstated the presidency as chief executive with the premier demoted to
+  // senior adviser.
+  //
+  // `presidential_republic` is the only form excluded, because it is the only
+  // one whose definition CONTRADICTS a premier-led reading. Semi-presidential
+  // republics genuinely split (Austria and Cape Verde are premier-led, Egypt
+  // and the DRC are not) and keep the override, which is right for them.
+  if (
+    form !== 'presidential_republic' &&
+    /parliamentary(?:\s+\w+)?\s+(?:republic|system|democracy|monarchy)/.test(line)
+  ) {
     return 'head_of_government'
   }
 
@@ -226,7 +271,8 @@ export const executivePowerOf = (
       return /absolute monarchy/.test(line) ? 'head_of_state' : 'head_of_government'
     case 'semi_presidential_republic':
       // The prose is the tiebreak, and "parliamentary" in it is decisive:
-      // Austria, Cape Verde and Congo all carry it and are all premier-led.
+      // Austria and Cape Verde both carry it and are premier-led. (Congo used
+      // to be listed here too, and is not — see the autocracy rule above.)
       if (/parliamentary/.test(line)) return 'head_of_government'
       if (/presidential system|executive presiden/.test(line)) return 'head_of_state'
       // Eight say neither, and they genuinely split — Portugal's premier is

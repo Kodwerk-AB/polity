@@ -1,6 +1,6 @@
 {
  "schema_version": "1.0.0",
- "generated_at": "2026-08-14T22:25:54.547Z",
+ "generated_at": "2026-08-14T22:32:39.032Z",
  "countries": {
   "AD": {
    "iso": "AD",
@@ -14466,7 +14466,7 @@
    },
    "name": "Republic of the Congo",
    "form": "semi_presidential_republic",
-   "executive_power": "head_of_government",
+   "executive_power": "head_of_state",
    "form_raw": [
     "parliamentary republic",
     "Unitary semi-presidential republic under an authoritarian dictatorship"
@@ -50417,7 +50417,7 @@
    },
    "name": "Kyrgyzstan",
    "form": "presidential_republic",
-   "executive_power": "head_of_government",
+   "executive_power": "head_of_state",
    "form_raw": [
     "parliamentary republic",
     "Unitary presidential republic"
@@ -92494,7 +92494,7 @@
    },
    "name": "Tunisia",
    "form": "presidential_republic",
-   "executive_power": "head_of_government",
+   "executive_power": "head_of_state",
    "form_raw": [
     "parliamentary republic",
     "semi-presidential system",
