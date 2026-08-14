@@ -1,0 +1,61 @@
+# Verifies every PR and every push to main.
+#
+# The three checks are independent, so they run as separate steps with
+# `if: '!cancelled()'` rather than a chain: a type error and a failing test
+# should both be visible from one run, not hidden behind whichever fails first.
+#
+# `validate` is the one that catches what the others cannot. The schema seals
+# every object with `additionalProperties: false`, so it fails on a field the
+# generator writes that the schema never described — which is how
+# `government.authority` was found published on all 193 countries and absent
+# from the schema entirely. TypeScript cannot see that: it describes intent,
+# not the file on disk.
+name: Checks
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# A force-push mid-run should cancel the stale run, not race it.
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    name: Test, typecheck, validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: .bun-version
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Unit tests
+        run: bun run test
+
+      - name: Typecheck
+        if: '!cancelled()'
+        run: bun run typecheck
+
+      # Regenerating first means a schema left stale by a type change fails
+      # here rather than shipping. No API key needed: this reads the committed
+      # dataset, it does not rebuild it.
+      - name: Schema matches the types, and the data matches the schema
+        if: '!cancelled()'
+        run: |
+          bun run build:schema
+          git diff --exit-code schema/ || {
+            echo '::error::schema/openapi.json is stale — run `bun run build:schema` and commit'
+            exit 1
+          }
+          bun run validate

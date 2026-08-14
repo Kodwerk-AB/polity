@@ -6,10 +6,12 @@
   "license": "ODbL-1.0",
   "type": "module",
   "scripts": {
-    "typecheck": "tsc --noEmit",
-    "test": "vitest run && bun run build:schema && node scripts/validate-schema.mjs",
+    "build": "tsx scripts/build.ts",
     "build:schema": "tsx scripts/emit-openapi.ts",
-    "validate": "node scripts/validate-schema.mjs"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "validate": "node scripts/validate-schema.mjs",
+    "check": "bun run typecheck && bun run test && bun run build:schema && bun run validate"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
