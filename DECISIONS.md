@@ -388,6 +388,18 @@ Stated plainly rather than left for a consumer to discover:
   closed, leaving the vice president as its only open holder; the country item
   was correct throughout. An office that calls its own history false is no
   longer read. See "Trusting an office item" below.
+- **The Gulf constitutional monarchies** — Bahrain, Kuwait and Qatar read
+  `executive_power: head_of_government`, but the emir appoints the prime
+  minister, approves the cabinet and ratifies legislation. Their `form` is
+  `constitutional_monarchy` where they function as absolute ones, and that is
+  an upstream classification we do not override.
+
+  A V-Dem cut was tested and rejected. It sorts these three correctly (0.139,
+  0.138, 0.034) and then takes Cambodia (0.183), Morocco (0.259) and Jordan
+  (0.282) with them — all premier-led in fact — while Thailand (0.424) sits
+  below Malaysia (0.504). No threshold separates the set, so the wrong answer
+  stays visible rather than being replaced by a differently wrong one.
+
 - **Pakistan** — `form: theocracy`, described above.
 - ~~**`represents`** — all three absolute monarchies read `ceremonial`.~~
   **Fixed.** A crowned head of state was called ceremonial on the title alone
