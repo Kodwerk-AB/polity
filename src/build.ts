@@ -765,7 +765,16 @@ const buildCountry = async (
       // filling the slot with a president two years out of office.
       //
       // Both shapes mean the same thing: one person holds both offices.
-      if (leaders.head_of_government && (named.same_person || !named.head_of_government)) {
+      // An office the article LISTS but cannot name readably is not an office
+      // the country lacks. Antigua writes its prime minister as a template, and
+      // reading that as "no head of government" dropped Gaston Browne — whom
+      // Wikidata holds correctly — and left the monarch as the executive.
+      const unreadable = new Set(named.unreadable ?? [])
+      if (
+        leaders.head_of_government &&
+        !unreadable.has('head_of_government') &&
+        (named.same_person || !named.head_of_government)
+      ) {
         leaders.head_of_government = null
       }
       for (const claim of named.claimants ?? []) {

@@ -1,27 +1,442 @@
 {
  "schema_version": "1.0.0",
- "generated_at": "2026-08-14T19:58:56.011Z",
+ "generated_at": "2026-08-14T21:46:08.019Z",
  "countries": {
-  "AU": {
-   "iso": "AU",
+  "AD": {
+   "iso": "AD",
    "entity": {
-    "qid": "Q408",
-    "label": "Australia"
+    "qid": "Q228",
+    "label": "Andorra"
    },
-   "name": "Australia",
+   "name": "Andorra",
+   "form": "other",
+   "executive_power": "head_of_state",
+   "form_raw": [
+    "parliamentary coprincipality",
+    "Unitary parliamentary co-principality"
+   ],
+   "head_of_state": {
+    "person": {
+     "qid": "Q93244592",
+     "label": "Josep-Lluís Serrano Pentinat"
+    },
+    "name": "Josep-Lluís Serrano Pentinat",
+    "office": {
+     "qid": "Q19808845",
+     "label": "French co-prince of Andorra"
+    },
+    "party": null,
+    "portrait": {
+     "file": "JLSerranoP.jpg",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/JLSerranoP.jpg",
+     "host": "commons",
+     "license": "CC BY-SA 4.0",
+     "non_free": false,
+     "credit": "CEE"
+    },
+    "represents": "ceremonial",
+    "provenance": {
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q228",
+     "retrieved_at": "2026-08-14"
+    },
+    "contested_by": [
+     {
+      "name": "Emmanuel Macron",
+      "authority": "Co-prince"
+     }
+    ]
+   },
+   "head_of_government": {
+    "person": {
+     "qid": "Q21001195",
+     "label": "Xavier Espot Zamora"
+    },
+    "name": "Xavier Espot Zamora",
+    "office": {
+     "qid": "Q634322",
+     "label": "Prime Minister of Andorra"
+    },
+    "party": {
+     "qid": "Q24863",
+     "label": "Democrats for Andorra"
+    },
+    "since": "2019-05-16",
+    "portrait": {
+     "file": "Xavier Espot Zamora i Isabel Santos a l'assemblea de l'OSCE 2017 (cropped).jpg",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Xavier%20Espot%20Zamora%20i%20Isabel%20Santos%20a%20l'assemblea%20de%20l'OSCE%202017%20(cropped).jpg",
+     "host": "commons",
+     "license": "CC BY-SA 2.0",
+     "non_free": false,
+     "credit": "OSCE Parliamentary Assembly"
+    },
+    "represents": "political",
+    "provenance": {
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q228",
+     "retrieved_at": "2026-08-14"
+    }
+   },
+   "parties": {
+    "Q24863": {
+     "entity": {
+      "qid": "Q24863",
+      "label": "Democrats for Andorra"
+     },
+     "name": "Democrats for Andorra",
+     "endonym": "Demòcrates per Andorra",
+     "abbreviation": "DA",
+     "kind": "party",
+     "alignment": "centre_right",
+     "alignment_raw": "centre-right",
+     "ideologies": [
+      {
+       "qid": "Q1043096",
+       "label": "liberal conservatism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#f08013"
+     ],
+     "founded_year": 2011,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q24863",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Demòcrates per Andorra logo.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dem%C3%B2crates%20per%20Andorra%20logo.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": [
+       "trademarked"
+      ],
+      "credit": "Demòcrates per Andorra"
+     },
+     "ideology_families": [
+      "conservative"
+     ]
+    },
+    "Q20104903": {
+     "entity": {
+      "qid": "Q20104903",
+      "label": "Committed Citizens"
+     },
+     "name": "Committed Citizens",
+     "endonym": "Ciutadans Compromesos",
+     "abbreviation": "CC",
+     "kind": "party",
+     "alignment": "centre_right",
+     "alignment_raw": "centre-right",
+     "ideologies": [
+      {
+       "qid": "Q201712",
+       "label": "social liberalism"
+      },
+      {
+       "qid": "Q1149297",
+       "label": "localism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#702584"
+     ],
+     "founded_year": 2011,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q20104903",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Logo Ciutadans Compromesos.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20Ciutadans%20Compromesos.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": [
+       "trademarked"
+      ],
+      "credit": "Committed Citizens"
+     },
+     "ideology_families": [
+      "liberal",
+      "reformist"
+     ]
+    },
+    "Q116153001": {
+     "entity": {
+      "qid": "Q116153001",
+      "label": "Concòrdia"
+     },
+     "name": "Concòrdia",
+     "kind": "party",
+     "alignment": "centre_left",
+     "alignment_raw": "centre-left",
+     "ideologies": [
+      {
+       "qid": "Q821102",
+       "label": "progressivism"
+      },
+      {
+       "qid": "Q219416",
+       "label": "sustainability"
+      },
+      {
+       "qid": "Q1377153",
+       "label": "European values"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#df786f"
+     ],
+     "founded_year": 2022,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q116153001",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Logo of the Concord (political party).svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20of%20the%20Concord%20(political%20party).svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "credit": "Concòrdia"
+     },
+     "ideology_families": [
+      "liberal",
+      "green"
+     ]
+    },
+    "Q24866": {
+     "entity": {
+      "qid": "Q24866",
+      "label": "Social Democratic Party"
+     },
+     "name": "Social Democratic Party",
+     "endonym": "Partit Socialdemòcrata d'Andorra",
+     "abbreviation": "PS",
+     "kind": "party",
+     "alignment": "centre_left",
+     "alignment_raw": "centre-left",
+     "ideologies": [
+      {
+       "qid": "Q121254",
+       "label": "social democracy"
+      },
+      {
+       "qid": "Q3781399",
+       "label": "pro-Europeanism"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q220945",
+       "label": "Party of European Socialists"
+      },
+      {
+       "qid": "Q159454",
+       "label": "Socialist International"
+      }
+     ],
+     "colors": [
+      "#e30613"
+     ],
+     "founded_year": 2000,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q24866",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Logo of the Social Democratic Party (Andorra).svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20of%20the%20Social%20Democratic%20Party%20(Andorra).svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "credit": "Partit Socialdemòcrata"
+     },
+     "ideology_families": [
+      "social_democratic",
+      "internationalist"
+     ]
+    },
+    "Q116465504": {
+     "entity": {
+      "qid": "Q116465504",
+      "label": "Andorra Forward"
+     },
+     "name": "Andorra Forward",
+     "endonym": "Andorra Endavant",
+     "abbreviation": "AE",
+     "kind": "party",
+     "alignment": "right",
+     "alignment_raw": "right-wing",
+     "ideologies": [
+      {
+       "qid": "Q7169",
+       "label": "conservatism"
+      },
+      {
+       "qid": "Q223200",
+       "label": "euroscepticism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#08298a",
+      "#ffff00",
+      "#df0101"
+     ],
+     "founded_year": 2021,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q116465504",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Logo of the Andorra Forward.svg",
+      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Logo%20of%20the%20Andorra%20Forward.svg",
+      "host": "wikipedia",
+      "license": "Fair use",
+      "non_free": true
+     },
+     "ideology_families": [
+      "conservative",
+      "internationalist"
+     ]
+    }
+   },
+   "chambers": [
+    {
+     "entity": {
+      "qid": "Q24824",
+      "label": "General Council of Andorra"
+     },
+     "role": "unicameral",
+     "name": "General Council of Andorra",
+     "seats_total": 28,
+     "selection": [
+      "directly_elected"
+     ],
+     "contestation": "competitive",
+     "composition": [
+      {
+       "party": "Q24863",
+       "name": "Democrats for Andorra",
+       "seats": 13,
+       "share": 0.4643,
+       "standing": "government"
+      },
+      {
+       "party": "Q20104903",
+       "name": "Committed Citizens",
+       "seats": 3,
+       "share": 0.1071,
+       "standing": "government"
+      },
+      {
+       "party": null,
+       "name": "Independent",
+       "seats": 1,
+       "share": 0.0357,
+       "standing": "government"
+      },
+      {
+       "party": "Q116153001",
+       "name": "Concòrdia",
+       "seats": 5,
+       "share": 0.1786,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q24866",
+       "name": "Social Democratic Party",
+       "seats": 3,
+       "share": 0.1071,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q116465504",
+       "name": "Andorra Endavant",
+       "seats": 3,
+       "share": 0.1071,
+       "standing": "opposition"
+      }
+     ],
+     "last_election": "2023-04-02",
+     "next_election": "2027",
+     "mandate": {
+      "expected_end": "2027-12-31",
+      "inferred": false,
+      "state": "current"
+     },
+     "as_of": "2023-04-02",
+     "retrieved_at": "2026-08-14",
+     "confidence": "high",
+     "provenance": {
+      "kind": "wikipedia",
+      "derivation": "extracted",
+      "article": "General Council (Andorra)",
+      "revid": 1350880806,
+      "retrieved_at": "2026-08-14",
+      "model": "claude-haiku-4-5"
+     },
+     "source_hash": "sha256:0bc89d7bbdee2d231b5e155692e2e562"
+    }
+   ],
+   "government": {
+    "governing": [
+     "Q24863",
+     "Q20104903"
+    ],
+    "backing": [],
+    "seats": 17,
+    "minority": false,
+    "authority": "rival_governments",
+    "confidence": "high",
+    "provenance": {
+     "kind": "wikipedia",
+     "derivation": "derived",
+     "article": "General Council (Andorra)",
+     "retrieved_at": "2026-08-14"
+    }
+   },
+   "sources": [
+    {
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q228",
+     "retrieved_at": "2026-08-14"
+    }
+   ],
+   "updated_at": "2026-08-14"
+  },
+  "AG": {
+   "iso": "AG",
+   "entity": {
+    "qid": "Q781",
+    "label": "Antigua and Barbuda"
+   },
+   "name": "Antigua and Barbuda",
    "form": "constitutional_monarchy",
    "executive_power": "head_of_government",
    "form_raw": [
-    "representative democracy",
     "constitutional monarchy",
-    "federation",
-    "Federal parliamentary constitutional monarchy"
+    "Unitary parliamentary constitutional monarchy"
    ],
-   "democracy": {
-    "score": 0.844,
-    "year": 2025,
-    "source": "vdem"
-   },
    "head_of_state": {
     "person": {
      "qid": "Q43274",
@@ -29,8 +444,8 @@
     },
     "name": "Charles III",
     "office": {
-     "qid": "Q14931512",
-     "label": "monarch of Australia"
+     "qid": "Q26869636",
+     "label": "monarch of Antigua and Barbuda"
     },
     "party": null,
     "since": "2022-09-08",
@@ -46,504 +461,126 @@
     "provenance": {
      "kind": "wikidata",
      "derivation": "structured",
-     "qid": "Q408",
+     "qid": "Q781",
      "retrieved_at": "2026-08-14"
     }
    },
    "head_of_government": {
     "person": {
-     "qid": "Q335697",
-     "label": "Anthony Albanese"
+     "qid": "Q17177542",
+     "label": "Gaston Browne"
     },
-    "name": "Anthony Albanese",
+    "name": "Gaston Browne",
     "office": {
-     "qid": "Q319145",
-     "label": "Prime Minister of Australia"
+     "qid": "Q20682527",
+     "label": "Prime Minister of Antigua and Barbuda"
     },
     "party": {
-     "qid": "Q216082",
-     "label": "Australian Labor Party"
+     "qid": "Q1277738",
+     "label": "Antigua and Barbuda Labour Party"
     },
-    "since": "2022-05-23",
+    "since": "2014-06-13",
     "portrait": {
-     "file": "Anthony Albanese portrait (re-crop).jpg",
-     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20Albanese%20portrait%20(re-crop).jpg",
+     "file": "Gaston Browne Coronation 2023.jpg",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gaston%20Browne%20Coronation%202023.jpg",
      "host": "commons",
-     "license": "CC BY 4.0",
+     "license": "CC BY 2.0",
      "non_free": false,
-     "credit": "Australian Government"
+     "credit": "Ian Jones"
     },
     "represents": "political",
     "provenance": {
      "kind": "wikidata",
      "derivation": "structured",
-     "qid": "Q408",
+     "qid": "Q781",
      "retrieved_at": "2026-08-14"
     }
    },
    "parties": {
-    "Q216082": {
+    "Q1277738": {
      "entity": {
-      "qid": "Q216082",
-      "label": "Australian Labor Party"
+      "qid": "Q1277738",
+      "label": "Antigua and Barbuda Labour Party"
      },
-     "name": "Australian Labor Party",
-     "endonym": "AUSTRALIAN LABOR PARTY",
-     "abbreviation": "ALP",
+     "name": "Antigua and Barbuda Labour Party",
      "kind": "party",
-     "alignment": "centre_left",
-     "alignment_raw": "centre-left",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q1277738",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Antigua and Barbuda Labour Party logo.png",
+      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Antigua%20and%20Barbuda%20Labour%20Party%20logo.png",
+      "host": "wikipedia",
+      "license": "Fair use",
+      "non_free": true
+     }
+    },
+    "Q1285399": {
+     "entity": {
+      "qid": "Q1285399",
+      "label": "United Progressive Party"
+     },
+     "name": "United Progressive Party",
+     "kind": "party",
      "ideologies": [
       {
        "qid": "Q121254",
        "label": "social democracy"
       }
      ],
-     "groupings": [
-      {
-       "qid": "Q7248622",
-       "label": "Progressive Alliance"
-      }
-     ],
-     "colors": [
-      "#f00011"
-     ],
-     "founded_year": 1901,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q216082",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Australian Labor Party Logo 2015.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Australian%20Labor%20Party%20Logo%202015.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "restrictions": [
-       "trademarked"
-      ],
-      "credit": "Rileyb"
-     },
-     "ideology_families": [
-      "social_democratic"
-     ]
-    },
-    "Q241149": {
-     "entity": {
-      "qid": "Q241149",
-      "label": "Liberal Party of Australia"
-     },
-     "name": "Liberal Party of Australia",
-     "endonym": "THE LIBERAL PARTY OF AUSTRALIA - FEDERAL SECRETARIAT",
-     "kind": "party",
-     "alignment": "centre_right",
-     "alignment_raw": "centre-right",
-     "ideologies": [
-      {
-       "qid": "Q7169",
-       "label": "conservatism"
-      },
-      {
-       "qid": "Q6216",
-       "label": "liberalism"
-      },
-      {
-       "qid": "Q1043096",
-       "label": "liberal conservatism"
-      }
-     ],
-     "groupings": [
-      {
-       "qid": "Q862603",
-       "label": "International Democracy Union"
-      }
-     ],
-     "colors": [
-      "#080cab"
-     ],
-     "founded_year": 1945,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q241149",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Liberal Party of Australia Logo 2015.png",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Liberal%20Party%20of%20Australia%20Logo%202015.png",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "credit": "Liberal Party of Australia"
-     },
-     "ideology_families": [
-      "liberal",
-      "conservative"
-     ]
-    },
-    "Q946040": {
-     "entity": {
-      "qid": "Q946040",
-      "label": "National Party of Australia"
-     },
-     "name": "National Party of Australia",
-     "kind": "party",
-     "alignment": "centre_right",
-     "alignment_raw": "centre-right",
-     "ideologies": [
-      {
-       "qid": "Q492050",
-       "label": "agrarianism"
-      },
-      {
-       "qid": "Q7169",
-       "label": "conservatism"
-      }
-     ],
      "groupings": [],
      "colors": [
-      "#006644"
-     ],
-     "founded_year": 1920,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q946040",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "The National Party of Australia Logo.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20National%20Party%20of%20Australia%20Logo.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "credit": "National Party of Australia"
-     },
-     "ideology_families": [
-      "conservative",
-      "agrarian"
-     ]
-    },
-    "Q1585274": {
-     "entity": {
-      "qid": "Q1585274",
-      "label": "Pauline Hanson's One Nation"
-     },
-     "name": "Pauline Hanson's One Nation",
-     "endonym": "One Nation",
-     "kind": "party",
-     "alignment": "right",
-     "alignment_raw": "right-wing",
-     "ideologies": [
-      {
-       "qid": "Q23073467",
-       "label": "Australian nationalism"
-      },
-      {
-       "qid": "Q104841377",
-       "label": "Hansonism"
-      },
-      {
-       "qid": "Q436860",
-       "label": "right-wing populism"
-      }
-     ],
-     "groupings": [],
-     "colors": [
-      "#ff4900"
-     ],
-     "founded_year": 1997,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q1585274",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "One Nation logo.png",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/One%20Nation%20logo.png",
-      "host": "commons",
-      "license": "CC BY-SA 4.0",
-      "non_free": false,
-      "credit": "LeoC12"
-     },
-     "ideology_families": [
-      "nationalist",
-      "populist"
-     ]
-    },
-    "Q140468977": {
-     "entity": {
-      "qid": "Q140468977",
-      "label": "Community Strong Australia"
-     },
-     "name": "Community Strong Australia",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q140468977",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Community Strong Australia logo.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Community%20Strong%20Australia%20logo.png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     }
-    },
-    "Q781486": {
-     "entity": {
-      "qid": "Q781486",
-      "label": "Australian Greens"
-     },
-     "name": "Australian Greens",
-     "kind": "party",
-     "alignment": "left",
-     "alignment_raw": "left-wing",
-     "ideologies": [
-      {
-       "qid": "Q1661415",
-       "label": "green politics"
-      },
-      {
-       "qid": "Q821102",
-       "label": "progressivism"
-      },
-      {
-       "qid": "Q11900614",
-       "label": "left-wing populism"
-      }
-     ],
-     "groupings": [
-      {
-       "qid": "Q384069",
-       "label": "Global Greens"
-      }
-     ],
-     "colors": [
-      "#10c25b"
+      "#0072c6"
      ],
      "founded_year": 1992,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q781486",
+      "qid": "Q1285399",
       "retrieved_at": "2026-08-14"
      },
      "logo": {
-      "file": "AustralianGreensLogo official.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/AustralianGreensLogo%20official.svg",
+      "file": "United Progressive Party logo.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/United%20Progressive%20Party%20logo.svg",
       "host": "commons",
       "license": "Public domain",
       "non_free": false,
       "restrictions": [
        "trademarked"
       ],
-      "credit": "Australian Greens"
+      "credit": "United Progressive Party"
      },
      "ideology_families": [
-      "liberal",
-      "green",
-      "populist"
+      "social_democratic"
      ]
     },
-    "Q6378340": {
+    "Q3038017": {
      "entity": {
-      "qid": "Q6378340",
-      "label": "Katter's Australian Party"
+      "qid": "Q3038017",
+      "label": "Barbuda People's Movement"
      },
-     "name": "Katter's Australian Party",
+     "name": "Barbuda People's Movement",
      "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q1414298",
-       "label": "social conservatism"
-      },
-      {
-       "qid": "Q555887",
-       "label": "economic nationalism"
-      },
-      {
-       "qid": "Q2684060",
-       "label": "regionalism"
-      },
-      {
-       "qid": "Q492050",
-       "label": "agrarianism"
-      },
-      {
-       "qid": "Q23073467",
-       "label": "Australian nationalism"
-      }
-     ],
-     "groupings": [],
-     "colors": [
-      "#b50204"
-     ],
-     "founded_year": 2011,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q6378340",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "KAP2016logo.png",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/KAP2016logo.png",
-      "host": "commons",
-      "license": "CC BY-SA 4.0",
-      "non_free": false,
-      "credit": "Katter's Australian Party"
-     },
-     "ideology_families": [
-      "conservative",
-      "nationalist",
-      "agrarian"
-     ]
-    },
-    "Q19876280": {
-     "entity": {
-      "qid": "Q19876280",
-      "label": "Centre Alliance"
-     },
-     "name": "Centre Alliance",
-     "kind": "party",
-     "alignment": "centre",
-     "alignment_raw": "centrism",
      "ideologies": [],
      "groupings": [],
      "colors": [
-      "#ff6300"
+      "#fcd116"
      ],
-     "founded_year": 2013,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q19876280",
+      "qid": "Q3038017",
       "retrieved_at": "2026-08-14"
      },
      "logo": {
-      "file": "Centre Alliance logo.png",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Centre%20Alliance%20logo.png",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "restrictions": [
-       "trademarked"
-      ],
-      "credit": "Centre Alliance"
-     }
-    },
-    "Q22079682": {
-     "entity": {
-      "qid": "Q22079682",
-      "label": "Jacqui Lambie Network"
-     },
-     "name": "Jacqui Lambie Network",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q180490",
-       "label": "populism"
-      },
-      {
-       "qid": "Q6235",
-       "label": "nationalism"
-      },
-      {
-       "qid": "Q2684060",
-       "label": "regionalism"
-      }
-     ],
-     "groupings": [],
-     "colors": [
-      "#ffff00"
-     ],
-     "founded_year": 2015,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q22079682",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Jacqui Lambie Network federal logo.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Jacqui%20Lambie%20Network%20federal%20logo.png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     },
-     "ideology_families": [
-      "nationalist",
-      "populist"
-     ]
-    },
-    "Q15130081": {
-     "entity": {
-      "qid": "Q15130081",
-      "label": "United Australia Party"
-     },
-     "name": "United Australia Party",
-     "kind": "party",
-     "alignment": "right",
-     "alignment_raw": "right-wing",
-     "ideologies": [
-      {
-       "qid": "Q23073467",
-       "label": "Australian nationalism"
-      },
-      {
-       "qid": "Q180490",
-       "label": "populism"
-      }
-     ],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 2013,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q15130081",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Logo of the United Australia Party.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Logo%20of%20the%20United%20Australia%20Party.png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     },
-     "ideology_families": [
-      "nationalist",
-      "populist"
-     ]
-    },
-    "Q130619056": {
-     "entity": {
-      "qid": "Q130619056",
-      "label": "Australia's Voice"
-     },
-     "name": "Australia's Voice",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q130619056",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Australia'sVoice.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Australia'sVoice.png",
+      "file": "Barbuda People's Movement Logo.jpg",
+      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Barbuda%20People's%20Movement%20Logo.jpg",
       "host": "wikipedia",
       "license": "Fair use",
       "non_free": true
@@ -553,214 +590,128 @@
    "chambers": [
     {
      "entity": {
-      "qid": "Q783401",
-      "label": "Australian House of Representatives"
+      "qid": "Q1266832",
+      "label": "House of Representatives of Antigua and Barbuda"
      },
      "role": "lower",
-     "name": "Australian House of Representatives",
+     "name": "House of Representatives of Antigua and Barbuda",
      "name_local": "House of Representatives",
-     "seats_total": 150,
+     "seats_total": 17,
      "selection": [
       "directly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "restricted",
      "composition": [
       {
-       "party": "Q216082",
-       "name": "Australian Labor Party",
-       "seats": 94,
-       "share": 0.6267,
+       "party": "Q1277738",
+       "name": "Labour",
+       "seats": 15,
+       "share": 0.8824,
        "standing": "government"
       },
       {
-       "party": "Q241149",
-       "name": "Liberal Party of Australia",
-       "seats": 27,
-       "share": 0.18,
+       "party": "Q1285399",
+       "name": "UPP",
+       "seats": 1,
+       "share": 0.0588,
        "standing": "opposition"
       },
       {
-       "party": "Q946040",
-       "name": "National Party of Australia",
-       "seats": 14,
-       "share": 0.0933,
+       "party": "Q3038017",
+       "name": "BPM",
+       "seats": 1,
+       "share": 0.0588,
        "standing": "opposition"
-      },
-      {
-       "party": "Q1585274",
-       "name": "One Nation",
-       "seats": 2,
-       "share": 0.0133,
-       "standing": "non_attached"
-      },
-      {
-       "party": "Q140468977",
-       "name": "Community Strong",
-       "seats": 2,
-       "share": 0.0133,
-       "standing": "non_attached"
-      },
-      {
-       "party": "Q781486",
-       "name": "Australian Greens",
-       "seats": 1,
-       "share": 0.0067,
-       "standing": "non_attached"
-      },
-      {
-       "party": "Q6378340",
-       "name": "Katter's Australian Party",
-       "seats": 1,
-       "share": 0.0067,
-       "standing": "non_attached"
-      },
-      {
-       "party": "Q19876280",
-       "name": "Centre Alliance",
-       "seats": 1,
-       "share": 0.0067,
-       "standing": "non_attached"
-      },
-      {
-       "party": null,
-       "name": "Independent",
-       "seats": 8,
-       "share": 0.0533,
-       "standing": "non_attached"
       }
      ],
-     "last_election": "2025-05-03",
-     "next_election": "2028",
+     "last_election": "2026-04-30",
      "mandate": {
-      "expected_end": "2028-12-31",
-      "inferred": false,
+      "expected_end": "2031-04-30",
+      "inferred": true,
       "state": "current"
      },
-     "as_of": "2025-05-03",
+     "as_of": "2026-04-30",
      "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
-      "article": "Australian House of Representatives",
-      "revid": 1357338035,
+      "article": "House of Representatives (Antigua and Barbuda)",
+      "revid": 1359304188,
       "retrieved_at": "2026-08-14",
       "model": "claude-haiku-4-5"
      },
-     "source_hash": "sha256:7c4353bab0aa2631567097716e307500"
+     "source_hash": "sha256:be146a6134aee81c38a8e3f354aaf8ea"
     },
     {
      "entity": {
-      "qid": "Q783330",
-      "label": "Australian Senate"
+      "qid": "Q1254104",
+      "label": "Senate of Antigua and Barbuda"
      },
      "role": "upper",
-     "name": "Australian Senate",
-     "name_local": "Senate",
-     "seats_total": 76,
+     "name": "Senate of Antigua and Barbuda",
+     "seats_total": 17,
      "selection": [
-      "directly_elected"
+      "appointed"
      ],
-     "contestation": "competitive",
+     "contestation": "appointed",
      "composition": [
       {
-       "party": "Q216082",
-       "name": "Australian Labor Party",
-       "seats": 30,
-       "share": 0.3947,
+       "party": "Q1277738",
+       "name": "Labour",
+       "seats": 11,
+       "share": 0.6471,
        "standing": "government"
       },
       {
-       "party": "Q241149",
-       "name": "Liberal Party of Australia",
-       "seats": 23,
-       "share": 0.3026,
+       "party": "Q1285399",
+       "name": "UPP",
+       "seats": 4,
+       "share": 0.2353,
        "standing": "opposition"
       },
       {
-       "party": "Q946040",
-       "name": "National Party of Australia",
-       "seats": 4,
-       "share": 0.0526,
+       "party": "Q3038017",
+       "name": "BPM",
+       "seats": 1,
+       "share": 0.0588,
        "standing": "opposition"
-      },
-      {
-       "party": "Q781486",
-       "name": "Australian Greens",
-       "seats": 10,
-       "share": 0.1316,
-       "standing": "non_attached"
-      },
-      {
-       "party": "Q1585274",
-       "name": "One Nation",
-       "seats": 4,
-       "share": 0.0526,
-       "standing": "non_attached"
-      },
-      {
-       "party": "Q22079682",
-       "name": "Jacqui Lambie Network",
-       "seats": 1,
-       "share": 0.0132,
-       "standing": "non_attached"
-      },
-      {
-       "party": "Q15130081",
-       "name": "United Australia Party",
-       "seats": 1,
-       "share": 0.0132,
-       "standing": "non_attached"
-      },
-      {
-       "party": "Q130619056",
-       "name": "Australia's Voice",
-       "seats": 1,
-       "share": 0.0132,
-       "standing": "non_attached"
       },
       {
        "party": null,
        "name": "Independent",
-       "seats": 2,
-       "share": 0.0263,
+       "seats": 1,
+       "share": 0.0588,
        "standing": "non_attached"
       }
      ],
-     "last_election": "2025-05-03",
-     "next_election": "2028",
-     "mandate": {
-      "expected_end": "2028-12-31",
-      "inferred": false,
-      "state": "current"
-     },
-     "as_of": "2025-05-03",
+     "as_of": "2026-08-14",
      "retrieved_at": "2026-08-14",
-     "confidence": "high",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
-      "article": "Australian Senate",
-      "revid": 1365747597,
+      "article": "Senate (Antigua and Barbuda)",
+      "revid": 1364379693,
       "retrieved_at": "2026-08-14",
       "model": "claude-haiku-4-5"
      },
-     "source_hash": "sha256:4c649854252edc07418b95df6137ec97"
+     "source_hash": "sha256:04a92083038c5ddaa5bed8b91f33dc90"
     }
    ],
    "government": {
     "governing": [
-     "Q216082"
+     "Q1277738"
     ],
     "backing": [],
-    "seats": 94,
+    "seats": 15,
     "minority": false,
     "authority": "established",
     "confidence": "high",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
-     "article": "Australian House of Representatives",
+     "article": "House of Representatives (Antigua and Barbuda)",
      "retrieved_at": "2026-08-14"
     }
    },
@@ -768,7 +719,276 @@
     {
      "kind": "wikidata",
      "derivation": "structured",
-     "qid": "Q408",
+     "qid": "Q781",
+     "retrieved_at": "2026-08-14"
+    }
+   ],
+   "updated_at": "2026-08-14"
+  },
+  "BS": {
+   "iso": "BS",
+   "entity": {
+    "qid": "Q778",
+    "label": "The Bahamas"
+   },
+   "name": "The Bahamas",
+   "form": "constitutional_monarchy",
+   "executive_power": "head_of_government",
+   "form_raw": [
+    "constitutional monarchy",
+    "Unitary parliamentary constitutional monarchy"
+   ],
+   "head_of_state": {
+    "person": {
+     "qid": "Q43274",
+     "label": "Charles III"
+    },
+    "name": "Charles III",
+    "office": {
+     "qid": "Q26869642",
+     "label": "monarch of the Bahamas"
+    },
+    "party": null,
+    "since": "2022-09-08",
+    "portrait": {
+     "file": "King Charles III 2025-09-17 (cropped).jpg",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/King%20Charles%20III%202025-09-17%20(cropped).jpg",
+     "host": "commons",
+     "license": "Public domain",
+     "non_free": false,
+     "credit": "The White House"
+    },
+    "represents": "ceremonial",
+    "provenance": {
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q778",
+     "retrieved_at": "2026-08-14"
+    }
+   },
+   "head_of_government": {
+    "person": {
+     "qid": "Q7183082",
+     "label": "Philip \"Brave\" Davis"
+    },
+    "name": "Philip \"Brave\" Davis",
+    "office": {
+     "qid": "Q565424",
+     "label": "Prime Minister of the Bahamas"
+    },
+    "party": {
+     "qid": "Q2566823",
+     "label": "Progressive Liberal Party"
+    },
+    "since": "2021-09-17",
+    "portrait": {
+     "file": "Prime Minister Philip Davis in 2022.jpg",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Prime%20Minister%20Philip%20Davis%20in%202022.jpg",
+     "host": "commons",
+     "license": "CC BY 2.0",
+     "non_free": false,
+     "credit": "Palácio do Planalto from Brasilia, Brasil"
+    },
+    "represents": "political",
+    "provenance": {
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q778",
+     "retrieved_at": "2026-08-14"
+    }
+   },
+   "parties": {
+    "Q2566823": {
+     "entity": {
+      "qid": "Q2566823",
+      "label": "Progressive Liberal Party"
+     },
+     "name": "Progressive Liberal Party",
+     "kind": "party",
+     "ideologies": [
+      {
+       "qid": "Q180490",
+       "label": "populism"
+      },
+      {
+       "qid": "Q201712",
+       "label": "social liberalism"
+      },
+      {
+       "qid": "Q821102",
+       "label": "progressivism"
+      },
+      {
+       "qid": "Q6235",
+       "label": "nationalism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#ffd700"
+     ],
+     "founded_year": 1953,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q2566823",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Progressive Liberal Party logo.png",
+      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Progressive%20Liberal%20Party%20logo.png",
+      "host": "wikipedia",
+      "license": "Fair use",
+      "non_free": true
+     },
+     "ideology_families": [
+      "liberal",
+      "nationalist",
+      "populist"
+     ]
+    },
+    "Q2566343": {
+     "entity": {
+      "qid": "Q2566343",
+      "label": "Free National Movement"
+     },
+     "name": "Free National Movement",
+     "kind": "party",
+     "alignment": "centre",
+     "alignment_raw": "centrism",
+     "ideologies": [
+      {
+       "qid": "Q617609",
+       "label": "conservative liberalism"
+      },
+      {
+       "qid": "Q180490",
+       "label": "populism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#d2232a"
+     ],
+     "founded_year": 1971,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q2566343",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "FNM Logo.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/FNM%20Logo.jpg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": [
+       "trademarked"
+      ],
+      "credit": "The Free National Movement"
+     },
+     "ideology_families": [
+      "liberal",
+      "populist"
+     ]
+    }
+   },
+   "chambers": [
+    {
+     "entity": {
+      "qid": "Q2948139",
+      "label": "House of Assembly"
+     },
+     "role": "lower",
+     "name": "House of Assembly",
+     "seats_total": 39,
+     "selection": [
+      "directly_elected"
+     ],
+     "contestation": "competitive",
+     "composition": [],
+     "as_of": "2026-08-14",
+     "retrieved_at": "2026-08-14",
+     "superseded_by_election": {
+      "article": "2026 Bahamian general election",
+      "year": 2026
+     },
+     "confidence": "flagged",
+     "provenance": {
+      "kind": "wikipedia",
+      "derivation": "structured",
+      "retrieved_at": "2026-08-14"
+     },
+     "source_hash": ""
+    },
+    {
+     "entity": {
+      "qid": "Q3510833",
+      "label": "Senate of the Bahamas"
+     },
+     "role": "upper",
+     "name": "Senate of the Bahamas",
+     "seats_total": 16,
+     "selection": [
+      "indirectly_elected"
+     ],
+     "contestation": "competitive",
+     "composition": [
+      {
+       "party": "Q2566823",
+       "name": "Progressive Liberal Party",
+       "seats": 10,
+       "share": 0.625,
+       "standing": "government"
+      },
+      {
+       "party": "Q2566343",
+       "name": "Free National Movement",
+       "seats": 6,
+       "share": 0.375,
+       "standing": "opposition"
+      }
+     ],
+     "last_election": "2026-05-12",
+     "next_election": "2031",
+     "mandate": {
+      "expected_end": "2031-12-31",
+      "inferred": false,
+      "state": "current"
+     },
+     "as_of": "2026-05-12",
+     "retrieved_at": "2026-08-14",
+     "confidence": "high",
+     "provenance": {
+      "kind": "wikipedia",
+      "derivation": "extracted",
+      "article": "Parliament of the Bahamas",
+      "revid": 1365810448,
+      "retrieved_at": "2026-08-14",
+      "model": "claude-haiku-4-5"
+     },
+     "source_hash": "sha256:c63df15edb593f6a692335cb6a3feae1"
+    }
+   ],
+   "government": {
+    "governing": [],
+    "backing": [],
+    "seats": 0,
+    "minority": true,
+    "authority": "established",
+    "confidence": "flagged",
+    "provenance": {
+     "kind": "wikipedia",
+     "derivation": "derived",
+     "retrieved_at": "2026-08-14"
+    }
+   },
+   "sources": [
+    {
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q778",
      "retrieved_at": "2026-08-14"
     }
    ],
@@ -1008,7 +1228,8 @@
      "ideology_families": [
       "social_democratic",
       "green",
-      "nationalist"
+      "nationalist",
+      "reformist"
      ]
     },
     "Q130765": {
@@ -1122,13 +1343,32 @@
       "green"
      ]
     },
+    "Q2506575": {
+     "entity": {
+      "qid": "Q2506575",
+      "label": "Representative of the Government in the Senate"
+     },
+     "name": "Representative of the Government in the Senate",
+     "endonym": "représentant du gouvernement au Sénat",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "founded_year": 1867,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q2506575",
+      "retrieved_at": "2026-08-14"
+     }
+    },
     "Q28946329": {
      "entity": {
       "qid": "Q28946329",
       "label": "Independent Senators Group"
      },
      "name": "Independent Senators Group",
-     "kind": "parliamentary_group",
+     "kind": "party",
      "ideologies": [],
      "groupings": [],
      "colors": [],
@@ -1157,7 +1397,7 @@
       "label": "Progressive Senate Group"
      },
      "name": "Progressive Senate Group",
-     "kind": "parliamentary_group",
+     "kind": "party",
      "ideologies": [
       {
        "qid": "Q821102",
@@ -1191,7 +1431,7 @@
       "label": "Canadian Senators Group"
      },
      "name": "Canadian Senators Group",
-     "kind": "parliamentary_group",
+     "kind": "party",
      "ideologies": [],
      "groupings": [],
      "colors": [],
@@ -1209,6 +1449,26 @@
       "license": "Public domain",
       "non_free": false,
       "credit": "Canadian Senators Group"
+     }
+    },
+    "Q327591": {
+     "entity": {
+      "qid": "Q327591",
+      "label": "independent politician"
+     },
+     "name": "independent politician",
+     "abbreviation": "Independent",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [
+      "#dddddd"
+     ],
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q327591",
+      "retrieved_at": "2026-08-14"
      }
     }
    },
@@ -1311,7 +1571,7 @@
      "contestation": "appointed",
      "composition": [
       {
-       "party": null,
+       "party": "Q2506575",
        "name": "Government Representative's Office",
        "seats": 5,
        "share": 0.0476,
@@ -1346,7 +1606,7 @@
        "standing": "non_attached"
       },
       {
-       "party": null,
+       "party": "Q327591",
        "name": "Non-affiliated",
        "seats": 6,
        "share": 0.0571,
@@ -1400,141 +1660,228 @@
    ],
    "updated_at": "2026-08-14"
   },
-  "JM": {
-   "iso": "JM",
+  "GH": {
+   "iso": "GH",
    "entity": {
-    "qid": "Q766",
-    "label": "Jamaica"
+    "qid": "Q117",
+    "label": "Ghana"
    },
-   "name": "Jamaica",
-   "form": "constitutional_monarchy",
-   "executive_power": "head_of_government",
+   "name": "Ghana",
+   "form": "presidential_republic",
+   "executive_power": "head_of_state",
    "form_raw": [
-    "Unitary parliamentary constitutional monarchy"
+    "democracy",
+    "Unitary presidential republic"
    ],
    "democracy": {
-    "score": 0.805,
+    "score": 0.711,
     "year": 2025,
     "source": "vdem"
    },
    "head_of_state": {
     "person": {
-     "qid": "Q43274",
-     "label": "Charles III"
+     "qid": "Q50678",
+     "label": "John Mahama"
     },
-    "name": "Charles III",
+    "name": "John Mahama",
     "office": {
-     "qid": "Q26869648",
-     "label": "monarch of Jamaica"
+     "qid": "Q2672728",
+     "label": "President of Ghana"
     },
-    "party": null,
-    "since": "2022-09-08",
-    "portrait": {
-     "file": "King Charles III 2025-09-17 (cropped).jpg",
-     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/King%20Charles%20III%202025-09-17%20(cropped).jpg",
-     "host": "commons",
-     "license": "Public domain",
-     "non_free": false,
-     "credit": "The White House"
-    },
-    "represents": "ceremonial",
-    "provenance": {
-     "kind": "wikidata",
-     "derivation": "structured",
-     "qid": "Q766",
-     "retrieved_at": "2026-08-14"
-    }
-   },
-   "head_of_government": {
-    "person": {
-     "qid": "Q505200",
-     "label": "Andrew Holness"
-    },
-    "name": "Andrew Holness",
-    "office": {
-     "qid": "Q1430943",
-     "label": "Prime Minister of Jamaica"
-    },
+    "office_local": "The President of the Republic of Ghana",
     "party": {
-     "qid": "Q1539301",
-     "label": "Jamaica Labour Party"
+     "qid": "Q200875",
+     "label": "National Democratic Congress"
     },
-    "since": "2016-03-03",
+    "since": "2025-01-07",
     "portrait": {
-     "file": "Andrew Holness Press (cropped).jpg",
-     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Andrew%20Holness%20Press%20(cropped).jpg",
+     "file": "John Mahama in Yokohama (cropped).jpg",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/John%20Mahama%20in%20Yokohama%20(cropped).jpg",
      "host": "commons",
-     "license": "Public domain",
+     "license": "CC BY 4.0",
      "non_free": false,
-     "credit": "U.S. Department of State from United States"
+     "credit": "Cabinet Public Relations Office of the Cabinet Secretariat"
     },
     "represents": "political",
     "provenance": {
      "kind": "wikidata",
      "derivation": "structured",
-     "qid": "Q766",
+     "qid": "Q117",
      "retrieved_at": "2026-08-14"
     }
    },
-   "parties": {},
+   "head_of_government": null,
+   "parties": {
+    "Q200875": {
+     "entity": {
+      "qid": "Q200875",
+      "label": "National Democratic Congress"
+     },
+     "name": "National Democratic Congress",
+     "abbreviation": "NDC",
+     "kind": "party",
+     "alignment": "centre_left",
+     "alignment_raw": "centre-left",
+     "ideologies": [
+      {
+       "qid": "Q121254",
+       "label": "social democracy"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q7248622",
+       "label": "Progressive Alliance"
+      },
+      {
+       "qid": "Q159454",
+       "label": "Socialist International"
+      }
+     ],
+     "colors": [
+      "#2e8b57"
+     ],
+     "founded_year": 1992,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q200875",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Logo of the National Democratic Congress (Ghana).svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20of%20the%20National%20Democratic%20Congress%20(Ghana).svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": [
+       "trademarked"
+      ],
+      "credit": "ThecentreCZ"
+     },
+     "ideology_families": [
+      "social_democratic"
+     ]
+    },
+    "Q1148441": {
+     "entity": {
+      "qid": "Q1148441",
+      "label": "New Patriotic Party"
+     },
+     "name": "New Patriotic Party",
+     "endonym": "New Patriotic Party, NPP",
+     "abbreviation": "NPP",
+     "kind": "party",
+     "alignment": "centre_right",
+     "alignment_raw": "centre-right",
+     "ideologies": [
+      {
+       "qid": "Q1043096",
+       "label": "liberal conservatism"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q862603",
+       "label": "International Democracy Union"
+      }
+     ],
+     "colors": [
+      "#0070ff"
+     ],
+     "founded_year": 1992,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q1148441",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "NewPatrioticParty logo.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/NewPatrioticParty%20logo.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": [
+       "trademarked"
+      ],
+      "credit": "JCRules (derivative)"
+     },
+     "ideology_families": [
+      "conservative"
+     ]
+    }
+   },
    "chambers": [
     {
      "entity": {
-      "qid": "Q20080342",
-      "label": "House of Representatives of Jamaica"
+      "qid": "Q1807513",
+      "label": "Parliament of Ghana"
      },
-     "role": "lower",
-     "name": "House of Representatives of Jamaica",
-     "seats_total": 63,
+     "role": "unicameral",
+     "name": "Parliament of Ghana",
+     "seats_total": 276,
      "selection": [
       "directly_elected"
      ],
      "contestation": "competitive",
-     "composition": [],
-     "as_of": "2026-08-14",
-     "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
-     "provenance": {
-      "kind": "wikipedia",
-      "derivation": "structured",
-      "retrieved_at": "2026-08-14"
-     },
-     "source_hash": ""
-    },
-    {
-     "entity": {
-      "qid": "Q27897650",
-      "label": "Senate of Jamaica"
-     },
-     "role": "upper",
-     "name": "Senate of Jamaica",
-     "seats_total": 21,
-     "selection": [
-      "indirectly_elected"
+     "composition": [
+      {
+       "party": "Q200875",
+       "name": "National Democratic Congress (Ghana)",
+       "seats": 185,
+       "share": 0.6703,
+       "standing": "government"
+      },
+      {
+       "party": "Q1148441",
+       "name": "New Patriotic Party",
+       "seats": 87,
+       "share": 0.3152,
+       "standing": "opposition"
+      },
+      {
+       "party": null,
+       "name": "Independent",
+       "seats": 4,
+       "share": 0.0145,
+       "standing": "opposition"
+      }
      ],
-     "contestation": "appointed",
-     "composition": [],
-     "as_of": "2026-08-14",
+     "last_election": "2024-12-07",
+     "next_election": "2028-12-07",
+     "mandate": {
+      "expected_end": "2028-12-07",
+      "inferred": false,
+      "state": "current"
+     },
+     "as_of": "2024-12-07",
      "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
+     "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
-      "derivation": "structured",
-      "retrieved_at": "2026-08-14"
+      "derivation": "extracted",
+      "article": "Parliament of Ghana",
+      "revid": 1364883513,
+      "retrieved_at": "2026-08-14",
+      "model": "claude-haiku-4-5"
      },
-     "source_hash": ""
+     "source_hash": "sha256:a28862ee391c3ac4c060247973c05b11"
     }
    ],
    "government": {
-    "governing": [],
+    "governing": [
+     "Q200875"
+    ],
     "backing": [],
-    "seats": 0,
-    "minority": true,
+    "seats": 185,
+    "minority": false,
     "authority": "established",
-    "confidence": "flagged",
+    "confidence": "high",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
+     "article": "Parliament of Ghana",
      "retrieved_at": "2026-08-14"
     }
    },
@@ -1542,7 +1889,7 @@
     {
      "kind": "wikidata",
      "derivation": "structured",
-     "qid": "Q766",
+     "qid": "Q117",
      "retrieved_at": "2026-08-14"
     }
    ],

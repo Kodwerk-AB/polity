@@ -1,6 +1,6 @@
 {
  "schema_version": "1.0.0",
- "generated_at": "2026-08-14T20:21:21.730Z",
+ "generated_at": "2026-08-14T22:07:27.356Z",
  "countries": {
   "AD": {
    "iso": "AD",
@@ -40,7 +40,13 @@
      "derivation": "structured",
      "qid": "Q228",
      "retrieved_at": "2026-08-14"
-    }
+    },
+    "contested_by": [
+     {
+      "name": "Emmanuel Macron",
+      "authority": "Co-prince"
+     }
+    ]
    },
    "head_of_government": {
     "person": {
@@ -209,8 +215,7 @@
      },
      "ideology_families": [
       "liberal",
-      "green",
-      "internationalist"
+      "green"
      ]
     },
     "Q24866": {
@@ -365,7 +370,7 @@
       },
       {
        "party": "Q116465504",
-       "name": "Andorra Forward",
+       "name": "Andorra Endavant",
        "seats": 3,
        "share": 0.1071,
        "standing": "opposition"
@@ -400,7 +405,7 @@
     "backing": [],
     "seats": 17,
     "minority": false,
-    "authority": "established",
+    "authority": "rival_governments",
     "confidence": "high",
     "provenance": {
      "kind": "wikipedia",
@@ -700,7 +705,7 @@
    },
    "name": "Antigua and Barbuda",
    "form": "constitutional_monarchy",
-   "executive_power": "head_of_state",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "Unitary parliamentary constitutional monarchy"
@@ -733,7 +738,37 @@
      "retrieved_at": "2026-08-14"
     }
    },
-   "head_of_government": null,
+   "head_of_government": {
+    "person": {
+     "qid": "Q17177542",
+     "label": "Gaston Browne"
+    },
+    "name": "Gaston Browne",
+    "office": {
+     "qid": "Q20682527",
+     "label": "Prime Minister of Antigua and Barbuda"
+    },
+    "party": {
+     "qid": "Q1277738",
+     "label": "Antigua and Barbuda Labour Party"
+    },
+    "since": "2014-06-13",
+    "portrait": {
+     "file": "Gaston Browne Coronation 2023.jpg",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gaston%20Browne%20Coronation%202023.jpg",
+     "host": "commons",
+     "license": "CC BY 2.0",
+     "non_free": false,
+     "credit": "Ian Jones"
+    },
+    "represents": "political",
+    "provenance": {
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q781",
+     "retrieved_at": "2026-08-14"
+    }
+   },
    "parties": {
     "Q1277738": {
      "entity": {
@@ -1144,62 +1179,29 @@
       "social_democratic"
      ]
     },
-    "Q845743": {
+    "Q133578286": {
      "entity": {
-      "qid": "Q845743",
-      "label": "Democratic Party of Albania"
+      "qid": "Q133578286",
+      "label": "Alliance for a Great Albania"
      },
-     "name": "Democratic Party of Albania",
-     "endonym": "Partia Demokratike e Shqipërisë",
+     "name": "Alliance for a Great Albania",
      "kind": "party",
-     "alignment": "centre_right",
-     "alignment_raw": "centre-right",
-     "ideologies": [
-      {
-       "qid": "Q7169",
-       "label": "conservatism"
-      },
-      {
-       "qid": "Q3781399",
-       "label": "pro-Europeanism"
-      }
-     ],
-     "groupings": [
-      {
-       "qid": "Q208242",
-       "label": "European People's Party"
-      },
-      {
-       "qid": "Q128064",
-       "label": "Centrist Democrat International"
-      },
-      {
-       "qid": "Q862603",
-       "label": "International Democracy Union"
-      }
-     ],
-     "colors": [
-      "#006dab"
-     ],
-     "founded_year": 1990,
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q845743",
+      "qid": "Q133578286",
       "retrieved_at": "2026-08-14"
      },
      "logo": {
-      "file": "Logoja e Partia Demokratike.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logoja%20e%20Partia%20Demokratike.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "credit": "Partia Demokratike"
-     },
-     "ideology_families": [
-      "conservative",
-      "internationalist"
-     ]
+      "file": "Logo of the Alliance for a Magnificent Albania.png",
+      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Logo%20of%20the%20Alliance%20for%20a%20Magnificent%20Albania.png",
+      "host": "wikipedia",
+      "license": "Fair use",
+      "non_free": true
+     }
     },
     "Q126915964": {
      "entity": {
@@ -1413,8 +1415,8 @@
        "standing": "backing"
       },
       {
-       "party": "Q845743",
-       "name": "Democratic Party of Albania / Alliance for a Magnificent Albania",
+       "party": "Q133578286",
+       "name": "Alliance for a Magnificent Albania",
        "seats": 49,
        "share": 0.35,
        "standing": "opposition"
@@ -2199,21 +2201,21 @@
        "name": "FNLA",
        "seats": 2,
        "share": 0.0091,
-       "standing": "opposition"
+       "standing": "non_attached"
       },
       {
        "party": "Q1674856",
        "name": "Social Renewal",
        "seats": 2,
        "share": 0.0091,
-       "standing": "opposition"
+       "standing": "non_attached"
       },
       {
        "party": "Q113624556",
        "name": "Humanist Party",
        "seats": 2,
        "share": 0.0091,
-       "standing": "opposition"
+       "standing": "non_attached"
       }
      ],
      "last_election": "2022-08-24",
@@ -2734,7 +2736,7 @@
      },
      "name": "Workers' Left Front – Unity",
      "abbreviation": "FIT-U",
-     "kind": "party",
+     "kind": "parliamentary_group",
      "alignment": "left",
      "alignment_raw": "far-left politics",
      "ideologies": [],
@@ -3000,7 +3002,7 @@
       },
       {
        "party": "Q124539631",
-       "name": "Independence",
+       "name": "Independencia",
        "seats": 1,
        "share": 0.0137,
        "standing": "backing"
@@ -3014,7 +3016,7 @@
       },
       {
        "party": "Q5505872",
-       "name": "Front for the Renewal of Concord",
+       "name": "Federal Innovation",
        "seats": 4,
        "share": 0.0548,
        "standing": "non_attached"
@@ -3503,7 +3505,6 @@
       "credit": "Unknown authorUnknown author"
      },
      "ideology_families": [
-      "liberal",
       "conservative",
       "nationalist",
       "internationalist",
@@ -3590,8 +3591,7 @@
      },
      "ideology_families": [
       "liberal",
-      "green",
-      "internationalist"
+      "green"
      ]
     }
    },
@@ -3640,7 +3640,7 @@
       },
       {
        "party": "Q193178",
-       "name": "Greens",
+       "name": "The Greens",
        "seats": 16,
        "share": 0.0874,
        "standing": "opposition"
@@ -4385,9 +4385,9 @@
       }
      ],
      "last_election": "2025-05-03",
-     "next_election": "2028",
+     "next_election": "2028-09-23",
      "mandate": {
-      "expected_end": "2028-12-31",
+      "expected_end": "2028-09-23",
       "inferred": false,
       "state": "current"
      },
@@ -4483,9 +4483,9 @@
       }
      ],
      "last_election": "2025-05-03",
-     "next_election": "2028",
+     "next_election": "2028-05-20",
      "mandate": {
-      "expected_end": "2028-12-31",
+      "expected_end": "2028-05-20",
       "inferred": false,
       "state": "current"
      },
@@ -4733,9 +4733,9 @@
       "credit": "Own work"
      },
      "ideology_families": [
-      "social_democratic",
       "liberal",
-      "nationalist"
+      "nationalist",
+      "other"
      ]
     },
     "Q7997515": {
@@ -4793,7 +4793,6 @@
       "non_free": true
      },
      "ideology_families": [
-      "social_democratic",
       "liberal",
       "conservative",
       "nationalist",
@@ -4857,8 +4856,9 @@
      },
      "ideology_families": [
       "liberal",
-      "conservative",
-      "internationalist"
+      "nationalist",
+      "internationalist",
+      "other"
      ]
     },
     "Q12836421": {
@@ -4964,8 +4964,8 @@
       "credit": "Mrmw"
      },
      "ideology_families": [
-      "social_democratic",
-      "liberal"
+      "liberal",
+      "other"
      ]
     },
     "Q5599720": {
@@ -6102,7 +6102,7 @@
       },
       {
        "party": "Q946306",
-       "name": "Our Party",
+       "name": "Our Party (Bosnia and Herzegovina)",
        "seats": 3,
        "share": 0.0714,
        "standing": "government"
@@ -6123,7 +6123,7 @@
       },
       {
        "party": "Q61364474",
-       "name": "Democratic Union",
+       "name": "Democratic Union (Bosnia and Herzegovina)",
        "seats": 1,
        "share": 0.0238,
        "standing": "backing"
@@ -6144,7 +6144,7 @@
       },
       {
        "party": "Q126737172",
-       "name": "Forward",
+       "name": "Forward (Bosnia and Herzegovina)",
        "seats": 1,
        "share": 0.0238,
        "standing": "backing"
@@ -6165,7 +6165,7 @@
       },
       {
        "party": "Q1164533",
-       "name": "Serb Democratic Party",
+       "name": "Serb Democratic Party (Bosnia and Herzegovina)",
        "seats": 2,
        "share": 0.0476,
        "standing": "opposition"
@@ -8216,7 +8216,7 @@
       "label": "GERB-SDS"
      },
      "name": "GERB-SDS",
-     "kind": "electoral_alliance",
+     "kind": "party",
      "alignment": "centre_right",
      "alignment_raw": "centre-right",
      "ideologies": [
@@ -8828,7 +8828,26 @@
      "retrieved_at": "2026-08-14"
     }
    },
-   "head_of_government": null,
+   "head_of_government": {
+    "person": {
+     "qid": "Q135650664",
+     "label": "Nestor Ntahontuye"
+    },
+    "name": "Nestor Ntahontuye",
+    "office": {
+     "qid": "Q52728003",
+     "label": "Prime Minister of Burundi"
+    },
+    "party": null,
+    "since": "2025-08-05",
+    "represents": "political",
+    "provenance": {
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q967",
+     "retrieved_at": "2026-08-14"
+    }
+   },
    "parties": {
     "Q2271402": {
      "entity": {
@@ -9568,10 +9587,10 @@
      },
      "ideology_families": [
       "socialist",
+      "liberal",
       "nationalist",
       "internationalist",
-      "populist",
-      "reformist"
+      "populist"
      ]
     },
     "Q202609": {
@@ -9758,7 +9777,8 @@
      "ideology_families": [
       "conservative",
       "nationalist",
-      "reformist"
+      "reformist",
+      "other"
      ]
     }
    },
@@ -9778,21 +9798,21 @@
      "composition": [
       {
        "party": "Q2605787",
-       "name": "Christian Democratic Party (Bolivia)",
+       "name": "Christian Democratic Party",
        "seats": 49,
        "share": 0.3769,
        "standing": "government"
       },
       {
        "party": "Q134267313",
-       "name": "Unity (Bolivia)",
+       "name": "Unity",
        "seats": 26,
        "share": 0.2,
        "standing": "government"
       },
       {
        "party": "Q134398739",
-       "name": "Libre (Bolivia)",
+       "name": "Libre",
        "seats": 39,
        "share": 0.3,
        "standing": "backing"
@@ -9806,7 +9826,7 @@
       },
       {
        "party": "Q135559560",
-       "name": "Popular Alliance (Bolivia)",
+       "name": "Popular Alliance",
        "seats": 8,
        "share": 0.0615,
        "standing": "opposition"
@@ -10051,159 +10071,49 @@
    },
    "head_of_government": null,
    "parties": {
-    "Q657089": {
+    "Q111659795": {
      "entity": {
-      "qid": "Q657089",
-      "label": "Workers' Party"
+      "qid": "Q111659795",
+      "label": "Brazil of Hope"
      },
-     "name": "Workers' Party",
-     "endonym": "Partido dos Trabalhadores",
-     "abbreviation": "PT",
+     "name": "Brazil of Hope",
+     "abbreviation": "FE Brasil",
      "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q121254",
-       "label": "social democracy"
-      },
-      {
-       "qid": "Q189280",
-       "label": "democratic socialism"
-      }
-     ],
-     "groupings": [
-      {
-       "qid": "Q7248622",
-       "label": "Progressive Alliance"
-      }
-     ],
-     "colors": [
-      "#da1208"
-     ],
-     "founded_year": 1980,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q657089",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "PT (Brazil) logo 2021.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/PT%20(Brazil)%20logo%202021.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "restrictions": [
-       "communist",
-       "trademarked"
-      ],
-      "credit": "Workers' Party (Brazil) (PT)"
-     },
-     "ideology_families": [
-      "social_democratic"
-     ]
-    },
-    "Q504000": {
-     "entity": {
-      "qid": "Q504000",
-      "label": "Communist Party of Brazil"
-     },
-     "name": "Communist Party of Brazil",
-     "abbreviation": "PCdoB",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q6186",
-       "label": "communism"
-      }
-     ],
+     "ideologies": [],
      "groupings": [],
-     "colors": [
-      "#da251c"
+     "members": [
+      {
+       "qid": "Q657089",
+       "label": "Workers' Party"
+      },
+      {
+       "qid": "Q504000",
+       "label": "Communist Party of Brazil"
+      },
+      {
+       "qid": "Q1234489",
+       "label": "Green Party"
+      }
      ],
-     "founded_year": 1962,
+     "colors": [],
+     "founded_year": 2022,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q504000",
+      "qid": "Q111659795",
       "retrieved_at": "2026-08-14"
      },
      "logo": {
-      "file": "PCdoB logo.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/PCdoB%20logo.svg",
+      "file": "Logo of the Brazil of Hope Federation.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20of%20the%20Brazil%20of%20Hope%20Federation.png",
       "host": "commons",
       "license": "Public domain",
       "non_free": false,
       "restrictions": [
-       "communist",
        "trademarked"
       ],
-      "credit": "Unknown authorUnknown author"
-     },
-     "ideology_families": [
-      "socialist"
-     ]
-    },
-    "Q1234489": {
-     "entity": {
-      "qid": "Q1234489",
-      "label": "Green Party"
-     },
-     "name": "Green Party",
-     "abbreviation": "PV",
-     "kind": "party",
-     "alignment": "centre",
-     "alignment_raw": "centrism",
-     "ideologies": [
-      {
-       "qid": "Q1661415",
-       "label": "green politics"
-      },
-      {
-       "qid": "Q204886",
-       "label": "federalism"
-      },
-      {
-       "qid": "Q821102",
-       "label": "progressivism"
-      },
-      {
-       "qid": "Q188961",
-       "label": "decentralization"
-      }
-     ],
-     "groupings": [
-      {
-       "qid": "Q2400046",
-       "label": "Federation of the Green Parties of the Americas"
-      },
-      {
-       "qid": "Q384069",
-       "label": "Global Greens"
-      }
-     ],
-     "colors": [
-      "#006600"
-     ],
-     "founded_year": 1986,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q1234489",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "PV Logo.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/PV%20Logo.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "credit": "Partido Verde"
-     },
-     "ideology_families": [
-      "liberal",
-      "green",
-      "reformist"
-     ]
+      "credit": "Federação Brasil da Esperança"
+     }
     },
     "Q2054750": {
      "entity": {
@@ -10327,107 +10237,33 @@
       "social_democratic"
      ]
     },
-    "Q1754827": {
+    "Q113192817": {
      "entity": {
-      "qid": "Q1754827",
-      "label": "Socialism and Freedom Party"
+      "qid": "Q113192817",
+      "label": "PSOL REDE Federation"
      },
-     "name": "Socialism and Freedom Party",
-     "endonym": "Partido Socialismo e Liberdade",
-     "abbreviation": "PSOL",
+     "name": "PSOL REDE Federation",
      "kind": "party",
-     "alignment": "left",
-     "alignment_raw": "far-left politics",
-     "ideologies": [
+     "ideologies": [],
+     "groupings": [],
+     "members": [
       {
-       "qid": "Q189280",
-       "label": "democratic socialism"
+       "qid": "Q1754827",
+       "label": "Socialism and Freedom Party"
       },
       {
-       "qid": "Q389647",
-       "label": "anti-capitalism"
-      },
-      {
-       "qid": "Q821102",
-       "label": "progressivism"
-      },
-      {
-       "qid": "Q216920",
-       "label": "secularism"
-      },
-      {
-       "qid": "Q8881",
-       "label": "socialism of the 21st century"
-      },
-      {
-       "qid": "Q7252",
-       "label": "feminism"
+       "qid": "Q10358279",
+       "label": "Sustainability Network"
       }
      ],
-     "groupings": [],
-     "colors": [
-      "#ffee57"
-     ],
-     "founded_year": 2004,
+     "colors": [],
+     "founded_year": 2022,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q1754827",
+      "qid": "Q113192817",
       "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "PSOL logo brazil.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/PSOL%20logo%20brazil.png",
-      "host": "wikipedia",
-      "license": "CC BY",
-      "non_free": false,
-      "credit": "Socialism and Liberty Party"
-     },
-     "ideology_families": [
-      "social_democratic",
-      "socialist",
-      "liberal"
-     ]
-    },
-    "Q10358279": {
-     "entity": {
-      "qid": "Q10358279",
-      "label": "Sustainability Network"
-     },
-     "name": "Sustainability Network",
-     "abbreviation": "REDE",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q1321721",
-       "label": "green liberalism"
-      }
-     ],
-     "groupings": [],
-     "colors": [
-      "#088a68"
-     ],
-     "founded_year": 2013,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q10358279",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Rede Sustentabilidade logo.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rede%20Sustentabilidade%20logo.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "restrictions": [
-       "trademarked"
-      ],
-      "credit": "Rede Sustentabilidade"
-     },
-     "ideology_families": [
-      "liberal"
-     ]
+     }
     },
     "Q3366792": {
      "entity": {
@@ -10548,8 +10384,8 @@
      "ideology_families": [
       "liberal",
       "religious",
-      "nationalist",
-      "populist"
+      "populist",
+      "reformist"
      ]
     },
     "Q3181274": {
@@ -10589,99 +10425,32 @@
       "liberal"
      ]
     },
-    "Q1322897": {
+    "Q113192821": {
      "entity": {
-      "qid": "Q1322897",
-      "label": "Brazilian Social Democracy Party"
+      "qid": "Q113192821",
+      "label": "PSDB Cidadania Federation"
      },
-     "name": "Brazilian Social Democracy Party",
-     "endonym": "Partido da Social Democracia Brasileira",
-     "abbreviation": "PSDB",
+     "name": "PSDB Cidadania Federation",
      "kind": "party",
-     "alignment": "centre_right",
-     "alignment_raw": "centre-right",
-     "ideologies": [
+     "ideologies": [],
+     "groupings": [],
+     "members": [
       {
-       "qid": "Q201712",
-       "label": "social liberalism"
+       "qid": "Q1322897",
+       "label": "Brazilian Social Democracy Party"
       },
       {
-       "qid": "Q494792",
-       "label": "Third Way"
+       "qid": "Q2598527",
+       "label": "Cidadania"
       }
      ],
-     "groupings": [
-      {
-       "qid": "Q128064",
-       "label": "Centrist Democrat International"
-      }
-     ],
-     "colors": [
-      "#084b8a"
-     ],
-     "founded_year": 1988,
+     "colors": [],
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q1322897",
+      "qid": "Q113192821",
       "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "PSDB wordmark.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/PSDB%20wordmark.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "restrictions": [
-       "trademarked"
-      ],
-      "credit": "Brazilian Social Democracy Party"
-     },
-     "ideology_families": [
-      "social_democratic",
-      "liberal"
-     ]
-    },
-    "Q2598527": {
-     "entity": {
-      "qid": "Q2598527",
-      "label": "Cidadania"
-     },
-     "name": "Cidadania",
-     "endonym": "Partido Popular Socialista",
-     "abbreviation": "PPS",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q121254",
-       "label": "social democracy"
-      }
-     ],
-     "groupings": [],
-     "colors": [
-      "#b43104"
-     ],
-     "founded_year": 1992,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q2598527",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Logo do Cidadania 23.png",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20do%20Cidadania%2023.png",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "restrictions": [
-       "trademarked"
-      ],
-      "credit": "Partido Cidadania (Brasil)"
-     },
-     "ideology_families": [
-      "social_democratic"
-     ]
+     }
     },
     "Q18552710": {
      "entity": {
@@ -10781,100 +10550,34 @@
      },
      "ideology_families": [
       "liberal",
-      "conservative"
+      "conservative",
+      "nationalist"
      ]
     },
-    "Q108837483": {
+    "Q134286811": {
      "entity": {
-      "qid": "Q108837483",
-      "label": "Brazil Union"
+      "qid": "Q134286811",
+      "label": "Progressive Union (Brazil)"
      },
-     "name": "Brazil Union",
+     "name": "Progressive Union (Brazil)",
      "kind": "party",
-     "alignment": "centre_right",
-     "alignment_raw": "centre-right",
-     "ideologies": [
-      {
-       "qid": "Q1043096",
-       "label": "liberal conservatism"
-      },
-      {
-       "qid": "Q729119",
-       "label": "economic liberalism"
-      }
-     ],
-     "groupings": [
-      {
-       "qid": "Q862603",
-       "label": "International Democracy Union"
-      }
-     ],
-     "colors": [
-      "#40ccff"
-     ],
-     "founded_year": 2022,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q108837483",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "União Brasil logo.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Uni%C3%A3o%20Brasil%20logo.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "restrictions": [
-       "trademarked"
-      ],
-      "credit": "União Brasil"
-     },
-     "ideology_families": [
-      "liberal",
-      "conservative"
-     ]
-    },
-    "Q732852": {
-     "entity": {
-      "qid": "Q732852",
-      "label": "Progressive Party"
-     },
-     "name": "Progressive Party",
-     "endonym": "Progressistas",
-     "abbreviation": "PP",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q7169",
-       "label": "conservatism"
-      }
-     ],
+     "ideologies": [],
      "groupings": [],
-     "colors": [
-      "#3a5aa7"
-     ],
-     "founded_year": 2003,
+     "colors": [],
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q732852",
+      "qid": "Q134286811",
       "retrieved_at": "2026-08-14"
      },
      "logo": {
-      "file": "Progressistas logo.png",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Progressistas%20logo.png",
+      "file": "Logo-Uniao-Progressista-848x477.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo-Uniao-Progressista-848x477.png",
       "host": "commons",
       "license": "Public domain",
       "non_free": false,
-      "restrictions": [
-       "trademarked"
-      ],
-      "credit": "Progressistas"
-     },
-     "ideology_families": [
-      "conservative"
-     ]
+      "credit": "Poder360"
+     }
     },
     "Q926973": {
      "entity": {
@@ -10975,87 +10678,21 @@
       "populist"
      ]
     },
-    "Q20061311": {
+    "Q135249065": {
      "entity": {
-      "qid": "Q20061311",
-      "label": "Solidarity"
+      "qid": "Q135249065",
+      "label": "Solidarity Renewal Federation"
      },
-     "name": "Solidarity",
-     "abbreviation": "SD",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q121254",
-       "label": "social democracy"
-      },
-      {
-       "qid": "Q494792",
-       "label": "Third Way"
-      },
-      {
-       "qid": "Q46158",
-       "label": "humanism"
-      },
-      {
-       "qid": "Q5968650",
-       "label": "labourism"
-      }
-     ],
-     "groupings": [],
-     "colors": [
-      "#d86425"
-     ],
-     "founded_year": 2013,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q20061311",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Logomarca do Partido Solidariedade.png",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logomarca%20do%20Partido%20Solidariedade.png",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "restrictions": [
-       "trademarked"
-      ],
-      "credit": "Solidariedade (Brasil)"
-     },
-     "ideology_families": [
-      "social_democratic",
-      "liberal"
-     ]
-    },
-    "Q115156140": {
-     "entity": {
-      "qid": "Q115156140",
-      "label": "Democratic Renewal Party"
-     },
-     "name": "Democratic Renewal Party",
-     "abbreviation": "PRD",
-     "kind": "party",
+     "name": "Solidarity Renewal Federation",
+     "kind": "electoral_alliance",
      "ideologies": [],
      "groupings": [],
      "colors": [],
-     "founded_year": 2023,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q115156140",
+      "qid": "Q135249065",
       "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Partido Renovação Democrática logo.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Partido%20Renova%C3%A7%C3%A3o%20Democr%C3%A1tica%20logo.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "restrictions": [
-       "trademarked"
-      ],
-      "credit": "Partido Renovação Democrática"
      }
     },
     "Q2653287": {
@@ -11098,6 +10735,202 @@
      "ideology_families": [
       "religious"
      ]
+    },
+    "Q657089": {
+     "entity": {
+      "qid": "Q657089",
+      "label": "Workers' Party"
+     },
+     "name": "Workers' Party",
+     "endonym": "Partido dos Trabalhadores",
+     "abbreviation": "PT",
+     "kind": "party",
+     "ideologies": [
+      {
+       "qid": "Q121254",
+       "label": "social democracy"
+      },
+      {
+       "qid": "Q189280",
+       "label": "democratic socialism"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q7248622",
+       "label": "Progressive Alliance"
+      }
+     ],
+     "colors": [
+      "#da1208"
+     ],
+     "founded_year": 1980,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q657089",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "PT (Brazil) logo 2021.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/PT%20(Brazil)%20logo%202021.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": [
+       "communist",
+       "trademarked"
+      ],
+      "credit": "Workers' Party (Brazil) (PT)"
+     },
+     "ideology_families": [
+      "social_democratic"
+     ]
+    },
+    "Q1322897": {
+     "entity": {
+      "qid": "Q1322897",
+      "label": "Brazilian Social Democracy Party"
+     },
+     "name": "Brazilian Social Democracy Party",
+     "endonym": "Partido da Social Democracia Brasileira",
+     "abbreviation": "PSDB",
+     "kind": "party",
+     "alignment": "centre_right",
+     "alignment_raw": "centre-right",
+     "ideologies": [
+      {
+       "qid": "Q201712",
+       "label": "social liberalism"
+      },
+      {
+       "qid": "Q494792",
+       "label": "Third Way"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q128064",
+       "label": "Centrist Democrat International"
+      }
+     ],
+     "colors": [
+      "#084b8a"
+     ],
+     "founded_year": 1988,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q1322897",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "PSDB wordmark.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/PSDB%20wordmark.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": [
+       "trademarked"
+      ],
+      "credit": "Brazilian Social Democracy Party"
+     },
+     "ideology_families": [
+      "social_democratic",
+      "liberal"
+     ]
+    },
+    "Q732852": {
+     "entity": {
+      "qid": "Q732852",
+      "label": "Progressive Party"
+     },
+     "name": "Progressive Party",
+     "endonym": "Progressistas",
+     "abbreviation": "PP",
+     "kind": "party",
+     "ideologies": [
+      {
+       "qid": "Q7169",
+       "label": "conservatism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#3a5aa7"
+     ],
+     "founded_year": 2003,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q732852",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Progressistas logo.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Progressistas%20logo.png",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": [
+       "trademarked"
+      ],
+      "credit": "Progressistas"
+     },
+     "ideology_families": [
+      "conservative"
+     ]
+    },
+    "Q108837483": {
+     "entity": {
+      "qid": "Q108837483",
+      "label": "Brazil Union"
+     },
+     "name": "Brazil Union",
+     "kind": "party",
+     "alignment": "centre_right",
+     "alignment_raw": "centre-right",
+     "ideologies": [
+      {
+       "qid": "Q1043096",
+       "label": "liberal conservatism"
+      },
+      {
+       "qid": "Q729119",
+       "label": "economic liberalism"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q862603",
+       "label": "International Democracy Union"
+      }
+     ],
+     "colors": [
+      "#40ccff"
+     ],
+     "founded_year": 2022,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q108837483",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "União Brasil logo.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Uni%C3%A3o%20Brasil%20logo.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": [
+       "trademarked"
+      ],
+      "credit": "União Brasil"
+     },
+     "ideology_families": [
+      "liberal",
+      "conservative"
+     ]
     }
    },
    "chambers": [
@@ -11115,65 +10948,39 @@
      "contestation": "competitive",
      "composition": [
       {
-       "party": "Q657089",
-       "name": "PT",
-       "seats": 64,
-       "share": 0.1243,
-       "standing": "government",
-       "alliance": "Brazil of Hope"
-      },
-      {
-       "party": "Q504000",
-       "name": "PCdoB",
-       "seats": 11,
-       "share": 0.0214,
-       "standing": "government",
-       "alliance": "Brazil of Hope"
-      },
-      {
-       "party": "Q1234489",
-       "name": "PV",
-       "seats": 6,
-       "share": 0.0117,
-       "standing": "government",
-       "alliance": "Brazil of Hope"
+       "party": "Q111659795",
+       "name": "Brazil of Hope",
+       "seats": 81,
+       "share": 0.1573,
+       "standing": "government"
       },
       {
        "party": "Q2054750",
-       "name": "PSD",
+       "name": "Social Democratic Party (Brazil, 2011)",
        "seats": 48,
        "share": 0.0932,
        "standing": "government"
       },
       {
        "party": "Q1322751",
-       "name": "MDB",
+       "name": "Brazilian Democratic Movement",
        "seats": 38,
        "share": 0.0738,
        "standing": "government"
       },
       {
        "party": "Q2054789",
-       "name": "PSB",
+       "name": "Brazilian Socialist Party",
        "seats": 17,
        "share": 0.033,
        "standing": "government"
       },
       {
-       "party": "Q1754827",
-       "name": "PSOL",
-       "seats": 13,
-       "share": 0.0252,
-       "standing": "government",
-       "alliance": "PSOL-REDE"
-      },
-      {
-       "party": "Q10358279",
-       "name": "REDE",
-       "seats": 3,
-       "share": 0.0058,
-       "standing": "government",
-       "alliance": "PSOL-REDE"
+       "party": "Q113192817",
+       "name": "PSOL REDE Federation",
+       "seats": 16,
+       "share": 0.0311,
+       "standing": "government"
       },
       {
        "party": "Q3366792",
@@ -11184,97 +10991,70 @@
       },
       {
        "party": "Q2731720",
-       "name": "PL",
+       "name": "Liberal Party (Brazil, 2006)",
        "seats": 97,
        "share": 0.1883,
        "standing": "opposition"
       },
       {
        "party": "Q3181274",
-       "name": "PODE",
+       "name": "Podemos (Brazil)",
        "seats": 28,
        "share": 0.0544,
        "standing": "opposition"
       },
       {
-       "party": "Q1322897",
-       "name": "PSDB",
-       "seats": 18,
-       "share": 0.035,
-       "standing": "opposition",
-       "alliance": "PSDB-Cidadania"
-      },
-      {
-       "party": "Q2598527",
-       "name": "Cidadania",
-       "seats": 2,
-       "share": 0.0039,
-       "standing": "opposition",
-       "alliance": "PSDB-Cidadania"
+       "party": "Q113192821",
+       "name": "Always Forward (Brazil)",
+       "seats": 20,
+       "share": 0.0388,
+       "standing": "opposition"
       },
       {
        "party": "Q18552710",
-       "name": "NOVO",
+       "name": "New Party (Brazil)",
        "seats": 5,
        "share": 0.0097,
        "standing": "opposition"
       },
       {
        "party": "Q134984491",
-       "name": "MISSÃO",
+       "name": "Mission Party (Brazil)",
        "seats": 1,
        "share": 0.0019,
        "standing": "opposition"
       },
       {
-       "party": "Q108837483",
-       "name": "UNIÃO",
-       "seats": 54,
-       "share": 0.1049,
-       "standing": "non_attached",
-       "alliance": "UPB"
-      },
-      {
-       "party": "Q732852",
-       "name": "PP",
-       "seats": 46,
-       "share": 0.0893,
-       "standing": "non_attached",
-       "alliance": "UPB"
+       "party": "Q134286811",
+       "name": "Progressive Union (Brazil)",
+       "seats": 100,
+       "share": 0.1942,
+       "standing": "non_attached"
       },
       {
        "party": "Q926973",
-       "name": "Republicanos",
+       "name": "Republicans (Brazil)",
        "seats": 42,
        "share": 0.0816,
        "standing": "non_attached"
       },
       {
        "party": "Q1414708",
-       "name": "PDT",
+       "name": "Democratic Labour Party (Brazil)",
        "seats": 9,
        "share": 0.0175,
        "standing": "non_attached"
       },
       {
-       "party": "Q20061311",
-       "name": "Solidariedade",
-       "seats": 4,
-       "share": 0.0078,
-       "standing": "non_attached",
-       "alliance": "Solidary Renewal"
-      },
-      {
-       "party": "Q115156140",
-       "name": "PRD",
-       "seats": 3,
-       "share": 0.0058,
-       "standing": "non_attached",
-       "alliance": "Solidary Renewal"
+       "party": "Q135249065",
+       "name": "Solidary Renewal Federation",
+       "seats": 7,
+       "share": 0.0136,
+       "standing": "non_attached"
       },
       {
        "party": "Q2653287",
-       "name": "DC",
+       "name": "Christian Democracy (Brazil)",
        "seats": 1,
        "share": 0.0019,
        "standing": "non_attached"
@@ -11430,14 +11210,11 @@
    ],
    "government": {
     "governing": [
-     "Q657089",
-     "Q504000",
-     "Q1234489",
+     "Q111659795",
      "Q2054750",
      "Q1322751",
      "Q2054789",
-     "Q1754827",
-     "Q10358279",
+     "Q113192817",
      "Q3366792"
     ],
     "backing": [],
@@ -11470,29 +11247,70 @@
    },
    "name": "The Bahamas",
    "form": "constitutional_monarchy",
-   "executive_power": "head_of_state",
+   "executive_power": "head_of_government",
    "form_raw": [
     "constitutional monarchy",
     "Unitary parliamentary constitutional monarchy"
    ],
    "head_of_state": {
     "person": {
-     "qid": "Q43274"
+     "qid": "Q43274",
+     "label": "Charles III"
     },
-    "name": "Philip Davis",
+    "name": "Charles III",
+    "office": {
+     "qid": "Q26869642",
+     "label": "monarch of the Bahamas"
+    },
     "party": null,
+    "since": "2022-09-08",
+    "portrait": {
+     "file": "King Charles III 2025-09-17 (cropped).jpg",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/King%20Charles%20III%202025-09-17%20(cropped).jpg",
+     "host": "commons",
+     "license": "Public domain",
+     "non_free": false,
+     "credit": "The White House"
+    },
     "represents": "ceremonial",
     "provenance": {
-     "kind": "wikipedia",
-     "derivation": "extracted",
-     "article": "The Bahamas",
-     "revid": 1368008727,
-     "retrieved_at": "2026-08-14",
-     "model": "claude-haiku-4-5"
-    },
-    "superseded": true
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q778",
+     "retrieved_at": "2026-08-14"
+    }
    },
-   "head_of_government": null,
+   "head_of_government": {
+    "person": {
+     "qid": "Q7183082",
+     "label": "Philip \"Brave\" Davis"
+    },
+    "name": "Philip \"Brave\" Davis",
+    "office": {
+     "qid": "Q565424",
+     "label": "Prime Minister of the Bahamas"
+    },
+    "party": {
+     "qid": "Q2566823",
+     "label": "Progressive Liberal Party"
+    },
+    "since": "2021-09-17",
+    "portrait": {
+     "file": "Prime Minister Philip Davis in 2022.jpg",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Prime%20Minister%20Philip%20Davis%20in%202022.jpg",
+     "host": "commons",
+     "license": "CC BY 2.0",
+     "non_free": false,
+     "credit": "Palácio do Planalto from Brasilia, Brasil"
+    },
+    "represents": "political",
+    "provenance": {
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q778",
+     "retrieved_at": "2026-08-14"
+    }
+   },
    "parties": {
     "Q2566823": {
      "entity": {
@@ -12390,7 +12208,6 @@
       "credit": "Белая Русь (партыя)"
      },
      "ideology_families": [
-      "nationalist",
       "internationalist",
       "authoritarian",
       "other"
@@ -12440,7 +12257,7 @@
      },
      "ideology_families": [
       "social_democratic",
-      "nationalist"
+      "internationalist"
      ]
     },
     "Q325413": {
@@ -12639,7 +12456,7 @@
       },
       {
        "party": "Q325413",
-       "name": "Communist Party of Belarus",
+       "name": "Communist Party",
        "seats": 1,
        "share": 0.0156,
        "standing": "government"
@@ -13204,7 +13021,8 @@
      "ideology_families": [
       "social_democratic",
       "green",
-      "nationalist"
+      "nationalist",
+      "reformist"
      ]
     },
     "Q130765": {
@@ -13318,13 +13136,32 @@
       "green"
      ]
     },
+    "Q2506575": {
+     "entity": {
+      "qid": "Q2506575",
+      "label": "Representative of the Government in the Senate"
+     },
+     "name": "Representative of the Government in the Senate",
+     "endonym": "représentant du gouvernement au Sénat",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "founded_year": 1867,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q2506575",
+      "retrieved_at": "2026-08-14"
+     }
+    },
     "Q28946329": {
      "entity": {
       "qid": "Q28946329",
       "label": "Independent Senators Group"
      },
      "name": "Independent Senators Group",
-     "kind": "parliamentary_group",
+     "kind": "party",
      "ideologies": [],
      "groupings": [],
      "colors": [],
@@ -13353,7 +13190,7 @@
       "label": "Progressive Senate Group"
      },
      "name": "Progressive Senate Group",
-     "kind": "parliamentary_group",
+     "kind": "party",
      "ideologies": [
       {
        "qid": "Q821102",
@@ -13387,7 +13224,7 @@
       "label": "Canadian Senators Group"
      },
      "name": "Canadian Senators Group",
-     "kind": "parliamentary_group",
+     "kind": "party",
      "ideologies": [],
      "groupings": [],
      "colors": [],
@@ -13405,6 +13242,26 @@
       "license": "Public domain",
       "non_free": false,
       "credit": "Canadian Senators Group"
+     }
+    },
+    "Q327591": {
+     "entity": {
+      "qid": "Q327591",
+      "label": "independent politician"
+     },
+     "name": "independent politician",
+     "abbreviation": "Independent",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [
+      "#dddddd"
+     ],
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q327591",
+      "retrieved_at": "2026-08-14"
      }
     }
    },
@@ -13507,7 +13364,7 @@
      "contestation": "appointed",
      "composition": [
       {
-       "party": null,
+       "party": "Q2506575",
        "name": "Government Representative's Office",
        "seats": 5,
        "share": 0.0476,
@@ -13542,7 +13399,7 @@
        "standing": "non_attached"
       },
       {
-       "party": null,
+       "party": "Q327591",
        "name": "Non-affiliated",
        "seats": 6,
        "share": 0.0571,
@@ -13645,7 +13502,37 @@
      "retrieved_at": "2026-08-14"
     }
    },
-   "head_of_government": null,
+   "head_of_government": {
+    "person": {
+     "qid": "Q117472023",
+     "label": "Judith Suminwa"
+    },
+    "name": "Judith Suminwa",
+    "office": {
+     "qid": "Q3401753",
+     "label": "Prime Minister of the Democratic Republic of the Congo"
+    },
+    "party": {
+     "qid": "Q1629663",
+     "label": "Union for Democracy and Social Progress"
+    },
+    "since": "2024-06-12",
+    "portrait": {
+     "file": "Prime Minister of DRC Judith Suminwa Tuluka (2025) (cropped).jpg",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Prime%20Minister%20of%20DRC%20Judith%20Suminwa%20Tuluka%20(2025)%20(cropped).jpg",
+     "host": "commons",
+     "license": "CC BY 4.0",
+     "non_free": false,
+     "credit": "首相官邸ホームページ"
+    },
+    "represents": "political",
+    "provenance": {
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q974",
+     "retrieved_at": "2026-08-14"
+    }
+   },
    "parties": {
     "Q1629663": {
      "entity": {
@@ -13716,23 +13603,6 @@
       "non_free": true
      }
     },
-    "Q22348900": {
-     "entity": {
-      "qid": "Q22348900",
-      "label": "AAAP"
-     },
-     "name": "AAAP",
-     "kind": "electoral_alliance",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q22348900",
-      "retrieved_at": "2026-08-14"
-     }
-    },
     "Q144806": {
      "entity": {
       "qid": "Q144806",
@@ -13800,23 +13670,6 @@
       "non_free": true
      }
     },
-    "Q295630": {
-     "entity": {
-      "qid": "Q295630",
-      "label": "ANB"
-     },
-     "name": "ANB",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q295630",
-      "retrieved_at": "2026-08-14"
-     }
-    },
     "Q3087061": {
      "entity": {
       "qid": "Q3087061",
@@ -13869,14 +13722,14 @@
       },
       {
        "party": null,
-       "name": "AFDC-A",
+       "name": "Alliance of Democratic Forces of Congo",
        "seats": 35,
        "share": 0.07,
        "standing": "non_attached"
       },
       {
        "party": "Q3550434",
-       "name": "A/A–Union for the Congolese Nation",
+       "name": "Allied Actions–Union for the Congolese Nation",
        "seats": 34,
        "share": 0.068,
        "standing": "non_attached"
@@ -13889,15 +13742,15 @@
        "standing": "non_attached"
       },
       {
-       "party": "Q22348900",
-       "name": "AAAP",
+       "party": null,
+       "name": "Alliance of actors attached to the people",
        "seats": 22,
        "share": 0.044,
        "standing": "non_attached"
       },
       {
        "party": null,
-       "name": "2A/TDC",
+       "name": "Allied Actions–All for the Development of Congo",
        "seats": 21,
        "share": 0.042,
        "standing": "non_attached"
@@ -13925,14 +13778,14 @@
       },
       {
        "party": null,
-       "name": "4AC",
+       "name": "Alternative Action of Actors for the Love of Congo",
        "seats": 17,
        "share": 0.034,
        "standing": "non_attached"
       },
       {
        "party": null,
-       "name": "AACPG",
+       "name": "Alliance for the Advent of a Prosperous and Greater Congo",
        "seats": 16,
        "share": 0.032,
        "standing": "non_attached"
@@ -13945,15 +13798,15 @@
        "standing": "non_attached"
       },
       {
-       "party": "Q295630",
-       "name": "ANB",
+       "party": null,
+       "name": "It's up to us to build the Congo",
        "seats": 13,
        "share": 0.026,
        "standing": "non_attached"
       },
       {
        "party": null,
-       "name": "AA/C",
+       "name": "Congo Allied Action for the Convention",
        "seats": 10,
        "share": 0.02,
        "standing": "non_attached"
@@ -14921,23 +14774,6 @@
       "non_free": true
      }
     },
-    "Q1270812": {
-     "entity": {
-      "qid": "Q1270812",
-      "label": "Must"
-     },
-     "name": "Must",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q1270812",
-      "retrieved_at": "2026-08-14"
-     }
-    },
     "Q3326534": {
      "entity": {
       "qid": "Q3326534",
@@ -15041,6 +14877,23 @@
       "qid": "Q6926640",
       "retrieved_at": "2026-08-14"
      }
+    },
+    "Q255573": {
+     "entity": {
+      "qid": "Q255573",
+      "label": "PRL"
+     },
+     "name": "PRL",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q255573",
+      "retrieved_at": "2026-08-14"
+     }
     }
    },
    "chambers": [
@@ -15122,8 +14975,8 @@
        "standing": "opposition"
       },
       {
-       "party": "Q1270812",
-       "name": "MUST",
+       "party": null,
+       "name": "Mouvement pour l'unité, la solidarité et le travail",
        "seats": 1,
        "share": 0.0066,
        "standing": "opposition"
@@ -15171,16 +15024,16 @@
        "standing": "non_attached"
       }
      ],
-     "last_election": "2022-07-31",
+     "last_election": "2022-07-10",
      "next_election": "2027",
      "mandate": {
       "expected_end": "2027-12-31",
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2022-07-31",
+     "as_of": "2022-07-10",
      "retrieved_at": "2026-08-14",
-     "confidence": "high",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -15241,22 +15094,22 @@
        "standing": "non_attached"
       },
       {
-       "party": null,
-       "name": "Parti républicain libéral",
+       "party": "Q255573",
+       "name": "PRL",
        "seats": 1,
        "share": 0.0139,
        "standing": "non_attached"
       },
       {
        "party": null,
-       "name": "Union des démocrates et libéraux du Congo",
+       "name": "UDLC",
        "seats": 1,
        "share": 0.0139,
        "standing": "non_attached"
       },
       {
-       "party": null,
-       "name": "Mouvement congolais pour la démocratie et le développement intégral",
+       "party": "Q3326534",
+       "name": "MCDDI",
        "seats": 1,
        "share": 0.0139,
        "standing": "non_attached"
@@ -15313,7 +15166,7 @@
     "seats_with_backing": 123,
     "minority": false,
     "authority": "established",
-    "confidence": "high",
+    "confidence": "partial",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -15699,7 +15552,7 @@
       "credit": "Mrmw"
      },
      "ideology_families": [
-      "liberal"
+      "green"
      ]
     },
     "Q663580": {
@@ -16606,7 +16459,8 @@
      },
      "ideology_families": [
       "liberal",
-      "conservative"
+      "conservative",
+      "other"
      ]
     },
     "Q602131": {
@@ -16725,8 +16579,7 @@
      },
      "ideology_families": [
       "liberal",
-      "conservative",
-      "reformist"
+      "conservative"
      ]
     },
     "Q126425000": {
@@ -16786,10 +16639,9 @@
      },
      "ideology_families": [
       "liberal",
-      "conservative",
       "nationalist",
-      "populist",
-      "authoritarian"
+      "authoritarian",
+      "other"
      ]
     },
     "Q107012458": {
@@ -16822,48 +16674,34 @@
       "credit": "Jomiga1999"
      }
     },
-    "Q126899719": {
+    "Q28469675": {
      "entity": {
-      "qid": "Q126899719",
+      "qid": "Q28469675",
       "label": "Broad Front"
      },
      "name": "Broad Front",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q821102",
-       "label": "progressivism"
-      },
-      {
-       "qid": "Q189280",
-       "label": "democratic socialism"
-      },
-      {
-       "qid": "Q6186",
-       "label": "communism"
-      }
-     ],
+     "endonym": "Frente Amplio",
+     "kind": "electoral_alliance",
+     "alignment": "left",
+     "alignment_raw": "left-wing",
+     "ideologies": [],
      "groupings": [],
      "colors": [],
-     "founded_year": 2024,
+     "founded_year": 2017,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q126899719",
+      "qid": "Q28469675",
       "retrieved_at": "2026-08-14"
      },
      "logo": {
-      "file": "Logo of the Broad Front (Chile, 2024).svg",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Logo%20of%20the%20Broad%20Front%20(Chile%2C%202024).svg",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     },
-     "ideology_families": [
-      "social_democratic",
-      "socialist",
-      "liberal"
-     ]
+      "file": "Frente Amplio (Texto).svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frente%20Amplio%20(Texto).svg",
+      "host": "commons",
+      "license": "CC BY-SA 4.0",
+      "non_free": false,
+      "credit": "Pablo Utreras"
+     }
     },
     "Q823648": {
      "entity": {
@@ -17264,21 +17102,21 @@
      "composition": [
       {
        "party": "Q64539214",
-       "name": "Republican",
+       "name": "Republican Party",
        "seats": 31,
        "share": 0.2,
        "standing": "government"
       },
       {
        "party": "Q602131",
-       "name": "UDI",
+       "name": "Independent Democratic Union",
        "seats": 18,
        "share": 0.1161,
        "standing": "government"
       },
       {
        "party": "Q1422826",
-       "name": "RN",
+       "name": "National Renewal",
        "seats": 16,
        "share": 0.1032,
        "standing": "government"
@@ -17292,20 +17130,20 @@
       },
       {
        "party": "Q126425000",
-       "name": "PNL",
+       "name": "National Libertarian Party",
        "seats": 8,
        "share": 0.0516,
        "standing": "backing"
       },
       {
        "party": "Q107012458",
-       "name": "PDG",
+       "name": "Party of the People",
        "seats": 14,
        "share": 0.0903,
        "standing": "non_attached"
       },
       {
-       "party": "Q126899719",
+       "party": "Q28469675",
        "name": "Broad Front",
        "seats": 18,
        "share": 0.1161,
@@ -17313,28 +17151,28 @@
       },
       {
        "party": "Q823648",
-       "name": "Socialist",
+       "name": "Socialist Party",
        "seats": 15,
        "share": 0.0968,
        "standing": "opposition"
       },
       {
        "party": "Q317952",
-       "name": "Communist",
+       "name": "Communist Party of Chile",
        "seats": 12,
        "share": 0.0774,
        "standing": "opposition"
       },
       {
        "party": "Q1759292",
-       "name": "PPD",
+       "name": "Party for Democracy",
        "seats": 10,
        "share": 0.0645,
        "standing": "opposition"
       },
       {
        "party": "Q1395049",
-       "name": "PDC",
+       "name": "Christian Democratic Party",
        "seats": 10,
        "share": 0.0645,
        "standing": "opposition"
@@ -17880,14 +17718,14 @@
       },
       {
        "party": "Q6979097",
-       "name": "National Union for Democracy and Progress",
+       "name": "National Union for Democracy and Progress (Cameroon)",
        "seats": 7,
        "share": 0.0389,
        "standing": "opposition"
       },
       {
        "party": "Q1470113",
-       "name": "Social Democratic Front",
+       "name": "Social Democratic Front (Cameroon)",
        "seats": 5,
        "share": 0.0278,
        "standing": "opposition"
@@ -18519,81 +18357,89 @@
      "selection": [
       "indirectly_elected"
      ],
-     "contestation": "uncontested",
+     "contestation": "restricted",
      "composition": [
       {
        "party": "Q17427",
        "name": "Chinese Communist Party",
        "seats": 2509,
-       "share": 0.8718,
+       "share": 0.8397,
        "standing": "government"
       },
       {
        "party": "Q1185348",
        "name": "Jiusan Society",
        "seats": 61,
-       "share": 0.0212,
-       "standing": "government"
+       "share": 0.0204,
+       "standing": "backing"
       },
       {
        "party": "Q1133626",
        "name": "Chinese Peasants' and Workers' Democratic Party",
        "seats": 60,
-       "share": 0.0208,
-       "standing": "government"
+       "share": 0.0201,
+       "standing": "backing"
       },
       {
        "party": "Q1348513",
        "name": "China Democratic League",
        "seats": 55,
-       "share": 0.0191,
-       "standing": "government"
+       "share": 0.0184,
+       "standing": "backing"
       },
       {
        "party": "Q1133583",
        "name": "China Association for Promoting Democracy",
        "seats": 54,
-       "share": 0.0188,
-       "standing": "government"
+       "share": 0.0181,
+       "standing": "backing"
       },
       {
        "party": "Q1133577",
        "name": "China National Democratic Construction Association",
        "seats": 44,
-       "share": 0.0153,
-       "standing": "government"
+       "share": 0.0147,
+       "standing": "backing"
       },
       {
        "party": "Q1202612",
        "name": "Revolutionary Committee of the Chinese Kuomintang",
        "seats": 43,
-       "share": 0.0149,
-       "standing": "government"
+       "share": 0.0144,
+       "standing": "backing"
       },
       {
        "party": "Q197765",
        "name": "China Zhi Gong Party",
        "seats": 39,
-       "share": 0.0136,
-       "standing": "government"
+       "share": 0.0131,
+       "standing": "backing"
       },
       {
        "party": "Q1185330",
        "name": "Taiwan Democratic Self-Government League",
        "seats": 13,
-       "share": 0.0045,
-       "standing": "government"
+       "share": 0.0044,
+       "standing": "backing"
+      },
+      {
+       "party": null,
+       "name": "Nonpartisan",
+       "seats": 110,
+       "share": 0.0368,
+       "standing": "non_attached"
       }
      ],
-     "next_election": "2027",
+     "last_election": "2023",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2027-12-31",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2023",
      "retrieved_at": "2026-08-14",
-     "confidence": "partial",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -18607,7 +18453,9 @@
    ],
    "government": {
     "governing": [
-     "Q17427",
+     "Q17427"
+    ],
+    "backing": [
      "Q1185348",
      "Q1133626",
      "Q1348513",
@@ -18617,11 +18465,11 @@
      "Q197765",
      "Q1185330"
     ],
-    "backing": [],
-    "seats": 2878,
+    "seats": 2509,
+    "seats_with_backing": 2878,
     "minority": false,
     "authority": "established",
-    "confidence": "partial",
+    "confidence": "flagged",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -18985,6 +18833,7 @@
       "credit": "Movimientomira"
      },
      "ideology_families": [
+      "liberal",
       "conservative",
       "religious",
       "reformist"
@@ -20438,7 +20287,7 @@
       },
       {
        "party": "Q1951190",
-       "name": "Movement for Democracy",
+       "name": "Movement for Democracy (Cape Verde)",
        "seats": 33,
        "share": 0.4583,
        "standing": "opposition"
@@ -20876,7 +20725,7 @@
      "composition": [
       {
        "party": "Q816863",
-       "name": "Democratic Party",
+       "name": "Democratic Party (Cyprus)",
        "seats": 8,
        "share": 0.1429,
        "standing": "government"
@@ -20897,7 +20746,7 @@
       },
       {
        "party": "Q2748384",
-       "name": "ELAM",
+       "name": "ELAM (Cyprus)",
        "seats": 8,
        "share": 0.1429,
        "standing": "opposition"
@@ -21518,78 +21367,6 @@
       "internationalist"
      ]
     },
-    "Q12039497": {
-     "entity": {
-      "qid": "Q12039497",
-      "label": "Nezávislí"
-     },
-     "name": "Nezávislí",
-     "abbreviation": "NEZ",
-     "kind": "party",
-     "alignment": "centre",
-     "alignment_raw": "centrism",
-     "ideologies": [
-      {
-       "qid": "Q6216",
-       "label": "liberalism"
-      }
-     ],
-     "groupings": [],
-     "colors": [
-      "#0275a5"
-     ],
-     "founded_year": 1994,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q12039497",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Nezávislí.png",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nez%C3%A1visl%C3%AD.png",
-      "host": "commons",
-      "license": "CC BY 4.0",
-      "non_free": false,
-      "credit": "Unknown authorUnknown author"
-     },
-     "ideology_families": [
-      "liberal"
-     ]
-    },
-    "Q105425062": {
-     "entity": {
-      "qid": "Q105425062",
-      "label": "Oath"
-     },
-     "name": "Oath",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [
-      {
-       "qid": "Q18907386",
-       "label": "Patriots.eu"
-      }
-     ],
-     "colors": [
-      "#0033ff"
-     ],
-     "founded_year": 2021,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q105425062",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Přísaha Logo.png",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/P%C5%99%C3%ADsaha%20Logo.png",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "credit": "Přísaha"
-     }
-    },
     "Q164878": {
      "entity": {
       "qid": "Q164878",
@@ -21922,29 +21699,8 @@
       {
        "party": "Q10728124",
        "name": "ANO",
-       "seats": 12,
-       "share": 0.1481,
-       "standing": "government"
-      },
-      {
-       "party": null,
-       "name": "Independent",
-       "seats": 1,
-       "share": 0.0123,
-       "standing": "government"
-      },
-      {
-       "party": "Q12039497",
-       "name": "NEZ",
-       "seats": 1,
-       "share": 0.0123,
-       "standing": "government"
-      },
-      {
-       "party": "Q105425062",
-       "name": "Přísaha",
-       "seats": 1,
-       "share": 0.0123,
+       "seats": 15,
+       "share": 0.1852,
        "standing": "government"
       },
       {
@@ -22026,7 +21782,7 @@
       },
       {
        "party": "Q341085",
-       "name": "Pirates",
+       "name": "Czech Pirate Party",
        "seats": 1,
        "share": 0.0123,
        "standing": "opposition"
@@ -22373,8 +22129,7 @@
      "ideology_families": [
       "conservative",
       "religious",
-      "nationalist",
-      "other"
+      "nationalist"
      ]
     },
     "Q49768": {
@@ -22581,10 +22336,10 @@
      },
      "ideology_families": [
       "liberal",
-      "conservative",
       "nationalist",
       "internationalist",
-      "populist"
+      "populist",
+      "other"
      ]
     },
     "Q49766": {
@@ -22745,16 +22500,14 @@
        "name": "CDU",
        "seats": 164,
        "share": 0.2603,
-       "standing": "government",
-       "alliance": "CDU/CSU"
+       "standing": "government"
       },
       {
        "party": "Q49763",
        "name": "CSU",
        "seats": 44,
        "share": 0.0698,
-       "standing": "government",
-       "alliance": "CDU/CSU"
+       "standing": "government"
       },
       {
        "party": "Q49768",
@@ -22793,9 +22546,9 @@
       }
      ],
      "last_election": "2025-02-23",
-     "next_election": "2029",
+     "next_election": "2029-03-25",
      "mandate": {
-      "expected_end": "2029-12-31",
+      "expected_end": "2029-03-25",
       "inferred": false,
       "state": "current"
      },
@@ -22946,81 +22699,33 @@
     }
    },
    "parties": {
-    "Q1817797": {
+    "Q1538413": {
      "entity": {
-      "qid": "Q1817797",
-      "label": "People's Rally for Progress"
+      "qid": "Q1538413",
+      "label": "Union for the Presidential Majority"
      },
-     "name": "People's Rally for Progress",
-     "kind": "party",
+     "name": "Union for the Presidential Majority",
+     "abbreviation": "UMP",
+     "kind": "electoral_alliance",
      "ideologies": [],
      "groupings": [],
-     "colors": [],
-     "founded_year": 1979,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q1817797",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "People's Rally for Progress.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/People's%20Rally%20for%20Progress.png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     }
-    },
-    "Q1470091": {
-     "entity": {
-      "qid": "Q1470091",
-      "label": "Front for the Restoration of Unity and Democracy"
-     },
-     "name": "Front for the Restoration of Unity and Democracy",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q211720",
-       "label": "Afar people"
-      }
+     "colors": [
+      "#669d66"
      ],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 1991,
+     "founded_year": 2003,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q1470091",
+      "qid": "Q1538413",
       "retrieved_at": "2026-08-14"
      },
      "logo": {
-      "file": "Flag of the Front for the Restoration of Unity and Democracy.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20the%20Front%20for%20the%20Restoration%20of%20Unity%20and%20Democracy.svg",
+      "file": "Dj ump-bandera.PNG",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dj%20ump-bandera.PNG",
       "host": "commons",
-      "license": "Public domain",
+      "license": "CC BY 3.0",
       "non_free": false,
-      "credit": "Germenfer"
-     },
-     "ideology_families": [
-      "nationalist"
-     ]
-    },
-    "Q3366531": {
-     "entity": {
-      "qid": "Q3366531",
-      "label": "National Democratic Party"
-     },
-     "name": "National Democratic Party",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 1992,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q3366531",
-      "retrieved_at": "2026-08-14"
+      "credit": "Jolle"
      }
     },
     "Q5285308": {
@@ -23054,31 +22759,14 @@
      "selection": [
       "directly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "restricted",
      "composition": [
       {
-       "party": "Q1817797",
-       "name": "People's Rally for Progress",
-       "seats": 45,
-       "share": 0.6923,
-       "standing": "government",
-       "alliance": "Union for the Presidential Majority"
-      },
-      {
-       "party": "Q1470091",
-       "name": "Front for the Restoration of Unity and Democracy",
-       "seats": 12,
-       "share": 0.1846,
-       "standing": "government",
-       "alliance": "Union for the Presidential Majority"
-      },
-      {
-       "party": "Q3366531",
-       "name": "National Democratic Party",
-       "seats": 1,
-       "share": 0.0154,
-       "standing": "government",
-       "alliance": "Union for the Presidential Majority"
+       "party": "Q1538413",
+       "name": "Union for the Presidential Majority",
+       "seats": 58,
+       "share": 0.8923,
+       "standing": "government"
       },
       {
        "party": "Q5285308",
@@ -23111,9 +22799,7 @@
    ],
    "government": {
     "governing": [
-     "Q1817797",
-     "Q1470091",
-     "Q3366531"
+     "Q1538413"
     ],
     "backing": [],
     "seats": 58,
@@ -24062,8 +23748,8 @@
       "credit": "Danmarksdemokraterne – Inger Støjberg"
      },
      "ideology_families": [
-      "liberal",
       "conservative",
+      "nationalist",
       "internationalist",
       "populist",
       "reformist"
@@ -24194,7 +23880,7 @@
       },
       {
        "party": "Q507170",
-       "name": "Danish People's Party",
+       "name": "Danish People's",
        "seats": 16,
        "share": 0.0894,
        "standing": "opposition"
@@ -24235,15 +23921,15 @@
        "standing": "opposition"
       }
      ],
-     "last_election": "2026",
-     "next_election": "2030",
+     "last_election": "2026-03-24",
+     "next_election": "2030-03-23",
      "term_years": 4,
      "mandate": {
-      "expected_end": "2030-12-31",
+      "expected_end": "2030-03-23",
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026",
+     "as_of": "2026-03-24",
      "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
@@ -24924,7 +24610,7 @@
      },
      "ideology_families": [
       "social_democratic",
-      "populist"
+      "nationalist"
      ]
     },
     "Q31284": {
@@ -26071,7 +25757,6 @@
      },
      "ideology_families": [
       "liberal",
-      "nationalist",
       "reformist"
      ]
     }
@@ -26792,7 +26477,8 @@
       "social_democratic",
       "liberal",
       "nationalist",
-      "internationalist"
+      "internationalist",
+      "other"
      ]
     },
     "Q21957427": {
@@ -26911,7 +26597,7 @@
       },
       {
        "party": null,
-       "name": "Independents",
+       "name": "Independent",
        "seats": 2,
        "share": 0.0132,
        "standing": "non_attached"
@@ -27175,7 +26861,7 @@
      "ideology_families": [
       "liberal",
       "internationalist",
-      "other"
+      "authoritarian"
      ]
     },
     "Q913551": {
@@ -27468,21 +27154,21 @@
      "composition": [
       {
        "party": "Q738947",
-       "name": "Estonian Reform Party",
+       "name": "Reform",
        "seats": 38,
        "share": 0.3762,
        "standing": "government"
       },
       {
        "party": "Q56249403",
-       "name": "Estonia 200",
+       "name": "E200",
        "seats": 12,
        "share": 0.1188,
        "standing": "government"
       },
       {
        "party": "Q913551",
-       "name": "Social Democratic Party",
+       "name": "SDE",
        "seats": 14,
        "share": 0.1386,
        "standing": "opposition"
@@ -27496,21 +27182,21 @@
       },
       {
        "party": "Q794028",
-       "name": "Conservative People's Party of Estonia",
+       "name": "EKRE",
        "seats": 9,
        "share": 0.0891,
        "standing": "opposition"
       },
       {
        "party": "Q928652",
-       "name": "Estonian Centre Party",
+       "name": "Centre",
        "seats": 8,
        "share": 0.0792,
        "standing": "opposition"
       },
       {
        "party": "Q126693274",
-       "name": "Estonian Nationalists and Conservatives",
+       "name": "ERK",
        "seats": 1,
        "share": 0.0099,
        "standing": "opposition"
@@ -28668,14 +28354,14 @@
        "standing": "non_attached"
       }
      ],
-     "last_election": "2025-08-04",
+     "last_election": "2025",
      "next_election": "2030",
      "mandate": {
       "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2025-08-04",
+     "as_of": "2025",
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -29057,7 +28743,6 @@
      "ideology_families": [
       "social_democratic",
       "liberal",
-      "nationalist",
       "internationalist",
       "reformist"
      ]
@@ -29211,7 +28896,7 @@
       "liberal",
       "green",
       "nationalist",
-      "internationalist"
+      "reformist"
      ]
     },
     "Q1029761": {
@@ -29500,7 +29185,8 @@
      "ideology_families": [
       "liberal",
       "conservative",
-      "nationalist"
+      "nationalist",
+      "reformist"
      ]
     },
     "Q97155800": {
@@ -29565,8 +29251,7 @@
       "social_democratic",
       "liberal",
       "nationalist",
-      "internationalist",
-      "authoritarian"
+      "other"
      ]
     },
     "Q59986766": {
@@ -29763,6 +29448,31 @@
       "internationalist"
      ]
     },
+    "Q120965503": {
+     "entity": {
+      "qid": "Q120965503",
+      "label": "Left for Independence"
+     },
+     "name": "Left for Independence",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q120965503",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Izquierdas por la Independencia logo.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Izquierdas%20por%20la%20Independencia%20logo.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "credit": "Izquierdas por la Independencia"
+     }
+    },
     "Q927193": {
      "entity": {
       "qid": "Q927193",
@@ -29872,7 +29582,8 @@
      "ideology_families": [
       "socialist",
       "nationalist",
-      "internationalist"
+      "internationalist",
+      "reformist"
      ]
     },
     "Q1104327": {
@@ -29937,8 +29648,7 @@
      "ideology_families": [
       "liberal",
       "conservative",
-      "nationalist",
-      "reformist"
+      "nationalist"
      ]
     },
     "Q5660112": {
@@ -30187,17 +29897,10 @@
        "standing": "government"
       },
       {
-       "party": "Q1029761",
-       "name": "EH Bildu",
-       "seats": 5,
-       "share": 0.0188,
-       "standing": "backing"
-      },
-      {
-       "party": "Q150068",
-       "name": "Republican Left of Catalonia",
-       "seats": 4,
-       "share": 0.015,
+       "party": "Q120965503",
+       "name": "Left for Independence",
+       "seats": 9,
+       "share": 0.0338,
        "standing": "backing"
       },
       {
@@ -31203,6 +30906,7 @@
      },
      "ideology_families": [
       "liberal",
+      "green",
       "internationalist"
      ]
     },
@@ -31638,9 +31342,9 @@
       "credit": "Social Democratic Liberal Party"
      },
      "ideology_families": [
-      "conservative",
       "religious",
-      "nationalist"
+      "nationalist",
+      "other"
      ]
     },
     "Q424705": {
@@ -32652,7 +32356,7 @@
        "name": "Non-Attached Members",
        "seats": 9,
        "share": 0.0156,
-       "standing": "opposition"
+       "standing": "non_attached"
       }
      ],
      "last_election": "2024-06-30",
@@ -32692,63 +32396,63 @@
      "composition": [
       {
        "party": "Q33959094",
-       "name": "Senate Republicans",
+       "name": "SR",
        "seats": 130,
        "share": 0.3736,
        "standing": "non_attached"
       },
       {
        "party": "Q1822853",
-       "name": "Socialist group in the Senate",
+       "name": "S",
        "seats": 65,
        "share": 0.1868,
        "standing": "non_attached"
       },
       {
        "party": "Q2388816",
-       "name": "Centrist Union group",
+       "name": "UC",
        "seats": 59,
        "share": 0.1695,
        "standing": "non_attached"
       },
       {
        "party": "Q41631620",
-       "name": "The Independents – Republic and Territories group",
+       "name": "LIRT",
        "seats": 20,
        "share": 0.0575,
        "standing": "non_attached"
       },
       {
        "party": "Q30837274",
-       "name": "Rally of Democrats, Progressive and Independent group",
+       "name": "RDPI",
        "seats": 19,
        "share": 0.0546,
        "standing": "non_attached"
       },
       {
        "party": "Q2724226",
-       "name": "Communist, Republican, Citizen and Ecologist group",
+       "name": "CRCE",
        "seats": 18,
        "share": 0.0517,
        "standing": "non_attached"
       },
       {
        "party": "Q2330141",
-       "name": "European Democratic and Social Rally group",
+       "name": "RDSE",
        "seats": 17,
        "share": 0.0489,
        "standing": "non_attached"
       },
       {
        "party": "Q2375582",
-       "name": "Ecologist group",
+       "name": "E",
        "seats": 16,
        "share": 0.046,
        "standing": "non_attached"
       },
       {
        "party": null,
-       "name": "Administrative meeting of senators not appearing on the list of any group",
+       "name": "RASNAG",
        "seats": 4,
        "share": 0.0115,
        "standing": "non_attached"
@@ -33672,8 +33376,8 @@
      },
      "ideology_families": [
       "green",
-      "nationalist",
-      "internationalist"
+      "internationalist",
+      "reformist"
      ]
     },
     "Q130225218": {
@@ -33682,7 +33386,7 @@
       "label": "Independent Alliance"
      },
      "name": "Independent Alliance",
-     "kind": "electoral_alliance",
+     "kind": "party",
      "ideologies": [],
      "groupings": [],
      "colors": [],
@@ -33953,7 +33657,6 @@
      },
      "ideology_families": [
       "religious",
-      "nationalist",
       "populist"
      ]
     },
@@ -34118,7 +33821,8 @@
      },
      "ideology_families": [
       "socialist",
-      "nationalist"
+      "nationalist",
+      "reformist"
      ]
     }
    },
@@ -34264,7 +33968,7 @@
       },
       {
        "party": null,
-       "name": "Casual vacancy",
+       "name": "Casual vacancies",
        "seats": 1,
        "share": 0.0015,
        "standing": "vacant"
@@ -35187,7 +34891,7 @@
      "composition": [
       {
        "party": "Q200875",
-       "name": "National Democratic Congress",
+       "name": "National Democratic Congress (Ghana)",
        "seats": 185,
        "share": 0.6703,
        "standing": "government"
@@ -36412,8 +36116,7 @@
      },
      "ideology_families": [
       "socialist",
-      "internationalist",
-      "authoritarian"
+      "internationalist"
      ]
     },
     "Q222897": {
@@ -36773,11 +36476,11 @@
       }
      ],
      "last_election": "2023-06-25",
-     "next_election": "2027-07-25",
+     "next_election": "2027",
      "mandate": {
-      "expected_end": "2027-07-25",
+      "expected_end": "2027-12-31",
       "inferred": false,
-      "state": "due_soon"
+      "state": "current"
      },
      "as_of": "2023-06-25",
      "retrieved_at": "2026-08-14",
@@ -37150,7 +36853,8 @@
      "ideology_families": [
       "liberal",
       "conservative",
-      "populist"
+      "populist",
+      "other"
      ]
     },
     "Q6163926": {
@@ -37194,7 +36898,7 @@
      },
      "ideology_families": [
       "liberal",
-      "nationalist"
+      "reformist"
      ]
     },
     "Q6064406": {
@@ -37534,7 +37238,7 @@
       },
       {
        "party": "Q8023686",
-       "name": "WINAQ-URNG",
+       "name": "Winaq-Guatemalan National Revolutionary Unity",
        "seats": 1,
        "share": 0.0063,
        "standing": "government"
@@ -37730,7 +37434,26 @@
      "retrieved_at": "2026-08-14"
     }
    },
-   "head_of_government": null,
+   "head_of_government": {
+    "person": {
+     "qid": "Q627337",
+     "label": "Rui Duarte de Barros"
+    },
+    "name": "Rui Duarte de Barros",
+    "office": {
+     "qid": "Q30101458",
+     "label": "Prime Minister of Guinea-Bissau"
+    },
+    "party": null,
+    "since": "2023-12-21",
+    "represents": "political",
+    "provenance": {
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q1007",
+     "retrieved_at": "2026-08-14"
+    }
+   },
    "parties": {},
    "chambers": [
     {
@@ -38956,96 +38679,6 @@
       "credit": "MIHANER"
      }
     },
-    "Q30324660": {
-     "entity": {
-      "qid": "Q30324660",
-      "label": "Centre"
-     },
-     "name": "Centre",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q6216",
-       "label": "liberalism"
-      }
-     ],
-     "groupings": [
-      {
-       "qid": "Q25079",
-       "label": "Alliance of Liberals and Democrats for Europe Party"
-      }
-     ],
-     "colors": [
-      "#2d7ab0"
-     ],
-     "founded_year": 2015,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q30324660",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Centar logo.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Centar%20logo.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "credit": "Rijeke pravde"
-     },
-     "ideology_families": [
-      "liberal"
-     ]
-    },
-    "Q130378788": {
-     "entity": {
-      "qid": "Q130378788",
-      "label": "Home and National Rally"
-     },
-     "name": "Home and National Rally",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q852739",
-       "label": "national conservatism"
-      },
-      {
-       "qid": "Q436860",
-       "label": "right-wing populism"
-      }
-     ],
-     "groupings": [
-      {
-       "qid": "Q1577483",
-       "label": "European Conservatives and Reformists Party"
-      }
-     ],
-     "colors": [
-      "#000000"
-     ],
-     "founded_year": 2024,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q130378788",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "DOMiNO logo.png",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/DOMiNO%20logo.png",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "restrictions": [
-       "trademarked"
-      ],
-      "credit": "Home and National Rally (DOMiNO)"
-     },
-     "ideology_families": [
-      "nationalist",
-      "populist"
-     ]
-    },
     "Q1261401": {
      "entity": {
       "qid": "Q1261401",
@@ -39090,7 +38723,7 @@
      },
      "ideology_families": [
       "social_democratic",
-      "nationalist"
+      "other"
      ]
     },
     "Q1261390": {
@@ -39199,7 +38832,7 @@
       },
       {
        "party": "Q86756923",
-       "name": "Homeland Movement (Croatia)",
+       "name": "Homeland Movement",
        "seats": 8,
        "share": 0.053,
        "standing": "government"
@@ -39275,14 +38908,14 @@
        "standing": "opposition"
       },
       {
-       "party": "Q30324660",
+       "party": null,
        "name": "Centre-NPS-GLAS",
        "seats": 5,
        "share": 0.0331,
        "standing": "opposition"
       },
       {
-       "party": "Q130378788",
+       "party": null,
        "name": "DOMiNO-HS",
        "seats": 4,
        "share": 0.0265,
@@ -39423,7 +39056,34 @@
      "retrieved_at": "2026-08-14"
     }
    },
-   "head_of_government": null,
+   "head_of_government": {
+    "person": {
+     "qid": "Q131140314",
+     "label": "Alix Didier Fils-Aimé"
+    },
+    "name": "Alix Didier Fils-Aimé",
+    "office": {
+     "qid": "Q1064589",
+     "label": "Prime Minister of Haiti"
+    },
+    "party": null,
+    "since": "2024-11-11",
+    "portrait": {
+     "file": "Alix Didier Fils-Aimé - Premier ministre.jpg",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Alix%20Didier%20Fils-Aim%C3%A9%20-%20Premier%20ministre.jpg",
+     "host": "commons",
+     "license": "CC0",
+     "non_free": false,
+     "credit": "Unknown authorUnknown author"
+    },
+    "represents": "political",
+    "provenance": {
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q790",
+     "retrieved_at": "2026-08-14"
+    }
+   },
    "parties": {},
    "chambers": [
     {
@@ -39473,7 +39133,7 @@
     "backing": [],
     "seats": 0,
     "minority": true,
-    "authority": "established",
+    "authority": "rival_governments",
     "confidence": "flagged",
     "provenance": {
      "kind": "wikipedia",
@@ -39782,7 +39442,7 @@
      "composition": [
       {
        "party": "Q125418097",
-       "name": "Tisza Party",
+       "name": "TISZA",
        "seats": 141,
        "share": 0.7085,
        "standing": "government"
@@ -39950,7 +39610,8 @@
      },
      "ideology_families": [
       "liberal",
-      "nationalist"
+      "nationalist",
+      "other"
      ]
     },
     "Q4261459": {
@@ -40005,9 +39666,9 @@
       "credit": "Danny Gaida Tera ELgar"
      },
      "ideology_families": [
-      "conservative",
       "nationalist",
-      "populist"
+      "populist",
+      "other"
      ]
     },
     "Q1257317": {
@@ -40069,7 +39730,7 @@
      "ideology_families": [
       "conservative",
       "religious",
-      "nationalist"
+      "other"
      ]
     },
     "Q2434365": {
@@ -40113,7 +39774,7 @@
      },
      "ideology_families": [
       "religious",
-      "nationalist"
+      "other"
      ]
     },
     "Q1186227": {
@@ -40161,7 +39822,7 @@
      },
      "ideology_families": [
       "liberal",
-      "nationalist"
+      "other"
      ]
     },
     "Q4207219": {
@@ -40217,8 +39878,9 @@
      },
      "ideology_families": [
       "liberal",
+      "conservative",
       "nationalist",
-      "authoritarian"
+      "other"
      ]
     },
     "Q1511101": {
@@ -40265,7 +39927,7 @@
      },
      "ideology_families": [
       "religious",
-      "nationalist"
+      "other"
      ]
     },
     "Q1186306": {
@@ -40332,7 +39994,8 @@
      "ideology_families": [
       "liberal",
       "nationalist",
-      "populist"
+      "populist",
+      "other"
      ]
     }
    },
@@ -40356,7 +40019,7 @@
        "seats": 102,
        "share": 0.1759,
        "standing": "government",
-       "alliance": "Advanced Indonesia Coalition"
+       "alliance": "KIM"
       },
       {
        "party": "Q4261459",
@@ -40364,7 +40027,7 @@
        "seats": 86,
        "share": 0.1483,
        "standing": "government",
-       "alliance": "Advanced Indonesia Coalition"
+       "alliance": "KIM"
       },
       {
        "party": "Q1257317",
@@ -40372,7 +40035,7 @@
        "seats": 68,
        "share": 0.1172,
        "standing": "government",
-       "alliance": "Advanced Indonesia Coalition"
+       "alliance": "KIM"
       },
       {
        "party": "Q2434365",
@@ -40380,7 +40043,7 @@
        "seats": 48,
        "share": 0.0828,
        "standing": "government",
-       "alliance": "Advanced Indonesia Coalition"
+       "alliance": "KIM"
       },
       {
        "party": "Q1186227",
@@ -40388,7 +40051,7 @@
        "seats": 44,
        "share": 0.0759,
        "standing": "government",
-       "alliance": "Advanced Indonesia Coalition"
+       "alliance": "KIM"
       },
       {
        "party": "Q4207219",
@@ -40396,7 +40059,7 @@
        "seats": 69,
        "share": 0.119,
        "standing": "backing",
-       "alliance": "Advanced Indonesia Coalition Plus"
+       "alliance": "KIM+"
       },
       {
        "party": "Q1511101",
@@ -40404,7 +40067,7 @@
        "seats": 53,
        "share": 0.0914,
        "standing": "backing",
-       "alliance": "Advanced Indonesia Coalition Plus"
+       "alliance": "KIM+"
       },
       {
        "party": "Q1186306",
@@ -40771,7 +40434,8 @@
      },
      "ideology_families": [
       "socialist",
-      "nationalist"
+      "nationalist",
+      "reformist"
      ]
     },
     "Q20682633": {
@@ -41207,7 +40871,7 @@
       },
       {
        "party": "Q503614",
-       "name": "Labour",
+       "name": "Labour Party",
        "seats": 11,
        "share": 0.0585,
        "standing": "opposition"
@@ -41256,7 +40920,7 @@
       },
       {
        "party": "Q831015",
-       "name": "Green",
+       "name": "Green Party",
        "seats": 1,
        "share": 0.0053,
        "standing": "opposition"
@@ -41617,7 +41281,6 @@
       "credit": "עיצוב מקורי: גדעון שגיא, עיצוב נוסף: ראובן אדלר מתוך אתר הארץ"
      },
      "ideology_families": [
-      "liberal",
       "conservative",
       "nationalist",
       "populist"
@@ -41915,7 +41578,7 @@
      "name": "United Torah Judaism",
      "endonym": "יהדות התורה",
      "abbreviation": "ج",
-     "kind": "party",
+     "kind": "parliamentary_group",
      "ideologies": [
       {
        "qid": "Q65352237",
@@ -42063,7 +41726,8 @@
       "credit": "United Arab List"
      },
      "ideology_families": [
-      "nationalist"
+      "nationalist",
+      "other"
      ]
     },
     "Q12407298": {
@@ -42074,7 +41738,7 @@
      "name": "Hadash-Ta'al",
      "endonym": "חד\"ש תע\"ל",
      "abbreviation": "و‌م",
-     "kind": "party",
+     "kind": "parliamentary_group",
      "alignment": "left",
      "alignment_raw": "left-wing",
      "ideologies": [],
@@ -42164,7 +41828,6 @@
      },
      "ideology_families": [
       "social_democratic",
-      "nationalist",
       "reformist"
      ]
     },
@@ -42288,7 +41951,7 @@
       },
       {
        "party": "Q60198488",
-       "name": "Blue & White National Unity",
+       "name": "Blue and White National Unity",
        "seats": 8,
        "share": 0.0667,
        "standing": "opposition"
@@ -42543,6 +42206,7 @@
      },
      "ideology_families": [
       "conservative",
+      "religious",
       "nationalist",
       "populist"
      ]
@@ -42660,7 +42324,7 @@
       "credit": "Office of Shiv Sena Dadar"
      },
      "ideology_families": [
-      "nationalist"
+      "religious"
      ]
     },
     "Q904827": {
@@ -42950,9 +42614,9 @@
       "credit": "Sg9655"
      },
      "ideology_families": [
-      "social_democratic",
       "liberal",
-      "nationalist"
+      "nationalist",
+      "other"
      ]
     },
     "Q4801137": {
@@ -43854,7 +43518,8 @@
       "retrieved_at": "2026-08-14"
      },
      "ideology_families": [
-      "religious"
+      "religious",
+      "other"
      ]
     },
     "Q60763483": {
@@ -43985,7 +43650,8 @@
       "socialist",
       "liberal",
       "nationalist",
-      "populist"
+      "populist",
+      "other"
      ]
     },
     "Q6974870": {
@@ -44210,7 +43876,8 @@
      },
      "ideology_families": [
       "social_democratic",
-      "liberal"
+      "liberal",
+      "other"
      ]
     },
     "Q1200751": {
@@ -44743,14 +44410,14 @@
       },
       {
        "party": null,
-       "name": "Independents",
+       "name": "Independent politician",
        "seats": 3,
        "share": 0.0122,
        "standing": "government"
       },
       {
        "party": null,
-       "name": "Nominated members",
+       "name": "List of nominated members of the Rajya Sabha",
        "seats": 7,
        "share": 0.0286,
        "standing": "government"
@@ -44841,7 +44508,7 @@
       },
       {
        "party": null,
-       "name": "Independents",
+       "name": "Independent politician",
        "seats": 1,
        "share": 0.0041,
        "standing": "opposition"
@@ -44917,15 +44584,16 @@
        "standing": "opposition"
       }
      ],
+     "last_election": "2026",
      "next_election": "2027",
      "mandate": {
       "expected_end": "2027-12-31",
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2026-08-14",
+     "as_of": "2026",
      "retrieved_at": "2026-08-14",
-     "confidence": "partial",
+     "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -45324,7 +44992,7 @@
       "label": "Azem coalition"
      },
      "name": "Azem coalition",
-     "kind": "party",
+     "kind": "electoral_alliance",
      "ideologies": [],
      "groupings": [],
      "colors": [],
@@ -45392,7 +45060,7 @@
       "label": "Al-Asas"
      },
      "name": "Al-Asas",
-     "kind": "party",
+     "kind": "electoral_alliance",
      "ideologies": [],
      "groupings": [],
      "colors": [],
@@ -45467,6 +45135,7 @@
       "non_free": true
      },
      "ideology_families": [
+      "nationalist",
       "populist"
      ]
     },
@@ -45526,7 +45195,7 @@
       },
       {
        "party": "Q101210235",
-       "name": "Takadum",
+       "name": "Progress Party (Iraq)",
        "seats": 27,
        "share": 0.0821,
        "standing": "government"
@@ -45867,7 +45536,8 @@
      },
      "ideology_families": [
       "religious",
-      "populist"
+      "nationalist",
+      "other"
      ]
     },
     "Q5505887": {
@@ -46766,11 +46436,11 @@
       "credit": "Consiglio Federale della Lega per Salvini Premier"
      },
      "ideology_families": [
+      "liberal",
       "nationalist",
       "internationalist",
       "populist",
-      "reformist",
-      "other"
+      "reformist"
      ]
     },
     "Q14924303": {
@@ -46841,8 +46511,7 @@
       "social_democratic",
       "conservative",
       "religious",
-      "populist",
-      "authoritarian"
+      "populist"
      ]
     },
     "Q113563752": {
@@ -46918,8 +46587,7 @@
       "non_free": true
      },
      "ideology_families": [
-      "liberal",
-      "internationalist"
+      "liberal"
      ]
     },
     "Q107017274": {
@@ -47221,7 +46889,7 @@
      "name": "Greens and Left Alliance",
      "endonym": "Alleanza Verdi e Sinistra",
      "abbreviation": "AVS",
-     "kind": "party",
+     "kind": "parliamentary_group",
      "alignment": "left",
      "alignment_raw": "left-wing",
      "ideologies": [
@@ -47538,8 +47206,8 @@
       "credit": "Union Valdotaine"
      },
      "ideology_families": [
-      "nationalist",
-      "reformist"
+      "socialist",
+      "nationalist"
      ]
     },
     "Q47090559": {
@@ -47703,7 +47371,7 @@
       "credit": "Sud chiama Nord"
      },
      "ideology_families": [
-      "nationalist"
+      "other"
      ]
     },
     "Q133280326": {
@@ -47866,16 +47534,16 @@
       },
       {
        "party": null,
-       "name": "Mixed Group",
+       "name": "Non-Inscrits",
        "seats": 2,
        "share": 0.005,
        "standing": "backing"
       },
       {
        "party": "Q47729",
-       "name": "Democratic Party – Democratic and Progressive Italy",
-       "seats": 68,
-       "share": 0.17,
+       "name": "Democratic Party",
+       "seats": 67,
+       "share": 0.1675,
        "standing": "opposition"
       },
       {
@@ -47957,7 +47625,7 @@
       },
       {
        "party": null,
-       "name": "Independents",
+       "name": "Non-Inscrits",
        "seats": 1,
        "share": 0.0025,
        "standing": "opposition"
@@ -48020,7 +47688,7 @@
       },
       {
        "party": "Q14924303",
-       "name": "Forza Italia–Berlusconi's party–People of Freedom",
+       "name": "Forza Italia–Berlusconi's Party–PPE",
        "seats": 20,
        "share": 0.0943,
        "standing": "government"
@@ -48048,7 +47716,7 @@
       },
       {
        "party": "Q67785862",
-       "name": "Italia Viva–Civic Revolution",
+       "name": "Italia Viva–Civic Renewal",
        "seats": 8,
        "share": 0.0377,
        "standing": "opposition"
@@ -48076,7 +47744,7 @@
       },
       {
        "party": "Q63926676",
-       "name": "Action–Rainbow Europe",
+       "name": "Action–Reformers",
        "seats": 2,
        "share": 0.0094,
        "standing": "opposition"
@@ -49130,6 +48798,7 @@
       "socialist",
       "liberal",
       "nationalist",
+      "internationalist",
       "reformist"
      ]
     },
@@ -49236,7 +48905,7 @@
      "ideology_families": [
       "liberal",
       "conservative",
-      "green"
+      "religious"
      ]
     },
     "Q64405573": {
@@ -49457,6 +49126,7 @@
      "ideology_families": [
       "social_democratic",
       "green",
+      "nationalist",
       "reformist"
      ]
     },
@@ -49578,7 +49248,7 @@
       },
       {
        "party": null,
-       "name": "Independent",
+       "name": "Independent politician",
        "seats": 7,
        "share": 0.0151,
        "standing": "non_attached"
@@ -49715,7 +49385,7 @@
        "name": "Constitutional Democratic Party of Japan",
        "seats": 1,
        "share": 0.004,
-       "standing": "speaker"
+       "standing": "non_attached"
       },
       {
        "party": null,
@@ -51265,7 +50935,7 @@
       "non_free": true
      },
      "ideology_families": [
-      "liberal",
+      "nationalist",
       "populist"
      ]
     }
@@ -51521,14 +51191,14 @@
      "composition": [
       {
        "party": "Q23058731",
-       "name": "Tobwaan Kiribati Party",
+       "name": "Tobwaan Kiribati",
        "seats": 33,
        "share": 0.7333,
        "standing": "government"
       },
       {
        "party": "Q96373866",
-       "name": "Boutokaan Kiribati Moa Party",
+       "name": "Boutokaan Kiribati Moa",
        "seats": 8,
        "share": 0.1778,
        "standing": "opposition"
@@ -51703,13 +51373,13 @@
        "standing": "non_attached"
       }
      ],
-     "last_election": "2025-01-30",
+     "last_election": "2025-01-12",
      "mandate": {
-      "expected_end": "2030-01-30",
+      "expected_end": "2030-01-12",
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2025-01-30",
+     "as_of": "2025-01-12",
      "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
@@ -52258,7 +51928,7 @@
      },
      "as_of": "2026-03-15",
      "retrieved_at": "2026-08-14",
-     "confidence": "partial",
+     "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -52278,7 +51948,7 @@
     "seats": 687,
     "minority": false,
     "authority": "established",
-    "confidence": "partial",
+    "confidence": "high",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -52449,7 +52119,8 @@
       "liberal",
       "conservative",
       "nationalist",
-      "populist"
+      "populist",
+      "other"
      ]
     },
     "Q124657368": {
@@ -52640,6 +52311,7 @@
       "credit": "기본소득당"
      },
      "ideology_families": [
+      "social_democratic",
       "liberal"
      ]
     },
@@ -53206,7 +52878,7 @@
        "name": "Lao People's Revolutionary Party",
        "seats": 169,
        "share": 0.9657,
-       "standing": "government"
+       "standing": "non_attached"
       },
       {
        "party": null,
@@ -53237,14 +52909,12 @@
     }
    ],
    "government": {
-    "governing": [
-     "Q756180"
-    ],
+    "governing": [],
     "backing": [],
-    "seats": 169,
-    "minority": false,
+    "seats": 0,
+    "minority": true,
     "authority": "established",
-    "confidence": "high",
+    "confidence": "flagged",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -53421,7 +53091,7 @@
       "label": "Democratic Gathering"
      },
      "name": "Democratic Gathering",
-     "kind": "parliamentary_group",
+     "kind": "electoral_alliance",
      "ideologies": [],
      "groupings": [],
      "colors": [],
@@ -53490,10 +53160,10 @@
      },
      "ideology_families": [
       "liberal",
-      "conservative",
       "religious",
       "nationalist",
-      "reformist"
+      "reformist",
+      "other"
      ]
     },
     "Q4793227": {
@@ -53768,7 +53438,7 @@
       },
       {
        "party": "Q106345810",
-       "name": "Lebanon First",
+       "name": "National Moderation",
        "seats": 6,
        "share": 0.0469,
        "standing": "backing"
@@ -53859,11 +53529,10 @@
       }
      ],
      "last_election": "2022-05-15",
-     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-12-31",
-      "inferred": false,
-      "state": "current"
+      "expected_end": "2027-05-15",
+      "inferred": true,
+      "state": "due_soon"
      },
      "as_of": "2022-05-15",
      "retrieved_at": "2026-08-14",
@@ -56488,6 +56157,63 @@
     }
    },
    "parties": {
+    "Q4362": {
+     "entity": {
+      "qid": "Q4362",
+      "label": "Social Democratic Party of Lithuania"
+     },
+     "name": "Social Democratic Party of Lithuania",
+     "endonym": "Lietuvos socialdemokratų partija",
+     "abbreviation": "LSDP",
+     "kind": "party",
+     "alignment": "centre_left",
+     "alignment_raw": "centre-left",
+     "ideologies": [
+      {
+       "qid": "Q121254",
+       "label": "social democracy"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q220945",
+       "label": "Party of European Socialists"
+      },
+      {
+       "qid": "Q159454",
+       "label": "Socialist International"
+      },
+      {
+       "qid": "Q7248622",
+       "label": "Progressive Alliance"
+      }
+     ],
+     "colors": [
+      "#ff101a",
+      "#e10514"
+     ],
+     "founded_year": 1896,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q4362",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "LSDP Logo.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/LSDP%20Logo.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": [
+       "trademarked"
+      ],
+      "credit": "Unknown authorUnknown author"
+     },
+     "ideology_families": [
+      "social_democratic"
+     ]
+    },
     "Q110966457": {
      "entity": {
       "qid": "Q110966457",
@@ -56582,9 +56308,9 @@
       "non_free": true
      },
      "ideology_families": [
-      "conservative",
+      "green",
       "agrarian",
-      "other"
+      "authoritarian"
      ]
     },
     "Q1357218": {
@@ -56643,7 +56369,7 @@
       "liberal",
       "conservative",
       "religious",
-      "nationalist"
+      "internationalist"
      ]
     },
     "Q81556": {
@@ -56838,7 +56564,7 @@
      },
      "ideology_families": [
       "nationalist",
-      "internationalist",
+      "populist",
       "reformist"
      ]
     },
@@ -56900,6 +56626,7 @@
      "ideology_families": [
       "nationalist",
       "internationalist",
+      "populist",
       "agrarian",
       "reformist"
      ]
@@ -56921,92 +56648,98 @@
      "contestation": "competitive",
      "composition": [
       {
+       "party": "Q4362",
+       "name": "Social Democratic Party of Lithuania Group",
+       "seats": 52,
+       "share": 0.3662,
+       "standing": "government"
+      },
+      {
        "party": null,
        "name": "Independent",
        "seats": 1,
-       "share": 0.0071,
-       "standing": "government",
-       "alliance": "Social Democratic Party of Lithuania Group"
+       "share": 0.007,
+       "standing": "government"
       },
       {
        "party": "Q110966457",
        "name": "Democrats \"For Lithuania\"",
        "seats": 14,
-       "share": 0.0993,
+       "share": 0.0986,
        "standing": "government"
       },
       {
        "party": "Q285817",
        "name": "Farmers and Greens Union",
        "seats": 6,
-       "share": 0.0426,
+       "share": 0.0423,
        "standing": "government"
       },
       {
        "party": "Q1357218",
        "name": "Electoral Action of Poles in Lithuania – Christian Families Alliance",
        "seats": 3,
-       "share": 0.0213,
+       "share": 0.0211,
        "standing": "government"
       },
       {
        "party": "Q81556",
        "name": "Homeland Union",
        "seats": 28,
-       "share": 0.1986,
+       "share": 0.1972,
        "standing": "opposition"
       },
       {
        "party": "Q124472979",
        "name": "Dawn of Nemunas",
        "seats": 18,
-       "share": 0.1277,
+       "share": 0.1268,
        "standing": "opposition"
       },
       {
        "party": "Q1466907",
        "name": "Liberals' Movement",
        "seats": 11,
-       "share": 0.078,
+       "share": 0.0775,
        "standing": "opposition"
       },
       {
        "party": null,
        "name": "Independent and Political Committees",
        "seats": 6,
-       "share": 0.0426,
+       "share": 0.0423,
        "standing": "non_attached"
       },
       {
        "party": "Q97216079",
        "name": "National Alliance",
        "seats": 1,
-       "share": 0.0071,
+       "share": 0.007,
        "standing": "non_attached"
       },
       {
        "party": "Q634790",
        "name": "People and Justice Union",
        "seats": 1,
-       "share": 0.0071,
+       "share": 0.007,
        "standing": "non_attached"
       },
       {
        "party": null,
        "name": "Vacant",
        "seats": 1,
-       "share": 0.0071,
+       "share": 0.007,
        "standing": "vacant"
       }
      ],
-     "last_election": "2024-10-13",
+     "last_election": "2024",
      "next_election": "2026",
      "mandate": {
       "expected_end": "2026-12-31",
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2024-10-13",
+     "as_of": "2024",
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -57022,13 +56755,14 @@
    ],
    "government": {
     "governing": [
+     "Q4362",
      "Q110966457",
      "Q285817",
      "Q1357218"
     ],
     "backing": [],
-    "seats": 24,
-    "minority": true,
+    "seats": 76,
+    "minority": false,
     "authority": "established",
     "confidence": "flagged",
     "provenance": {
@@ -57425,7 +57159,7 @@
       "credit": "Unknown authorUnknown author"
      },
      "ideology_families": [
-      "reformist"
+      "populist"
      ]
     },
     "Q1270494": {
@@ -57733,7 +57467,7 @@
       "label": "Union of Greens and Farmers"
      },
      "name": "Union of Greens and Farmers",
-     "kind": "parliamentary_group",
+     "kind": "party",
      "alignment": "centre_right",
      "alignment_raw": "centre-right",
      "ideologies": [
@@ -57788,7 +57522,7 @@
       "credit": "Zaļo un Zemnieku savienība (ZZS)"
      },
      "ideology_families": [
-      "conservative",
+      "green",
       "nationalist",
       "agrarian"
      ]
@@ -57800,7 +57534,7 @@
      },
      "name": "United List",
      "endonym": "Apvienotais saraksts",
-     "kind": "parliamentary_group",
+     "kind": "party",
      "alignment": "centre_right",
      "alignment_raw": "centre-right",
      "ideologies": [
@@ -57846,7 +57580,7 @@
       "non_free": true
      },
      "ideology_families": [
-      "conservative",
+      "green",
       "nationalist"
      ]
     },
@@ -58186,7 +57920,37 @@
      "retrieved_at": "2026-08-14"
     }
    },
-   "head_of_government": null,
+   "head_of_government": {
+    "person": {
+     "qid": "Q105319569",
+     "label": "Abd al-Hamid Dbeibeh"
+    },
+    "name": "Abd al-Hamid Dbeibeh",
+    "office": {
+     "qid": "Q15305714",
+     "label": "Prime Minister of Libya"
+    },
+    "party": {
+     "qid": "Q327591",
+     "label": "independent politician"
+    },
+    "since": "2021-02-05",
+    "portrait": {
+     "file": "Abdul Hamid Dbeibeh (15-04-2021).jpg",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Abdul%20Hamid%20Dbeibeh%20(15-04-2021).jpg",
+     "host": "commons",
+     "license": "CC BY 4.0",
+     "non_free": false,
+     "credit": "Government of the Russian Federation"
+    },
+    "represents": "political",
+    "provenance": {
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q1016",
+     "retrieved_at": "2026-08-14"
+    }
+   },
    "parties": {},
    "chambers": [
     {
@@ -58493,85 +58257,6 @@
      "ideology_families": [
       "conservative",
       "nationalist"
-     ]
-    },
-    "Q3550065": {
-     "entity": {
-      "qid": "Q3550065",
-      "label": "Constitutional Union"
-     },
-     "name": "Constitutional Union",
-     "kind": "party",
-     "alignment": "centre_right",
-     "alignment_raw": "centre-right",
-     "ideologies": [
-      {
-       "qid": "Q943197",
-       "label": "royalism"
-      },
-      {
-       "qid": "Q1043096",
-       "label": "liberal conservatism"
-      },
-      {
-       "qid": "Q729119",
-       "label": "economic liberalism"
-      }
-     ],
-     "groupings": [
-      {
-       "qid": "Q212712",
-       "label": "Liberal International"
-      }
-     ],
-     "colors": [
-      "#f29400"
-     ],
-     "founded_year": 1983,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q3550065",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Constitutional Union (Morocco) logo.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Constitutional%20Union%20(Morocco)%20logo.png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     },
-     "ideology_families": [
-      "liberal",
-      "conservative"
-     ]
-    },
-    "Q3326668": {
-     "entity": {
-      "qid": "Q3326668",
-      "label": "Democratic and Social Movement"
-     },
-     "name": "Democratic and Social Movement",
-     "kind": "party",
-     "ideologies": [
-      {
-       "qid": "Q943197",
-       "label": "royalism"
-      }
-     ],
-     "groupings": [],
-     "colors": [
-      "#200000"
-     ],
-     "founded_year": 1996,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q3326668",
-      "retrieved_at": "2026-08-14"
-     },
-     "ideology_families": [
-      "conservative"
      ]
     },
     "Q2297130": {
@@ -58886,6 +58571,85 @@
       "non_free": true
      }
     },
+    "Q3550065": {
+     "entity": {
+      "qid": "Q3550065",
+      "label": "Constitutional Union"
+     },
+     "name": "Constitutional Union",
+     "kind": "party",
+     "alignment": "centre_right",
+     "alignment_raw": "centre-right",
+     "ideologies": [
+      {
+       "qid": "Q943197",
+       "label": "royalism"
+      },
+      {
+       "qid": "Q1043096",
+       "label": "liberal conservatism"
+      },
+      {
+       "qid": "Q729119",
+       "label": "economic liberalism"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q212712",
+       "label": "Liberal International"
+      }
+     ],
+     "colors": [
+      "#f29400"
+     ],
+     "founded_year": 1983,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q3550065",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Constitutional Union (Morocco) logo.png",
+      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Constitutional%20Union%20(Morocco)%20logo.png",
+      "host": "wikipedia",
+      "license": "Fair use",
+      "non_free": true
+     },
+     "ideology_families": [
+      "liberal",
+      "conservative"
+     ]
+    },
+    "Q3326668": {
+     "entity": {
+      "qid": "Q3326668",
+      "label": "Democratic and Social Movement"
+     },
+     "name": "Democratic and Social Movement",
+     "kind": "party",
+     "ideologies": [
+      {
+       "qid": "Q943197",
+       "label": "royalism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#200000"
+     ],
+     "founded_year": 1996,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q3326668",
+      "retrieved_at": "2026-08-14"
+     },
+     "ideology_families": [
+      "conservative"
+     ]
+    },
     "Q3550326": {
      "entity": {
       "qid": "Q3550326",
@@ -59022,17 +58786,10 @@
        "standing": "government"
       },
       {
-       "party": "Q3550065",
-       "name": "Constitutional Union",
-       "seats": 18,
-       "share": 0.0456,
-       "standing": "backing"
-      },
-      {
-       "party": "Q3326668",
-       "name": "Democratic and Social Movement",
-       "seats": 5,
-       "share": 0.0127,
+       "party": null,
+       "name": "Constitutional, Democratic and Social Group",
+       "seats": 23,
+       "share": 0.0582,
        "standing": "backing"
       },
       {
@@ -59094,7 +58851,7 @@
      },
      "as_of": "2021-09-08",
      "retrieved_at": "2026-08-14",
-     "confidence": "high",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -59238,15 +58995,15 @@
        "standing": "opposition"
       }
      ],
-     "last_election": "2021",
+     "last_election": "2021-10-05",
      "mandate": {
-      "expected_end": "2026-01-01",
+      "expected_end": "2026-10-05",
       "inferred": true,
-      "state": "overdue"
+      "state": "due_soon"
      },
-     "as_of": "2021",
+     "as_of": "2021-10-05",
      "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -59264,15 +59021,12 @@
      "Q784586",
      "Q477273"
     ],
-    "backing": [
-     "Q3550065",
-     "Q3326668"
-    ],
+    "backing": [],
     "seats": 267,
     "seats_with_backing": 290,
     "minority": false,
     "authority": "established",
-    "confidence": "high",
+    "confidence": "partial",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -59362,32 +59116,136 @@
     }
    },
    "parties": {
-    "Q116693824": {
+    "Q48760874": {
      "entity": {
-      "qid": "Q116693824",
-      "label": "Monegasque National Union"
+      "qid": "Q48760874",
+      "label": "Priorité Monaco"
      },
-     "name": "Monegasque National Union",
-     "abbreviation": "UNM",
+     "name": "Priorité Monaco",
      "kind": "party",
-     "ideologies": [],
+     "ideologies": [
+      {
+       "qid": "Q794394",
+       "label": "classical liberalism"
+      },
+      {
+       "qid": "Q180490",
+       "label": "populism"
+      },
+      {
+       "qid": "Q223200",
+       "label": "euroscepticism"
+      }
+     ],
      "groupings": [],
-     "colors": [],
-     "founded_year": 2022,
+     "colors": [
+      "#8080c0"
+     ],
+     "founded_year": 2017,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q116693824",
+      "qid": "Q48760874",
       "retrieved_at": "2026-08-14"
      },
      "logo": {
-      "file": "Logo of Union nationale monégasque.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20of%20Union%20nationale%20mon%C3%A9gasque.svg",
+      "file": "Priorité Monaco logo.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Priorit%C3%A9%20Monaco%20logo.svg",
       "host": "commons",
       "license": "Public domain",
       "non_free": false,
-      "credit": "UNM"
-     }
+      "restrictions": [
+       "trademarked"
+      ],
+      "credit": "Priorité Monaco"
+     },
+     "ideology_families": [
+      "liberal",
+      "internationalist",
+      "populist"
+     ]
+    },
+    "Q19604424": {
+     "entity": {
+      "qid": "Q19604424",
+      "label": "Horizon Monaco"
+     },
+     "name": "Horizon Monaco",
+     "kind": "party",
+     "ideologies": [
+      {
+       "qid": "Q7169",
+       "label": "conservatism"
+      },
+      {
+       "qid": "Q223200",
+       "label": "euroscepticism"
+      }
+     ],
+     "groupings": [],
+     "colors": [],
+     "founded_year": 2012,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q19604424",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Horizon Monaco logo.png",
+      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Horizon%20Monaco%20logo.png",
+      "host": "wikipedia",
+      "license": "Fair use",
+      "non_free": true
+     },
+     "ideology_families": [
+      "conservative",
+      "internationalist"
+     ]
+    },
+    "Q2053150": {
+     "entity": {
+      "qid": "Q2053150",
+      "label": "Union for Monaco"
+     },
+     "name": "Union for Monaco",
+     "kind": "party",
+     "alignment": "centre",
+     "alignment_raw": "centrism",
+     "ideologies": [
+      {
+       "qid": "Q6216",
+       "label": "liberalism"
+      },
+      {
+       "qid": "Q216669",
+       "label": "monarchism"
+      }
+     ],
+     "groupings": [],
+     "colors": [],
+     "founded_year": 2013,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q2053150",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Union Monégasque Logo.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Union%20Mon%C3%A9gasque%20Logo.png",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": [
+       "trademarked"
+      ],
+      "credit": "Union Monégasque"
+     },
+     "ideology_families": [
+      "liberal",
+      "conservative"
+     ]
     }
    },
    "chambers": [
@@ -59406,11 +59264,28 @@
      "contestation": "uncontested",
      "composition": [
       {
-       "party": "Q116693824",
-       "name": "Monegasque National Union",
-       "seats": 24,
-       "share": 1,
-       "standing": "government"
+       "party": "Q48760874",
+       "name": "Priorité Monaco",
+       "seats": 13,
+       "share": 0.5417,
+       "standing": "government",
+       "alliance": "Monegasque National Union"
+      },
+      {
+       "party": "Q19604424",
+       "name": "Horizon Monaco",
+       "seats": 8,
+       "share": 0.3333,
+       "standing": "government",
+       "alliance": "Monegasque National Union"
+      },
+      {
+       "party": "Q2053150",
+       "name": "Union Monégasque",
+       "seats": 3,
+       "share": 0.125,
+       "standing": "government",
+       "alliance": "Monegasque National Union"
       }
      ],
      "last_election": "2023-02-05",
@@ -59436,7 +59311,9 @@
    ],
    "government": {
     "governing": [
-     "Q116693824"
+     "Q48760874",
+     "Q19604424",
+     "Q2053150"
     ],
     "backing": [],
     "seats": 24,
@@ -60163,7 +60040,8 @@
       "credit": "HapHaxion"
      },
      "ideology_families": [
-      "nationalist"
+      "nationalist",
+      "internationalist"
      ]
     },
     "Q2711827": {
@@ -60577,6 +60455,7 @@
      },
      "ideology_families": [
       "liberal",
+      "green",
       "internationalist"
      ]
     },
@@ -60932,21 +60811,24 @@
    },
    "head_of_government": {
     "person": {
-     "qid": "Q136542212"
+     "qid": "Q136542212",
+     "label": "Herintsalama Rajaonarivelo"
     },
-    "name": "Mamitiana Rajaonarison",
+    "name": "Herintsalama Rajaonarivelo",
+    "office": {
+     "qid": "Q23782691",
+     "label": "Prime Minister of Madagascar"
+    },
     "office_local": "Praiminisitra Ao Amin'ny Repoblikan'i Madagasikara",
     "party": null,
+    "since": "2025-10-20",
     "represents": "political",
     "provenance": {
-     "kind": "wikipedia",
-     "derivation": "extracted",
-     "article": "Madagascar",
-     "revid": 1369138543,
-     "retrieved_at": "2026-08-14",
-     "model": "claude-haiku-4-5"
-    },
-    "superseded": true
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q1019",
+     "retrieved_at": "2026-08-14"
+    }
    },
    "parties": {
     "Q8058262": {
@@ -61393,31 +61275,128 @@
     }
    },
    "parties": {
-    "Q10501097": {
+    "Q945717": {
      "entity": {
-      "qid": "Q10501097",
-      "label": "Your Macedonia"
+      "qid": "Q945717",
+      "label": "Internal Macedonian Revolutionary Organization – Democratic Party for Macedonian National Unity"
      },
-     "name": "Your Macedonia",
-     "endonym": "За подобра Македонија",
-     "kind": "electoral_alliance",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
+     "name": "Internal Macedonian Revolutionary Organization – Democratic Party for Macedonian National Unity",
+     "endonym": "Внатрешна македонска револуционерна организација — Демократска партија за македонско национално единство",
+     "abbreviation": "VMRO-DPMNE",
+     "kind": "party",
+     "ideologies": [
+      {
+       "qid": "Q3407487",
+       "label": "Macedonian nationalism"
+      },
+      {
+       "qid": "Q7169",
+       "label": "conservatism"
+      },
+      {
+       "qid": "Q209158",
+       "label": "Christian democracy"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q208242",
+       "label": "European People's Party"
+      },
+      {
+       "qid": "Q862603",
+       "label": "International Democracy Union"
+      }
+     ],
+     "colors": [
+      "#cc0000"
+     ],
+     "founded_year": 1990,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q10501097",
+      "qid": "Q945717",
       "retrieved_at": "2026-08-14"
      },
      "logo": {
-      "file": "Logo of the Your Macedonia coalition.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20of%20the%20Your%20Macedonia%20coalition.svg",
+      "file": "VMRO-DPMNE Logo 2025.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/VMRO-DPMNE%20Logo%202025.png",
       "host": "commons",
       "license": "CC BY-SA 4.0",
       "non_free": false,
       "credit": "VMRO-DPMNE"
-     }
+     },
+     "ideology_families": [
+      "conservative",
+      "religious",
+      "nationalist"
+     ]
+    },
+    "Q2491139": {
+     "entity": {
+      "qid": "Q2491139",
+      "label": "Socialist Party of Macedonia"
+     },
+     "name": "Socialist Party of Macedonia",
+     "kind": "party",
+     "ideologies": [
+      {
+       "qid": "Q189280",
+       "label": "democratic socialism"
+      }
+     ],
+     "groupings": [],
+     "colors": [],
+     "founded_year": 1990,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q2491139",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Socijalistichka-Partija-na-Makedonija logo.gif",
+      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Socijalistichka-Partija-na-Makedonija%20logo.gif",
+      "host": "wikipedia",
+      "license": "Fair use",
+      "non_free": true
+     },
+     "ideology_families": [
+      "social_democratic"
+     ]
+    },
+    "Q3621311": {
+     "entity": {
+      "qid": "Q3621311",
+      "label": "Democratic Party of Serbs in Macedonia"
+     },
+     "name": "Democratic Party of Serbs in Macedonia",
+     "kind": "party",
+     "ideologies": [
+      {
+       "qid": "Q1369260",
+       "label": "minority rights"
+      }
+     ],
+     "groupings": [],
+     "colors": [],
+     "founded_year": 1992,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q3621311",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Dpsm.png",
+      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Dpsm.png",
+      "host": "wikipedia",
+      "license": "Fair use",
+      "non_free": true
+     },
+     "ideology_families": [
+      "liberal"
+     ]
     },
     "Q126192947": {
      "entity": {
@@ -61468,30 +61447,135 @@
       "non_free": true
      }
     },
-    "Q125635628": {
+    "Q160188": {
      "entity": {
-      "qid": "Q125635628",
-      "label": "For a European Future"
+      "qid": "Q160188",
+      "label": "Social Democratic Union of Macedonia"
      },
-     "name": "For a European Future",
+     "name": "Social Democratic Union of Macedonia",
+     "endonym": "Социјалдемократски сојуз на Македонија",
+     "abbreviation": "СДСМ",
      "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
+     "alignment": "centre_left",
+     "alignment_raw": "centre-left",
+     "ideologies": [
+      {
+       "qid": "Q121254",
+       "label": "social democracy"
+      },
+      {
+       "qid": "Q3781399",
+       "label": "pro-Europeanism"
+      }
+     ],
+     "groupings": [
+      {
+       "qid": "Q220945",
+       "label": "Party of European Socialists"
+      },
+      {
+       "qid": "Q7248622",
+       "label": "Progressive Alliance"
+      }
+     ],
+     "colors": [
+      "#c0181f"
+     ],
+     "founded_year": 1991,
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q125635628",
+      "qid": "Q160188",
       "retrieved_at": "2026-08-14"
      },
      "logo": {
-      "file": "Logo of the For a European Future coalition.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20of%20the%20For%20a%20European%20Future%20coalition.svg",
+      "file": "Лого на Социјалдемократски Сојуз на Македонија (СДСМ).svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/%D0%9B%D0%BE%D0%B3%D0%BE%20%D0%BD%D0%B0%20%D0%A1%D0%BE%D1%86%D0%B8%D1%98%D0%B0%D0%BB%D0%B4%D0%B5%D0%BC%D0%BE%D0%BA%D1%80%D0%B0%D1%82%D1%81%D0%BA%D0%B8%20%D0%A1%D0%BE%D1%98%D1%83%D0%B7%20%D0%BD%D0%B0%20%D0%9C%D0%B0%D0%BA%D0%B5%D0%B4%D0%BE%D0%BD%D0%B8%D1%98%D0%B0%20(%D0%A1%D0%94%D0%A1%D0%9C).svg",
       "host": "commons",
-      "license": "CC BY-SA 4.0",
+      "license": "Public domain",
       "non_free": false,
-      "credit": "Social Democratic Union of Macedonia"
-     }
+      "restrictions": [
+       "trademarked"
+      ],
+      "credit": "Pta345MK"
+     },
+     "ideology_families": [
+      "social_democratic",
+      "internationalist"
+     ]
+    },
+    "Q2705468": {
+     "entity": {
+      "qid": "Q2705468",
+      "label": "New Social Democratic Party"
+     },
+     "name": "New Social Democratic Party",
+     "kind": "party",
+     "ideologies": [
+      {
+       "qid": "Q121254",
+       "label": "social democracy"
+      }
+     ],
+     "groupings": [],
+     "colors": [],
+     "founded_year": 2005,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q2705468",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "New Social Democratic Party.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/New%20Social%20Democratic%20Party.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "credit": "Нова социјалдемократска партија"
+     },
+     "ideology_families": [
+      "social_democratic"
+     ]
+    },
+    "Q683845": {
+     "entity": {
+      "qid": "Q683845",
+      "label": "Liberal Democratic Party"
+     },
+     "name": "Liberal Democratic Party",
+     "kind": "party",
+     "ideologies": [
+      {
+       "qid": "Q6216",
+       "label": "liberalism"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#ffff00"
+     ],
+     "founded_year": 1997,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q683845",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "Liberal Democratic Party (North Macedonia) logo.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Liberal%20Democratic%20Party%20(North%20Macedonia)%20logo.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": [
+       "trademarked"
+      ],
+      "credit": "Unknown authorUnknown author"
+     },
+     "ideology_families": [
+      "liberal"
+     ]
     },
     "Q1186346": {
      "entity": {
@@ -61535,6 +61619,23 @@
       "liberal",
       "internationalist"
      ]
+    },
+    "Q7165624": {
+     "entity": {
+      "qid": "Q7165624",
+      "label": "People's Movement"
+     },
+     "name": "People's Movement",
+     "kind": "party",
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q7165624",
+      "retrieved_at": "2026-08-14"
+     }
     },
     "Q25553804": {
      "entity": {
@@ -61722,15 +61823,29 @@
      "contestation": "competitive",
      "composition": [
       {
-       "party": "Q10501097",
-       "name": "VMRO-DPMNE Coalition",
-       "seats": 58,
-       "share": 0.4833,
+       "party": "Q945717",
+       "name": "VMRO-DPMNE",
+       "seats": 55,
+       "share": 0.4583,
+       "standing": "government"
+      },
+      {
+       "party": "Q2491139",
+       "name": "Socialist Party of Macedonia",
+       "seats": 2,
+       "share": 0.0167,
+       "standing": "government"
+      },
+      {
+       "party": "Q3621311",
+       "name": "Democratic Party of Serbs in Macedonia",
+       "seats": 1,
+       "share": 0.0083,
        "standing": "government"
       },
       {
        "party": "Q126192947",
-       "name": "VLEN Coalition",
+       "name": "VLEN",
        "seats": 11,
        "share": 0.0917,
        "standing": "government"
@@ -61743,17 +61858,45 @@
        "standing": "government"
       },
       {
-       "party": "Q125635628",
-       "name": "SDSM Coalition",
-       "seats": 18,
-       "share": 0.15,
+       "party": "Q160188",
+       "name": "Social Democratic Union of Macedonia",
+       "seats": 15,
+       "share": 0.125,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q2705468",
+       "name": "New Social Democratic Party",
+       "seats": 2,
+       "share": 0.0167,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q683845",
+       "name": "Liberal Democratic Party",
+       "seats": 1,
+       "share": 0.0083,
        "standing": "opposition"
       },
       {
        "party": "Q1186346",
-       "name": "BDI Coalition",
-       "seats": 12,
-       "share": 0.1,
+       "name": "Democratic Union for Integration",
+       "seats": 10,
+       "share": 0.0833,
+       "standing": "opposition"
+      },
+      {
+       "party": "Q7165624",
+       "name": "People's Movement",
+       "seats": 1,
+       "share": 0.0083,
+       "standing": "opposition"
+      },
+      {
+       "party": null,
+       "name": "Turks Movement for Rights and Democracy",
+       "seats": 1,
+       "share": 0.0083,
        "standing": "opposition"
       },
       {
@@ -61809,7 +61952,7 @@
      },
      "as_of": "2024-05-08",
      "retrieved_at": "2026-08-14",
-     "confidence": "high",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -61823,7 +61966,9 @@
    ],
    "government": {
     "governing": [
-     "Q10501097",
+     "Q945717",
+     "Q2491139",
+     "Q3621311",
      "Q126192947",
      "Q124415752"
     ],
@@ -61831,7 +61976,7 @@
     "seats": 74,
     "minority": false,
     "authority": "established",
-    "confidence": "high",
+    "confidence": "partial",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -62503,7 +62648,7 @@
        "standing": "non_attached"
       },
       {
-       "party": null,
+       "party": "Q728190",
        "name": "Tatmadaw",
        "seats": 56,
        "share": 0.2467,
@@ -63010,7 +63155,7 @@
       "credit": "Chinneeb"
      },
      "ideology_families": [
-      "liberal"
+      "green"
      ]
     }
    },
@@ -63726,14 +63871,14 @@
        "standing": "opposition"
       }
      ],
-     "last_election": "2023-05-13",
+     "last_election": "2023",
      "next_election": "2028",
      "mandate": {
       "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2023-05-13",
+     "as_of": "2023",
      "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
@@ -64816,7 +64961,7 @@
       },
       {
        "party": null,
-       "name": "Independents",
+       "name": "Independent",
        "seats": 2,
        "share": 0.0215,
        "standing": "non_attached"
@@ -64993,9 +65138,9 @@
       "non_free": true
      },
      "ideology_families": [
-      "liberal",
       "conservative",
-      "nationalist"
+      "nationalist",
+      "other"
      ]
     },
     "Q107750651": {
@@ -65106,23 +65251,6 @@
       "conservative"
      ]
     },
-    "Q6972277": {
-     "entity": {
-      "qid": "Q6972277",
-      "label": "National Development Party"
-     },
-     "name": "National Development Party",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q6972277",
-      "retrieved_at": "2026-08-14"
-     }
-    },
     "Q139776": {
      "entity": {
       "qid": "Q139776",
@@ -65205,15 +65333,15 @@
        "standing": "opposition"
       },
       {
-       "party": "Q6972277",
-       "name": "National Development Party",
+       "party": null,
+       "name": "National Developement Party",
        "seats": 1,
        "share": 0.0044,
        "standing": "opposition"
       },
       {
        "party": null,
-       "name": "People's Development Party",
+       "name": "People's Developement Party",
        "seats": 1,
        "share": 0.0044,
        "standing": "opposition"
@@ -65397,8 +65525,9 @@
      "ideology_families": [
       "social_democratic",
       "nationalist",
+      "internationalist",
       "populist",
-      "reformist"
+      "other"
      ]
     },
     "Q383718": {
@@ -65439,7 +65568,6 @@
       "credit": "The party itself"
      },
      "ideology_families": [
-      "conservative",
       "green"
      ]
     },
@@ -65503,8 +65631,8 @@
      "ideology_families": [
       "social_democratic",
       "socialist",
-      "conservative",
-      "nationalist"
+      "nationalist",
+      "reformist"
      ]
     },
     "Q851087": {
@@ -65703,14 +65831,14 @@
       },
       {
        "party": "Q383718",
-       "name": "PVEM",
+       "name": "Ecologist Green Party of Mexico",
        "seats": 62,
        "share": 0.124,
        "standing": "government"
       },
       {
        "party": "Q540320",
-       "name": "PT",
+       "name": "Labor Party",
        "seats": 49,
        "share": 0.098,
        "standing": "government"
@@ -65724,21 +65852,21 @@
       },
       {
        "party": "Q851087",
-       "name": "PAN",
+       "name": "National Action Party",
        "seats": 70,
        "share": 0.14,
        "standing": "opposition"
       },
       {
        "party": "Q682969",
-       "name": "PRI",
+       "name": "Institutional Revolutionary Party",
        "seats": 37,
        "share": 0.074,
        "standing": "opposition"
       },
       {
        "party": "Q10920094",
-       "name": "MC",
+       "name": "Citizens' Movement",
        "seats": 28,
        "share": 0.056,
        "standing": "opposition"
@@ -66250,7 +66378,7 @@
       "credit": "Malaysian Indian Congress, redraw by Molecule Extraction"
      },
      "ideology_families": [
-      "social_democratic",
+      "liberal",
       "conservative",
       "nationalist"
      ]
@@ -67025,13 +67153,6 @@
        "standing": "government"
       },
       {
-       "party": null,
-       "name": "Independent",
-       "seats": 7,
-       "share": 0.0315,
-       "standing": "government"
-      },
-      {
        "party": "Q1547025",
        "name": "Malaysian Islamic Party",
        "seats": 43,
@@ -67076,7 +67197,7 @@
      },
      "as_of": "2022-11-19",
      "retrieved_at": "2026-08-14",
-     "confidence": "high",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -67105,96 +67226,84 @@
        "name": "People's Justice Party (Malaysia)",
        "seats": 9,
        "share": 0.1286,
-       "standing": "government",
-       "alliance": "Pakatan Harapan"
+       "standing": "government"
       },
       {
        "party": "Q1185837",
        "name": "Democratic Action Party",
        "seats": 8,
        "share": 0.1143,
-       "standing": "government",
-       "alliance": "Pakatan Harapan"
+       "standing": "government"
       },
       {
        "party": "Q4919308",
        "name": "National Trust Party (Malaysia)",
        "seats": 2,
        "share": 0.0286,
-       "standing": "government",
-       "alliance": "Pakatan Harapan"
+       "standing": "government"
       },
       {
        "party": "Q1668154",
        "name": "United Malay National Organisation",
        "seats": 9,
        "share": 0.1286,
-       "standing": "government",
-       "alliance": "Barisan Nasional"
+       "standing": "government"
       },
       {
        "party": "Q1886920",
        "name": "Malaysian Chinese Association",
        "seats": 3,
        "share": 0.0429,
-       "standing": "government",
-       "alliance": "Barisan Nasional"
+       "standing": "government"
       },
       {
        "party": "Q958983",
        "name": "Malaysian Indian Congress",
        "seats": 1,
        "share": 0.0143,
-       "standing": "government",
-       "alliance": "Barisan Nasional"
+       "standing": "government"
       },
       {
        "party": "Q4918646",
        "name": "Parti Pesaka Bumiputera Bersatu",
        "seats": 4,
        "share": 0.0571,
-       "standing": "government",
-       "alliance": "Gabungan Parti Sarawak"
+       "standing": "government"
       },
       {
        "party": "Q4921498",
        "name": "Sarawak People's Party",
        "seats": 1,
        "share": 0.0143,
-       "standing": "government",
-       "alliance": "Gabungan Parti Sarawak"
+       "standing": "government"
       },
       {
        "party": "Q7423428",
        "name": "Progressive Democratic Party (Malaysia)",
        "seats": 1,
        "share": 0.0143,
-       "standing": "government",
-       "alliance": "Gabungan Parti Sarawak"
+       "standing": "government"
       },
       {
        "party": "Q1100205",
        "name": "Sarawak United Peoples' Party",
        "seats": 1,
        "share": 0.0143,
-       "standing": "government",
-       "alliance": "Gabungan Parti Sarawak"
+       "standing": "government"
       },
       {
        "party": "Q98139835",
        "name": "Parti Gagasan Rakyat Sabah",
        "seats": 2,
        "share": 0.0286,
-       "standing": "government",
-       "alliance": "Gabungan Rakyat Sabah"
+       "standing": "government"
       },
       {
        "party": "Q175657",
        "name": "United Progressive Kinabalu Organisation",
        "seats": 1,
        "share": 0.0143,
-       "standing": "government",
-       "alliance": "Gabungan Rakyat Sabah"
+       "standing": "government"
       },
       {
        "party": "Q30591536",
@@ -67215,16 +67324,14 @@
        "name": "Malaysian Islamic Party",
        "seats": 7,
        "share": 0.1,
-       "standing": "opposition",
-       "alliance": "Perikatan Nasional"
+       "standing": "opposition"
       },
       {
        "party": "Q140191522",
        "name": "National Vision Party (Malaysia)",
        "seats": 1,
        "share": 0.0143,
-       "standing": "opposition",
-       "alliance": "Perikatan Nasional"
+       "standing": "opposition"
       },
       {
        "party": null,
@@ -67270,10 +67377,10 @@
      "Q109678369"
     ],
     "backing": [],
-    "seats": 150,
+    "seats": 143,
     "minority": false,
     "authority": "established",
-    "confidence": "high",
+    "confidence": "flagged",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -67446,7 +67553,7 @@
      },
      "ideology_families": [
       "social_democratic",
-      "reformist"
+      "other"
      ]
     },
     "Q1425821": {
@@ -67501,7 +67608,8 @@
       "conservative",
       "religious",
       "nationalist",
-      "populist"
+      "populist",
+      "other"
      ]
     },
     "Q668181": {
@@ -67854,7 +67962,8 @@
      "ideology_families": [
       "socialist",
       "internationalist",
-      "reformist"
+      "reformist",
+      "other"
      ]
     },
     "Q1155803": {
@@ -67902,7 +68011,8 @@
       "non_free": true
      },
      "ideology_families": [
-      "conservative"
+      "conservative",
+      "other"
      ]
     },
     "Q60518792": {
@@ -68974,42 +69084,42 @@
        "name": "Labour Party",
        "seats": 22,
        "share": 0.0611,
-       "standing": "non_attached"
+       "standing": "opposition"
       },
       {
        "party": "Q118896450",
        "name": "New Nigeria People's Party",
        "seats": 15,
        "share": 0.0417,
-       "standing": "non_attached"
+       "standing": "opposition"
       },
       {
        "party": "Q4729271",
        "name": "All Progressives Grand Alliance",
        "seats": 5,
        "share": 0.0139,
-       "standing": "non_attached"
+       "standing": "opposition"
       },
       {
        "party": "Q7550561",
        "name": "Social Democratic Party",
        "seats": 2,
        "share": 0.0056,
-       "standing": "non_attached"
+       "standing": "opposition"
       },
       {
        "party": "Q60143323",
        "name": "African Democratic Congress",
        "seats": 1,
        "share": 0.0028,
-       "standing": "non_attached"
+       "standing": "opposition"
       },
       {
        "party": "Q63434802",
        "name": "Young Progressives Party",
        "seats": 1,
        "share": 0.0028,
-       "standing": "non_attached"
+       "standing": "opposition"
       }
      ],
      "last_election": "2023-02-25",
@@ -69471,7 +69581,7 @@
       },
       {
        "party": "Q2054647",
-       "name": "Independent Liberal Party",
+       "name": "Independent Liberal Party (Nicaragua)",
        "seats": 1,
        "share": 0.011,
        "standing": "opposition"
@@ -69485,7 +69595,7 @@
       },
       {
        "party": "Q4732427",
-       "name": "Alliance for the Republic",
+       "name": "Alliance for the Republic (Nicaragua)",
        "seats": 1,
        "share": 0.011,
        "standing": "opposition"
@@ -70036,7 +70146,8 @@
       "nationalist",
       "internationalist",
       "populist",
-      "reformist"
+      "reformist",
+      "other"
      ]
     },
     "Q137842537": {
@@ -70129,8 +70240,8 @@
      },
      "ideology_families": [
       "social_democratic",
-      "nationalist",
-      "populist"
+      "populist",
+      "reformist"
      ]
     },
     "Q663535": {
@@ -70189,8 +70300,8 @@
       "credit": "Partij voor de Dieren"
      },
      "ideology_families": [
-      "liberal",
-      "green"
+      "green",
+      "other"
      ]
     },
     "Q101083924": {
@@ -70501,7 +70612,7 @@
       "label": "GroenLinks–PvdA"
      },
      "name": "GroenLinks–PvdA",
-     "kind": "electoral_alliance",
+     "kind": "parliamentary_group",
      "alignment": "centre_left",
      "alignment_raw": "centre-left",
      "ideologies": [
@@ -71220,7 +71331,7 @@
       "socialist",
       "liberal",
       "green",
-      "nationalist"
+      "reformist"
      ]
     },
     "Q1518568": {
@@ -71477,7 +71588,8 @@
      },
      "ideology_families": [
       "liberal",
-      "reformist"
+      "green",
+      "populist"
      ]
     }
    },
@@ -71829,7 +71941,7 @@
      "ideology_families": [
       "social_democratic",
       "socialist",
-      "reformist"
+      "other"
      ]
     },
     "Q136716194": {
@@ -71966,7 +72078,7 @@
      "ideology_families": [
       "liberal",
       "conservative",
-      "nationalist"
+      "religious"
      ]
     },
     "Q92259330": {
@@ -72513,7 +72625,8 @@
       "credit": "J.mcdowall"
      },
      "ideology_families": [
-      "liberal"
+      "liberal",
+      "conservative"
      ]
     },
     "Q180059": {
@@ -72563,7 +72676,8 @@
      "ideology_families": [
       "conservative",
       "nationalist",
-      "populist"
+      "populist",
+      "other"
      ]
     },
     "Q1048192": {
@@ -73222,7 +73336,8 @@
       "non_free": true
      },
      "ideology_families": [
-      "liberal"
+      "liberal",
+      "nationalist"
      ]
     },
     "Q2732443": {
@@ -73280,9 +73395,9 @@
       "credit": "Partido Popular"
      },
      "ideology_families": [
-      "conservative",
       "religious",
-      "reformist"
+      "reformist",
+      "other"
      ]
     },
     "Q127386808": {
@@ -73436,7 +73551,7 @@
       },
       {
        "party": "Q127386808",
-       "name": "Vamos Coalition",
+       "name": "Coalición Vamos",
        "seats": 16,
        "share": 0.2254,
        "standing": "opposition"
@@ -74655,23 +74770,6 @@
       "reformist"
      ]
     },
-    "Q7444733": {
-     "entity": {
-      "qid": "Q7444733",
-      "label": "Sectoral representation in the House of Representatives of the Philippines"
-     },
-     "name": "Sectoral representation in the House of Representatives of the Philippines",
-     "kind": "parliamentary_group",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q7444733",
-      "retrieved_at": "2026-08-14"
-     }
-    },
     "Q1798571": {
      "entity": {
       "qid": "Q1798571",
@@ -74960,31 +75058,6 @@
       "populist"
      ]
     },
-    "Q7888308": {
-     "entity": {
-      "qid": "Q7888308",
-      "label": "United Nationalist Alliance"
-     },
-     "name": "United Nationalist Alliance",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "founded_year": 2012,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q7888308",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "United_Nationalist_Alliance.svg",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/United_Nationalist_Alliance.svg",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     }
-    },
     "Q24915728": {
      "entity": {
       "qid": "Q24915728",
@@ -75112,7 +75185,7 @@
      },
      "ideology_families": [
       "liberal",
-      "populist"
+      "other"
      ]
     },
     "Q7140531": {
@@ -75212,34 +75285,34 @@
      "selection": [
       "directly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "uncontested",
      "composition": [
       {
        "party": "Q3240730",
        "name": "Lakas",
-       "seats": 75,
-       "share": 0.2358,
+       "seats": 76,
+       "share": 0.239,
        "standing": "government"
       },
       {
        "party": "Q6979208",
        "name": "NUP",
-       "seats": 53,
-       "share": 0.1667,
+       "seats": 55,
+       "share": 0.173,
        "standing": "government"
       },
       {
        "party": "Q60749150",
        "name": "PFP",
-       "seats": 52,
-       "share": 0.1635,
+       "seats": 53,
+       "share": 0.1667,
        "standing": "government"
       },
       {
-       "party": "Q7444733",
+       "party": null,
        "name": "Party-lists",
-       "seats": 45,
-       "share": 0.1415,
+       "seats": 64,
+       "share": 0.2013,
        "standing": "government"
       },
       {
@@ -75252,15 +75325,15 @@
       {
        "party": "Q302210",
        "name": "Nacionalista",
-       "seats": 17,
-       "share": 0.0535,
+       "seats": 18,
+       "share": 0.0566,
        "standing": "government"
       },
       {
        "party": "Q1476937",
        "name": "Liberal",
-       "seats": 3,
-       "share": 0.0094,
+       "seats": 6,
+       "share": 0.0189,
        "standing": "government"
       },
       {
@@ -75306,66 +75379,10 @@
        "standing": "government"
       },
       {
-       "party": "Q7444733",
-       "name": "Party-lists",
-       "seats": 18,
-       "share": 0.0566,
-       "standing": "opposition"
-      },
-      {
-       "party": "Q1476937",
-       "name": "Liberal",
-       "seats": 3,
-       "share": 0.0094,
-       "standing": "opposition"
-      },
-      {
-       "party": "Q6979208",
-       "name": "NUP",
-       "seats": 2,
-       "share": 0.0063,
-       "standing": "opposition"
-      },
-      {
-       "party": "Q3240730",
-       "name": "Lakas",
-       "seats": 1,
-       "share": 0.0031,
-       "standing": "opposition"
-      },
-      {
-       "party": "Q302210",
-       "name": "Nacionalista",
-       "seats": 1,
-       "share": 0.0031,
-       "standing": "opposition"
-      },
-      {
-       "party": "Q60749150",
-       "name": "PFP",
-       "seats": 1,
-       "share": 0.0031,
-       "standing": "opposition"
-      },
-      {
-       "party": "Q7888308",
-       "name": "UNA",
-       "seats": 1,
-       "share": 0.0031,
-       "standing": "opposition"
-      },
-      {
        "party": "Q24915728",
        "name": "HTL",
        "seats": 3,
        "share": 0.0094,
-       "standing": "non_attached"
-      },
-      {
-       "party": "Q7444733",
-       "name": "Party-list",
-       "seats": 1,
-       "share": 0.0031,
        "standing": "non_attached"
       },
       {
@@ -75514,7 +75531,6 @@
      "Q3240730",
      "Q6979208",
      "Q60749150",
-     "Q7444733",
      "Q1798571",
      "Q302210",
      "Q1476937",
@@ -75525,7 +75541,7 @@
      "Q15980841"
     ],
     "backing": [],
-    "seats": 286,
+    "seats": 313,
     "minority": false,
     "authority": "established",
     "confidence": "high",
@@ -75722,7 +75738,8 @@
      },
      "ideology_families": [
       "social_democratic",
-      "liberal"
+      "liberal",
+      "religious"
      ]
     },
     "Q28129076": {
@@ -76269,7 +76286,7 @@
       },
       {
        "party": "Q13219795",
-       "name": "National Party",
+       "name": "National Party (Pakistan)",
        "seats": 1,
        "share": 0.003,
        "standing": "government"
@@ -76318,9 +76335,9 @@
       }
      ],
      "last_election": "2024-02-08",
-     "next_election": "2029",
+     "next_election": "2029-02-28",
      "mandate": {
-      "expected_end": "2029-12-31",
+      "expected_end": "2029-02-28",
       "inferred": false,
       "state": "current"
      },
@@ -77166,7 +77183,7 @@
       "label": "New Poland – Centre"
      },
      "name": "New Poland – Centre",
-     "kind": "parliamentary_group",
+     "kind": "party",
      "ideologies": [],
      "groupings": [],
      "colors": [],
@@ -77195,7 +77212,7 @@
      "composition": [
       {
        "party": "Q1021144",
-       "name": "Civic Coalition",
+       "name": "Civic Coalition (Poland)",
        "seats": 156,
        "share": 0.3391,
        "standing": "government"
@@ -77209,14 +77226,14 @@
       },
       {
        "party": "Q66807204",
-       "name": "The Left",
+       "name": "The Left (Poland)",
        "seats": 21,
        "share": 0.0457,
        "standing": "government"
       },
       {
        "party": "Q138337619",
-       "name": "Centre Union",
+       "name": "Centre Union (Poland)",
        "seats": 15,
        "share": 0.0326,
        "standing": "government"
@@ -77265,7 +77282,7 @@
       },
       {
        "party": "Q130556302",
-       "name": "Direct Democracy",
+       "name": "Direct Democracy (Polish parliamentary group)",
        "seats": 4,
        "share": 0.0087,
        "standing": "opposition"
@@ -77565,7 +77582,6 @@
       "religious",
       "nationalist",
       "internationalist",
-      "populist",
       "authoritarian"
      ]
     },
@@ -77687,8 +77703,7 @@
      },
      "ideology_families": [
       "socialist",
-      "nationalist",
-      "populist"
+      "nationalist"
      ]
     },
     "Q818618": {
@@ -77752,8 +77767,7 @@
      "ideology_families": [
       "socialist",
       "nationalist",
-      "internationalist",
-      "populist"
+      "internationalist"
      ]
     },
     "Q1989200": {
@@ -78626,7 +78640,6 @@
       "credit": "Pessoas–Animais–Natureza"
      },
      "ideology_families": [
-      "liberal",
       "green",
       "reformist"
      ]
@@ -78697,35 +78710,35 @@
      "composition": [
       {
        "party": "Q595575",
-       "name": "PPD/PSD",
+       "name": "Social Democratic Party (PPD/PSD)",
        "seats": 89,
        "share": 0.387,
        "standing": "government"
       },
       {
        "party": "Q1054298",
-       "name": "CDS–PP",
+       "name": "CDS – People's Party",
        "seats": 2,
        "share": 0.0087,
        "standing": "government"
       },
       {
        "party": "Q63645885",
-       "name": "CH",
+       "name": "Chega",
        "seats": 60,
        "share": 0.2609,
        "standing": "opposition"
       },
       {
        "party": "Q847263",
-       "name": "PS",
+       "name": "Socialist Party",
        "seats": 58,
        "share": 0.2522,
        "standing": "opposition"
       },
       {
        "party": "Q46122950",
-       "name": "IL",
+       "name": "Liberal Initiative",
        "seats": 9,
        "share": 0.0391,
        "standing": "opposition"
@@ -78739,28 +78752,28 @@
       },
       {
        "party": "Q769829",
-       "name": "PCP",
+       "name": "Portuguese Communist Party",
        "seats": 3,
        "share": 0.013,
        "standing": "opposition"
       },
       {
        "party": "Q884840",
-       "name": "BE",
+       "name": "Left Bloc",
        "seats": 1,
        "share": 0.0043,
        "standing": "opposition"
       },
       {
        "party": "Q2054840",
-       "name": "PAN",
+       "name": "People-Animals-Nature",
        "seats": 1,
        "share": 0.0043,
        "standing": "opposition"
       },
       {
        "party": "Q19694667",
-       "name": "JPP",
+       "name": "Together for the People",
        "seats": 1,
        "share": 0.0043,
        "standing": "opposition"
@@ -79888,6 +79901,7 @@
      },
      "ideology_families": [
       "liberal",
+      "nationalist",
       "internationalist"
      ]
     },
@@ -80026,29 +80040,6 @@
       "nationalist"
      ]
     },
-    "Q30103": {
-     "entity": {
-      "qid": "Q30103",
-      "label": "minority group"
-     },
-     "name": "minority group",
-     "kind": "electoral_alliance",
-     "ideologies": [],
-     "groupings": [],
-     "members": [
-      {
-       "qid": "Q131763278",
-       "label": "minorities in Islam"
-      }
-     ],
-     "colors": [],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q30103",
-      "retrieved_at": "2026-08-14"
-     }
-    },
     "Q752435": {
      "entity": {
       "qid": "Q752435",
@@ -80116,10 +80107,10 @@
      "ideology_families": [
       "social_democratic",
       "socialist",
+      "liberal",
       "conservative",
       "nationalist",
-      "populist",
-      "reformist"
+      "populist"
      ]
     },
     "Q97193048": {
@@ -80252,10 +80243,10 @@
       "credit": "Thelovableidiot"
      },
      "ideology_families": [
-      "conservative",
       "religious",
       "nationalist",
-      "internationalist"
+      "internationalist",
+      "other"
      ]
     },
     "Q136538493": {
@@ -80304,7 +80295,7 @@
      "composition": [
       {
        "party": "Q686228",
-       "name": "National Liberal Party",
+       "name": "National Liberal Party (Romania)",
        "seats": 53,
        "share": 0.1601,
        "standing": "government"
@@ -80324,7 +80315,7 @@
        "standing": "government"
       },
       {
-       "party": "Q30103",
+       "party": null,
        "name": "National minorities",
        "seats": 17,
        "share": 0.0514,
@@ -80332,7 +80323,7 @@
       },
       {
        "party": "Q752435",
-       "name": "Social Democratic Party",
+       "name": "Social Democratic Party (Romania)",
        "seats": 93,
        "share": 0.281,
        "standing": "opposition"
@@ -80451,9 +80442,9 @@
       }
      ],
      "last_election": "2024-12-01",
-     "next_election": "2028",
+     "next_election": "2028-11-26",
      "mandate": {
-      "expected_end": "2028-12-31",
+      "expected_end": "2028-11-26",
       "inferred": false,
       "state": "current"
      },
@@ -80477,9 +80468,7 @@
      "Q27108508",
      "Q266582"
     ],
-    "backing": [
-     "Q30103"
-    ],
+    "backing": [],
     "seats": 114,
     "seats_with_backing": 131,
     "minority": true,
@@ -80908,7 +80897,7 @@
      },
      "ideology_families": [
       "conservative",
-      "populist"
+      "other"
      ]
     },
     "Q1273056": {
@@ -81058,11 +81047,11 @@
       "credit": "VMSZ"
      },
      "ideology_families": [
+      "socialist",
       "liberal",
       "conservative",
       "nationalist",
-      "internationalist",
-      "reformist"
+      "internationalist"
      ]
     },
     "Q1559559": {
@@ -81366,13 +81355,12 @@
       "social_democratic"
      ]
     },
-    "Q640380": {
+    "Q110046100": {
      "entity": {
-      "qid": "Q640380",
-      "label": "New Democratic Party of Serbia"
+      "qid": "Q110046100",
+      "label": "National Democratic Alternative"
      },
-     "name": "New Democratic Party of Serbia",
-     "endonym": "Демократска странка Србије",
+     "name": "National Democratic Alternative",
      "kind": "party",
      "alignment": "right",
      "alignment_raw": "right-wing",
@@ -81380,33 +81368,29 @@
       {
        "qid": "Q852739",
        "label": "national conservatism"
-      }
-     ],
-     "groupings": [
+      },
       {
-       "qid": "Q208242",
-       "label": "European People's Party"
+       "qid": "Q216669",
+       "label": "monarchism"
       }
      ],
-     "colors": [
-      "#126180"
-     ],
-     "founded_year": 1992,
+     "groupings": [],
+     "colors": [],
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q640380",
+      "qid": "Q110046100",
       "retrieved_at": "2026-08-14"
      },
      "logo": {
-      "file": "Logo of the New Democratic Party of Serbia.png",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20of%20the%20New%20Democratic%20Party%20of%20Serbia.png",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "credit": "Нова демократска странка Србије"
+      "file": "Logo of the National Democratic Alternative (Serbia).png",
+      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Logo%20of%20the%20National%20Democratic%20Alternative%20(Serbia).png",
+      "host": "wikipedia",
+      "license": "Fair use",
+      "non_free": true
      },
      "ideology_families": [
+      "conservative",
       "nationalist"
      ]
     },
@@ -81654,9 +81638,9 @@
       "non_free": true
      },
      "ideology_families": [
+      "socialist",
       "nationalist",
-      "internationalist",
-      "reformist"
+      "internationalist"
      ]
     },
     "Q3366611": {
@@ -81953,7 +81937,7 @@
        "standing": "opposition"
       },
       {
-       "party": "Q640380",
+       "party": "Q110046100",
        "name": "National Democratic Alternative",
        "seats": 7,
        "share": 0.028,
@@ -81961,7 +81945,7 @@
       },
       {
        "party": null,
-       "name": "Monarchists–PKS",
+       "name": "Monarchists",
        "seats": 3,
        "share": 0.012,
        "standing": "opposition"
@@ -82328,7 +82312,6 @@
       "credit": "Leonid"
      },
      "ideology_families": [
-      "conservative",
       "nationalist",
       "populist",
       "authoritarian",
@@ -82400,7 +82383,6 @@
      },
      "ideology_families": [
       "social_democratic",
-      "liberal",
       "conservative",
       "nationalist",
       "populist"
@@ -82468,7 +82450,8 @@
      "ideology_families": [
       "socialist",
       "conservative",
-      "populist"
+      "populist",
+      "other"
      ]
     },
     "Q98842815": {
@@ -82524,8 +82507,7 @@
      },
      "ideology_families": [
       "liberal",
-      "nationalist",
-      "reformist"
+      "nationalist"
      ]
     }
    },
@@ -82671,13 +82653,13 @@
        "standing": "vacant"
       }
      ],
-     "last_election": "1993",
+     "last_election": "1993-12-12",
      "mandate": {
-      "expected_end": "1998-01-01",
+      "expected_end": "1998-12-12",
       "inferred": true,
       "state": "overdue"
      },
-     "as_of": "1993",
+     "as_of": "1993-12-12",
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -84047,8 +84029,7 @@
      "ideology_families": [
       "conservative",
       "religious",
-      "nationalist",
-      "populist"
+      "nationalist"
      ]
     },
     "Q5255850": {
@@ -84774,7 +84755,7 @@
       "credit": "Centerpartiet (fix and upload by GeMet)"
      },
      "ideology_families": [
-      "liberal",
+      "green",
       "agrarian",
       "reformist"
      ]
@@ -84967,7 +84948,7 @@
      "composition": [
       {
        "party": "Q110843",
-       "name": "Moderates",
+       "name": "Moderate Party",
        "seats": 66,
        "share": 0.1891,
        "standing": "government"
@@ -85016,7 +84997,7 @@
       },
       {
        "party": "Q105112",
-       "name": "Social Democrats",
+       "name": "Swedish Social Democratic Party",
        "seats": 106,
        "share": 0.3037,
        "standing": "opposition"
@@ -85253,8 +85234,7 @@
      "ideology_families": [
       "liberal",
       "conservative",
-      "nationalist",
-      "reformist"
+      "nationalist"
      ]
     },
     "Q2299911": {
@@ -85550,9 +85530,9 @@
       "credit": "vectorised by Dbc334"
      },
      "ideology_families": [
-      "conservative",
       "nationalist",
-      "populist"
+      "populist",
+      "other"
      ]
     },
     "Q138685422": {
@@ -85835,7 +85815,7 @@
       },
       {
        "party": "Q139505356",
-       "name": "LV",
+       "name": "Levica and Vesna",
        "seats": 5,
        "share": 0.0556,
        "standing": "opposition"
@@ -86288,58 +86268,30 @@
       "internationalist"
      ]
     },
-    "Q372043": {
+    "Q122863832": {
      "entity": {
-      "qid": "Q372043",
-      "label": "Slovakia"
+      "qid": "Q122863832",
+      "label": "OĽaNO and Friends"
      },
-     "name": "Slovakia",
-     "endonym": "SLOVENSKO",
+     "name": "OĽaNO and Friends",
      "kind": "party",
-     "alignment": "centre",
-     "alignment_raw": "centrism",
-     "ideologies": [
-      {
-       "qid": "Q7169",
-       "label": "conservatism"
-      },
-      {
-       "qid": "Q180490",
-       "label": "populism"
-      }
-     ],
-     "groupings": [
-      {
-       "qid": "Q208242",
-       "label": "European People's Party"
-      }
-     ],
-     "colors": [
-      "#494949",
-      "#42b5c2"
-     ],
-     "founded_year": 2011,
+     "ideologies": [],
+     "groupings": [],
+     "colors": [],
      "provenance": {
       "kind": "wikidata",
       "derivation": "structured",
-      "qid": "Q372043",
+      "qid": "Q122863832",
       "retrieved_at": "2026-08-14"
      },
      "logo": {
-      "file": "Slovakia (political party) logo.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Slovakia%20(political%20party)%20logo.svg",
+      "file": "OĽaNO a priatelia logo.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/O%C4%BDaNO%20a%20priatelia%20logo.svg",
       "host": "commons",
       "license": "Public domain",
       "non_free": false,
-      "restrictions": [
-       "trademarked"
-      ],
-      "credit": "Slovensko"
-     },
-     "ideology_families": [
-      "conservative",
-      "populist"
-     ]
+      "credit": "OĽaNO a priatelia"
+     }
     },
     "Q904070": {
      "entity": {
@@ -86468,21 +86420,21 @@
      "composition": [
       {
        "party": "Q821929",
-       "name": "Direction – Social Democracy",
+       "name": "Smer",
        "seats": 41,
        "share": 0.2733,
        "standing": "government"
       },
       {
        "party": "Q96754424",
-       "name": "Voice – Social Democracy",
+       "name": "Hlas",
        "seats": 25,
        "share": 0.1667,
        "standing": "government"
       },
       {
        "party": "Q221480",
-       "name": "Slovak National Party",
+       "name": "SNS",
        "seats": 8,
        "share": 0.0533,
        "standing": "government"
@@ -86502,22 +86454,22 @@
        "standing": "opposition"
       },
       {
-       "party": "Q372043",
-       "name": "Slovakia–For the People",
+       "party": "Q122863832",
+       "name": "S–ZĽ",
        "seats": 12,
        "share": 0.08,
        "standing": "opposition"
       },
       {
        "party": "Q904070",
-       "name": "Christian Democratic Movement",
+       "name": "KDH",
        "seats": 12,
        "share": 0.08,
        "standing": "opposition"
       },
       {
        "party": "Q220847",
-       "name": "Freedom and Solidarity",
+       "name": "SaS",
        "seats": 12,
        "share": 0.08,
        "standing": "opposition"
@@ -86807,7 +86759,7 @@
     "person": {
      "qid": "Q57546"
     },
-    "name": "Alice Mina, Vladimiro Selva",
+    "name": "Alice Mina and Vladimiro Selva",
     "office_local": "Capitani reggenti di San Marino",
     "party": null,
     "represents": "political",
@@ -88246,7 +88198,7 @@
      "composition": [
       {
        "party": "Q2420320",
-       "name": "National Democratic Party",
+       "name": "National Democratic Party (Suriname)",
        "seats": 18,
        "share": 0.3529,
        "standing": "government"
@@ -88288,7 +88240,7 @@
       },
       {
        "party": "Q2188402",
-       "name": "Progressive Reform Party",
+       "name": "Progressive Reform Party (Suriname)",
        "seats": 17,
        "share": 0.3333,
        "standing": "opposition"
@@ -88540,14 +88492,14 @@
        "standing": "non_attached"
       }
      ],
-     "last_election": "2010-04-11",
-     "next_election": "2026-12-22",
+     "last_election": "2010",
+     "next_election": "2026",
      "mandate": {
-      "expected_end": "2026-12-22",
+      "expected_end": "2026-12-31",
       "inferred": false,
       "state": "due_soon"
      },
-     "as_of": "2010-04-11",
+     "as_of": "2010",
      "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
@@ -89077,7 +89029,7 @@
       "non_free": true
      },
      "ideology_families": [
-      "liberal"
+      "nationalist"
      ]
     },
     "Q1953774": {
@@ -90438,8 +90390,8 @@
       "liberal",
       "conservative",
       "green",
-      "populist",
-      "reformist"
+      "internationalist",
+      "populist"
      ]
     },
     "Q1142913": {
@@ -91258,9 +91210,9 @@
       }
      ],
      "last_election": "2026-02-08",
-     "next_election": "2030-03-25",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-03-25",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -91289,23 +91241,31 @@
       "indirectly_elected"
      ],
      "contestation": "appointed",
-     "composition": [],
-     "last_election": "2024",
-     "next_election": "2029",
+     "composition": [
+      {
+       "party": null,
+       "name": "Nonpartisan",
+       "seats": 200,
+       "share": 1,
+       "standing": "non_attached"
+      }
+     ],
+     "last_election": "2024-06-09",
      "mandate": {
-      "expected_end": "2029-12-31",
-      "inferred": false,
+      "expected_end": "2029-06-09",
+      "inferred": true,
       "state": "current"
      },
-     "as_of": "2024",
+     "as_of": "2024-06-09",
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
-      "derivation": "structured",
+      "derivation": "extracted",
       "article": "Senate (Thailand)",
       "revid": 1363998891,
-      "retrieved_at": "2026-08-14"
+      "retrieved_at": "2026-08-14",
+      "model": "claude-haiku-4-5"
      },
      "source_hash": "sha256:04a7af09fd1b8c86c2902a12c13f87cb"
     }
@@ -91523,7 +91483,7 @@
       "non_free": true
      },
      "ideology_families": [
-      "agrarian"
+      "other"
      ]
     },
     "Q11813078": {
@@ -91656,7 +91616,8 @@
      },
      "ideology_families": [
       "liberal",
-      "conservative"
+      "conservative",
+      "other"
      ]
     }
    },
@@ -91677,7 +91638,7 @@
      "composition": [
       {
        "party": "Q1045162",
-       "name": "People's Democratic Party of Tajikistan",
+       "name": "People's Democratic Party",
        "seats": 49,
        "share": 0.7778,
        "standing": "government"
@@ -91698,7 +91659,7 @@
       },
       {
        "party": "Q7482830",
-       "name": "Socialist Party of Tajikistan",
+       "name": "Socialist Party",
        "seats": 1,
        "share": 0.0159,
        "standing": "non_attached"
@@ -92716,7 +92677,7 @@
       },
       {
        "party": "Q3326636",
-       "name": "PUPD",
+       "name": "Democratic Patriots' Unified Party",
        "seats": 2,
        "share": 0.0114,
        "standing": "non_attached"
@@ -93044,7 +93005,8 @@
      "ideology_families": [
       "liberal",
       "conservative",
-      "nationalist"
+      "nationalist",
+      "reformist"
      ]
     },
     "Q251077": {
@@ -93513,7 +93475,8 @@
       "conservative",
       "religious",
       "nationalist",
-      "internationalist"
+      "internationalist",
+      "other"
      ]
     },
     "Q1637009": {
@@ -93852,6 +93815,51 @@
     }
    },
    "parties": {
+    "Q1024804": {
+     "entity": {
+      "qid": "Q1024804",
+      "label": "United National Congress"
+     },
+     "name": "United National Congress",
+     "kind": "party",
+     "alignment": "centre_left",
+     "alignment_raw": "centre-left",
+     "ideologies": [
+      {
+       "qid": "Q121254",
+       "label": "social democracy"
+      },
+      {
+       "qid": "Q1080800",
+       "label": "Christian left"
+      }
+     ],
+     "groupings": [],
+     "colors": [
+      "#fccc08"
+     ],
+     "founded_year": 1989,
+     "provenance": {
+      "kind": "wikidata",
+      "derivation": "structured",
+      "qid": "Q1024804",
+      "retrieved_at": "2026-08-14"
+     },
+     "logo": {
+      "file": "United National Congress logo.svg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/United%20National%20Congress%20logo.svg",
+      "host": "commons",
+      "license": "Public domain",
+      "non_free": false,
+      "restrictions": [
+       "trademarked"
+      ],
+      "credit": "United National Congress"
+     },
+     "ideology_families": [
+      "social_democratic"
+     ]
+    },
     "Q3326740": {
      "entity": {
       "qid": "Q3326740",
@@ -93927,52 +93935,7 @@
       "credit": "Unknown authorUnknown author"
      },
      "ideology_families": [
-      "reformist"
-     ]
-    },
-    "Q1024804": {
-     "entity": {
-      "qid": "Q1024804",
-      "label": "United National Congress"
-     },
-     "name": "United National Congress",
-     "kind": "party",
-     "alignment": "centre_left",
-     "alignment_raw": "centre-left",
-     "ideologies": [
-      {
-       "qid": "Q121254",
-       "label": "social democracy"
-      },
-      {
-       "qid": "Q1080800",
-       "label": "Christian left"
-      }
-     ],
-     "groupings": [],
-     "colors": [
-      "#fccc08"
-     ],
-     "founded_year": 1989,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q1024804",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "United National Congress logo.svg",
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/United%20National%20Congress%20logo.svg",
-      "host": "commons",
-      "license": "Public domain",
-      "non_free": false,
-      "restrictions": [
-       "trademarked"
-      ],
-      "credit": "United National Congress"
-     },
-     "ideology_families": [
-      "social_democratic"
+      "socialist"
      ]
     }
    },
@@ -93991,7 +93954,7 @@
      "contestation": "competitive",
      "composition": [
       {
-       "party": null,
+       "party": "Q1024804",
        "name": "United National Congress–Coalition of Interests",
        "seats": 26,
        "share": 0.6341,
@@ -94020,7 +93983,7 @@
      },
      "as_of": "2025-04-28",
      "retrieved_at": "2026-08-14",
-     "confidence": "partial",
+     "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -94081,7 +94044,9 @@
     }
    ],
    "government": {
-    "governing": [],
+    "governing": [
+     "Q1024804"
+    ],
     "backing": [],
     "seats": 26,
     "minority": false,
@@ -94432,8 +94397,8 @@
      },
      "ideology_families": [
       "liberal",
-      "conservative",
-      "nationalist"
+      "nationalist",
+      "other"
      ]
     },
     "Q31113": {
@@ -94509,7 +94474,9 @@
      },
      "ideology_families": [
       "conservative",
-      "nationalist"
+      "nationalist",
+      "reformist",
+      "other"
      ]
     },
     "Q66029902": {
@@ -94866,7 +94833,7 @@
        "name": "Attorney General",
        "seats": 1,
        "share": 0.0025,
-       "standing": "non_attached"
+       "standing": "residual"
       }
      ],
      "last_election": "2025-10-29",
@@ -96222,7 +96189,7 @@
      "composition": [
       {
        "party": "Q29468",
-       "name": "Republican",
+       "name": "Republican Party (United States)",
        "seats": 218,
        "share": 0.5011,
        "standing": "government"
@@ -96236,7 +96203,7 @@
       },
       {
        "party": "Q29552",
-       "name": "Democratic",
+       "name": "Democratic Party (United States)",
        "seats": 212,
        "share": 0.4874,
        "standing": "opposition"
@@ -96611,7 +96578,7 @@
       "credit": "Cruccig83"
      },
      "ideology_families": [
-      "nationalist"
+      "reformist"
      ]
     },
     "Q63495952": {
@@ -96739,9 +96706,8 @@
       "non_free": true
      },
      "ideology_families": [
-      "liberal",
       "nationalist",
-      "internationalist"
+      "other"
      ]
     }
    },
@@ -97102,7 +97068,6 @@
      },
      "ideology_families": [
       "liberal",
-      "conservative",
       "nationalist",
       "internationalist",
       "other"
@@ -97425,34 +97390,7 @@
      "retrieved_at": "2026-08-14"
     }
    },
-   "head_of_government": {
-    "person": {
-     "qid": "Q109385659",
-     "label": "Raffaella Petrini"
-    },
-    "name": "Raffaella Petrini",
-    "office": {
-     "qid": "Q2387238",
-     "label": "President of the Pontifical Commission for the Vatican City State"
-    },
-    "party": null,
-    "since": "2025-03-01",
-    "portrait": {
-     "file": "Secretary general Raffaella Petrini delivers remarks at Independence Day 2023 (cropped).jpg",
-     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Secretary%20general%20Raffaella%20Petrini%20delivers%20remarks%20at%20Independence%20Day%202023%20(cropped).jpg",
-     "host": "commons",
-     "license": "Public domain",
-     "non_free": false,
-     "credit": "U.S. Embassy to the Holy See"
-    },
-    "represents": "political",
-    "provenance": {
-     "kind": "wikidata",
-     "derivation": "structured",
-     "qid": "Q237",
-     "retrieved_at": "2026-08-14"
-    }
-   },
+   "head_of_government": null,
    "parties": {},
    "chambers": [
     {
@@ -97652,7 +97590,8 @@
      },
      "ideology_families": [
       "social_democratic",
-      "nationalist"
+      "nationalist",
+      "reformist"
      ]
     }
    },
@@ -97914,71 +97853,6 @@
       "socialist",
       "nationalist",
       "internationalist"
-     ]
-    },
-    "Q3525435": {
-     "entity": {
-      "qid": "Q3525435",
-      "label": "indigenous peoples in Venezuela"
-     },
-     "name": "indigenous peoples in Venezuela",
-     "kind": "party",
-     "ideologies": [],
-     "groupings": [],
-     "colors": [],
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q3525435",
-      "retrieved_at": "2026-08-14"
-     }
-    },
-    "Q1641259": {
-     "entity": {
-      "qid": "Q1641259",
-      "label": "A New Era"
-     },
-     "name": "A New Era",
-     "endonym": "Un Nuevo Tiempo",
-     "kind": "party",
-     "alignment": "centre_left",
-     "alignment_raw": "centre-left",
-     "ideologies": [
-      {
-       "qid": "Q121254",
-       "label": "social democracy"
-      },
-      {
-       "qid": "Q878445",
-       "label": "reformism"
-      }
-     ],
-     "groupings": [
-      {
-       "qid": "Q159454",
-       "label": "Socialist International"
-      }
-     ],
-     "colors": [
-      "#003399"
-     ],
-     "founded_year": 1999,
-     "provenance": {
-      "kind": "wikidata",
-      "derivation": "structured",
-      "qid": "Q1641259",
-      "retrieved_at": "2026-08-14"
-     },
-     "logo": {
-      "file": "Logotipo del UNT.png",
-      "url": "https://en.wikipedia.org/wiki/Special:FilePath/Logotipo%20del%20UNT.png",
-      "host": "wikipedia",
-      "license": "Fair use",
-      "non_free": true
-     },
-     "ideology_families": [
-      "social_democratic",
-      "reformist"
      ]
     },
     "Q339183": {
@@ -98269,14 +98143,14 @@
        "standing": "government"
       },
       {
-       "party": "Q3525435",
+       "party": null,
        "name": "Indigenous seats",
        "seats": 3,
        "share": 0.0105,
        "standing": "government"
       },
       {
-       "party": "Q1641259",
+       "party": null,
        "name": "Un Nuevo Tiempo–Union and Change",
        "seats": 11,
        "share": 0.0386,
@@ -98341,7 +98215,7 @@
      },
      "as_of": "2025-05-25",
      "retrieved_at": "2026-08-14",
-     "confidence": "high",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -98355,14 +98229,13 @@
    ],
    "government": {
     "governing": [
-     "Q5599744",
-     "Q3525435"
+     "Q5599744"
     ],
     "backing": [],
     "seats": 256,
     "minority": false,
     "authority": "established",
-    "confidence": "high",
+    "confidence": "partial",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -99474,7 +99347,6 @@
       "credit": "Partie Demokratike e Kosovës"
      },
      "ideology_families": [
-      "liberal",
       "conservative",
       "nationalist",
       "internationalist"
@@ -99545,7 +99417,8 @@
       "liberal",
       "conservative",
       "nationalist",
-      "internationalist"
+      "internationalist",
+      "reformist"
      ]
     },
     "Q22205328": {
@@ -100449,7 +100322,8 @@
       "liberal",
       "conservative",
       "populist",
-      "reformist"
+      "reformist",
+      "other"
      ]
     },
     "Q15980906": {
@@ -100629,8 +100503,8 @@
       "non_free": true
      },
      "ideology_families": [
-      "liberal",
-      "religious"
+      "religious",
+      "other"
      ]
     },
     "Q122149537": {
@@ -100775,9 +100649,9 @@
      },
      "ideology_families": [
       "socialist",
-      "conservative",
       "nationalist",
-      "internationalist"
+      "internationalist",
+      "other"
      ]
     },
     "Q127039134": {
@@ -101800,9 +101674,9 @@
       }
      ],
      "last_election": "2023-08-23",
-     "next_election": "2030",
+     "next_election": "2030-08-05",
      "mandate": {
-      "expected_end": "2030-12-31",
+      "expected_end": "2030-08-05",
       "inferred": false,
       "state": "current"
      },
@@ -101830,21 +101704,21 @@
      "selection": [
       "indirectly_elected"
      ],
-     "contestation": "competitive",
+     "contestation": "unknown",
      "composition": [
       {
        "party": "Q1910161",
        "name": "ZANU–PF",
        "seats": 33,
        "share": 0.4074,
-       "standing": "government"
+       "standing": "non_attached"
       },
       {
        "party": "Q110664645",
        "name": "Citizens Coalition For Change",
        "seats": 27,
        "share": 0.3333,
-       "standing": "opposition"
+       "standing": "non_attached"
       },
       {
        "party": null,

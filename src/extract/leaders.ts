@@ -52,14 +52,55 @@ export const governmentTypeLine = async (articleTitle: string): Promise<string |
   return text.length > 3 ? text.slice(0, 200) : undefined
 }
 
-const LEADER_FIELDS = /^\s*\|\s*(?:leader_title\d*|leader_name\d*)\s*=\s*(.+)$/gim
+const LEADER_FIELDS = /^[ \t]*\|[ \t]*(?:leader_title\d*|leader_name\d*)[ \t]*=/gim
+
+/**
+ * A field's value, following it across newlines until its braces close.
+ *
+ * A line-anchored read loses any value written as a list. Andorra names its
+ * co-princes as `{{plainlist|` with the two names on the LINES BELOW, so
+ * taking the first line alone handed the model an empty template and it
+ * reported the co-princes' personal representative instead. Switzerland's
+ * Federal Council and the UAE's rulers are written the same way.
+ *
+ * Stops at the next `|` field at the start of a line once braces are balanced,
+ * which is where the infobox's next parameter begins.
+ */
+const valueOf = (wikitext: string, from: number): string => {
+  let depth = 0
+  for (let index = from; index < wikitext.length; index++) {
+    const pair = wikitext.slice(index, index + 2)
+    if (pair === '{{' || pair === '[[') {
+      depth++
+      index++
+      continue
+    }
+    if (pair === '}}' || pair === ']]') {
+      depth--
+      index++
+      continue
+    }
+    if (depth <= 0 && wikitext[index] === '\n') {
+      // The next infobox parameter, or the end of the box.
+      const rest = wikitext.slice(index + 1)
+      if (/^[ \t]*[|}]/.test(rest)) return wikitext.slice(from, index)
+    }
+  }
+  return wikitext.slice(from)
+}
 
 export const leaderLines = async (articleTitle: string): Promise<LeaderLines | undefined> => {
   const page = await getArticle(articleTitle)
   if (!page) return undefined
-  const lines = [...page.wikitext.matchAll(LEADER_FIELDS)]
-    .map(match => match[0].trim())
-    .filter(line => line.length < 200)
+  const lines: string[] = []
+  for (const match of page.wikitext.matchAll(LEADER_FIELDS)) {
+    const start = match.index! + match[0].length
+    const value = valueOf(page.wikitext, start)
+      .replace(/\s+/g, ' ')
+      .trim()
+    const line = `${match[0].trim()} ${value}`
+    if (line.length < 260) lines.push(line)
+  }
   if (lines.length < 2) return undefined
-  return { text: lines.slice(0, 12).join('\n'), article: page.title, revid: page.revid }
+  return { text: lines.slice(0, 14).join('\n'), article: page.title, revid: page.revid }
 }

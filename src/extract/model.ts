@@ -18,7 +18,7 @@ import { IDEOLOGY_FAMILIES, type IdeologyFamily, type Standing } from '../types/
 const MODEL = 'claude-haiku-4-5-20251001'
 /** Bumped whenever SYSTEM changes, so a prompt fix invalidates old answers
  *  rather than serving a cached reading of a rule that no longer applies. */
-const PROMPT_VERSION = 'v13'
+const PROMPT_VERSION = 'v19'
 const API = 'https://api.anthropic.com/v1/messages'
 
 export interface ExtractedBloc {
@@ -285,6 +285,17 @@ export interface ExtractedLeaders {
   claimants?: ExtractedClaimant[]
   /** The source names no holder because rivals claim it — Libya's premiership. */
   vacant_contested?: boolean
+  /**
+   * Offices the source LISTS but whose holder it does not name readably —
+   * Antigua writes its prime minister as `{{Current prime minister of Antigua
+   * and Barbuda}}`, Canada its monarch as `{{Current Canadian monarch}}`.
+   *
+   * An omitted office and an unreadable one look identical in the fields above
+   * and mean opposite things: the first says the country has no such office and
+   * a stale structured statement should be dropped, the second says the office
+   * exists and the structured statement is the only source left for it.
+   */
+  unreadable?: ('head_of_state' | 'head_of_government')[]
 }
 
 const LEADER_SYSTEM = `You read the leadership fields of a country's Wikipedia infobox.
@@ -305,6 +316,25 @@ Rules:
   lieutenant governor, an administrator or a regent.
 - head_of_government: the person under Prime Minister, Chancellor, Taoiseach,
   Premier, President of the Government. NOT a vice president or deputy.
+- The "unreadable" ARRAY names offices the infobox lists but cannot name: add
+  the string "head_of_state" or "head_of_government" to it, and leave that
+  office's own name field empty. Never write the word unreadable as a name.
+  Canada's monarch line is "{{Current Canadian monarch}}" and Antigua's prime
+  minister is "{{Current prime minister of Antigua and Barbuda}}": both belong
+  in the array. This is different from an office the infobox does not list at
+  all, which means the country does not have it.
+- An office whose name is an unreadable template is MISSING, never borrowed
+  from a neighbouring line — in either direction. Antigua's prime-minister line
+  is "{{Current prime minister of Antigua and Barbuda}}"; omit
+  head_of_government rather than reporting the monarch, exactly as an
+  unreadable monarch means omitting head_of_state rather than reporting the
+  prime minister.
+- A PERSONAL REPRESENTATIVE is not the officeholder. Andorra's co-princes are
+  the President of France and the Bishop of Urgell, each of whom appoints a
+  representative to the country; report the co-prince, never the
+  representative. The same holds for a regent, a deputy, or anyone the field
+  marks as acting on another's behalf while that other person still holds the
+  office.
 - If the same person holds both, report that name for BOTH and same_person true.
 - If the country has no separate head of government (a presidential system),
   report head_of_government as the head of state and same_person true.
@@ -350,6 +380,10 @@ const LEADER_TOOL = {
       same_person: { type: 'boolean' },
       disputed: { type: 'boolean' },
       vacant_contested: { type: 'boolean' },
+      unreadable: {
+        type: 'array',
+        items: { type: 'string', enum: ['head_of_state', 'head_of_government'] },
+      },
       claimants: {
         type: 'array',
         items: {
