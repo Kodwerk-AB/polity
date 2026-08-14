@@ -181,7 +181,7 @@ the licence and a `non_free` flag. Each consumer applies its own policy.
 ## Use
 
 ```bash
-curl -s https://raw.githubusercontent.com/USER/polity/main/data/polity.json
+curl -s https://raw.githubusercontent.com/Kodwerk-AB/polity/main/data/polity.json
 ```
 
 ```bash
