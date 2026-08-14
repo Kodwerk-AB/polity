@@ -1,4 +1,16 @@
-# polity
+```
+          ·  ·  ·  ·  ·  ·  ·  ·  ·
+        ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·
+      ·  ·  ·  ·              ·  ·  ·  ·
+     ·  ·  ·                      ·  ·  ·
+    ·  ·                              ·  ·
+
+     ██████   ██████  ██      ██ ████████ ██   ██
+     ██   ██ ██    ██ ██      ██    ██     ██ ██
+     ██████  ██    ██ ██      ██    ██      ███
+     ██      ██    ██ ██      ██    ██       ██
+     ██       ██████  ███████ ██    ██       ██
+```
 
 **Every country's government, parliament and parties — as structured, typed, verifiable data.**
 
@@ -180,17 +192,64 @@ the licence and a `non_free` flag. Each consumer applies its own policy.
 
 ## Use
 
+### Fetch it
+
+Four endpoints, all CORS-enabled, no key and no rate limit.
+
+| What you want | URL | Size |
+| --- | --- | --- |
+| One country | `https://kodwerk-ab.github.io/polity/v1/countries/SE.json` | ~7 KB |
+| The country list | `https://kodwerk-ab.github.io/polity/v1/index.json` | 24 KB |
+| Everything | `https://kodwerk-ab.github.io/polity/v1/polity.json` | 2.4 MB |
+| The schema | `https://kodwerk-ab.github.io/polity/v1/openapi.json` | 90 KB |
+
+```bash
+curl -s https://kodwerk-ab.github.io/polity/v1/countries/SE.json | jq '.chambers[0].composition'
+```
+
+```js
+const sweden = await fetch('https://kodwerk-ab.github.io/polity/v1/countries/SE.json')
+  .then(response => response.json())
+```
+
+**Prefer the per-country files.** The median country is 6.8 KB against 2.4 MB
+for the whole dataset — a 350× saving if you want one parliament. `index.json`
+carries the name, form, chamber count, seat total, democracy score and
+confidence for all 193, which is enough to render a picker or a coverage table
+without fetching a single country.
+
+The raw GitHub URL also works and is the one that survives a Pages outage:
+
 ```bash
 curl -s https://raw.githubusercontent.com/Kodwerk-AB/polity/main/data/polity.json
 ```
+
+It serves `content-type: text/plain`, so a browser needs an explicit
+`JSON.parse` rather than `response.json()`.
+
+### Version it
+
+`/v1/` is the schema major version, and the shape under it will not break. A
+change that removes a field or narrows an enum arrives at `/v2/` with `/v1/`
+still served. `schema_version` inside the file is the precise semver, and
+`generated_at` is when the build ran.
+
+**Pin what you rely on.** The dataset is rebuilt weekly and a composition
+changes whenever a parliament does, so treat every value as current-at-a-date:
+`chambers[].as_of` is the election a composition describes, and
+`retrieved_at` is when we read it.
+
+### Build it yourself
 
 ```bash
 bun install
 bun run build            # full rebuild (cached; near-free after the first)
 bun run build SV NO KP   # a few countries, into data/sample.json
 bun run build:schema     # regenerate schema/openapi.json from the types
+bun run build:site       # emit the per-country split into site/
 bun run validate         # check data/polity.json against the schema
-bun run test             # unit tests, then schema regeneration and validation
+bun run test             # unit tests
+bun run check            # typecheck, test, schema, validate — all of it
 ```
 
 The schema seals every object with `additionalProperties: false`, so validation
@@ -199,6 +258,21 @@ that the schema never described. The first run of that check found
 `government.authority` on all 193 countries, missing from the schema entirely.
 
 `CLAUDE_KEY` must be set for extraction. Everything else needs no credentials.
+
+### Know what you are trusting
+
+Every derived field's rules are written down in
+**[DECISIONS.md](DECISIONS.md)** — in the order they fire, with the case that
+forced each one, and the open defects named rather than left to be discovered.
+
+Three fields carry that judgement in the data itself:
+
+- **`confidence`** — `high` / `partial` / `flagged` per chamber. 159 of 273 are
+  `high`. A `flagged` chamber still ships, with the reason.
+- **`provenance`** — whether a value was read from a structured property,
+  parsed, extracted by a model, or entered by hand, plus the exact `revid`.
+- **`mandate`** — which chambers are near the end of a term, so you re-check
+  the handful that matter rather than distrusting all 193.
 
 ## Licence
 

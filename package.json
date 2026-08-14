@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "validate": "node scripts/validate-schema.mjs",
-    "check": "bun run typecheck && bun run test && bun run build:schema && bun run validate"
+    "check": "bun run typecheck && bun run test && bun run build:schema && bun run validate",
+    "build:site": "tsx scripts/emit-site.ts"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

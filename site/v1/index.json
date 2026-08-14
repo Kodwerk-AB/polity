@@ -1,0 +1,1723 @@
+{
+ "schema_version": "1.0.0",
+ "generated_at": "2026-08-14T08:05:32.564Z",
+ "countries": [
+  {
+   "iso": "AD",
+   "name": "Andorra",
+   "form": "other",
+   "chambers": 1,
+   "seats": 28,
+   "confidence": "high"
+  },
+  {
+   "iso": "AE",
+   "name": "United Arab Emirates",
+   "form": "constitutional_monarchy",
+   "chambers": 1,
+   "seats": 40,
+   "democracy": 0.104,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "AF",
+   "name": "Afghanistan",
+   "form": "theocracy",
+   "chambers": 1,
+   "seats": 352,
+   "democracy": 0.069,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "AG",
+   "name": "Antigua and Barbuda",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 34,
+   "confidence": "partial"
+  },
+  {
+   "iso": "AL",
+   "name": "Albania",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 140,
+   "democracy": 0.484,
+   "confidence": "high"
+  },
+  {
+   "iso": "AM",
+   "name": "Armenia",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 105,
+   "democracy": 0.614,
+   "confidence": "high"
+  },
+  {
+   "iso": "AO",
+   "name": "Angola",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 220,
+   "democracy": 0.344,
+   "confidence": "high"
+  },
+  {
+   "iso": "AR",
+   "name": "Argentina",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 329,
+   "democracy": 0.69,
+   "confidence": "partial"
+  },
+  {
+   "iso": "AT",
+   "name": "Austria",
+   "form": "semi_presidential_republic",
+   "chambers": 2,
+   "seats": 243,
+   "democracy": 0.839,
+   "confidence": "partial"
+  },
+  {
+   "iso": "AU",
+   "name": "Australia",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 226,
+   "democracy": 0.844,
+   "confidence": "high"
+  },
+  {
+   "iso": "AZ",
+   "name": "Azerbaijan",
+   "form": "semi_presidential_republic",
+   "chambers": 1,
+   "seats": 125,
+   "democracy": 0.171,
+   "confidence": "high"
+  },
+  {
+   "iso": "BA",
+   "name": "Bosnia and Herzegovina",
+   "form": "parliamentary_republic",
+   "chambers": 2,
+   "seats": 57,
+   "democracy": 0.498,
+   "confidence": "high"
+  },
+  {
+   "iso": "BB",
+   "name": "Barbados",
+   "form": "parliamentary_republic",
+   "chambers": 2,
+   "seats": 51,
+   "democracy": 0.797,
+   "confidence": "partial"
+  },
+  {
+   "iso": "BD",
+   "name": "Bangladesh",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 350,
+   "democracy": 0.195,
+   "confidence": "high"
+  },
+  {
+   "iso": "BE",
+   "name": "Belgium",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 210,
+   "democracy": 0.889,
+   "confidence": "high"
+  },
+  {
+   "iso": "BF",
+   "name": "Burkina Faso",
+   "form": "military_junta",
+   "chambers": 1,
+   "seats": 127,
+   "democracy": 0.134,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "BG",
+   "name": "Bulgaria",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 240,
+   "democracy": 0.599,
+   "confidence": "high"
+  },
+  {
+   "iso": "BH",
+   "name": "Bahrain",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 80,
+   "democracy": 0.139,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "BI",
+   "name": "Burundi",
+   "form": "dominant_party_state",
+   "chambers": 2,
+   "seats": 113,
+   "democracy": 0.185,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "BJ",
+   "name": "Benin",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 109,
+   "democracy": 0.493,
+   "confidence": "high"
+  },
+  {
+   "iso": "BN",
+   "name": "Brunei",
+   "form": "absolute_monarchy",
+   "chambers": 1,
+   "seats": 34,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "BO",
+   "name": "Bolivia",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 166,
+   "democracy": 0.605,
+   "confidence": "partial"
+  },
+  {
+   "iso": "BR",
+   "name": "Brazil",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 594,
+   "democracy": 0.784,
+   "confidence": "high"
+  },
+  {
+   "iso": "BS",
+   "name": "The Bahamas",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 55,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "BT",
+   "name": "Bhutan",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 72,
+   "democracy": 0.566,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "BW",
+   "name": "Botswana",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 69,
+   "democracy": 0.665,
+   "confidence": "high"
+  },
+  {
+   "iso": "BY",
+   "name": "Belarus",
+   "form": "semi_presidential_republic",
+   "chambers": 2,
+   "seats": 174,
+   "democracy": 0.163,
+   "confidence": "partial"
+  },
+  {
+   "iso": "BZ",
+   "name": "Belize",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 44,
+   "confidence": "partial"
+  },
+  {
+   "iso": "CA",
+   "name": "Canada",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 448,
+   "democracy": 0.84,
+   "confidence": "partial"
+  },
+  {
+   "iso": "CD",
+   "name": "Democratic Republic of the Congo",
+   "form": "semi_presidential_republic",
+   "chambers": 2,
+   "seats": 609,
+   "democracy": 0.306,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "CF",
+   "name": "Central African Republic",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 140,
+   "democracy": 0.293,
+   "confidence": "partial"
+  },
+  {
+   "iso": "CG",
+   "name": "Republic of the Congo",
+   "form": "semi_presidential_republic",
+   "chambers": 2,
+   "seats": 223,
+   "democracy": 0.243,
+   "confidence": "partial"
+  },
+  {
+   "iso": "CH",
+   "name": "Switzerland",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 246,
+   "democracy": 0.882,
+   "confidence": "high"
+  },
+  {
+   "iso": "CI",
+   "name": "Ivory Coast",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 354,
+   "democracy": 0.394,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "CL",
+   "name": "Chile",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 205,
+   "democracy": 0.839,
+   "confidence": "high"
+  },
+  {
+   "iso": "CM",
+   "name": "Cameroon",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 280,
+   "democracy": 0.26,
+   "confidence": "partial"
+  },
+  {
+   "iso": "CN",
+   "name": "People's Republic of China",
+   "form": "dominant_party_state",
+   "chambers": 1,
+   "seats": 2878,
+   "democracy": 0.072,
+   "confidence": "partial"
+  },
+  {
+   "iso": "CO",
+   "name": "Colombia",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 286,
+   "democracy": 0.679,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "CR",
+   "name": "Costa Rica",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 57,
+   "democracy": 0.862,
+   "confidence": "high"
+  },
+  {
+   "iso": "CU",
+   "name": "Cuba",
+   "form": "other",
+   "chambers": 1,
+   "seats": 470,
+   "democracy": 0.176,
+   "confidence": "high"
+  },
+  {
+   "iso": "CV",
+   "name": "Cape Verde",
+   "form": "semi_presidential_republic",
+   "chambers": 1,
+   "seats": 72,
+   "democracy": 0.745,
+   "confidence": "high"
+  },
+  {
+   "iso": "CY",
+   "name": "Cyprus",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 56,
+   "democracy": 0.773,
+   "confidence": "high"
+  },
+  {
+   "iso": "CZ",
+   "name": "Czech Republic",
+   "form": "parliamentary_republic",
+   "chambers": 2,
+   "seats": 281,
+   "democracy": 0.849,
+   "confidence": "partial"
+  },
+  {
+   "iso": "DE",
+   "name": "Germany",
+   "form": "parliamentary_republic",
+   "chambers": 2,
+   "seats": 699,
+   "democracy": 0.828,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "DJ",
+   "name": "Djibouti",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 65,
+   "democracy": 0.25,
+   "confidence": "high"
+  },
+  {
+   "iso": "DK",
+   "name": "Denmark",
+   "form": "constitutional_monarchy",
+   "chambers": 1,
+   "seats": 179,
+   "democracy": 0.913,
+   "confidence": "high"
+  },
+  {
+   "iso": "DM",
+   "name": "Dominica",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 32,
+   "confidence": "high"
+  },
+  {
+   "iso": "DO",
+   "name": "Dominican Republic",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 222,
+   "democracy": 0.735,
+   "confidence": "high"
+  },
+  {
+   "iso": "DZ",
+   "name": "Algeria",
+   "form": "semi_presidential_republic",
+   "chambers": 2,
+   "seats": 581,
+   "democracy": 0.265,
+   "confidence": "partial"
+  },
+  {
+   "iso": "EC",
+   "name": "Ecuador",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 151,
+   "democracy": 0.607,
+   "confidence": "high"
+  },
+  {
+   "iso": "EE",
+   "name": "Estonia",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 101,
+   "democracy": 0.887,
+   "confidence": "high"
+  },
+  {
+   "iso": "EG",
+   "name": "Egypt",
+   "form": "semi_presidential_republic",
+   "chambers": 2,
+   "seats": 2622,
+   "democracy": 0.187,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "ER",
+   "name": "Eritrea",
+   "form": "one_party_state",
+   "chambers": 1,
+   "seats": 150,
+   "democracy": 0.069,
+   "confidence": "partial"
+  },
+  {
+   "iso": "ES",
+   "name": "Spain",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 616,
+   "democracy": 0.822,
+   "confidence": "high"
+  },
+  {
+   "iso": "ET",
+   "name": "Ethiopia",
+   "form": "parliamentary_republic",
+   "chambers": 2,
+   "seats": 659,
+   "democracy": 0.257,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "FI",
+   "name": "Finland",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 200,
+   "democracy": 0.852,
+   "confidence": "high"
+  },
+  {
+   "iso": "FJ",
+   "name": "Fiji",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 55,
+   "democracy": 0.507,
+   "confidence": "high"
+  },
+  {
+   "iso": "FM",
+   "name": "Federated States of Micronesia",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 14,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "FR",
+   "name": "France",
+   "form": "semi_presidential_republic",
+   "chambers": 2,
+   "seats": 925,
+   "democracy": 0.865,
+   "confidence": "high"
+  },
+  {
+   "iso": "GA",
+   "name": "Gabon",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 247,
+   "democracy": 0.302,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "GB",
+   "name": "United Kingdom",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 1458,
+   "democracy": 0.772,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "GD",
+   "name": "Grenada",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 29,
+   "confidence": "partial"
+  },
+  {
+   "iso": "GE",
+   "name": "Georgia",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 150,
+   "democracy": 0.401,
+   "confidence": "high"
+  },
+  {
+   "iso": "GH",
+   "name": "Ghana",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 276,
+   "democracy": 0.711,
+   "confidence": "high"
+  },
+  {
+   "iso": "GM",
+   "name": "The Gambia",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 58,
+   "democracy": 0.641,
+   "confidence": "high"
+  },
+  {
+   "iso": "GN",
+   "name": "Guinea",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 147,
+   "democracy": 0.187,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "GQ",
+   "name": "Equatorial Guinea",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 155,
+   "democracy": 0.172,
+   "confidence": "high"
+  },
+  {
+   "iso": "GR",
+   "name": "Greece",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 300,
+   "democracy": 0.741,
+   "confidence": "partial"
+  },
+  {
+   "iso": "GT",
+   "name": "Guatemala",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 160,
+   "democracy": 0.637,
+   "confidence": "high"
+  },
+  {
+   "iso": "GW",
+   "name": "Guinea-Bissau",
+   "form": "military_junta",
+   "chambers": 1,
+   "seats": 102,
+   "democracy": 0.252,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "GY",
+   "name": "Guyana",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 65,
+   "democracy": 0.515,
+   "confidence": "partial"
+  },
+  {
+   "iso": "HN",
+   "name": "Honduras",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 128,
+   "democracy": 0.511,
+   "confidence": "high"
+  },
+  {
+   "iso": "HR",
+   "name": "Croatia",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 151,
+   "democracy": 0.686,
+   "confidence": "high"
+  },
+  {
+   "iso": "HT",
+   "name": "Haiti",
+   "form": "semi_presidential_republic",
+   "chambers": 1,
+   "seats": 119,
+   "democracy": 0.238,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "HU",
+   "name": "Hungary",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 199,
+   "democracy": 0.421,
+   "confidence": "high"
+  },
+  {
+   "iso": "ID",
+   "name": "Indonesia",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 732,
+   "democracy": 0.462,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "IE",
+   "name": "Ireland",
+   "form": "parliamentary_republic",
+   "chambers": 2,
+   "seats": 234,
+   "democracy": 0.887,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "IL",
+   "name": "Israel",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 120,
+   "democracy": 0.694,
+   "confidence": "high"
+  },
+  {
+   "iso": "IN",
+   "name": "India",
+   "form": "parliamentary_republic",
+   "chambers": 2,
+   "seats": 788,
+   "democracy": 0.377,
+   "confidence": "high"
+  },
+  {
+   "iso": "IQ",
+   "name": "Iraq",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 329,
+   "democracy": 0.369,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "IR",
+   "name": "Iran",
+   "form": "theocracy",
+   "chambers": 1,
+   "seats": 290,
+   "democracy": 0.159,
+   "confidence": "high"
+  },
+  {
+   "iso": "IS",
+   "name": "Iceland",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 63,
+   "democracy": 0.807,
+   "confidence": "high"
+  },
+  {
+   "iso": "IT",
+   "name": "Italy",
+   "form": "parliamentary_republic",
+   "chambers": 2,
+   "seats": 605,
+   "democracy": 0.745,
+   "confidence": "partial"
+  },
+  {
+   "iso": "JM",
+   "name": "Jamaica",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 84,
+   "democracy": 0.805,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "JO",
+   "name": "Jordan",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 207,
+   "democracy": 0.282,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "JP",
+   "name": "Japan",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 713,
+   "democracy": 0.819,
+   "confidence": "high"
+  },
+  {
+   "iso": "KE",
+   "name": "Kenya",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 416,
+   "democracy": 0.563,
+   "confidence": "high"
+  },
+  {
+   "iso": "KG",
+   "name": "Kyrgyzstan",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 90,
+   "democracy": 0.313,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "KH",
+   "name": "Cambodia",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 187,
+   "democracy": 0.183,
+   "confidence": "high"
+  },
+  {
+   "iso": "KI",
+   "name": "Kiribati",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 45,
+   "confidence": "high"
+  },
+  {
+   "iso": "KM",
+   "name": "Comoros",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 33,
+   "democracy": 0.293,
+   "confidence": "partial"
+  },
+  {
+   "iso": "KN",
+   "name": "Saint Kitts and Nevis",
+   "form": "constitutional_monarchy",
+   "chambers": 1,
+   "seats": 15,
+   "confidence": "high"
+  },
+  {
+   "iso": "KP",
+   "name": "North Korea",
+   "form": "one_party_state",
+   "chambers": 1,
+   "seats": 687,
+   "democracy": 0.083,
+   "confidence": "partial"
+  },
+  {
+   "iso": "KR",
+   "name": "South Korea",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 300,
+   "democracy": 0.819,
+   "confidence": "high"
+  },
+  {
+   "iso": "KW",
+   "name": "Kuwait",
+   "form": "constitutional_monarchy",
+   "chambers": 1,
+   "seats": 50,
+   "democracy": 0.138,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "KZ",
+   "name": "Kazakhstan",
+   "form": "semi_presidential_republic",
+   "chambers": 1,
+   "seats": 50,
+   "democracy": 0.259,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "LA",
+   "name": "Laos",
+   "form": "dominant_party_state",
+   "chambers": 1,
+   "seats": 175,
+   "democracy": 0.135,
+   "confidence": "high"
+  },
+  {
+   "iso": "LB",
+   "name": "Lebanon",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 128,
+   "democracy": 0.419,
+   "confidence": "partial"
+  },
+  {
+   "iso": "LC",
+   "name": "Saint Lucia",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 28,
+   "confidence": "partial"
+  },
+  {
+   "iso": "LI",
+   "name": "Liechtenstein",
+   "form": "constitutional_monarchy",
+   "chambers": 1,
+   "seats": 25,
+   "confidence": "high"
+  },
+  {
+   "iso": "LK",
+   "name": "Sri Lanka",
+   "form": "semi_presidential_republic",
+   "chambers": 1,
+   "seats": 225,
+   "democracy": 0.783,
+   "confidence": "high"
+  },
+  {
+   "iso": "LR",
+   "name": "Liberia",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 103,
+   "democracy": 0.597,
+   "confidence": "high"
+  },
+  {
+   "iso": "LS",
+   "name": "Lesotho",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 153,
+   "democracy": 0.661,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "LT",
+   "name": "Lithuania",
+   "form": "semi_presidential_republic",
+   "chambers": 1,
+   "seats": 141,
+   "democracy": 0.786,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "LU",
+   "name": "Luxembourg",
+   "form": "constitutional_monarchy",
+   "chambers": 1,
+   "seats": 60,
+   "democracy": 0.869,
+   "confidence": "high"
+  },
+  {
+   "iso": "LV",
+   "name": "Latvia",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 100,
+   "democracy": 0.834,
+   "confidence": "high"
+  },
+  {
+   "iso": "LY",
+   "name": "Libya",
+   "form": "transitional",
+   "chambers": 1,
+   "seats": 200,
+   "democracy": 0.193,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "MA",
+   "name": "Morocco",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 515,
+   "democracy": 0.259,
+   "confidence": "partial"
+  },
+  {
+   "iso": "MC",
+   "name": "Monaco",
+   "form": "constitutional_monarchy",
+   "chambers": 1,
+   "seats": 24,
+   "confidence": "high"
+  },
+  {
+   "iso": "MD",
+   "name": "Moldova",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 101,
+   "democracy": 0.553,
+   "confidence": "high"
+  },
+  {
+   "iso": "ME",
+   "name": "Montenegro",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 81,
+   "democracy": 0.636,
+   "confidence": "partial"
+  },
+  {
+   "iso": "MG",
+   "name": "Madagascar",
+   "form": "military_junta",
+   "chambers": 2,
+   "seats": 181,
+   "democracy": 0.361,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "MH",
+   "name": "Marshall Islands",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 33,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "MK",
+   "name": "North Macedonia",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 120,
+   "democracy": 0.562,
+   "confidence": "partial"
+  },
+  {
+   "iso": "ML",
+   "name": "Mali",
+   "form": "military_junta",
+   "chambers": 1,
+   "seats": 147,
+   "democracy": 0.164,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "MM",
+   "name": "Myanmar",
+   "form": "other",
+   "chambers": 2,
+   "seats": 664,
+   "democracy": 0.08,
+   "confidence": "partial"
+  },
+  {
+   "iso": "MN",
+   "name": "Mongolia",
+   "form": "semi_presidential_republic",
+   "chambers": 1,
+   "seats": 126,
+   "democracy": 0.535,
+   "confidence": "high"
+  },
+  {
+   "iso": "MR",
+   "name": "Mauritania",
+   "form": "semi_presidential_republic",
+   "chambers": 1,
+   "seats": 176,
+   "democracy": 0.328,
+   "confidence": "partial"
+  },
+  {
+   "iso": "MT",
+   "name": "Malta",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 79,
+   "democracy": 0.783,
+   "confidence": "high"
+  },
+  {
+   "iso": "MU",
+   "name": "Mauritius",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 66,
+   "democracy": 0.738,
+   "confidence": "partial"
+  },
+  {
+   "iso": "MV",
+   "name": "Maldives",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 93,
+   "democracy": 0.556,
+   "confidence": "high"
+  },
+  {
+   "iso": "MW",
+   "name": "Malawi",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 229,
+   "democracy": 0.557,
+   "confidence": "partial"
+  },
+  {
+   "iso": "MX",
+   "name": "Mexico",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 628,
+   "democracy": 0.469,
+   "confidence": "high"
+  },
+  {
+   "iso": "MY",
+   "name": "Malaysia",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 292,
+   "democracy": 0.504,
+   "confidence": "partial"
+  },
+  {
+   "iso": "MZ",
+   "name": "Mozambique",
+   "form": "dominant_party_state",
+   "chambers": 1,
+   "seats": 250,
+   "democracy": 0.279,
+   "confidence": "high"
+  },
+  {
+   "iso": "NA",
+   "name": "Namibia",
+   "form": "semi_presidential_republic",
+   "chambers": 2,
+   "seats": 146,
+   "democracy": 0.633,
+   "confidence": "high"
+  },
+  {
+   "iso": "NE",
+   "name": "Niger",
+   "form": "military_junta",
+   "chambers": 1,
+   "seats": 171,
+   "democracy": 0.227,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "NG",
+   "name": "Nigeria",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 469,
+   "democracy": 0.505,
+   "confidence": "high"
+  },
+  {
+   "iso": "NI",
+   "name": "Nicaragua",
+   "form": "other",
+   "chambers": 1,
+   "seats": 90,
+   "democracy": 0.151,
+   "confidence": "high"
+  },
+  {
+   "iso": "NL",
+   "name": "Netherlands",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 225,
+   "democracy": 0.832,
+   "confidence": "partial"
+  },
+  {
+   "iso": "NO",
+   "name": "Norway",
+   "form": "constitutional_monarchy",
+   "chambers": 1,
+   "seats": 169,
+   "democracy": 0.89,
+   "confidence": "high"
+  },
+  {
+   "iso": "NP",
+   "name": "Nepal",
+   "form": "parliamentary_republic",
+   "chambers": 2,
+   "seats": 334,
+   "democracy": 0.656,
+   "confidence": "high"
+  },
+  {
+   "iso": "NR",
+   "name": "Nauru",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 19,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "NZ",
+   "name": "New Zealand",
+   "form": "constitutional_monarchy",
+   "chambers": 1,
+   "seats": 123,
+   "democracy": 0.849,
+   "confidence": "high"
+  },
+  {
+   "iso": "OM",
+   "name": "Oman",
+   "form": "absolute_monarchy",
+   "chambers": 2,
+   "seats": 173,
+   "democracy": 0.175,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "PA",
+   "name": "Panama",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 71,
+   "democracy": 0.728,
+   "confidence": "high"
+  },
+  {
+   "iso": "PE",
+   "name": "Peru",
+   "form": "semi_presidential_republic",
+   "chambers": 1,
+   "seats": 130,
+   "democracy": 0.667,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "PG",
+   "name": "Papua New Guinea",
+   "form": "constitutional_monarchy",
+   "chambers": 1,
+   "seats": 118,
+   "democracy": 0.467,
+   "confidence": "partial"
+  },
+  {
+   "iso": "PH",
+   "name": "Philippines",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 342,
+   "democracy": 0.392,
+   "confidence": "high"
+  },
+  {
+   "iso": "PK",
+   "name": "Pakistan",
+   "form": "theocracy",
+   "chambers": 2,
+   "seats": 432,
+   "democracy": 0.302,
+   "confidence": "high"
+  },
+  {
+   "iso": "PL",
+   "name": "Poland",
+   "form": "semi_presidential_republic",
+   "chambers": 2,
+   "seats": 560,
+   "democracy": 0.768,
+   "confidence": "high"
+  },
+  {
+   "iso": "PT",
+   "name": "Portugal",
+   "form": "semi_presidential_republic",
+   "chambers": 1,
+   "seats": 230,
+   "democracy": 0.822,
+   "confidence": "high"
+  },
+  {
+   "iso": "PW",
+   "name": "Palau",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 25,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "PY",
+   "name": "Paraguay",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 125,
+   "democracy": 0.581,
+   "confidence": "high"
+  },
+  {
+   "iso": "QA",
+   "name": "Qatar",
+   "form": "constitutional_monarchy",
+   "chambers": 1,
+   "seats": 45,
+   "democracy": 0.034,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "RO",
+   "name": "Romania",
+   "form": "semi_presidential_republic",
+   "chambers": 2,
+   "seats": 464,
+   "democracy": 0.605,
+   "confidence": "partial"
+  },
+  {
+   "iso": "RS",
+   "name": "Serbia",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 250,
+   "democracy": 0.3,
+   "confidence": "partial"
+  },
+  {
+   "iso": "RU",
+   "name": "Russia",
+   "form": "dominant_party_state",
+   "chambers": 2,
+   "seats": 628,
+   "democracy": 0.17,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "RW",
+   "name": "Rwanda",
+   "form": "semi_presidential_republic",
+   "chambers": 2,
+   "seats": 106,
+   "democracy": 0.193,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "SA",
+   "name": "Saudi Arabia",
+   "form": "absolute_monarchy",
+   "chambers": 1,
+   "seats": 150,
+   "democracy": 0.016,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "SB",
+   "name": "Solomon Islands",
+   "form": "constitutional_monarchy",
+   "chambers": 1,
+   "seats": 50,
+   "democracy": 0.696,
+   "confidence": "high"
+  },
+  {
+   "iso": "SC",
+   "name": "Seychelles",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 34,
+   "democracy": 0.76,
+   "confidence": "high"
+  },
+  {
+   "iso": "SD",
+   "name": "Sudan",
+   "form": "military_junta",
+   "chambers": 2,
+   "seats": 458,
+   "democracy": 0.13,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "SE",
+   "name": "Sweden",
+   "form": "constitutional_monarchy",
+   "chambers": 1,
+   "seats": 349,
+   "democracy": 0.889,
+   "confidence": "partial"
+  },
+  {
+   "iso": "SG",
+   "name": "Singapore",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 108,
+   "democracy": 0.434,
+   "confidence": "high"
+  },
+  {
+   "iso": "SI",
+   "name": "Slovenia",
+   "form": "parliamentary_republic",
+   "chambers": 2,
+   "seats": 130,
+   "democracy": 0.692,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "SK",
+   "name": "Slovakia",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 150,
+   "democracy": 0.733,
+   "confidence": "high"
+  },
+  {
+   "iso": "SL",
+   "name": "Sierra Leone",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 149,
+   "democracy": 0.471,
+   "confidence": "high"
+  },
+  {
+   "iso": "SM",
+   "name": "San Marino",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 60,
+   "confidence": "high"
+  },
+  {
+   "iso": "SN",
+   "name": "Senegal",
+   "form": "semi_presidential_republic",
+   "chambers": 1,
+   "seats": 165,
+   "democracy": 0.633,
+   "confidence": "high"
+  },
+  {
+   "iso": "SO",
+   "name": "Somalia",
+   "form": "transitional",
+   "chambers": 2,
+   "seats": 315,
+   "democracy": 0.165,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "SR",
+   "name": "Suriname",
+   "form": "other",
+   "chambers": 1,
+   "seats": 51,
+   "democracy": 0.781,
+   "confidence": "high"
+  },
+  {
+   "iso": "SS",
+   "name": "South Sudan",
+   "form": "transitional",
+   "chambers": 2,
+   "seats": 650,
+   "democracy": 0.133,
+   "confidence": "partial"
+  },
+  {
+   "iso": "ST",
+   "name": "São Tomé and Príncipe",
+   "form": "semi_presidential_republic",
+   "chambers": 1,
+   "seats": 55,
+   "democracy": 0.632,
+   "confidence": "high"
+  },
+  {
+   "iso": "SV",
+   "name": "El Salvador",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 60,
+   "democracy": 0.321,
+   "confidence": "high"
+  },
+  {
+   "iso": "SY",
+   "name": "Syria",
+   "form": "transitional",
+   "chambers": 1,
+   "seats": 210,
+   "democracy": 0.128,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "SZ",
+   "name": "Eswatini",
+   "form": "absolute_monarchy",
+   "chambers": 2,
+   "seats": 107,
+   "democracy": 0.128,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "TD",
+   "name": "Chad",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 188,
+   "democracy": 0.242,
+   "confidence": "high"
+  },
+  {
+   "iso": "TG",
+   "name": "Togo",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 113,
+   "democracy": 0.351,
+   "confidence": "high"
+  },
+  {
+   "iso": "TH",
+   "name": "Thailand",
+   "form": "constitutional_monarchy",
+   "chambers": 2,
+   "seats": 700,
+   "democracy": 0.424,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "TJ",
+   "name": "Tajikistan",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 96,
+   "democracy": 0.158,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "TL",
+   "name": "Timor-Leste",
+   "form": "semi_presidential_republic",
+   "chambers": 1,
+   "seats": 65,
+   "democracy": 0.736,
+   "confidence": "high"
+  },
+  {
+   "iso": "TM",
+   "name": "Turkmenistan",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 181,
+   "democracy": 0.148,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "TN",
+   "name": "Tunisia",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 176,
+   "democracy": 0.395,
+   "confidence": "partial"
+  },
+  {
+   "iso": "TO",
+   "name": "Tonga",
+   "form": "constitutional_monarchy",
+   "chambers": 1,
+   "seats": 27,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "TR",
+   "name": "Turkey",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 600,
+   "democracy": 0.293,
+   "confidence": "high"
+  },
+  {
+   "iso": "TT",
+   "name": "Trinidad and Tobago",
+   "form": "parliamentary_republic",
+   "chambers": 2,
+   "seats": 72,
+   "democracy": 0.786,
+   "confidence": "partial"
+  },
+  {
+   "iso": "TV",
+   "name": "Tuvalu",
+   "form": "constitutional_monarchy",
+   "chambers": 1,
+   "seats": 16,
+   "confidence": "high"
+  },
+  {
+   "iso": "TZ",
+   "name": "Tanzania",
+   "form": "dominant_party_state",
+   "chambers": 1,
+   "seats": 403,
+   "democracy": 0.365,
+   "confidence": "high"
+  },
+  {
+   "iso": "UA",
+   "name": "Ukraine",
+   "form": "semi_presidential_republic",
+   "chambers": 1,
+   "seats": 450,
+   "democracy": 0.386,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "UG",
+   "name": "Uganda",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 529,
+   "democracy": 0.253,
+   "confidence": "partial"
+  },
+  {
+   "iso": "US",
+   "name": "United States",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 535,
+   "democracy": 0.735,
+   "confidence": "high"
+  },
+  {
+   "iso": "UY",
+   "name": "Uruguay",
+   "form": "presidential_republic",
+   "chambers": 2,
+   "seats": 129,
+   "democracy": 0.862,
+   "confidence": "high"
+  },
+  {
+   "iso": "UZ",
+   "name": "Uzbekistan",
+   "form": "semi_presidential_republic",
+   "chambers": 2,
+   "seats": 250,
+   "democracy": 0.218,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "VC",
+   "name": "Saint Vincent and the Grenadines",
+   "form": "constitutional_monarchy",
+   "chambers": 1,
+   "seats": 23,
+   "confidence": "high"
+  },
+  {
+   "iso": "VE",
+   "name": "Venezuela",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 285,
+   "democracy": 0.181,
+   "confidence": "partial"
+  },
+  {
+   "iso": "VN",
+   "name": "Vietnam",
+   "form": "one_party_state",
+   "chambers": 1,
+   "seats": 500,
+   "democracy": 0.146,
+   "confidence": "high"
+  },
+  {
+   "iso": "VU",
+   "name": "Vanuatu",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 52,
+   "democracy": 0.729,
+   "confidence": "high"
+  },
+  {
+   "iso": "WS",
+   "name": "Samoa",
+   "form": "parliamentary_republic",
+   "chambers": 1,
+   "seats": 51,
+   "confidence": "high"
+  },
+  {
+   "iso": "YE",
+   "name": "Yemen",
+   "form": "transitional",
+   "chambers": 2,
+   "seats": 412,
+   "democracy": 0.127,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "ZA",
+   "name": "South Africa",
+   "form": "parliamentary_republic",
+   "chambers": 2,
+   "seats": 490,
+   "democracy": 0.743,
+   "confidence": "high"
+  },
+  {
+   "iso": "ZM",
+   "name": "Zambia",
+   "form": "presidential_republic",
+   "chambers": 1,
+   "seats": 167,
+   "democracy": 0.497,
+   "confidence": "flagged"
+  },
+  {
+   "iso": "ZW",
+   "name": "Zimbabwe",
+   "form": "parliamentary_republic",
+   "chambers": 2,
+   "seats": 360,
+   "democracy": 0.268,
+   "confidence": "high"
+  }
+ ],
+ "omissions": []
+}

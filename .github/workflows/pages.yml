@@ -1,0 +1,70 @@
+# Publish the dataset to GitHub Pages on every push to main.
+#
+# raw.githubusercontent.com already works and stays supported — it is the URL
+# that survives a Pages outage. But it serves `content-type: text/plain`, so a
+# browser will not parse it as JSON without the consumer overriding it, and it
+# offers the whole 2.4MB file or nothing.
+#
+# Pages fixes both: correct content types, and the per-country split emitted by
+# `build:site`, where the median country is 6.8KB rather than 2.4MB.
+#
+# This deploys what is COMMITTED — it never rebuilds the data. A push that
+# changes data/polity.json publishes it; the weekly Rebuild workflow makes that
+# push. Keeping the two apart means a Pages failure cannot lose a harvest, and
+# a rebuild failure cannot take the site down.
+name: Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/polity.json'
+      - 'schema/openapi.json'
+      - 'scripts/emit-site.ts'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never cancel a deploy mid-flight — a half-published site is worse than a
+# slightly stale one. Queue instead.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: .bun-version
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      # The data being published must still match the schema being published
+      # alongside it.
+      - name: Validate before publishing
+        run: bun run validate
+
+      - name: Build site payloads
+        run: bun run build:site
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
