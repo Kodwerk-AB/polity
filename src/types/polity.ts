@@ -127,7 +127,51 @@ export interface OfficeHolder {
   portrait?: ImageRef
   /** Whether this office speaks politically or ceremonially for the state. */
   represents: Representation
+  /**
+   * The source still names this person, and their own record says they left.
+   *
+   * A country's leadership statement is written when someone arrives and often
+   * never closed when they go — Somalia names a prime minister who left in
+   * 2022, Chad one who died in 2021. Their own article closes every position
+   * they held, which is how the contradiction is caught.
+   *
+   * Set means the NAME came from the country's article because the structured
+   * record named somebody who has left. The name is current; the fields that
+   * would describe them — start date, portrait, party, entity id — are absent,
+   * because those belonged to the previous holder and attaching them here would
+   * give one person another's biography.
+   */
+  superseded?: boolean
+  /**
+   * Somebody else claims this office.
+   *
+   * A civil war is not a footnote on a leader — it is the central fact about
+   * who governs, and a dataset that reduces it to a boolean cannot say
+   * anything useful. Sudan's article names not just that the presidency is
+   * disputed but WHO disputes it and under which rival authority; Yemen's
+   * names the Supreme Political Council in Sanaa.
+   *
+   * Recorded on the office rather than the country because the split is rarely
+   * total: Sudan's rivals contest the presidency, the sovereignty council and
+   * the premiership separately, and Libya's two governments agree on nobody.
+   */
+  contested_by?: Claimant[]
   provenance: Provenance
+}
+
+/**
+ * A rival claimant to an office.
+ *
+ * Deliberately thin. The dataset can say who is named and what they are named
+ * as; it cannot adjudicate which claim is valid, and should not try. A consumer
+ * that needs to pick one has more context than this file does.
+ */
+export interface Claimant {
+  name: string
+  /** The rival authority they hold the office under, when the source names one
+   *  — Sudan's "Government of Peace and Unity", Yemen's Supreme Political
+   *  Council. */
+  authority?: string
 }
 
 // ---------------------------------------------------------------------------
@@ -288,6 +332,23 @@ export interface Chamber {
  * full, so deriving is both better covered and impossible to leave inconsistent
  * with the composition beside it.
  */
+/**
+ * How firmly one authority actually holds the state.
+ *
+ * Distinct from `contestation`, which is about a chamber's elections. This is
+ * about the state itself: a country can hold perfectly competitive elections in
+ * the territory it controls while a rival government runs the rest.
+ */
+export type Authority =
+  /** One government, uncontested control. */
+  | 'established'
+  /** An office or two is claimed by a rival, but one authority governs. */
+  | 'contested'
+  /** Two or more governments claim the state — Libya, Yemen, Sudan. */
+  | 'rival_governments'
+  /** No effective national government. */
+  | 'collapsed'
+
 export interface Government {
   /** Parties holding ministries. */
   governing: QID[]
@@ -305,6 +366,12 @@ export interface Government {
    * supply deal at all.
    */
   minority: boolean
+  /**
+   * Whether this government's writ actually runs. `established` for most of
+   * the world; anything else is a signal that "the government" is a contested
+   * description rather than a settled fact.
+   */
+  authority: Authority
   /** How the source phrases it — "minority coalition government". */
   description?: string
   formed?: ISODate

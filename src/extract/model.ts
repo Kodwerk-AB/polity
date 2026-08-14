@@ -18,7 +18,7 @@ import type { Standing } from '../types/enums'
 const MODEL = 'claude-haiku-4-5-20251001'
 /** Bumped whenever SYSTEM changes, so a prompt fix invalidates old answers
  *  rather than serving a cached reading of a rule that no longer applies. */
-const PROMPT_VERSION = 'v6'
+const PROMPT_VERSION = 'v7'
 const API = 'https://api.anthropic.com/v1/messages'
 
 export interface ExtractedBloc {
@@ -221,6 +221,149 @@ export const extractComposition = async (
       return undefined
     }
     await sleep(2000 * attempt)
+  }
+  return undefined
+}
+
+// ---------------------------------------------------------------------------
+// Leaders
+// ---------------------------------------------------------------------------
+
+export interface ExtractedClaimant {
+  office: 'head_of_state' | 'head_of_government'
+  name: string
+  authority?: string
+}
+
+export interface ExtractedLeaders {
+  head_of_state?: string
+  head_of_government?: string
+  /** True when the same person holds both offices. */
+  same_person: boolean
+  /** The source itself says the office is contested or the holder disputed. */
+  disputed: boolean
+  /** Who else claims an office, and under what rival authority. */
+  claimants?: ExtractedClaimant[]
+  /** The source names no holder because rivals claim it — Libya's premiership. */
+  vacant_contested?: boolean
+}
+
+const LEADER_SYSTEM = `You read the leadership fields of a country's Wikipedia infobox.
+
+Report ONLY names that appear in the text given. Never supply a name from
+memory, never guess a successor, never complete a partial name.
+
+Rules:
+- head_of_state: the person under the title that heads the STATE — President,
+  Monarch, King, Queen, Emir, Sultan, Supreme Leader, Chairman. For a country
+  under a junta or transitional council, that is the council's chairman or
+  transitional president.
+- head_of_government: the person under Prime Minister, Chancellor, Taoiseach,
+  Premier, President of the Government. NOT a vice president or deputy.
+- If the same person holds both, report that name for BOTH and same_person true.
+- If the country has no separate head of government (a presidential system),
+  report head_of_government as the head of state and same_person true.
+- The fields carry editorial debris: stray quote= parameters, footnote markers,
+  parenthetical notes like (interim) or (acting). Report the NAME only, without
+  the note — but set disputed true when the text says the office is contested,
+  disputed, vacant, or claimed by more than one person.
+- A title with no name beside it means nobody is recorded. Omit that office
+  rather than borrowing a name from another line. If the title is there and the
+  name is missing BECAUSE rivals claim it, set vacant_contested true.
+- claimants: when a name carries a note that another person disputes it, record
+  that person. Sudan writes "Disputed by Abdelaziz al-Hilu of the Government of
+  Peace and Unity" — report name "Abdelaziz al-Hilu" and authority "Government
+  of Peace and Unity". Report the office they contest. Set disputed true
+  whenever there is at least one claimant, or the source calls an office
+  contested, disputed or claimed.
+- Do NOT infer a dispute from your own knowledge of a country's politics. Only
+  report what the text in front of you says. A civil war the infobox does not
+  mention is not yours to add.
+
+Return JSON only.`
+
+const LEADER_TOOL = {
+  name: 'report_leaders',
+  description: "Report the leaders named in a country's infobox.",
+  input_schema: {
+    type: 'object',
+    properties: {
+      head_of_state: { type: 'string' },
+      head_of_government: { type: 'string' },
+      same_person: { type: 'boolean' },
+      disputed: { type: 'boolean' },
+      vacant_contested: { type: 'boolean' },
+      claimants: {
+        type: 'array',
+        items: {
+          type: 'object',
+          properties: {
+            office: { type: 'string', enum: ['head_of_state', 'head_of_government'] },
+            name: { type: 'string' },
+            authority: { type: 'string' },
+          },
+          required: ['office', 'name'],
+          additionalProperties: false,
+        },
+      },
+    },
+    required: ['same_person', 'disputed'],
+    additionalProperties: false,
+  },
+} as const
+
+/**
+ * Read a country's current leaders from its article infobox.
+ *
+ * Cached on the source hash, like the composition extractor — a country whose
+ * leadership lines have not changed costs nothing on a rebuild.
+ */
+export const extractLeaders = async (
+  sourceHash: string,
+  markup: string,
+  country: string
+): Promise<ExtractedLeaders | undefined> => {
+  const cacheKey = `leaders:${MODEL}:${PROMPT_VERSION}:${sourceHash}`
+  const cached = cacheRead<ExtractedLeaders>(cacheKey)
+  if (cached !== undefined) return cached
+
+  const apiKey = process.env.CLAUDE_KEY
+  if (!apiKey) throw new Error('CLAUDE_KEY is not set')
+
+  for (let attempt = 1; attempt <= 4; attempt++) {
+    calls++
+    const response = await fetch(API, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+      },
+      body: JSON.stringify({
+        model: MODEL,
+        max_tokens: 1024,
+        system: LEADER_SYSTEM,
+        tools: [LEADER_TOOL],
+        tool_choice: { type: 'tool', name: LEADER_TOOL.name },
+        messages: [{ role: 'user', content: `Country: ${country}\n\n${markup.slice(0, 4000)}` }],
+      }),
+      signal: AbortSignal.timeout(60_000),
+    }).catch(() => undefined)
+
+    if (response?.ok) {
+      const body = (await response.json().catch(() => undefined)) as
+        | { content?: { type?: string; input?: unknown }[] }
+        | undefined
+      const parsed = body?.content?.find(part => part.type === 'tool_use')?.input as
+        | ExtractedLeaders
+        | undefined
+      if (parsed) {
+        cacheWrite(cacheKey, parsed)
+        return parsed
+      }
+    }
+    if (response?.status === 400 || response?.status === 401) return undefined
+    await sleep(1500 * attempt)
   }
   return undefined
 }

@@ -1,3 +1,4 @@
+import type { Snak } from '../net/wiki'
 import {
   claimId,
   claimIds,
@@ -26,6 +27,11 @@ import type { Entity, ImageRef, OfficeHolder, QID } from '../types/polity'
 
 const HEAD_OF_STATE = 'P35'
 const HEAD_OF_GOVERNMENT = 'P6'
+/** The OFFICE of head of state / head of government, on the country item. */
+const OFFICE_OF_HEAD_OF_STATE = 'P1906'
+const OFFICE_OF_HEAD_OF_GOVERNMENT = 'P1313'
+/** Who holds an office, on the office item. */
+const OFFICEHOLDER = 'P1308'
 const BASIC_FORM = 'P122'
 const POSITION_HELD = 'P39'
 const MEMBER_OF_PARTY = 'P102'
@@ -111,6 +117,38 @@ const FORM_BY_LABEL: [RegExp, GovernmentForm][] = [
 export interface FormResult {
   form: GovernmentForm
   form_raw: string[]
+}
+
+/**
+ * The form, read from a country article's `government_type` prose.
+ *
+ * Ordered most-specific first, exactly like the P122 rules and for the same
+ * reason: the line usually says several things at once, and "under a military
+ * junta" outranks the "presidential republic" it qualifies.
+ */
+const FORM_BY_PROSE: [RegExp, GovernmentForm][] = [
+  [/military junta|under (a )?military|military government|junta/i, 'military_junta'],
+  [/provisional|transitional|caretaker/i, 'transitional'],
+  [/one[- ]party|single[- ]party/i, 'one_party_state'],
+  [/dominant[- ]party/i, 'dominant_party_state'],
+  // "Islamic republic" alone is NOT a theocracy — Mauritania's line reads
+  // "semi-presidential Islamic republic", which describes its constitutional
+  // religion, not clerical rule. Only an explicit theocracy qualifies, and
+  // the machinery rules below get first refusal.
+  [/theocra/i, 'theocracy'],
+  [/absolute monarchy/i, 'absolute_monarchy'],
+  [/(constitutional|parliamentary|federal) monarchy/i, 'constitutional_monarchy'],
+  [/semi[- ]presidential/i, 'semi_presidential_republic'],
+  [/parliamentary republic|parliamentary democracy|parliamentary system/i, 'parliamentary_republic'],
+  [/presidential republic|presidential system/i, 'presidential_republic'],
+  // Last, so it never pre-empts the machinery above.
+  [/islamic republic/i, 'theocracy'],
+]
+
+export const formFromProse = (line: string | undefined): GovernmentForm | undefined => {
+  if (!line) return undefined
+  for (const [pattern, form] of FORM_BY_PROSE) if (pattern.test(line)) return form
+  return undefined
 }
 
 export const governmentForm = async (
@@ -206,10 +244,47 @@ export interface Leaders {
  * Germany's Chancellor is at the G7 while the President signs treaties, and
  * Britain's King is at the banquet while the Prime Minister negotiates.
  */
+/**
+ * Who holds an office, asked of the OFFICE rather than the country.
+ *
+ * The country's P35/P6 is written when a leader arrives and frequently never
+ * closed when they leave: Somalia still names a prime minister who left in
+ * 2022, Sudan one who resigned the same year, Chad one who DIED in 2021.
+ *
+ * The office item is a different page with different editors, and it is
+ * maintained where the country's statement is not. Asked directly, it returns
+ * Somalia's Hamza Abdi Barre, the DRC's Judith Suminwa, Kazakhstan's Olzhas
+ * Bektenov and Chad's Allamaye Halina — every one of them the answer the
+ * country item was three to five years behind on.
+ *
+ * So the office is tried FIRST and the country's own statement is the fallback.
+ * Neither is authoritative on its own; the disagreement between them is what
+ * `superseded` reports.
+ */
+const holderOfOffice = async (
+  country: WikidataEntity | undefined,
+  officeProperty: string
+): Promise<{ id: string; statement: Snak } | undefined> => {
+  const offices = claimIds(country, officeProperty)
+  if (!offices.length) return undefined
+  const entities = await getEntities(offices, 'claims')
+  for (const office of offices) {
+    const { statement, stale } = resolveStatement(entities[office]?.claims?.[OFFICEHOLDER])
+    // An office whose every holder statement is closed is a vacancy, not an
+    // answer — Chad's premiership reads that way and must fall through.
+    if (stale || !statement) continue
+    const id = claimId(statement)
+    if (id) return { id, statement }
+  }
+  return undefined
+}
+
 export const leadersOf = async (
   countryQid: QID,
   form: GovernmentForm,
-  retrievedAt: string
+  retrievedAt: string,
+  /** The source stated this form outright rather than it being inferred. */
+  explicit = false
 ): Promise<Leaders> => {
   const country = (await getEntities([countryQid], 'claims'))[countryQid]
 
@@ -217,12 +292,61 @@ export const leadersOf = async (
     property: string,
     represents: OfficeHolder['represents']
   ): Promise<OfficeHolder | null> => {
-    const { statement, stale } = resolveStatement(country?.claims?.[property])
-    const id = statement ? claimId(statement) : undefined
+    // TWO independent sources, and neither is trustworthy on its own.
+    //
+    // The office item is right where the country is years behind (Somalia,
+    // Kazakhstan, the DRC's premiership) and wrong where nobody has touched it
+    // (the DRC's presidency still names Joseph Kabila, who left in 2019, on a
+    // single statement with no start date at all).
+    //
+    // So they are compared on EVIDENCE rather than ranked by source: the claim
+    // that carries a start date wins, and the later start wins between two that
+    // do. A statement nobody dated is a statement nobody has revisited.
+    const officeProperty =
+      property === HEAD_OF_STATE ? OFFICE_OF_HEAD_OF_STATE : OFFICE_OF_HEAD_OF_GOVERNMENT
+    const fromOffice = await holderOfOffice(country, officeProperty)
+    const fallback = resolveStatement(country?.claims?.[property])
+
+    const officeStart = fromOffice ? startedOn(fromOffice.statement) : undefined
+    const countryStart = startedOn(fallback.statement)
+    const preferOffice =
+      !!fromOffice &&
+      (!fallback.statement ||
+        fallback.stale ||
+        (!!officeStart && (!countryStart || officeStart > countryStart)))
+
+    const statement = preferOffice ? fromOffice!.statement : (fallback.statement ?? fromOffice?.statement)
+    const stale = preferOffice ? false : fallback.stale
+    const id = preferOffice ? fromOffice!.id : (statement ? claimId(statement) : undefined)
     if (!id) return null
     const person = (await getEntities([id], 'labels|claims'))[id]
     const name = labelOf(person)
     if (!name) return null
+
+    // CROSS-CHECK the country's claim against the person's own record.
+    //
+    // A country's P35/P6 statement is written when a leader arrives and often
+    // never closed when they leave, so "open" is not the same as "current".
+    // Somalia still names a prime minister who left in 2022, Sudan one who
+    // resigned the same year, Chad one who DIED in 2021 — every one of them an
+    // open statement on the country item.
+    //
+    // The person's own P39 (position held) is maintained where the country's is
+    // not: an ex-leader's positions are all closed, and a death date is
+    // decisive. Measured across five stale records and three current ones, the
+    // separation was exact — every stale leader had zero open positions, every
+    // current one had some.
+    //
+    // This is a REPORTING rule, not a correction: we cannot know who replaced
+    // them, so the best available name is kept and marked, which is what
+    // `confidence` and `derivation` exist to carry. A country dropped for a
+    // stale statement would be a worse answer than a country flagged.
+    const deceased = (person?.claims?.P570?.length ?? 0) > 0
+    const positions = person?.claims?.P39 ?? []
+    const openPositions = positions.filter(
+      held => held.rank !== 'deprecated' && !held.qualifiers?.P582?.length
+    ).length
+    const departed = deceased || (positions.length > 0 && openPositions === 0)
     const since = startedOn(statement)
     const office = await officeOf(statement)
     const portrait = await portraitOf(person)
@@ -234,9 +358,10 @@ export const leadersOf = async (
       ...(since ? { since } : {}),
       ...(portrait ? { portrait } : {}),
       represents,
+      ...(departed || stale ? { superseded: true } : {}),
       provenance: {
         kind: 'wikidata',
-        derivation: stale ? 'derived' : 'structured',
+        derivation: departed || stale ? 'derived' : 'structured',
         qid: countryQid,
         retrieved_at: retrievedAt,
       },
@@ -292,8 +417,15 @@ export const leadersOf = async (
   //
   // Where the structure and the label disagree, the STRUCTURE wins: two
   // separate offices means a parliamentary arrangement.
+  //
+  // It applies only where the form was INFERRED from a vague label. Where a
+  // source states the system outright, it is describing a real arrangement we
+  // have no business overruling: a presidential republic may perfectly well
+  // appoint a prime minister to run the cabinet, and most of West and Central
+  // Africa does exactly that. Overruling them turned Cameroon, Chad, Djibouti,
+  // Gabon, Guinea and the CAR into parliamentary republics they have never been.
   const corrected: GovernmentForm =
-    form === 'presidential_republic' && head_of_state && head_of_government && !same
+    form === 'presidential_republic' && head_of_state && head_of_government && !same && !explicit
       ? 'parliamentary_republic'
       : form
   if (corrected !== form && head_of_state) head_of_state.represents = 'ceremonial'

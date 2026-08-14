@@ -9,13 +9,16 @@ import {
 } from './net/wiki'
 import { unMemberStates } from './resolve/countries'
 import { chambersOf, type ChamberRef } from './resolve/chambers'
-import { governmentForm, leadersOf } from './resolve/leaders'
+import { formFromProse, governmentForm, leadersOf } from './resolve/leaders'
 import { chamberSource } from './extract/source'
-import { extractComposition, type ExtractedBloc } from './extract/model'
+import { governmentTypeLine, leaderLines } from './extract/leaders'
+import { extractComposition, extractLeaders, type ExtractedBloc } from './extract/model'
+import { hashOf } from './net/cache'
 import type { BlocKind, Confidence, Contestation, SpectrumBand } from './types/enums'
 import type {
   Chamber,
   Entity,
+  OfficeHolder,
   Government,
   ImageRef,
   Party,
@@ -378,27 +381,180 @@ interface BuildResult {
   omission?: { iso: string; reason: string }
 }
 
+/** Wikitext leftovers that mean the field held no readable name. */
+const NOT_A_NAME = /^\s*$|\{\{|^(prime minister|president|monarch|king|queen|chancellor|premier|vacant|tbd|none)\b/i
+
+/**
+ * Fold a name for comparison: diacritics out, letters only.
+ *
+ * Transliterations differ by insertions as often as substitutions —
+ * Toqaev/Tokayev, Déby/Deby — so names are compared on their letters with a
+ * small edit budget rather than exactly.
+ */
+const foldName = (value: string) =>
+  value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z ]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean)
+
+const nearlyEqual = (a: string, b: string): boolean => {
+  if (a === b || a.includes(b) || b.includes(a)) return true
+  if (Math.abs(a.length - b.length) > 3) return false
+  let previous = Array.from({ length: b.length + 1 }, (_, index) => index)
+  for (let i = 1; i <= a.length; i++) {
+    const row = [i]
+    for (let j = 1; j <= b.length; j++) {
+      row[j] = Math.min(
+        previous[j]! + 1,
+        row[j - 1]! + 1,
+        previous[j - 1]! + (a[i - 1] === b[j - 1] ? 0 : 1)
+      )
+    }
+    previous = row
+  }
+  return previous[b.length]! <= Math.max(2, Math.floor(Math.min(a.length, b.length) / 4))
+}
+
+const sameHuman = (a: string, b: string): boolean => {
+  const left = foldName(a)
+  const right = foldName(b)
+  if (!left.length || !right.length) return false
+  return left.some(word => right.some(other => nearlyEqual(word, other)))
+}
+
+/**
+ * Put the article's name into the record.
+ *
+ * Same person: nothing to do — the structured entry already describes them.
+ * Different person: the name replaces the entry, and every structured field
+ * describing the PREVIOUS holder goes with it. Keeping a start date, portrait
+ * or party from the person who left would attach one person's biography to
+ * another's name, which is worse than having none.
+ */
+const applyNamedLeader = (
+  held: OfficeHolder | null,
+  claimed: string | undefined,
+  source: { article: string; revid: number },
+  retrieved: string
+): void => {
+  if (!held || !claimed || NOT_A_NAME.test(claimed.trim())) return
+  const name = claimed.replace(/\s*\(.*?\)\s*/g, ' ').replace(/\s+/g, ' ').trim()
+  if (!name || sameHuman(held.name, name)) return
+
+  held.name = name
+  held.superseded = true
+  delete held.since
+  delete held.born_year
+  delete held.portrait
+  delete held.office
+  held.party = null
+  held.person = { qid: held.person.qid }
+  held.provenance = {
+    kind: 'wikipedia',
+    derivation: 'extracted',
+    article: source.article,
+    revid: source.revid,
+    retrieved_at: retrieved,
+    model: 'claude-haiku-4-5',
+  }
+}
+
 const buildCountry = async (
   iso: string,
   countryQid: QID,
-  countryName: string
+  countryName: string,
+  countryArticle?: string
 ): Promise<BuildResult> => {
   const retrieved = today()
+  let contested = false
+  let vacantContested = false
+  let rivalAuthorities: string[] = []
   const countryEntity = (await getEntities([countryQid], 'claims|labels'))[countryQid]
   const { form: declaredForm, form_raw } = await governmentForm(countryEntity)
-  const leaders = await leadersOf(countryQid, declaredForm, retrieved)
+  // The country article's own `government_type` prose, which says what P122
+  // cannot: "under a military junta", "one-party ... totalitarian
+  // dictatorship". It is preferred wherever the structured route could not
+  // classify the state, and wherever it names a REGIME the structured route
+  // has no vocabulary for — a junta is not a flavour of presidential republic,
+  // it is the fact that displaces it.
+  // Prose WINS wherever it parses.
+  //
+  // It is written as one considered sentence on a heavily watched page —
+  // "Federal parliamentary republic", "Unitary presidential republic under a
+  // military junta" — where P122 is an unordered pile of overlapping labels
+  // that must be guessed between. Gating the prose behind "only when the
+  // structured route failed" kept India as a presidential republic on the
+  // strength of "constitutional republic", while its own article said
+  // parliamentary in as many words.
+  const prose = countryArticle ? await governmentTypeLine(countryArticle) : undefined
+  const proseForm = formFromProse(prose)
+  const startingForm = proseForm ?? declaredForm
+
+  // Prose states the system outright; P122's vaguer labels are inferred.
+  const leaders = await leadersOf(countryQid, startingForm, retrieved, !!proseForm)
   // The office arrangement can correct the label — see `leadersOf`.
   const form = leaders.form
+
+  // THE FRESHNESS CHECK. A country's own article is the most-watched page it
+  // has: measured across twelve states, every one had been edited within four
+  // days, and it named the correct leader in every case — including Chad's
+  // Allamaye Halina and Iraq's Nizar Amidi, which both structured routes miss
+  // by years.
+  //
+  // It does not REPLACE the structured data, which carries the Q-ids, dates and
+  // portraits an infobox line cannot. It arbitrates: where the article names
+  // somebody else, the structured record is the stale one, and saying so is
+  // more useful than silently shipping a leader who left in 2021.
+  // THE ARTICLE IS THE SOURCE OF WHO HOLDS OFFICE.
+  //
+  // This started as a cross-check that flagged disagreements, and flagging was
+  // the wrong shape: 20 records ended up holding the correct successor in a
+  // `succeeded_by` field while still presenting the departed person as the
+  // officeholder. Chad shipped Idriss Déby, dead since 2021, with "Allamaye
+  // Halina" sitting in the record beside him.
+  //
+  // The country's article is simply the better source — measured across every
+  // country that was wrong, it had been edited within days and named the
+  // current holder. So it NAMES the officeholder, and Wikidata supplies what a
+  // name cannot: the entity id, the start date, the portrait, the party. Where
+  // the two agree, the record is whole. Where they disagree, the name wins and
+  // the structured detail is dropped rather than misattributed to somebody it
+  // does not describe.
+  const lines = countryArticle ? await leaderLines(countryArticle) : undefined
+  if (lines) {
+    const named = await extractLeaders(hashOf(lines.text), lines.text, countryName)
+    if (named) {
+      applyNamedLeader(leaders.head_of_state, named.head_of_state, lines, retrieved)
+      if (!named.same_person) {
+        applyNamedLeader(leaders.head_of_government, named.head_of_government, lines, retrieved)
+      }
+      for (const claim of named.claimants ?? []) {
+        const target =
+          claim.office === 'head_of_state' ? leaders.head_of_state : leaders.head_of_government
+        if (!target || !claim.name) continue
+        target.contested_by = [
+          ...(target.contested_by ?? []),
+          { name: claim.name, ...(claim.authority ? { authority: claim.authority } : {}) },
+        ]
+      }
+      if (named.disputed) contested = true
+      if (named.vacant_contested) vacantContested = true
+      rivalAuthorities = [
+        ...new Set(
+          (named.claimants ?? [])
+            .map(claim => claim.authority)
+            .filter((authority): authority is string => !!authority)
+        ),
+      ]
+    }
+  }
 
   if (!leaders.head_of_state) {
     return { omission: { iso, reason: 'no head of state resolved' } }
   }
-  // A leader taken from a CLOSED statement is the most recent holder, not a
-  // confirmed incumbent — Colombia and Guinea-Bissau are mid-transition in the
-  // source. Recorded, and marked, rather than omitted.
-  const staleLeader =
-    leaders.head_of_state.provenance.derivation === 'derived' ||
-    leaders.head_of_government?.provenance.derivation === 'derived'
 
   const chamberRefs = await chambersOf(countryQid)
   if (!chamberRefs.length) {
@@ -626,7 +782,36 @@ const buildCountry = async (
     seats: governmentSeats,
     ...(backedSeats > governmentSeats ? { seats_with_backing: backedSeats } : {}),
     minority: primary.seats_total > 0 && governmentSeats * 2 <= primary.seats_total,
-    confidence: !governingRows.length || staleLeader ? 'flagged' : primary.confidence,
+    // How firmly this government holds the state, as the source describes it.
+    //
+    // A NAMED rival authority is the strongest evidence there is — Sudan's
+    // "Government of Peace and Unity", Yemen's Supreme Political Council are
+    // not factions inside a government, they are competing claims to be it.
+    // An office nobody can be named for because rivals claim it (Libya's
+    // premiership) says the same thing.
+    //
+    // Never inferred from conflict alone: a country can be at war and still
+    // have one uncontested government, and calling that `rival_governments`
+    // would be a political judgement the data does not support.
+    authority: rivalAuthorities.length
+      ? 'rival_governments'
+      : vacantContested
+        ? 'rival_governments'
+        : contested
+          ? 'contested'
+          : 'established',
+    // A contested office is a flagged government however clean the seats are:
+    // Sudan's article says the presidency is "Disputed by Hemedti of the RSF",
+    // which is the single most important fact about who governs there.
+    // A leader whose name had to be taken from prose, or an office somebody
+    // else claims, is a government we cannot describe confidently.
+    confidence:
+      !governingRows.length ||
+      contested ||
+      leaders.head_of_state?.superseded ||
+      leaders.head_of_government?.superseded
+        ? 'flagged'
+        : primary.confidence,
     provenance: {
       kind: 'wikipedia',
       derivation: 'derived',
@@ -641,7 +826,7 @@ const buildCountry = async (
       entity: { qid: countryQid, label: countryName },
       name: countryName,
       form,
-      form_raw,
+      form_raw: prose ? [...form_raw, prose] : form_raw,
       head_of_state: leaders.head_of_state,
       head_of_government: leaders.head_of_government,
       parties,
@@ -668,7 +853,7 @@ export const build = async (only?: string[]): Promise<PolityDataset> => {
   let done = 0
   for (const state of wanted) {
     try {
-      const result = await buildCountry(state.iso, state.qid, state.name)
+      const result = await buildCountry(state.iso, state.qid, state.name, state.article)
       if (result.polity) countries[state.iso] = result.polity
       if (result.omission) omissions.push(result.omission)
     } catch (error) {
