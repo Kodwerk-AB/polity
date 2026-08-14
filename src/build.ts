@@ -10,6 +10,7 @@ import {
 import { unMemberStates } from './resolve/countries'
 import { chambersOf, type ChamberRef } from './resolve/chambers'
 import { formFromProse, governmentForm, leadersOf } from './resolve/leaders'
+import { electionSince } from './extract/elections'
 import { chamberSource } from './extract/source'
 import { governmentTypeLine, leaderLines } from './extract/leaders'
 import { extractComposition, extractLeaders, type ExtractedBloc } from './extract/model'
@@ -140,7 +141,7 @@ const contestationOf = (
   const largest = blocs.reduce((most, bloc) => Math.max(most, bloc.seats), 0)
   const dominance = total > 0 ? largest / total : 0
   // Rows that are somebody's party, as opposed to vacancies and independents.
-  const partyRows = blocs.filter(bloc => !NOT_A_PARTY.test(bloc.name.trim())).length
+  const partyRows = blocs.filter(bloc => !isResidual(bloc)).length
 
   // 1. The form, where it is decisive. A state that permits no rival is not
   //    holding a contest whatever its turnout says.
@@ -314,20 +315,48 @@ const SPECTRUM_BY_LABEL: [RegExp, SpectrumBand][] = [
   [/centrism|centre|center|big tent|syncretic/i, 'centre'],
 ]
 
-const NOT_A_PARTY =
+/**
+ * Whether a row is somebody's party, as the model that read it judged.
+ *
+ * This used to be a regex over the name, and a name cannot carry the
+ * distinction: Latvia seats a party called "Independence", and 142 entries are
+ * named like blocs while being ordinary parties. The model sees the row, its
+ * neighbours and the country, which is what the judgement actually needs. The
+ * name pattern survives only as a fallback for rows extracted before `kind`
+ * existed.
+ */
+const LOOKS_RESIDUAL =
   /^(others?|independents?|vacant|non[- ]attached|unaffiliated|crossbench|blank|total|speaker)$/i
 
-const ALLIANCE_WORDS = /\b(alliance|coalition|bloc|front|union of|pact)\b/i
+const isResidual = (bloc: { name: string; kind?: string }): boolean =>
+  bloc.kind ? bloc.kind === 'residual' || bloc.kind === 'independents' : LOOKS_RESIDUAL.test(bloc.name.trim())
 
-const kindOf = (name: string, entity: Parameters<typeof labelOf>[0]): BlocKind => {
-  if (NOT_A_PARTY.test(name.trim())) {
+const kindOf = (
+  name: string,
+  entity: Parameters<typeof labelOf>[0],
+  claimed?: string
+): BlocKind => {
+  // The model's reading first — it had the row in context.
+  if (claimed === 'residual' || claimed === 'independents') return claimed
+  if (LOOKS_RESIDUAL.test(name.trim())) {
     return /independent/i.test(name) ? 'independents' : 'residual'
   }
+  // The CLASS decides, never the name.
+  //
+  // 142 entries are named like blocs — "New Flemish Alliance", "National
+  // Liberation Front of Angola", "Centre Alliance", "Democratic Front" — and
+  // Wikidata files them as ordinary parties, which they are. A name-based
+  // guess would have relabelled every one of them, and "which party governs?"
+  // would then have no answer in a dozen countries that have a perfectly good
+  // one. Where the class is silent, a party is the safer default: calling a
+  // real party an alliance removes it from the question, where the reverse
+  // merely leaves a bloc slightly overstated.
   const classes = openClaimIds(entity, 'P31')
-  // Q7278 political party; Q10647343 political alliance; Q48204 association
+  // Q7278 political party; Q10647343 political alliance; Q1418047 electoral list
   if (classes.includes('Q7278')) return 'party'
   if (classes.includes('Q10647343') || classes.includes('Q1418047')) return 'electoral_alliance'
-  if (ALLIANCE_WORDS.test(name)) return 'electoral_alliance'
+  // Where Wikidata is silent, the model's reading stands.
+  if (claimed === 'electoral_alliance' || claimed === 'parliamentary_group') return claimed
   return 'party'
 }
 
@@ -513,6 +542,10 @@ const buildCountry = async (
   let vacantContested = false
   let rivalAuthorities: string[] = []
   const countryEntity = (await getEntities([countryQid], 'claims|labels'))[countryQid]
+  // "Ethiopian", "Guinean", "Swedish" — what an election article is named for.
+  const demonym = ((countryEntity?.claims?.P1549 ?? [])
+    .map(statement => statement.mainsnak?.datavalue?.value as { text?: string; language?: string })
+    .find(value => value?.language === 'en')?.text ?? '').trim()
   const { form: declaredForm, form_raw } = await governmentForm(countryEntity)
   // The country article's own `government_type` prose, which says what P122
   // cannot: "under a military junta", "one-party ... totalitarian
@@ -655,9 +688,7 @@ const buildCountry = async (
     // Union came back as "Homeland Union (2020)", which resolves to nothing,
     // while the bare "Homeland Union" is a real article. Falling back only when
     // `article` was ABSENT left 28 seats of a major opposition party unlinked.
-    const byName = blocs
-      .filter(bloc => !NOT_A_PARTY.test(bloc.name.trim()))
-      .map(bloc => bloc.name)
+    const byName = blocs.filter(bloc => !isResidual(bloc)).map(bloc => bloc.name)
     const byTitle = await resolveArticles([...linked, ...byName])
     const partyQids = [...new Set([...byTitle.values()])]
     const partyEntities = partyQids.length
@@ -718,7 +749,7 @@ const buildCountry = async (
       // it: "Independent" pointed at the ENTITY for independent politician,
       // which put a non-party in the registry and made 421 seats of
       // independents look like one organisation.
-      const residual = NOT_A_PARTY.test(bloc.name.trim())
+      const residual = isResidual(bloc)
       const qid = residual
         ? undefined
         : (bloc.article ? byTitle.get(bloc.article) : undefined) ?? byTitle.get(bloc.name)
@@ -750,7 +781,7 @@ const buildCountry = async (
           name: english,
           ...(endonym ? { endonym } : {}),
           ...(abbreviation ? { abbreviation } : {}),
-          kind: kindOf(bloc.name, entity),
+          kind: kindOf(bloc.name, entity, bloc.kind),
           ...(band ? { alignment: band } : {}),
           ...(alignmentLabel ? { alignment_raw: alignmentLabel } : {}),
           ideologies: openClaimIds(entity, 'P1142').slice(0, 6).map(named),
@@ -775,7 +806,15 @@ const buildCountry = async (
     }
 
     const mandate = mandateOf(lastElection, nextElection, ref.term_years, new Date())
-    const unresolved = composition.filter(row => !row.party && !NOT_A_PARTY.test(row.name)).length
+
+    // Second pass: has an election happened since the one this composition
+    // describes? A single read of the chamber's article cannot know — it has
+    // nothing to compare against — so the election articles are asked directly.
+    const newer =
+      demonym && ref.role !== 'upper'
+        ? await electionSince(demonym, lastElection ?? undefined)
+        : undefined
+    const unresolved = blocs.filter(bloc => !isResidual(bloc) && !byTitle.get(bloc.article ?? '') && !byTitle.get(bloc.name)).length
     // The SAME tolerance the validator applies, so a chamber can never be
     // called `high` and then fail its own sum check — an inconsistency that
     // would make `confidence` meaningless.
@@ -797,11 +836,9 @@ const buildCountry = async (
     // and six of them were marked `high` on the strength of the arithmetic.
     // Naming no party is not a confident description of a parliament, however
     // exactly the seats add up.
-    const RESIDUAL_ROW =
-      /^(others?|independents?|vacant|non[- ]attached|unaffiliated|crossbench|blank|appointed|nominated)/i
-    const namedParties = blocs.filter(bloc => !RESIDUAL_ROW.test(bloc.name.trim())).length
+    const namedParties = blocs.filter(bloc => !isResidual(bloc)).length
     const residualSeats = blocs
-      .filter(bloc => RESIDUAL_ROW.test(bloc.name.trim()))
+      .filter(bloc => isResidual(bloc))
       .reduce((sum, bloc) => sum + bloc.seats, 0)
     const mostlyResidual = seated > 0 && residualSeats / seated >= 0.5
 
@@ -809,7 +846,7 @@ const buildCountry = async (
     const undated = !lastElection
     const confidence: Confidence = !blocs.length
       ? 'flagged'
-      : !sumsMatch || expired || !namedParties
+      : !sumsMatch || expired || !namedParties || newer
         ? 'flagged'
         : unresolved > 0 || !precise || undated || mostlyResidual
           ? 'partial'
@@ -831,6 +868,7 @@ const buildCountry = async (
       // The election the composition describes, NOT the day we read it.
       as_of: lastElection ?? retrieved,
       retrieved_at: retrieved,
+      ...(newer ? { superseded_by_election: newer } : {}),
       confidence,
       provenance: {
         kind: 'wikipedia',

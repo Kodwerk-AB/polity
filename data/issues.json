@@ -1,1 +1,20 @@
-[]
+[
+ {
+  "iso": "BO",
+  "severity": "warning",
+  "message": "seated 64 is far above 36 — nested list read twice?",
+  "chamber": "Senate of Bolivia"
+ },
+ {
+  "iso": "KE",
+  "severity": "warning",
+  "message": "seated 686 is far above 349 — nested list read twice?",
+  "chamber": "National Assembly"
+ },
+ {
+  "iso": "VN",
+  "severity": "warning",
+  "message": "seated 1000 is far above 500 — nested list read twice?",
+  "chamber": "National Assembly of Vietnam"
+ }
+]

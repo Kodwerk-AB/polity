@@ -216,14 +216,37 @@ const partyOf = async (person: WikidataEntity | undefined): Promise<Entity | nul
   return { qid: id as QID, ...(label ? { label } : {}) }
 }
 
-const officeOf = async (statement: ReturnType<typeof currentStatement>): Promise<Entity | undefined> => {
-  const id = statement?.qualifiers?.[POSITION_HELD]?.[0]
-    ? claimId({ mainsnak: statement.qualifiers[POSITION_HELD][0] })
+/**
+ * The office a leader holds, and its name in its own language.
+ *
+ * Read from the OFFICE ITEM the country points at (P1906 / P1313) rather than
+ * from a qualifier on the leadership statement. The qualifier is present for 22
+ * of 193 heads of state and for none of the heads of government, where the
+ * office item exists almost everywhere and carries the native label besides —
+ * "Bundeskanzler", "Statsminister", "Taoiseach". The last of those is the case
+ * that makes it worth having: nobody in Ireland says prime minister.
+ */
+const officeDetail = async (
+  officeQid: string | undefined,
+  fallback: ReturnType<typeof currentStatement>
+): Promise<{ office?: Entity; office_local?: string }> => {
+  const qualified = fallback?.qualifiers?.[POSITION_HELD]?.[0]
+    ? claimId({ mainsnak: fallback.qualifiers[POSITION_HELD][0] })
     : undefined
-  if (!id) return undefined
-  const entity = (await getEntities([id], 'labels'))[id]
+  const id = officeQid ?? qualified
+  if (!id) return {}
+  const entity = (await getEntities([id], 'labels|claims'))[id]
   const label = labelOf(entity)
-  return { qid: id as QID, ...(label ? { label } : {}) }
+  const native = ['P1705', 'P1448'].reduce<string | undefined>((found, property) => {
+    if (found) return found
+    const statement = currentStatement(entity?.claims?.[property])
+    const raw = statement?.mainsnak?.datavalue?.value as { text?: string } | undefined
+    return raw?.text?.trim() || undefined
+  }, undefined)
+  return {
+    office: { qid: id as QID, ...(label ? { label } : {}) },
+    ...(native && native !== label ? { office_local: native } : {}),
+  }
 }
 
 export interface Leaders {
@@ -348,12 +371,16 @@ export const leadersOf = async (
     ).length
     const departed = deceased || (positions.length > 0 && openPositions === 0)
     const since = startedOn(statement)
-    const office = await officeOf(statement)
+    const { office, office_local } = await officeDetail(
+      claimIds(country, officeProperty)[0],
+      statement
+    )
     const portrait = await portraitOf(person)
     return {
       person: { qid: id as QID, label: name },
       name,
       ...(office ? { office } : {}),
+      ...(office_local ? { office_local } : {}),
       party: await partyOf(person),
       ...(since ? { since } : {}),
       ...(portrait ? { portrait } : {}),

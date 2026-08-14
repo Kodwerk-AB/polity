@@ -117,8 +117,25 @@ export interface ImageRef {
 export interface OfficeHolder {
   person: Entity
   name: string
-  /** The office itself — "President of El Salvador", as an entity. */
+  /**
+   * The office itself — "Prime Minister of Sweden", as an entity.
+   *
+   * Worth carrying separately from the person because the title is the part
+   * that explains the role: a Chancellor, a Taoiseach and a Minister-President
+   * are all heads of government and the word says something the category does
+   * not.
+   */
   office?: Entity
+  /**
+   * The office in its own language — "Bundeskanzler", "Statsminister",
+   * "Taoiseach", "Ministerpresident".
+   *
+   * From the office item's P1705, the same native-label property the chambers
+   * and parties use. Frequently the only name anyone in the country actually
+   * says, and untranslatable in the cases that matter most: nobody calls the
+   * Taoiseach a prime minister.
+   */
+  office_local?: string
   /** Their party, or null when genuinely independent of one. */
   party: Entity | null
   /** When this term began. Day precision or absent — never a padded year. */
@@ -329,6 +346,19 @@ export interface Chamber {
   as_of: ISODate
   /** When the pipeline last read the source. Distinct from `as_of`. */
   retrieved_at: ISODate
+  /**
+   * An election has been held that this composition does NOT describe.
+   *
+   * Found by a second pass: Wikipedia names election articles by a strong
+   * convention, so asking whether "2026 Ethiopian general election" exists is
+   * one cheap query — and it existed while this dataset still described
+   * Ethiopia's 2021 chamber, because the legislature article had not caught up.
+   *
+   * It says nothing about the RESULT, which is the honest limit of what a title
+   * can tell us. It says the seats below are out of date and names the article
+   * that supersedes them.
+   */
+  superseded_by_election?: { article: string; year: number }
   confidence: Confidence
   provenance: Provenance
   /**

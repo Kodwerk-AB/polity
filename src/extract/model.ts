@@ -18,13 +18,24 @@ import type { Standing } from '../types/enums'
 const MODEL = 'claude-haiku-4-5-20251001'
 /** Bumped whenever SYSTEM changes, so a prompt fix invalidates old answers
  *  rather than serving a cached reading of a rule that no longer applies. */
-const PROMPT_VERSION = 'v7'
+const PROMPT_VERSION = 'v9'
 const API = 'https://api.anthropic.com/v1/messages'
 
 export interface ExtractedBloc {
   name: string
   seats: number
   standing: Standing
+  /**
+   * What the row IS, judged by the model that can read it.
+   *
+   * This was a regex over names, and a regex cannot tell "Independents" (a
+   * tally of unaffiliated members) from "Independence" (a Latvian party), or
+   * "New Flemish Alliance" (a party) from "Advanced Indonesia Coalition" (an
+   * alliance). 142 entries are named like blocs and are ordinary parties. The
+   * model has the row, its neighbours and the country in front of it, which is
+   * exactly the context the judgement needs.
+   */
+  kind?: 'party' | 'electoral_alliance' | 'parliamentary_group' | 'independents' | 'residual'
   /** The wikilink target, when the row links one — the Q-id resolution key. */
   article?: string
   /** The bloc this row stood in, when the markup nests them. */
@@ -78,6 +89,12 @@ Rules:
   A standing header like "Government (108)" is NOT one of those levels — it is
   a header, its total is the sum of the rows beneath it, and those rows are the
   blocs. Report them with standing:government, not the header.
+  BUT a header with NOTHING beneath it is all the chamber has, and you should
+  report it as a bloc. Tuvalu's whole composition is "Government (10)" and
+  "Opposition (6)"; Qatar's is "Appointed by Emir (45)". Those are real seat
+  counts and refusing them loses the chamber entirely. Name the bloc as the
+  markup names it and give it the matching standing — "Appointed by Emir" is
+  a bloc named exactly that, with standing non_attached.
 - CHECK YOUR TOTAL BEFORE ANSWERING. Add up the seats you are about to report
   and compare with the declared size you were given.
   * Sum much LARGER: you have counted a nesting twice. Brazil lists a coalition
@@ -92,6 +109,18 @@ Rules:
   you read the structure correctly.
 - A cabinet name in a header ("Government (Støre Cabinet)") is not a party.
 - name: the party's display name, without the seat count.
+- kind: what the row is.
+  * party — a single political party, however it is named. "New Flemish
+    Alliance", "National Liberation Front", "Democratic Front" and "Centre
+    Alliance" are all parties despite the words in their names.
+  * electoral_alliance — parties that contested the election on one list, or a
+    named bloc holding seats its member parties are not separately listed for.
+  * parliamentary_group — a group formed inside the chamber after the election.
+  * independents — a tally of members elected as no party's candidate:
+    "Independents", "Non-attached", "Crossbench". Note that a PARTY may be
+    called "Independence" or "Independent Greens" and is not this.
+  * residual — the chamber's own bookkeeping: "Vacant", "Others", "Speaker",
+    "Appointed by Emir", a seat category rather than an organisation.
 - article: the wikilink target if the row links one, e.g. [[Labour Party
   (Norway)|Labour]] gives article "Labour Party (Norway)".
 - alliance: only when the markup nests a party inside a named bloc.
@@ -130,6 +159,16 @@ const TOOL = {
             standing: {
               type: 'string',
               enum: ['government', 'backing', 'opposition', 'speaker', 'non_attached', 'vacant'],
+            },
+            kind: {
+              type: 'string',
+              enum: [
+                'party',
+                'electoral_alliance',
+                'parliamentary_group',
+                'independents',
+                'residual',
+              ],
             },
             article: { type: 'string' },
             alliance: { type: 'string' },

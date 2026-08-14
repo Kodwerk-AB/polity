@@ -79,7 +79,26 @@ const officeHolder = {
   properties: {
     person: entity,
     name: { type: 'string' },
+    superseded: {
+      type: 'boolean',
+      description:
+        "The name came from the country's article because the structured record named somebody who has left. The name is current; the dates, portrait and party that would describe them are absent, because those belonged to the previous holder.",
+    },
+    contested_by: {
+      type: 'array',
+      description: 'Rival claimants to this office, with the authority they claim it under.',
+      items: {
+        type: 'object',
+        required: ['name'],
+        properties: { name: { type: 'string' }, authority: { type: 'string' } },
+      },
+    },
     office: entity,
+    office_local: {
+      type: 'string',
+      description:
+        "The office in its own language — Bundeskanzler, Statsminister, Taoiseach. Frequently the only name anyone in the country says.",
+    },
     party: {
       oneOf: [entity, { type: 'null' }],
       description: 'Null when genuinely independent — several heads of state suspend party membership.',
@@ -214,6 +233,13 @@ const chamber = {
       type: 'string',
       format: 'date',
       description: 'When the source was last read. Distinct from as_of.',
+    },
+    superseded_by_election: {
+      type: 'object',
+      description:
+        'An election has been held that this composition does not describe. Found by checking whether the election article exists — it says the seats are out of date and names what supersedes them, not what the result was.',
+      required: ['article', 'year'],
+      properties: { article: { type: 'string' }, year: { type: 'integer' } },
     },
     confidence: enumOf(CONFIDENCE, 'In the data, not a log: a consumer must tell a verified row from a guessed one.'),
     provenance,
