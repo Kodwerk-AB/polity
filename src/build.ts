@@ -413,6 +413,40 @@ const SPECTRUM_BY_LABEL: [RegExp, SpectrumBand][] = [
 const LOOKS_RESIDUAL =
   /^(others?|independents?|vacant|non[- ]attached|unaffiliated|crossbench|blank|total|speaker)$/i
 
+/**
+ * Drop a coalition's header row when its members are listed beneath it.
+ *
+ * Kenya's National Assembly is written as "Kenya Kwanza — 179", then each of
+ * its fourteen member parties, then "Azimio la Umoja — 158" and its nine.
+ * Every row is true, but the chamber seats 349 and the rows sum to 686: each
+ * seat is counted twice, once under its party and once under its alliance.
+ * Uruguay's Republican Coalition does the same.
+ *
+ * The model already reports the nesting — each member row names its parent in
+ * `alliance` — so the parent is identified by that link and nothing else. An
+ * earlier attempt inferred it from arithmetic instead, treating any row whose
+ * seats equalled the sum of the rows beneath it as a header; that coincidence
+ * is common, and it deleted the CDU from the Bundestag and the Conservatives
+ * from the Commons. A wrong drop silently removes a real party, so only an
+ * explicit parent-child statement counts.
+ *
+ * The MEMBERS are kept and the header dropped, because "which parties sit in
+ * this parliament" is the question the data answers; the alliance survives on
+ * each member's own `alliance` field.
+ */
+export const withoutAllianceHeaders = (blocs: ExtractedBloc[]): ExtractedBloc[] => {
+  const parents = new Set(
+    blocs.map(bloc => bloc.alliance?.trim()).filter((name): name is string => !!name)
+  )
+  if (!parents.size) return blocs
+  return blocs.filter(bloc => {
+    // A row is a header only if some OTHER row names it as their alliance and
+    // it does not itself sit inside one.
+    const isHeader = parents.has(bloc.name.trim()) && !bloc.alliance
+    return !isHeader
+  })
+}
+
 const isResidual = (bloc: { name: string; kind?: string }): boolean =>
   bloc.kind ? bloc.kind === 'residual' || bloc.kind === 'independents' : LOOKS_RESIDUAL.test(bloc.name.trim())
 
@@ -789,6 +823,8 @@ const buildCountry = async (
         nextElection = normaliseDate(extraction?.next_election)
       }
     }
+
+    blocs = withoutAllianceHeaders(blocs)
 
     // Resolve every linked bloc to an entity in one batch per chamber.
     //

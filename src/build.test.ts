@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { landslideOr, selectionOf } from './build'
+import { landslideOr, selectionOf, withoutAllianceHeaders } from './build'
 import { FREE_ELECTION_SCORE } from './resolve/democracy'
 
 /**
@@ -68,5 +68,57 @@ describe('landslideOr', () => {
     // V-Dem omits 17 UN members, nearly all small states.
     expect(landslideOr('uncontested', undefined)).toBe('uncontested')
     expect(landslideOr('restricted', undefined)).toBe('restricted')
+  })
+})
+
+describe('withoutAllianceHeaders', () => {
+  const bloc = (name: string, seats: number, alliance?: string) => ({
+    name,
+    seats,
+    standing: 'government' as const,
+    ...(alliance ? { alliance } : {}),
+  })
+
+  it('drops a coalition header whose members are listed beneath it', () => {
+    // Kenya: the alliance total and every member party, so 349 seats sum to 686.
+    const kept = withoutAllianceHeaders([
+      bloc('Kenya Kwanza', 179),
+      bloc('United Democratic Alliance', 143, 'Kenya Kwanza'),
+      bloc('Amani National Congress', 7, 'Kenya Kwanza'),
+      bloc('Azimio la Umoja', 158),
+      bloc('Orange Democratic Movement', 89, 'Azimio la Umoja'),
+      bloc('Independents', 12),
+    ])
+    expect(kept.map(row => row.name)).toEqual([
+      'United Democratic Alliance',
+      'Amani National Congress',
+      'Orange Democratic Movement',
+      'Independents',
+    ])
+  })
+
+  it('keeps a large party that no row claims as its parent', () => {
+    // The regression this rule replaced: an arithmetic version treated any row
+    // whose seats equalled the sum of those beneath it as a header, and deleted
+    // the CDU from the Bundestag and the Conservatives from the Commons.
+    const bundestag = [
+      bloc('CDU/CSU', 208),
+      bloc('AfD', 152),
+      bloc('SPD', 120),
+      bloc('The Greens', 85),
+      bloc('The Left', 64),
+    ]
+    expect(withoutAllianceHeaders(bundestag)).toEqual(bundestag)
+  })
+
+  it('leaves a chamber with no nesting untouched', () => {
+    const commons = [bloc('Labour Party', 405), bloc('Conservative Party', 121)]
+    expect(withoutAllianceHeaders(commons)).toEqual(commons)
+  })
+
+  it('keeps an alliance whose members are NOT listed separately', () => {
+    // Nothing names it as a parent, so its seats are the only record of them.
+    const rows = [bloc('National Coalition', 40), bloc('Opposition Party', 20)]
+    expect(withoutAllianceHeaders(rows)).toEqual(rows)
   })
 })
