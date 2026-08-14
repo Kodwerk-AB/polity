@@ -18,7 +18,7 @@ import { IDEOLOGY_FAMILIES, type IdeologyFamily, type Standing } from '../types/
 const MODEL = 'claude-haiku-4-5-20251001'
 /** Bumped whenever SYSTEM changes, so a prompt fix invalidates old answers
  *  rather than serving a cached reading of a rule that no longer applies. */
-const PROMPT_VERSION = 'v11'
+const PROMPT_VERSION = 'v13'
 const API = 'https://api.anthropic.com/v1/messages'
 
 export interface ExtractedBloc {
@@ -297,11 +297,23 @@ Rules:
   Monarch, King, Queen, Emir, Sultan, Supreme Leader, Chairman. For a country
   under a junta or transitional council, that is the council's chairman or
   transitional president.
+- A GOVERNOR GENERAL is never the head of state. They represent an absent
+  monarch, who remains the head of state whether or not the infobox names them
+  readably. Canada and Jamaica both list a monarch then a governor general; if
+  the monarch's line is an unreadable template, omit head_of_state rather than
+  taking the governor general from the next line. The same holds for a
+  lieutenant governor, an administrator or a regent.
 - head_of_government: the person under Prime Minister, Chancellor, Taoiseach,
   Premier, President of the Government. NOT a vice president or deputy.
 - If the same person holds both, report that name for BOTH and same_person true.
 - If the country has no separate head of government (a presidential system),
   report head_of_government as the head of state and same_person true.
+- That rule runs ONE WAY ONLY. Never promote a prime minister into the
+  head_of_state field because the monarch or president line was unreadable.
+  Canada's monarch line is a bare template, and reporting Carney as head of
+  state produced a record where Charles III's identifier carried the prime
+  minister's name. If the head of STATE cannot be read, omit head_of_state and
+  report head_of_government alone with same_person false.
 - The fields carry editorial debris: stray quote= parameters, footnote markers,
   parenthetical notes like (interim) or (acting). Report the NAME only, without
   the note — but set disputed true when the text says the office is contested,

@@ -1,1 +1,8 @@
-[]
+[
+ {
+  "iso": "BO",
+  "severity": "warning",
+  "message": "seated 64 is far above 36 — nested list read twice?",
+  "chamber": "Senate of Bolivia"
+ }
+]
