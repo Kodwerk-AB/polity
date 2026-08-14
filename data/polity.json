@@ -1,6 +1,6 @@
 {
  "schema_version": "1.0.0",
- "generated_at": "2026-08-14T05:57:57.831Z",
+ "generated_at": "2026-08-14T06:08:00.458Z",
  "countries": {
   "AD": {
    "iso": "AD",
@@ -590,7 +590,7 @@
      "role": "unicameral",
      "name": "National Assembly of Afghanistan",
      "name_local": "شورای ملی دولت جمهوری اسلامی افغانستان",
-     "seats_total": 0,
+     "seats_total": 352,
      "selection": [
       "directly_elected"
      ],
@@ -613,7 +613,7 @@
     "governing": [],
     "backing": [],
     "seats": 0,
-    "minority": false,
+    "minority": true,
     "authority": "established",
     "confidence": "flagged",
     "provenance": {
@@ -1637,7 +1637,7 @@
      "role": "unicameral",
      "name": "National Assembly of Armenia",
      "name_local": "Հայաստանի Ազգային ժողով",
-     "seats_total": 107,
+     "seats_total": 105,
      "selection": [
       "directly_elected"
      ],
@@ -1647,21 +1647,21 @@
        "party": "Q17305307",
        "name": "Civil Contract",
        "seats": 64,
-       "share": 0.5981,
+       "share": 0.6095,
        "standing": "government"
       },
       {
        "party": "Q139265655",
        "name": "Strong Armenia",
        "seats": 29,
-       "share": 0.271,
+       "share": 0.2762,
        "standing": "opposition"
       },
       {
        "party": "Q106833126",
        "name": "Armenia Alliance",
        "seats": 12,
-       "share": 0.1121,
+       "share": 0.1143,
        "standing": "opposition"
       }
      ],
@@ -3899,7 +3899,7 @@
      "role": "lower",
      "name": "Australian House of Representatives",
      "name_local": "House of Representatives",
-     "seats_total": 151,
+     "seats_total": 150,
      "selection": [
       "directly_elected"
      ],
@@ -3909,63 +3909,63 @@
        "party": "Q216082",
        "name": "Labor",
        "seats": 94,
-       "share": 0.6225,
+       "share": 0.6267,
        "standing": "government"
       },
       {
        "party": "Q241149",
        "name": "Liberal",
        "seats": 27,
-       "share": 0.1788,
+       "share": 0.18,
        "standing": "opposition"
       },
       {
        "party": "Q946040",
        "name": "National",
        "seats": 14,
-       "share": 0.0927,
+       "share": 0.0933,
        "standing": "opposition"
       },
       {
        "party": "Q1585274",
        "name": "One Nation",
        "seats": 2,
-       "share": 0.0132,
+       "share": 0.0133,
        "standing": "non_attached"
       },
       {
        "party": "Q140468977",
        "name": "Community Strong",
        "seats": 2,
-       "share": 0.0132,
+       "share": 0.0133,
        "standing": "non_attached"
       },
       {
        "party": "Q781486",
        "name": "Greens",
        "seats": 1,
-       "share": 0.0066,
+       "share": 0.0067,
        "standing": "non_attached"
       },
       {
        "party": "Q6378340",
        "name": "Katter's Australian",
        "seats": 1,
-       "share": 0.0066,
+       "share": 0.0067,
        "standing": "non_attached"
       },
       {
        "party": "Q19876280",
        "name": "Centre Alliance",
        "seats": 1,
-       "share": 0.0066,
+       "share": 0.0067,
        "standing": "non_attached"
       },
       {
        "party": null,
        "name": "Independent",
        "seats": 8,
-       "share": 0.053,
+       "share": 0.0533,
        "standing": "non_attached"
       }
      ],
@@ -8408,7 +8408,7 @@
      },
      "role": "lower",
      "name": "National Assembly",
-     "seats_total": 121,
+     "seats_total": 100,
      "selection": [
       "directly_elected"
      ],
@@ -8418,14 +8418,14 @@
        "party": "Q2271402",
        "name": "National Council for the Defense of Democracy – Forces for the Defense of Democracy",
        "seats": 108,
-       "share": 0.8926,
+       "share": 0.973,
        "standing": "non_attached"
       },
       {
        "party": "Q107331",
        "name": "Great Lakes Twa",
        "seats": 3,
-       "share": 0.0248,
+       "share": 0.027,
        "standing": "non_attached"
       }
      ],
@@ -8456,7 +8456,7 @@
      },
      "role": "upper",
      "name": "Senate",
-     "seats_total": 39,
+     "seats_total": 13,
      "selection": [
       "indirectly_elected"
      ],
@@ -8772,7 +8772,7 @@
      },
      "role": "unicameral",
      "name": "Legislative Council of Brunei",
-     "seats_total": 37,
+     "seats_total": 34,
      "selection": [
       "directly_elected"
      ],
@@ -8782,20 +8782,20 @@
        "party": "Q144552",
        "name": "Ex-officio",
        "seats": 14,
-       "share": 0.3784,
+       "share": 0.4118,
        "standing": "government"
       },
       {
        "party": "Q327591",
        "name": "Non-partisan",
        "seats": 20,
-       "share": 0.5405,
+       "share": 0.5882,
        "standing": "non_attached"
       }
      ],
      "as_of": "2026-08-14",
      "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -8815,7 +8815,7 @@
     "seats": 14,
     "minority": true,
     "authority": "established",
-    "confidence": "flagged",
+    "confidence": "partial",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -9170,7 +9170,7 @@
      "role": "upper",
      "name": "Senate of Bolivia",
      "name_local": "Cámara de Senadores",
-     "seats_total": 52,
+     "seats_total": 36,
      "selection": [
       "indirectly_elected"
      ],
@@ -9228,7 +9228,7 @@
      },
      "as_of": "2025-08-17",
      "retrieved_at": "2026-08-14",
-     "confidence": "partial",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -14113,7 +14113,7 @@
      "role": "lower",
      "name": "National Assembly",
      "name_local": "Assemblée nationale",
-     "seats_total": 153,
+     "seats_total": 151,
      "selection": [
       "directly_elected"
      ],
@@ -14123,112 +14123,112 @@
        "party": "Q1785816",
        "name": "Congolese Party of Labour",
        "seats": 112,
-       "share": 0.732,
+       "share": 0.7417,
        "standing": "government"
       },
       {
        "party": "Q4677129",
        "name": "Action and Renewal Movement",
        "seats": 4,
-       "share": 0.0261,
+       "share": 0.0265,
        "standing": "government"
       },
       {
        "party": "Q5136089",
        "name": "Club 2002 – Party for the Unity and the Republic",
        "seats": 2,
-       "share": 0.0131,
+       "share": 0.0132,
        "standing": "government"
       },
       {
        "party": "Q17075186",
        "name": "Rally for Democracy and Social Progress",
        "seats": 2,
-       "share": 0.0131,
+       "share": 0.0132,
        "standing": "government"
       },
       {
        "party": "Q139408052",
        "name": "Perspectives and Realities Club",
        "seats": 1,
-       "share": 0.0065,
+       "share": 0.0066,
        "standing": "backing"
       },
       {
        "party": "Q139377396",
        "name": "Union for the Reconstruction and Development of Congo",
        "seats": 1,
-       "share": 0.0065,
+       "share": 0.0066,
        "standing": "backing"
       },
       {
        "party": "Q5122579",
        "name": "Citizen Rally",
        "seats": 1,
-       "share": 0.0065,
+       "share": 0.0066,
        "standing": "backing"
       },
       {
        "party": "Q3550401",
        "name": "Pan-African Union for Social Democracy",
        "seats": 7,
-       "share": 0.0458,
+       "share": 0.0464,
        "standing": "opposition"
       },
       {
        "party": "Q113746441",
        "name": "Union of Humanist Democrats-Yuki",
        "seats": 7,
-       "share": 0.0458,
+       "share": 0.0464,
        "standing": "opposition"
       },
       {
        "party": null,
        "name": "Mouvement pour l'unité, la solidarité et le travail",
        "seats": 1,
-       "share": 0.0065,
+       "share": 0.0066,
        "standing": "opposition"
       },
       {
        "party": "Q3326534",
        "name": "Congolese Movement for Democracy and Integral Development",
        "seats": 1,
-       "share": 0.0065,
+       "share": 0.0066,
        "standing": "opposition"
       },
       {
        "party": "Q3366689",
        "name": "Republican and Liberal Party",
        "seats": 2,
-       "share": 0.0131,
+       "share": 0.0132,
        "standing": "non_attached"
       },
       {
        "party": "Q139377385",
        "name": "Dynamic for the Republic and Recovery",
        "seats": 2,
-       "share": 0.0131,
+       "share": 0.0132,
        "standing": "non_attached"
       },
       {
        "party": "Q139377388",
        "name": "Permanent Action for the Congo",
        "seats": 1,
-       "share": 0.0065,
+       "share": 0.0066,
        "standing": "non_attached"
       },
       {
        "party": "Q6926640",
        "name": "Movement for Democracy and Progress",
        "seats": 1,
-       "share": 0.0065,
+       "share": 0.0066,
        "standing": "non_attached"
       },
       {
        "party": null,
        "name": "Independents",
        "seats": 6,
-       "share": 0.0392,
+       "share": 0.0397,
        "standing": "non_attached"
       }
      ],
@@ -14260,7 +14260,7 @@
      "role": "upper",
      "name": "Senate",
      "name_local": "Sénat",
-     "seats_total": 71,
+     "seats_total": 72,
      "selection": [
       "indirectly_elected"
      ],
@@ -14270,70 +14270,70 @@
        "party": "Q1785816",
        "name": "Congolese Party of Labour",
        "seats": 52,
-       "share": 0.7324,
+       "share": 0.7222,
        "standing": "government"
       },
       {
        "party": "Q17075186",
        "name": "Rally for Democracy and Social Progress",
        "seats": 3,
-       "share": 0.0423,
+       "share": 0.0417,
        "standing": "opposition"
       },
       {
        "party": "Q4677129",
        "name": "Action and Renewal Movement",
        "seats": 2,
-       "share": 0.0282,
+       "share": 0.0278,
        "standing": "opposition"
       },
       {
        "party": "Q5136089",
        "name": "Club 2002 – Party for the Unity of the Republic",
        "seats": 2,
-       "share": 0.0282,
+       "share": 0.0278,
        "standing": "opposition"
       },
       {
        "party": "Q3550401",
        "name": "Pan-African Union for Social Democracy",
        "seats": 1,
-       "share": 0.0141,
+       "share": 0.0139,
        "standing": "opposition"
       },
       {
        "party": "Q255573",
        "name": "PRL",
        "seats": 1,
-       "share": 0.0141,
+       "share": 0.0139,
        "standing": "opposition"
       },
       {
        "party": null,
        "name": "UDLC",
        "seats": 1,
-       "share": 0.0141,
+       "share": 0.0139,
        "standing": "opposition"
       },
       {
        "party": "Q3326534",
        "name": "MCDDI",
        "seats": 1,
-       "share": 0.0141,
+       "share": 0.0139,
        "standing": "opposition"
       },
       {
        "party": null,
        "name": "Le Congo en marche",
        "seats": 1,
-       "share": 0.0141,
+       "share": 0.0139,
        "standing": "opposition"
       },
       {
        "party": null,
        "name": "Independents",
        "seats": 7,
-       "share": 0.0986,
+       "share": 0.0972,
        "standing": "non_attached"
       }
      ],
@@ -15390,7 +15390,7 @@
      },
      "role": "upper",
      "name": "Senate",
-     "seats_total": 97,
+     "seats_total": 99,
      "selection": [
       "indirectly_elected"
      ],
@@ -15400,28 +15400,28 @@
        "party": "Q2132038",
        "name": "RHDP",
        "seats": 58,
-       "share": 0.5979,
+       "share": 0.5859,
        "standing": "government"
       },
       {
        "party": "Q1455532",
        "name": "PDCI-RDA",
        "seats": 6,
-       "share": 0.0619,
+       "share": 0.0606,
        "standing": "opposition"
       },
       {
        "party": null,
        "name": "Independents",
        "seats": 2,
-       "share": 0.0206,
+       "share": 0.0202,
        "standing": "non_attached"
       },
       {
        "party": "Q327591",
        "name": "Appointed",
        "seats": 31,
-       "share": 0.3196,
+       "share": 0.3131,
        "standing": "non_attached"
       }
      ],
@@ -15433,7 +15433,7 @@
      },
      "as_of": "2023-09-16",
      "retrieved_at": "2026-08-14",
-     "confidence": "high",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -18216,7 +18216,7 @@
      },
      "role": "lower",
      "name": "Chamber of Representatives of Colombia",
-     "seats_total": 202,
+     "seats_total": 183,
      "selection": [
       "directly_elected"
      ],
@@ -18358,7 +18358,7 @@
      },
      "as_of": "2026-03-08",
      "retrieved_at": "2026-08-14",
-     "confidence": "partial",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -18377,7 +18377,7 @@
      "role": "upper",
      "name": "Senate of Colombia",
      "name_local": "Senado de la República de Colombia",
-     "seats_total": 102,
+     "seats_total": 103,
      "selection": [
       "indirectly_elected"
      ],
@@ -18387,105 +18387,105 @@
        "party": "Q15909095",
        "name": "Democratic Center",
        "seats": 17,
-       "share": 0.1667,
+       "share": 0.165,
        "standing": "government"
       },
       {
        "party": "Q747333",
        "name": "Conservative",
        "seats": 11,
-       "share": 0.1078,
+       "share": 0.1068,
        "standing": "government"
       },
       {
        "party": "Q973542",
        "name": "Union Party",
        "seats": 8,
-       "share": 0.0784,
+       "share": 0.0777,
        "standing": "government"
       },
       {
        "party": "Q429642",
        "name": "Radical Change",
        "seats": 7,
-       "share": 0.0686,
+       "share": 0.068,
        "standing": "government"
       },
       {
        "party": "Q3326610",
        "name": "National Salvation Movement",
        "seats": 4,
-       "share": 0.0392,
+       "share": 0.0388,
        "standing": "government"
       },
       {
        "party": "Q13988",
        "name": "MIRA",
        "seats": 3,
-       "share": 0.0294,
+       "share": 0.0291,
        "standing": "government"
       },
       {
        "party": "Q7009804",
        "name": "New Liberalism",
        "seats": 1,
-       "share": 0.0098,
+       "share": 0.0097,
        "standing": "government"
       },
       {
        "party": "Q939021",
        "name": "Liberal",
        "seats": 10,
-       "share": 0.098,
+       "share": 0.0971,
        "standing": "non_attached"
       },
       {
        "party": "Q256029",
        "name": "ASI",
        "seats": 4,
-       "share": 0.0392,
+       "share": 0.0388,
        "standing": "non_attached"
       },
       {
        "party": "Q135581316",
        "name": "Historic Pact",
        "seats": 25,
-       "share": 0.2451,
+       "share": 0.2427,
        "standing": "opposition"
       },
       {
        "party": "Q1452567",
        "name": "Green Alliance",
        "seats": 5,
-       "share": 0.049,
+       "share": 0.0485,
        "standing": "opposition"
       },
       {
        "party": null,
        "name": "Dignity and Commitment",
        "seats": 1,
-       "share": 0.0098,
+       "share": 0.0097,
        "standing": "opposition"
       },
       {
        "party": null,
        "name": "En Marcha",
        "seats": 1,
-       "share": 0.0098,
+       "share": 0.0097,
        "standing": "opposition"
       },
       {
        "party": "Q342240",
        "name": "Democratic",
        "seats": 1,
-       "share": 0.0098,
+       "share": 0.0097,
        "standing": "opposition"
       },
       {
        "party": "Q6714227",
        "name": "MAIS",
        "seats": 2,
-       "share": 0.0196,
+       "share": 0.0194,
        "standing": "opposition"
       }
      ],
@@ -18497,7 +18497,7 @@
      },
      "as_of": "2026-03-08",
      "retrieved_at": "2026-08-14",
-     "confidence": "partial",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -18523,7 +18523,7 @@
     "seats": 85,
     "minority": true,
     "authority": "established",
-    "confidence": "partial",
+    "confidence": "flagged",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -26672,7 +26672,7 @@
      },
      "role": "upper",
      "name": "Senate of Egypt",
-     "seats_total": 300,
+     "seats_total": 2026,
      "selection": [
       "indirectly_elected"
      ],
@@ -26682,140 +26682,140 @@
        "party": "Q20982186",
        "name": "Nation's Future Party",
        "seats": 118,
-       "share": 0.3933,
+       "share": 0.0582,
        "standing": "government"
       },
       {
        "party": "Q24715937",
        "name": "Homeland Defenders Party",
        "seats": 72,
-       "share": 0.24,
+       "share": 0.0355,
        "standing": "government"
       },
       {
        "party": "Q131646346",
        "name": "National Front Party",
        "seats": 45,
-       "share": 0.15,
+       "share": 0.0222,
        "standing": "government"
       },
       {
        "party": "Q15980860",
        "name": "Republican People's Party",
        "seats": 14,
-       "share": 0.0467,
+       "share": 0.0069,
        "standing": "government"
       },
       {
        "party": "Q767012",
        "name": "Egyptian Wafd Party",
        "seats": 6,
-       "share": 0.02,
+       "share": 0.003,
        "standing": "government"
       },
       {
        "party": "Q1568357",
        "name": "Egyptian Congress Party",
        "seats": 3,
-       "share": 0.01,
+       "share": 0.0015,
        "standing": "government"
       },
       {
        "party": "Q5500590",
        "name": "Egyptian Freedom Party",
        "seats": 2,
-       "share": 0.0067,
+       "share": 0.001,
        "standing": "government"
       },
       {
        "party": "Q210461",
        "name": "Al-Nour Party",
        "seats": 2,
-       "share": 0.0067,
+       "share": 0.001,
        "standing": "government"
       },
       {
        "party": "Q104666616",
        "name": "Will of a Generation Party",
        "seats": 1,
-       "share": 0.0033,
+       "share": 0.0005,
        "standing": "government"
       },
       {
        "party": "Q962942",
        "name": "Free Egyptians Party",
        "seats": 1,
-       "share": 0.0033,
+       "share": 0.0005,
        "standing": "government"
       },
       {
        "party": "Q406382",
        "name": "Revolution Egypt Party",
        "seats": 1,
-       "share": 0.0033,
+       "share": 0.0005,
        "standing": "government"
       },
       {
        "party": "Q16126767",
        "name": "Sadat Democratic Party",
        "seats": 1,
-       "share": 0.0033,
+       "share": 0.0005,
        "standing": "government"
       },
       {
        "party": "Q623898",
        "name": "Arab Democratic Nasserist Party",
        "seats": 1,
-       "share": 0.0033,
+       "share": 0.0005,
        "standing": "government"
       },
       {
        "party": "Q5255623",
        "name": "Democratic Generation Party",
        "seats": 1,
-       "share": 0.0033,
+       "share": 0.0005,
        "standing": "government"
       },
       {
        "party": "Q17460678",
        "name": "Consciousness Party",
        "seats": 1,
-       "share": 0.0033,
+       "share": 0.0005,
        "standing": "government"
       },
       {
        "party": "Q253911",
        "name": "Egyptian Social Democratic Party",
        "seats": 7,
-       "share": 0.0233,
+       "share": 0.0035,
        "standing": "opposition"
       },
       {
        "party": "Q250155",
        "name": "Reform and Development Party",
        "seats": 5,
-       "share": 0.0167,
+       "share": 0.0025,
        "standing": "opposition"
       },
       {
        "party": "Q1346851",
        "name": "Justice Party",
        "seats": 5,
-       "share": 0.0167,
+       "share": 0.0025,
        "standing": "opposition"
       },
       {
        "party": "Q1966909",
        "name": "National Progressive Unionist Party",
        "seats": 3,
-       "share": 0.01,
+       "share": 0.0015,
        "standing": "opposition"
       },
       {
        "party": null,
        "name": "Independents",
        "seats": 11,
-       "share": 0.0367,
+       "share": 0.0054,
        "standing": "non_attached"
       }
      ],
@@ -26828,7 +26828,7 @@
      },
      "as_of": "2025-08-04",
      "retrieved_at": "2026-08-14",
-     "confidence": "high",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -26994,7 +26994,7 @@
      },
      "role": "unicameral",
      "name": "National Assembly",
-     "seats_total": 104,
+     "seats_total": 150,
      "selection": [
       "directly_elected"
      ],
@@ -27017,7 +27017,7 @@
      ],
      "as_of": "2026-08-14",
      "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -27035,9 +27035,9 @@
     ],
     "backing": [],
     "seats": 75,
-    "minority": false,
+    "minority": true,
     "authority": "established",
-    "confidence": "flagged",
+    "confidence": "partial",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -30783,7 +30783,7 @@
      },
      "role": "lower",
      "name": "National Assembly",
-     "seats_total": 143,
+     "seats_total": 145,
      "selection": [
       "directly_elected"
      ],
@@ -32801,7 +32801,7 @@
      },
      "role": "unicameral",
      "name": "Parliament of Ghana",
-     "seats_total": 275,
+     "seats_total": 276,
      "selection": [
       "directly_elected"
      ],
@@ -33264,7 +33264,7 @@
      },
      "role": "unicameral",
      "name": "National Assembly",
-     "seats_total": 114,
+     "seats_total": 147,
      "selection": [
       "directly_elected"
      ],
@@ -33467,7 +33467,7 @@
      "role": "upper",
      "name": "Senate of Equatorial Guinea",
      "name_local": "Senado",
-     "seats_total": 70,
+     "seats_total": 55,
      "selection": [
       "indirectly_elected"
      ],
@@ -33477,7 +33477,7 @@
        "party": "Q945167",
        "name": "Democratic Party of Equatorial Guinea",
        "seats": 55,
-       "share": 0.7857,
+       "share": 1,
        "standing": "government"
       }
      ],
@@ -33489,7 +33489,7 @@
      },
      "as_of": "2022-11-20",
      "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
+     "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -34973,7 +34973,7 @@
      },
      "role": "unicameral",
      "name": "National People's Assembly",
-     "seats_total": 100,
+     "seats_total": 102,
      "selection": [
       "directly_elected"
      ],
@@ -37550,7 +37550,7 @@
      },
      "role": "lower",
      "name": "Dewan Perwakilan Rakyat",
-     "seats_total": 575,
+     "seats_total": 580,
      "selection": [
       "directly_elected"
      ],
@@ -38313,7 +38313,7 @@
      },
      "role": "lower",
      "name": "Dáil Éireann",
-     "seats_total": 181,
+     "seats_total": 174,
      "selection": [
       "directly_elected"
      ],
@@ -38448,7 +38448,7 @@
      },
      "as_of": "2024-11-29",
      "retrieved_at": "2026-08-14",
-     "confidence": "high",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -38466,7 +38466,7 @@
      },
      "role": "upper",
      "name": "Seanad Éireann",
-     "seats_total": 76,
+     "seats_total": 60,
      "selection": [
       "indirectly_elected"
      ],
@@ -38580,7 +38580,7 @@
      },
      "as_of": "2025-01-29",
      "retrieved_at": "2026-08-14",
-     "confidence": "partial",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -38600,9 +38600,9 @@
     "backing": [],
     "seats": 90,
     "seats_with_backing": 93,
-    "minority": true,
+    "minority": false,
     "authority": "established",
-    "confidence": "high",
+    "confidence": "flagged",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -39413,7 +39413,7 @@
      "role": "unicameral",
      "name": "The Knesset",
      "name_local": "הכנסת‎",
-     "seats_total": 123,
+     "seats_total": 120,
      "selection": [
       "directly_elected"
      ],
@@ -39554,7 +39554,7 @@
      },
      "as_of": "2022-11-01",
      "retrieved_at": "2026-08-14",
-     "confidence": "high",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -41392,7 +41392,7 @@
      },
      "role": "lower",
      "name": "Lok Sabha",
-     "seats_total": 545,
+     "seats_total": 543,
      "selection": [
       "directly_elected"
      ],
@@ -41402,7 +41402,7 @@
        "party": "Q10230",
        "name": "Bharatiya Janata Party",
        "seats": 240,
-       "share": 0.4404,
+       "share": 0.442,
        "standing": "government",
        "alliance": "National Democratic Alliance"
       },
@@ -41410,7 +41410,7 @@
        "party": "Q140215595",
        "name": "Nationalist Citizens Party of India",
        "seats": 20,
-       "share": 0.0367,
+       "share": 0.0368,
        "standing": "government",
        "alliance": "National Democratic Alliance"
       },
@@ -41418,7 +41418,7 @@
        "party": "Q2279320",
        "name": "Telugu Desam Party",
        "seats": 16,
-       "share": 0.0294,
+       "share": 0.0295,
        "standing": "government",
        "alliance": "National Democratic Alliance"
       },
@@ -41434,7 +41434,7 @@
        "party": "Q904827",
        "name": "Janata Dal (United)",
        "seats": 12,
-       "share": 0.022,
+       "share": 0.0221,
        "standing": "government",
        "alliance": "National Democratic Alliance"
       },
@@ -41522,7 +41522,7 @@
        "party": "Q10225",
        "name": "Indian National Congress",
        "seats": 98,
-       "share": 0.1798,
+       "share": 0.1805,
        "standing": "opposition",
        "alliance": "Indian National Developmental Inclusive Alliance"
       },
@@ -41530,7 +41530,7 @@
        "party": "Q1546941",
        "name": "Samajwadi Party",
        "seats": 37,
-       "share": 0.0679,
+       "share": 0.0681,
        "standing": "opposition",
        "alliance": "Indian National Developmental Inclusive Alliance"
       },
@@ -41554,7 +41554,7 @@
        "party": "Q234277",
        "name": "Communist Party of India (Marxist)",
        "seats": 4,
-       "share": 0.0073,
+       "share": 0.0074,
        "standing": "opposition",
        "alliance": "Indian National Developmental Inclusive Alliance"
       },
@@ -41562,7 +41562,7 @@
        "party": "Q3176919",
        "name": "Rashtriya Janata Dal",
        "seats": 4,
-       "share": 0.0073,
+       "share": 0.0074,
        "standing": "opposition",
        "alliance": "Indian National Developmental Inclusive Alliance"
       },
@@ -41674,14 +41674,14 @@
        "party": "Q1255973",
        "name": "Dravida Munnetra Kazhagam",
        "seats": 22,
-       "share": 0.0404,
+       "share": 0.0405,
        "standing": "opposition"
       },
       {
        "party": "Q8046035",
        "name": "YSR Congress Party",
        "seats": 4,
-       "share": 0.0073,
+       "share": 0.0074,
        "standing": "opposition"
       },
       {
@@ -41783,7 +41783,7 @@
      "role": "upper",
      "name": "Rajya Sabha",
      "name_local": "राज्य सभा",
-     "seats_total": 244,
+     "seats_total": 245,
      "selection": [
       "indirectly_elected"
      ],
@@ -41793,35 +41793,35 @@
        "party": "Q10230",
        "name": "Bharatiya Janata Party",
        "seats": 117,
-       "share": 0.4795,
+       "share": 0.4776,
        "standing": "government"
       },
       {
        "party": "Q651141",
        "name": "All India Anna Dravida Munnetra Kazhagam",
        "seats": 4,
-       "share": 0.0164,
+       "share": 0.0163,
        "standing": "government"
       },
       {
        "party": "Q904827",
        "name": "Janata Dal (United)",
        "seats": 4,
-       "share": 0.0164,
+       "share": 0.0163,
        "standing": "government"
       },
       {
        "party": "Q1561861",
        "name": "Nationalist Congress Party",
        "seats": 4,
-       "share": 0.0164,
+       "share": 0.0163,
        "standing": "government"
       },
       {
        "party": "Q2279320",
        "name": "Telugu Desam Party",
        "seats": 4,
-       "share": 0.0164,
+       "share": 0.0163,
        "standing": "government"
       },
       {
@@ -41884,63 +41884,63 @@
        "party": "Q327591",
        "name": "Independent politician",
        "seats": 3,
-       "share": 0.0123,
+       "share": 0.0122,
        "standing": "government"
       },
       {
        "party": null,
        "name": "Nominated members",
        "seats": 7,
-       "share": 0.0287,
+       "share": 0.0286,
        "standing": "government"
       },
       {
        "party": "Q10225",
        "name": "Indian National Congress",
        "seats": 30,
-       "share": 0.123,
+       "share": 0.1224,
        "standing": "opposition"
       },
       {
        "party": "Q912899",
        "name": "Trinamool Congress",
        "seats": 9,
-       "share": 0.0369,
+       "share": 0.0367,
        "standing": "opposition"
       },
       {
        "party": "Q1546941",
        "name": "Samajwadi Party",
        "seats": 4,
-       "share": 0.0164,
+       "share": 0.0163,
        "standing": "opposition"
       },
       {
        "party": "Q234277",
        "name": "Communist Party of India (Marxist)",
        "seats": 3,
-       "share": 0.0123,
+       "share": 0.0122,
        "standing": "opposition"
       },
       {
        "party": "Q1626979",
        "name": "Jammu & Kashmir National Conference",
        "seats": 3,
-       "share": 0.0123,
+       "share": 0.0122,
        "standing": "opposition"
       },
       {
        "party": "Q3273397",
        "name": "Jharkhand Mukti Morcha",
        "seats": 3,
-       "share": 0.0123,
+       "share": 0.0122,
        "standing": "opposition"
       },
       {
        "party": "Q3176919",
        "name": "Rashtriya Janata Dal",
        "seats": 3,
-       "share": 0.0123,
+       "share": 0.0122,
        "standing": "opposition"
       },
       {
@@ -41989,35 +41989,35 @@
        "party": "Q1255973",
        "name": "Dravida Munnetra Kazhagam",
        "seats": 8,
-       "share": 0.0328,
+       "share": 0.0327,
        "standing": "opposition"
       },
       {
        "party": "Q859993",
        "name": "Biju Janata Dal",
        "seats": 5,
-       "share": 0.0205,
+       "share": 0.0204,
        "standing": "opposition"
       },
       {
        "party": "Q8046035",
        "name": "YSR Congress Party",
        "seats": 4,
-       "share": 0.0164,
+       "share": 0.0163,
        "standing": "opposition"
       },
       {
        "party": "Q129844",
        "name": "Aam Aadmi Party",
        "seats": 3,
-       "share": 0.0123,
+       "share": 0.0122,
        "standing": "opposition"
       },
       {
        "party": "Q3518390",
        "name": "Bharat Rashtra Samithi",
        "seats": 3,
-       "share": 0.0123,
+       "share": 0.0122,
        "standing": "opposition"
       },
       {
@@ -42589,7 +42589,7 @@
      "role": "unicameral",
      "name": "Council of Representatives of Iraq",
      "name_local": "مجلس النواب العراقي",
-     "seats_total": 318,
+     "seats_total": 329,
      "selection": [
       "directly_elected"
      ],
@@ -42599,112 +42599,112 @@
        "party": "Q135800151",
        "name": "Reconstruction and Development Coalition",
        "seats": 46,
-       "share": 0.1447,
+       "share": 0.1398,
        "standing": "government"
       },
       {
        "party": "Q1971776",
        "name": "State of Law Coalition",
        "seats": 29,
-       "share": 0.0912,
+       "share": 0.0881,
        "standing": "government"
       },
       {
        "party": "Q18161820",
        "name": "Al Sadiqoun Bloc",
        "seats": 27,
-       "share": 0.0849,
+       "share": 0.0821,
        "standing": "government"
       },
       {
        "party": "Q101210235",
        "name": "Takadum",
        "seats": 27,
-       "share": 0.0849,
+       "share": 0.0821,
        "standing": "government"
       },
       {
        "party": "Q781221",
        "name": "Kurdistan Democratic Party",
        "seats": 26,
-       "share": 0.0818,
+       "share": 0.079,
        "standing": "government"
       },
       {
        "party": "Q2994636",
        "name": "Badr Organisation",
        "seats": 18,
-       "share": 0.0566,
+       "share": 0.0547,
        "standing": "government"
       },
       {
        "party": "Q677505",
        "name": "Patriotic Union of Kurdistan",
        "seats": 15,
-       "share": 0.0472,
+       "share": 0.0456,
        "standing": "government"
       },
       {
        "party": "Q110944609",
        "name": "Azem Alliance",
        "seats": 15,
-       "share": 0.0472,
+       "share": 0.0456,
        "standing": "government"
       },
       {
        "party": "Q28715319",
        "name": "Babylon Movement",
        "seats": 2,
-       "share": 0.0063,
+       "share": 0.0061,
        "standing": "government"
       },
       {
        "party": "Q138297212",
        "name": "Alliance of Nation State Forces",
        "seats": 18,
-       "share": 0.0566,
+       "share": 0.0547,
        "standing": "government"
       },
       {
        "party": "Q4702230",
        "name": "Al-Asas",
        "seats": 8,
-       "share": 0.0252,
+       "share": 0.0243,
        "standing": "government"
       },
       {
        "party": "Q122421923",
        "name": "Tasmim Alliance",
        "seats": 6,
-       "share": 0.0189,
+       "share": 0.0182,
        "standing": "government"
       },
       {
        "party": "Q4119382",
        "name": "Huqouq Movement",
        "seats": 6,
-       "share": 0.0189,
+       "share": 0.0182,
        "standing": "government"
       },
       {
        "party": null,
        "name": "Al-Siyadah",
        "seats": 8,
-       "share": 0.0252,
+       "share": 0.0243,
        "standing": "opposition"
       },
       {
        "party": "Q122422013",
        "name": "Ishraqat Kanoon",
        "seats": 8,
-       "share": 0.0252,
+       "share": 0.0243,
        "standing": "opposition"
       },
       {
        "party": null,
        "name": "Others",
        "seats": 59,
-       "share": 0.1855,
+       "share": 0.1793,
        "standing": "opposition"
       }
      ],
@@ -42718,7 +42718,7 @@
      },
      "as_of": "2025-11-11",
      "retrieved_at": "2026-08-14",
-     "confidence": "partial",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -45726,7 +45726,7 @@
      "role": "upper",
      "name": "Senate of Jordan",
      "name_local": "مجلس الأعيان الأردني",
-     "seats_total": 65,
+     "seats_total": 69,
      "selection": [
       "indirectly_elected"
      ],
@@ -47175,7 +47175,7 @@
      "role": "unicameral",
      "name": "Supreme Council",
      "name_local": "Кыргыз Республикасынын Жогорку Кеңеши",
-     "seats_total": 93,
+     "seats_total": 90,
      "selection": [
       "directly_elected"
      ],
@@ -47247,7 +47247,7 @@
      },
      "as_of": "2025-11-30",
      "retrieved_at": "2026-08-14",
-     "confidence": "partial",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -47485,7 +47485,7 @@
      "role": "lower",
      "name": "National Assembly",
      "name_local": "រដ្ឋសភានៃព្រះរាជាណាចក្រកម្ពុជា",
-     "seats_total": 123,
+     "seats_total": 125,
      "selection": [
       "directly_elected"
      ],
@@ -47534,7 +47534,7 @@
      "role": "upper",
      "name": "Senate of Cambodia",
      "name_local": "ព្រឹទ្ធសភានៃព្រះរាជាណាចក្រកម្ពុជា",
-     "seats_total": 61,
+     "seats_total": 62,
      "selection": [
       "indirectly_elected"
      ],
@@ -49139,7 +49139,7 @@
      "role": "unicameral",
      "name": "Senate of Kazakhstan",
      "name_local": "Қазақстан Республикасының Парламенті Сенаты",
-     "seats_total": 47,
+     "seats_total": 50,
      "selection": [
       "directly_elected"
      ],
@@ -49300,7 +49300,7 @@
      "role": "unicameral",
      "name": "National Assembly",
      "name_local": "ສະພາແຫ່ງຊາດ",
-     "seats_total": 164,
+     "seats_total": 175,
      "selection": [
       "directly_elected"
      ],
@@ -49329,7 +49329,7 @@
      },
      "as_of": "2026-02-22",
      "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
+     "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -49349,7 +49349,7 @@
     "seats": 169,
     "minority": false,
     "authority": "established",
-    "confidence": "flagged",
+    "confidence": "high",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -53866,7 +53866,7 @@
      },
      "role": "unicameral",
      "name": "Saeima",
-     "seats_total": 90,
+     "seats_total": 100,
      "selection": [
       "directly_elected"
      ],
@@ -53876,56 +53876,56 @@
        "party": "Q98104169",
        "name": "New Unity",
        "seats": 25,
-       "share": 0.2778,
+       "share": 0.25,
        "standing": "government"
       },
       {
        "party": "Q167928",
        "name": "Union of Greens and Farmers",
        "seats": 16,
-       "share": 0.1778,
+       "share": 0.16,
        "standing": "government"
       },
       {
        "party": "Q113163582",
        "name": "United List",
        "seats": 13,
-       "share": 0.1444,
+       "share": 0.13,
        "standing": "government"
       },
       {
        "party": "Q1576026",
        "name": "National Alliance (Latvia)",
        "seats": 12,
-       "share": 0.1333,
+       "share": 0.12,
        "standing": "government"
       },
       {
        "party": null,
        "name": "Independent",
        "seats": 3,
-       "share": 0.0333,
+       "share": 0.03,
        "standing": "backing"
       },
       {
        "party": "Q28966907",
        "name": "The Progressives (Latvia)",
        "seats": 9,
-       "share": 0.1,
+       "share": 0.09,
        "standing": "opposition"
       },
       {
        "party": "Q108096403",
        "name": "Latvia First",
        "seats": 8,
-       "share": 0.0889,
+       "share": 0.08,
        "standing": "opposition"
       },
       {
        "party": null,
        "name": "Independent",
        "seats": 4,
-       "share": 0.0444,
+       "share": 0.04,
        "standing": "opposition"
       }
      ],
@@ -53938,7 +53938,7 @@
      },
      "as_of": "2022-10-01",
      "retrieved_at": "2026-08-14",
-     "confidence": "high",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -53962,7 +53962,7 @@
     "seats_with_backing": 69,
     "minority": false,
     "authority": "established",
-    "confidence": "high",
+    "confidence": "flagged",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -56695,7 +56695,7 @@
      },
      "role": "unicameral",
      "name": "Parliament of Montenegro",
-     "seats_total": 93,
+     "seats_total": 81,
      "selection": [
       "directly_elected"
      ],
@@ -56847,7 +56847,7 @@
      },
      "as_of": "2023-06-11",
      "retrieved_at": "2026-08-14",
-     "confidence": "partial",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -56879,7 +56879,7 @@
     "seats_with_backing": 63,
     "minority": false,
     "authority": "established",
-    "confidence": "partial",
+    "confidence": "flagged",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -57054,7 +57054,7 @@
      "role": "lower",
      "name": "National Assembly",
      "name_local": "Antenimierampirenena",
-     "seats_total": 160,
+     "seats_total": 163,
      "selection": [
       "directly_elected"
      ],
@@ -59998,7 +59998,7 @@
      "role": "unicameral",
      "name": "Parliament of Malta",
      "name_local": "Il-Kamra tad-Deputati ta’ Malta",
-     "seats_total": 67,
+     "seats_total": 79,
      "selection": [
       "directly_elected"
      ],
@@ -60027,7 +60027,7 @@
      },
      "as_of": "2026-05-30",
      "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
+     "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -60047,7 +60047,7 @@
     "seats": 42,
     "minority": false,
     "authority": "established",
-    "confidence": "flagged",
+    "confidence": "high",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -65090,7 +65090,7 @@
      },
      "role": "unicameral",
      "name": "Asamblea Nacional de Nicaragua",
-     "seats_total": 92,
+     "seats_total": 90,
      "selection": [
       "directly_elected"
      ],
@@ -65100,49 +65100,49 @@
        "party": "Q27389",
        "name": "Sandinista National Liberation Front",
        "seats": 76,
-       "share": 0.8261,
+       "share": 0.8352,
        "standing": "government"
       },
       {
        "party": "Q1422066",
        "name": "Constitutionalist Liberal Party",
        "seats": 9,
-       "share": 0.0978,
+       "share": 0.0989,
        "standing": "opposition"
       },
       {
        "party": "Q2729459",
        "name": "Nicaraguan Liberal Alliance",
        "seats": 2,
-       "share": 0.0217,
+       "share": 0.022,
        "standing": "opposition"
       },
       {
        "party": "Q9096783",
        "name": "YATAMA",
        "seats": 1,
-       "share": 0.0109,
+       "share": 0.011,
        "standing": "opposition"
       },
       {
        "party": "Q2054647",
        "name": "Independent Liberal Party",
        "seats": 1,
-       "share": 0.0109,
+       "share": 0.011,
        "standing": "opposition"
       },
       {
        "party": "Q7024450",
        "name": "Nicaraguan Party of the Christian Path",
        "seats": 1,
-       "share": 0.0109,
+       "share": 0.011,
        "standing": "opposition"
       },
       {
        "party": "Q4732427",
        "name": "Alliance for the Republic",
        "seats": 1,
-       "share": 0.0109,
+       "share": 0.011,
        "standing": "opposition"
       }
      ],
@@ -68321,7 +68321,7 @@
      },
      "role": "upper",
      "name": "state council of Oman",
-     "seats_total": 86,
+     "seats_total": 83,
      "selection": [
       "indirectly_elected"
      ],
@@ -68331,13 +68331,13 @@
        "party": "Q327591",
        "name": "Non-partisan",
        "seats": 83,
-       "share": 0.9651,
+       "share": 1,
        "standing": "non_attached"
       }
      ],
      "as_of": "2026-08-14",
      "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -69550,7 +69550,7 @@
      },
      "role": "unicameral",
      "name": "National Parliament of Papua New Guinea",
-     "seats_total": 119,
+     "seats_total": 118,
      "selection": [
       "directly_elected"
      ],
@@ -71410,7 +71410,7 @@
      "role": "lower",
      "name": "National Assembly (Pakistan)",
      "name_local": "قَومی اَسِمبلئ پاکِستان‬‎",
-     "seats_total": 331,
+     "seats_total": 336,
      "selection": [
       "directly_elected"
      ],
@@ -71420,35 +71420,35 @@
        "party": "Q799577",
        "name": "PML(N)",
        "seats": 132,
-       "share": 0.3988,
+       "share": 0.3929,
        "standing": "government"
       },
       {
        "party": "Q186591",
        "name": "PPP",
        "seats": 74,
-       "share": 0.2236,
+       "share": 0.2202,
        "standing": "government"
       },
       {
        "party": "Q28129076",
        "name": "MQM-P",
        "seats": 22,
-       "share": 0.0665,
+       "share": 0.0655,
        "standing": "government"
       },
       {
        "party": "Q864345",
        "name": "PML(Q)",
        "seats": 4,
-       "share": 0.0121,
+       "share": 0.0119,
        "standing": "government"
       },
       {
        "party": "Q119224727",
        "name": "IPP",
        "seats": 4,
-       "share": 0.0121,
+       "share": 0.0119,
        "standing": "government"
       },
       {
@@ -71476,14 +71476,14 @@
        "party": null,
        "name": "Independent",
        "seats": 4,
-       "share": 0.0121,
+       "share": 0.0119,
        "standing": "government"
       },
       {
        "party": "Q13211655",
        "name": "JUI-F",
        "seats": 10,
-       "share": 0.0302,
+       "share": 0.0298,
        "standing": "opposition"
       },
       {
@@ -71511,7 +71511,7 @@
        "party": null,
        "name": "Independent",
        "seats": 75,
-       "share": 0.2266,
+       "share": 0.2232,
        "standing": "opposition"
       }
      ],
@@ -71543,7 +71543,7 @@
      "role": "upper",
      "name": "Senate of Pakistan",
      "name_local": "ایوانِ بالا پاکستان‎",
-     "seats_total": 95,
+     "seats_total": 96,
      "selection": [
       "indirectly_elected"
      ],
@@ -71553,98 +71553,98 @@
        "party": "Q186591",
        "name": "Pakistan People's Party",
        "seats": 26,
-       "share": 0.2737,
+       "share": 0.2708,
        "standing": "government"
       },
       {
        "party": "Q799577",
        "name": "Pakistan Muslim League (N)",
        "seats": 20,
-       "share": 0.2105,
+       "share": 0.2083,
        "standing": "government"
       },
       {
        "party": "Q55604783",
        "name": "Balochistan Awami Party",
        "seats": 4,
-       "share": 0.0421,
+       "share": 0.0417,
        "standing": "government"
       },
       {
        "party": "Q28129076",
        "name": "Muttahida Qaumi Movement-Pakistan",
        "seats": 3,
-       "share": 0.0316,
+       "share": 0.0313,
        "standing": "government"
       },
       {
        "party": "Q659854",
        "name": "Awami National Party",
        "seats": 3,
-       "share": 0.0316,
+       "share": 0.0313,
        "standing": "government"
       },
       {
        "party": "Q13219795",
        "name": "National Party",
        "seats": 1,
-       "share": 0.0105,
+       "share": 0.0104,
        "standing": "government"
       },
       {
        "party": "Q864345",
        "name": "Pakistan Muslim League (Q)",
        "seats": 1,
-       "share": 0.0105,
+       "share": 0.0104,
        "standing": "government"
       },
       {
        "party": null,
        "name": "Independent",
        "seats": 7,
-       "share": 0.0737,
+       "share": 0.0729,
        "standing": "government"
       },
       {
        "party": "Q284454",
        "name": "Pakistan Tehreek-e-Insaf",
        "seats": 13,
-       "share": 0.1368,
+       "share": 0.1354,
        "standing": "opposition"
       },
       {
        "party": "Q13211655",
        "name": "Jamiat Ulema-e-Islam (F)",
        "seats": 7,
-       "share": 0.0737,
+       "share": 0.0729,
        "standing": "opposition"
       },
       {
        "party": "Q15711639",
        "name": "Majlis Wahdat-e-Muslimeen",
        "seats": 1,
-       "share": 0.0105,
+       "share": 0.0104,
        "standing": "opposition"
       },
       {
        "party": "Q12857049",
        "name": "Sunni Ittehad Council",
        "seats": 1,
-       "share": 0.0105,
+       "share": 0.0104,
        "standing": "opposition"
       },
       {
        "party": null,
        "name": "Independent",
        "seats": 7,
-       "share": 0.0737,
+       "share": 0.0729,
        "standing": "opposition"
       },
       {
        "party": null,
        "name": "Vacant",
        "seats": 1,
-       "share": 0.0105,
+       "share": 0.0104,
        "standing": "vacant"
       }
      ],
@@ -78506,7 +78506,7 @@
      "role": "unicameral",
      "name": "National Assembly of Seychelles",
      "name_local": "National Assembly",
-     "seats_total": 31,
+     "seats_total": 34,
      "selection": [
       "directly_elected"
      ],
@@ -78536,7 +78536,7 @@
      },
      "as_of": "2025-09-25",
      "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
+     "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -78556,7 +78556,7 @@
     "seats": 19,
     "minority": false,
     "authority": "established",
-    "confidence": "flagged",
+    "confidence": "high",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -82028,7 +82028,7 @@
      "role": "unicameral",
      "name": "National Assembly",
      "name_local": "Assemblée nationale",
-     "seats_total": 170,
+     "seats_total": 165,
      "selection": [
       "directly_elected"
      ],
@@ -82163,7 +82163,7 @@
      },
      "as_of": "2024-11-17",
      "retrieved_at": "2026-08-14",
-     "confidence": "partial",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -83824,7 +83824,7 @@
      },
      "role": "lower",
      "name": "House of Assembly of Eswatini",
-     "seats_total": 70,
+     "seats_total": 76,
      "selection": [
       "directly_elected"
      ],
@@ -83834,21 +83834,21 @@
        "party": null,
        "name": "Independents",
        "seats": 59,
-       "share": 0.8429,
+       "share": 0.7763,
        "standing": "non_attached"
       },
       {
        "party": "Q618536",
        "name": "Nominated",
        "seats": 10,
-       "share": 0.1429,
+       "share": 0.1316,
        "standing": "non_attached"
       },
       {
        "party": "Q1501926",
        "name": "Attorney general",
        "seats": 1,
-       "share": 0.0143,
+       "share": 0.0132,
        "standing": "non_attached"
       }
      ],
@@ -83860,7 +83860,7 @@
      },
      "as_of": "2023-09-29",
      "retrieved_at": "2026-08-14",
-     "confidence": "partial",
+     "confidence": "flagged",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -83878,7 +83878,7 @@
      },
      "role": "upper",
      "name": "Senate of Eswatini",
-     "seats_total": 30,
+     "seats_total": 31,
      "selection": [
       "indirectly_elected"
      ],
@@ -85539,7 +85539,7 @@
      },
      "role": "upper",
      "name": "Senate of Thailand",
-     "seats_total": 150,
+     "seats_total": 200,
      "selection": [
       "indirectly_elected"
      ],
@@ -85561,7 +85561,7 @@
      },
      "as_of": "2024-06-09",
      "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
+     "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -91698,7 +91698,7 @@
      "role": "unicameral",
      "name": "National Assembly of Vietnam",
      "name_local": "Quốc hội Việt Nam",
-     "seats_total": 498,
+     "seats_total": 500,
      "selection": [
       "directly_elected"
      ],
@@ -94019,7 +94019,7 @@
      },
      "role": "unicameral",
      "name": "National Assembly",
-     "seats_total": 166,
+     "seats_total": 167,
      "selection": [
       "directly_elected"
      ],
@@ -94306,7 +94306,7 @@
      "role": "lower",
      "name": "National Assembly of Zimbabwe",
      "name_local": "House of Assembly of Zimbabwe",
-     "seats_total": 281,
+     "seats_total": 280,
      "selection": [
       "directly_elected"
      ],
@@ -94368,7 +94368,7 @@
      },
      "role": "upper",
      "name": "Senate of Zimbabwe",
-     "seats_total": 81,
+     "seats_total": 80,
      "selection": [
       "indirectly_elected"
      ],

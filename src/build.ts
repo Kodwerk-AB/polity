@@ -610,6 +610,7 @@ const buildCountry = async (
     let article: string | undefined
     let revid: number | undefined
     let precise = false
+    let statedSeats: number | undefined
     let description: string | undefined
     let lastElection: string | undefined
     let nextElection: string | undefined
@@ -621,6 +622,7 @@ const buildCountry = async (
         article = source.article
         revid = source.revid
         precise = source.precise
+        statedSeats = source.seats
         const extraction = await extractComposition(source.hash, source.text, {
           chamber: ref.name,
           country: countryName,
@@ -687,12 +689,20 @@ const buildCountry = async (
     // sound (enough rows, a plausible total) may overrule the declared size.
     // Otherwise a truncated read would silently redefine the chamber to
     // whatever it managed to find.
+    // The chamber's own article states its size, and that is the best source
+    // there is. Wikidata's P1342 goes stale wherever a chamber is resized and
+    // nobody revisits the statement — 67 for a 79-seat Maltese parliament, 575
+    // for Indonesia's 580, 104 for Eritrea's 150, 181 for a Dáil of 174, 545
+    // for a Lok Sabha of 543 — while the article was right in every case.
+    //
+    // Failing that, a clean reading of the composition beats a contradicted
+    // P1342: enough rows to look complete, and a total that disagrees.
     const declared = ref.seats_total ?? 0
     const trustReading =
       seated > 0 &&
       blocs.length >= 3 &&
       (declared === 0 || Math.abs(seated - declared) / declared > 0.02)
-    const seatsTotal = trustReading ? seated : declared || seated
+    const seatsTotal = statedSeats ?? (trustReading ? seated : declared || seated)
     // Share is of the seats actually SEATED, not the declared size.
     //
     // The two disagree whenever a chamber's reading overruns its P1342 —

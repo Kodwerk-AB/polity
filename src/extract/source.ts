@@ -26,6 +26,17 @@ export interface ChamberSource {
   article: string
   revid: number
   /**
+   * The chamber's size as its OWN ARTICLE states it.
+   *
+   * Wikidata's P1342 goes stale wherever a chamber is resized and nobody
+   * revisits the statement: it reads 67 for Malta's 79-seat parliament, 575
+   * for Indonesia's 580, 104 for Eritrea's 150, 181 for a Dáil of 174, 90 for
+   * a Saeima of 100, 545 for a Lok Sabha of 543. The article's own `seats`
+   * field was correct in every one of those, and it sits on a page already
+   * being fetched for the composition.
+   */
+  seats?: number
+  /**
    * The infobox's election-date fields, appended to what the model reads.
    *
    * They sit OUTSIDE the composition field, so the field alone never carries
@@ -92,6 +103,27 @@ const mostlyTemplated = (field: string): boolean => {
  */
 const ELECTION_FIELDS = /^\s*\|\s*(?:last_election\d*|next_election\d*)\s*=\s*(.+)$/gim
 
+/**
+ * The `seats` / `members` field, as a bare number.
+ *
+ * The value is often decorated — a wikilink, a footnote, a `<br>` and a
+ * template — so the FIRST integer is taken and anything implausible for a
+ * chamber is refused rather than guessed at.
+ */
+const statedSeats = (wikitext: string): number | undefined => {
+  const raw = /^\s*\|\s*(?:seats|members)\s*=\s*(.+)$/im.exec(wikitext)?.[1]
+  if (!raw) return undefined
+  const cleaned = raw
+    .replace(/<ref[\s\S]*$/i, '')
+    .replace(/\{\{[^}]*\}\}/g, ' ')
+    .replace(/\[\[(?:[^\]|]*\|)?([^\]]*)\]\]/g, '$1')
+    .replace(/'''/g, '')
+  const found = /\b(\d{1,4})\b/.exec(cleaned)
+  const seats = found ? Number(found[1]) : undefined
+  // No national chamber is smaller than a dozen or larger than China's ~3000.
+  return seats && seats >= 10 && seats <= 3200 ? seats : undefined
+}
+
 const electionLines = (wikitext: string): string | undefined => {
   const lines = [...wikitext.matchAll(ELECTION_FIELDS)]
     .map(match => match[0].trim())
@@ -104,6 +136,10 @@ export const chamberSource = async (
 ): Promise<ChamberSource | undefined> => {
   const page: PageRevision | undefined = await getArticle(articleTitle)
   if (!page) return undefined
+
+  // One reading for every branch below.
+  const stated = statedSeats(page.wikitext)
+  const seatsField = stated ? { seats: stated } : {}
 
   const field = compositionField(page.wikitext)
   if (field) {
@@ -124,6 +160,8 @@ export const chamberSource = async (
           precise: true,
           article: page.title,
           revid: page.revid,
+          ...(elections ? { elections } : {}),
+          ...seatsField,
         }
       }
     }
@@ -151,6 +189,7 @@ export const chamberSource = async (
           article: page.title,
           revid: page.revid,
           ...(elections ? { elections } : {}),
+          ...seatsField,
         }
       }
     }
@@ -163,12 +202,20 @@ export const chamberSource = async (
       article: page.title,
       revid: page.revid,
       ...(elections ? { elections } : {}),
+      ...seatsField,
     }
   }
 
   const box = legislatureInfobox(page.wikitext)
   if (box) {
-    return { text: box, hash: hashOf(box), precise: false, article: page.title, revid: page.revid }
+    return {
+      text: box,
+      hash: hashOf(box),
+      precise: false,
+      article: page.title,
+      revid: page.revid,
+      ...seatsField,
+    }
   }
   return undefined
 }
