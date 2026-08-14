@@ -8,11 +8,27 @@ const only = process.argv.slice(2).filter(argument => /^[A-Z]{2}$/.test(argument
 const started = Date.now()
 const dataset = await build(only.length ? only : undefined)
 
+const issues = validateDataset(dataset)
+
+// Validate BEFORE writing. A schema-breaking value used to reach the published
+// file and fail `bun run validate` afterwards — Tanzania's Attorney General
+// carried standing "residual", a real value from the wrong vocabulary — by
+// which point the bad data was already on disk and, on that occasion, pushed.
+// An error here means the run produced something the schema forbids, so the
+// previous file is the better one to keep.
+const blocking = issues.filter(issue => issue.severity === 'error')
+if (blocking.length && !only.length) {
+  for (const issue of blocking.slice(0, 10)) {
+    console.error(`  ERROR ${issue.iso ?? ''} ${issue.message ?? JSON.stringify(issue)}`)
+  }
+  throw new Error(
+    `${blocking.length} validation error(s) — refusing to overwrite data/polity.json`
+  )
+}
+
 mkdirSync('data', { recursive: true })
 const path = only.length ? 'data/sample.json' : 'data/polity.json'
 writeFileSync(path, `${JSON.stringify(dataset, null, 1)}\n`)
-
-const issues = validateDataset(dataset)
 // A few-country run is a probe, not the dataset. Writing its issue list to the
 // shared file replaced 193 countries' findings with nine countries' — and an
 // empty result then read as "no errors anywhere" rather than "not checked".

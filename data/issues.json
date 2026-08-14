@@ -4,11 +4,5 @@
   "severity": "warning",
   "message": "seated 64 is far above 36 — nested list read twice?",
   "chamber": "Senate of Bolivia"
- },
- {
-  "iso": "TZ",
-  "severity": "error",
-  "message": "bad standing \"residual\"",
-  "chamber": "National Assembly"
  }
 ]

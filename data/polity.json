@@ -1,6 +1,6 @@
 {
  "schema_version": "1.0.0",
- "generated_at": "2026-08-14T22:07:27.356Z",
+ "generated_at": "2026-08-14T22:09:47.716Z",
  "countries": {
   "AD": {
    "iso": "AD",
@@ -94833,7 +94833,7 @@
        "name": "Attorney General",
        "seats": 1,
        "share": 0.0025,
-       "standing": "residual"
+       "standing": "non_attached"
       }
      ],
      "last_election": "2025-10-29",

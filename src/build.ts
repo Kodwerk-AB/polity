@@ -22,6 +22,7 @@ import {
   type ExtractedBloc,
 } from './extract/model'
 import { hashOf } from './net/cache'
+import { STANDINGS } from './types/enums'
 import type {
   BlocKind,
   ChamberRole,
@@ -460,6 +461,18 @@ export const withoutAllianceHeaders = (blocs: ExtractedBloc[]): ExtractedBloc[] 
     return !isHeader
   })
 }
+
+/**
+ * A standing the schema permits, or the safe default.
+ *
+ * The model occasionally answers with a `kind` where a `standing` belongs —
+ * Tanzania's Attorney General came back as "residual", which is a real value in
+ * the wrong vocabulary. It reached the published file and failed schema
+ * validation there, which is late: the row is a real seat and belongs in the
+ * chamber, it simply is not on a side.
+ */
+const asStanding = (value: string): Seating['standing'] =>
+  (STANDINGS as readonly string[]).includes(value) ? (value as Seating['standing']) : 'non_attached'
 
 const isResidual = (bloc: { name: string; kind?: string }): boolean =>
   bloc.kind ? bloc.kind === 'residual' || bloc.kind === 'independents' : LOOKS_RESIDUAL.test(bloc.name.trim())
@@ -983,7 +996,7 @@ const buildCountry = async (
         name: bloc.name,
         seats: bloc.seats,
         share: shareBase > 0 ? Number((bloc.seats / shareBase).toFixed(4)) : 0,
-        standing: bloc.standing,
+        standing: asStanding(bloc.standing),
         ...(bloc.alliance ? { alliance: bloc.alliance } : {}),
       })
     }
