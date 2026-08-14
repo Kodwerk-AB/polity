@@ -284,8 +284,18 @@ export interface Chamber {
    */
   seats_contested?: number
   composition: Seating[]
-  last_election?: ISODate
-  next_election?: ISODate
+  /** The election this composition came from. Day precision, or a bare year
+   *  when that is all the source gives. */
+  last_election?: ISODate | string
+  /**
+   * The next scheduled election, as precisely as the source states it.
+   *
+   * Frequently just a YEAR, and it is stored as one — `"2029"`, not
+   * `"2029-07-01"`. Anchoring a bare year to a day invented four months of
+   * precision nobody wrote down, and made Sweden's September 2026 election read
+   * as already past on 14 August.
+   */
+  next_election?: ISODate | string
   /**
    * The constitutional term, in years (P2097 on the chamber).
    *

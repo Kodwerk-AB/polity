@@ -1,6 +1,6 @@
 {
  "schema_version": "1.0.0",
- "generated_at": "2026-08-14T05:47:59.983Z",
+ "generated_at": "2026-08-14T05:50:37.152Z",
  "countries": {
   "AD": {
    "iso": "AD",
@@ -339,11 +339,11 @@
       }
      ],
      "last_election": "2023-04-02",
-     "next_election": "2027-07-01",
+     "next_election": "2027",
      "mandate": {
-      "expected_end": "2027-07-01",
+      "expected_end": "2027-12-31",
       "inferred": false,
-      "state": "due_soon"
+      "state": "current"
      },
      "as_of": "2023-04-02",
      "retrieved_at": "2026-08-14",
@@ -2053,11 +2053,11 @@
       }
      ],
      "last_election": "2022-08-24",
-     "next_election": "2027-07-01",
+     "next_election": "2027",
      "mandate": {
-      "expected_end": "2027-07-01",
+      "expected_end": "2027-12-31",
       "inferred": false,
-      "state": "due_soon"
+      "state": "current"
      },
      "as_of": "2022-08-24",
      "retrieved_at": "2026-08-14",
@@ -3281,9 +3281,9 @@
       }
      ],
      "last_election": "2024-09-29",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -3970,9 +3970,9 @@
       }
      ],
      "last_election": "2025-05-03",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -4068,9 +4068,9 @@
       }
      ],
      "last_election": "2025-05-03",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -4747,9 +4747,9 @@
       }
      ],
      "last_election": "2024-09-01",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -5983,9 +5983,9 @@
       }
      ],
      "last_election": "2026-02-11",
-     "next_election": "2031-07-01",
+     "next_election": "2031",
      "mandate": {
-      "expected_end": "2031-07-01",
+      "expected_end": "2031-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -6573,9 +6573,9 @@
       }
      ],
      "last_election": "2026-02-12",
-     "next_election": "2031-07-01",
+     "next_election": "2031",
      "mandate": {
-      "expected_end": "2031-07-01",
+      "expected_end": "2031-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -7403,9 +7403,9 @@
       }
      ],
      "last_election": "2024-06-09",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -7515,9 +7515,9 @@
       }
      ],
      "last_election": "2024-06-09",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -8069,9 +8069,9 @@
       }
      ],
      "last_election": "2026-04-19",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -8200,15 +8200,15 @@
       }
      ],
      "last_election": "2022-12-19",
-     "next_election": "2026-07-01",
+     "next_election": "2026",
      "mandate": {
-      "expected_end": "2026-07-01",
+      "expected_end": "2026-12-31",
       "inferred": false,
-      "state": "overdue"
+      "state": "due_soon"
      },
      "as_of": "2022-12-19",
      "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
+     "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -8242,15 +8242,15 @@
       }
      ],
      "last_election": "2022-12-19",
-     "next_election": "2026-07-01",
+     "next_election": "2026",
      "mandate": {
-      "expected_end": "2026-07-01",
+      "expected_end": "2026-12-31",
       "inferred": false,
-      "state": "overdue"
+      "state": "due_soon"
      },
      "as_of": "2022-12-19",
      "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
+     "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -8430,9 +8430,9 @@
       }
      ],
      "last_election": "2025-06-05",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -8463,9 +8463,9 @@
      "contestation": "restricted",
      "composition": [],
      "last_election": "2025-07-23",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -9143,9 +9143,9 @@
       }
      ],
      "last_election": "2025-08-17",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -9220,9 +9220,9 @@
       }
      ],
      "last_election": "2025-08-17",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -10811,9 +10811,9 @@
       }
      ],
      "last_election": "2026-05-12",
-     "next_election": "2031-07-01",
+     "next_election": "2031",
      "mandate": {
-      "expected_end": "2031-07-01",
+      "expected_end": "2031-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -11358,9 +11358,9 @@
       }
      ],
      "last_election": "2024-10-30",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -14232,14 +14232,14 @@
        "standing": "non_attached"
       }
      ],
-     "last_election": "2022-07-01",
-     "next_election": "2027-07-01",
+     "last_election": "2022",
+     "next_election": "2027",
      "mandate": {
-      "expected_end": "2027-07-01",
+      "expected_end": "2027-12-31",
       "inferred": false,
-      "state": "due_soon"
+      "state": "current"
      },
-     "as_of": "2022-07-01",
+     "as_of": "2022",
      "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
@@ -14338,9 +14338,9 @@
       }
      ],
      "last_election": "2023-08-20",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -16299,10 +16299,10 @@
       }
      ],
      "last_election": "2025-11-16",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "term_years": 4,
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -16452,10 +16452,10 @@
       }
      ],
      "last_election": "2025-11-16",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "term_years": 8,
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -16963,15 +16963,15 @@
        "standing": "opposition"
       }
      ],
-     "next_election": "2026-07-01",
+     "next_election": "2026",
      "mandate": {
-      "expected_end": "2026-07-01",
+      "expected_end": "2026-12-31",
       "inferred": false,
-      "state": "overdue"
+      "state": "due_soon"
      },
      "as_of": "2026-08-14",
      "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -17073,7 +17073,7 @@
     "seats": 152,
     "minority": false,
     "authority": "established",
-    "confidence": "flagged",
+    "confidence": "partial",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -17571,14 +17571,14 @@
        "standing": "backing"
       }
      ],
-     "last_election": "2022-07-01",
-     "next_election": "2027-07-01",
+     "last_election": "2022",
+     "next_election": "2027",
      "mandate": {
-      "expected_end": "2027-07-01",
+      "expected_end": "2027-12-31",
       "inferred": false,
-      "state": "due_soon"
+      "state": "current"
      },
-     "as_of": "2022-07-01",
+     "as_of": "2022",
      "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
@@ -18350,9 +18350,9 @@
       }
      ],
      "last_election": "2026-03-08",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -18832,10 +18832,10 @@
       }
      ],
      "last_election": "2026-02-01",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "term_years": 4,
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -19038,9 +19038,9 @@
       }
      ],
      "last_election": "2023-03-26",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -19312,9 +19312,9 @@
       }
      ],
      "last_election": "2026-05-17",
-     "next_election": "2031-07-01",
+     "next_election": "2031",
      "mandate": {
-      "expected_end": "2031-07-01",
+      "expected_end": "2031-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -19740,9 +19740,9 @@
       }
      ],
      "last_election": "2026-05-24",
-     "next_election": "2031-07-01",
+     "next_election": "2031",
      "mandate": {
-      "expected_end": "2031-07-01",
+      "expected_end": "2031-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -20619,10 +20619,10 @@
       }
      ],
      "last_election": "2025-10-03",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "term_years": 4,
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -20781,16 +20781,16 @@
       }
      ],
      "last_election": "2024-09-20",
-     "next_election": "2026-07-01",
+     "next_election": "2026",
      "term_years": 6,
      "mandate": {
-      "expected_end": "2026-07-01",
+      "expected_end": "2026-12-31",
       "inferred": false,
-      "state": "overdue"
+      "state": "due_soon"
      },
      "as_of": "2024-09-20",
      "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -21641,9 +21641,9 @@
       }
      ],
      "last_election": "2023-02-24",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -22691,10 +22691,10 @@
       }
      ],
      "last_election": "2026-03-24",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "term_years": 4,
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -23590,9 +23590,9 @@
       }
      ],
      "last_election": "2024-05-19",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -23673,9 +23673,9 @@
       }
      ],
      "last_election": "2024-05-19",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -24572,10 +24572,10 @@
       }
      ],
      "last_election": "2026-07-02",
-     "next_election": "2031-07-01",
+     "next_election": "2031",
      "term_years": 5,
      "mandate": {
-      "expected_end": "2031-07-01",
+      "expected_end": "2031-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -25205,9 +25205,9 @@
       }
      ],
      "last_election": "2025-02-09",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -26646,9 +26646,9 @@
       }
      ],
      "last_election": "2025-11-10",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -26820,9 +26820,9 @@
       }
      ],
      "last_election": "2025-08-04",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -28174,11 +28174,11 @@
       }
      ],
      "last_election": "2023-07-23",
-     "next_election": "2027-07-01",
+     "next_election": "2027",
      "mandate": {
-      "expected_end": "2027-07-01",
+      "expected_end": "2027-12-31",
       "inferred": false,
-      "state": "due_soon"
+      "state": "current"
      },
      "as_of": "2023-07-23",
      "retrieved_at": "2026-08-14",
@@ -28610,9 +28610,9 @@
       }
      ],
      "last_election": "2026-06-01",
-     "next_election": "2031-07-01",
+     "next_election": "2031",
      "mandate": {
-      "expected_end": "2031-07-01",
+      "expected_end": "2031-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -29562,15 +29562,15 @@
       }
      ],
      "last_election": "2022-12-14",
-     "next_election": "2026-07-01",
+     "next_election": "2026",
      "mandate": {
-      "expected_end": "2026-07-01",
+      "expected_end": "2026-12-31",
       "inferred": false,
-      "state": "overdue"
+      "state": "due_soon"
      },
      "as_of": "2022-12-14",
      "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
+     "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -30445,15 +30445,15 @@
        "standing": "opposition"
       }
      ],
-     "last_election": "2024-07-01",
-     "next_election": "2029-07-01",
+     "last_election": "2024",
+     "next_election": "2029",
      "term_years": 5,
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
-     "as_of": "2024-07-01",
+     "as_of": "2024",
      "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
@@ -30545,15 +30545,15 @@
       }
      ],
      "last_election": "2023-09-24",
-     "next_election": "2026-07-01",
+     "next_election": "2026",
      "mandate": {
-      "expected_end": "2026-07-01",
+      "expected_end": "2026-12-31",
       "inferred": false,
-      "state": "overdue"
+      "state": "due_soon"
      },
      "as_of": "2023-09-24",
      "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
+     "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -30840,9 +30840,9 @@
       }
      ],
      "last_election": "2025-09-27",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -31928,9 +31928,9 @@
       }
      ],
      "last_election": "2024-07-04",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -32221,11 +32221,11 @@
       }
      ],
      "last_election": "2022-06-23",
-     "next_election": "2027-07-01",
+     "next_election": "2027",
      "mandate": {
-      "expected_end": "2027-07-01",
+      "expected_end": "2027-12-31",
       "inferred": false,
-      "state": "due_soon"
+      "state": "current"
      },
      "as_of": "2022-06-23",
      "retrieved_at": "2026-08-14",
@@ -33145,11 +33145,11 @@
       }
      ],
      "last_election": "2022-04-09",
-     "next_election": "2027-07-01",
+     "next_election": "2027",
      "mandate": {
-      "expected_end": "2027-07-01",
+      "expected_end": "2027-12-31",
       "inferred": false,
-      "state": "due_soon"
+      "state": "current"
      },
      "as_of": "2022-04-09",
      "retrieved_at": "2026-08-14",
@@ -34874,11 +34874,11 @@
       }
      ],
      "last_election": "2023-06-25",
-     "next_election": "2027-07-01",
+     "next_election": "2027",
      "mandate": {
-      "expected_end": "2027-07-01",
+      "expected_end": "2027-12-31",
       "inferred": false,
-      "state": "due_soon"
+      "state": "current"
      },
      "as_of": "2023-06-25",
      "retrieved_at": "2026-08-14",
@@ -35222,9 +35222,9 @@
       }
      ],
      "last_election": "2025-09-01",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -35568,9 +35568,9 @@
       }
      ],
      "last_election": "2025-11-30",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -36735,14 +36735,14 @@
      ],
      "contestation": "competitive",
      "composition": [],
-     "last_election": "2015-07-01",
-     "next_election": "2026-07-01",
+     "last_election": "2015",
+     "next_election": "2026",
      "mandate": {
-      "expected_end": "2026-07-01",
+      "expected_end": "2026-12-31",
       "inferred": false,
-      "state": "overdue"
+      "state": "due_soon"
      },
-     "as_of": "2015-07-01",
+     "as_of": "2015",
      "retrieved_at": "2026-08-14",
      "confidence": "flagged",
      "provenance": {
@@ -37043,9 +37043,9 @@
       }
      ],
      "last_election": "2026-04-12",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -37621,9 +37621,9 @@
       }
      ],
      "last_election": "2024-02-14",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -37662,9 +37662,9 @@
       }
      ],
      "last_election": "2024-02-14",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -38440,9 +38440,9 @@
       }
      ],
      "last_election": "2024-11-29",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -38572,9 +38572,9 @@
       }
      ],
      "last_election": "2025-01-29",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -41756,9 +41756,9 @@
       }
      ],
      "last_election": "2024-04-19",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -42056,14 +42056,14 @@
        "standing": "opposition"
       }
      ],
-     "last_election": "2026-07-01",
-     "next_election": "2027-07-01",
+     "last_election": "2026",
+     "next_election": "2027",
      "mandate": {
-      "expected_end": "2027-07-01",
+      "expected_end": "2027-12-31",
       "inferred": false,
-      "state": "due_soon"
+      "state": "current"
      },
-     "as_of": "2026-07-01",
+     "as_of": "2026",
      "retrieved_at": "2026-08-14",
      "confidence": "partial",
      "provenance": {
@@ -42709,10 +42709,10 @@
       }
      ],
      "last_election": "2025-11-11",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "term_years": 4,
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -43033,9 +43033,9 @@
       }
      ],
      "last_election": "2024-03-01",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -43504,9 +43504,9 @@
       }
      ],
      "last_election": "2024-11-30",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -45086,11 +45086,11 @@
       }
      ],
      "last_election": "2022-09-25",
-     "next_election": "2027-07-01",
+     "next_election": "2027",
      "mandate": {
-      "expected_end": "2027-07-01",
+      "expected_end": "2027-12-31",
       "inferred": false,
-      "state": "due_soon"
+      "state": "current"
      },
      "as_of": "2022-09-25",
      "retrieved_at": "2026-08-14",
@@ -45191,11 +45191,11 @@
       }
      ],
      "last_election": "2022-09-25",
-     "next_election": "2027-07-01",
+     "next_election": "2027",
      "mandate": {
-      "expected_end": "2027-07-01",
+      "expected_end": "2027-12-31",
       "inferred": false,
-      "state": "due_soon"
+      "state": "current"
      },
      "as_of": "2022-09-25",
      "retrieved_at": "2026-08-14",
@@ -45699,9 +45699,9 @@
       }
      ],
      "last_election": "2024-09-10",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -46670,10 +46670,10 @@
       }
      ],
      "last_election": "2025-07-20",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "term_years": 6,
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -46902,11 +46902,11 @@
       }
      ],
      "last_election": "2022-08-09",
-     "next_election": "2027-07-01",
+     "next_election": "2027",
      "mandate": {
-      "expected_end": "2027-07-01",
+      "expected_end": "2027-12-31",
       "inferred": false,
-      "state": "due_soon"
+      "state": "current"
      },
      "as_of": "2022-08-09",
      "retrieved_at": "2026-08-14",
@@ -47239,9 +47239,9 @@
       }
      ],
      "last_election": "2025-11-30",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -47507,9 +47507,9 @@
       }
      ],
      "last_election": "2023-07-23",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -47742,9 +47742,9 @@
       }
      ],
      "last_election": "2024-08-19",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -49934,9 +49934,9 @@
       }
      ],
      "last_election": "2022-05-15",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -50560,9 +50560,9 @@
       }
      ],
      "last_election": "2025-02-09",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -51106,9 +51106,9 @@
       }
      ],
      "last_election": "2024-11-14",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -52967,15 +52967,15 @@
       }
      ],
      "last_election": "2024-10-13",
-     "next_election": "2026-07-01",
+     "next_election": "2026",
      "mandate": {
-      "expected_end": "2026-07-01",
+      "expected_end": "2026-12-31",
       "inferred": false,
-      "state": "overdue"
+      "state": "due_soon"
      },
      "as_of": "2024-10-13",
      "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -52998,7 +52998,7 @@
     "seats": 76,
     "minority": false,
     "authority": "established",
-    "confidence": "flagged",
+    "confidence": "partial",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -53460,9 +53460,9 @@
       }
      ],
      "last_election": "2023-10-08",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -54893,15 +54893,15 @@
       }
      ],
      "last_election": "2021-09-08",
-     "next_election": "2026-07-01",
+     "next_election": "2026",
      "mandate": {
-      "expected_end": "2026-07-01",
+      "expected_end": "2026-12-31",
       "inferred": false,
-      "state": "overdue"
+      "state": "due_soon"
      },
      "as_of": "2021-09-08",
      "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
+     "confidence": "high",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -55079,7 +55079,7 @@
     "seats_with_backing": 290,
     "minority": false,
     "authority": "established",
-    "confidence": "flagged",
+    "confidence": "high",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -55970,9 +55970,9 @@
       }
      ],
      "last_election": "2025-09-28",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -57111,9 +57111,9 @@
       }
      ],
      "last_election": "2024-05-29",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -57962,10 +57962,10 @@
       }
      ],
      "last_election": "2024-05-08",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "term_years": 4,
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -59151,9 +59151,9 @@
       }
      ],
      "last_election": "2024-06-28",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -59769,9 +59769,9 @@
       }
      ],
      "last_election": "2023-05-13",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -60809,9 +60809,9 @@
       }
      ],
      "last_election": "2024-04-21",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -62898,9 +62898,9 @@
       }
      ],
      "last_election": "2022-11-19",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -63371,9 +63371,9 @@
       }
      ],
      "last_election": "2024-10-09",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -64023,9 +64023,9 @@
       }
      ],
      "last_election": "2024-11-27",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -66259,10 +66259,10 @@
       }
      ],
      "last_election": "2025-10-29",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "term_years": 4,
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -66407,12 +66407,12 @@
       }
      ],
      "last_election": "2023-05-30",
-     "next_election": "2027-07-01",
+     "next_election": "2027",
      "term_years": 4,
      "mandate": {
-      "expected_end": "2027-07-01",
+      "expected_end": "2027-12-31",
       "inferred": false,
-      "state": "due_soon"
+      "state": "current"
      },
      "as_of": "2023-05-30",
      "retrieved_at": "2026-08-14",
@@ -67027,9 +67027,9 @@
       }
      ],
      "last_election": "2025-09-08",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -67527,9 +67527,9 @@
       }
      ],
      "last_election": "2026-03-05",
-     "next_election": "2031-07-01",
+     "next_election": "2031",
      "mandate": {
-      "expected_end": "2031-07-01",
+      "expected_end": "2031-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -67602,13 +67602,13 @@
        "standing": "vacant"
       }
      ],
-     "last_election": "2026-07-01",
+     "last_election": "2026",
      "mandate": {
-      "expected_end": "2031-07-01",
+      "expected_end": "2031-01-01",
       "inferred": true,
       "state": "current"
      },
-     "as_of": "2026-07-01",
+     "as_of": "2026",
      "retrieved_at": "2026-08-14",
      "confidence": "high",
      "provenance": {
@@ -67729,9 +67729,9 @@
       }
      ],
      "last_election": "2025-10-11",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -68850,9 +68850,9 @@
       }
      ],
      "last_election": "2024-05-05",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -71649,11 +71649,11 @@
       }
      ],
      "last_election": "2024-04-02",
-     "next_election": "2027-07-01",
+     "next_election": "2027",
      "mandate": {
-      "expected_end": "2027-07-01",
+      "expected_end": "2027-12-31",
       "inferred": false,
-      "state": "due_soon"
+      "state": "current"
      },
      "as_of": "2024-04-02",
      "retrieved_at": "2026-08-14",
@@ -72384,11 +72384,11 @@
       }
      ],
      "last_election": "2023-10-15",
-     "next_election": "2027-07-01",
+     "next_election": "2027",
      "mandate": {
-      "expected_end": "2027-07-01",
+      "expected_end": "2027-12-31",
       "inferred": false,
-      "state": "due_soon"
+      "state": "current"
      },
      "as_of": "2023-10-15",
      "retrieved_at": "2026-08-14",
@@ -76844,11 +76844,11 @@
       }
      ],
      "last_election": "2023-12-17",
-     "next_election": "2027-07-01",
+     "next_election": "2027",
      "mandate": {
-      "expected_end": "2027-07-01",
+      "expected_end": "2027-12-31",
       "inferred": false,
-      "state": "due_soon"
+      "state": "current"
      },
      "as_of": "2023-12-17",
      "retrieved_at": "2026-08-14",
@@ -79645,15 +79645,15 @@
       }
      ],
      "last_election": "2022-09-11",
-     "next_election": "2026-07-01",
+     "next_election": "2026",
      "mandate": {
-      "expected_end": "2026-07-01",
+      "expected_end": "2026-12-31",
       "inferred": false,
-      "state": "overdue"
+      "state": "due_soon"
      },
      "as_of": "2022-09-11",
      "retrieved_at": "2026-08-14",
-     "confidence": "flagged",
+     "confidence": "partial",
      "provenance": {
       "kind": "wikipedia",
       "derivation": "extracted",
@@ -79680,7 +79680,7 @@
     "seats_with_backing": 176,
     "minority": true,
     "authority": "established",
-    "confidence": "flagged",
+    "confidence": "partial",
     "provenance": {
      "kind": "wikipedia",
      "derivation": "derived",
@@ -80462,11 +80462,11 @@
        "standing": "non_attached"
       }
      ],
-     "next_election": "2027-07-01",
+     "next_election": "2027",
      "mandate": {
-      "expected_end": "2027-07-01",
+      "expected_end": "2027-12-31",
       "inferred": false,
-      "state": "due_soon"
+      "state": "current"
      },
      "as_of": "2026-08-14",
      "retrieved_at": "2026-08-14",
@@ -81004,11 +81004,11 @@
       }
      ],
      "last_election": "2023-09-30",
-     "next_election": "2027-07-01",
+     "next_election": "2027",
      "mandate": {
-      "expected_end": "2027-07-01",
+      "expected_end": "2027-12-31",
       "inferred": false,
-      "state": "due_soon"
+      "state": "current"
      },
      "as_of": "2023-09-30",
      "retrieved_at": "2026-08-14",
@@ -81218,9 +81218,9 @@
       }
      ],
      "last_election": "2023-06-24",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -82155,9 +82155,9 @@
       }
      ],
      "last_election": "2024-11-17",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -84281,9 +84281,9 @@
       }
      ],
      "last_election": "2024-12-29",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -85513,9 +85513,9 @@
       }
      ],
      "last_election": "2026-02-08",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -86322,9 +86322,9 @@
       }
      ],
      "last_election": "2023-05-21",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -86589,9 +86589,9 @@
       }
      ],
      "last_election": "2023-03-26",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -87065,9 +87065,9 @@
       }
      ],
      "last_election": "2025-11-20",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -87800,9 +87800,9 @@
       }
      ],
      "last_election": "2023-05-14",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -90703,9 +90703,9 @@
       }
      ],
      "last_election": "2024-10-27",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -91524,9 +91524,9 @@
       }
      ],
      "last_election": "2025-05-25",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -91720,9 +91720,9 @@
       }
      ],
      "last_election": "2026-03-15",
-     "next_election": "2031-07-01",
+     "next_election": "2031",
      "mandate": {
-      "expected_end": "2031-07-01",
+      "expected_end": "2031-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -92370,9 +92370,9 @@
       }
      ],
      "last_election": "2025-08-29",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -93684,9 +93684,9 @@
       }
      ],
      "last_election": "2024-05-29",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -93781,9 +93781,9 @@
       }
      ],
      "last_election": "2024-06-13",
-     "next_election": "2029-07-01",
+     "next_election": "2029",
      "mandate": {
-      "expected_end": "2029-07-01",
+      "expected_end": "2029-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -94342,9 +94342,9 @@
       }
      ],
      "last_election": "2023-08-23",
-     "next_election": "2030-07-01",
+     "next_election": "2030",
      "mandate": {
-      "expected_end": "2030-07-01",
+      "expected_end": "2030-12-31",
       "inferred": false,
       "state": "current"
      },
@@ -94411,9 +94411,9 @@
       }
      ],
      "last_election": "2023-08-23",
-     "next_election": "2028-07-01",
+     "next_election": "2028",
      "mandate": {
-      "expected_end": "2028-07-01",
+      "expected_end": "2028-12-31",
       "inferred": false,
       "state": "current"
      },

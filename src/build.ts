@@ -46,19 +46,38 @@ const today = () => new Date().toISOString().slice(0, 10)
  * means somewhere in 2024, and anchoring it to the 1st would systematically
  * overstate how long ago it was by up to a year.
  */
+/**
+ * A date the model read, kept at the precision it was written.
+ *
+ * A bare year stays a bare year. Padding "2029" to "2029-07-01" invented four
+ * months of precision nobody recorded, and the invented day was then compared
+ * against the calendar: Sweden's September 2026 election was stored as 1 July
+ * and read as already past on 14 August, flagging a perfectly current
+ * parliament as overdue.
+ */
 const normaliseDate = (value: string | undefined): string | undefined => {
   if (!value) return undefined
-  const full = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value.trim())
+  const text = value.trim()
+  const full = /^(\d{4})-(\d{2})-(\d{2})$/.exec(text)
   if (full) {
     const year = Number(full[1])
-    return year >= 1900 && year <= 2100 ? value.trim() : undefined
+    return year >= 1900 && year <= 2100 ? text : undefined
   }
-  const year = /^(\d{4})$/.exec(value.trim())
-  if (year) {
-    const number = Number(year[1])
-    return number >= 1900 && number <= 2100 ? `${year[1]}-07-01` : undefined
+  const bare = /^(\d{4})$/.exec(text)
+  if (bare) {
+    const year = Number(bare[1])
+    return year >= 1900 && year <= 2100 ? bare[1] : undefined
   }
   return undefined
+}
+
+/** A date at whatever precision, as a Date. A bare year becomes its END, so a
+ *  year-precision election is only "past" once the year is over. */
+const asDate = (value: string | undefined, endOfYear = false): Date | undefined => {
+  if (!value) return undefined
+  if (/^\d{4}$/.test(value)) return new Date(`${value}-${endOfYear ? '12-31' : '01-01'}`)
+  const date = new Date(value)
+  return Number.isNaN(date.getTime()) ? undefined : date
 }
 
 // ---------------------------------------------------------------------------
@@ -92,10 +111,15 @@ const mandateOf = (
   let expected: Date | undefined
   let inferred = false
   if (nextElection) {
-    expected = new Date(nextElection)
-  } else if (lastElection) {
-    expected = new Date(new Date(lastElection).getTime() + (termYears ?? 5) * year)
-    inferred = true
+    // End of year for a year-only date: a 2026 election is not overdue in
+    // August 2026.
+    expected = asDate(nextElection, true)
+  } else {
+    const from = asDate(lastElection)
+    if (from) {
+      expected = new Date(from.getTime() + (termYears ?? 5) * year)
+      inferred = true
+    }
   }
   if (!expected || Number.isNaN(expected.getTime())) {
     return lastElection || nextElection ? { inferred: false, state: 'unknown' } : undefined
