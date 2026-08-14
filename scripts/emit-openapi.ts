@@ -2,6 +2,7 @@ import { writeFileSync, mkdirSync } from 'node:fs'
 import {
   AUTHORITIES,
   BLOC_KINDS,
+  RECOGNITION,
   IDEOLOGY_FAMILIES,
   CHAMBER_ROLES,
   CONFIDENCE,
@@ -461,5 +462,5 @@ const sealed = (node: unknown): unknown => {
 writeFileSync('schema/openapi.json', `${JSON.stringify(sealed(spec), null, 2)}\n`)
 console.log(
   `wrote schema/openapi.json — ${Object.keys(spec.components.schemas).length} schemas, ` +
-    `${[STANDINGS, CHAMBER_ROLES, CONTESTATION, GOVERNMENT_FORMS, SPECTRUM_BANDS, BLOC_KINDS, CONFIDENCE, DERIVATIONS, SOURCE_KINDS, SELECTION_METHODS, REPRESENTATION, AUTHORITIES, MANDATE_STATES, IMAGE_HOSTS, IMAGE_RESTRICTIONS, IDEOLOGY_FAMILIES].reduce((total, list) => total + list.length, 0)} enum values`
+    `${[STANDINGS, CHAMBER_ROLES, CONTESTATION, GOVERNMENT_FORMS, SPECTRUM_BANDS, BLOC_KINDS, CONFIDENCE, DERIVATIONS, SOURCE_KINDS, SELECTION_METHODS, REPRESENTATION, AUTHORITIES, MANDATE_STATES, IMAGE_HOSTS, IMAGE_RESTRICTIONS, IDEOLOGY_FAMILIES, RECOGNITION].reduce((total, list) => total + list.length, 0)} enum values`
 )

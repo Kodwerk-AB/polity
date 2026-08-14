@@ -1,6 +1,7 @@
 import {
   claimAmount,
   claimIds,
+  openClaimIds,
   currentStatement,
   enwikiTitle,
   getEntities,
@@ -241,7 +242,13 @@ const LEGISLATURE_OVERRIDES: Record<string, string[]> = {
 export const chambersOf = async (countryQid: QID): Promise<ChamberRef[]> => {
   const country = (await getEntities([countryQid], 'claims'))[countryQid]
   const direct = [
-    ...new Set([...claimIds(country, 'P194'), ...(LEGISLATURE_OVERRIDES[countryQid] ?? [])]),
+    // OPEN statements only. A country that replaced its legislature keeps the
+    // old one on P194 with an end qualifier, and reading every statement took
+    // the superseded body: Taiwan's five P194 values are the Legislative Yuan
+    // (preferred, open, 113 seats) and four ENDED ones, and the resolver
+    // published the Control Yuan — an audit body whose statement was closed —
+    // while dropping the actual parliament.
+    ...new Set([...openClaimIds(country, 'P194'), ...(LEGISLATURE_OVERRIDES[countryQid] ?? [])]),
   ]
   if (!direct.length) return []
   const dissolvedOnly: ChamberRef[] = []

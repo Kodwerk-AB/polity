@@ -1,5 +1,6 @@
 import { claimIds, enwikiTitle, fetchJson, getEntities, labelOf } from '../net/wiki'
 import type { QID } from '../types/polity'
+import type { Recognition } from '../types/enums'
 
 /**
  * The country list, resolved from Wikidata rather than hardcoded.
@@ -22,6 +23,8 @@ export interface CountryRef {
   article?: string
   /** P298 — the alpha-3 code, which is how outside datasets key countries. */
   alpha3?: string
+  /** Absent for a UN member state; set for everything else this carries. */
+  recognition?: Recognition
 }
 
 interface SparqlBinding {
@@ -79,6 +82,9 @@ export const unMemberStates = async (): Promise<CountryRef[]> => {
     seen.set(iso, { ...substitute })
   }
 
+  // States with no UN seat, added deliberately and flagged as such.
+  for (const state of NON_MEMBER_STATES) if (!seen.has(state.iso)) seen.set(state.iso, state)
+
   const countries = [...seen.values()].sort((a, b) => a.iso.localeCompare(b.iso))
   // Attach each country's own article — the fallback source when a legislature
   // article carries nothing usable.
@@ -114,11 +120,27 @@ const REALM_SUBSTITUTIONS: Record<string, CountryRef> = {
   NL: { iso: 'NL', qid: 'Q55' as QID, name: 'Netherlands' },
 }
 
-/** Countries the UN list misses that a world dataset should still carry.
- *  Kept tiny and explicit: each one is a judgement, not an oversight. */
-export const OBSERVER_STATES: CountryRef[] = [
-  { iso: 'VA', qid: 'Q237' as QID, name: 'Vatican City' },
-  { iso: 'PS', qid: 'Q219060' as QID, name: 'Palestine' },
+/**
+ * States the UN membership query misses that a world dataset should carry.
+ *
+ * Each is a judgement, stated rather than assumed, and each ships with
+ * `recognition` set so a consumer can filter to the 193 if that is what they
+ * need. The dataset would otherwise be silently missing a fully competitive
+ * multi-party parliament (Taiwan's Legislative Yuan) with no record that it had
+ * been considered at all — which is worse than either including or excluding
+ * it deliberately.
+ *
+ * The Vatican is here because it is a UN observer with no legislature, so it
+ * arrives as an omission with a reason rather than as a gap.
+ */
+export const NON_MEMBER_STATES: CountryRef[] = [
+  // UN observer states.
+  { iso: 'VA', qid: 'Q237' as QID, name: 'Vatican City', recognition: 'un_observer' },
+  { iso: 'PS', qid: 'Q219060' as QID, name: 'Palestine', recognition: 'un_observer' },
+  // Widely recognised, no UN seat. Taiwan lost its seat to the PRC in 1971 and
+  // its Legislative Yuan is among the most competitive chambers in Asia.
+  { iso: 'TW', qid: 'Q865' as QID, name: 'Taiwan', recognition: 'partially_recognised' },
+  { iso: 'XK', qid: 'Q1246' as QID, name: 'Kosovo', recognition: 'partially_recognised' },
 ]
 
 /** Wikidata sometimes files a country's legislature only on a related item. */

@@ -22,7 +22,15 @@ import {
   type ExtractedBloc,
 } from './extract/model'
 import { hashOf } from './net/cache'
-import type { BlocKind, ChamberRole, Confidence, Contestation, SelectionMethod, SpectrumBand } from './types/enums'
+import type {
+  BlocKind,
+  ChamberRole,
+  Confidence,
+  Contestation,
+  Recognition,
+  SelectionMethod,
+  SpectrumBand,
+} from './types/enums'
 import type {
   Chamber,
   Entity,
@@ -670,7 +678,8 @@ const buildCountry = async (
   iso: string,
   countryQid: QID,
   countryName: string,
-  countryArticle?: string
+  countryArticle?: string,
+  recognition?: Recognition
 ): Promise<BuildResult> => {
   const retrieved = today()
   let contested = false
@@ -855,11 +864,12 @@ const buildCountry = async (
       ? await getEntities(partyQids, 'claims|labels')
       : {}
 
+    const memberPartyIds = partyQids.flatMap(qid => openClaimIds(partyEntities[qid], 'P527'))
     const alignmentIds = partyQids.flatMap(qid => openClaimIds(partyEntities[qid], 'P1387'))
     const ideologyIds = partyQids.flatMap(qid => openClaimIds(partyEntities[qid], 'P1142'))
     const groupingIds = partyQids.flatMap(qid => openClaimIds(partyEntities[qid], 'P463'))
     const labelEntities = await getEntities(
-      [...new Set([...alignmentIds, ...ideologyIds, ...groupingIds])],
+      [...new Set([...alignmentIds, ...ideologyIds, ...groupingIds, ...memberPartyIds])],
       'labels'
     )
     const named = (id: string): Entity => {
@@ -917,6 +927,7 @@ const buildCountry = async (
         const entity = partyEntities[qid]
         // A party that has moved on the spectrum carries its history here, so
         // the current statement is the one that describes it today.
+        const memberIds = openClaimIds(entity, 'P527')
         const alignmentStatement = currentStatement(entity?.claims?.P1387)
         const alignmentId =
           (alignmentStatement?.mainsnak?.datavalue?.value as { id?: string } | undefined)?.id ??
@@ -946,6 +957,9 @@ const buildCountry = async (
           ...(alignmentLabel ? { alignment_raw: alignmentLabel } : {}),
           ideologies: openClaimIds(entity, 'P1142').slice(0, 6).map(named),
           groupings: openClaimIds(entity, 'P463').slice(0, 6).map(named),
+          // A coalition's member parties. Only meaningful for a bloc that HAS
+          // parts, so an ordinary party simply carries none.
+          ...(memberIds.length ? { members: memberIds.slice(0, 12).map(named) } : {}),
           colors: claimStrings(entity, 'P465')
             .filter(value => HEX.test(value))
             .map(value => `#${value.toLowerCase()}`),
@@ -1134,6 +1148,7 @@ const buildCountry = async (
       entity: { qid: countryQid, label: countryName },
       name: countryName,
       form,
+      ...(recognition ? { recognition } : {}),
       form_raw: prose ? [...form_raw, prose] : form_raw,
       ...(democracy ? { democracy: { ...democracy, source: 'vdem' as const } } : {}),
       head_of_state: leaders.head_of_state,
@@ -1162,7 +1177,13 @@ export const build = async (only?: string[]): Promise<PolityDataset> => {
   let done = 0
   for (const state of wanted) {
     try {
-      const result = await buildCountry(state.iso, state.qid, state.name, state.article)
+      const result = await buildCountry(
+        state.iso,
+        state.qid,
+        state.name,
+        state.article,
+        state.recognition
+      )
       if (result.polity) countries[state.iso] = result.polity
       if (result.omission) omissions.push(result.omission)
     } catch (error) {

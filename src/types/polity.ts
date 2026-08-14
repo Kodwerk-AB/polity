@@ -4,6 +4,7 @@ import type {
   Confidence,
   Authority,
   Contestation,
+  Recognition,
   IdeologyFamily,
   ImageHost,
   ImageRestriction,
@@ -249,6 +250,19 @@ export interface Party {
    * "member of the EPP" means.
    */
   groupings: Entity[]
+  /**
+   * The parties this bloc is composed of, when it is a coalition or a
+   * parliamentary group rather than a single party.
+   *
+   * From `P527` (has part). Without it, a leader cannot be joined to the bench
+   * they actually sit on: France's chamber seats "Together for the Republic
+   * group", Poland's seats "Civic Coalition", and Brazil's seats "Brazil of
+   * Hope" — while Macron leads Renaissance, Tusk leads Civic Platform and Lula
+   * leads the Workers' Party. Every one of those is a member of the bloc named
+   * on the bench, and the Q-ids match exactly; nothing else in the record
+   * connects them.
+   */
+  members?: Entity[]
   /** Party colours as `#rrggbb`. Validated hex — free-text values are dropped. */
   colors: string[]
   founded_year?: number
@@ -443,6 +457,11 @@ export interface Polity {
   iso: ISOCountryCode
   entity: Entity
   name: string
+  /**
+   * Set only for a state with no UN seat — absent means a UN member, which is
+   * 193 of the 197 here. Filter on it to get exactly the UN membership.
+   */
+  recognition?: Recognition
   /** The state's form, folded to a closed set. */
   form: GovernmentForm
   /** Every raw P122 label at preferred rank, unfolded. */

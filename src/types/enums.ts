@@ -372,3 +372,20 @@ export const IDEOLOGY_FAMILIES = [
   'other',
 ] as const
 export type IdeologyFamily = (typeof IDEOLOGY_FAMILIES)[number]
+
+/**
+ * A state's standing in the international system.
+ *
+ * Absent means a UN member state, which is the overwhelming majority and the
+ * default a consumer should assume. The rest are carried deliberately — a
+ * dataset that silently omitted Taiwan's Legislative Yuan, one of Asia's most
+ * competitive chambers, would be worse than one that includes it and says what
+ * it is.
+ */
+export const RECOGNITION = [
+  /** A UN observer state: the Vatican, Palestine. */
+  'un_observer',
+  /** Recognised by many states but holding no UN seat: Taiwan, Kosovo. */
+  'partially_recognised',
+] as const
+export type Recognition = (typeof RECOGNITION)[number]
