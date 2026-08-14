@@ -338,8 +338,24 @@ the same person must not fill both offices, a chamber must not seat more members
 than it has, and a government block must not be empty where a chamber is seated.
 
 **Zero high-severity findings.** No placeholder names, no representatives in a
-head-of-state slot, no markup in a name, and every country resolves to a named
-leader.
+head-of-state slot, no markup in a name, no country whose `executive_power`
+resolves to nobody, no country with one person silently filling both offices,
+and no high-confidence chamber seating more members than it holds.
+
+A sixth check — "both offices marked `political`" — was written and then
+withdrawn as a bad rule rather than a finding. It flags ten countries, all
+semi-presidential republics (Austria, Portugal, Poland, Lithuania, Mongolia,
+Pakistan, Palestine, Cape Verde, Somalia, São Tomé), and in a semi-presidential
+republic both offices genuinely do hold political power. That is what the form
+means. `represents` says who wields power; `executive_power` says who leads.
+
+**Leaders were web-verified against live sources for 80+ countries**, chosen for
+recency and surprise rather than convenience. Every post-cutoff change checked
+was correct, including ones from the weeks before the audit: Colombia's de la
+Espriella (7 Aug 2026), Moldova's Tofan (22 Jul), Lithuania's Sinkevičius (14
+Jul), Peru's Fujimori (28 Jul), Iraq's al-Zaidi (14 May), Iran's Mojtaba
+Khamenei (8 Mar), Nepal's Balen Shah (27 Mar), and the two post-coup
+transitional administrations in Madagascar and Guinea-Bissau.
 
 **21 chambers seat more members than they hold**, and every one of them is
 already `flagged` or `partial` — none claims high confidence. The cause is
