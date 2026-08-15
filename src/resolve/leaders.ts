@@ -4,6 +4,7 @@ import {
   claimIds,
   claimStrings,
   currentStatement,
+  dayPrecision,
   fileLicence,
   resolveStatement,
   filePathUrl,
@@ -37,6 +38,7 @@ const BASIC_FORM = 'P122'
 const POSITION_HELD = 'P39'
 const MEMBER_OF_PARTY = 'P102'
 const IMAGE = 'P18'
+const DATE_OF_BIRTH = 'P569'
 
 /**
  * Wikidata's forms folded onto the dataset's closed set.
@@ -527,7 +529,8 @@ export const leadersOf = async (
     if (!id) return null
     // `sitelinks` is fetched for the name check in `personName`: a vandalised
     // label is one edit, where the article title behind it is a real page.
-    const person = (await getEntities([id], 'labels|claims|sitelinks'))[id]
+    // `descriptions` is the one-line gloss Wikidata keeps beside every person.
+    const person = (await getEntities([id], 'labels|descriptions|claims|sitelinks'))[id]
     const name = personName(person)
     // Wikidata itself sometimes carries a placeholder where a person belongs —
     // Burundi's head of state resolved to a label reading "<UNKNOWN>". A leader
@@ -564,6 +567,20 @@ export const leadersOf = async (
       statement
     )
     const portrait = await portraitOf(person)
+    // The year they were born, and Wikidata's own one-line gloss. Neither
+    // decides anything here — both are carried because a consumer asking "who
+    // leads this country" almost always wants to say something ABOUT them, and
+    // both are already in the payload this function fetches.
+    const bornYear = Number(
+      dayPrecision(
+        (
+          currentStatement(person?.claims?.[DATE_OF_BIRTH])?.mainsnak?.datavalue?.value as
+            | { time?: string }
+            | undefined
+        )?.time
+      )?.slice(0, 4)
+    )
+    const description = person?.descriptions?.en?.value
     return {
       person: { qid: id as QID, label: name },
       name,
@@ -571,6 +588,8 @@ export const leadersOf = async (
       ...(office_local ? { office_local } : {}),
       party: await partyOf(person),
       ...(since ? { since } : {}),
+      ...(Number.isFinite(bornYear) && bornYear > 1800 ? { born_year: bornYear } : {}),
+      ...(description ? { description } : {}),
       ...(portrait ? { portrait } : {}),
       represents,
       ...(departed || stale ? { superseded: true } : {}),

@@ -147,7 +147,18 @@ export interface OfficeHolder {
   party: Entity | null
   /** When this term began. Day precision or absent — never a padded year. */
   since?: ISODate
+  /** The year they were born, where Wikidata records it to day precision. */
   born_year?: number
+  /**
+   * Wikidata's own one-line gloss — "German politician, Chancellor of the
+   * Federal Republic of Germany".
+   *
+   * Carried because a consumer asking who leads a country almost always wants
+   * to say something ABOUT them, and it is already in the payload. It is a
+   * DESCRIPTION, not a claim this dataset makes: it is free text maintained by
+   * anyone, and nothing here is derived from it.
+   */
+  description?: string
   portrait?: ImageRef
   /** Whether this office speaks politically or ceremonially for the state. */
   represents: Representation

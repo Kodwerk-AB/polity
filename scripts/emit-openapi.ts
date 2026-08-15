@@ -122,6 +122,11 @@ const officeHolder = {
     },
     since: { type: 'string', format: 'date', description: 'Day precision, or absent. Never padded.' },
     born_year: { type: 'integer', minimum: 1900, maximum: 2100 },
+    description: {
+      type: 'string',
+      description:
+        "Wikidata's own one-line gloss on the person. Free text maintained by anyone — a description, not a claim this dataset makes, and nothing here is derived from it.",
+    },
     portrait: imageRef,
     represents: enumOf(
       REPRESENTATION,
