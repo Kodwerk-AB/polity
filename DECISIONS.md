@@ -387,6 +387,66 @@ would assert something the source does not say.
 
 ---
 
+## What the second audit pass found
+
+The first pass checked leaders. The second checked everything else — seat
+arithmetic, the government block, party records, provenance and licensing — and
+re-checked leaders against *dates* rather than only against names. Four defects,
+each invisible to the first pass:
+
+**A term is current only if it has BEGUN and not yet ENDED.** `resolveStatement`
+knew neither. Hungary showed both halves in one office: Sulyok to 19 July 2026,
+Ágnes Forsthoffer interim to 18 August, András Baka from the 19th. "Latest start
+wins" actively prefers Baka, so a president-elect was published as sitting four
+days early; and a bare "has an end qualifier" test writes off Forsthoffer, the
+one person actually holding the office today. Both halves now compare dates
+against today rather than testing for a qualifier's presence.
+
+**An empty `seats` field is absent, not a match.** Egypt's Senate reads
+`| seats = | structure1 = File:Egypt Senate 2026.svg`, and the capture running
+to the end of the line made the first integer a YEAR in a filename: a 300-seat
+chamber published as 2026. Wikidata had 300 correct all along. Exactly the shape
+of the `voting_system` bug that made Oman's blank field match on the word
+"voting" in the field name after it.
+
+**A collective executive has no single head of government.** Switzerland's
+`executive_power` is `collective`, and P1313 pointed at the Federal Chancellor —
+a civil servant running the Chancellery, not a premier.
+
+**Provenance now names the source it actually read.** `kind: 'wikipedia'` was
+hardcoded, so 15 records with no article — Jamaica's two houses, Palau's,
+Rwanda's Senate, every one with zero composition rows — claimed a Wikipedia
+provenance with no article to check them against.
+
+### The prompt fix that had to be stated twice
+
+The 13 leaders extracted by the model from article prose never reach
+`resolveStatement`, so the incumbency fix could not touch them. Adding "a
+president-elect is not the officeholder" fixed Hungary and **regressed
+Venezuela**: Delcy Rodríguez, acting president since Maduro's capture, was
+rejected as not-a-real-holder in favour of Maduro himself, pulled from a
+footnote.
+
+The two cases are opposites and are now written as such. A president-ELECT does
+not hold the office yet. An ACTING or INTERIM holder holds it TODAY. The
+distinguishing test was already in the older "personal representative" rule —
+*while that other person still holds the office* — and is now spelled out.
+
+### What was checked and found clean
+
+- **1,403 parties** — one long name, which is genuinely that long.
+- **The government block** — one finding, Brunei, where an absolute monarchy's
+  ex-officio bloc has no party because parties do not function there.
+- **Portraits** — every one carries a licence; none is non-free.
+- **283 future-dated fields** — all `next_election` and `expected_end`, future
+  by definition. One real violation, Hungary, now fixed.
+
+Eight chambers remain one to five seats short of their declared size at `high`
+confidence — vacancies and speakers' seats, which is ordinary parliamentary life
+rather than a reading error.
+
+---
+
 ## Known open defects
 
 Stated plainly rather than left for a consumer to discover:
