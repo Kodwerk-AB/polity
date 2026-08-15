@@ -153,19 +153,54 @@ export interface Resolution {
   stale: boolean
 }
 
-export const resolveStatement = (statements: Snak[] | undefined): Resolution => {
+export const resolveStatement = (
+  statements: Snak[] | undefined,
+  /** Today, as `YYYY-MM-DD`. Injectable so the rule is testable. */
+  today = new Date().toISOString().slice(0, 10)
+): Resolution => {
   const live = (statements ?? []).filter(statement => statement.rank !== 'deprecated')
   const byStart = (pool: Snak[]) =>
     [...pool].sort((a, b) => (timeOf(b, 'P580') ?? '').localeCompare(timeOf(a, 'P580') ?? ''))[0]
 
-  const open = live.filter(statement => !statement.qualifiers?.P582?.length)
+  // Current means BEGUN AND NOT YET ENDED — both judged against today.
+  //
+  // Nothing here previously knew what day it was, so both halves were wrong in
+  // opposite directions, and Hungary showed both in one office. Its presidency
+  // reads: Tamás Sulyok to 19 July 2026, Ágnes Forsthoffer interim from 20
+  // July to 18 August, then András Baka from the 19th.
+  //
+  //   - Baka's term has not started. "Latest start wins" actively PREFERS him,
+  //     so he was published as the sitting president four days early.
+  //   - Forsthoffer's term has not ended, but it carries an end DATE, and a
+  //     bare "has a P582" test reads that as already over — writing off the
+  //     one person actually holding the office today.
+  //
+  // Filtering on the dates rather than on the presence of a qualifier gets
+  // both right, and leaves `stale` meaning what it says: every term this
+  // office has is finished.
+  const begun = live.filter(statement => {
+    const start = dayPrecision(timeOf(statement, 'P580'))
+    return !start || start <= today
+  })
+
+  const ended = (statement: Snak) => {
+    if (!statement.qualifiers?.P582?.length) return false
+    const end = dayPrecision(timeOf(statement, 'P582'))
+    // An end date we cannot read to the day is trusted as an ending, which is
+    // the pre-existing behaviour and the safe direction: it retires a term
+    // rather than inventing an incumbency.
+    return !end || end <= today
+  }
+
+  const open = begun.filter(statement => !ended(statement))
   if (open.length) {
     const preferred = open.filter(statement => statement.rank === 'preferred')
     const chosen = byStart(preferred.length ? preferred : open)
     return chosen ? { statement: chosen, stale: false } : { stale: false }
   }
-  // Nothing open. Take the most recently ENDED, and say so.
-  const closed = byStart(live)
+  // Nothing open. Take the most recently ENDED, and say so. Drawn from `begun`
+  // for the same reason as above — a not-yet-started term is not a past one.
+  const closed = byStart(begun)
   return closed ? { statement: closed, stale: true } : { stale: false }
 }
 

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { landslideOr, selectionOf, withoutAllianceHeaders } from './build'
+import { resolveStatement } from './net/wiki'
 import { executivePowerOf, trustedHolder } from './resolve/leaders'
 import { FREE_ELECTION_SCORE } from './resolve/democracy'
 import { familiesOf } from './resolve/ideology'
@@ -332,5 +333,107 @@ describe('trustedHolder', () => {
     expect(
       trustedHolder([held('Q_departed', 'normal', { ended: true, start: '2019-01-01' })])
     ).toBeUndefined()
+  })
+})
+
+describe('resolveStatement', () => {
+  const at = (start: string, opts: { ended?: boolean; rank?: string } = {}) =>
+    ({
+      rank: opts.rank ?? 'normal',
+      mainsnak: { datavalue: { value: { id: `Q_${start}` } } },
+      qualifiers: {
+        P580: [{ datavalue: { value: { time: `+${start}T00:00:00Z` } } }],
+        ...(opts.ended ? { P582: [{}] } : {}),
+      },
+    }) as never
+
+  const idOf = (r: ReturnType<typeof resolveStatement>) =>
+    (r.statement as { mainsnak?: { datavalue?: { value?: { id?: string } } } } | undefined)?.mainsnak
+      ?.datavalue?.value?.id
+
+  it('takes the latest open term that has begun', () => {
+    const r = resolveStatement([at('2019-01-01', { ended: true }), at('2023-03-13')], '2026-08-15')
+    expect(idOf(r)).toBe('Q_2023-03-13')
+    expect(r.stale).toBe(false)
+  })
+
+  it('ignores a term that has not started yet', () => {
+    // Hungary: András Baka was elected 11 Aug 2026 to take office on the 19th.
+    // "Latest start wins" actively PREFERS a president-elect, so he was
+    // published as the sitting president four days early.
+    const r = resolveStatement(
+      [at('2024-03-05', { ended: true }), at('2026-08-19')],
+      '2026-08-15'
+    )
+    // The office is genuinely empty until the 19th — falling through to the
+    // last real holder and reporting `stale` is the truthful answer.
+    expect(idOf(r)).toBe('Q_2024-03-05')
+    expect(r.stale).toBe(true)
+  })
+
+  it('accepts the term on the day it begins', () => {
+    const r = resolveStatement([at('2026-08-15')], '2026-08-15')
+    expect(idOf(r)).toBe('Q_2026-08-15')
+    expect(r.stale).toBe(false)
+  })
+
+  it('keeps a dateless statement, having nothing to disqualify it on', () => {
+    const undated = { rank: 'normal', mainsnak: { datavalue: { value: { id: 'Q_undated' } } } }
+    expect(idOf(resolveStatement([undated as never], '2026-08-15'))).toBe('Q_undated')
+  })
+})
+
+describe('resolveStatement — a term with a future end date', () => {
+  const term = (start: string, end?: string, rank = 'normal') =>
+    ({
+      rank,
+      mainsnak: { datavalue: { value: { id: `Q_${start}` } } },
+      qualifiers: {
+        P580: [{ datavalue: { value: { time: `+${start}T00:00:00Z` } } }],
+        ...(end ? { P582: [{ datavalue: { value: { time: `+${end}T00:00:00Z` } } }] } : {}),
+      },
+    }) as never
+
+  const idOf = (r: ReturnType<typeof resolveStatement>) =>
+    (r.statement as { mainsnak?: { datavalue?: { value?: { id?: string } } } } | undefined)?.mainsnak
+      ?.datavalue?.value?.id
+
+  it('serves an interim holder whose term has not ended yet', () => {
+    // Hungary's presidency in full: Sulyok to 19 Jul, Forsthoffer interim to
+    // 18 Aug, Baka from the 19th. On 15 Aug the answer is Forsthoffer — she is
+    // the only one both begun and unfinished.
+    const r = resolveStatement(
+      [
+        term('2024-03-05', '2026-07-19'),
+        term('2026-07-20', '2026-08-18'),
+        term('2026-08-19', undefined, 'preferred'),
+      ],
+      '2026-08-15'
+    )
+    expect(idOf(r)).toBe('Q_2026-07-20')
+    expect(r.stale).toBe(false)
+  })
+
+  it('retires that same holder once the date passes', () => {
+    const r = resolveStatement(
+      [term('2026-07-20', '2026-08-18'), term('2026-08-19', undefined, 'preferred')],
+      '2026-08-20'
+    )
+    expect(idOf(r)).toBe('Q_2026-08-19')
+    expect(r.stale).toBe(false)
+  })
+
+  it('treats an unreadable end date as an ending', () => {
+    // Coarser-than-day precision: retire the term rather than invent an
+    // incumbency out of a date we cannot compare.
+    const vague = {
+      rank: 'normal',
+      mainsnak: { datavalue: { value: { id: 'Q_vague' } } },
+      qualifiers: {
+        P580: [{ datavalue: { value: { time: '+2020-00-00T00:00:00Z' } } }],
+        P582: [{ datavalue: { value: { time: '+2024-00-00T00:00:00Z' } } }],
+      },
+    }
+    expect(resolveStatement([vague as never], '2026-08-15').stale).toBe(true)
   })
 })

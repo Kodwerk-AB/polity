@@ -1079,9 +1079,14 @@ const buildCountry = async (
       ...(newer ? { superseded_by_election: newer } : {}),
       confidence,
       provenance: {
-        kind: 'wikipedia',
+        // Name the source we actually READ. `wikipedia` was hardcoded, so a
+        // chamber with no article — Jamaica's two houses, Palau's, Rwanda's
+        // Senate: 15 records, every one with zero composition rows — claimed a
+        // Wikipedia provenance carrying no article to check it against. Those
+        // came from Wikidata structure alone, and now say so.
+        kind: article ? 'wikipedia' : 'wikidata',
         derivation: blocs.length ? 'extracted' : 'structured',
-        ...(article ? { article } : {}),
+        ...(article ? { article } : { qid: ref.qid }),
         ...(revid ? { revid } : {}),
         retrieved_at: retrieved,
         ...(blocs.length ? { model: 'claude-haiku-4-5' } : {}),
@@ -1168,12 +1173,36 @@ const buildCountry = async (
         ? 'flagged'
         : primary.confidence,
     provenance: {
-      kind: 'wikipedia',
+      // Derived from the primary chamber, so it inherits that chamber's source
+      // — including the case where there was no article to read.
+      kind: primary.provenance.article ? 'wikipedia' : 'wikidata',
       derivation: 'derived',
-      ...(primary.provenance.article ? { article: primary.provenance.article } : {}),
+      ...(primary.provenance.article
+        ? { article: primary.provenance.article }
+        : { qid: primary.entity.qid }),
       retrieved_at: retrieved,
     },
   }
+
+  const executivePower = executivePowerOf(
+    form,
+    prose ? [...form_raw, prose] : form_raw,
+    !!leaders.head_of_government,
+    iso
+  )
+
+  // A collective executive has no single head of government, by definition.
+  //
+  // Switzerland is the case. Its Federal Council governs as a body, which is
+  // why `executive_power` reads `collective` — but P1313 points at the Federal
+  // Chancellor, who runs the Federal Chancellery and is a civil servant, not a
+  // premier. Publishing him in this slot invited exactly the reading the
+  // `collective` value exists to prevent.
+  //
+  // Dropped rather than corrected: naming the right person is impossible when
+  // the right answer is "seven of them", and the Federal Council is already
+  // reported as head of state.
+  const headOfGovernment = executivePower === 'collective' ? null : leaders.head_of_government
 
   return {
     polity: {
@@ -1182,16 +1211,11 @@ const buildCountry = async (
       name: countryName,
       form,
       ...(recognition ? { recognition } : {}),
-      executive_power: executivePowerOf(
-        form,
-        prose ? [...form_raw, prose] : form_raw,
-        !!leaders.head_of_government,
-        iso
-      ),
+      executive_power: executivePower,
       form_raw: prose ? [...form_raw, prose] : form_raw,
       ...(democracy ? { democracy: { ...democracy, source: 'vdem' as const } } : {}),
       head_of_state: leaders.head_of_state,
-      head_of_government: leaders.head_of_government,
+      head_of_government: headOfGovernment,
       parties,
       chambers,
       government,

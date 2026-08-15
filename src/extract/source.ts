@@ -126,12 +126,23 @@ const ELECTION_FIELDS = /^\s*\|\s*(?:last_election\d*|next_election\d*)\s*=\s*(.
  * template — so the FIRST integer is taken and anything implausible for a
  * chamber is refused rather than guessed at.
  */
-const statedSeats = (wikitext: string): number | undefined => {
+export const statedSeats = (wikitext: string): number | undefined => {
   const raw = /^\s*\|\s*(?:seats|members)\s*=\s*(.+)$/im.exec(wikitext)?.[1]
   if (!raw) return undefined
+  // An EMPTY field is absent, not a match. `.` does not cross a newline, but
+  // the capture still runs to the end of the line, and where the value is blank
+  // the next field's own `| name = value` follows on it. Egypt's Senate reads
+  // `| seats = | structure1 = File:Egypt Senate 2026.svg`, so the first integer
+  // found was the YEAR in a filename: a 300-seat chamber published as 2026.
+  //
+  // Same shape as the `voting_system` bug that made Oman's blank field match on
+  // the word "voting" in the field name after it.
+  if (/^\s*\|/.test(raw)) return undefined
   const cleaned = raw
     .replace(/<ref[\s\S]*$/i, '')
     .replace(/\{\{[^}]*\}\}/g, ' ')
+    // A file reference carries a year far more often than a seat count.
+    .replace(/\b(?:File|Image)\s*:[^|\]]*/gi, ' ')
     .replace(/\[\[(?:[^\]|]*\|)?([^\]]*)\]\]/g, '$1')
     .replace(/'''/g, '')
   const found = /\b(\d{1,4})\b/.exec(cleaned)

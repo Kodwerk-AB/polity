@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import { statedSeats } from './source'
 import { compositionField, switchBranch, transcludedTemplate } from './composition'
 
 /**
@@ -78,5 +79,31 @@ describe('switchBranch', () => {
 
   it('returns nothing when the branch is not in the template', () => {
     expect(switchBranch('no switch here', 'Commons')).toBeUndefined()
+  })
+})
+
+describe('statedSeats', () => {
+  it('reads a plain seats field', () => {
+    expect(statedSeats('| seats = 300\n| other = x')).toBe(300)
+  })
+
+  it('reads a decorated seats field', () => {
+    expect(statedSeats("| seats = '''545''' <ref>note</ref>\n")).toBe(545)
+  })
+
+  it('refuses an EMPTY field that runs into the next one', () => {
+    // Egypt's Senate: `| seats = | structure1 = File:Egypt Senate 2026.svg`.
+    // The first integer on the line was the YEAR in a filename, so a 300-seat
+    // chamber was published as 2026.
+    expect(statedSeats('| seats = | structure1 = File:Egypt Senate 2026.svg\n')).toBeUndefined()
+  })
+
+  it('ignores a year inside a file reference', () => {
+    expect(statedSeats('| seats = [[File:Senate 2026.svg]] 300\n')).toBe(300)
+  })
+
+  it('refuses a count no national chamber could have', () => {
+    expect(statedSeats('| seats = 4\n')).toBeUndefined()
+    expect(statedSeats('| seats = 9999\n')).toBeUndefined()
   })
 })
