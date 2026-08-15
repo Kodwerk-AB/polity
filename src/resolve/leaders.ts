@@ -242,6 +242,22 @@ export const executivePowerOf = (
   // one whose definition CONTRADICTS a premier-led reading. Semi-presidential
   // republics genuinely split (Austria and Cape Verde are premier-led, Egypt
   // and the DRC are not) and keep the override, which is right for them.
+  // An EXECUTIVE PRESIDENCY is the more specific claim, and it wins.
+  //
+  // Guyana's summary says both: "Unitary parliamentary republic WITH AN
+  // EXECUTIVE PRESIDENCY". The parliamentary override below fired first and
+  // handed the country to Prime Minister Mark Phillips, who is constitutionally
+  // the president's first vice president and successor — the president is head
+  // of state AND head of government there.
+  //
+  // "Parliamentary" describes how the legislature is composed; "executive
+  // presidency" describes who runs the government, which is the question this
+  // function asks. Seven of the eight countries whose summaries carry the
+  // phrase already read `head_of_state` by other routes — Botswana, South
+  // Africa, Zimbabwe, Kiribati, Nauru, the Marshall Islands, Tajikistan — and
+  // Guyana was the lone outlier.
+  if (/executive presiden/.test(line)) return 'head_of_state'
+
   if (
     form !== 'presidential_republic' &&
     /parliamentary(?:\s+\w+)?\s+(?:republic|system|democracy|monarchy)/.test(line)

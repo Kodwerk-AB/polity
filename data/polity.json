@@ -1,6 +1,6 @@
 {
  "schema_version": "1.0.0",
- "generated_at": "2026-08-15T13:11:45.254Z",
+ "generated_at": "2026-08-15T13:39:32.878Z",
  "countries": {
   "AD": {
    "iso": "AD",
@@ -37764,7 +37764,7 @@
    },
    "name": "Guyana",
    "form": "parliamentary_republic",
-   "executive_power": "head_of_government",
+   "executive_power": "head_of_state",
    "form_raw": [
     "parliamentary republic",
     "Unitary parliamentary republic with an executive presidency{{efn |The president is constitutionally obligated to dissolve parliament after a successful no-confidence motion against the government (art"

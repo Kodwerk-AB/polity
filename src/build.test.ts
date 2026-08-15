@@ -516,3 +516,27 @@ describe('executivePowerOf — authoritarian monarchies', () => {
     }
   })
 })
+
+describe('executivePowerOf — an executive presidency', () => {
+  const at = (form: string, raw: string[]) => executivePowerOf(form as never, raw, true, '')
+
+  it('outranks "parliamentary" in the same sentence', () => {
+    // Guyana says both: "Unitary parliamentary republic WITH AN EXECUTIVE
+    // PRESIDENCY". The president is head of state and head of government; the
+    // prime minister is constitutionally the first vice president.
+    // "Parliamentary" describes how the legislature is composed, "executive
+    // presidency" who runs the government — which is what this asks.
+    expect(
+      at('parliamentary_republic', [
+        'parliamentary republic',
+        'Unitary parliamentary republic with an executive presidency',
+      ])
+    ).toBe('head_of_state')
+  })
+
+  it('leaves an ordinary parliamentary republic with its premier', () => {
+    expect(
+      at('parliamentary_republic', ['federal parliamentary republic', 'Federal parliamentary republic'])
+    ).toBe('head_of_government')
+  })
+})
