@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { landslideOr, selectionOf, withoutAllianceHeaders } from './build'
-import { resolveStatement } from './net/wiki'
+import { personName, resolveStatement } from './net/wiki'
 import { executivePowerOf, trustedHolder } from './resolve/leaders'
 import { FREE_ELECTION_SCORE } from './resolve/democracy'
 import { familiesOf } from './resolve/ideology'
@@ -435,5 +435,72 @@ describe('resolveStatement — a term with a future end date', () => {
       },
     }
     expect(resolveStatement([vague as never], '2026-08-15').stale).toBe(true)
+  })
+})
+
+describe('personName', () => {
+  const person = (label?: string, enwiki?: string) =>
+    ({
+      ...(label ? { labels: { en: { value: label } } } : {}),
+      ...(enwiki ? { sitelinks: { enwiki: { title: enwiki } } } : {}),
+    }) as never
+
+  it('keeps the label where the two share a word', () => {
+    // Spelling, accents and titles are the common case and the label wins.
+    expect(personName(person('Alexander Lukashenka', 'Alexander Lukashenko'))).toBe(
+      'Alexander Lukashenka'
+    )
+    expect(personName(person('Delcy Rodriguez', 'Delcy Rodríguez'))).toBe('Delcy Rodriguez')
+    expect(personName(person('Leo XIV', 'Pope Leo XIV'))).toBe('Leo XIV')
+    expect(personName(person('Ram Chandra Poudel', 'Ram Chandra Paudel'))).toBe(
+      'Ram Chandra Poudel'
+    )
+  })
+
+  it('takes the article title where the label shares nothing with it', () => {
+    // A label is one edit away from anything; a sitelink is a real page. Both
+    // of these were live vandalism.
+    expect(personName(person('Ben Do', 'Feleti Teo'))).toBe('Feleti Teo')
+    expect(personName(person('Edeupa Yerimin', 'Russell Dlamini'))).toBe('Russell Dlamini')
+  })
+
+  it('drops a parenthetical disambiguator', () => {
+    expect(personName(person('Ali Khamenei', 'Ali Khamenei (politician)'))).toBe('Ali Khamenei')
+  })
+
+  it('falls back to whichever field exists', () => {
+    expect(personName(person('Only Label'))).toBe('Only Label')
+    expect(personName(person(undefined, 'Only Sitelink'))).toBe('Only Sitelink')
+  })
+})
+
+describe('executivePowerOf — authoritarian monarchies', () => {
+  const at = (form: string, raw: string[]) => executivePowerOf(form as never, raw, true, '')
+
+  it('gives an authoritarian monarchy to its crown', () => {
+    // Bahrain and Qatar as their own articles describe them. In both the emir
+    // appoints the prime minister, approves the cabinet and ratifies laws.
+    expect(
+      at('constitutional_monarchy', [
+        'constitutional monarchy',
+        'Unitary constitutional monarchy under an authoritarian government',
+      ])
+    ).toBe('head_of_state')
+    expect(
+      at('constitutional_monarchy', [
+        'constitutional monarchy',
+        'Unitary authoritarian semi-constitutional monarchy',
+      ])
+    ).toBe('head_of_state')
+  })
+
+  it('leaves every ordinary constitutional monarchy premier-led', () => {
+    for (const raw of [
+      ['constitutional monarchy', 'Unitary parliamentary constitutional monarchy'],
+      ['constitutional monarchy', 'Federal parliamentary constitutional elective monarchy'],
+      ['constitutional monarchy', 'Unitary parliamentary semi-constitutional monarchy'],
+    ]) {
+      expect(at('constitutional_monarchy', raw)).toBe('head_of_government')
+    }
   })
 })

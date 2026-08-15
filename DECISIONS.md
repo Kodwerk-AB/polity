@@ -452,37 +452,58 @@ rather than a reading error.
 Stated plainly rather than left for a consumer to discover:
 
 - **Kazakhstan** — the 2026 constitution abolished both chambers on 1 July 2026
-  and replaced them with a unicameral 145-seat Kurultai, first elected in August
-  2026. We still record one 50-seat "Senate". This is upstream lag, not a
-  resolver bug: Wikidata's P194 still points at "Parliament of Kazakhstan" with
-  the Senate and Mäjilis as its parts, and carries no Kurultai item. The chamber
-  is `flagged`, holds zero composition rows, and now carries
-  `as_of_is_fallback`. Publishing a 145-seat chamber would assert what no source
-  yet says.
-- ~~**Nepal** — `head_of_state` names the *Vice* President.~~ **Fixed.** The
-  presidency's office item had all three real presidents marked *deprecated* and
-  closed, leaving the vice president as its only open holder; the country item
-  was correct throughout. An office that calls its own history false is no
-  longer read. See "Trusting an office item" below.
-- **The Gulf constitutional monarchies** — Bahrain, Kuwait and Qatar read
-  `executive_power: head_of_government`, but the emir appoints the prime
-  minister, approves the cabinet and ratifies legislation. Their `form` is
-  `constitutional_monarchy` where they function as absolute ones, and that is
-  an upstream classification we do not override.
+  and replaced them with a unicameral 145-seat Kurultai, first elected on **23
+  August 2026** — which has not happened yet. We still record one 50-seat
+  "Senate".
 
-  A V-Dem cut was tested and rejected. It sorts these three correctly (0.139,
+  Everything needed is already published and correct: the article
+  `Kurultai (Kazakhstan)` states 145 seats and honestly lists its composition as
+  `Vacant (145)`, and the Wikidata item **Q138020507** ("Kurultai of Kazakhstan")
+  carries P1342 = 145 and is classed as a legislature. The single missing link
+  is Kazakhstan's own P194, which still points only at Q2995409, the old
+  Parliament with the Senate and Mäjilis as its parts. One upstream statement
+  fixes this; nothing here can, and nothing should be invented in the meantime.
+
+- **The Gulf constitutional monarchies** — **Bahrain and Qatar fixed; Kuwait
+  outstanding.** All three read `executive_power: head_of_government` while the
+  emir appoints the prime minister, approves the cabinet and ratifies
+  legislation.
+
+  A V-Dem cut was tested and rejected: it sorts these three correctly (0.139,
   0.138, 0.034) and then takes Cambodia (0.183), Morocco (0.259) and Jordan
-  (0.282) with them — all premier-led in fact — while Thailand (0.424) sits
-  below Malaysia (0.504). No threshold separates the set, so the wrong answer
-  stays visible rather than being replaced by a differently wrong one.
+  (0.282) with them — all genuinely premier-led — while Thailand (0.424) sits
+  below Malaysia (0.504). No threshold separates the set.
 
-- **Tuvalu** — `head_of_government` reads "Ben Do". The prime minister is
-  Feleti Teo, appointed 2024-02-26, which is exactly the date we record. The
-  Wikidata item Q5441662 IS the Tuvalu premiership entry — right office, right
-  start date, preferred rank, open statement, and its own English description
-  still reads "Prime Minister of Tuvalu since 2024" — but its LABEL has been
-  vandalised. No structural signal distinguishes it from a correct record, so
-  nothing in the resolver can catch it; the fix belongs upstream.
+  The sources' own words do. Bahrain's article reads "Unitary constitutional
+  monarchy **under an authoritarian government**" and Qatar's "Unitary
+  **authoritarian** semi-constitutional monarchy", so `executivePowerOf` now
+  reads `authoritarian` exactly as it already read `absolute monarchy` for the
+  UAE. The word is rare enough to be a signal rather than a mood: of 37
+  constitutional monarchies only these two and the UAE carry it, and Britain,
+  Sweden, Japan, Spain, Malaysia, Morocco, Jordan and Thailand are untouched.
+
+  **Kuwait keeps the wrong value**, because its article carries no such marker —
+  a plain "Unitary constitutional monarchy", cited to Article 4 of the
+  constitution. That description is out of date: in May 2024 the emir dissolved
+  the National Assembly and suspended constitutional articles, consolidating
+  legislative and executive power for up to four years. The `Politics of Kuwait`
+  article has no `government_type` field to read instead. Left wrong and visible
+  rather than special-cased by ISO code.
+
+- ~~**Tuvalu** — `head_of_government` reads "Ben Do".~~ **Fixed**, along with a
+  second case nobody had spotted. Q5441662's LABEL was vandalised while
+  everything else on the item stayed right — its enwiki sitelink points at
+  "Feleti Teo" and its own description still reads "Prime Minister of Tuvalu
+  since 2024". A label is one edit away from anything; a sitelink is the title
+  of a real page, so replacing it means moving an article.
+
+  `personName` now prefers the article title where the label shares NO word with
+  it. Measured across all 319 leaders: 57 differ, and almost all are spelling —
+  Lukashenka/Lukashenko, Poudel/Paudel, a dropped accent, an added "Pope" — which
+  keep the label. Exactly four are wholly disjoint, and the sitelink is better on
+  every one: Tuvalu's "Ben Do", Eswatini's "Edeupa Yerimin" (a second live
+  vandalism, for Russell Dlamini), and the Kazakh and Nigerien transliterations
+  where the article title is the more standard spelling.
 
 - **Pakistan** — `form: theocracy`, described above.
 - ~~**`represents`** — all three absolute monarchies read `ceremonial`.~~

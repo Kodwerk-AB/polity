@@ -9,6 +9,7 @@ import {
   filePathUrl,
   getEntities,
   labelOf,
+  personName,
   startedOn,
   type WikidataEntity,
 } from '../net/wiki'
@@ -268,7 +269,19 @@ export const executivePowerOf = (
       // breath, and the president (ruler of Abu Dhabi) appoints the prime
       // minister (ruler of Dubai). Where the prose still says absolute, the
       // crown governs.
-      return /absolute monarchy/.test(line) ? 'head_of_state' : 'head_of_government'
+      //
+      // AUTHORITARIAN is the same finding in the sources' own words, and it is
+      // how Bahrain and Qatar are written: "Unitary constitutional monarchy
+      // under an authoritarian government" and "Unitary authoritarian
+      // semi-constitutional monarchy". In both the emir appoints the prime
+      // minister, approves the cabinet and ratifies legislation, and both were
+      // reading `head_of_government` — the inverse of who governs.
+      //
+      // The word is rare enough to be a signal rather than a mood: across all
+      // 37 constitutional monarchies only these two and the UAE carry it.
+      // Britain, Sweden, Japan, Spain, Malaysia, Morocco, Jordan and Thailand
+      // carry nothing of the sort and are untouched.
+      return /absolute monarchy|authoritarian/.test(line) ? 'head_of_state' : 'head_of_government'
     case 'semi_presidential_republic':
       // The prose is the tiebreak, and "parliamentary" in it is decisive:
       // Austria and Cape Verde both carry it and are premier-led. (Congo used
@@ -512,8 +525,10 @@ export const leadersOf = async (
     const stale = preferOffice ? false : fallback.stale
     const id = preferOffice ? fromOffice!.id : (statement ? claimId(statement) : undefined)
     if (!id) return null
-    const person = (await getEntities([id], 'labels|claims'))[id]
-    const name = labelOf(person)
+    // `sitelinks` is fetched for the name check in `personName`: a vandalised
+    // label is one edit, where the article title behind it is a real page.
+    const person = (await getEntities([id], 'labels|claims|sitelinks'))[id]
+    const name = personName(person)
     // Wikidata itself sometimes carries a placeholder where a person belongs —
     // Burundi's head of state resolved to a label reading "<UNKNOWN>". A leader
     // we cannot name is not a leader we should publish.

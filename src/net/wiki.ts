@@ -223,6 +223,49 @@ export const labelOf = (entity: WikidataEntity | undefined): string | undefined 
 export const enwikiTitle = (entity: WikidataEntity | undefined): string | undefined =>
   entity?.sitelinks?.enwiki?.title
 
+/** Comparable name tokens: lowercased, unaccented, punctuation dropped. */
+const nameTokens = (value: string): string[] =>
+  value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z ]/g, ' ')
+    .split(/\s+/)
+    .filter(token => token.length > 2)
+
+/**
+ * A person's name, with the article title as a check on a vandalised label.
+ *
+ * The label is the right field and is used wherever the two agree. But a label
+ * is one edit away from anything, and the sitelink is not: it is the title of a
+ * real article, so replacing it means moving a page.
+ *
+ * The test is whether the two share ANY word. Measured across all 319 leaders:
+ * 57 differ, and almost all of those are spelling — "Lukashenka"/"Lukashenko",
+ * "Poudel"/"Paudel", a dropped accent, an added "Pope". Those keep the label.
+ * Exactly FOUR are wholly disjoint, and on every one the sitelink is the better
+ * answer:
+ *
+ *   Q5441662   "Ben Do"          -> "Feleti Teo"            (vandalised)
+ *   Q123342092 "Edeupa Yerimin"  -> "Russell Dlamini"       (vandalised)
+ *   Q200881    "Qasym-Zhomart Toqaev" -> "Kassym-Jomart Tokayev"
+ *   Q120965176 "Omar Tiani"      -> "Abdourahamane Tchiani"
+ *
+ * The last two are transliterations where the article title is the more
+ * standard spelling, so nothing is lost by preferring it there either.
+ *
+ * A parenthetical disambiguator is dropped — "Ali Khamenei (politician)" is a
+ * filing convention, not part of the name.
+ */
+export const personName = (entity: WikidataEntity | undefined): string | undefined => {
+  const label = labelOf(entity)
+  const title = enwikiTitle(entity)?.replace(/\s*\([^)]*\)\s*$/, '')
+  if (!label) return title
+  if (!title) return label
+  const shared = nameTokens(label).some(token => nameTokens(title).includes(token))
+  return shared ? label : title
+}
+
 // ---------------------------------------------------------------------------
 // Wikipedia
 // ---------------------------------------------------------------------------
