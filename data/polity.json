@@ -1,6 +1,6 @@
 {
  "schema_version": "1.0.0",
- "generated_at": "2026-08-15T06:49:28.439Z",
+ "generated_at": "2026-08-15T12:20:43.708Z",
  "countries": {
   "AD": {
    "iso": "AD",
@@ -8604,7 +8604,7 @@
    },
    "name": "Bahrain",
    "form": "constitutional_monarchy",
-   "executive_power": "head_of_government",
+   "executive_power": "head_of_state",
    "form_raw": [
     "constitutional monarchy",
     "Unitary constitutional monarchy under an authoritarian government"
@@ -52041,7 +52041,38 @@
      "retrieved_at": "2026-08-15"
     }
    },
-   "head_of_government": null,
+   "head_of_government": {
+    "person": {
+     "qid": "Q55082182",
+     "label": "Han Seong-sook"
+    },
+    "name": "Han Seong-sook",
+    "office": {
+     "qid": "Q6296418",
+     "label": "President of South Korea"
+    },
+    "office_local": "대한민국 대통령",
+    "party": {
+     "qid": "Q327591",
+     "label": "independent politician"
+    },
+    "since": "2026-07-01",
+    "portrait": {
+     "file": "Prime Minister Han Seong-sook 20260707.jpg",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Prime%20Minister%20Han%20Seong-sook%2020260707.jpg",
+     "host": "commons",
+     "license": "KOGL Type 1",
+     "non_free": false,
+     "credit": "대한민국 국회"
+    },
+    "represents": "political",
+    "provenance": {
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q884",
+     "retrieved_at": "2026-08-15"
+    }
+   },
    "parties": {
     "Q15978686": {
      "entity": {
@@ -52643,9 +52674,9 @@
    "head_of_state": {
     "person": {
      "qid": "Q200881",
-     "label": "Qasym-Zhomart Toqaev"
+     "label": "Kassym-Jomart Tokayev"
     },
-    "name": "Qasym-Zhomart Toqaev",
+    "name": "Kassym-Jomart Tokayev",
     "office": {
      "qid": "Q5256775",
      "label": "President of Kazakhstan"
@@ -68551,9 +68582,9 @@
    "head_of_state": {
     "person": {
      "qid": "Q120965176",
-     "label": "Omar Tiani"
+     "label": "Abdourahamane Tchiani"
     },
-    "name": "Omar Tiani",
+    "name": "Abdourahamane Tchiani",
     "office": {
      "qid": "Q4376760",
      "label": "President of Niger"
@@ -79660,7 +79691,7 @@
    },
    "name": "Qatar",
    "form": "constitutional_monarchy",
-   "executive_power": "head_of_government",
+   "executive_power": "head_of_state",
    "form_raw": [
     "constitutional monarchy",
     "Unitary authoritarian semi-constitutional monarchy"
@@ -79673,9 +79704,9 @@
    "head_of_state": {
     "person": {
      "qid": "Q1855372",
-     "label": "Tamim bin Hamad Al"
+     "label": "Tamim bin Hamad Al Thani"
     },
-    "name": "Tamim bin Hamad Al",
+    "name": "Tamim bin Hamad Al Thani",
     "office": {
      "qid": "Q25711499",
      "label": "Emir of the State of Qatar"
@@ -89475,21 +89506,32 @@
    },
    "head_of_government": {
     "person": {
-     "qid": "Q123342092"
+     "qid": "Q123342092",
+     "label": "Russell Dlamini"
     },
     "name": "Russell Dlamini",
+    "office": {
+     "qid": "Q30101440",
+     "label": "Prime Minister of Eswatini"
+    },
     "office_local": "Prime Minister of the Kingdom of eSwatini",
     "party": null,
+    "since": "2023-11-04",
+    "portrait": {
+     "file": "Russell Dlamini official portrait.jpg",
+     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Russell%20Dlamini%20official%20portrait.jpg",
+     "host": "commons",
+     "license": "CC BY",
+     "non_free": false,
+     "credit": "總統府"
+    },
     "represents": "political",
     "provenance": {
-     "kind": "wikipedia",
-     "derivation": "extracted",
-     "article": "Eswatini",
-     "revid": 1365751458,
-     "retrieved_at": "2026-08-15",
-     "model": "claude-haiku-4-5"
-    },
-    "superseded": true
+     "kind": "wikidata",
+     "derivation": "structured",
+     "qid": "Q1050",
+     "retrieved_at": "2026-08-15"
+    }
    },
    "parties": {},
    "chambers": [
@@ -92547,9 +92589,9 @@
    "head_of_government": {
     "person": {
      "qid": "Q108892374",
-     "label": "Sarra Zaafrani"
+     "label": "Sara Zaafarani"
     },
-    "name": "Sarra Zaafrani",
+    "name": "Sara Zaafarani",
     "office": {
      "qid": "Q1064106",
      "label": "Prime Minister of Tunisia"
@@ -94170,9 +94212,9 @@
    "head_of_government": {
     "person": {
      "qid": "Q5441662",
-     "label": "Ben Do"
+     "label": "Feleti Teo"
     },
-    "name": "Ben Do",
+    "name": "Feleti Teo",
     "office": {
      "qid": "Q592866",
      "label": "Prime Minister of Tuvalu"

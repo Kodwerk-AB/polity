@@ -464,6 +464,18 @@ describe('personName', () => {
     expect(personName(person('Edeupa Yerimin', 'Russell Dlamini'))).toBe('Russell Dlamini')
   })
 
+  it('completes a name cut off on a connecting particle', () => {
+    // Qatar's emir read "Tamim bin Hamad Al" — the particle is meaningless in
+    // final position, so this cannot fire on a complete name.
+    expect(personName(person('Tamim bin Hamad Al', 'Tamim bin Hamad Al Thani'))).toBe(
+      'Tamim bin Hamad Al Thani'
+    )
+    // ...and a complete name that merely CONTAINS a particle keeps its label.
+    expect(personName(person('Salman bin Abdulaziz Al Saud', 'Salman of Saudi Arabia'))).toBe(
+      'Salman bin Abdulaziz Al Saud'
+    )
+  })
+
   it('drops a parenthetical disambiguator', () => {
     expect(personName(person('Ali Khamenei', 'Ali Khamenei (politician)'))).toBe('Ali Khamenei')
   })

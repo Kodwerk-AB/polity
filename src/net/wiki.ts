@@ -262,6 +262,11 @@ export const personName = (entity: WikidataEntity | undefined): string | undefin
   const title = enwikiTitle(entity)?.replace(/\s*\([^)]*\)\s*$/, '')
   if (!label) return title
   if (!title) return label
+  // A name ending on a connecting particle was cut off mid-way: Qatar's emir
+  // reads "Tamim bin Hamad Al" where the article title carries the missing
+  // "Thani". The particle is meaningless in final position, so this cannot fire
+  // on a complete name.
+  if (/\s(?:al|el|bin|bint|ibn|de|del|van|von|ben)$/i.test(label.trim())) return title
   const shared = nameTokens(label).some(token => nameTokens(title).includes(token))
   return shared ? label : title
 }
