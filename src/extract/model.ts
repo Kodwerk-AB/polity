@@ -19,6 +19,15 @@ const MODEL = 'claude-haiku-4-5-20251001'
 /** Bumped whenever SYSTEM changes, so a prompt fix invalidates old answers
  *  rather than serving a cached reading of a rule that no longer applies. */
 const PROMPT_VERSION = 'v19'
+/**
+ * The LEADER prompt's own version.
+ *
+ * Split from `PROMPT_VERSION` because the two prompts are independent and the
+ * composition pass is the expensive one: a one-line leader rule was
+ * invalidating all ~450 composition extractions along with it, which is both
+ * slow and a reason not to fix small things.
+ */
+const LEADER_PROMPT_VERSION = 'v21'
 const API = 'https://api.anthropic.com/v1/messages'
 
 export interface ExtractedBloc {
@@ -329,12 +338,28 @@ Rules:
   head_of_government rather than reporting the monarch, exactly as an
   unreadable monarch means omitting head_of_state rather than reporting the
   prime minister.
+- A PERSON WHO HAS NOT TAKEN OFFICE is not the officeholder. A title reading
+  "President-elect", "Prime Minister-designate" or "incoming" describes a
+  successor, not an incumbent: omit that office rather than reporting them.
+  Hungary's infobox reads "President-elect: András Baka", who takes office on
+  19 August 2026, and reporting him made a man who holds no office yet the
+  sitting head of state.
+- An ACTING or INTERIM holder IS the officeholder, and is always reported.
+  This is the opposite case and must not be confused with the one above: an
+  acting president holds the office TODAY, where a president-elect does not
+  hold it yet. Venezuela's infobox reads "President: Delcy Rodríguez (acting)"
+  with a footnote explaining that Nicolás Maduro was captured — report
+  Rodríguez, never the predecessor named in the note. The same holds for
+  "interim", "provisional" and "caretaker".
 - A PERSONAL REPRESENTATIVE is not the officeholder. Andorra's co-princes are
   the President of France and the Bishop of Urgell, each of whom appoints a
   representative to the country; report the co-prince, never the
   representative. The same holds for a regent, a deputy, or anyone the field
   marks as acting on another's behalf while that other person still holds the
-  office.
+  office. That last clause is the whole test: where the other person NO LONGER
+  holds the office — they died, resigned, were deposed or removed — the acting
+  holder is not a representative at all, they are the officeholder, and the
+  rule above applies instead.
 - If the same person holds both, report that name for BOTH and same_person true.
 - If the country has no separate head of government (a presidential system),
   report head_of_government as the head of state and same_person true.
@@ -414,7 +439,7 @@ export const extractLeaders = async (
   markup: string,
   country: string
 ): Promise<ExtractedLeaders | undefined> => {
-  const cacheKey = `leaders:${MODEL}:${PROMPT_VERSION}:${sourceHash}`
+  const cacheKey = `leaders:${MODEL}:${LEADER_PROMPT_VERSION}:${sourceHash}`
   const cached = cacheRead<ExtractedLeaders>(cacheKey)
   if (cached !== undefined) return cached
 
